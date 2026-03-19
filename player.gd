@@ -13,3 +13,4 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO,SPEED)
 	move_and_slide()
+#skibidi
