@@ -33,4 +33,4 @@ animation = &"new_animation"
 shape = SubResource("CircleShape2D_onrkg")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2078342767]
-zoom = Vector2(3.5, 3.5)
+zoom = Vector2(2.5, 2.5)

@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://d4httccfa0dba"]
 
 [ext_resource type="PackedScene" uid="uid://cs1grtahgtfeq" path="res://player.tscn" id="1_80nbo"]
-[ext_resource type="PackedScene" uid="uid://bukh0nhqhmn4d" path="res://test_map.tscn" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://blocdf550mewr" path="res://level0.tscn" id="1_e2o6t"]
 
 [node name="game" type="Node2D" unique_id=1596037007]
 
-[node name="TileMap" parent="." unique_id=1086905670 instance=ExtResource("2_e2o6t")]
+[node name="TileMap" parent="." unique_id=1774038579 instance=ExtResource("1_e2o6t")]
 
 [node name="CharacterBody2D" parent="." unique_id=383396189 instance=ExtResource("1_80nbo")]
-position = Vector2(-2, 3)
+position = Vector2(27, 35)

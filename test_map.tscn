@@ -14,6 +14,7 @@ sources/0 = SubResource("TileSetAtlasSource_4wuf8")
 [node name="TileMap" type="TileMap" unique_id=1086905670]
 tile_set = SubResource("TileSet_s02eq")
 format = 2
+layer_0/tile_data = PackedInt32Array(4, 65536, 0, 131076, 65536, 0, -131068, 65536, 0, -65531, 65536, 0, 65541, 65536, 0)
 
 [node name="Layer1" type="TileMapLayer" parent="." unique_id=891699854]
 use_parent_material = true
