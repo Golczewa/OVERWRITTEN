@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dubkv0up8i1i8"
-path="res://.godot/imported/wall1_level0.png-7c23be2bf347e8a30eea6909e58fcf12.ctex"
+uid="uid://csl4nb0snls6f"
+path="res://.godot/imported/mc_proto.png-9e491773c0e52ebb93d4f82d4eed7344.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asstets/wall1_level0.png"
-dest_files=["res://.godot/imported/wall1_level0.png-7c23be2bf347e8a30eea6909e58fcf12.ctex"]
+source_file="res://asstets/player/mc_proto.png"
+dest_files=["res://.godot/imported/mc_proto.png-9e491773c0e52ebb93d4f82d4eed7344.ctex"]
 
 [params]
 
