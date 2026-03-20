@@ -6,7 +6,7 @@ const JUMP_VELOCITY = -400.0
 
 
 func _physics_process(delta: float) -> void:
-	$AnimatedSprite2D.look_at(get_global_mouse_position())
+	look_at(get_global_mouse_position())
 	var direction := Input.get_vector("move_left","move_right","move_up","move_down")
 	if direction:
 		velocity = direction * SPEED

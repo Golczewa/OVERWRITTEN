@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://xp1en1s4tatk"]
+
+[ext_resource type="Texture2D" uid="uid://dubkv0up8i1i8" path="res://asstets/wall1_level0.png" id="1_axwn1"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_axwn1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45o5j"]
+size = Vector2(8, 32)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1312600483]
+physics_material_override = SubResource("PhysicsMaterial_axwn1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=974024126]
+texture = ExtResource("1_axwn1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=333404894]
+shape = SubResource("RectangleShape2D_45o5j")
