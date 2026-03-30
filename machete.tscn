@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bw33stdcmiq6l"]
+
+[ext_resource type="Texture2D" uid="uid://dorguutn51qeb" path="res://asstets/player/mc_arm.png" id="1_bhp4m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhp4m"]
+atlas = ExtResource("1_bhp4m")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fl0k8"]
+atlas = ExtResource("1_bhp4m")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7crru"]
+atlas = ExtResource("1_bhp4m")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hw0gn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhp4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fl0k8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7crru")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1587313047]
+sprite_frames = SubResource("SpriteFrames_hw0gn")
+animation = &"attack"

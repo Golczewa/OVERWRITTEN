@@ -13,4 +13,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO,SPEED)
 	move_and_slide()
-#skibidi
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index==MOUSE_BUTTON_LEFT:
+			if event.pressed:
+				$AnimatedSprite2D2.play_backwards("attack")

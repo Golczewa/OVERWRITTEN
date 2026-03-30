@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://cs1grtahgtfeq"]
 
-[ext_resource type="Script" uid="uid://dgjs6ox0i6mw4" path="res://player.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://csl4nb0snls6f" path="res://asstets/mc_proto.png" id="2_onrkg"]
+[ext_resource type="Script" uid="uid://dgjs6ox0i6mw4" path="res://scenes/player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://csl4nb0snls6f" path="res://asstets/player/mc_proto.png" id="2_onrkg"]
+[ext_resource type="PackedScene" uid="uid://bw33stdcmiq6l" path="res://machete.tscn" id="2_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i3pqv"]
 atlas = ExtResource("2_onrkg")
@@ -24,6 +25,9 @@ radius = 12.0
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=383396189]
 script = ExtResource("1_onrkg")
 
+[node name="AnimatedSprite2D2" parent="." unique_id=1587313047 instance=ExtResource("2_qhqgy")]
+position = Vector2(12, 22)
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1472101267]
 position = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_i3pqv")
@@ -35,3 +39,5 @@ shape = SubResource("CircleShape2D_onrkg")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2078342767]
 zoom = Vector2(2.5, 2.5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=241964166]
