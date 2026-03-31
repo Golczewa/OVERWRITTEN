@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bw33stdcmiq6l"]
+
+[ext_resource type="Texture2D" uid="uid://dorguutn51qeb" path="res://asstets/player/mc_arm.png" id="1_bhp4m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fl0k8"]
+atlas = ExtResource("1_bhp4m")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7crru"]
+atlas = ExtResource("1_bhp4m")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hw0gn"]
+atlas = ExtResource("1_bhp4m")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_81mnr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fl0k8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7crru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hw0gn")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=2079253940]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1858617163]
+sprite_frames = SubResource("SpriteFrames_81mnr")
