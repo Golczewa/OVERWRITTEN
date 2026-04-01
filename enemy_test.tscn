@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b6au2n0824xnn"]
+
+[ext_resource type="Script" uid="uid://6jv6r5xt435a" path="res://enemy_test.gd" id="1_tegdf"]
+[ext_resource type="Texture2D" uid="uid://bjfs44jx58joc" path="res://asstets/player/Sprite-0001.png" id="1_tekfo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tegdf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tekfo")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c6iok"]
+radius = 46.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=625731905]
+script = ExtResource("1_tegdf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1590663486]
+position = Vector2(-6, 0)
+scale = Vector2(0.63832855, 0.62741315)
+sprite_frames = SubResource("SpriteFrames_tegdf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=413708611]
+position = Vector2(3, -5)
+shape = SubResource("CircleShape2D_c6iok")
