@@ -16,8 +16,3 @@ func _physics_process(delta: float) -> void:
 		#if event.button_index==MOUSE_BUTTON_LEFT:
 			#if event.pressed:
 				#$AnimatedSprite2D2.play_backwards("attack")
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		if event.button_index==MOUSE_BUTTON_LEFT:
-			if event.pressed:
-				$Area2D/AnimatedSprite2D.play_backwards("attack")
