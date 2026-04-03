@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://pdn2oykes4m1"]
+
+[ext_resource type="Texture2D" uid="uid://di8ag7itwlunm" path="res://asstets/player/mc_arm.png.png.png" id="1_gf4tl"]
+[ext_resource type="Script" uid="uid://drnr315lviwe1" path="res://scenes/test_gun.gd" id="2_16teb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16teb"]
+atlas = ExtResource("1_gf4tl")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ve081"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16teb")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1235518650]
+sprite_frames = SubResource("SpriteFrames_ve081")
+script = ExtResource("2_16teb")
