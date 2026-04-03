@@ -15,5 +15,6 @@ func _input(event: InputEvent) -> void:
 func attack():
 	var bodies=get_overlapping_bodies()
 	for body in bodies:
-		body.take_damage(machete_dmg)
+		if body.is_in_group("enemies"):
+			body.take_damage(machete_dmg)
 		
