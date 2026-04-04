@@ -19,5 +19,7 @@ animations = [{
 }]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1235518650]
+position = Vector2(12, 1)
 sprite_frames = SubResource("SpriteFrames_ve081")
+offset = Vector2(12, 1)
 script = ExtResource("2_16teb")

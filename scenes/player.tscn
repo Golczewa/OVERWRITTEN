@@ -27,10 +27,10 @@ radius = 12.0
 script = ExtResource("1_onrkg")
 
 [node name="AnimatedSprite2D2" parent="." unique_id=1235518650 instance=ExtResource("4_dqkch")]
-position = Vector2(13, -19)
+position = Vector2(0, -20)
 
 [node name="Area2D" parent="." unique_id=150455651 instance=ExtResource("2_qhqgy")]
-position = Vector2(13, 21)
+position = Vector2(1, 21)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1472101267]
 position = Vector2(-1, 1)
