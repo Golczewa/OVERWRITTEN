@@ -23,3 +23,6 @@ position = Vector2(12, 1)
 sprite_frames = SubResource("SpriteFrames_ve081")
 offset = Vector2(12, 1)
 script = ExtResource("2_16teb")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=2118524406]
+position = Vector2(36, 9)

@@ -20,4 +20,4 @@ func _on_body_enterd(body):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	position=+velocity*delta
+	position=position + velocity*delta
