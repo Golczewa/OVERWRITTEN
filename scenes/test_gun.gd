@@ -1,5 +1,5 @@
 extends AnimatedSprite2D
-
+var can_attack = true
 var bullet_test = preload("res://scenes/bullet_test.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,8 +15,14 @@ func _input(event: InputEvent) -> void:
 			if event.pressed:
 				shoot()
 
+func end_cd():
+	can_attack=true
+
 func shoot():
-	var bullet = bullet_test.instantiate()
-	bullet.direction = ($Marker2D.global_position - $Marker2D2.global_position).normalized()
-	get_tree().current_scene.add_child(bullet) 
-	bullet.global_position=$Marker2D.global_position
+	if can_attack:
+		var bullet = bullet_test.instantiate()
+		bullet.direction = ($Marker2D.global_position - $Marker2D2.global_position).normalized()
+		get_tree().current_scene.add_child(bullet) 
+		bullet.global_position=$Marker2D.global_position
+		can_attack=false
+		get_tree().create_timer(0.5).timeout.connect(end_cd)
