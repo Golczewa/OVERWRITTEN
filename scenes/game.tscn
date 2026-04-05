@@ -13,3 +13,9 @@ position = Vector2(149, -29)
 
 [node name="CharacterBody2D" parent="." unique_id=383396189 instance=ExtResource("1_80nbo")]
 position = Vector2(27, 35)
+
+[node name="CharacterBody2D3" parent="." unique_id=488500864 instance=ExtResource("2_lnu2h")]
+position = Vector2(207, -35)
+
+[node name="CharacterBody2D4" parent="." unique_id=1383731433 instance=ExtResource("2_lnu2h")]
+position = Vector2(178, -32)

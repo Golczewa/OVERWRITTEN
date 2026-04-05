@@ -18,5 +18,5 @@ func _input(event: InputEvent) -> void:
 func shoot():
 	var bullet = bullet_test.instantiate()
 	bullet.direction = ($Marker2D.global_position - $Marker2D2.global_position).normalized()
-	get_parent().add_child(bullet) 
+	get_tree().current_scene.add_child(bullet) 
 	bullet.global_position=$Marker2D.global_position
