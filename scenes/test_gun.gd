@@ -1,6 +1,7 @@
 extends AnimatedSprite2D
 var can_attack = true
 var bullet_test = preload("res://scenes/bullet_test.tscn")
+var cooldown=0.3
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	scale=Vector2(1,-1)
@@ -25,4 +26,4 @@ func shoot():
 		get_tree().current_scene.add_child(bullet) 
 		bullet.global_position=$Marker2D.global_position
 		can_attack=false
-		get_tree().create_timer(0.5).timeout.connect(end_cd)
+		get_tree().create_timer(cooldown).timeout.connect(end_cd)
