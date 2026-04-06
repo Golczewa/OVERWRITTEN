@@ -13,13 +13,12 @@ func _ready() -> void:
 func _on_body_enterd(body):
 	if body.is_in_group("enemies"):
 		body.take_damage(dmg)
-		if perced==1:
+		if perced==perce:
 			queue_free()
 		perced=perced+1
 	else:
 		queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-
+func _physics_process(delta: float) -> void:
 	position=position + velocity*delta
