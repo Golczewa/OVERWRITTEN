@@ -8,14 +8,14 @@
 
 [node name="TileMap" parent="." unique_id=1774038579 instance=ExtResource("1_e2o6t")]
 
-[node name="CharacterBody2D2" parent="." unique_id=625731905 instance=ExtResource("2_lnu2h")]
-position = Vector2(149, -29)
-
 [node name="CharacterBody2D" parent="." unique_id=383396189 instance=ExtResource("1_80nbo")]
-position = Vector2(27, 35)
+position = Vector2(-108, 28)
 
-[node name="CharacterBody2D3" parent="." unique_id=488500864 instance=ExtResource("2_lnu2h")]
-position = Vector2(207, -35)
+[node name="CharacterBody2D3" parent="." unique_id=625731905 instance=ExtResource("2_lnu2h")]
+position = Vector2(6, -245)
 
-[node name="CharacterBody2D4" parent="." unique_id=1383731433 instance=ExtResource("2_lnu2h")]
-position = Vector2(178, -32)
+[node name="CharacterBody2D2" parent="." unique_id=1056077575 instance=ExtResource("2_lnu2h")]
+position = Vector2(-116, -246)
+
+[node name="CharacterBody2D4" parent="." unique_id=882555295 instance=ExtResource("2_lnu2h")]
+position = Vector2(169, -255)

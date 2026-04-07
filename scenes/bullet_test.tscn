@@ -16,4 +16,4 @@ shape = SubResource("RectangleShape2D_87sy2")
 texture = ExtResource("1_8dvgp")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=979256463]
-target_position = Vector2(10, 0)
+target_position = Vector2(0, 0)
