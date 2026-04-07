@@ -5,6 +5,7 @@ var perced:int=0
 var dmg: int =20
 var velocity 
 var direction
+
 func _ready() -> void:
 	body_entered.connect(_on_body_enterd)
 	look_at(direction)
@@ -18,7 +19,6 @@ func _on_body_enterd(body):
 		perced=perced+1
 	else:
 		queue_free()
-
 
 func _physics_process(delta: float) -> void:
 	if $RayCast2D.is_colliding():

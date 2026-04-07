@@ -11,11 +11,5 @@
 [node name="CharacterBody2D" parent="." unique_id=383396189 instance=ExtResource("1_80nbo")]
 position = Vector2(-108, 28)
 
-[node name="CharacterBody2D3" parent="." unique_id=625731905 instance=ExtResource("2_lnu2h")]
-position = Vector2(6, -245)
-
 [node name="CharacterBody2D2" parent="." unique_id=1056077575 instance=ExtResource("2_lnu2h")]
 position = Vector2(-116, -246)
-
-[node name="CharacterBody2D4" parent="." unique_id=882555295 instance=ExtResource("2_lnu2h")]
-position = Vector2(169, -255)
