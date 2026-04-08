@@ -78,6 +78,7 @@ func  chase():
 	rot_speed=20
 	if nav_agent.is_navigation_finished():
 		direction=Vector2.ZERO
-	nav_agent.target_position=player.global_position
-	var next_path=nav_agent.get_next_path_position()
-	direction = global_position.direction_to(next_path)
+	else:
+		nav_agent.target_position=player.global_position
+		var next_path=nav_agent.get_next_path_position()
+		direction = global_position.direction_to(next_path)
