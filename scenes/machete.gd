@@ -6,13 +6,9 @@ var something_in:bool=false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		if event.button_index==MOUSE_BUTTON_LEFT:
-			if event.pressed:
-				$AnimatedSprite2D.play_backwards("attack")
-				attack()
+
 func attack():
+	$AnimatedSprite2D.play_backwards("attack")
 	var bodies=get_overlapping_bodies()
 	for body in bodies:
 		if body.is_in_group("enemies"):

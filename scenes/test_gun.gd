@@ -10,16 +10,11 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	look_at(get_global_mouse_position())
 	
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		if event.button_index==MOUSE_BUTTON_RIGHT:
-			if event.pressed:
-				shoot()
 
 func end_cd():
 	can_attack=true
 
-func shoot():
+func attack():
 	if can_attack:
 		var bullet = bullet_test.instantiate()
 		bullet.direction = ($Marker2D.global_position - $Marker2D2.global_position).normalized()
