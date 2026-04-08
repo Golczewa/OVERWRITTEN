@@ -5,6 +5,7 @@ extends CharacterBody2D
 var curr_health: int
 var direction: Vector2 = Vector2.ZERO
 var speed: int=50
+var walk_range: int =200
 
 signal died
 
@@ -29,14 +30,15 @@ func _damage_effect():
 
 func _idle_moving():
 	if nav_agent.is_navigation_finished():
+		direction=Vector2.ZERO
 		_randomise_target()
 		return
 	var next_path=nav_agent.get_next_path_position()
 	direction = global_position.direction_to(next_path)
 
 func _randomise_target():
-	var x=randf_range(-100,100)
-	var y=randf_range(-100,100)
+	var x=randf_range(-walk_range,walk_range)
+	var y=randf_range(-walk_range,walk_range)
 	var target=global_position+Vector2(x,y)
 	nav_agent.target_position=target
 

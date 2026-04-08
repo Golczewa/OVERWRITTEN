@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://d4httccfa0dba"]
 
 [ext_resource type="PackedScene" uid="uid://cs1grtahgtfeq" path="res://scenes/player.tscn" id="1_80nbo"]
-[ext_resource type="PackedScene" uid="uid://blocdf550mewr" path="res://scenes/level0.tscn" id="1_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://cnyvwvoudnuew" path="res://scenes/level_test.tscn" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://b6au2n0824xnn" path="res://scenes/enemy_test.tscn" id="2_lnu2h"]
 
 [node name="game" type="Node2D" unique_id=1596037007]
 
-[node name="TileMap" parent="." unique_id=1774038579 instance=ExtResource("1_e2o6t")]
+[node name="NavigationRegion2D" parent="." unique_id=774230127 instance=ExtResource("1_lnu2h")]
 
 [node name="CharacterBody2D" parent="." unique_id=383396189 instance=ExtResource("1_80nbo")]
-position = Vector2(-108, 28)
+position = Vector2(158, -67)
 
 [node name="CharacterBody2D2" parent="." unique_id=1056077575 instance=ExtResource("2_lnu2h")]
-position = Vector2(-116, -246)
+position = Vector2(-258, -575)
