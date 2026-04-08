@@ -8,6 +8,7 @@ var direction: Vector2 = Vector2.ZERO
 var speed: int=50
 var rot_speed: int =15
 var view_distance: int =250
+var player_sighted:bool = false
 @export var walk_range: int =200
 signal died
 
@@ -32,6 +33,8 @@ func _damage_effect():
 
 func _idle_moving():
 	if nav_agent.is_navigation_finished():
+		speed=50
+		rot_speed=15
 		direction=Vector2.ZERO
 		_randomise_target()
 		return
@@ -45,12 +48,15 @@ func _randomise_target():
 	nav_agent.target_position=target
 
 func _physics_process(_delta: float) -> void:
-	_idle_moving()
+	if(player_sighted):
+		chase()
+	else: 
+		_idle_moving()
 	var target_angle = direction.angle()
 	rotation = lerp_angle(rotation, target_angle, rot_speed * _delta)
 	velocity=direction*speed
-	if(can_see_player()):
-		queue_free()
+	if(!player_sighted):
+		player_sighted=can_see_player()
 	move_and_slide()
 
 func can_see_player():
@@ -66,3 +72,12 @@ func can_see_player():
 		if result.collider == player:
 			return true
 	return false
+
+func  chase():
+	speed=200
+	rot_speed=20
+	if nav_agent.is_navigation_finished():
+		direction=Vector2.ZERO
+	nav_agent.target_position=player.global_position
+	var next_path=nav_agent.get_next_path_position()
+	direction = global_position.direction_to(next_path)
