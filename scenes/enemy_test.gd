@@ -2,11 +2,13 @@ extends CharacterBody2D
 
 @export var test_max_health: int =100
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
+@onready var player = get_tree().get_first_node_in_group("player")
 var curr_health: int
 var direction: Vector2 = Vector2.ZERO
 var speed: int=50
-var walk_range: int =200
-
+var rot_speed: int =15
+var view_distance: int =250
+@export var walk_range: int =200
 signal died
 
 func _ready() -> void:
@@ -44,5 +46,23 @@ func _randomise_target():
 
 func _physics_process(_delta: float) -> void:
 	_idle_moving()
+	var target_angle = direction.angle()
+	rotation = lerp_angle(rotation, target_angle, rot_speed * _delta)
 	velocity=direction*speed
+	if(can_see_player()):
+		queue_free()
 	move_and_slide()
+
+func can_see_player():
+	var dist = global_position.distance_to(player.global_position)
+	if dist > view_distance:
+		return false
+	var space_state=get_world_2d().direct_space_state
+	var query=PhysicsRayQueryParameters2D.create(global_position, player.global_position)
+	query.collision_mask = 3 
+	query.exclude = [self.get_rid()]
+	var result = space_state.intersect_ray(query)
+	if result:
+		if result.collider == player:
+			return true
+	return false
