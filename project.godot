@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="game_with_no_name"
+config/name="OVERWRITTEN"
 run/main_scene="uid://d4httccfa0dba"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
