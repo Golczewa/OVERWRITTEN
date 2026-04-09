@@ -1,6 +1,7 @@
 extends Area2D
 @export var machete_dmg: int =35
 var owner_node:Node=null
+var knockback:int=10
 @export var cooldown=0.5
 var can_attack:bool=true
 
@@ -10,7 +11,7 @@ func attack():
 		var bodies=get_overlapping_bodies()
 		for body in bodies:
 			if body.is_in_group("enemies"):
-				body.take_damage(machete_dmg)
+				body.take_damage(machete_dmg,knockback)
 			elif body.is_in_group("player"):
 				body.player_take_dmg(machete_dmg)
 		can_attack=false

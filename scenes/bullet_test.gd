@@ -13,7 +13,7 @@ func _ready() -> void:
 	$RayCast2D.target_position = Vector2(speed * get_physics_process_delta_time(), 0)
 func _on_body_enterd(body):
 	if body.is_in_group("enemies"):
-		body.take_damage(dmg)
+		body.take_damage(dmg,0)
 		if perced==perce:
 			queue_free()
 		perced=perced+1

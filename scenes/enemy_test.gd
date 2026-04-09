@@ -19,8 +19,9 @@ func _ready() -> void:
 		curr_health=test_max_health
 		_randomise_target()
 		
-func take_damage(damage: int):
+func take_damage(damage: int,knockback:int):
 	curr_health=curr_health-damage
+	
 	_damage_effect()
 	if curr_health<=0:
 		_die()
@@ -89,4 +90,4 @@ func  chase():
 func player_in(body):
 	if player_sighted:
 		if body.is_in_group("player"):
-			weapon.attack()wdwadw
+			weapon.attack()

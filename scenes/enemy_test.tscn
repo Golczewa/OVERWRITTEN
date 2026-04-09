@@ -20,8 +20,6 @@ radius = 29.068884
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=625731905 groups=["enemies"]]
 script = ExtResource("1_tegdf")
-test_max_health = null
-walk_range = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1590663486]
 position = Vector2(-4, 2.000001)
