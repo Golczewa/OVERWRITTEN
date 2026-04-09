@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var test_max_health: int =100
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var player = get_tree().get_first_node_in_group("player")
+@onready var weapon: Area2D=$AnimatedSprite2D/Area2D
 var curr_health: int
 var direction: Vector2 = Vector2.ZERO
 var speed: int=50
@@ -10,9 +11,11 @@ var rot_speed: int =15
 var view_distance: int =250
 var player_sighted:bool = false
 @export var walk_range: int =200
+
 signal died
 
 func _ready() -> void:
+		weapon.body_entered.connect(player_in)
 		curr_health=test_max_health
 		_randomise_target()
 		
@@ -82,3 +85,7 @@ func  chase():
 		nav_agent.target_position=player.global_position
 		var next_path=nav_agent.get_next_path_position()
 		direction = global_position.direction_to(next_path)
+
+func player_in(body):
+	if body.is_in_group("player"):
+		weapon.attack()

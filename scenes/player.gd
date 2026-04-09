@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 500.0
 const JUMP_VELOCITY = -400.0
-var player_health=100
+var player_health=1000
 
 func _physics_process(_delta: float) -> void:
 	$AnimatedSprite2D.look_at(get_global_mouse_position())
@@ -25,5 +25,11 @@ func _input(event: InputEvent) -> void:
 
 func player_take_dmg(dmg):
 	player_health=player_health-dmg
+	_damage_effect()
 	if(player_health<=0):
 		get_tree().reload_current_scene()
+		
+func _damage_effect():
+	modulate=Color.RED
+	await get_tree().create_timer(0.1).timeout
+	modulate=Color.WHITE

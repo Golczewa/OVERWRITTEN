@@ -11,6 +11,8 @@ func attack():
 		for body in bodies:
 			if body.is_in_group("enemies"):
 				body.take_damage(machete_dmg)
+			elif body.is_in_group("player"):
+				body.player_take_dmg(machete_dmg)
 		can_attack=false
 		get_tree().create_timer(cooldown).timeout.connect(end_cd)
 		
