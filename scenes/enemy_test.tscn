@@ -34,7 +34,7 @@ scale = Vector2(2.5340028, 2.4535227)
 target_position = Vector2(150, 0)
 
 [node name="Area2D" parent="AnimatedSprite2D" unique_id=150455651 instance=ExtResource("3_ainam")]
-position = Vector2(58.282066, 31.895794)
+position = Vector2(45.612053, 36.80284)
 scale = Vector2(2.5340028, 2.4535224)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=413708611]

@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 500.0
 const JUMP_VELOCITY = -400.0
-var player_health=1000
+var player_health=100
 
 func _physics_process(_delta: float) -> void:
 	$AnimatedSprite2D.look_at(get_global_mouse_position())

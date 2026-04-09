@@ -87,5 +87,6 @@ func  chase():
 		direction = global_position.direction_to(next_path)
 
 func player_in(body):
-	if body.is_in_group("player"):
-		weapon.attack()
+	if player_sighted:
+		if body.is_in_group("player"):
+			weapon.attack()wdwadw
