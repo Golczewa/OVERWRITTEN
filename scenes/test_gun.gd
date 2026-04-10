@@ -1,16 +1,16 @@
 extends AnimatedSprite2D
 var can_attack = true
 var bullet_test = preload("res://scenes/bullet_test.tscn")
-var cooldown=0.3
+var cooldown=1
 var is_owned_by_player:bool
 var target:Vector2
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if(get_parent().get_parent().is_in_group("player")):
 		is_owned_by_player=true
+		cooldown=0.3
 		scale=Vector2(1,-1)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if(is_owned_by_player):
 		look_at(get_global_mouse_position())

@@ -18,7 +18,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_arinv"]
 radius = 26.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1837710199]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1837710199 groups=["enemies"]]
 script = ExtResource("1_yphuh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1924938793]
@@ -29,11 +29,11 @@ sprite_frames = SubResource("SpriteFrames_j0lpi")
 [node name="RayCast2D" type="RayCast2D" parent="AnimatedSprite2D" unique_id=1669275274]
 position = Vector2(18.733736, -8.055986)
 
-[node name="AnimatedSprite2D2" parent="AnimatedSprite2D" unique_id=1235518650 groups=["enemies"] instance=ExtResource("3_xvhym")]
+[node name="AnimatedSprite2D2" parent="AnimatedSprite2D" unique_id=1235518650 instance=ExtResource("3_xvhym")]
 position = Vector2(15.370998, 57.316742)
 scale = Vector2(2.9051166, 2.865837)
 
-[node name="RayCast2D2" type="RayCast2D" parent="AnimatedSprite2D/AnimatedSprite2D2" unique_id=1779151189 groups=["enemies"]]
+[node name="RayCast2D2" type="RayCast2D" parent="AnimatedSprite2D/AnimatedSprite2D2" unique_id=1779151189]
 position = Vector2(4.2328043, 9.000002)
 target_position = Vector2(400, 0)
 

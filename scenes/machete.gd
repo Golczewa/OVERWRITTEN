@@ -1,8 +1,8 @@
 extends Area2D
-@export var machete_dmg: int =35
+@export var machete_dmg: int =20
 var owner_node:Node=null
 var knockback:int=500
-@export var cooldown=0.5
+@export var cooldown=0.3
 var can_attack:bool=true
 
 func attack():

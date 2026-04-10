@@ -5,6 +5,9 @@ const SPEED = 500.0
 const JUMP_VELOCITY = -400.0
 var player_health=100
 
+func _ready() -> void:
+	$Label.text = "HP: " + str(player_health)
+
 func _physics_process(_delta: float) -> void:
 	$AnimatedSprite2D.look_at(get_global_mouse_position())
 	var direction := Input.get_vector("move_left","move_right","move_up","move_down")
@@ -25,6 +28,7 @@ func _input(event: InputEvent) -> void:
 
 func player_take_dmg(dmg):
 	player_health=player_health-dmg
+	$Label.text = "HP: " + str(player_health)
 	_damage_effect()
 	if(player_health<=0):
 		get_tree().reload_current_scene()

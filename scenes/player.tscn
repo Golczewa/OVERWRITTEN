@@ -43,3 +43,9 @@ shape = SubResource("CircleShape2D_onrkg")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2078342767]
 zoom = Vector2(2.5, 2.5)
+
+[node name="Label" type="Label" parent="." unique_id=158941220]
+offset_left = -87.0
+offset_top = 57.0
+offset_right = -47.0
+offset_bottom = 80.0

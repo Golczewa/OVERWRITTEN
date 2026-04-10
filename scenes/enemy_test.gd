@@ -75,6 +75,8 @@ func _physics_process(_delta: float) -> void:
 	velocity=direction*speed
 	if(!player_sighted):
 		player_sighted=can_see_player()
+		if player_sighted:
+			get_tree().call_group("enemies","trigger")
 	move_and_slide()
 
 func can_see_player():
@@ -105,3 +107,6 @@ func player_in(body):
 	if player_sighted:
 		if body.is_in_group("player"):
 			weapon.attack()
+			
+func trigger():
+	player_sighted=true

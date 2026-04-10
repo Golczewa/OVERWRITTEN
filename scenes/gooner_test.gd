@@ -9,7 +9,7 @@ var direction: Vector2 = Vector2.ZERO
 var speed: int=50
 var rot_speed: int =15
 var view_distance: int =250
-var player_sighted:bool = false
+@export var player_sighted:bool = false
 var in_knocback:bool=false
 var in_range:bool=false
 @export var walk_range: int =200
@@ -78,6 +78,8 @@ func _physics_process(_delta: float) -> void:
 	velocity=direction*speed
 	if(!player_sighted):
 		player_sighted=can_see_player()
+		if player_sighted:
+			get_tree().call_group("enemies","trigger")
 	move_and_slide()
 
 func can_see_player():
@@ -119,3 +121,6 @@ func is_path_blocked():
 		else:
 			return true
 	return false
+
+func trigger():
+	player_sighted=true

@@ -10,10 +10,16 @@
 [node name="NavigationRegion2D" parent="." unique_id=774230127 instance=ExtResource("1_lnu2h")]
 
 [node name="CharacterBody2D" parent="." unique_id=383396189 instance=ExtResource("1_80nbo")]
-position = Vector2(158, -67)
+position = Vector2(-20, -96)
 
 [node name="CharacterBody2D3" parent="." unique_id=1837710199 instance=ExtResource("4_lbhrr")]
-position = Vector2(279, -553)
+position = Vector2(273, -545)
 
 [node name="CharacterBody2D2" parent="." unique_id=625731905 instance=ExtResource("4_iywne")]
-position = Vector2(-197, -548)
+position = Vector2(-211, -543)
+
+[node name="CharacterBody2D4" parent="." unique_id=836706285 instance=ExtResource("4_iywne")]
+position = Vector2(-201, -402)
+
+[node name="CharacterBody2D5" parent="." unique_id=2144885727 instance=ExtResource("4_lbhrr")]
+position = Vector2(352, 3)
