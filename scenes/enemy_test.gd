@@ -23,18 +23,19 @@ func _ready() -> void:
 func take_damage(damage: int,knockback:int):
 	curr_health=curr_health-damage
 	if(knockback!=0):
+		var org_speed=speed
 		speed=knockback
 		direction=-direction
 		in_knocback=true
-		get_tree().create_timer(0.2).timeout.connect(end_knockback)
+		get_tree().create_timer(0.2).timeout.connect(end_knockback.bind(org_speed))
 	_damage_effect()
 	if(!player_sighted):
 		player_sighted=true
 	if curr_health<=0:
 		_die()
 
-func end_knockback():
-	speed=50
+func end_knockback( org_speed):
+	speed=org_speed
 	direction=-direction
 	in_knocback=false
 
