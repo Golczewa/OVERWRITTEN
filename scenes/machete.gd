@@ -1,7 +1,7 @@
 extends Area2D
 @export var machete_dmg: int =35
 var owner_node:Node=null
-var knockback:int=10
+var knockback:int=250
 @export var cooldown=0.5
 var can_attack:bool=true
 
@@ -15,7 +15,7 @@ func attack():
 			elif body.is_in_group("player"):
 				body.player_take_dmg(machete_dmg)
 		can_attack=false
-		get_tree().create_timer(cooldown).timeout.connect(end_cd)
+		get_tree().create_timer(0.5).timeout.connect(end_cd)
 		
 func end_cd():
 	can_attack=true

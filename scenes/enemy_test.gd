@@ -10,6 +10,7 @@ var speed: int=50
 var rot_speed: int =15
 var view_distance: int =250
 var player_sighted:bool = false
+var in_knocback:bool=false
 @export var walk_range: int =200
 
 signal died
@@ -21,10 +22,21 @@ func _ready() -> void:
 		
 func take_damage(damage: int,knockback:int):
 	curr_health=curr_health-damage
-	
+	if(knockback!=0):
+		speed=knockback
+		direction=-direction
+		in_knocback=true
+		get_tree().create_timer(0.2).timeout.connect(end_knockback)
 	_damage_effect()
+	if(!player_sighted):
+		player_sighted=true
 	if curr_health<=0:
 		_die()
+
+func end_knockback():
+	speed=50
+	direction=-direction
+	in_knocback=false
 
 func  _die():
 	emit_signal("died")
@@ -52,12 +64,13 @@ func _randomise_target():
 	nav_agent.target_position=target
 
 func _physics_process(_delta: float) -> void:
-	if(player_sighted):
-		chase()
-	else: 
-		_idle_moving()
-	var target_angle = direction.angle()
-	rotation = lerp_angle(rotation, target_angle, rot_speed * _delta)
+	if(!in_knocback):
+		if(player_sighted):
+			chase()
+		else: 
+			_idle_moving()
+		var target_angle = direction.angle()
+		rotation = lerp_angle(rotation, target_angle, rot_speed * _delta)
 	velocity=direction*speed
 	if(!player_sighted):
 		player_sighted=can_see_player()

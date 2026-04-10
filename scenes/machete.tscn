@@ -29,11 +29,11 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack",
-"speed": 12.0
+"speed": 15.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81mnr"]
-size = Vector2(25, 49)
+size = Vector2(34, 75)
 
 [node name="Area2D" type="Area2D" unique_id=150455651]
 script = ExtResource("1_b38jh")
@@ -46,5 +46,5 @@ frame_progress = 1.0
 offset = Vector2(12, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2091999505]
-position = Vector2(31.5, 6.5)
+position = Vector2(36, -6.5)
 shape = SubResource("RectangleShape2D_81mnr")
