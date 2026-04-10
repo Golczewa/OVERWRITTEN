@@ -71,8 +71,8 @@ func _physics_process(_delta: float) -> void:
 		else: 
 			_idle_moving()
 			weapon.target=nav_agent.target_position
-		var target_angle = direction.angle()
-		rotation = lerp_angle(rotation, target_angle, rot_speed * _delta)
+	var target_angle = direction.angle()
+	rotation = lerp_angle(rotation, target_angle, rot_speed * _delta)
 	velocity=direction*speed
 	if(!player_sighted):
 		player_sighted=can_see_player()
@@ -93,10 +93,14 @@ func can_see_player():
 	return false
 
 func  chase():
-	pass
-	#if nav_agent.is_navigation_finished():
-		#direction=Vector2.ZERO
-	#else:
-		#nav_agent.target_position=player.global_position
-		#var next_path=nav_agent.get_next_path_position()
-		#direction = global_position.direction_to(next_path)
+	weapon.target=player.global_position
+	if(global_position.distance_to(player.global_position)<=range):
+		direction=Vector2.ZERO
+		weapon.attack()
+	else:
+		if global_position.distance_to(player.global_position)<=range:
+			direction=Vector2.ZERO
+		else:
+			nav_agent.target_position=player.global_position
+			var next_path=nav_agent.get_next_path_position()
+			direction = global_position.direction_to(next_path)

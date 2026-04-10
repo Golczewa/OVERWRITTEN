@@ -23,6 +23,8 @@ func end_cd():
 func attack():
 	if can_attack:
 		var bullet = bullet_test.instantiate()
+		if is_owned_by_player:
+			bullet.shot_by_player=true
 		bullet.direction = ($Marker2D.global_position - $Marker2D2.global_position).normalized()
 		get_tree().current_scene.add_child(bullet) 
 		bullet.global_position=$Marker2D.global_position
