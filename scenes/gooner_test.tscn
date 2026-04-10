@@ -4,9 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://bjfs44jx58joc" path="res://asstets/player/Sprite-0001.png" id="2_twk8v"]
 [ext_resource type="PackedScene" uid="uid://pdn2oykes4m1" path="res://scenes/test_gun.tscn" id="3_xvhym"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_arinv"]
-radius = 26.0
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_j0lpi"]
 animations = [{
 "frames": [{
@@ -18,14 +15,11 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_arinv"]
+radius = 26.0
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1837710199]
 script = ExtResource("1_yphuh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=466690639]
-position = Vector2(-3, -1)
-shape = SubResource("CircleShape2D_arinv")
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1737912424]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1924938793]
 position = Vector2(-6.000004, 2)
@@ -35,6 +29,16 @@ sprite_frames = SubResource("SpriteFrames_j0lpi")
 [node name="RayCast2D" type="RayCast2D" parent="AnimatedSprite2D" unique_id=1669275274]
 position = Vector2(18.733736, -8.055986)
 
-[node name="AnimatedSprite2D2" parent="AnimatedSprite2D" unique_id=1235518650 instance=ExtResource("3_xvhym")]
-position = Vector2(18.445196, 57.316742)
+[node name="AnimatedSprite2D2" parent="AnimatedSprite2D" unique_id=1235518650 groups=["enemies"] instance=ExtResource("3_xvhym")]
+position = Vector2(15.370998, 57.316742)
 scale = Vector2(2.9051166, 2.865837)
+
+[node name="RayCast2D2" type="RayCast2D" parent="AnimatedSprite2D/AnimatedSprite2D2" unique_id=1779151189 groups=["enemies"]]
+position = Vector2(4.2328043, 9.000002)
+target_position = Vector2(400, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=466690639]
+position = Vector2(-3, -1)
+shape = SubResource("CircleShape2D_arinv")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1737912424]

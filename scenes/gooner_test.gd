@@ -13,7 +13,7 @@ var player_sighted:bool = false
 var in_knocback:bool=false
 var in_range:bool=false
 @export var walk_range: int =200
-var range:int=500
+var range_:int=400
 signal died
 
 func _ready() -> void:
@@ -70,9 +70,11 @@ func _physics_process(_delta: float) -> void:
 			chase()
 		else: 
 			_idle_moving()
-			weapon.target=nav_agent.target_position
-	var target_angle = direction.angle()
-	rotation = lerp_angle(rotation, target_angle, rot_speed * _delta)
+			var offset = Vector2.RIGHT.rotated(rotation) * 100
+			var target_pos = global_position + offset
+			weapon.target = target_pos
+			var target_angle = direction.angle()
+			rotation = lerp_angle(rotation, target_angle, rot_speed * _delta)
 	velocity=direction*speed
 	if(!player_sighted):
 		player_sighted=can_see_player()
@@ -93,14 +95,27 @@ func can_see_player():
 	return false
 
 func  chase():
+	speed=100
+	rot_speed=20
 	weapon.target=player.global_position
-	if(global_position.distance_to(player.global_position)<=range):
+	look_at(player.global_position)
+	if(global_position.distance_to(player.global_position)<=range_ and not is_path_blocked()):
 		direction=Vector2.ZERO
 		weapon.attack()
 	else:
-		if global_position.distance_to(player.global_position)<=range:
+		if global_position.distance_to(player.global_position)<=range_ and not is_path_blocked():
 			direction=Vector2.ZERO
 		else:
 			nav_agent.target_position=player.global_position
 			var next_path=nav_agent.get_next_path_position()
 			direction = global_position.direction_to(next_path)
+
+func is_path_blocked():
+	$AnimatedSprite2D/AnimatedSprite2D2/RayCast2D2.target_position=Vector2(range_,0)
+	if $AnimatedSprite2D/AnimatedSprite2D2/RayCast2D2.is_colliding():
+		var collider=$AnimatedSprite2D/AnimatedSprite2D2/RayCast2D2.get_collider()
+		if collider.is_in_group("player"):
+			return false
+		else:
+			return true
+	return false
