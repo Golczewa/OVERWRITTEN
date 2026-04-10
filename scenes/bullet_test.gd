@@ -26,3 +26,4 @@ func _physics_process(delta: float) -> void:
 		if not collider.is_in_group("enemies"):
 			queue_free()
 	position=position + velocity*delta
+ #test
