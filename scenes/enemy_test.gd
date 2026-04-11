@@ -11,6 +11,7 @@ var rot_speed: int =15
 var view_distance: int =250
 var player_sighted:bool = false
 var in_knocback:bool=false
+var dead=false
 @export var walk_range: int =200
 
 signal died
@@ -40,8 +41,15 @@ func end_knockback( org_speed):
 	in_knocback=false
 
 func  _die():
+	dead=true
 	emit_signal("died")
-	queue_free()
+	$AnimatedSprite2D.play("dead")
+	modulate = Color.GRAY
+	set_physics_process(false)
+	set_process(false)
+	$CollisionShape2D.set_deferred("disabled", true)
+	$AnimatedSprite2D/RayCast2D.set_deferred("disabled", true)
+	remove_from_group("enemies")
 
 func _damage_effect():
 	modulate=Color.RED
@@ -104,7 +112,7 @@ func  chase():
 		direction = global_position.direction_to(next_path)
 
 func player_in(body):
-	if player_sighted:
+	if player_sighted and not dead:
 		if body.is_in_group("player"):
 			get_tree().create_timer(0.2).timeout
 			weapon.attack()

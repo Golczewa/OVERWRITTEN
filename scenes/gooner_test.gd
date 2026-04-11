@@ -41,7 +41,13 @@ func end_knockback( org_speed):
 
 func  _die():
 	emit_signal("died")
-	queue_free()
+	$AnimatedSprite2D.play("dead")
+	modulate = Color.GRAY
+	set_physics_process(false)
+	set_process(false)
+	$CollisionShape2D.set_deferred("disabled", true)
+	$AnimatedSprite2D/AnimatedSprite2D2/RayCast2D2.set_deferred("disabled", true)
+	remove_from_group("enemies")
 
 func _damage_effect():
 	modulate=Color.RED
@@ -116,11 +122,10 @@ func is_path_blocked():
 	$AnimatedSprite2D/AnimatedSprite2D2/RayCast2D2.target_position=Vector2(range_,0)
 	if $AnimatedSprite2D/AnimatedSprite2D2/RayCast2D2.is_colliding():
 		var collider=$AnimatedSprite2D/AnimatedSprite2D2/RayCast2D2.get_collider()
-		if collider.is_in_group("player"):
+		if collider and collider.is_in_group("player"):
 			return false
 		else:
 			return true
 	return false
-
 func trigger():
 	player_sighted=true

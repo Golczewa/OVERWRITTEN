@@ -2,10 +2,19 @@
 
 [ext_resource type="Script" uid="uid://6jv6r5xt435a" path="res://scenes/enemy_test.gd" id="1_tegdf"]
 [ext_resource type="Texture2D" uid="uid://bjfs44jx58joc" path="res://asstets/player/Sprite-0001.png" id="1_tekfo"]
+[ext_resource type="Texture2D" uid="uid://cn31x2uofq4mr" path="res://asstets/player/Sprite-0001_dead.png" id="2_mo2s0"]
 [ext_resource type="PackedScene" uid="uid://bw33stdcmiq6l" path="res://scenes/machete.tscn" id="3_ainam"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tegdf"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mo2s0")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_tekfo")

@@ -2,10 +2,19 @@
 
 [ext_resource type="Script" uid="uid://dim2ehejf6rhe" path="res://scenes/gooner_test.gd" id="1_yphuh"]
 [ext_resource type="Texture2D" uid="uid://bjfs44jx58joc" path="res://asstets/player/Sprite-0001.png" id="2_twk8v"]
+[ext_resource type="Texture2D" uid="uid://cn31x2uofq4mr" path="res://asstets/player/Sprite-0001_dead.png" id="2_xvhym"]
 [ext_resource type="PackedScene" uid="uid://pdn2oykes4m1" path="res://scenes/test_gun.tscn" id="3_xvhym"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j0lpi"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xvhym")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_twk8v")
