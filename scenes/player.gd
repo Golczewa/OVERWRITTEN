@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 
-const SPEED = 500.0
-const JUMP_VELOCITY = -400.0
+var SPEED = 500.0
+var dash=900
 var player_health=100
 
 func _ready() -> void:
@@ -25,6 +25,11 @@ func _input(event: InputEvent) -> void:
 		elif event.button_index==MOUSE_BUTTON_RIGHT:
 			if event.pressed:
 				$AnimatedSprite2D/AnimatedSprite2D2.attack()
+		elif event.button_index==OP_SHIFT_LEFT:
+			if event.pressed:
+				SPEED=SPEED*dash
+				get_tree().create_timer(0.2).timeout
+				SPEED=SPEED/dash
 
 func player_take_dmg(dmg):
 	player_health=player_health-dmg
@@ -34,6 +39,6 @@ func player_take_dmg(dmg):
 		get_tree().reload_current_scene()
 		
 func _damage_effect():
-	modulate=Color.RED
+	$AnimatedSprite2D.modulate=Color.RED
 	await get_tree().create_timer(0.1).timeout
-	modulate=Color.WHITE
+	$AnimatedSprite2D.modulate=Color.WHITE

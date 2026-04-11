@@ -1,5 +1,5 @@
 extends Area2D
-@export var machete_dmg: int =20
+@export var machete_dmg: int =25
 var owner_node:Node=null
 var knockback:int=500
 @export var cooldown=0.3

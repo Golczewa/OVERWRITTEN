@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var test_max_health: int =100
+@export var test_max_health: int =50
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var weapon: Area2D=$AnimatedSprite2D/Area2D
@@ -106,6 +106,7 @@ func  chase():
 func player_in(body):
 	if player_sighted:
 		if body.is_in_group("player"):
+			get_tree().create_timer(0.2).timeout
 			weapon.attack()
 			
 func trigger():
