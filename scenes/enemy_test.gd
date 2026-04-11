@@ -12,12 +12,14 @@ var view_distance: int =250
 var player_sighted:bool = false
 var in_knocback:bool=false
 var dead=false
+var can_attack=false
 @export var walk_range: int =200
 
 signal died
 
 func _ready() -> void:
 		weapon.body_entered.connect(player_in)
+		weapon.body_exited.connect(player_out)
 		curr_health=test_max_health
 		_randomise_target()
 		
@@ -85,6 +87,8 @@ func _physics_process(_delta: float) -> void:
 		player_sighted=can_see_player()
 		if player_sighted:
 			get_tree().call_group("enemies","trigger")
+	if can_attack:
+		weapon.attack()
 	move_and_slide()
 
 func can_see_player():
@@ -111,11 +115,10 @@ func  chase():
 		var next_path=nav_agent.get_next_path_position()
 		direction = global_position.direction_to(next_path)
 
-func player_in(body):
-	if player_sighted and not dead:
-		if body.is_in_group("player"):
-			get_tree().create_timer(0.2).timeout
-			weapon.attack()
-			
+func player_in(_body):
+	can_attack=true
+
+func player_out(_body):
+	can_attack=false
 func trigger():
 	player_sighted=true

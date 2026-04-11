@@ -2,7 +2,7 @@ extends Area2D
 var speed: int =1500
 var perce: int=1
 var perced:int=0
-var dmg: int =15
+var dmg: int =20
 var velocity 
 var direction
 var shot_by_player:bool=false

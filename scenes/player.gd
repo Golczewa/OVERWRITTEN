@@ -25,18 +25,14 @@ func _input(event: InputEvent) -> void:
 		elif event.button_index==MOUSE_BUTTON_RIGHT:
 			if event.pressed:
 				$AnimatedSprite2D/AnimatedSprite2D2.attack()
-		elif event.button_index==OP_SHIFT_LEFT:
-			if event.pressed:
-				SPEED=SPEED*dash
-				get_tree().create_timer(0.2).timeout
-				SPEED=SPEED/dash
 
 func player_take_dmg(dmg):
 	player_health=player_health-dmg
 	$Label.text = "HP: " + str(player_health)
-	_damage_effect()
 	if(player_health<=0):
 		get_tree().reload_current_scene()
+	_damage_effect()
+	
 		
 func _damage_effect():
 	$AnimatedSprite2D.modulate=Color.RED

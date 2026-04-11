@@ -21,7 +21,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
-size = Vector2(37.25, 37)
+size = Vector2(28.8125, 37.75)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=383396189 groups=["player"]]
 script = ExtResource("1_onrkg")
@@ -37,10 +37,6 @@ position = Vector2(2, 20)
 [node name="AnimatedSprite2D2" parent="AnimatedSprite2D" unique_id=1235518650 instance=ExtResource("4_dqkch")]
 position = Vector2(1, -21)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1840891722]
-position = Vector2(-2, 5)
-shape = SubResource("RectangleShape2D_dqkch")
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2078342767]
 zoom = Vector2(2.5, 2.5)
 
@@ -49,3 +45,7 @@ offset_left = -87.0
 offset_top = 57.0
 offset_right = -47.0
 offset_bottom = 80.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1840891722]
+position = Vector2(2.40625, 3.875)
+shape = SubResource("RectangleShape2D_dqkch")

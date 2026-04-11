@@ -127,5 +127,6 @@ func is_path_blocked():
 		else:
 			return true
 	return false
+
 func trigger():
 	player_sighted=true
