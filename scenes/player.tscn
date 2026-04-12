@@ -41,10 +41,16 @@ position = Vector2(1, -21)
 zoom = Vector2(2.5, 2.5)
 
 [node name="Label" type="Label" parent="." unique_id=158941220]
-offset_left = -87.0
-offset_top = 57.0
-offset_right = -47.0
-offset_bottom = 80.0
+offset_left = -215.0
+offset_top = 93.0
+offset_right = -175.0
+offset_bottom = 116.0
+
+[node name="Label2" type="Label" parent="." unique_id=159195427]
+offset_left = 173.0
+offset_top = 93.0
+offset_right = 213.0
+offset_bottom = 116.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1840891722]
 position = Vector2(2.40625, 3.875)

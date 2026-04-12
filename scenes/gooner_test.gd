@@ -25,9 +25,12 @@ func take_damage(damage: int,knockback:int):
 	if(knockback!=0):
 		var org_speed=speed
 		speed=knockback
-		direction=-direction
+		if(direction==Vector2.ZERO):
+			direction=-Vector2($RayCast2D.target_position-global_position).normalized()
+		else:
+			direction=-direction
 		in_knocback=true
-		get_tree().create_timer(0.2).timeout.connect(end_knockback.bind(org_speed))
+		get_tree().create_timer(0.1).timeout.connect(end_knockback.bind(org_speed))
 	_damage_effect()
 	if(!player_sighted):
 		player_sighted=true
@@ -35,8 +38,10 @@ func take_damage(damage: int,knockback:int):
 		_die()
 
 func end_knockback( org_speed):
-	speed=org_speed
+	speed=0
 	direction=-direction
+	await get_tree().create_timer(1).timeout
+	speed=org_speed
 	in_knocback=false
 
 func  _die():
