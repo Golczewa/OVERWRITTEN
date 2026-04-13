@@ -29,6 +29,7 @@ radius = 26.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1837710199 groups=["enemies"]]
 script = ExtResource("1_yphuh")
+test_max_health = 60
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1924938793]
 position = Vector2(-6.000004, 2)
@@ -49,5 +50,5 @@ shape = SubResource("CircleShape2D_arinv")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1737912424]
 
-[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1669275274]
-target_position = Vector2(100, 0)
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1905502852]
+position = Vector2(-25, 0)

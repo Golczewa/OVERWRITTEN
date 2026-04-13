@@ -26,7 +26,7 @@ func take_damage(damage: int,knockback:int):
 		var org_speed=speed
 		speed=knockback
 		if(direction==Vector2.ZERO):
-			direction=-Vector2($RayCast2D.target_position-global_position).normalized()
+			direction=Vector2($Marker2D.global_position-global_position).normalized()
 		else:
 			direction=-direction
 		in_knocback=true
