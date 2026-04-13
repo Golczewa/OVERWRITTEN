@@ -41,7 +41,7 @@ position = Vector2(15.370999, 57.316742)
 scale = Vector2(2.9051166, 2.865837)
 
 [node name="RayCast2D2" type="RayCast2D" parent="AnimatedSprite2D/AnimatedSprite2D2" unique_id=1779151189]
-position = Vector2(4.2328043, 9.000002)
+position = Vector2(-3.1746035, 9)
 target_position = Vector2(400, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=466690639]
