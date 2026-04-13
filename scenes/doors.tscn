@@ -50,7 +50,7 @@ animations = [{
 size = Vector2(13, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tr1cs"]
-size = Vector2(148, 88)
+size = Vector2(148, 64)
 
 [node name="Area2D" type="Area2D" unique_id=219715312]
 script = ExtResource("1_26m4p")
