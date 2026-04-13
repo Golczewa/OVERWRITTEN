@@ -52,10 +52,10 @@ size = Vector2(13, 64)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tr1cs"]
 size = Vector2(148, 64)
 
-[node name="Area2D" type="Area2D" unique_id=219715312]
+[node name="Area2D" type="Area2D" unique_id=219715312 groups=["doors"]]
 script = ExtResource("1_26m4p")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=947692820 groups=["doors"]]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=947692820]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D" unique_id=1580280737]
 sprite_frames = SubResource("SpriteFrames_78wek")

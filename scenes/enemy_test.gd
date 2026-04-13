@@ -121,9 +121,11 @@ func  chase():
 		direction = global_position.direction_to(next_path)
 
 func player_in(_body):
-	can_attack=true
+	if _body.is_in_group("player"):
+		can_attack=true
 
 func player_out(_body):
-	can_attack=false
+	if _body.is_in_group("player"):
+		can_attack=false
 func trigger():
 	player_sighted=true

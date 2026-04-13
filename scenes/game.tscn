@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cs1grtahgtfeq" path="res://scenes/player.tscn" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://cnyvwvoudnuew" path="res://scenes/level_test.tscn" id="1_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://b6au2n0824xnn" path="res://scenes/enemy_test.tscn" id="4_iywne"]
 [ext_resource type="PackedScene" uid="uid://clap81ynbqx0x" path="res://scenes/gooner_test.tscn" id="4_lbhrr"]
 
 [node name="game" type="Node2D" unique_id=1596037007]
@@ -13,6 +14,12 @@ position = Vector2(273, -545)
 
 [node name="CharacterBody2D5" parent="." unique_id=2144885727 instance=ExtResource("4_lbhrr")]
 position = Vector2(352, 3)
+
+[node name="CharacterBody2D2" parent="." unique_id=625731905 instance=ExtResource("4_iywne")]
+position = Vector2(-224, -550)
+
+[node name="CharacterBody2D4" parent="." unique_id=1978202650 instance=ExtResource("4_iywne")]
+position = Vector2(-260, 215)
 
 [node name="CharacterBody2D" parent="." unique_id=383396189 instance=ExtResource("1_80nbo")]
 position = Vector2(-20, -96)
