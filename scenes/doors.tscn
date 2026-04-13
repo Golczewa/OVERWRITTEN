@@ -47,10 +47,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4x3mg"]
-size = Vector2(14, 64)
+size = Vector2(13, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tr1cs"]
-size = Vector2(115, 54)
+size = Vector2(148, 88)
 
 [node name="Area2D" type="Area2D" unique_id=219715312]
 script = ExtResource("1_26m4p")
@@ -62,6 +62,7 @@ sprite_frames = SubResource("SpriteFrames_78wek")
 animation = &"open"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=740416489]
+position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_4x3mg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=190417903]
