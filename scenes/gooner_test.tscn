@@ -25,7 +25,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_arinv"]
-radius = 26.0
+radius = 24.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1837710199 groups=["enemies"]]
 script = ExtResource("1_yphuh")
@@ -45,7 +45,7 @@ position = Vector2(4.2328043, 9.000002)
 target_position = Vector2(400, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=466690639]
-position = Vector2(-3, -1)
+position = Vector2(-1, -2)
 shape = SubResource("CircleShape2D_arinv")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1737912424]
