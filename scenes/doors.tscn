@@ -1,38 +1,45 @@
 [gd_scene format=3 uid="uid://eapp1741qlvm"]
 
-[ext_resource type="Texture2D" uid="uid://d348iyog0d3m5" path="res://asstets/walls/le_door.png" id="1_5v6d3"]
 [ext_resource type="Script" uid="uid://dj2ovwcp267bp" path="res://scenes/doors.gd" id="1_26m4p"]
+[ext_resource type="Texture2D" uid="uid://d00yvvktnetc5" path="res://asstets/walls/lee_dor.png.png" id="3_af2mo"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_26m4p"]
-atlas = ExtResource("1_5v6d3")
+[sub_resource type="AtlasTexture" id="AtlasTexture_78wek"]
+atlas = ExtResource("3_af2mo")
 region = Rect2(0, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_af2mo"]
-atlas = ExtResource("1_5v6d3")
+[sub_resource type="AtlasTexture" id="AtlasTexture_4x3mg"]
+atlas = ExtResource("3_af2mo")
 region = Rect2(32, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ctrmn"]
-atlas = ExtResource("1_5v6d3")
+[sub_resource type="AtlasTexture" id="AtlasTexture_tr1cs"]
+atlas = ExtResource("3_af2mo")
 region = Rect2(64, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6xqom"]
-atlas = ExtResource("1_5v6d3")
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xyi2"]
+atlas = ExtResource("3_af2mo")
 region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nprjq"]
+atlas = ExtResource("3_af2mo")
+region = Rect2(128, 0, 32, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_78wek"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_26m4p")
+"texture": SubResource("AtlasTexture_78wek")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_af2mo")
+"texture": SubResource("AtlasTexture_4x3mg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ctrmn")
+"texture": SubResource("AtlasTexture_tr1cs")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6xqom")
+"texture": SubResource("AtlasTexture_6xyi2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nprjq")
 }],
 "loop": false,
 "name": &"open",
