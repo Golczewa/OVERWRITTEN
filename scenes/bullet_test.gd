@@ -27,7 +27,7 @@ func _on_body_enterd(body):
 func _physics_process(delta: float) -> void:
 	if $RayCast2D.is_colliding():
 		var collider = $RayCast2D.get_collider()
-		if not collider.is_in_group("enemies"):
+		if not collider.is_in_group("enemies") and not collider.is_in_group("player"):
 			queue_free()
 	position=position + velocity*delta
  #test
