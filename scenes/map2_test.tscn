@@ -6,9 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://eapp1741qlvm" path="res://scenes/doors.tscn" id="3_a65vu"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_j52oj"]
-vertices = PackedVector2Array(42, -371, 42, -374, 182, -374, 182, 86, -182, 86, -42, -371, -182, -374, -42, -374, 182, -598, 182, -402.35156, 42, -402.35156, 42, -404, -182, -598, -42, -404, -182, -402.35156, -42, -402.35156)
+vertices = PackedVector2Array(57, -356, 57, -359, 167, -359, 167, 71, -167, 71, -57, -356, -167, -359, -57, -359, 167, -583, 167, -417.35156, 57, -417.35156, 57, -419, -167, -583, -57, -419, -167, -417.35156, -57, -417.35156)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5), PackedInt32Array(5, 4, 6, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(12, 8, 11, 13), PackedInt32Array(14, 12, 13, 15)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-195, -616, 199, -618, 196, 100, -198, 102)])
+agent_radius = 25.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uqqt2"]
 texture = ExtResource("1_j52oj")
