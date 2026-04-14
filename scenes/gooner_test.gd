@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var weapon: AnimatedSprite2D=$AnimatedSprite2D/AnimatedSprite2D2
 var curr_health: int
+var floor
 var direction: Vector2 = Vector2.ZERO
 var speed: int=50
 var rot_speed: int =15
@@ -14,9 +15,12 @@ var in_knocback:bool=false
 var in_range:bool=false
 @export var walk_range: int =200
 var range_:int=400
+var dead=false
 signal died
 
 func _ready() -> void:
+		floor=get_parent()
+		floor.enemies=floor.enemies+1
 		curr_health=test_max_health
 		_randomise_target()
 		
@@ -46,6 +50,8 @@ func end_knockback( org_speed):
 
 func  _die():
 	emit_signal("died")
+	floor.enemies=floor.enemies-1
+	dead=true
 	$AnimatedSprite2D.play("dead")
 	modulate = Color.GRAY
 	set_physics_process(false)

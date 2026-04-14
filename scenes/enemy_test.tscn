@@ -25,15 +25,15 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c6iok"]
-radius = 29.068884
+radius = 21.095022
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=625731905 groups=["enemies"]]
 script = ExtResource("1_tegdf")
 test_max_health = 80
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1590663486]
-position = Vector2(-4, 2.000001)
-scale = Vector2(0.39463255, 0.40757722)
+position = Vector2(-3, 2)
+scale = Vector2(0.30682638, 0.31189674)
 sprite_frames = SubResource("SpriteFrames_tegdf")
 
 [node name="RayCast2D" type="RayCast2D" parent="AnimatedSprite2D" unique_id=558538467]
@@ -46,7 +46,7 @@ position = Vector2(45.612053, 36.80284)
 scale = Vector2(2.5340028, 2.4535224)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=413708611]
-position = Vector2(2, -2)
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_c6iok")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1533406768]

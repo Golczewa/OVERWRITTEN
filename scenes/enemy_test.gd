@@ -8,6 +8,7 @@ var curr_health: int
 var direction: Vector2 = Vector2.ZERO
 var speed: int=50
 var rot_speed: int =15
+var floor
 var view_distance: int =250
 var player_sighted:bool = false
 var in_knocback:bool=false
@@ -18,6 +19,8 @@ var can_attack=false
 signal died
 
 func _ready() -> void:
+		floor=get_parent()
+		floor.enemies=floor.enemies+1
 		weapon.body_entered.connect(player_in)
 		weapon.body_exited.connect(player_out)
 		curr_health=test_max_health
@@ -49,6 +52,7 @@ func end_knockback( org_speed):
 
 func  _die():
 	dead=true
+	floor.enemies=floor.enemies-1
 	emit_signal("died")
 	$AnimatedSprite2D.play("dead")
 	modulate = Color.GRAY
