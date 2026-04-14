@@ -1,7 +1,5 @@
 extends NavigationRegion2D
 
-var next
-var prev=null
 var enemies
 var enemies_number=0
 

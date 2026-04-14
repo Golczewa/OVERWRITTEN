@@ -79,6 +79,7 @@ func heal():
 		hp_update()
 		heal_charge=heal_charge-1
 		charge_update()
+		heal_effect()
 		get_tree().create_timer(30).timeout.connect(replenish_charge.bind())
 
 func hp_update():
@@ -92,4 +93,9 @@ func replenish_charge():
 	charge_update()
 
 func set_player_position(pos):
-	global_position=position
+	global_position=pos
+
+func heal_effect():
+	$AnimatedSprite2D.modulate=Color.WEB_GREEN
+	await get_tree().create_timer(0.1).timeout
+	$AnimatedSprite2D.modulate=Color.WHITE

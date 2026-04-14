@@ -15,6 +15,9 @@ script = ExtResource("1_mk54j")
 position = Vector2(64, -676)
 rotation = -1.5707964
 
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1860784172]
+position = Vector2(64, 256)
+
 [node name="enemies" type="Node2D" parent="." unique_id=763083039]
 
 [node name="CharacterBody2D" parent="enemies" unique_id=1837710199 instance=ExtResource("2_f54ou")]
