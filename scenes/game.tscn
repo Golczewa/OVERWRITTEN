@@ -5,7 +5,7 @@
 
 [node name="game" type="Node2D" unique_id=1596037007]
 
-[node name="Node2D" parent="." unique_id=58144035 instance=ExtResource("1_yqjtg")]
+[node name="level_test" parent="." unique_id=58144035 instance=ExtResource("1_yqjtg")]
 position = Vector2(-12, 6)
 
 [node name="CharacterBody2D" parent="." unique_id=383396189 instance=ExtResource("1_80nbo")]

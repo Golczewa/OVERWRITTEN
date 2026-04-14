@@ -9,21 +9,23 @@
 [node name="Node2D" type="Node2D" unique_id=1600190573]
 script = ExtResource("1_mk54j")
 
-[node name="NavigationRegion2D" parent="." unique_id=774230127 instance=ExtResource("1_p7kkn")]
-
-[node name="CharacterBody2D" parent="." unique_id=1837710199 instance=ExtResource("2_f54ou")]
-position = Vector2(343, -346)
-
-[node name="CharacterBody2D2" parent="." unique_id=1482179049 instance=ExtResource("2_f54ou")]
-position = Vector2(-237, -552)
-
-[node name="CharacterBody2D3" parent="." unique_id=625731905 instance=ExtResource("3_cnpdn")]
-position = Vector2(317, -562)
-
-[node name="CharacterBody2D4" parent="." unique_id=1525942036 instance=ExtResource("3_cnpdn")]
-position = Vector2(-260, 204)
-test_max_health = 50
+[node name="map" parent="." unique_id=774230127 instance=ExtResource("1_p7kkn")]
 
 [node name="Area2D" parent="." unique_id=1410637359 instance=ExtResource("5_grpmd")]
 position = Vector2(64, -676)
 rotation = -1.5707964
+
+[node name="enemies" type="Node2D" parent="." unique_id=763083039]
+
+[node name="CharacterBody2D" parent="enemies" unique_id=1837710199 instance=ExtResource("2_f54ou")]
+position = Vector2(343, -346)
+
+[node name="CharacterBody2D2" parent="enemies" unique_id=1482179049 instance=ExtResource("2_f54ou")]
+position = Vector2(-237, -552)
+
+[node name="CharacterBody2D3" parent="enemies" unique_id=625731905 instance=ExtResource("3_cnpdn")]
+position = Vector2(317, -562)
+
+[node name="CharacterBody2D4" parent="enemies" unique_id=1525942036 instance=ExtResource("3_cnpdn")]
+position = Vector2(-260, 204)
+test_max_health = 50

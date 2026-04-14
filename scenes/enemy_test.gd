@@ -19,7 +19,7 @@ var can_attack=false
 signal died
 
 func _ready() -> void:
-		floor=get_parent()
+		floor=get_parent().get_parent()
 		floor.enemies=floor.enemies+1
 		weapon.body_entered.connect(player_in)
 		weapon.body_exited.connect(player_out)

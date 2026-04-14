@@ -70,14 +70,16 @@ tile_set = SubResource("TileSet_hpvma")
 tile_map_data = PackedByteArray("AAD8//L/AAAAAAAAAAAHAPL/AAABAAAAAAA=")
 tile_set = SubResource("TileSet_hpvma")
 
-[node name="Area2D" parent="." unique_id=219715312 instance=ExtResource("4_thegj")]
+[node name="doors" type="Node2D" parent="." unique_id=1940721104]
+
+[node name="Area2D" parent="doors" unique_id=219715312 instance=ExtResource("4_thegj")]
 position = Vector2(96, 68)
 rotation = 1.5707964
 
-[node name="Area2D2" parent="." unique_id=594008904 instance=ExtResource("4_thegj")]
+[node name="Area2D2" parent="doors" unique_id=594008904 instance=ExtResource("4_thegj")]
 position = Vector2(32, 67)
 rotation = -1.5707964
 
-[node name="Area2D3" parent="." unique_id=2132553045 instance=ExtResource("4_thegj")]
+[node name="Area2D3" parent="doors" unique_id=2132553045 instance=ExtResource("4_thegj")]
 position = Vector2(-125, -192)
 rotation = 3.1415925

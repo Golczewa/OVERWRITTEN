@@ -19,7 +19,7 @@ var dead=false
 signal died
 
 func _ready() -> void:
-		floor=get_parent()
+		floor=get_parent().get_parent()
 		floor.enemies=floor.enemies+1
 		curr_health=test_max_health
 		_randomise_target()
