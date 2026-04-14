@@ -90,3 +90,6 @@ func charge_update():
 func replenish_charge():
 	heal_charge=heal_charge+1
 	charge_update()
+
+func set_player_position(pos):
+	global_position=position

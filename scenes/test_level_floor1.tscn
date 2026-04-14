@@ -20,12 +20,5 @@ rotation = -1.5707964
 [node name="CharacterBody2D" parent="enemies" unique_id=1837710199 instance=ExtResource("2_f54ou")]
 position = Vector2(343, -346)
 
-[node name="CharacterBody2D2" parent="enemies" unique_id=1482179049 instance=ExtResource("2_f54ou")]
-position = Vector2(-237, -552)
-
 [node name="CharacterBody2D3" parent="enemies" unique_id=625731905 instance=ExtResource("3_cnpdn")]
 position = Vector2(317, -562)
-
-[node name="CharacterBody2D4" parent="enemies" unique_id=1525942036 instance=ExtResource("3_cnpdn")]
-position = Vector2(-260, 204)
-test_max_health = 50
