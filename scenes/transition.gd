@@ -7,12 +7,11 @@ func _ready() -> void:
 	floor = get_parent()
 
 
-func _process(delta: float) -> void:
-	pass
+
 
 func on_body_enterd(body):
 	if body.is_in_group("player") and floor.enemies==0:
 		move_on()
 
 func move_on():
-	pass
+	$StaticBody2D/AnimatedSprite2D.play("default")

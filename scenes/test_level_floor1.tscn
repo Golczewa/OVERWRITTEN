@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://5bopb36vqr0u"]
 
 [ext_resource type="Script" uid="uid://cc7dh1ggwtlhw" path="res://scenes/test_level_floor_1.gd" id="1_mk54j"]
-[ext_resource type="PackedScene" uid="uid://cnyvwvoudnuew" path="res://scenes/level_test.tscn" id="1_p7kkn"]
+[ext_resource type="PackedScene" uid="uid://cnyvwvoudnuew" path="res://scenes/map1_test.tscn" id="1_p7kkn"]
 [ext_resource type="PackedScene" uid="uid://clap81ynbqx0x" path="res://scenes/gooner_test.tscn" id="2_f54ou"]
 [ext_resource type="PackedScene" uid="uid://b6au2n0824xnn" path="res://scenes/enemy_test.tscn" id="3_cnpdn"]
+[ext_resource type="PackedScene" uid="uid://gvdpfkhlvqdq" path="res://scenes/transition.tscn" id="5_grpmd"]
 
 [node name="Node2D" type="Node2D" unique_id=1600190573]
 script = ExtResource("1_mk54j")
@@ -22,3 +23,7 @@ position = Vector2(317, -562)
 [node name="CharacterBody2D4" parent="." unique_id=1525942036 instance=ExtResource("3_cnpdn")]
 position = Vector2(-260, 204)
 test_max_health = 50
+
+[node name="Area2D" parent="." unique_id=1410637359 instance=ExtResource("5_grpmd")]
+position = Vector2(64, -676)
+rotation = -1.5707964

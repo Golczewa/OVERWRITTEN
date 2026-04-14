@@ -50,7 +50,7 @@ animations = [{
 size = Vector2(13, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8mcfx"]
-size = Vector2(84, 64)
+size = Vector2(35, 64)
 
 [node name="Area2D" type="Area2D" unique_id=1410637359]
 script = ExtResource("1_f0i4t")
@@ -65,5 +65,5 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_7fmn4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=165821127]
-position = Vector2(-50, 0)
+position = Vector2(-25.5, 0)
 shape = SubResource("RectangleShape2D_8mcfx")
