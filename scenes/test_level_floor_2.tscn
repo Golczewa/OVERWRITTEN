@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bujl56eesocv5" path="res://scenes/map2_test.tscn" id="1_jmtqe"]
 [ext_resource type="Script" uid="uid://dvcgxa7p2kigi" path="res://scenes/test_level_floor_2.gd" id="1_wt32b"]
 [ext_resource type="PackedScene" uid="uid://b6au2n0824xnn" path="res://scenes/enemy_test.tscn" id="3_ifb2b"]
+[ext_resource type="PackedScene" uid="uid://clap81ynbqx0x" path="res://scenes/gooner_test.tscn" id="4_ii3o8"]
 
 [node name="Node2D" type="Node2D" unique_id=371866247]
 script = ExtResource("1_wt32b")
@@ -16,3 +17,6 @@ position = Vector2(0, 37)
 
 [node name="CharacterBody2D" parent="Node2D" unique_id=625731905 instance=ExtResource("3_ifb2b")]
 position = Vector2(-75, -542)
+
+[node name="CharacterBody2D2" parent="Node2D" unique_id=1837710199 instance=ExtResource("4_ii3o8")]
+position = Vector2(89, -507)

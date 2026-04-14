@@ -7,7 +7,7 @@ func _ready() -> void:
 	call_deferred("setup")
 
 func  setup():
-	var doors= get_tree().get_nodes_in_group("doors")
+	var doors= $doors.get_children()
 	for door in doors:
 		var collision=door.get_node("StaticBody2D/CollisionShape2D")
 		collision.set_deferred("disabled", true)
