@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://kkqb7cfxl6sm"]
+
+[ext_resource type="Script" uid="uid://cemewsf4rmgj3" path="res://scenes/scavenger_brute.gd" id="1_i4orf"]
+[ext_resource type="Texture2D" uid="uid://c4fnrvd3fufx0" path="res://asstets/enemies/scavenger_brute_corpse.png" id="2_i4orf"]
+[ext_resource type="Texture2D" uid="uid://d5ptim6p6hj4" path="res://asstets/enemies/scavenger_brute.png" id="3_i4orf"]
+[ext_resource type="PackedScene" uid="uid://bw33stdcmiq6l" path="res://scenes/machete.tscn" id="4_6tdr0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7scwk"]
+atlas = ExtResource("2_i4orf")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwalq"]
+atlas = ExtResource("2_i4orf")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tdr0"]
+atlas = ExtResource("2_i4orf")
+region = Rect2(256, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myjew"]
+atlas = ExtResource("2_i4orf")
+region = Rect2(384, 0, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tegdf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7scwk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwalq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tdr0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myjew")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_i4orf")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i4orf"]
+size = Vector2(35, 37)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=625731905 groups=["enemies"]]
+collision_mask = 3
+script = ExtResource("1_i4orf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1590663486]
+position = Vector2(21, 0)
+sprite_frames = SubResource("SpriteFrames_tegdf")
+
+[node name="RayCast2D" type="RayCast2D" parent="AnimatedSprite2D" unique_id=558538467]
+position = Vector2(-21, 0)
+scale = Vector2(2.5340028, 2.4535227)
+target_position = Vector2(150, 0)
+
+[node name="Area2D" parent="AnimatedSprite2D" unique_id=150455651 instance=ExtResource("4_6tdr0")]
+position = Vector2(-23, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=413708611]
+position = Vector2(8.5, 0.5)
+shape = SubResource("RectangleShape2D_i4orf")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1533406768]

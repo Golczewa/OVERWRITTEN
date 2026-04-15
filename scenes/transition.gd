@@ -16,5 +16,6 @@ func on_body_enterd(body):
 func move_on():
 	$StaticBody2D/AnimatedSprite2D.play("default")
 	await $StaticBody2D/AnimatedSprite2D.animation_finished
+	await  get_tree().create_timer(0.5).timeout
 	$StaticBody2D/AnimatedSprite2D.frame=0
 	level_.call_deferred("move_up")
