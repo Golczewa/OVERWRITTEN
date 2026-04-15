@@ -133,5 +133,6 @@ func player_in(_body):
 func player_out(_body):
 	if _body.is_in_group("player"):
 		can_attack=false
+
 func trigger():
 	player_sighted=true

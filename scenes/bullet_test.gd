@@ -11,7 +11,7 @@ func _ready() -> void:
 	body_entered.connect(_on_body_enterd)
 	look_at(direction)
 	velocity = direction * speed
-	$RayCast2D.target_position = Vector2(speed * get_physics_process_delta_time(), 0)
+	$RayCast2D.target_position = Vector2((speed) * get_physics_process_delta_time(), 0)
 func _on_body_enterd(body):
 	if body.is_in_group("enemies"):
 		if shot_by_player:
@@ -21,8 +21,6 @@ func _on_body_enterd(body):
 			perced=perced+1
 	elif body.is_in_group("player") :
 		body.player_take_dmg(dmg)
-	else:
-		queue_free()
 
 func _physics_process(delta: float) -> void:
 	if $RayCast2D.is_colliding():

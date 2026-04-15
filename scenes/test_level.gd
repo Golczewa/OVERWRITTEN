@@ -23,5 +23,5 @@ func move_up():
 func move_down():
 	remove_child(floors[curr_floor-1])
 	curr_floor=curr_floor-1
-	add_child(floors[curr_floor])
-	player.set_player_position(floors[curr_floor-1].spawn)
+	add_child(floors[curr_floor-1])
+	player.set_player_position(floors[curr_floor-1].exit)

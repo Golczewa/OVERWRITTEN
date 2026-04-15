@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dvcgxa7p2kigi" path="res://scenes/test_level_floor_2.gd" id="1_wt32b"]
 [ext_resource type="PackedScene" uid="uid://b6au2n0824xnn" path="res://scenes/enemy_test.tscn" id="3_ifb2b"]
 [ext_resource type="PackedScene" uid="uid://clap81ynbqx0x" path="res://scenes/gooner_test.tscn" id="4_ii3o8"]
+[ext_resource type="PackedScene" uid="uid://bu878f6tabfh3" path="res://transition_exit.tscn" id="5_i5tmd"]
 
 [node name="Node2D" type="Node2D" unique_id=371866247]
 script = ExtResource("1_wt32b")
@@ -12,6 +13,10 @@ script = ExtResource("1_wt32b")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=583781197]
 position = Vector2(0, 37)
+
+[node name="Area2D" parent="." unique_id=1410637359 instance=ExtResource("5_i5tmd")]
+position = Vector2(0, 101)
+rotation = 1.5707964
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1295539043]
 
