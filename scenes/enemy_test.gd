@@ -20,6 +20,8 @@ signal died
 
 func _ready() -> void:
 		floor_=get_parent().get_parent()
+		if nav_agent.get_navigation_map() != get_world_2d().get_navigation_map():
+			nav_agent.set_navigation_map(get_world_2d().get_navigation_map())
 		floor_.enemies=floor_.enemies+1
 		weapon.body_entered.connect(player_in)
 		weapon.body_exited.connect(player_out)

@@ -28,6 +28,7 @@ animations = [{
 radius = 21.095022
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=625731905 groups=["enemies"]]
+collision_mask = 3
 script = ExtResource("1_tegdf")
 test_max_health = 80
 

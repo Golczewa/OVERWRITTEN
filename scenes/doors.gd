@@ -20,4 +20,5 @@ func on_body_exited(body):
 
 func bodies_in():
 	var bodies=get_overlapping_bodies()
+	print(len(bodies))
 	return len(bodies)

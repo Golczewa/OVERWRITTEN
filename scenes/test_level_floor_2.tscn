@@ -8,7 +8,7 @@
 [node name="Node2D" type="Node2D" unique_id=371866247]
 script = ExtResource("1_wt32b")
 
-[node name="NavigationRegion2D" parent="." unique_id=1450460285 instance=ExtResource("1_jmtqe")]
+[node name="map" parent="." unique_id=1450460285 instance=ExtResource("1_jmtqe")]
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=583781197]
 position = Vector2(0, 37)
@@ -19,4 +19,4 @@ position = Vector2(0, 37)
 position = Vector2(-75, -542)
 
 [node name="CharacterBody2D2" parent="Node2D" unique_id=1837710199 instance=ExtResource("4_ii3o8")]
-position = Vector2(89, -507)
+position = Vector2(-403, -412)
