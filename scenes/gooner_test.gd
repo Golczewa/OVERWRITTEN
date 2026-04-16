@@ -4,16 +4,17 @@ extends CharacterBody2D
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var weapon: AnimatedSprite2D=$AnimatedSprite2D/AnimatedSprite2D2
+@onready var legs=$AnimatedSprite2D/AnimatedSprite2D3
 var curr_health: int
 var floor_
 var direction: Vector2 = Vector2.ZERO
 var speed: int=50
 var rot_speed: int =15
 var view_distance: int =250
-@export var player_sighted:bool = false
+var player_sighted:bool = false
 var in_knocback:bool=false
 var in_range:bool=false
-@export var walk_range: int =200
+var walk_range: int =200
 var range_:int=400
 var dead=false
 signal died
@@ -22,6 +23,8 @@ func _ready() -> void:
 		floor_=get_parent().get_parent()
 		floor_.enemies=floor_.enemies+1
 		curr_health=test_max_health
+		legs.walk()
+		$AnimatedSprite2D.play("default")
 		_randomise_target()
 		
 func take_damage(damage: int,knockback:int):
@@ -29,6 +32,7 @@ func take_damage(damage: int,knockback:int):
 	if(knockback!=0):
 		var org_speed=speed
 		speed=knockback
+		legs.stop()
 		if(direction==Vector2.ZERO):
 			direction=Vector2($Marker2D.global_position-global_position).normalized()
 		else:
@@ -45,6 +49,7 @@ func end_knockback( org_speed):
 	speed=0
 	direction=-direction
 	await get_tree().create_timer(1).timeout
+	legs.walk()
 	speed=org_speed
 	in_knocback=false
 
@@ -53,11 +58,15 @@ func  _die():
 	floor_.enemies=floor_.enemies-1
 	dead=true
 	$AnimatedSprite2D.play("dead")
+	$AnimatedSprite2D.frame=0
 	modulate = Color.GRAY
 	set_physics_process(false)
 	set_process(false)
 	$CollisionShape2D.set_deferred("disabled", true)
 	$AnimatedSprite2D/AnimatedSprite2D2/RayCast2D2.set_deferred("disabled", true)
+	legs.visible=not legs.visible
+	legs.stop()
+	$AnimatedSprite2D/AnimatedSprite2D2.visible=not $AnimatedSprite2D/AnimatedSprite2D2.visible
 	remove_from_group("enemies")
 
 func _damage_effect():
@@ -121,10 +130,12 @@ func  chase():
 	if(global_position.distance_to(player.global_position)<=range_ and not is_path_blocked()):
 		direction=Vector2.ZERO
 		weapon.attack()
+		legs.stop_walking()
 	else:
 		if global_position.distance_to(player.global_position)<=range_ and not is_path_blocked():
 			direction=Vector2.ZERO
 		else:
+			legs.walk()
 			nav_agent.target_position=player.global_position
 			var next_path=nav_agent.get_next_path_position()
 			direction = global_position.direction_to(next_path)

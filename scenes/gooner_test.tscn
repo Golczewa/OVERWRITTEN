@@ -1,31 +1,61 @@
 [gd_scene format=3 uid="uid://clap81ynbqx0x"]
 
 [ext_resource type="Script" uid="uid://dim2ehejf6rhe" path="res://scenes/gooner_test.gd" id="1_yphuh"]
-[ext_resource type="Texture2D" uid="uid://bjfs44jx58joc" path="res://asstets/player/Sprite-0001.png" id="2_twk8v"]
-[ext_resource type="Texture2D" uid="uid://cn31x2uofq4mr" path="res://asstets/player/Sprite-0001_dead.png" id="2_xvhym"]
+[ext_resource type="Texture2D" uid="uid://b7twfvry48epk" path="res://asstets/enemies/scavenger_gooner_corpse.png" id="2_xvhym"]
+[ext_resource type="Texture2D" uid="uid://ctmdd472ojvj5" path="res://asstets/enemies/scavenger_gooner.png" id="3_twk8v"]
 [ext_resource type="PackedScene" uid="uid://pdn2oykes4m1" path="res://scenes/test_gun.tscn" id="3_xvhym"]
+[ext_resource type="PackedScene" uid="uid://cnijtad8hhrio" path="res://scenes/legs.tscn" id="5_xvhym"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjsos"]
+atlas = ExtResource("2_xvhym")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fy2yf"]
+atlas = ExtResource("2_xvhym")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnyfx"]
+atlas = ExtResource("2_xvhym")
+region = Rect2(256, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4aiw4"]
+atlas = ExtResource("2_xvhym")
+region = Rect2(384, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvhym"]
+atlas = ExtResource("3_twk8v")
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j0lpi"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_xvhym")
+"texture": SubResource("AtlasTexture_rjsos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fy2yf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnyfx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4aiw4")
 }],
-"loop": true,
+"loop": false,
 "name": &"dead",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_twk8v")
+"texture": SubResource("AtlasTexture_xvhym")
 }],
 "loop": false,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_arinv"]
-radius = 24.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_twk8v"]
+size = Vector2(32, 32.5)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1837710199 groups=["enemies"]]
 collision_mask = 3
@@ -33,21 +63,24 @@ script = ExtResource("1_yphuh")
 test_max_health = 60
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1924938793]
-position = Vector2(-6.000004, 2)
-scale = Vector2(0.32528815, 0.3489382)
+position = Vector2(10, 0)
 sprite_frames = SubResource("SpriteFrames_j0lpi")
+animation = &"dead"
 
 [node name="AnimatedSprite2D2" parent="AnimatedSprite2D" unique_id=1235518650 instance=ExtResource("3_xvhym")]
-position = Vector2(15.370999, 57.316742)
-scale = Vector2(2.9051166, 2.865837)
+show_behind_parent = true
+position = Vector2(-11, 2)
 
 [node name="RayCast2D2" type="RayCast2D" parent="AnimatedSprite2D/AnimatedSprite2D2" unique_id=1779151189]
-position = Vector2(-3.1746035, 9)
+position = Vector2(0, 12)
 target_position = Vector2(400, 0)
 
+[node name="AnimatedSprite2D3" parent="AnimatedSprite2D" unique_id=1071073496 instance=ExtResource("5_xvhym")]
+show_behind_parent = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=466690639]
-position = Vector2(-1, -2)
-shape = SubResource("CircleShape2D_arinv")
+position = Vector2(7, -3)
+shape = SubResource("RectangleShape2D_twk8v")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1737912424]
 

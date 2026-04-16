@@ -33,7 +33,7 @@ func _ready() -> void:
 func take_damage(damage: int,knockback:int):
 	curr_health=curr_health-damage
 	if(knockback!=0):
-		legs.stop()
+		legs.stop_walking()
 		var org_speed=speed
 		speed=knockback
 		if(direction==Vector2.ZERO):
@@ -65,7 +65,7 @@ func  _die():
 	set_process(false)
 	$CollisionShape2D.set_deferred("disabled", true)
 	$AnimatedSprite2D/RayCast2D.set_deferred("disabled", true)
-	legs.stop()
+	legs.stop_walking()
 	legs.visible=not legs.visible
 	$AnimatedSprite2D/Area2D/AnimatedSprite2D.visible=not $AnimatedSprite2D/Area2D/AnimatedSprite2D.visible
 	remove_from_group("enemies")

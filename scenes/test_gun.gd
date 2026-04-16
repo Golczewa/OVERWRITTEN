@@ -29,4 +29,5 @@ func attack():
 		get_tree().current_scene.add_child(bullet) 
 		bullet.global_position=$Marker2D.global_position
 		can_attack=false
+		play("default")
 		get_tree().create_timer(cooldown).timeout.connect(end_cd)

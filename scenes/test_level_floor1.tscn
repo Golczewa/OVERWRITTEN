@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cc7dh1ggwtlhw" path="res://scenes/test_level_floor_1.gd" id="1_mk54j"]
 [ext_resource type="PackedScene" uid="uid://cnyvwvoudnuew" path="res://scenes/map1_test.tscn" id="1_p7kkn"]
 [ext_resource type="PackedScene" uid="uid://kkqb7cfxl6sm" path="res://scenes/scavenger_brute.tscn" id="5_0qarx"]
+[ext_resource type="PackedScene" uid="uid://clap81ynbqx0x" path="res://scenes/gooner_test.tscn" id="5_62onn"]
 [ext_resource type="PackedScene" uid="uid://gvdpfkhlvqdq" path="res://scenes/transition.tscn" id="5_grpmd"]
 
 [node name="Node2D" type="Node2D" unique_id=1600190573]
@@ -21,3 +22,6 @@ position = Vector2(64, 256)
 
 [node name="CharacterBody2D2" parent="enemies" unique_id=625731905 instance=ExtResource("5_0qarx")]
 position = Vector2(252, -561)
+
+[node name="CharacterBody2D" parent="enemies" unique_id=1837710199 instance=ExtResource("5_62onn")]
+position = Vector2(-235, -316)

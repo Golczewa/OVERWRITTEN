@@ -36,7 +36,8 @@ animation = &"new_animation"
 position = Vector2(2, 20)
 
 [node name="AnimatedSprite2D2" parent="AnimatedSprite2D" unique_id=1235518650 instance=ExtResource("4_dqkch")]
-position = Vector2(1, -21)
+show_behind_parent = true
+position = Vector2(2, -19)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2078342767]
 zoom = Vector2(1.5, 1.5)
