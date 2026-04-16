@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var weapon: Area2D=$AnimatedSprite2D/Area2D
+@onready var legs=$AnimatedSprite2D/AnimatedSprite2D2
 var curr_health: int
 var direction: Vector2 = Vector2.ZERO
 var speed: int=50
@@ -26,11 +27,13 @@ func _ready() -> void:
 		weapon.body_entered.connect(player_in)
 		weapon.body_exited.connect(player_out)
 		curr_health=test_max_health
+		legs.walk()
 		_randomise_target()
 		
 func take_damage(damage: int,knockback:int):
 	curr_health=curr_health-damage
 	if(knockback!=0):
+		legs.stop()
 		var org_speed=speed
 		speed=knockback
 		if(direction==Vector2.ZERO):
@@ -77,6 +80,7 @@ func _idle_moving():
 		rot_speed=15
 		direction=Vector2.ZERO
 		_randomise_target()
+		legs.walk()
 		return
 	var next_path=nav_agent.get_next_path_position()
 	direction = global_position.direction_to(next_path)
@@ -124,6 +128,7 @@ func  chase():
 	if nav_agent.is_navigation_finished():
 		direction=Vector2.ZERO
 	else:
+		legs.run()
 		nav_agent.target_position=player.global_position
 		var next_path=nav_agent.get_next_path_position()
 		direction = global_position.direction_to(next_path)
