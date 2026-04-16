@@ -2,7 +2,7 @@ extends Area2D
 
 var floor_
 var level_;
-
+@onready var player = get_tree().get_first_node_in_group("player")
 
 func _ready() -> void:
 	body_entered.connect(on_body_enterd)
@@ -15,7 +15,8 @@ func on_body_enterd(body):
 
 func move_on():
 	$StaticBody2D/AnimatedSprite2D.play("default")
+	player.freeze_player()
 	await $StaticBody2D/AnimatedSprite2D.animation_finished
-	await  get_tree().create_timer(0.5).timeout
+	player.unfreeze_player()
 	$StaticBody2D/AnimatedSprite2D.frame=0
 	level_.call_deferred("move_up")

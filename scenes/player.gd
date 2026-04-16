@@ -100,3 +100,9 @@ func heal_effect():
 	$AnimatedSprite2D.modulate=Color.WEB_GREEN
 	await get_tree().create_timer(0.1).timeout
 	$AnimatedSprite2D.modulate=Color.WHITE
+	
+func freeze_player():
+	process_mode = Node.PROCESS_MODE_DISABLED 
+	
+func unfreeze_player():
+	process_mode = Node.PROCESS_MODE_INHERIT

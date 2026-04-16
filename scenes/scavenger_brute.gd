@@ -61,11 +61,12 @@ func  _die():
 	emit_signal("died")
 	$AnimatedSprite2D.animation="dead"
 	$AnimatedSprite2D.frame=0
-	modulate = Color.GRAY
 	set_physics_process(false)
 	set_process(false)
 	$CollisionShape2D.set_deferred("disabled", true)
 	$AnimatedSprite2D/RayCast2D.set_deferred("disabled", true)
+	legs.stop()
+	legs.visible=not legs.visible
 	$AnimatedSprite2D/Area2D/AnimatedSprite2D.visible=not $AnimatedSprite2D/Area2D/AnimatedSprite2D.visible
 	remove_from_group("enemies")
 
