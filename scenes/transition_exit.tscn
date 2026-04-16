@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bu878f6tabfh3"]
 
-[ext_resource type="Script" uid="uid://ckypxlvw0u6f7" path="res://transition_exit.gd" id="1_3s3hs"]
+[ext_resource type="Script" uid="uid://ckypxlvw0u6f7" path="res://scenes/transition_exit.gd" id="1_3s3hs"]
 [ext_resource type="Texture2D" uid="uid://d00yvvktnetc5" path="res://asstets/walls/lee_dor.png.png" id="2_pyivh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pj2mc"]

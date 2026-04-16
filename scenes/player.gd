@@ -10,6 +10,7 @@ var dash_cd:int=1
 var can_dash:bool=true
 var heal_amount=60
 var heal_charge=3
+signal player_died
 
 func _ready() -> void:
 	hp_update()
@@ -43,7 +44,7 @@ func player_take_dmg(dmg):
 	player_health=player_health-dmg
 	hp_update()
 	if(player_health<=0):
-		get_tree().reload_current_scene()
+		player_died.emit()
 	_damage_effect()
 	
 		
