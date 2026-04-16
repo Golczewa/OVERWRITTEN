@@ -1,7 +1,7 @@
 extends Node2D
 
-var floor1=preload("res://scenes/test_level_floor1.tscn")
-var floor2=preload("res://scenes/test_level_floor_2.tscn")
+@onready var floor1=preload("res://scenes/test_level_floor1.tscn")
+@onready var floor2=preload("res://scenes/test_level_floor_2.tscn")
 @onready var player = get_tree().get_first_node_in_group("player")
 var curr_floor:int=1
 var floors:Array

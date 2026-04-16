@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cekqy8vl7q6kc"]
+
+[ext_resource type="FontFile" uid="uid://sfknyifhji8s" path="res://asstets/menu/VCR_OSD_MONO_1.001.ttf" id="1_y26ei"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yxx3c"]
+font = ExtResource("1_y26ei")
+font_size = 32
+font_color = Color(1, 0, 0, 1)
+
+[node name="Control" type="Control" unique_id=1312501908]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="." unique_id=1771712589]
+layout_mode = 0
+offset_left = -275.0
+offset_top = -147.0
+offset_right = 274.0
+offset_bottom = 164.0
+
+[node name="Label" type="Label" parent="." unique_id=1329255147]
+layout_mode = 0
+offset_left = -104.0
+offset_top = -16.0
+offset_right = 103.0
+offset_bottom = 13.0
+text = "SKILL ISSUE"
+label_settings = SubResource("LabelSettings_yxx3c")
