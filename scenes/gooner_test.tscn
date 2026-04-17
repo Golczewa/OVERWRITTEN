@@ -65,7 +65,6 @@ test_max_health = 60
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1924938793]
 position = Vector2(10, 0)
 sprite_frames = SubResource("SpriteFrames_j0lpi")
-animation = &"dead"
 
 [node name="AnimatedSprite2D2" parent="AnimatedSprite2D" unique_id=1235518650 instance=ExtResource("3_xvhym")]
 show_behind_parent = true
@@ -77,12 +76,13 @@ target_position = Vector2(400, 0)
 
 [node name="AnimatedSprite2D3" parent="AnimatedSprite2D" unique_id=1071073496 instance=ExtResource("5_xvhym")]
 show_behind_parent = true
+position = Vector2(-11, 0)
+
+[node name="Marker2D" type="Marker2D" parent="AnimatedSprite2D" unique_id=1905502852]
+position = Vector2(-35, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=466690639]
 position = Vector2(7, -3)
 shape = SubResource("RectangleShape2D_twk8v")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1737912424]
-
-[node name="Marker2D" type="Marker2D" parent="." unique_id=1905502852]
-position = Vector2(-25, 0)

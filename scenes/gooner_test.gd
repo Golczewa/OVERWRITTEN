@@ -126,7 +126,7 @@ func  chase():
 	speed=100
 	rot_speed=20
 	weapon.target=player.global_position
-	look_at(player.global_position)
+	$AnimatedSprite2D.look_at(player.global_position)
 	if(global_position.distance_to(player.global_position)<=range_ and not is_path_blocked()):
 		direction=Vector2.ZERO
 		weapon.attack()
@@ -138,6 +138,7 @@ func  chase():
 			legs.walk()
 			nav_agent.target_position=player.global_position
 			var next_path=nav_agent.get_next_path_position()
+			legs.toogle_fallow(next_path)
 			direction = global_position.direction_to(next_path)
 
 func is_path_blocked():

@@ -71,4 +71,5 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_3rplp")
 animation = &"walk"
 frame_progress = 0.9201011
+offset = Vector2(11, 0)
 script = ExtResource("2_kx4nc")
