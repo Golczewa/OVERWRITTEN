@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bujl56eesocv5" path="res://scenes/map2_test.tscn" id="1_jmtqe"]
 [ext_resource type="Script" uid="uid://dvcgxa7p2kigi" path="res://scenes/test_level_floor_2.gd" id="1_wt32b"]
 [ext_resource type="PackedScene" uid="uid://bu878f6tabfh3" path="res://scenes/transition_exit.tscn" id="5_i5tmd"]
+[ext_resource type="PackedScene" uid="uid://b027hwxqycj2f" path="res://scenes/enemy_spawner.tscn" id="5_rey0u"]
 [ext_resource type="PackedScene" uid="uid://kkqb7cfxl6sm" path="res://scenes/scavenger_brute.tscn" id="5_yxfk5"]
 
 [node name="Node2D" type="Node2D" unique_id=371866247]
@@ -17,7 +18,16 @@ position = Vector2(0, 37)
 position = Vector2(0, 101)
 rotation = 1.5707964
 
-[node name="Node2D" type="Node2D" parent="." unique_id=1295539043]
+[node name="enemies" type="Node2D" parent="." unique_id=1295539043]
 
-[node name="CharacterBody2D" parent="Node2D" unique_id=625731905 instance=ExtResource("5_yxfk5")]
+[node name="CharacterBody2D" parent="enemies" unique_id=625731905 instance=ExtResource("5_yxfk5")]
 position = Vector2(-68, -497)
+
+[node name="StaticBody2D2" parent="." unique_id=1873508276 instance=ExtResource("5_rey0u")]
+position = Vector2(-384, -611)
+rotation = 1.5707964
+mirrored = true
+
+[node name="StaticBody2D3" parent="." unique_id=471786552 instance=ExtResource("5_rey0u")]
+position = Vector2(-320, -611)
+rotation = 1.5707964

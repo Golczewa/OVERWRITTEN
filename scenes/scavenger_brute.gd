@@ -21,8 +21,6 @@ signal died
 
 func _ready() -> void:
 		floor_=get_parent().get_parent()
-		if nav_agent.get_navigation_map() != get_world_2d().get_navigation_map():
-			nav_agent.set_navigation_map(get_world_2d().get_navigation_map())
 		floor_.enemies=floor_.enemies+1
 		weapon.body_entered.connect(player_in)
 		weapon.body_exited.connect(player_out)
@@ -62,6 +60,7 @@ func  _die():
 	$AnimatedSprite2D.play("dead")
 	$AnimatedSprite2D.stop()
 	$AnimatedSprite2D.frame=(randi()%2)+1
+	modulate = Color(0.25, 0.25, 0.25)
 	set_physics_process(false)
 	set_process(false)
 	$CollisionShape2D.set_deferred("disabled", true)
@@ -72,9 +71,10 @@ func  _die():
 	remove_from_group("enemies")
 
 func _damage_effect():
-	modulate=Color.RED
-	await get_tree().create_timer(0.1).timeout
-	modulate=Color.WHITE
+	if curr_health>0:
+		modulate=Color.RED
+		await get_tree().create_timer(0.1).timeout
+		modulate=Color.WHITE
 
 func _idle_moving():
 	if nav_agent.is_navigation_finished():

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cc7dh1ggwtlhw" path="res://scenes/test_level_floor_1.gd" id="1_mk54j"]
 [ext_resource type="PackedScene" uid="uid://cnyvwvoudnuew" path="res://scenes/map1_test.tscn" id="1_p7kkn"]
+[ext_resource type="PackedScene" uid="uid://b027hwxqycj2f" path="res://scenes/enemy_spawner.tscn" id="4_0qarx"]
 [ext_resource type="PackedScene" uid="uid://kkqb7cfxl6sm" path="res://scenes/scavenger_brute.tscn" id="5_0qarx"]
 [ext_resource type="PackedScene" uid="uid://clap81ynbqx0x" path="res://scenes/gooner_test.tscn" id="5_62onn"]
 [ext_resource type="PackedScene" uid="uid://gvdpfkhlvqdq" path="res://scenes/transition.tscn" id="5_grpmd"]
@@ -17,6 +18,9 @@ rotation = -1.5707964
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1860784172]
 position = Vector2(64, 256)
+
+[node name="StaticBody2D" parent="." unique_id=179286510 instance=ExtResource("4_0qarx")]
+position = Vector2(-356, -576)
 
 [node name="enemies" type="Node2D" parent="." unique_id=763083039]
 
