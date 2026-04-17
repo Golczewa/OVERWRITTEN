@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://c7334xe3kn3dl"]
 
-[ext_resource type="Texture2D" uid="uid://debra8eu7p4cr" path="res://asstets/player/bullet_test.png.png" id="1_8dvgp"]
 [ext_resource type="Script" uid="uid://b3a1boyjd2pa8" path="res://scenes/bullet_test.gd" id="1_87sy2"]
+[ext_resource type="Texture2D" uid="uid://dsb3x3xdqaame" path="res://asstets/enemies/bullet_revolver.png" id="2_87sy2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87sy2"]
-size = Vector2(3, 1)
+size = Vector2(4, 2)
+
+[sub_resource type="Gradient" id="Gradient_87sy2"]
+offsets = PackedFloat32Array(0, 0)
+colors = PackedColorArray(0, 0, 0, 0, 1, 0.8392157, 0, 1)
 
 [node name="Area2D" type="Area2D" unique_id=1962568695]
 collision_mask = 1023
@@ -14,8 +18,12 @@ script = ExtResource("1_87sy2")
 shape = SubResource("RectangleShape2D_87sy2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=638842227]
-texture = ExtResource("1_8dvgp")
+texture = ExtResource("2_87sy2")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=979256463]
 target_position = Vector2(0, 0)
 collision_mask = 3
+
+[node name="Line2D" type="Line2D" parent="." unique_id=2128039418]
+width = 2.0
+gradient = SubResource("Gradient_87sy2")

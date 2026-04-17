@@ -6,6 +6,7 @@ var dmg: int =20
 var velocity 
 var direction
 var shot_by_player:bool=false
+var trace_len=3
 
 func _ready() -> void:
 	body_entered.connect(_on_body_enterd)
@@ -23,6 +24,12 @@ func _on_body_enterd(body):
 		body.player_take_dmg(dmg)
 
 func _physics_process(delta: float) -> void:
+	$Line2D.global_position = Vector2.ZERO # Linia musi być w zerze globalnym, by punkty były w dobrych miejscach
+	$Line2D.global_rotation = 0
+	var point = global_position
+	$Line2D.add_point(point)
+	if $Line2D.points.size() > trace_len:
+		$Line2D.remove_point(0)
 	if $RayCast2D.is_colliding():
 		var collider = $RayCast2D.get_collider()
 		if not collider.is_in_group("enemies") and not collider.is_in_group("player"):

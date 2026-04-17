@@ -59,8 +59,9 @@ func  _die():
 	dead=true
 	floor_.enemies=floor_.enemies-1
 	emit_signal("died")
-	$AnimatedSprite2D.animation="dead"
-	$AnimatedSprite2D.frame=0
+	$AnimatedSprite2D.play("dead")
+	$AnimatedSprite2D.stop()
+	$AnimatedSprite2D.frame=(randi()%2)+1
 	set_physics_process(false)
 	set_process(false)
 	$CollisionShape2D.set_deferred("disabled", true)

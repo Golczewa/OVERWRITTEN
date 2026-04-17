@@ -20,6 +20,7 @@ var dead=false
 signal died
 
 func _ready() -> void:
+		randomize()
 		floor_=get_parent().get_parent()
 		floor_.enemies=floor_.enemies+1
 		curr_health=test_max_health
@@ -34,7 +35,7 @@ func take_damage(damage: int,knockback:int):
 		speed=knockback
 		legs.stop()
 		if(direction==Vector2.ZERO):
-			direction=Vector2($Marker2D.global_position-global_position).normalized()
+			direction=Vector2($AnimatedSprite2D/Marker2D.global_position-global_position).normalized()
 		else:
 			direction=-direction
 		in_knocback=true
@@ -58,7 +59,8 @@ func  _die():
 	floor_.enemies=floor_.enemies-1
 	dead=true
 	$AnimatedSprite2D.play("dead")
-	$AnimatedSprite2D.frame=0
+	$AnimatedSprite2D.stop()
+	$AnimatedSprite2D.frame=(randi()%2)+1
 	modulate = Color.GRAY
 	set_physics_process(false)
 	set_process(false)
