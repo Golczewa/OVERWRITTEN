@@ -12,7 +12,8 @@ func _ready() -> void:
 	body_entered.connect(_on_body_enterd)
 	look_at(direction)
 	velocity = direction * speed
-	$RayCast2D.target_position = Vector2((speed) * get_physics_process_delta_time(), 0)
+	$RayCast2D.target_position = Vector2((speed-250) * get_physics_process_delta_time(), 0)
+
 func _on_body_enterd(body):
 	if body.is_in_group("enemies"):
 		if shot_by_player:
@@ -24,7 +25,7 @@ func _on_body_enterd(body):
 		body.player_take_dmg(dmg)
 
 func _physics_process(delta: float) -> void:
-	$Line2D.global_position = Vector2.ZERO # Linia musi być w zerze globalnym, by punkty były w dobrych miejscach
+	$Line2D.global_position = Vector2.ZERO
 	$Line2D.global_rotation = 0
 	var point = global_position
 	$Line2D.add_point(point)

@@ -79,6 +79,7 @@ show_behind_parent = true
 position = Vector2(-11, 0)
 
 [node name="Marker2D" type="Marker2D" parent="AnimatedSprite2D" unique_id=1905502852]
+z_index = 1
 position = Vector2(-35, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=466690639]
