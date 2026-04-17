@@ -29,7 +29,6 @@ collision_mask = 3
 script = ExtResource("1_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1472101267]
-position = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_i3pqv")
 animation = &"new_animation"
 
@@ -56,5 +55,4 @@ offset_right = 262.0
 offset_bottom = 137.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1840891722]
-position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_dqkch")

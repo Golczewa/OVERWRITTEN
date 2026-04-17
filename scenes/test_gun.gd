@@ -24,10 +24,14 @@ func attack():
 	if can_attack:
 		var bullet = bullet_test.instantiate()
 		if is_owned_by_player:
+			var random_angle = deg_to_rad(randf_range(0, 10))
 			bullet.shot_by_player=true
+		var random_angle = deg_to_rad(randf_range(-5, 5))
 		bullet.direction = ($Marker2D.global_position - $Marker2D2.global_position).normalized()
+		bullet.direction=bullet.direction.rotated(random_angle)
 		get_tree().current_scene.add_child(bullet) 
-		bullet.global_position=$Marker2D.global_position
+		bullet.global_position=$Marker2D2.global_position
+		bullet.look_at($Marker2D.global_position)
 		can_attack=false
 		play("default")
 		get_tree().create_timer(cooldown).timeout.connect(end_cd)

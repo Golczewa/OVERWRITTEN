@@ -5,12 +5,12 @@ var perced:int=0
 var dmg: int =20
 var velocity 
 var direction
+var target
 var shot_by_player:bool=false
 var trace_len=3
 
 func _ready() -> void:
 	body_entered.connect(_on_body_enterd)
-	look_at(direction)
 	velocity = direction * speed
 	$RayCast2D.target_position = Vector2((speed-250) * get_physics_process_delta_time(), 0)
 
