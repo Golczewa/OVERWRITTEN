@@ -54,6 +54,7 @@ size = Vector2(148, 64)
 
 [node name="Area2D" type="Area2D" unique_id=219715312 groups=["doors"]]
 z_index = 2
+collision_mask = 13
 script = ExtResource("1_26m4p")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=947692820]

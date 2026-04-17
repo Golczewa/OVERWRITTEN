@@ -41,11 +41,12 @@ func _input(event: InputEvent) -> void:
 			heal()
 
 func player_take_dmg(dmg):
-	player_health=player_health-dmg
-	hp_update()
-	if(player_health<=0):
-		player_died.emit()
-	_damage_effect()
+	if not is_dashing:
+		player_health=player_health-dmg
+		hp_update()
+		if(player_health<=0):
+			player_died.emit()
+		_damage_effect()
 	
 		
 func _damage_effect():
@@ -58,6 +59,8 @@ func _dash():
 		var temp=SPEED
 		var dash_dir=direction
 		is_dashing=true
+		set_collision_mask_value(3, false)
+		set_collision_layer_value(1,false)
 		if(dash_dir==Vector2.ZERO ):
 			direction=Vector2(get_global_mouse_position()- global_position).normalized()
 		velocity = direction * dash
@@ -66,6 +69,8 @@ func _dash():
 		SPEED=temp
 		is_dashing=false
 		can_dash=false
+		set_collision_mask_value(3, true)
+		set_collision_layer_value(1,true)
 		get_tree().create_timer(dash_cd).timeout.connect(dash_again.bind())
 
 func dash_again():

@@ -20,6 +20,7 @@ var can_attack=false
 signal died
 
 func _ready() -> void:
+		randomize()
 		floor_=get_parent().get_parent()
 		floor_.enemies=floor_.enemies+1
 		weapon.body_entered.connect(player_in)
