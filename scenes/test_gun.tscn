@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cr45pxckyf6i6" path="res://asstets/enemies/scavenger_gooner_weapon.png" id="1_16teb"]
 [ext_resource type="Script" uid="uid://drnr315lviwe1" path="res://scenes/test_gun.gd" id="2_16teb"]
+[ext_resource type="Texture2D" uid="uid://dghprvnkr2un0" path="res://asstets/player/john_overwritten_gun.png" id="2_ve081"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ve081"]
 atlas = ExtResource("1_16teb")
@@ -10,6 +11,18 @@ region = Rect2(0, 0, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_pkx16"]
 atlas = ExtResource("1_16teb")
 region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xu8b"]
+atlas = ExtResource("2_ve081")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nj8d"]
+atlas = ExtResource("2_ve081")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcwvk"]
+atlas = ExtResource("2_ve081")
+region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ve081"]
 animations = [{
@@ -26,17 +39,29 @@ animations = [{
 "loop": false,
 "name": &"default",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xu8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0nj8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pcwvk")
+}],
+"loop": false,
+"name": &"player",
+"speed": 10.0
 }]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1235518650]
 sprite_frames = SubResource("SpriteFrames_ve081")
-frame = 2
-frame_progress = 1.0
 offset = Vector2(11, -3)
 script = ExtResource("2_16teb")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=2118524406]
-position = Vector2(28, 12)
+position = Vector2(30, 13)
 
 [node name="Marker2D2" type="Marker2D" parent="." unique_id=93481631]
-position = Vector2(23, 12)
+position = Vector2(26, 13)

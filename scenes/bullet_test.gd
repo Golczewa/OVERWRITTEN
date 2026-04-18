@@ -9,6 +9,7 @@ var target
 var shot_by_player:bool=false
 var trace_len=3
 
+
 func _ready() -> void:
 	body_entered.connect(_on_body_enterd)
 	velocity = direction * speed

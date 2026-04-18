@@ -11,6 +11,9 @@ func _ready() -> void:
 	$AnimatedSprite2D.frame=0
 	parent=get_parent().get_parent()
 	if(parent.is_in_group("player")):
+		$AnimatedSprite2D.play("player_attack")
+		$AnimatedSprite2D.stop()
+		$AnimatedSprite2D.frame=0
 		is_owned_by_player=true
 func attack():
 	if can_attack:
@@ -28,6 +31,11 @@ func end_cd():
 	can_attack=true
 
 func play_animation():
-	$AnimatedSprite2D.play("attack")
-	await $AnimatedSprite2D.animation_finished
-	$AnimatedSprite2D.play_backwards("attack")
+	if is_owned_by_player:
+		$AnimatedSprite2D.play("player_attack")
+		await $AnimatedSprite2D.animation_finished
+		$AnimatedSprite2D.play_backwards("player_attack")
+	else:
+		$AnimatedSprite2D.play("attack")
+		await $AnimatedSprite2D.animation_finished
+		$AnimatedSprite2D.play_backwards("attack")
