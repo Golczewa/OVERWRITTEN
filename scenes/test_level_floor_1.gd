@@ -12,6 +12,6 @@ func _ready() -> void:
 	$StaticBody2D.waves=waves1
 	$StaticBody2D.wave_remain=len(waves1)-1
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if enemies==0 :
 		$StaticBody2D.spawn_wave()

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://outynbsf3ogm"]
+
+[ext_resource type="Texture2D" uid="uid://dghprvnkr2un0" path="res://asstets/player/john_overwritten_gun.png" id="1_ahca3"]
+[ext_resource type="Script" uid="uid://bvvkqj5bslth" path="res://scenes/player_revolver.gd" id="2_cghyl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cghyl"]
+atlas = ExtResource("1_ahca3")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s00m3"]
+atlas = ExtResource("1_ahca3")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqjkv"]
+atlas = ExtResource("1_ahca3")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uutei"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cghyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s00m3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqjkv")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1733857797]
+sprite_frames = SubResource("SpriteFrames_uutei")
+offset = Vector2(11, -4)
+script = ExtResource("2_cghyl")
+
+[node name="Marker2D2" type="Marker2D" parent="." unique_id=1316597167]
+position = Vector2(24, 12)
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=431945813]
+position = Vector2(29, 12)
