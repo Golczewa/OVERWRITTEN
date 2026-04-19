@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://kkqb7cfxl6sm" path="res://scenes/scavenger_brute.tscn" id="5_0qarx"]
 [ext_resource type="PackedScene" uid="uid://clap81ynbqx0x" path="res://scenes/gooner_test.tscn" id="5_62onn"]
 [ext_resource type="PackedScene" uid="uid://gvdpfkhlvqdq" path="res://scenes/transition.tscn" id="5_grpmd"]
-[ext_resource type="PackedScene" uid="uid://dd18baucil8v4" path="res://scenes/player_ghost.tscn" id="7_62onn"]
 
 [node name="Node2D" type="Node2D" unique_id=1600190573]
 script = ExtResource("1_mk54j")
@@ -30,6 +29,3 @@ position = Vector2(252, -561)
 
 [node name="CharacterBody2D" parent="enemies" unique_id=1837710199 instance=ExtResource("5_62onn")]
 position = Vector2(-235, -316)
-
-[node name="AnimatedSprite2D" parent="." unique_id=2080497566 instance=ExtResource("7_62onn")]
-position = Vector2(-57, 154)
