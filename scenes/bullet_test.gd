@@ -23,7 +23,8 @@ func _on_body_enterd(body):
 				queue_free()
 			perced=perced+1
 	elif body.is_in_group("player") :
-		body.player_take_dmg(dmg)
+		if not shot_by_player:
+			body.player_take_dmg(dmg)
 
 func _physics_process(delta: float) -> void:
 	$Line2D.global_position = Vector2.ZERO
