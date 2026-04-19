@@ -43,4 +43,3 @@ func _physics_process(delta: float) -> void:
 			get_tree().current_scene.add_child(bullet_hit_wall_inst)
 			queue_free()
 	position=position + velocity*delta
- #test

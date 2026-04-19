@@ -18,7 +18,7 @@ color = Color(1, 0.92156863, 0, 1)
 [node name="GPUParticles2D" type="GPUParticles2D" unique_id=915592593]
 emitting = false
 amount = 4
-lifetime = 0.46
+lifetime = 0.6
 one_shot = true
 speed_scale = 3.51
 explosiveness = 1.0
