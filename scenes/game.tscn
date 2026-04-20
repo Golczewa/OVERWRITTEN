@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cppps27fe04ai" path="res://scenes/game.gd" id="1_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://bwm6yfn2g5ii8" path="res://scenes/test_level.tscn" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://cekqy8vl7q6kc" path="res://scenes/game_over.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://bgyyaiqgaghs2" path="res://scenes/pause.tscn" id="5_iywne"]
 
 [node name="game" type="Node2D" unique_id=1596037007]
 script = ExtResource("1_lbhrr")
@@ -13,6 +14,16 @@ script = ExtResource("1_lbhrr")
 [node name="CharacterBody2D" parent="." unique_id=383396189 instance=ExtResource("1_80nbo")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1286738117]
+process_mode = 3
+
+[node name="pause" parent="CanvasLayer" unique_id=801102142 instance=ExtResource("5_iywne")]
+anchors_preset = -1
+anchor_bottom = 0.994
+offset_left = 553.0
+offset_top = 320.0
+offset_right = 553.0
+offset_bottom = 323.888
+scale = Vector2(2, 2)
 
 [node name="skill issue" parent="CanvasLayer" unique_id=1312501908 instance=ExtResource("3_lnu2h")]
 offset_left = 552.0
