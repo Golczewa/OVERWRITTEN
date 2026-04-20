@@ -17,6 +17,7 @@ script = ExtResource("1_lbhrr")
 process_mode = 3
 
 [node name="pause" parent="CanvasLayer" unique_id=801102142 instance=ExtResource("5_iywne")]
+visible = false
 anchors_preset = -1
 anchor_bottom = 0.994
 offset_left = 553.0
@@ -26,6 +27,7 @@ offset_bottom = 323.888
 scale = Vector2(2, 2)
 
 [node name="skill issue" parent="CanvasLayer" unique_id=1312501908 instance=ExtResource("3_lnu2h")]
+visible = false
 offset_left = 552.0
 offset_top = 294.0
 offset_right = 632.0
