@@ -60,7 +60,7 @@ func  _die():
 	emit_signal("died")
 	$AnimatedSprite2D.play("dead")
 	$AnimatedSprite2D.stop()
-	$AnimatedSprite2D.frame=(randi()%2)+1
+	$AnimatedSprite2D.frame=(randi()%3)+1
 	modulate = Color(0.25, 0.25, 0.25)
 	set_physics_process(false)
 	set_process(false)

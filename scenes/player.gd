@@ -10,6 +10,7 @@ var dash_cd:int=1
 var can_dash:bool=true
 var heal_amount=60
 var heal_charge=3
+@onready var legs=$AnimatedSprite2D2
 signal player_died
 
 func _ready() -> void:
@@ -22,8 +23,10 @@ func _physics_process(_delta: float) -> void:
 		direction = Input.get_vector("move_left","move_right","move_up","move_down")
 		if direction:
 			velocity = direction * SPEED
+			legs.walk(velocity)
 		else:
 			velocity = velocity.move_toward(Vector2.ZERO,SPEED)
+			legs.stop()
 	move_and_slide()
 	
 func _input(event: InputEvent) -> void:
