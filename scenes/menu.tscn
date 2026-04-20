@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cwqiuufv88ki0"]
+
+[ext_resource type="Script" uid="uid://dac76vsrdek72" path="res://scenes/menu.gd" id="1_yqeox"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vsb4k"]
+font_size = 60
+font_color = Color(1, 0, 0, 1)
+
+[node name="Control" type="Control" unique_id=868958688]
+layout_mode = 3
+anchor_left = -0.49800003
+anchor_top = -0.44900003
+anchor_right = 0.5
+anchor_bottom = 0.551
+offset_left = -0.30395508
+offset_top = -0.047973633
+offset_right = 2.0
+offset_bottom = -0.04800415
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yqeox")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=787325014]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1549519269]
+offset_left = -209.0
+offset_top = -184.0
+offset_right = 209.0
+offset_bottom = -101.0
+text = "OVERWRITTEN"
+label_settings = SubResource("LabelSettings_vsb4k")
+
+[node name="play_button" type="Button" parent="CanvasLayer" unique_id=802138381]
+offset_left = -71.0
+offset_top = -38.0
+offset_right = 72.0
+offset_bottom = 30.0
+text = "PLAY"
