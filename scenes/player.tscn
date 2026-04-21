@@ -42,6 +42,12 @@ position = Vector2(1, 11)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2078342767]
 zoom = Vector2(1.5, 1.5)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1840891722]
+shape = SubResource("RectangleShape2D_dqkch")
+
+[node name="AnimatedSprite2D2" parent="." unique_id=1439691933 instance=ExtResource("5_qlg0r")]
+show_behind_parent = true
+
 [node name="Label" type="Label" parent="." unique_id=158941220]
 offset_left = -233.0
 offset_top = 112.0
@@ -53,9 +59,4 @@ offset_left = 222.0
 offset_top = 114.0
 offset_right = 262.0
 offset_bottom = 137.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1840891722]
-shape = SubResource("RectangleShape2D_dqkch")
-
-[node name="AnimatedSprite2D2" parent="." unique_id=1439691933 instance=ExtResource("5_qlg0r")]
-show_behind_parent = true
+metadata/_edit_use_anchors_ = true

@@ -5,6 +5,7 @@ extends Control
 func _ready() -> void:
 	hide()
 	$Button.pressed.connect(when_pressed)
+	
 
 func  _input(event: InputEvent) -> void:
 	if event is InputEventKey:

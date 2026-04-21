@@ -29,3 +29,11 @@ offset_top = -14.0
 offset_right = 42.0
 offset_bottom = 17.0
 text = "REASUME"
+
+[node name="Button2" type="Button" parent="." unique_id=315599369]
+layout_mode = 0
+offset_left = -42.0
+offset_top = 22.0
+offset_right = 41.0
+offset_bottom = 53.0
+text = "MENU"
