@@ -7,4 +7,5 @@ func _ready() -> void:
 func load_level(path:String):
 	var level_pre=load(path)
 	var level=level_pre.instantiate()
+	level.player=player
 	add_child(level)
