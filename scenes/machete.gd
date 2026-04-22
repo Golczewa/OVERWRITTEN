@@ -34,8 +34,8 @@ func play_animation():
 	if is_owned_by_player:
 		$AnimatedSprite2D.play("player_attack")
 		await $AnimatedSprite2D.animation_finished
-		$AnimatedSprite2D.play_backwards("player_attack")
+		$AnimatedSprite2D.frame=0
 	else:
 		$AnimatedSprite2D.play("attack")
 		await $AnimatedSprite2D.animation_finished
-		$AnimatedSprite2D.play_backwards("attack")
+		$AnimatedSprite2D.frame=0
