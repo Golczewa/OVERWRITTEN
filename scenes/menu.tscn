@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://cwqiuufv88ki0"]
 
+[ext_resource type="Script" uid="uid://dac76vsrdek72" path="res://scenes/menu.gd" id="1_yqeox"]
+[ext_resource type="PackedScene" uid="uid://d0m7o7ingoi7t" path="res://scenes/menu_map_choice.tscn" id="2_vjb58"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_4h3mk"]
 font_size = 100
 
@@ -15,8 +18,16 @@ offset_right = 1.0
 offset_bottom = 0.039978027
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_yqeox")
 
-[node name="Button" type="Button" parent="." unique_id=1737624102]
+[node name="Panel" type="Panel" parent="." unique_id=746485281]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 1182.0
+offset_bottom = 684.0
+
+[node name="Button" type="Button" parent="Panel" unique_id=1737624102]
 layout_mode = 0
 offset_left = 507.0
 offset_top = 383.0
@@ -25,7 +36,7 @@ offset_bottom = 458.0
 theme_override_font_sizes/font_size = 40
 text = "PLAY"
 
-[node name="Label" type="Label" parent="." unique_id=981488201]
+[node name="Label" type="Label" parent="Panel" unique_id=981488201]
 layout_mode = 0
 offset_left = 227.0
 offset_top = 62.0
@@ -33,3 +44,15 @@ offset_right = 924.0
 offset_bottom = 199.0
 text = "OVERWRITTEN"
 label_settings = SubResource("LabelSettings_4h3mk")
+
+[node name="Button2" type="Button" parent="Panel" unique_id=2024678113]
+layout_mode = 0
+offset_left = 507.0
+offset_top = 480.0
+offset_right = 643.0
+offset_bottom = 555.0
+theme_override_font_sizes/font_size = 40
+text = "EXIT"
+
+[node name="map_choice" parent="." unique_id=1884821685 instance=ExtResource("2_vjb58")]
+layout_mode = 1
