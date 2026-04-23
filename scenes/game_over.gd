@@ -1,7 +1,7 @@
 extends Control
 
 @onready var player = get_tree().get_first_node_in_group("player")
-
+signal restart
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Button.pressed.connect(when_pressed)
@@ -16,4 +16,4 @@ func on_player_died():
 func when_pressed():
 	if get_tree().paused:
 		get_tree().paused=false
-		get_tree().reload_current_scene()
+		emit_signal("restart")

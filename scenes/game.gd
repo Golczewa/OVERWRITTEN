@@ -2,7 +2,8 @@ extends Node2D
 @onready var player=$CharacterBody2D
 var curr_scene
 
-
+func _ready() -> void:
+	$"CanvasLayer/skill issue".restart.connect(restart)
 
 func load_level(path:String):
 	if not curr_scene ==null:
@@ -12,3 +13,9 @@ func load_level(path:String):
 	level.player=player
 	curr_scene=level
 	add_child(level)
+
+func restart():
+	curr_scene.restart_floor()
+	player.player_health=100
+	player.hp_update()
+	$"CanvasLayer/skill issue".hide()
