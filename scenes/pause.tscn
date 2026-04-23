@@ -25,15 +25,23 @@ text = "PAUSE"
 [node name="Button" type="Button" parent="." unique_id=782064507]
 layout_mode = 0
 offset_left = -41.0
-offset_top = -14.0
+offset_top = -40.0
 offset_right = 42.0
-offset_bottom = 17.0
-text = "REASUME"
+offset_bottom = -9.0
+text = "RESUME"
 
 [node name="Button2" type="Button" parent="." unique_id=315599369]
 layout_mode = 0
-offset_left = -42.0
-offset_top = 22.0
-offset_right = 41.0
-offset_bottom = 53.0
+offset_left = -41.0
+offset_top = 36.0
+offset_right = 42.0
+offset_bottom = 67.0
 text = "MENU"
+
+[node name="Button3" type="Button" parent="." unique_id=499512439]
+layout_mode = 0
+offset_left = -41.0
+offset_top = -3.0
+offset_right = 42.0
+offset_bottom = 28.0
+text = "RESTART"

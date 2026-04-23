@@ -11,8 +11,8 @@ func _ready() -> void:
 	floors_loaded.append(floor1)
 	floors_loaded.append(floor2)
 	for loaded_floor in floors_loaded:
-		var floor = loaded_floor.instantiate()
-		floors.append(floor)
+		var floor_ = loaded_floor.instantiate()
+		floors.append(floor_)
 	add_child(floors[0])
 	player.set_player_position(floors[0].spawn)
 
