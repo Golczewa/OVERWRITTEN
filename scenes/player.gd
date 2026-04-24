@@ -10,12 +10,26 @@ var dash_cd:int=1
 var can_dash:bool=true
 var heal_amount=60
 var heal_charge=3
+@export var heal_cd=30
 @onready var legs=$AnimatedSprite2D2
+@onready var heath_bar=$Camera2D/CanvasLayer/Label
+@onready var charges=$Camera2D/CanvasLayer/ProgressBar
 signal player_died
+var default_state={
+		"health": 100,
+		"charges": 3,
+		"replenish_queue": 0,
+		"can_dash": true
+	}
+var charges_to_replenish: int = 0
 
 func _ready() -> void:
+	$Camera2D/CanvasLayer.hide()
+	charges.max_value=heal_cd
+	charges.value=heal_cd
 	hp_update()
 	charge_update()
+	$Timer.timeout.connect(replenish_charge)
 
 func _physics_process(_delta: float) -> void:
 	$AnimatedSprite2D.look_at(get_global_mouse_position())
@@ -29,6 +43,12 @@ func _physics_process(_delta: float) -> void:
 			legs.stop()
 	move_and_slide()
 	
+func _process(_delta: float) -> void:
+	if $Timer.time_left>0 and heal_charge!=3:
+		charges.value = $Timer.wait_time - $Timer.time_left
+	else:
+		charges.value=heal_cd
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index==MOUSE_BUTTON_LEFT:
@@ -87,21 +107,29 @@ func heal():
 			player_health=player_health+heal_amount
 		hp_update()
 		heal_charge=heal_charge-1
+		charges_to_replenish += 1
 		charge_update()
 		heal_effect()
-		get_tree().create_timer(30).timeout.connect(replenish_charge.bind())
+		if $Timer.is_stopped() and heal_charge<3:
+			$Timer.start(heal_cd)
 
 func hp_update():
-	$Label.text = "HP: " + str(player_health)
+	heath_bar.text = "Integrity:\n" + str(player_health)+"%"
 
 func charge_update():
-	$Label2.text=str(heal_charge)
+	$Camera2D/CanvasLayer/ProgressBar/Label.text=str(heal_charge)
 
 func replenish_charge():
-	heal_charge=heal_charge+1
-	charge_update()
+	if  charges_to_replenish > 0:
+		heal_charge += 1
+		charges_to_replenish -= 1 
+		charge_update()
+		charges.value=heal_cd
+		if charges_to_replenish > 0 and heal_charge<3:
+			$Timer.start(heal_cd)
 
 func set_player_position(pos):
+	$Camera2D/CanvasLayer.show()
 	global_position=pos
 
 func heal_effect():
@@ -114,3 +142,26 @@ func freeze_player():
 	
 func unfreeze_player():
 	process_mode = Node.PROCESS_MODE_INHERIT
+
+func get_state() -> Dictionary:
+	return {
+		"health": player_health,
+		"charges": heal_charge,
+		"replenish_queue": charges_to_replenish,
+		"can_dash": can_dash
+	}
+func load_state(state: Dictionary):
+	$Timer.stop()
+	player_health = state["health"]
+	heal_charge = state["charges"]
+	charges_to_replenish = state["replenish_queue"]
+	can_dash = state["can_dash"]
+	if charges_to_replenish > 0:
+		$Timer.start(heal_cd)
+	is_dashing = false
+	SPEED = 500.0
+	set_collision_mask_value(3, true)
+	set_collision_layer_value(1, true)
+	unfreeze_player()
+	hp_update()
+	charge_update()
