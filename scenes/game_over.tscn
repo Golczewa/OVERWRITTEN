@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://cekqy8vl7q6kc"]
 
 [ext_resource type="Script" uid="uid://cgeswc1idc7bu" path="res://scenes/game_over.gd" id="1_wqhvx"]
-[ext_resource type="FontFile" uid="uid://sfknyifhji8s" path="res://asstets/menu/VCR_OSD_MONO_1.001.ttf" id="1_xeevv"]
+[ext_resource type="FontFile" uid="uid://d1feesbwk46ll" path="res://asstets/menu/DroidSansMono.ttf" id="2_wqhvx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yxx3c"]
-font = ExtResource("1_xeevv")
+font = ExtResource("2_wqhvx")
 font_size = 32
 font_color = Color(1, 0, 0, 1)
 
