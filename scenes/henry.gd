@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var test_max_health: int =50
+@export var test_max_health: int =200
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var weapon: Area2D=$AnimatedSprite2D/Area2D
@@ -63,7 +63,7 @@ func  _die():
 	emit_signal("died")
 	$AnimatedSprite2D.play("dead")
 	$AnimatedSprite2D.stop()
-	$AnimatedSprite2D.frame=(randi()%3)+1
+	$AnimatedSprite2D.frame=1
 	modulate = Color(0.25, 0.25, 0.25)
 	set_physics_process(false)
 	set_process(false)
@@ -71,6 +71,7 @@ func  _die():
 	$AnimatedSprite2D/RayCast2D.set_deferred("disabled", true)
 	legs.stop_walking()
 	legs.visible=not legs.visible
+	gun.hide()
 	$AnimatedSprite2D/Area2D/AnimatedSprite2D.visible=not $AnimatedSprite2D/Area2D/AnimatedSprite2D.visible
 	remove_from_group("enemies")
 
@@ -132,17 +133,16 @@ func can_see_player():
 	return false
 
 func  chase():
-	speed=150
+	speed=200
 	rot_speed=20
 	gun.target=player.global_position
 	$AnimatedSprite2D.look_at(player.global_position)
-	if global_position.distance_to(player.global_position) <= range_ and not is_path_blocked():
+	if  not is_path_blocked():
 		gun.attack()
-	else:
-		legs.run()
-		nav_agent.target_position=player.global_position
-		var next_path=nav_agent.get_next_path_position()
-		direction = global_position.direction_to(next_path)
+	legs.run()
+	nav_agent.target_position=player.global_position
+	var next_path=nav_agent.get_next_path_position()
+	direction = global_position.direction_to(next_path)
 
 func player_in(_body):
 	if _body.is_in_group("player"):

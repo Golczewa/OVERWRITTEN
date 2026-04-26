@@ -17,6 +17,7 @@ func _ready() -> void:
 	add_child(floors[0])
 	player.set_player_position(floors[0].spawn)
 	player.load_state(player.default_state)
+	player_state=player.default_state
 
 func move_up():
 	remove_child(floors[curr_floor-1])

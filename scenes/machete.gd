@@ -6,18 +6,22 @@ var is_owned_by_player=false
 @export var cooldown=0.7
 var can_attack:bool=true
 var parent
+@export var skin:String="0"
 
 func _ready() -> void:
-	$AnimatedSprite2D.frame=0
+	skin_(skin)
 	parent=get_parent().get_parent()
 	if(parent.is_in_group("player")):
-		$AnimatedSprite2D.play("player_attack")
-		$AnimatedSprite2D.stop()
-		$AnimatedSprite2D.frame=0
 		is_owned_by_player=true
+
+func skin_(num):
+	$AnimatedSprite2D.play(num)
+	$AnimatedSprite2D.stop()
+	$AnimatedSprite2D.frame=0
+
 func attack():
 	if can_attack:
-		play_animation()
+		play_animation(skin)
 		var bodies=get_overlapping_bodies()
 		for body in bodies:
 			if body.is_in_group("enemies") and is_owned_by_player:
@@ -30,12 +34,8 @@ func attack():
 func end_cd():
 	can_attack=true
 
-func play_animation():
-	if is_owned_by_player:
-		$AnimatedSprite2D.play("player_attack")
-		await $AnimatedSprite2D.animation_finished
-		$AnimatedSprite2D.frame=0
-	else:
-		$AnimatedSprite2D.play("attack")
-		await $AnimatedSprite2D.animation_finished
-		$AnimatedSprite2D.frame=0
+func play_animation(num):
+	$AnimatedSprite2D.play(num)
+	await $AnimatedSprite2D.animation_finished
+	$AnimatedSprite2D.frame=0
+	
