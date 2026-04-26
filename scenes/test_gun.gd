@@ -2,12 +2,14 @@ extends AnimatedSprite2D
 var can_attack = true
 var bullet_test = preload("res://scenes/bullet_test.tscn")
 var cooldown=1
-
+@export var mirrored=false
 var target:Vector2
 
 
+func _ready() -> void:
+	if mirrored:
+		scale=Vector2(1,-1)
 		
-
 func _process(_delta: float) -> void:
 	look_at(target)
 

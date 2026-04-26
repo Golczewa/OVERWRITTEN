@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://bkriveic7mop1"]
+
+[ext_resource type="Texture2D" uid="uid://c4fnrvd3fufx0" path="res://asstets/enemies/scavenger_brute_corpse.png" id="1_1bjdr"]
+[ext_resource type="Script" uid="uid://c5fd0s3wrkgcf" path="res://scenes/henry.gd" id="1_an1b6"]
+[ext_resource type="Texture2D" uid="uid://ifgm6fb2fuyv" path="res://asstets/enemies/v2137.png" id="2_5i5tf"]
+[ext_resource type="PackedScene" uid="uid://cnijtad8hhrio" path="res://scenes/legs.tscn" id="3_bad0o"]
+[ext_resource type="PackedScene" uid="uid://bw33stdcmiq6l" path="res://scenes/machete.tscn" id="4_1tacw"]
+[ext_resource type="PackedScene" uid="uid://by50psneamwru" path="res://scenes/henry_gun.tscn" id="5_bad0o"]
+[ext_resource type="Texture2D" uid="uid://utysrvollxcy" path="res://asstets/enemies/v2137_goon.png" id="6_bad0o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7scwk"]
+atlas = ExtResource("1_1bjdr")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwalq"]
+atlas = ExtResource("1_1bjdr")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tdr0"]
+atlas = ExtResource("1_1bjdr")
+region = Rect2(256, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myjew"]
+atlas = ExtResource("1_1bjdr")
+region = Rect2(384, 0, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7auab"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7scwk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwalq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tdr0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myjew")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5i5tf")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_np2ag"]
+atlas = ExtResource("6_bad0o")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi0v5"]
+atlas = ExtResource("6_bad0o")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6nto"]
+atlas = ExtResource("6_bad0o")
+region = Rect2(256, 0, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2siqg"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_np2ag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mi0v5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6nto")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogqcr"]
+size = Vector2(35, 37)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=349374792 groups=["enemies"]]
+script = ExtResource("1_an1b6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=272506226]
+position = Vector2(43, 0)
+sprite_frames = SubResource("SpriteFrames_7auab")
+
+[node name="AnimatedSprite2D3" parent="AnimatedSprite2D" unique_id=1071073496 instance=ExtResource("3_bad0o")]
+show_behind_parent = true
+position = Vector2(-43, 0)
+
+[node name="RayCast2D" type="RayCast2D" parent="AnimatedSprite2D" unique_id=969744123]
+position = Vector2(-43, 0)
+scale = Vector2(2.5340028, 2.4535227)
+target_position = Vector2(150, 0)
+
+[node name="Area2D" parent="AnimatedSprite2D" unique_id=150455651 instance=ExtResource("4_1tacw")]
+position = Vector2(-41, 12)
+
+[node name="AnimatedSprite2D2" parent="AnimatedSprite2D" unique_id=1235518650 instance=ExtResource("5_bad0o")]
+show_behind_parent = true
+position = Vector2(-42, -10)
+sprite_frames = SubResource("SpriteFrames_2siqg")
+
+[node name="RayCast2D" type="RayCast2D" parent="AnimatedSprite2D/AnimatedSprite2D2" unique_id=273010443]
+position = Vector2(14, -5)
+target_position = Vector2(400, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=377940889]
+visible = false
+shape = SubResource("RectangleShape2D_ogqcr")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=734336109]

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bw33stdcmiq6l" path="res://scenes/machete.tscn" id="2_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://outynbsf3ogm" path="res://scenes/player_revolver.tscn" id="3_dqkch"]
 [ext_resource type="PackedScene" uid="uid://dco1qqc6am2wg" path="res://scenes/player_legs.tscn" id="5_qlg0r"]
-[ext_resource type="PackedScene" uid="uid://cad8a5ncmngqb" path="res://player_camera.tscn" id="6_tuyoq"]
+[ext_resource type="PackedScene" uid="uid://cad8a5ncmngqb" path="res://scenes/player_camera.tscn" id="6_tuyoq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i3pqv"]
 animations = [{
