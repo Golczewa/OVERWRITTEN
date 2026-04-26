@@ -17,12 +17,14 @@ var in_knocback:bool=false
 var dead=false
 var can_attack=false
 var range_:int=400
+var boss_bar
 @export var walk_range: int =200
 
 signal died
 
 func _ready() -> void:
-		
+		boss_bar=player.get_node("Camera2D/CanvasLayer/ProgressBar2")
+		boss_bar.boss_is_in("Henry",test_max_health)
 		randomize()
 		floor_=get_parent().get_parent()
 		floor_.enemies=floor_.enemies+1
@@ -31,9 +33,11 @@ func _ready() -> void:
 		curr_health=test_max_health
 		legs.walk()
 		_randomise_target()
+		player_sighted=true	
 		
 func take_damage(damage: int,knockback:int):
 	curr_health=curr_health-damage
+	boss_bar.update(curr_health)
 	if(knockback!=0):
 		legs.stop_walking()
 		var org_speed=speed
@@ -72,6 +76,7 @@ func  _die():
 	legs.stop_walking()
 	legs.visible=not legs.visible
 	gun.hide()
+	boss_bar.boss_is_out()
 	$AnimatedSprite2D/Area2D/AnimatedSprite2D.visible=not $AnimatedSprite2D/Area2D/AnimatedSprite2D.visible
 	remove_from_group("enemies")
 
