@@ -3,6 +3,7 @@ var boss_name:String ="Lorem ipsum"
 
 
 func _ready() -> void:
+	get("theme_override_styles/fill").bg_color = Color.RED
 	hide()
 
 func boss_is_in(name_:String,max_:int):
