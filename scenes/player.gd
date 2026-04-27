@@ -26,6 +26,7 @@ var default_state={
 var charges_to_replenish: int = 0
 
 func _ready() -> void:
+	right_weapon=$AnimatedSprite2D/righthand.equip(1)
 	$Camera2D/CanvasLayer.hide()
 	charges.max_value=heal_cd
 	charges.value=heal_cd
@@ -55,7 +56,7 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index==MOUSE_BUTTON_LEFT:
 			if event.pressed:
-				$AnimatedSprite2D/Area2D.attack()
+				right_weapon.attack()
 		elif event.button_index==MOUSE_BUTTON_RIGHT:
 			if event.pressed:
 				$AnimatedSprite2D/AnimatedSprite2D2.attack()

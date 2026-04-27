@@ -2,7 +2,8 @@ extends AnimatedSprite2D
 var can_attack = true
 var bullet_test = preload("res://scenes/bullet_test.tscn")
 var cooldown=0.3
-
+var is_owned_by_player=true
+var skin
 
 func _ready() -> void:
 	scale=Vector2(1,-1)
@@ -28,7 +29,7 @@ func attack():
 			bullet.global_position=$Marker2D2.global_position
 			bullet.look_at($Marker2D.global_position)
 		can_attack=false
-		play("default")
+		play("0")
 		get_tree().create_timer(cooldown).timeout.connect(end_cd)
 
 func is_hand_in_wall():

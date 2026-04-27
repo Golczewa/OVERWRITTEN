@@ -74,6 +74,7 @@ target_position = Vector2(150, 0)
 
 [node name="Area2D" parent="AnimatedSprite2D" unique_id=150455651 instance=ExtResource("4_6tdr0")]
 position = Vector2(-22, 8)
+skin = "2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=413708611]
 position = Vector2(8.5, 0.5)

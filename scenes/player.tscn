@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dgjs6ox0i6mw4" path="res://scenes/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://blfiaj0pbji4r" path="res://asstets/player/john_overwritten.png" id="2_dqkch"]
-[ext_resource type="PackedScene" uid="uid://bw33stdcmiq6l" path="res://scenes/machete.tscn" id="2_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://outynbsf3ogm" path="res://scenes/player_revolver.tscn" id="3_dqkch"]
+[ext_resource type="PackedScene" uid="uid://btl0mxf27lbcx" path="res://scenes/weapon_menager.tscn" id="4_tuyoq"]
 [ext_resource type="PackedScene" uid="uid://dco1qqc6am2wg" path="res://scenes/player_legs.tscn" id="5_qlg0r"]
 [ext_resource type="PackedScene" uid="uid://cad8a5ncmngqb" path="res://scenes/player_camera.tscn" id="6_tuyoq"]
 
@@ -37,10 +37,9 @@ offset = Vector2(12, -1)
 show_behind_parent = true
 position = Vector2(0, -7)
 
-[node name="Area2D" parent="AnimatedSprite2D" unique_id=150455651 instance=ExtResource("2_qhqgy")]
-show_behind_parent = true
-position = Vector2(0, 11)
-skin = "2"
+[node name="righthand" parent="AnimatedSprite2D" unique_id=1342247543 instance=ExtResource("4_tuyoq")]
+position = Vector2(0, 7)
+hand = "right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1840891722]
 shape = SubResource("RectangleShape2D_dqkch")
