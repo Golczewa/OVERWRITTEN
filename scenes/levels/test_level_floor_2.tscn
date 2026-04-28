@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bu878f6tabfh3" path="res://scenes/levels/props/transition_exit.tscn" id="5_i5tmd"]
 [ext_resource type="PackedScene" uid="uid://b027hwxqycj2f" path="res://scenes/levels/props/enemy_spawner.tscn" id="5_rey0u"]
 [ext_resource type="PackedScene" uid="uid://kkqb7cfxl6sm" path="res://scenes/enemies/scavenger_brute.tscn" id="5_yxfk5"]
+[ext_resource type="PackedScene" uid="uid://gvdpfkhlvqdq" path="res://scenes/levels/props/transition.tscn" id="6_v4mwl"]
 
 [node name="Node2D" type="Node2D" unique_id=371866247]
 script = ExtResource("1_wt32b")
@@ -31,3 +32,7 @@ mirrored = true
 [node name="StaticBody2D3" parent="." unique_id=471786552 instance=ExtResource("5_rey0u")]
 position = Vector2(-320, -611)
 rotation = 1.5707964
+
+[node name="Area2D2" parent="." unique_id=806439152 instance=ExtResource("6_v4mwl")]
+position = Vector2(0, -612)
+rotation = -1.5707964

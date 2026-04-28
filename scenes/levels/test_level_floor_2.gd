@@ -6,10 +6,10 @@ var exit
 @onready var sca_gooner=preload("res://scenes/enemies/gooner_test.tscn")
 
 func _ready() -> void:
-	var waves1=[[[1,sca_brute],[1,sca_gooner]],[[1,sca_brute],[1,sca_gooner]]]
-	var waves2=[[[2,sca_gooner]],[[2,sca_brute]]]
-	spawn=$Marker2D.global_position
-	exit=$Area2D/Marker2D.global_position
+	var waves1=[[[1,sca_brute],[0,sca_gooner]],[[0,sca_brute],[1,sca_gooner]]]
+	var waves2=[[[1,sca_gooner]],[[1,sca_brute]]]
+	spawn=$Area2D/Marker2D.global_position
+	exit=$Area2D2/Marker2D.global_position
 	$StaticBody2D2.waves=waves1
 	$StaticBody2D2.wave_remain=len(waves1)-1
 	$StaticBody2D3.waves=waves2
