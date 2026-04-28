@@ -27,6 +27,7 @@ var charges_to_replenish: int = 0
 
 func _ready() -> void:
 	right_weapon=$AnimatedSprite2D/righthand.equip(1)
+	left_weapon=$AnimatedSprite2D/lefthand.equip(0)
 	$Camera2D/CanvasLayer.hide()
 	charges.max_value=heal_cd
 	charges.value=heal_cd
@@ -59,7 +60,7 @@ func _input(event: InputEvent) -> void:
 				right_weapon.attack()
 		elif event.button_index==MOUSE_BUTTON_RIGHT:
 			if event.pressed:
-				$AnimatedSprite2D/AnimatedSprite2D2.attack()
+				left_weapon.attack()
 	elif event is InputEventKey:
 		if event.keycode==KEY_SHIFT and event.pressed:
 			_dash()

@@ -5,9 +5,6 @@ var cooldown=0.3
 var is_owned_by_player=true
 var skin
 
-func _ready() -> void:
-	scale=Vector2(1,-1)
-
 
 
 func _physics_process(_delta: float) -> void:

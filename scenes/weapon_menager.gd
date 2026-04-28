@@ -10,6 +10,6 @@ func equip(num):
 	weapon.is_owned_by_player=true
 	weapon.skin="0"
 	if hand=="left":
-		weapon.scale(0,-1)
+		weapon.scale=Vector2(1,-1)
 	add_child(weapon)
 	return weapon
