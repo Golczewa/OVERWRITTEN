@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cekqy8vl7q6kc"]
+
+[ext_resource type="Script" uid="uid://cgeswc1idc7bu" path="res://scenes/menu/game_over.gd" id="1_wqhvx"]
+[ext_resource type="FontFile" uid="uid://d1feesbwk46ll" path="res://asstets/menu/DroidSansMono.ttf" id="2_wqhvx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yxx3c"]
+font = ExtResource("2_wqhvx")
+font_size = 32
+font_color = Color(1, 0, 0, 1)
+
+[node name="Control" type="Control" unique_id=1312501908]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(2.5, 2.5)
+script = ExtResource("1_wqhvx")
+
+[node name="Panel" type="Panel" parent="." unique_id=1771712589]
+layout_mode = 0
+offset_left = -275.0
+offset_top = -147.0
+offset_right = 274.0
+offset_bottom = 164.0
+
+[node name="Label" type="Label" parent="." unique_id=1329255147]
+layout_mode = 0
+offset_left = -105.0
+offset_top = -48.0
+offset_right = 102.0
+offset_bottom = -19.0
+text = "SKILL ISSUE"
+label_settings = SubResource("LabelSettings_yxx3c")
+
+[node name="Button" type="Button" parent="." unique_id=1169076744]
+layout_mode = 0
+offset_left = -56.0
+offset_right = 56.0
+offset_bottom = 31.0
+text = "RESTART"

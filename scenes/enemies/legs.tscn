@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://cnijtad8hhrio"]
+
+[ext_resource type="Texture2D" uid="uid://cs7aaabdkabo" path="res://asstets/enemies/scavenger_brute_legs.png" id="1_etw4g"]
+[ext_resource type="Script" uid="uid://dbj6alxoapjxn" path="res://scenes/enemies/legs.gd" id="2_kx4nc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kx4nc"]
+atlas = ExtResource("1_etw4g")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dn43f"]
+atlas = ExtResource("1_etw4g")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pp65a"]
+atlas = ExtResource("1_etw4g")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p508q"]
+atlas = ExtResource("1_etw4g")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ff0j6"]
+atlas = ExtResource("1_etw4g")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_saaar"]
+atlas = ExtResource("1_etw4g")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxosw"]
+atlas = ExtResource("1_etw4g")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6eph"]
+atlas = ExtResource("1_etw4g")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3rplp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kx4nc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dn43f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pp65a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p508q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ff0j6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_saaar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxosw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6eph")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1071073496]
+sprite_frames = SubResource("SpriteFrames_3rplp")
+animation = &"walk"
+frame_progress = 0.9201011
+offset = Vector2(11, 0)
+script = ExtResource("2_kx4nc")

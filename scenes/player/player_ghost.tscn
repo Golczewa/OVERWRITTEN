@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dd18baucil8v4"]
+
+[ext_resource type="Script" uid="uid://dgryyk5m3kwpj" path="res://scenes/player/player_ghost.gd" id="1_hmsbg"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=2080497566]
+show_behind_parent = true
+script = ExtResource("1_hmsbg")

@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://gvdpfkhlvqdq"]
+
+[ext_resource type="Script" uid="uid://brkdlpac127i8" path="res://scenes/levels/props/transition.gd" id="1_f0i4t"]
+[ext_resource type="Texture2D" uid="uid://d00yvvktnetc5" path="res://asstets/walls/lee_dor.png.png" id="1_rerct"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pj2mc"]
+atlas = ExtResource("1_rerct")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r5tf"]
+atlas = ExtResource("1_rerct")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ap01"]
+atlas = ExtResource("1_rerct")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7m3o"]
+atlas = ExtResource("1_rerct")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhlym"]
+atlas = ExtResource("1_rerct")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j7crc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pj2mc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4r5tf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ap01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7m3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhlym")
+}],
+"loop": false,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7fmn4"]
+size = Vector2(13, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8mcfx"]
+size = Vector2(35, 64)
+
+[node name="Area2D" type="Area2D" unique_id=1410637359]
+script = ExtResource("1_f0i4t")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1397525334]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D" unique_id=511924607]
+sprite_frames = SubResource("SpriteFrames_j7crc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1499448396]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_7fmn4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=165821127]
+position = Vector2(-25.5, 0)
+shape = SubResource("RectangleShape2D_8mcfx")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=3891957]
+position = Vector2(-80, 0)

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://btl0mxf27lbcx"]
+
+[ext_resource type="Script" uid="uid://e1ad3us4svy2" path="res://scenes/player/weapon_menager.gd" id="1_4vpnd"]
+
+[node name="Node2D" type="Node2D" unique_id=1342247543]
+script = ExtResource("1_4vpnd")

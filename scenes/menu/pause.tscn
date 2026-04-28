@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bgyyaiqgaghs2"]
+
+[ext_resource type="Script" uid="uid://r4w6gwo8gjxc" path="res://scenes/menu/pause.gd" id="1_f1d2v"]
+
+[node name="Control" type="Control" unique_id=801102142]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_f1d2v")
+
+[node name="Panel2" type="Panel" parent="." unique_id=414352634]
+layout_mode = 0
+offset_left = -55.0
+offset_top = -90.0
+offset_right = 54.0
+offset_bottom = 90.0
+
+[node name="Label" type="Label" parent="Panel2" unique_id=1574522979]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 20.0
+offset_right = 80.0
+offset_bottom = 43.0
+text = "PAUSE"
+
+[node name="Button" type="Button" parent="." unique_id=782064507]
+layout_mode = 0
+offset_left = -41.0
+offset_top = -40.0
+offset_right = 42.0
+offset_bottom = -9.0
+text = "RESUME"
+
+[node name="Button2" type="Button" parent="." unique_id=315599369]
+layout_mode = 0
+offset_left = -41.0
+offset_top = 36.0
+offset_right = 42.0
+offset_bottom = 67.0
+text = "MENU"
+
+[node name="Button3" type="Button" parent="." unique_id=499512439]
+layout_mode = 0
+offset_left = -41.0
+offset_top = -3.0
+offset_right = 42.0
+offset_bottom = 28.0
+text = "RESTART"

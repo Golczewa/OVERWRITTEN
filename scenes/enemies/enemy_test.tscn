@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://b6au2n0824xnn"]
+
+[ext_resource type="Script" uid="uid://6jv6r5xt435a" path="res://scenes/enemies/enemy_test.gd" id="1_tegdf"]
+[ext_resource type="Texture2D" uid="uid://bjfs44jx58joc" path="res://asstets/player/Sprite-0001.png" id="1_tekfo"]
+[ext_resource type="Texture2D" uid="uid://cn31x2uofq4mr" path="res://asstets/player/Sprite-0001_dead.png" id="2_mo2s0"]
+[ext_resource type="PackedScene" uid="uid://bw33stdcmiq6l" path="res://scenes/enemies/machete.tscn" id="3_ainam"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tegdf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mo2s0")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tekfo")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c6iok"]
+radius = 21.095022
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=625731905 groups=["enemies"]]
+collision_mask = 3
+script = ExtResource("1_tegdf")
+test_max_health = 80
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1590663486]
+position = Vector2(-3, 2)
+scale = Vector2(0.30682638, 0.31189674)
+sprite_frames = SubResource("SpriteFrames_tegdf")
+
+[node name="RayCast2D" type="RayCast2D" parent="AnimatedSprite2D" unique_id=558538467]
+position = Vector2(10.136011, -4.9070477)
+scale = Vector2(2.5340028, 2.4535227)
+target_position = Vector2(150, 0)
+
+[node name="Area2D" parent="AnimatedSprite2D" unique_id=150455651 instance=ExtResource("3_ainam")]
+position = Vector2(45.612053, 36.80284)
+scale = Vector2(2.5340028, 2.4535224)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=413708611]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_c6iok")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1533406768]
