@@ -16,6 +16,8 @@ var heal_charge=3
 @onready var charges=$Camera2D/CanvasLayer/ProgressBar
 var left_weapon
 var right_weapon
+var left_up_weapon
+var right_up_weapon
 signal player_died
 var default_state={
 		"health": 100,
@@ -28,6 +30,8 @@ var charges_to_replenish: int = 0
 func _ready() -> void:
 	right_weapon=$AnimatedSprite2D/righthand.equip(1)
 	left_weapon=$AnimatedSprite2D/lefthand.equip(0)
+	right_up_weapon=$AnimatedSprite2D/rightuphand.equip(1)
+	left_up_weapon=$AnimatedSprite2D/leftuphand.equip(1)
 	$Camera2D/CanvasLayer.hide()
 	charges.max_value=heal_cd
 	charges.value=heal_cd
@@ -58,9 +62,11 @@ func _input(event: InputEvent) -> void:
 		if event.button_index==MOUSE_BUTTON_LEFT:
 			if event.pressed:
 				right_weapon.attack()
+				right_up_weapon.attack()
 		elif event.button_index==MOUSE_BUTTON_RIGHT:
 			if event.pressed:
 				left_weapon.attack()
+				left_up_weapon.attack()
 	elif event is InputEventKey:
 		if event.keycode==KEY_SHIFT and event.pressed:
 			_dash()

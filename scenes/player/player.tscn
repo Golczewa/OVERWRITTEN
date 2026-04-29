@@ -42,6 +42,14 @@ show_behind_parent = true
 position = Vector2(0, -7)
 hand = "left"
 
+[node name="rightuphand" parent="AnimatedSprite2D" unique_id=1345014296 instance=ExtResource("4_tuyoq")]
+position = Vector2(-8, 4)
+hand = "right"
+
+[node name="leftuphand" parent="AnimatedSprite2D" unique_id=173200585 instance=ExtResource("4_tuyoq")]
+position = Vector2(-8, -4)
+hand = "left"
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1840891722]
 shape = SubResource("RectangleShape2D_dqkch")
 

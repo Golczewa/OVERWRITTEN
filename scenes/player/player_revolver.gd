@@ -18,7 +18,7 @@ func attack():
 		if not is_hand_in_wall():
 			var random_angle
 			var bullet = bullet_test.instantiate()
-			random_angle = deg_to_rad(randf_range(0, 7))
+			random_angle = deg_to_rad(randf_range(-7, 7))
 			bullet.shot_by_player=true
 			bullet.direction = ($Marker2D.global_position - $Marker2D2.global_position).normalized()
 			bullet.direction=bullet.direction.rotated(random_angle)
