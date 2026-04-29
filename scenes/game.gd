@@ -17,7 +17,6 @@ func load_level(path:String):
 
 func restart():
 	curr_scene.restart_floor()
-	#player.player_health=100
-	#player.hp_update()
 	$"CanvasLayer/skill issue".hide()
 	$CanvasLayer/pause.hide()
+ 	

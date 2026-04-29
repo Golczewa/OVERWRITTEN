@@ -4,6 +4,7 @@ var spawn
 var exit
 @onready var sca_brute=preload("res://scenes/enemies/scavenger_brute.tscn")
 @onready var sca_gooner=preload("res://scenes/enemies/gooner_test.tscn")
+var cleard = false
 
 func _ready() -> void:
 	var waves1=[[[1,sca_brute],[0,sca_gooner]],[[0,sca_brute],[1,sca_gooner]]]
@@ -19,3 +20,5 @@ func _physics_process(_delta: float) -> void:
 	if enemies==0 :
 		$StaticBody2D3.spawn_wave()
 		$StaticBody2D2.spawn_wave()
+		if $StaticBody2D2.wave_remain==0:
+			cleard=true

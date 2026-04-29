@@ -23,3 +23,5 @@ func spawn_wave():
 				await  get_tree().create_timer(1).timeout
 		wave_counter=wave_counter+1
 		$AnimatedSprite2D.play_backwards("default")
+	else :
+		wave_remain=0
