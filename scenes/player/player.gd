@@ -98,7 +98,7 @@ func _dash():
 			direction=Vector2(get_global_mouse_position()- global_position).normalized()
 		velocity = direction * dash
 		SPEED=dash
-		$AnimatedSprite2D/Sprite2D.makeTrail()
+		$AnimatedSprite2D/Ghost.dashEffect()
 		await get_tree().create_timer(0.2).timeout
 		SPEED=temp
 		is_dashing=false
