@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dgjs6ox0i6mw4" path="res://scenes/player/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://blfiaj0pbji4r" path="res://asstets/player/john_overwritten.png" id="2_dqkch"]
+[ext_resource type="PackedScene" uid="uid://h32rru3abg61" path="res://scenes/player/player_ghost2.tscn" id="4_75vfm"]
 [ext_resource type="PackedScene" uid="uid://btl0mxf27lbcx" path="res://scenes/player/weapon_menager.tscn" id="4_tuyoq"]
 [ext_resource type="PackedScene" uid="uid://dco1qqc6am2wg" path="res://scenes/player/player_legs.tscn" id="5_qlg0r"]
 [ext_resource type="PackedScene" uid="uid://cad8a5ncmngqb" path="res://scenes/player/player_camera.tscn" id="6_tuyoq"]
@@ -49,6 +50,8 @@ hand = "right"
 [node name="leftuphand" parent="AnimatedSprite2D" unique_id=173200585 instance=ExtResource("4_tuyoq")]
 position = Vector2(-8, -4)
 hand = "left"
+
+[node name="Sprite2D" parent="AnimatedSprite2D" unique_id=69245362 instance=ExtResource("4_75vfm")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1840891722]
 shape = SubResource("RectangleShape2D_dqkch")
