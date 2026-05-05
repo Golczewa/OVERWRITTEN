@@ -26,6 +26,7 @@ var default_state={
 		"can_dash": true
 	}
 var charges_to_replenish: int = 0
+var ghost= preload("res://scenes/player/player_ghost2.tscn")
 
 func _ready() -> void:
 	right_weapon=$AnimatedSprite2D/righthand.equip(1)
@@ -92,13 +93,14 @@ func _dash():
 		var temp=SPEED
 		var dash_dir=direction
 		is_dashing=true
+		add_ghost()
 		set_collision_mask_value(3, false)
 		set_collision_layer_value(1,false)
 		if(dash_dir==Vector2.ZERO ):
 			direction=Vector2(get_global_mouse_position()- global_position).normalized()
 		velocity = direction * dash
 		SPEED=dash
-		$AnimatedSprite2D/Ghost.dashEffect()
+		add_ghost()
 		await get_tree().create_timer(0.2).timeout
 		SPEED=temp
 		is_dashing=false
@@ -177,5 +179,12 @@ func load_state(state: Dictionary):
 	hp_update()
 	charge_update()
 	
-
+func add_ghost():
+	while is_dashing:
+		var ghost_inst=ghost.instantiate()
+		ghost_inst.global_position=global_position
+		ghost_inst.look_at(get_global_mouse_position())
+		get_tree().current_scene.add_child(ghost_inst)
+		await get_tree().create_timer(0.01).timeout
+	
 	

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://h32rru3abg61"]
+
+[ext_resource type="Texture2D" uid="uid://blfiaj0pbji4r" path="res://asstets/player/john_overwritten.png" id="1_navkg"]
+[ext_resource type="Script" uid="uid://di7mmhac6eqfc" path="res://scenes/player/player_ghost_2.gd" id="2_ddt07"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ddt07"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_navkg")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=548167858]
+modulate = Color(1, 1, 1, 0.39215687)
+sprite_frames = SubResource("SpriteFrames_ddt07")
+offset = Vector2(12, -1)
+script = ExtResource("2_ddt07")
