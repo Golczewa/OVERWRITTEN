@@ -30,8 +30,8 @@ var charges_to_replenish: int = 0
 var ghost= preload("res://scenes/player/player_ghost2.tscn")
 
 func _ready() -> void:
-	right_weapon=$AnimatedSprite2D/righthand.equip(0)
-	left_weapon=$AnimatedSprite2D/lefthand.equip(1)
+	right_weapon=$AnimatedSprite2D/righthand.equip(1)
+	left_weapon=$AnimatedSprite2D/lefthand.equip(2)
 	$Camera2D/CanvasLayer.hide()
 	charges.max_value=heal_cd
 	charges.value=heal_cd

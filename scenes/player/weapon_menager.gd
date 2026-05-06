@@ -2,7 +2,8 @@ extends Node2D
 
 var machete_pack=preload("res://scenes/enemies/machete.tscn")
 var revolver_pack=preload("res://scenes/player/player_revolver.tscn")
-var weapons=[machete_pack,revolver_pack]
+var patchwork_pack=preload("res://scenes/player/player_patchwork.tscn")
+var weapons=[machete_pack,revolver_pack,patchwork_pack]
 @export_enum("left","right") var hand:String
 
 func equip(num):
