@@ -20,3 +20,15 @@ func restart():
 	$"CanvasLayer/skill issue".hide()
 	$CanvasLayer/pause.hide()
  	
+func showGameUI():
+	show()
+	$CanvasLayer.show()
+	$CanvasLayer/pause.hide()
+	$"CanvasLayer/skill issue".hide()
+	$CharacterBody2D/Camera2D/CanvasLayer.show()
+
+func hideGameUI():
+	hide()
+	$CanvasLayer.hide()
+	$CharacterBody2D/Camera2D/CanvasLayer.hide()
+	

@@ -9,7 +9,7 @@ func _ready() -> void:
 	$game/CanvasLayer/pause/Button2.pressed.connect(back_to_menu)
 	
 func play_game(path):
-	$game.show()
+	$game.showGameUI()
 	$game.process_mode=Node.PROCESS_MODE_INHERIT
 	$game.load_level(path)
 	$CanvasLayer.hide()
@@ -17,8 +17,7 @@ func play_game(path):
 
 func back_to_menu():
 	get_tree().paused = false
-	$game.hide()
-	$game/CanvasLayer.hide()
+	$game.hideGameUI()
 	$game.process_mode=Node.PROCESS_MODE_DISABLED
 	$CanvasLayer.show()
 	$CanvasLayer/menu.get_main_menu()
