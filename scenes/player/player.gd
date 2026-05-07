@@ -31,7 +31,7 @@ var ghost= preload("res://scenes/player/player_ghost2.tscn")
 
 func _ready() -> void:
 	right_weapon=$AnimatedSprite2D/righthand.equip(1)
-	left_weapon=$AnimatedSprite2D/lefthand.equip(2)
+	left_weapon=$AnimatedSprite2D/lefthand.equip(0)
 	$Camera2D/CanvasLayer.hide()
 	charges.max_value=heal_cd
 	charges.value=heal_cd

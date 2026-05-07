@@ -21,7 +21,7 @@ size = Vector2(31, 4.5)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1733857797]
 sprite_frames = SubResource("SpriteFrames_uutei")
 animation = &"0"
-offset = Vector2(24, 8)
+offset = Vector2(21, 8)
 script = ExtResource("2_cghyl")
 
 [node name="Marker2D2" type="Marker2D" parent="." unique_id=1316597167]
@@ -37,6 +37,6 @@ position = Vector2(18, 8)
 shape = SubResource("RectangleShape2D_cghyl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1060190610]
-position = Vector2(5, 5)
+position = Vector2(2, 5)
 scale = Vector2(1, -1)
 texture = ExtResource("3_yyisv")

@@ -34,12 +34,12 @@ offset = Vector2(12, -1)
 
 [node name="righthand" parent="AnimatedSprite2D" unique_id=1342247543 instance=ExtResource("4_tuyoq")]
 show_behind_parent = true
-position = Vector2(0, 7)
+position = Vector2(3, 8)
 hand = "right"
 
 [node name="lefthand" parent="AnimatedSprite2D" unique_id=1175286132 instance=ExtResource("4_tuyoq")]
 show_behind_parent = true
-position = Vector2(0, -7)
+position = Vector2(3, -8)
 hand = "left"
 
 [node name="rightuphand" parent="AnimatedSprite2D" unique_id=1345014296 instance=ExtResource("4_tuyoq")]
@@ -51,12 +51,15 @@ position = Vector2(-8, -4)
 hand = "left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1840891722]
+visible = false
 shape = SubResource("RectangleShape2D_dqkch")
 
 [node name="AnimatedSprite2D2" parent="." unique_id=1439691933 instance=ExtResource("5_qlg0r")]
+visible = false
 show_behind_parent = true
 
 [node name="Timer" type="Timer" parent="." unique_id=39781936]
 one_shot = true
 
 [node name="Camera2D" parent="." unique_id=518007863 instance=ExtResource("6_tuyoq")]
+visible = false

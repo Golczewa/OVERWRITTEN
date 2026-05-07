@@ -10,23 +10,20 @@ var parent
 
 func _ready() -> void:
 	skin_(skin)
-	parent=get_parent().get_parent()
-	if(parent.is_in_group("player")):
-		is_owned_by_player=true
 
 func skin_(num):
 	$AnimatedSprite2D.play(num)
 	$AnimatedSprite2D.stop()
 	$AnimatedSprite2D.frame=0
+	if(num=="2"):
+		$AnimatedSprite2D.position=Vector2(29,-13)
 
 func attack():
 	if can_attack:
 		play_animation(skin)
 		var bodies=get_overlapping_bodies()
 		for body in bodies:
-			if body.is_in_group("enemies") and is_owned_by_player:
-				body.take_damage(machete_dmg,knockback)
-			elif body.is_in_group("player") and not is_owned_by_player:
+			if body.is_in_group("player"):
 				body.player_take_dmg(machete_dmg)
 		can_attack=false
 		get_tree().create_timer(cooldown).timeout.connect(end_cd)

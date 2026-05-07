@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://dc4tq025xxm62"]
+
+[ext_resource type="Script" uid="uid://ds80p0bhx1leo" path="res://scenes/player/player_machete.gd" id="1_dvmub"]
+[ext_resource type="Texture2D" uid="uid://bu3tg78yuhiir" path="res://asstets/player/john_overwritten_machete2.png" id="1_gt6oj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1s1h1"]
+atlas = ExtResource("1_gt6oj")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_noihs"]
+atlas = ExtResource("1_gt6oj")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uddee"]
+atlas = ExtResource("1_gt6oj")
+region = Rect2(256, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sx3rw"]
+atlas = ExtResource("1_gt6oj")
+region = Rect2(384, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jn8b"]
+atlas = ExtResource("1_gt6oj")
+region = Rect2(512, 0, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dvmub"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1s1h1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_noihs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uddee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sx3rw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jn8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jn8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jn8b")
+}],
+"loop": false,
+"name": &"0",
+"speed": 17.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pumti"]
+size = Vector2(43, 43)
+
+[node name="Area2D" type="Area2D" unique_id=1736020479]
+collision_mask = 15
+script = ExtResource("1_dvmub")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1592545076]
+position = Vector2(29, -11)
+sprite_frames = SubResource("SpriteFrames_dvmub")
+animation = &"0"
+offset = Vector2(12, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=913230530]
+position = Vector2(35.5, -11.5)
+shape = SubResource("RectangleShape2D_pumti")
