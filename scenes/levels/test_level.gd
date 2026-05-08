@@ -30,15 +30,13 @@ func move_up():
 	curr_floor=curr_floor+1
 	add_child(floors[curr_floor-1])
 	player.set_player_position(floors[curr_floor-1].spawn)
-	print(checkpoint)
 
 func move_down():
 	remove_child(floors[curr_floor-1])
 	curr_floor=curr_floor-1
 	add_child(floors[curr_floor-1])
 	player.set_player_position(floors[curr_floor-1].exit)
-	print(checkpoint)
-	
+
 func restart_floor():
 	remove_child(floors[curr_floor-1])
 	curr_floor=checkpoint
@@ -47,4 +45,3 @@ func restart_floor():
 	add_child(floors[curr_floor-1])
 	player.set_player_position(floors[curr_floor-1].spawn)
 	player.load_state(player_state)
-#dwad

@@ -1,11 +1,13 @@
 extends AnimatedSprite2D
 var can_attack = true
 var bullet_test = preload("res://scenes/effects/bullet_test.tscn")
-var cooldown=0.6
+var cooldown=1
 var skin
+var target=Vector2(0,0)
 
 
-
+func _process(_delta: float) -> void:
+	look_at(target)
 
 func end_cd():
 	can_attack=true
@@ -26,5 +28,4 @@ func attack():
 			bullet.global_position=$Marker2D2.global_position
 			bullet.look_at($Marker2D.global_position)
 			await  get_tree().create_timer(0.2).timeout
-		play("0")
 		get_tree().create_timer(cooldown).timeout.connect(end_cd)

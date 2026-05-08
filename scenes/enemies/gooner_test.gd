@@ -126,7 +126,7 @@ func can_see_player():
 	return false
 
 func  chase():
-	speed=100
+	speed=150
 	rot_speed=20
 	weapon.target=player.global_position
 	$AnimatedSprite2D.look_at(player.global_position)

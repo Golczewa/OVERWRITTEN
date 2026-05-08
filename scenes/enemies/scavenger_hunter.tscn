@@ -1,14 +1,61 @@
 [gd_scene format=3 uid="uid://cnukyg5amafvv"]
 
-[ext_resource type="Texture2D" uid="uid://df1ll8e248gms" path="res://asstets/enemies/scavenger_hunter.png" id="1_dh731"]
+[ext_resource type="Script" uid="uid://dxuqxbga8qmaa" path="res://scenes/enemies/scavenger_hunter.gd" id="1_b4jvi"]
+[ext_resource type="Texture2D" uid="uid://duf1k30n3pnp2" path="res://asstets/enemies/scavenger_hunter_head.png" id="2_0k8x3"]
 [ext_resource type="PackedScene" uid="uid://v7dcqv7suiyy" path="res://scenes/enemies/patchwork.tscn" id="2_tvbk2"]
+[ext_resource type="Texture2D" uid="uid://cr0aeyk2ua2ki" path="res://asstets/enemies/hunter_corpse.png" id="2_y7tc8"]
 [ext_resource type="PackedScene" uid="uid://cnijtad8hhrio" path="res://scenes/enemies/legs.tscn" id="3_ku0l3"]
+[ext_resource type="Texture2D" uid="uid://0i53iptkdel5" path="res://asstets/enemies/scavenger_hunter_hands.png" id="4_y7tc8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikgbx"]
+atlas = ExtResource("2_y7tc8")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfw2s"]
+atlas = ExtResource("2_y7tc8")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00seh"]
+atlas = ExtResource("2_y7tc8")
+region = Rect2(256, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_574ax"]
+atlas = ExtResource("2_y7tc8")
+region = Rect2(384, 0, 128, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tvbk2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_dh731")
+"texture": SubResource("AtlasTexture_ikgbx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfw2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00seh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_574ax")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0k8x3")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ikgbx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_y7tc8")
 }],
 "loop": true,
 "name": &"default",
@@ -18,25 +65,31 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ku0l3"]
 size = Vector2(28, 29)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=943878568]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=943878568 groups=["enemies"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_b4jvi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1323144180]
-position = Vector2(23, -1)
 sprite_frames = SubResource("SpriteFrames_tvbk2")
+animation = &"dead"
+offset = Vector2(23, -1)
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="AnimatedSprite2D" unique_id=1962717659]
+show_behind_parent = true
+position = Vector2(24, -1)
+sprite_frames = SubResource("SpriteFrames_ikgbx")
 
 [node name="AnimatedSprite2D2" parent="AnimatedSprite2D" unique_id=1802748101 instance=ExtResource("2_tvbk2")]
-position = Vector2(-8, 5)
+show_behind_parent = true
+position = Vector2(16, 3)
 
 [node name="RayCast2D" type="RayCast2D" parent="AnimatedSprite2D/AnimatedSprite2D2" unique_id=586676831]
 position = Vector2(-6, 0)
 target_position = Vector2(103, 0)
 
-[node name="AnimatedSprite2D" parent="AnimatedSprite2D" unique_id=1071073496 instance=ExtResource("3_ku0l3")]
-show_behind_parent = true
-position = Vector2(-23, 2)
-
 [node name="Marker2D" type="Marker2D" parent="AnimatedSprite2D" unique_id=917105313]
-position = Vector2(-42, 1)
+position = Vector2(-18, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=460577920]
 visible = false
@@ -44,3 +97,8 @@ position = Vector2(4, 0)
 shape = SubResource("RectangleShape2D_ku0l3")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1987958388]
+
+[node name="AnimatedSprite2D2" parent="." unique_id=1071073496 instance=ExtResource("3_ku0l3")]
+visible = false
+show_behind_parent = true
+position = Vector2(0, 1)
