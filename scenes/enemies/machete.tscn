@@ -158,6 +158,8 @@ script = ExtResource("1_b38jh")
 position = Vector2(32, -10)
 sprite_frames = SubResource("SpriteFrames_hw0gn")
 animation = &"2"
+frame = 6
+frame_progress = 1.0
 offset = Vector2(12, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2091999505]

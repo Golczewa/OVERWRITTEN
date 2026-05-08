@@ -8,7 +8,7 @@ extends CharacterBody2D
 var curr_health: int
 var floor_
 var direction: Vector2 = Vector2.ZERO
-var speed: int=50
+var speed: int=70
 var rot_speed: int =15
 var view_distance: int =250
 var player_sighted:bool = false
