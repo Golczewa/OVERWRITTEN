@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d0m7o7ingoi7t"]
 
 [ext_resource type="Script" uid="uid://bo6iv6ycgyodt" path="res://scenes/menu/menu_map_choice.gd" id="1_086vr"]
+[ext_resource type="PackedScene" uid="uid://q6ale2m8tx0" path="res://scenes/menu/level_panel.tscn" id="2_6dt88"]
 
 [node name="Control" type="Control" unique_id=1884821685]
 layout_mode = 3
@@ -36,3 +37,7 @@ offset_right = 532.0
 offset_bottom = 181.0
 theme_override_font_sizes/font_size = 31
 text = "LEVEL 0"
+
+[node name="Control" parent="." unique_id=332237915 instance=ExtResource("2_6dt88")]
+visible = false
+layout_mode = 1

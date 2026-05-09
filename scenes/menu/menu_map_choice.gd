@@ -4,11 +4,11 @@ extends Control
 
 func _ready() -> void:
 	hide()
-	$Button.pressed.connect(test_map)
+	$Button.pressed.connect(level_setup.bind(0))
 	$Button3.pressed.connect(level_0)
 	
-func test_map():
-	get_tree().current_scene.play_game("res://scenes/levels/test_level.tscn")
+func level_setup(num:int):
+	$Control.setup(num)
 
 func level_0():
 	pass
