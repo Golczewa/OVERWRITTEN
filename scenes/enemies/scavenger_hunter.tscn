@@ -72,7 +72,6 @@ script = ExtResource("1_b4jvi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1323144180]
 sprite_frames = SubResource("SpriteFrames_tvbk2")
-animation = &"dead"
 offset = Vector2(23, -1)
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="AnimatedSprite2D" unique_id=1962717659]
@@ -92,13 +91,11 @@ target_position = Vector2(103, 0)
 position = Vector2(-18, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=460577920]
-visible = false
 position = Vector2(4, 0)
 shape = SubResource("RectangleShape2D_ku0l3")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1987958388]
 
 [node name="AnimatedSprite2D2" parent="." unique_id=1071073496 instance=ExtResource("3_ku0l3")]
-visible = false
 show_behind_parent = true
 position = Vector2(0, 1)

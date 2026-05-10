@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://dorivql3hpxew"]
+
+[ext_resource type="FontFile" uid="uid://d1feesbwk46ll" path="res://asstets/menu/DroidSansMono.ttf" id="1_8fbip"]
+[ext_resource type="Script" uid="uid://dkanngeq3oewm" path="res://scenes/menu/endlevel.gd" id="1_c1f8k"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c1f8k"]
+font = ExtResource("1_8fbip")
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_bw75o"]
+font = ExtResource("1_8fbip")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_76lw5"]
+font = ExtResource("1_8fbip")
+font_size = 64
+
+[node name="Control" type="Control" unique_id=374425218]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c1f8k")
+
+[node name="Label" type="Label" parent="." unique_id=622350353]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 77.0
+offset_right = 850.0
+offset_bottom = 163.0
+text = "Level Complete"
+label_settings = SubResource("LabelSettings_c1f8k")
+
+[node name="time" type="Label" parent="." unique_id=1866809226]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 238.0
+offset_right = 427.0
+offset_bottom = 281.0
+text = "Time: "
+label_settings = SubResource("LabelSettings_bw75o")
+
+[node name="deaths" type="Label" parent="." unique_id=1113718913]
+layout_mode = 0
+offset_left = 313.0
+offset_top = 289.0
+offset_right = 466.0
+offset_bottom = 332.0
+text = "Deaths: "
+label_settings = SubResource("LabelSettings_bw75o")
+
+[node name="used" type="Label" parent="." unique_id=635050407]
+layout_mode = 0
+offset_left = 309.0
+offset_top = 337.0
+offset_right = 462.0
+offset_bottom = 380.0
+text = "Healing used:"
+label_settings = SubResource("LabelSettings_bw75o")
+
+[node name="rank" type="Label" parent="." unique_id=2026520659]
+layout_mode = 0
+offset_left = 311.0
+offset_top = 443.0
+offset_right = 560.0
+offset_bottom = 529.0
+text = "Rank:"
+label_settings = SubResource("LabelSettings_76lw5")
+
+[node name="used2" type="Label" parent="." unique_id=566129444]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 396.0
+offset_right = 559.0
+offset_bottom = 439.0
+text = "Score:"
+label_settings = SubResource("LabelSettings_bw75o")
+
+[node name="Button" type="Button" parent="." unique_id=1850987378]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 529.0
+offset_right = 215.0
+offset_bottom = 590.0
+text = "Menu"

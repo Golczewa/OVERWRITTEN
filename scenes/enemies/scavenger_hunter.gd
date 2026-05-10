@@ -68,8 +68,10 @@ func  _die():
 	$AnimatedSprite2D/AnimatedSprite2D2/RayCast2D.set_deferred("disabled", true)
 	legs.visible=not legs.visible
 	legs.stop()
-	$AnimatedSprite2D/AnimatedSprite2D2.visible=not $AnimatedSprite2D/AnimatedSprite2D2.visible
+	$AnimatedSprite2D/AnimatedSprite2D2.hide()
 	$AnimatedSprite2D/AnimatedSprite2D3.hide()
+	$AnimatedSprite2D2.stop()
+	$AnimatedSprite2D2.hide()
 	remove_from_group("enemies")
 
 func _damage_effect():

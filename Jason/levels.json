@@ -6,7 +6,8 @@
 			"name":"test level",
 			"unlocked": true,
 			"score": 0,
-			"rank": "-"
+			"rank": "-",
+			"image":"res://icon.svg"
 		},
 		{
 			"id":1,
@@ -14,7 +15,8 @@
 			"name":"level 1",
 			"unlocked": false,
 			"score": 0,
-			"rank": "-"
+			"rank": "-",
+			"image":"res://icon.svg"
 		}
 	]
 }

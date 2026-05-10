@@ -25,3 +25,10 @@ func back_to_menu():
 	
 func exit():
 	get_tree().quit()
+
+func end_level():
+	$game.timer_stop()
+	var score=$game.gameScore
+	back_to_menu()
+	$CanvasLayer/menu/Panel.hide()
+	$CanvasLayer/menu/Control.setup(score)

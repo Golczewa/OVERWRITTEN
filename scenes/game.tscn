@@ -34,3 +34,5 @@ offset_left = 165.0
 offset_top = 32.0
 offset_right = 951.0
 offset_bottom = 62.0
+
+[node name="Timer" type="Timer" parent="." unique_id=625494770]

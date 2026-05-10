@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://q6ale2m8tx0"]
 
-[ext_resource type="Texture2D" uid="uid://bqwfb4qaeux6k" path="res://icon.svg" id="1_8r5av"]
 [ext_resource type="Script" uid="uid://l7x0dcmm4iv4" path="res://scenes/menu/level_panel.gd" id="1_dxkar"]
 [ext_resource type="FontFile" uid="uid://d1feesbwk46ll" path="res://asstets/menu/DroidSansMono.ttf" id="2_dxkar"]
 
@@ -28,16 +27,18 @@ script = ExtResource("1_dxkar")
 
 [node name="Panel" type="Panel" parent="." unique_id=199341933]
 layout_mode = 0
-offset_right = 1194.0
-offset_bottom = 666.0
+offset_left = -8.0
+offset_top = -23.0
+offset_right = 1185.0
+offset_bottom = 665.0
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1367755251]
 layout_mode = 0
-offset_left = 556.0
+offset_left = 573.0
 offset_top = 39.0
-offset_right = 1106.0
+offset_right = 1123.0
 offset_bottom = 386.0
-texture = ExtResource("1_8r5av")
+stretch_mode = 4
 
 [node name="rank" type="Label" parent="." unique_id=114621718]
 layout_mode = 0

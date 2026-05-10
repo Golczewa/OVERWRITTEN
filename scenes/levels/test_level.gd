@@ -45,3 +45,7 @@ func restart_floor():
 	add_child(floors[curr_floor-1])
 	player.set_player_position(floors[curr_floor-1].spawn)
 	player.load_state(player_state)
+	
+func end_level():
+	get_tree().current_scene.end_level()
+	queue_free()

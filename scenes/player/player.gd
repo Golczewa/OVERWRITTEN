@@ -28,8 +28,10 @@ var default_state={
 	}
 var charges_to_replenish: int = 0
 var ghost= preload("res://scenes/player/player_ghost2.tscn")
+var score
 
 func _ready() -> void:
+	score=get_parent().gameScore
 	right_weapon=$AnimatedSprite2D/righthand.equip(0)
 	left_weapon=$AnimatedSprite2D/lefthand.equip(2)
 	$Camera2D/CanvasLayer.hide()
@@ -77,6 +79,7 @@ func player_take_dmg(dmg):
 		hp_update()
 		if(player_health<=0):
 			player_died.emit()
+			score["deaths"]=score["deaths"]+1
 		_damage_effect()
 	
 		
@@ -116,6 +119,7 @@ func heal():
 		else :
 			player_health=player_health+heal_amount
 		hp_update()
+		score["hused"]=score["hused"]+1
 		heal_charge=heal_charge-1
 		charges_to_replenish += 1
 		charge_update()

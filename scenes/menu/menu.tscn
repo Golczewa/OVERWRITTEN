@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dac76vsrdek72" path="res://scenes/menu/menu.gd" id="1_yqeox"]
 [ext_resource type="PackedScene" uid="uid://d0m7o7ingoi7t" path="res://scenes/menu/menu_map_choice.tscn" id="2_vjb58"]
+[ext_resource type="PackedScene" uid="uid://dorivql3hpxew" path="res://scenes/menu/endlevel.tscn" id="3_e0arn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4h3mk"]
 font_size = 100
@@ -55,4 +56,9 @@ theme_override_font_sizes/font_size = 40
 text = "EXIT"
 
 [node name="map_choice" parent="." unique_id=1884821685 instance=ExtResource("2_vjb58")]
+visible = false
+layout_mode = 1
+
+[node name="Control" parent="." unique_id=374425218 instance=ExtResource("3_e0arn")]
+visible = false
 layout_mode = 1

@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b63p8yx8jmyyx" path="res://scenes/levels/test_level_floor_3.gd" id="1_ya1ar"]
 [ext_resource type="PackedScene" uid="uid://bu878f6tabfh3" path="res://scenes/levels/props/transition_exit.tscn" id="2_ukels"]
 [ext_resource type="PackedScene" uid="uid://bkriveic7mop1" path="res://scenes/enemies/henry.tscn" id="3_hwv41"]
+[ext_resource type="PackedScene" uid="uid://rgpml3tss12d" path="res://scenes/levels/props/exit.tscn" id="5_ij4tk"]
 
 [node name="Node2D" type="Node2D" unique_id=1126122025]
 script = ExtResource("1_ya1ar")
@@ -18,3 +19,7 @@ rotation = 1.5707964
 
 [node name="CharacterBody2D" parent="enemies" unique_id=349374792 instance=ExtResource("3_hwv41")]
 position = Vector2(76, -117)
+
+[node name="Area2D2" parent="." unique_id=1227416673 instance=ExtResource("5_ij4tk")]
+position = Vector2(128, -195)
+rotation = 1.5707964

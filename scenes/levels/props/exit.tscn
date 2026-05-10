@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://rgpml3tss12d"]
+
+[ext_resource type="Script" uid="uid://bhxwwc7gcnf1j" path="res://scenes/levels/props/exit.gd" id="1_f8vx1"]
+[ext_resource type="Texture2D" uid="uid://d00yvvktnetc5" path="res://asstets/walls/lee_dor.png.png" id="1_j6gtg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8vx1"]
+size = Vector2(65.5, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkkxo"]
+atlas = ExtResource("1_j6gtg")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iox6w"]
+atlas = ExtResource("1_j6gtg")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txjh8"]
+atlas = ExtResource("1_j6gtg")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pbpv"]
+atlas = ExtResource("1_j6gtg")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0new"]
+atlas = ExtResource("1_j6gtg")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hsbdj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkkxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iox6w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txjh8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pbpv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0new")
+}],
+"loop": false,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7cpn8"]
+size = Vector2(13, 64)
+
+[node name="Area2D" type="Area2D" unique_id=1227416673]
+script = ExtResource("1_f8vx1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1668405698]
+position = Vector2(38.75, 0)
+shape = SubResource("RectangleShape2D_f8vx1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=15770010]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D" unique_id=1142947689]
+sprite_frames = SubResource("SpriteFrames_hsbdj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1932859846]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_7cpn8")
