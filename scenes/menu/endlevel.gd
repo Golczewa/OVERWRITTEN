@@ -7,7 +7,7 @@ func _ready() -> void:
 func setup(score:Dictionary):
 	show()
 	count_score(score)
-	$time.text="Time: "+str(score["time"])
+	$time.text="Time: "+format_time(score["time"])
 	$deaths.text="Deaths: "+str(score["deaths"])
 	$used.text="Healing used: "+str(score["hused"])
 	$used2.text="Score: "+str(score["rank"])
@@ -18,3 +18,8 @@ func count_score(score:Dictionary):
 
 func hidee():
 	hide()
+
+func format_time(time:int):
+	var seconds=time%60
+	var minutes=time/60
+	return str(minutes)+":"+str(seconds)
