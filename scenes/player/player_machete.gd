@@ -8,7 +8,8 @@ var can_attack:bool=true
 var parent
 @export var skin:String="0"
 
-
+func _physics_process(_delta: float) -> void:
+	look_at(get_global_mouse_position())
 
 func attack():
 	if can_attack:

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d00yvvktnetc5" path="res://asstets/walls/lee_dor.png.png" id="1_j6gtg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f8vx1"]
-size = Vector2(65.5, 64)
+size = Vector2(28, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jkkxo"]
 atlas = ExtResource("1_j6gtg")
@@ -56,7 +56,7 @@ size = Vector2(13, 64)
 script = ExtResource("1_f8vx1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1668405698]
-position = Vector2(38.75, 0)
+position = Vector2(20, 0)
 shape = SubResource("RectangleShape2D_f8vx1")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=15770010]
