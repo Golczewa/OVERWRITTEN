@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://gsaoihwdgsiw"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_ptp5o"]
+
+[node name="Button" type="Button" unique_id=167595797]
+offset_right = 116.0
+offset_bottom = 38.0
+icon = SubResource("ImageTexture_ptp5o")
