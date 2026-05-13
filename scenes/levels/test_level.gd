@@ -9,6 +9,7 @@ var floors:Array
 var floors_loaded:Array
 var player_state:Dictionary
 var checkpoint=1
+var real_curr_floor
 
 func _ready() -> void:
 	floors_loaded.append(floor1)
@@ -18,6 +19,7 @@ func _ready() -> void:
 		var floor_ = loaded_floor.instantiate()
 		floors.append(floor_)
 	add_child(floors[0])
+	real_curr_floor=floors[0]
 	player.set_player_position(floors[0].spawn)
 	player.load_state(player.default_state)
 	player_state=player.default_state
@@ -29,12 +31,14 @@ func move_up():
 	remove_child(floors[curr_floor-1])
 	curr_floor=curr_floor+1
 	add_child(floors[curr_floor-1])
+	real_curr_floor=floors[curr_floor-1]
 	player.set_player_position(floors[curr_floor-1].spawn)
 
 func move_down():
 	remove_child(floors[curr_floor-1])
 	curr_floor=curr_floor-1
 	add_child(floors[curr_floor-1])
+	real_curr_floor=floors[curr_floor-1]
 	player.set_player_position(floors[curr_floor-1].exit)
 
 func restart_floor():
@@ -43,6 +47,7 @@ func restart_floor():
 	floors[curr_floor-1]=floors_loaded[curr_floor-1].instantiate()
 	curr_floor=checkpoint
 	add_child(floors[curr_floor-1])
+	real_curr_floor=floors[curr_floor-1]
 	player.set_player_position(floors[curr_floor-1].spawn)
 	player.load_state(player_state)
 	

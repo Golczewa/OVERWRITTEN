@@ -19,6 +19,7 @@ func skin_(num):
 		$AnimatedSprite2D.position=Vector2(29,-13)
 
 func attack():
+	await get_tree().create_timer(0.1).timeout
 	if can_attack:
 		play_animation(skin)
 		var bodies=get_overlapping_bodies()

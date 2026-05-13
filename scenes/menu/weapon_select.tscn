@@ -23,7 +23,7 @@ layout_mode = 0
 offset_left = 40.0
 offset_top = 30.0
 offset_right = 737.0
-offset_bottom = 634.0
+offset_bottom = 559.0
 
 [node name="TextureRect" type="TextureRect" parent="Panel" unique_id=1274662470]
 layout_mode = 0
@@ -38,3 +38,12 @@ offset_left = 830.0
 offset_top = 225.0
 offset_right = 1095.0
 offset_bottom = 630.0
+
+[node name="Button" type="Button" parent="Panel" unique_id=1659947161]
+layout_mode = 0
+offset_left = 253.0
+offset_top = 573.0
+offset_right = 482.0
+offset_bottom = 638.0
+text = "Back
+"

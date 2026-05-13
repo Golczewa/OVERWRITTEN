@@ -7,5 +7,6 @@
 [node name="Button" type="Button" unique_id=167595797]
 offset_right = 116.0
 offset_bottom = 38.0
+toggle_mode = true
 icon = SubResource("ImageTexture_ptp5o")
 script = ExtResource("1_8mc0j")

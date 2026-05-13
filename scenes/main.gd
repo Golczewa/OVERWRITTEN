@@ -1,6 +1,6 @@
 extends Node
 
-
+var state=0
 
 func _ready() -> void:
 	$game.hide()
@@ -14,6 +14,7 @@ func play_game(path:String):
 	$game.load_level(path)
 	$CanvasLayer.hide()
 	$CanvasLayer.process_mode=Node.PROCESS_MODE_DISABLED
+	state=1
 
 func back_to_menu():
 	get_tree().paused = false
@@ -22,6 +23,7 @@ func back_to_menu():
 	$CanvasLayer.show()
 	$CanvasLayer/menu.get_main_menu()
 	$CanvasLayer.process_mode=Node.PROCESS_MODE_INHERIT
+	state=0
 	
 func exit():
 	get_tree().quit()

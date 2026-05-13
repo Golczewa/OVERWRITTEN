@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://l7x0dcmm4iv4" path="res://scenes/menu/level_panel.gd" id="1_dxkar"]
 [ext_resource type="FontFile" uid="uid://d1feesbwk46ll" path="res://asstets/menu/DroidSansMono.ttf" id="2_dxkar"]
+[ext_resource type="PackedScene" uid="uid://bpf5ntl6k4qfh" path="res://scenes/menu/weapon_card.tscn" id="3_dxkar"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ij28o"]
 font = ExtResource("2_dxkar")
@@ -31,6 +32,13 @@ offset_left = -8.0
 offset_top = -23.0
 offset_right = 1185.0
 offset_bottom = 665.0
+
+[node name="Control" parent="." unique_id=1310289588 instance=ExtResource("3_dxkar")]
+layout_mode = 1
+offset_left = 23.0
+offset_top = 95.0
+offset_right = 23.0
+offset_bottom = 95.0
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1367755251]
 layout_mode = 0

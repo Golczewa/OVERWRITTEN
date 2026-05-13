@@ -40,6 +40,6 @@ func _physics_process(delta: float) -> void:
 		if not collider.is_in_group("enemies") and not collider.is_in_group("player"):
 			bullet_hit_wall_inst.global_position = $RayCast2D.get_collision_point()
 			bullet_hit_wall_inst.rotation = velocity.angle()
-			get_tree().current_scene.add_child(bullet_hit_wall_inst)
+			get_tree().get_first_node_in_group("game").curr_scene.real_curr_floor.add_child(bullet_hit_wall_inst)
 			queue_free()
 	position=position + velocity*delta

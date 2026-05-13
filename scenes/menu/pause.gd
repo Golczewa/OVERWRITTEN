@@ -9,10 +9,11 @@ func _ready() -> void:
 	
 
 func  _input(event: InputEvent) -> void:
-	if event is InputEventKey:
-		if event.keycode==KEY_ESCAPE and event.pressed:
-			show()
-			get_tree().paused=true
+	if get_tree().current_scene.state==1:
+		if event is InputEventKey:
+			if event.keycode==KEY_ESCAPE and event.pressed:
+				show()
+				get_tree().paused=true
 
 func  when_pressed():
 	if get_tree().paused:

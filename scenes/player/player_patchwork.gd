@@ -15,21 +15,11 @@ func end_cd():
 
 func attack():
 	if can_attack:
-		can_attack=false
+		can_attack = false
 		if not is_hand_in_wall():
-			for i in range(0,3):
-				var random_angle
-				var bullet = bullet_test.instantiate()
-				bullet.perce=0
-				bullet.dmg=15
-				random_angle = deg_to_rad(randf_range(-2, 2))
-				bullet.shot_by_player=true
-				bullet.direction = ($Marker2D.global_position - $Marker2D2.global_position).normalized()
-				bullet.direction=bullet.direction.rotated(random_angle)
-				get_tree().current_scene.add_child(bullet) 
-				bullet.global_position=$Marker2D2.global_position
-				bullet.look_at($Marker2D.global_position)
-				await  get_tree().create_timer(0.2).timeout
+			for i in range(0, 3):
+				_spawn_bullet()
+				await get_tree().create_timer(0.2).timeout
 		play("0")
 		get_tree().create_timer(cooldown).timeout.connect(end_cd)
 
@@ -39,3 +29,16 @@ func is_hand_in_wall():
 			if not body.is_in_group("enemies") and not body.is_in_group("player"):
 				return true
 	return false
+
+func _spawn_bullet():
+	var bullet = bullet_test.instantiate()
+	bullet.perce = 0
+	bullet.dmg = 15
+	var random_angle = deg_to_rad(randf_range(-2, 2))
+	bullet.shot_by_player = true
+	var spawn_pos = $Marker2D2.global_position
+	var spawn_dir = ($Marker2D.global_position - spawn_pos).normalized().rotated(random_angle)
+	bullet.direction = spawn_dir
+	bullet.global_position = spawn_pos
+	get_tree().get_first_node_in_group("game").curr_scene.real_curr_floor.add_child(bullet)
+	bullet.look_at($Marker2D.global_position)

@@ -32,7 +32,7 @@ var score
 
 func _ready() -> void:
 	score=get_parent().gameScore
-	right_weapon=$AnimatedSprite2D/righthand.equip("res://scenes/player/player_machete.tscn")
+	right_weapon=$AnimatedSprite2D/righthand.equip("res://scenes/player/player_revolver.tscn")
 	left_weapon=$AnimatedSprite2D/lefthand.equip("res://scenes/player/player_patchwork.tscn")
 	$Camera2D/CanvasLayer.hide()
 	charges.max_value=heal_cd

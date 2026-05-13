@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://kkqb7cfxl6sm" path="res://scenes/enemies/scavenger_brute.tscn" id="5_yxfk5"]
 [ext_resource type="PackedScene" uid="uid://gvdpfkhlvqdq" path="res://scenes/levels/props/transition.tscn" id="6_v4mwl"]
 
-[node name="Node2D" type="Node2D" unique_id=371866247]
+[node name="Node2D" type="Node2D" unique_id=371866247 groups=["floors"]]
 script = ExtResource("1_wt32b")
 
 [node name="map" parent="." unique_id=1450460285 instance=ExtResource("1_jmtqe")]

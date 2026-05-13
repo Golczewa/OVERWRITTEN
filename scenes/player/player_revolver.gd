@@ -22,8 +22,8 @@ func attack():
 			bullet.shot_by_player=true
 			bullet.direction = ($Marker2D.global_position - $Marker2D2.global_position).normalized()
 			bullet.direction=bullet.direction.rotated(random_angle)
-			get_tree().current_scene.add_child(bullet) 
 			bullet.global_position=$Marker2D2.global_position
+			get_tree().get_first_node_in_group("game").curr_scene.real_curr_floor.add_child(bullet) 
 			bullet.look_at($Marker2D.global_position)
 		can_attack=false
 		play("0")
