@@ -17,7 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6anpk")
 
-[node name="Panel" type="Panel" parent="." unique_id=1202367464]
+[node name="Panel" type="Button" parent="." unique_id=1577190834]
 layout_mode = 0
 offset_right = 196.0
 offset_bottom = 204.0

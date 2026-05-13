@@ -24,3 +24,17 @@ offset_left = 40.0
 offset_top = 30.0
 offset_right = 737.0
 offset_bottom = 634.0
+
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=1274662470]
+layout_mode = 0
+offset_left = 846.0
+offset_top = 36.0
+offset_right = 1078.0
+offset_bottom = 218.0
+
+[node name="Label" type="Label" parent="Panel" unique_id=1349081104]
+layout_mode = 0
+offset_left = 830.0
+offset_top = 225.0
+offset_right = 1095.0
+offset_bottom = 630.0

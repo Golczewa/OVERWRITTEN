@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://gsaoihwdgsiw"]
 
+[ext_resource type="Script" uid="uid://slvrdhtf1ckb" path="res://scenes/menu/weapon_button.gd" id="1_8mc0j"]
+
 [sub_resource type="ImageTexture" id="ImageTexture_ptp5o"]
 
 [node name="Button" type="Button" unique_id=167595797]
 offset_right = 116.0
 offset_bottom = 38.0
 icon = SubResource("ImageTexture_ptp5o")
+script = ExtResource("1_8mc0j")
