@@ -21,12 +21,7 @@ func _ready() -> void:
 		row.add_child(card)
 	
 func load_config():
-	var config=ConfigFile.new()
-	var err = config.load("res://config/weapons.cfg")
-	if err!=OK:
-		print("confing loading error")
-		return
-	weapons=config
+	weapons=get_tree().get_first_node_in_group("game").weapons
 
 func display_disc(i):
 	$Panel/TextureRect.texture=load(weapons.get_value(str(i),"image","res://icon.svg"))

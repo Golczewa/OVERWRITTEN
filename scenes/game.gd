@@ -7,12 +7,14 @@ var gameScore={"time":0,
 "score":0,
 "rank":"-"
 }
-
+var weapons:ConfigFile
+var player_config:ConfigFile
 
 func _ready() -> void:
 	$"CanvasLayer/skill issue".restart.connect(restart)
 	$CanvasLayer/pause/Button3.pressed.connect(restart)
 	$Timer.timeout.connect(add_time)
+	load_config()
 
 func load_level(path:String):
 	if not curr_scene ==null:
@@ -24,6 +26,19 @@ func load_level(path:String):
 	add_child(level)
 	resetScore()
 	$Timer.start(1)
+
+func load_config():
+	var config=ConfigFile.new()
+	var err = config.load("res://config/weapons.cfg")
+	if err!=OK:
+		print("confing loading error")
+		return
+	weapons=config
+	var newconfig=ConfigFile.new()
+	var newerr = newconfig.load("res://config/player.cfg")
+	if newerr!=OK:
+		print("confing loading error")
+	player_config=newconfig
 
 func restart():
 	curr_scene.restart_floor()
