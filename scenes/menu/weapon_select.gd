@@ -51,3 +51,4 @@ func untoggling(button:Button):
 func equip(num:int):
 	print(num)
 	player_config.set_value("weapons",hand,num)
+	player_config.save("res://config/player.cfg")

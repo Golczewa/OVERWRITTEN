@@ -40,6 +40,14 @@ offset_top = 95.0
 offset_right = 23.0
 offset_bottom = 95.0
 
+[node name="Control2" parent="." unique_id=2034477685 instance=ExtResource("3_dxkar")]
+layout_mode = 1
+offset_left = 243.0
+offset_top = 94.0
+offset_right = 243.0
+offset_bottom = 94.0
+hand = "right"
+
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1367755251]
 layout_mode = 0
 offset_left = 573.0

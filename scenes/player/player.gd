@@ -32,8 +32,6 @@ var score
 
 func _ready() -> void:
 	score=get_parent().gameScore
-	right_weapon=$AnimatedSprite2D/righthand.equip("res://scenes/player/player_revolver.tscn")
-	left_weapon=$AnimatedSprite2D/lefthand.equip("res://scenes/player/player_patchwork.tscn")
 	$Camera2D/CanvasLayer.hide()
 	charges.max_value=heal_cd
 	charges.value=heal_cd
@@ -189,4 +187,7 @@ func add_ghost():
 		get_tree().current_scene.add_child(ghost_inst)
 		await get_tree().create_timer(0.01).timeout
 	
+func equip_weapons():
+	right_weapon=$AnimatedSprite2D/righthand.equip()
+	left_weapon=$AnimatedSprite2D/lefthand.equip()
 	

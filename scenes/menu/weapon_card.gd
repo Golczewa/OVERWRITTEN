@@ -7,15 +7,17 @@ var player_config:ConfigFile
 func _ready() -> void:
 	load_config()
 	$button.pressed.connect(weapon_panel)
-	update(player_config.get_value("weapons",hand))
-
+	update()
+	
+	
 func weapon_panel():
 	var panel=panel_pack.instantiate()
 	panel.hand=hand
+	panel.closed.connect(update)
 	get_parent().add_child(panel)
 
-func update(num):
-	print(num)
+func update():
+	var num =player_config.get_value("weapons",hand)
 	$Label.text=weapons.get_value(str(num),"name","skill issue")
 	$TextureRect.texture=load(weapons.get_value(str(num),"image","res://icon.svg"))
 	

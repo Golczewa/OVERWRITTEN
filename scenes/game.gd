@@ -24,6 +24,7 @@ func load_level(path:String):
 	level.player=player
 	curr_scene=level
 	add_child(level)
+	$CharacterBody2D.equip_weapons()
 	resetScore()
 	$Timer.start(1)
 
