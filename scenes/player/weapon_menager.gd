@@ -5,7 +5,13 @@ extends Node2D
 var weapons:ConfigFile
 var player_config:ConfigFile
 
-
+func _ready() -> void:
+	var config=ConfigFile.new()
+	var err = config.load("res://config/weapons.cfg")
+	if err!=OK:
+		print("confing loading error")
+		return
+	weapons=config
 
 func equip():
 	load_config()
@@ -20,14 +26,9 @@ func equip():
 	return weapon
 
 func load_config():
-	var config=ConfigFile.new()
-	var err = config.load("res://config/weapons.cfg")
-	if err!=OK:
-		print("confing loading error")
-		return
-	weapons=config
 	var newconfig=ConfigFile.new()
 	var newerr = newconfig.load("res://config/player.cfg")
 	if newerr!=OK:
 		print("confing loading error")
+		return
 	player_config=newconfig

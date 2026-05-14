@@ -2,5 +2,5 @@ extends Button
 
 
 
-func setup(name,img):
+func setup(_name,img):
 	icon=load(img)

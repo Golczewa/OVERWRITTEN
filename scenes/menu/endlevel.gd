@@ -22,4 +22,7 @@ func hidee():
 func format_time(time:int):
 	var seconds=time%60
 	var minutes=time/60
-	return str(minutes)+":"+str(seconds)
+	var zero=""
+	if seconds>10:
+		zero="0"
+	return str(minutes)+":"+zero+str(seconds)
