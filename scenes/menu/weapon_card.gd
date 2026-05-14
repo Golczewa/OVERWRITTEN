@@ -11,6 +11,7 @@ func _ready() -> void:
 
 func weapon_panel():
 	var panel=panel_pack.instantiate()
+	panel.hand=hand
 	get_parent().add_child(panel)
 
 func update(num):

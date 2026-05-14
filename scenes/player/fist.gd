@@ -18,6 +18,7 @@ func attack():
 		await  $AnimatedSprite2D.animation_finished
 		$AnimatedSprite2D.frame=0
 		get_tree().create_timer(cooldown).timeout.connect(end_cd)
+
 func _physics_process(delta: float) -> void:
 	look_at(get_global_mouse_position())
 
