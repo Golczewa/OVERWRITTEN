@@ -32,9 +32,10 @@ texture = ExtResource("1_gtl4y")
 
 [node name="Label" type="Label" parent="." unique_id=1399336506]
 layout_mode = 0
-offset_left = 45.0
-offset_top = 150.0
-offset_right = 160.0
-offset_bottom = 193.0
+offset_left = 8.0
+offset_top = 153.0
+offset_right = 187.0
+offset_bottom = 196.0
 text = "Weapon"
 label_settings = SubResource("LabelSettings_u1kcl")
+horizontal_alignment = 1

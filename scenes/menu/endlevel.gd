@@ -23,6 +23,6 @@ func format_time(time:int):
 	var seconds=time%60
 	var minutes=time/60
 	var zero=""
-	if seconds>10:
+	if seconds<10:
 		zero="0"
 	return str(minutes)+":"+zero+str(seconds)
