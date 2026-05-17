@@ -4,3 +4,4 @@
 /addons/
 .idea/
 CMakePresets.json
+.vscode/
