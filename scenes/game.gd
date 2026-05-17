@@ -11,6 +11,8 @@ var weapons:ConfigFile
 var player_config:ConfigFile
 
 func _ready() -> void:
+	get_parent().menu.connect(hideGameUI)
+	get_parent().game.connect(showGameUI)
 	$"CanvasLayer/skill issue".restart.connect(restart)
 	$CanvasLayer/pause/Button3.pressed.connect(restart)
 	$Timer.timeout.connect(add_time)

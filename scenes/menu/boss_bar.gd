@@ -3,6 +3,7 @@ var boss_name:String ="Lorem ipsum"
 
 
 func _ready() -> void:
+	get_tree().current_scene.menu.connect(boss_is_out)
 	get("theme_override_styles/fill").bg_color = Color.RED
 	hide()
 

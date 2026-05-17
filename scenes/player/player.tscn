@@ -51,15 +51,12 @@ position = Vector2(-8, -4)
 hand = "left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1840891722]
-visible = false
 shape = SubResource("RectangleShape2D_dqkch")
 
 [node name="AnimatedSprite2D2" parent="." unique_id=1439691933 instance=ExtResource("5_qlg0r")]
-visible = false
 show_behind_parent = true
 
 [node name="Timer" type="Timer" parent="." unique_id=39781936]
 one_shot = true
 
 [node name="Camera2D" parent="." unique_id=518007863 instance=ExtResource("6_tuyoq")]
-visible = false

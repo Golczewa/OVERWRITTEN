@@ -1,6 +1,8 @@
 extends Node
 
 var state=0
+signal menu
+signal game
 
 func _ready() -> void:
 	$game.hide()
@@ -9,7 +11,7 @@ func _ready() -> void:
 	$game/CanvasLayer/pause/Button2.pressed.connect(back_to_menu)
 	
 func play_game(path:String):
-	$game.showGameUI()
+	emit_signal("game")
 	$game.process_mode=Node.PROCESS_MODE_INHERIT
 	$game.load_level(path)
 	$CanvasLayer.hide()
@@ -18,10 +20,8 @@ func play_game(path:String):
 
 func back_to_menu():
 	get_tree().paused = false
-	$game.hideGameUI()
+	emit_signal("menu")
 	$game.process_mode=Node.PROCESS_MODE_DISABLED
-	$CanvasLayer.show()
-	$CanvasLayer/menu.get_main_menu()
 	$CanvasLayer.process_mode=Node.PROCESS_MODE_INHERIT
 	state=0
 	

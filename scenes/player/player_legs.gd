@@ -2,7 +2,7 @@ extends AnimatedSprite2D
 var dir_
 
 func walk(dir):
-	play("walk")
+	play("walk2")
 	dir_=dir
 	
 func stop_walking():
