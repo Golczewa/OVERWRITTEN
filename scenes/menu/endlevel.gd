@@ -13,7 +13,7 @@ func setup(score:Dictionary):
 	$used2.text="Score: "+str(score["rank"])
 	$rank.text="Rank: "+score["rank"]
 
-func count_score(score:Dictionary):
+func count_score(_score:Dictionary):
 	pass
 
 func hidee():
@@ -21,7 +21,7 @@ func hidee():
 
 func format_time(time:int):
 	var seconds=time%60
-	var minutes=time/60
+	var minutes=(time/60)
 	var zero=""
 	if seconds<10:
 		zero="0"
