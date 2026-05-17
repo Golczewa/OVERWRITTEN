@@ -49,6 +49,15 @@ func untoggling(button:Button):
 	to_untoggle=button
 
 func equip(num:int):
-	print(num)
-	player_config.set_value("weapons",hand,num)
+	var current_weapon = player_config.get_value("weapons", hand)
+	if num == current_weapon:
+		return
+	var other_hand = null
+	for side in ["left", "right"]:
+		if side != hand and player_config.get_value("weapons", side) == num:
+			other_hand = side
+			break
+	if other_hand != null:
+		player_config.set_value("weapons", other_hand, current_weapon)
+	player_config.set_value("weapons", hand, num)
 	player_config.save("res://config/player.cfg")

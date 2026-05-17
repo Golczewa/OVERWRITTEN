@@ -8,6 +8,9 @@ func _ready() -> void:
 	load_config()
 	$Button.pressed.connect(play)
 	$Button2.pressed.connect(go_back)
+	$Control.update_all_sig.connect(update_all)
+	$Control2.update_all_sig.connect(update_all)
+
 
 
 func setup(num:int):
@@ -45,3 +48,7 @@ func load_config():
 		print("confing loading error")
 		return
 	levels=config
+
+func update_all():
+	$Control.update()
+	$Control2.update()
