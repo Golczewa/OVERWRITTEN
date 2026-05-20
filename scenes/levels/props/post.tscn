@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://bn4nlbvpeol31"]
+
+[ext_resource type="Texture2D" uid="uid://7udl0jyeut5g" path="res://asstets/props/pneumatic_post.png" id="1_ouxmy"]
+[ext_resource type="Script" uid="uid://dvm0okruw6ana" path="res://scenes/levels/props/post.gd" id="1_pi01h"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pi01h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ouxmy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nglee"]
+size = Vector2(61, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pi01h"]
+size = Vector2(27, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_athag"]
+size = Vector2(40, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_62hgh"]
+size = Vector2(88, 41)
+
+[node name="Area2D" type="Area2D" unique_id=1422119035]
+script = ExtResource("1_pi01h")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=423433257]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D" unique_id=1516129138]
+position = Vector2(-15, -9)
+sprite_frames = SubResource("SpriteFrames_pi01h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1791648862]
+position = Vector2(0.5, -13.5)
+shape = SubResource("RectangleShape2D_nglee")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=946515817]
+position = Vector2(-43.5, -14.5)
+shape = SubResource("RectangleShape2D_pi01h")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=801130286]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_athag")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=917889910]
+position = Vector2(-13, 16.5)
+shape = SubResource("RectangleShape2D_62hgh")

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cuxbevpy7k8jy"]
+
+[ext_resource type="Script" uid="uid://bl0mvsi18ij2l" path="res://scenes/menu/post_menu.gd" id="1_f38p2"]
+[ext_resource type="PackedScene" uid="uid://bpf5ntl6k4qfh" path="res://scenes/menu/weapon_card.tscn" id="1_wxtlm"]
+
+[node name="Control" type="Control" unique_id=77048239]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f38p2")
+
+[node name="Control" parent="." unique_id=1310289588 instance=ExtResource("1_wxtlm")]
+layout_mode = 1
+offset_left = 376.0
+offset_top = 153.0
+offset_right = 376.0
+offset_bottom = 153.0
+
+[node name="Control2" parent="." unique_id=1779067292 instance=ExtResource("1_wxtlm")]
+layout_mode = 1
+offset_left = 649.0
+offset_top = 155.0
+offset_right = 649.0
+offset_bottom = 155.0
+hand = "right"

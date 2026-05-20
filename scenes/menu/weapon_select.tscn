@@ -41,9 +41,9 @@ offset_bottom = 630.0
 
 [node name="Button" type="Button" parent="Panel" unique_id=1659947161]
 layout_mode = 0
-offset_left = 253.0
-offset_top = 573.0
-offset_right = 482.0
-offset_bottom = 638.0
+offset_left = 48.0
+offset_top = 537.0
+offset_right = 277.0
+offset_bottom = 602.0
 text = "Back
 "

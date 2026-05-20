@@ -14,6 +14,7 @@ var heal_charge=3
 @onready var legs=$AnimatedSprite2D2
 @onready var heath_bar=$Camera2D/CanvasLayer/Label
 @onready var charges=$Camera2D/CanvasLayer/ProgressBar
+@onready var canvas=$Camera2D/CanvasLayer
 var left_weapon
 var right_weapon
 var left_up_weapon

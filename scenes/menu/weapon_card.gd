@@ -2,6 +2,7 @@ extends Control
 var panel_pack =preload("res://scenes/menu/weapon_select.tscn")
 var weapons:ConfigFile
 var player_config:ConfigFile
+var where_add_menu
 @export var hand="left"
 signal update_all_sig
 func _ready() -> void:
