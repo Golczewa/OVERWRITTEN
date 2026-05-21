@@ -29,3 +29,6 @@ position = Vector2(-188, -546)
 
 [node name="CharacterBody2D2" parent="enemies" unique_id=943878568 instance=ExtResource("6_35l1y")]
 position = Vector2(342, -198)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=831006016]
+color = Color(0.4045111, 0.40451115, 0.4045111, 1)
