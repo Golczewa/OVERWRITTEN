@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://dico4xcxnqi3w"]
+
+[ext_resource type="Texture2D" uid="uid://bfqtecnk8hw27" path="res://asstets/props/le_door.png" id="1_prr7n"]
+[ext_resource type="Script" uid="uid://b3bdnpfh4ljga" path="res://scenes/levels/props/double_doors.gd" id="1_x88ls"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x88ls"]
+atlas = ExtResource("1_prr7n")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23rci"]
+atlas = ExtResource("1_prr7n")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mr0c"]
+atlas = ExtResource("1_prr7n")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mhkl"]
+atlas = ExtResource("1_prr7n")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yntnm"]
+atlas = ExtResource("1_prr7n")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pypc2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x88ls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23rci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mr0c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mhkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yntnm")
+}],
+"loop": false,
+"name": &"open",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8b7lw"]
+size = Vector2(6, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_prr7n"]
+size = Vector2(148, 128)
+
+[node name="Area2D" type="Area2D" unique_id=867155296]
+collision_mask = 13
+script = ExtResource("1_x88ls")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=73379836]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D" unique_id=107322879]
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_pypc2")
+animation = &"open"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="StaticBody2D" unique_id=59349463]
+position = Vector2(0, 32)
+scale = Vector2(1, -1)
+sprite_frames = SubResource("SpriteFrames_pypc2")
+animation = &"open"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1263993742]
+shape = SubResource("RectangleShape2D_8b7lw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=271846695]
+shape = SubResource("RectangleShape2D_prr7n")

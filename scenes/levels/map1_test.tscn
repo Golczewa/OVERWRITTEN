@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dxmydvdht7qtw" path="res://asstets/tiles/tiles_level0_v.png" id="2_yye5b"]
 [ext_resource type="Texture2D" uid="uid://d0hfxdd6ns7a0" path="res://asstets/walls/wall_level0.png" id="3_vntj0"]
+[ext_resource type="PackedScene" uid="uid://dico4xcxnqi3w" path="res://scenes/levels/props/double_doors.tscn" id="4_gye2n"]
 [ext_resource type="PackedScene" uid="uid://bn4nlbvpeol31" path="res://scenes/levels/props/post.tscn" id="4_kwli8"]
 [ext_resource type="PackedScene" uid="uid://eapp1741qlvm" path="res://scenes/levels/props/doors.tscn" id="4_thegj"]
 [ext_resource type="PackedScene" uid="uid://bevjcpo0ytymi" path="res://scenes/levels/props/fan_stealmail.tscn" id="5_s5d2s"]
@@ -96,17 +97,13 @@ tile_set = SubResource("TileSet_hpvma")
 [node name="Area2D4" parent="doors" unique_id=219715312 instance=ExtResource("4_thegj")]
 position = Vector2(-124, -192)
 
-[node name="Area2D" parent="doors" unique_id=1880934865 instance=ExtResource("4_thegj")]
-position = Vector2(96, 68)
-rotation = 1.5707964
-
-[node name="Area2D2" parent="doors" unique_id=594008904 instance=ExtResource("4_thegj")]
-position = Vector2(32, 67)
-rotation = -1.5707964
-
 [node name="Area2D3" parent="doors" unique_id=2132553045 instance=ExtResource("4_thegj")]
-position = Vector2(-125, -128)
+position = Vector2(-124, -128)
 rotation = 3.1415925
+
+[node name="Area2D" parent="doors" unique_id=867155296 instance=ExtResource("4_gye2n")]
+position = Vector2(64, 68)
+rotation = 1.5707964
 
 [node name="Area2D" parent="." unique_id=1422119035 instance=ExtResource("4_kwli8")]
 position = Vector2(-324, -182)

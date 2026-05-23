@@ -22,6 +22,7 @@ func setup(num:int):
 		$rank.text="Rank: "+levels.get_value(section_name,"rank")
 		$score.text="Best score: "+str(levels.get_value(section_name,"score"))
 		path=levels.get_value(section_name,"path")
+		update_all()
 
 func play():
 		get_tree().current_scene.play_game(path)
