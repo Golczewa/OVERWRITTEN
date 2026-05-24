@@ -13,7 +13,7 @@ script = ExtResource("1_mk54j")
 [node name="map" parent="." unique_id=774230127 instance=ExtResource("1_p7kkn")]
 
 [node name="Area2D" parent="." unique_id=1410637359 instance=ExtResource("5_grpmd")]
-position = Vector2(64, -676)
+position = Vector2(64, -675)
 rotation = -1.5707964
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1860784172]
