@@ -128,11 +128,11 @@ func can_see_player():
 func  chase():
 	speed=200
 	rot_speed=20
+	legs.run()
+	nav_agent.target_position=player.global_position
 	if nav_agent.is_navigation_finished():
-		direction=Vector2.ZERO
+		direction = global_position.direction_to(player.global_position)
 	else:
-		legs.run()
-		nav_agent.target_position=player.global_position
 		var next_path=nav_agent.get_next_path_position()
 		direction = global_position.direction_to(next_path)
 

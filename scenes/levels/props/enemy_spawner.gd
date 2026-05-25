@@ -17,10 +17,11 @@ func spawn_wave():
 		for enemy in wave:
 			for i in range(enemy[0]):
 				var enemy_inst=enemy[1].instantiate()
-				enemy_inst.global_position=$Marker2D.global_position
+				var spawn_offset = Vector2(randf_range(-8, 8), randf_range(-8, 8))
+				enemy_inst.global_position=$Marker2D.global_position + spawn_offset
 				enemy_inst.player_sighted=true
 				_floor.get_node("enemies").add_child(enemy_inst)
-				await  get_tree().create_timer(1).timeout
+				await get_tree().create_timer(1).timeout
 		wave_counter=wave_counter+1
 		$AnimatedSprite2D.play_backwards("default")
 	else :
