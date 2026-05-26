@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://bujl56eesocv5"]
 
 [ext_resource type="Texture2D" uid="uid://dxmydvdht7qtw" path="res://asstets/tiles/tiles_level0_v.png" id="1_j52oj"]
-[ext_resource type="Texture2D" uid="uid://d0hfxdd6ns7a0" path="res://asstets/walls/wall_level0.png" id="2_cins8"]
+[ext_resource type="TileSet" uid="uid://b14ewh2p8sgeo" path="res://asstets/tiles/wall2.tres" id="2_04n4t"]
 [ext_resource type="PackedScene" uid="uid://eapp1741qlvm" path="res://scenes/levels/props/doors.tscn" id="3_a65vu"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_j52oj"]
@@ -28,23 +28,6 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_uqqt2")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0a5ke"]
-texture = ExtResource("2_cins8")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -7.6471386, -16, -7.6471386, 16, -16, 16)
-0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, -16, 7.6471386, 16, 7.6471386, 16, 16)
-1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 7.6471386, -16, 7.6471386, 16, 16, 16)
-1:1/0 = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, -7.6471386, -16, -7.6471386, -16, -16)
-
-[sub_resource type="TileSet" id="TileSet_rbbu0"]
-tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_0a5ke")
-
 [node name="NavigationRegion2D" type="NavigationRegion2D" unique_id=1450460285]
 navigation_polygon = SubResource("NavigationPolygon_j52oj")
 
@@ -55,7 +38,7 @@ tile_set = SubResource("TileSet_srr10")
 [node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1535955610]
 z_index = 2
 tile_map_data = PackedByteArray("AAAGAPT/AQAAAAAAAAAGAPX/AQAAAAAAAAAGAPb/AQAAAAAAAAAGAPf/AQAAAAAAAAAGAPj/AQAAAAAAAAAGAPn/AQAAAAAAAAAGAPr/AQAAAAAAAAAGAPv/AQAAAAAAAAAGAPz/AQAAAAAAAAAGAP3/AQAAAAAAAAAGAP7/AQAAAAAAAAAGAP//AQAAAAAAAAAGAAAAAQAAAAAAAAAGAAEAAQAAAAAAAAAGAAIAAQAAAAAAAAD5//T/AQABAAAAAAD5//X/AQABAAAAAAD5//b/AQABAAAAAAD5//f/AQABAAAAAAD5//j/AQABAAAAAAD5//n/AQABAAAAAAD5//r/AQABAAAAAAD5//3/AQABAAAAAAD5//7/AQABAAAAAAD5////AQABAAAAAAD5/wAAAQABAAAAAAD5/wEAAQABAAAAAAD5/wIAAQABAAAAAAD6//P/AQAAAAEAAAD7//P/AQAAAAEAAAD8//P/AQAAAAEAAAABAPP/AQAAAAEAAAACAPP/AQAAAAEAAAADAPP/AQAAAAEAAAAEAPP/AQAAAAEAAAAFAPP/AQAAAAEAAAD6/wMAAQABAAEAAAD7/wMAAQABAAEAAAD8/wMAAQABAAEAAAD9/wMAAQABAAEAAAD+/wMAAQABAAEAAAABAAMAAQABAAEAAAACAAMAAQABAAEAAAADAAMAAQABAAEAAAAEAAMAAQABAAEAAAAFAAMAAQABAAEAAAD6/+z/AQAAAAEAAAD7/+z/AQAAAAEAAAD8/+z/AQAAAAEAAAD9/+z/AQAAAAEAAAD+/+z/AQAAAAEAAAABAOz/AQAAAAEAAAACAOz/AQAAAAEAAAADAOz/AQAAAAEAAAAEAOz/AQAAAAEAAAAFAOz/AQAAAAEAAAAGAO3/AQAAAAAAAAAGAO7/AQAAAAAAAAAGAO//AQAAAAAAAAAGAPD/AQAAAAAAAAAGAPH/AQAAAAAAAAAGAPL/AQAAAAAAAAAGAPP/AQAAAAAAAAD5/+3/AQABAAAAAAD5/+7/AQABAAAAAAD5/+//AQABAAAAAAD5//D/AQABAAAAAAD5//H/AQABAAAAAAD5//L/AQABAAAAAAD5//P/AQABAAAAAADw/wMAAQABAAEAAADx/wMAAQABAAEAAADy/wMAAQABAAEAAADz/wMAAQABAAEAAAD0/wMAAQABAAEAAAD1/wMAAQABAAEAAAD2/wMAAQABAAEAAAD3/wMAAQABAAEAAAD4/wMAAQABAAEAAAD5/wMAAQABAAEAAADw/+z/AQAAAAEAAADx/+z/AQAAAAEAAADy/+z/AQAAAAEAAAD3/+z/AQAAAAEAAAD4/+z/AQAAAAEAAAD5/+z/AQAAAAEAAADv/+3/AQABAAAAAADv/+7/AQABAAAAAADv/+//AQABAAAAAADv//D/AQABAAAAAADv//H/AQABAAAAAADv//L/AQABAAAAAADv//P/AQABAAAAAADv//T/AQABAAAAAADv//X/AQABAAAAAADv//b/AQABAAAAAADv//f/AQABAAAAAADv//j/AQABAAAAAADv//n/AQABAAAAAADv//r/AQABAAAAAADv//v/AQABAAAAAADv//z/AQABAAAAAADv//3/AQABAAAAAADv//7/AQABAAAAAADv////AQABAAAAAADv/wAAAQABAAAAAADv/wEAAQABAAAAAADv/wIAAQABAAAAAAA=")
-tile_set = SubResource("TileSet_rbbu0")
+tile_set = ExtResource("2_04n4t")
 
 [node name="doors" type="Node2D" parent="." unique_id=1282620127]
 
