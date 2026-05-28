@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bqml6iwreuavg"]
+
+[ext_resource type="Texture2D" uid="uid://dkvpv022ctymn" path="res://asstets/tiles/black_backround.png" id="1_428y8"]
+
+[node name="Sprite2D" type="Sprite2D" unique_id=41209180]
+texture = ExtResource("1_428y8")
