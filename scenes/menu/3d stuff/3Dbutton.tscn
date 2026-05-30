@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://k5d3enng1mx"]
+
+[ext_resource type="ArrayMesh" uid="uid://c7pjeumicmaih" path="res://asstets/3d stuff/button1.obj" id="1_lnlwm"]
+[ext_resource type="ArrayMesh" uid="uid://bofs1p8ecqt02" path="res://asstets/3d stuff/button2.obj" id="2_20hqj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rr4j2"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdq4b"]
+albedo_color = Color(0.1584723, 0.15847233, 0.1584723, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" unique_id=309136869]
+material_override = SubResource("StandardMaterial3D_rr4j2")
+mesh = ExtResource("1_lnlwm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1854441508]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.008995533, 0)
+material_override = SubResource("StandardMaterial3D_fdq4b")
+mesh = ExtResource("2_20hqj")

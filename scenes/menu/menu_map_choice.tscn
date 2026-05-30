@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bo6iv6ycgyodt" path="res://scenes/menu/menu_map_choice.gd" id="1_086vr"]
 [ext_resource type="PackedScene" uid="uid://q6ale2m8tx0" path="res://scenes/menu/level_panel.tscn" id="2_6dt88"]
+[ext_resource type="PackedScene" uid="uid://bmps6hqseaixa" path="res://scenes/menu/3d stuff/steelmill.tscn" id="3_85pnu"]
+
+[sub_resource type="Environment" id="Environment_g5ekd"]
+background_mode = 1
 
 [node name="Control" type="Control" unique_id=1884821685]
 layout_mode = 3
@@ -41,3 +45,20 @@ text = "LEVEL 0"
 [node name="Control" parent="." unique_id=332237915 instance=ExtResource("2_6dt88")]
 visible = false
 layout_mode = 1
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1462048294]
+layout_mode = 0
+offset_left = 571.0
+offset_top = 66.0
+offset_right = 1086.0
+offset_bottom = 578.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=931915920]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=475865043]
+transform = Transform3D(0.25683153, -0.17248565, 0.95093966, -0.050196536, 0.9802362, 0.19135673, -0.9651518, -0.09688032, 0.24309735, 3.1631696, 0.28710234, 1.2810218)
+environment = SubResource("Environment_g5ekd")
+
+[node name="MeshInstance3D" parent="." unique_id=455693068 instance=ExtResource("3_85pnu")]

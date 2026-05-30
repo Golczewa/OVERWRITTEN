@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dbspqfu56vr5r"]
+
+[ext_resource type="Texture2D" uid="uid://cgjotri0t0mhd" path="res://asstets/props/stealmail_lamp.png" id="1_0eppn"]
+[ext_resource type="Texture2D" uid="uid://dsdld16o7vgly" path="res://asstets/props/steelmill_lamp2.png" id="1_gxtd8"]
+[ext_resource type="Texture2D" uid="uid://0uh0rx1ddq6w" path="res://asstets/props/light_test.png" id="2_xotw0"]
+[ext_resource type="Script" uid="uid://8v8urfgumhjs" path="res://scenes/levels/props/lamp_test.gd" id="3_fwrmw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvnwh"]
+atlas = ExtResource("1_0eppn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bhlov"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gxtd8")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvnwh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=790032022]
+sprite_frames = SubResource("SpriteFrames_bhlov")
+script = ExtResource("3_fwrmw")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=756674024]
+z_index = 4
+color = Color(1, 1, 0, 1)
+shadow_enabled = true
+texture = ExtResource("2_xotw0")
+texture_scale = 1.79
