@@ -7,6 +7,4 @@ func _ready() -> void:
 		play("default")
 	elif state == "dead":
 		play("dead")
-		$Light2D.enabled = false
-
-
+		$PointLight2D.hide()

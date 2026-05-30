@@ -92,6 +92,7 @@ rotation = -1.5707964
 [node name="AnimatedSprite2D2" parent="." unique_id=1748760106 instance=ExtResource("6_p4u2e")]
 position = Vector2(244, -48)
 rotation = 1.5707964
+state = "dead"
 
 [node name="Sprite2D" parent="." unique_id=41209180 instance=ExtResource("11_chlgw")]
 show_behind_parent = true
