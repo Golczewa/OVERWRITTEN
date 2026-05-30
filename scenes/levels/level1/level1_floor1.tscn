@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b7ar7b5gj3apb"]
+
+[ext_resource type="PackedScene" uid="uid://25td1cyhdt8b" path="res://scenes/levels/level1/level1_floor1_map.tscn" id="1_doynn"]
+[ext_resource type="Script" uid="uid://bk5gjs3u4y30e" path="res://scenes/levels/level1/level_1_floor_1.gd" id="1_n6fr6"]
+[ext_resource type="PackedScene" uid="uid://gvdpfkhlvqdq" path="res://scenes/levels/props/transition.tscn" id="2_7tjud"]
+
+[node name="Node2D" type="Node2D" unique_id=596077465]
+script = ExtResource("1_n6fr6")
+
+[node name="map" parent="." unique_id=1537283447 instance=ExtResource("1_doynn")]
+
+[node name="Area2D" parent="." unique_id=1410637359 instance=ExtResource("2_7tjud")]
+position = Vector2(285, 32)
+
+[node name="Marker2D2" type="Marker2D" parent="." unique_id=1054578562]
+position = Vector2(39, 7)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1818859340]
+color = Color(0.4045111, 0.40451115, 0.4045111, 1)
