@@ -188,5 +188,5 @@ state = "dead"
 
 [node name="Sprite2D" parent="." unique_id=41209180 instance=ExtResource("7_1k5hy")]
 show_behind_parent = true
-position = Vector2(37.00003, 28.999992)
-scale = Vector2(6.890625, 4.890625)
+position = Vector2(55.50004, 40.00003)
+scale = Vector2(9.601563, 7.4218755)
