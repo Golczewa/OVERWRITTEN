@@ -7,7 +7,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fd3cx"]
 render_priority = 0
 shader = ExtResource("1_fd3cx")
-shader_parameter/hologram_color = Color(1, 0, 0, 1)
+shader_parameter/hologram_color = Color(0.5372549, 0, 0.101960786, 1)
 shader_parameter/dot_scale = 50.0
 shader_parameter/dot_size = 0.2
 
