@@ -1,11 +1,17 @@
 [gd_scene format=3 uid="uid://cwqiuufv88ki0"]
 
 [ext_resource type="Script" uid="uid://dac76vsrdek72" path="res://scenes/menu/menu.gd" id="1_yqeox"]
-[ext_resource type="Texture2D" uid="uid://blyidninmeh4q" path="res://asstets/menu/title.png" id="2_037ec"]
 [ext_resource type="PackedScene" uid="uid://d0m7o7ingoi7t" path="res://scenes/menu/menu_map_choice.tscn" id="2_vjb58"]
 [ext_resource type="Texture2D" uid="uid://dkvpv022ctymn" path="res://asstets/tiles/black_backround.png" id="2_y1o0p"]
+[ext_resource type="Texture2D" uid="uid://btqc6slrw5iva" path="res://asstets/menu/ascii-text-art.png" id="3_3y2rt"]
 [ext_resource type="PackedScene" uid="uid://dorivql3hpxew" path="res://scenes/menu/endlevel.tscn" id="3_e0arn"]
 [ext_resource type="Theme" uid="uid://wmjvw5llbpog" path="res://asstets/menu/button_theme.tres" id="3_r8yej"]
+[ext_resource type="FontFile" uid="uid://d1feesbwk46ll" path="res://asstets/menu/DroidSansMono.ttf" id="5_3y2rt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_t0a87"]
+line_spacing = 0.0
+font = ExtResource("5_3y2rt")
+font_size = 14
 
 [node name="Control" type="Control" unique_id=937757178]
 layout_mode = 3
@@ -32,12 +38,12 @@ texture = ExtResource("2_y1o0p")
 [node name="TextureRect" type="TextureRect" parent="Panel" unique_id=452749659]
 modulate = Color(0.5358087, 0, 0.10357297, 1)
 layout_mode = 0
-offset_left = 157.0
-offset_top = 149.0
-offset_right = 1034.0
-offset_bottom = 396.0
-texture = ExtResource("2_037ec")
-stretch_mode = 4
+offset_left = 65.0
+offset_top = 153.0
+offset_right = 1136.0
+offset_bottom = 283.0
+texture = ExtResource("3_3y2rt")
+expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1503875628]
 layout_mode = 0
@@ -50,16 +56,30 @@ offset_bottom = 560.0
 layout_mode = 2
 theme = ExtResource("3_r8yej")
 text = "> Play"
+alignment = 0
 
 [node name="Button3" type="Button" parent="Panel/VBoxContainer" unique_id=2112177484]
 layout_mode = 2
 theme = ExtResource("3_r8yej")
 text = "> Settings"
+alignment = 0
 
 [node name="Button2" type="Button" parent="Panel/VBoxContainer" unique_id=2024678113]
 layout_mode = 2
 theme = ExtResource("3_r8yej")
 text = "> Exit"
+alignment = 0
+
+[node name="Label" type="Label" parent="Panel" unique_id=584176809]
+visible = false
+layout_mode = 0
+offset_left = 58.0
+offset_top = 534.0
+offset_right = 1261.0
+offset_bottom = 574.0
+text = "  ██████╗ ██╗   ██╗███████╗██████╗ ██╗    ██╗██████╗ ██╗████████╗████████╗███████╗███╗   ██╗
+██╔═══██╗██║   ██║██╔════╝██╔══██╗██║    ██║██╔══██╗██║╚══██╔══╝╚══██╔══╝██╔════╝████╗  ██║"
+label_settings = SubResource("LabelSettings_t0a87")
 
 [node name="map_choice" parent="." unique_id=1884821685 instance=ExtResource("2_vjb58")]
 visible = false
