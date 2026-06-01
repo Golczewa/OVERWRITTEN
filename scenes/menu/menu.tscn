@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dorivql3hpxew" path="res://scenes/menu/endlevel.tscn" id="3_e0arn"]
 [ext_resource type="Theme" uid="uid://wmjvw5llbpog" path="res://asstets/menu/button_theme.tres" id="3_r8yej"]
 [ext_resource type="FontFile" uid="uid://d1feesbwk46ll" path="res://asstets/menu/DroidSansMono.ttf" id="5_3y2rt"]
+[ext_resource type="Script" uid="uid://uamd46ltc757" path="res://scenes/menu/menu_button.gd" id="5_t0a87"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_t0a87"]
 line_spacing = 0.0
@@ -29,9 +30,9 @@ script = ExtResource("1_yqeox")
 
 [node name="Panel" type="TextureRect" parent="." unique_id=1341140100]
 layout_mode = 0
-offset_left = -25.0
+offset_left = -26.0
 offset_top = -20.0
-offset_right = 1177.0
+offset_right = 1176.0
 offset_bottom = 684.0
 texture = ExtResource("2_y1o0p")
 
@@ -55,20 +56,23 @@ offset_bottom = 560.0
 [node name="Button" type="Button" parent="Panel/VBoxContainer" unique_id=1737624102]
 layout_mode = 2
 theme = ExtResource("3_r8yej")
-text = "> Play"
+text = "  Play"
 alignment = 0
+script = ExtResource("5_t0a87")
 
 [node name="Button3" type="Button" parent="Panel/VBoxContainer" unique_id=2112177484]
 layout_mode = 2
 theme = ExtResource("3_r8yej")
-text = "> Settings"
+text = "  Settings"
 alignment = 0
+script = ExtResource("5_t0a87")
 
 [node name="Button2" type="Button" parent="Panel/VBoxContainer" unique_id=2024678113]
 layout_mode = 2
 theme = ExtResource("3_r8yej")
-text = "> Exit"
+text = "  Exit"
 alignment = 0
+script = ExtResource("5_t0a87")
 
 [node name="Label" type="Label" parent="Panel" unique_id=584176809]
 visible = false
