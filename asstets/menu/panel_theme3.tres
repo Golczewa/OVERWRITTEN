@@ -1,0 +1,23 @@
+[gd_resource type="Theme" format=3 uid="uid://dgfg2te01wwei"]
+
+[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="1_qpbao"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hmmmm"]
+bg_color = Color(0.691167, 1.755569e-05, 0.057135873, 1)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ejjay"]
+bg_color = Color(0.54509807, 0, 0.03529412, 1)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_26pdb"]
+bg_color = Color(0.8666667, 0.101960786, 0.21568628, 1)
+border_color = Color(0, 0, 0, 1)
+
+[resource]
+Button/colors/font_color = Color(0.8666667, 0.101960786, 0.21568628, 1)
+Button/font_sizes/font_size = 22
+Button/fonts/font = ExtResource("1_qpbao")
+Button/styles/hover = SubResource("StyleBoxFlat_hmmmm")
+Button/styles/normal = SubResource("StyleBoxFlat_ejjay")
+Button/styles/pressed = SubResource("StyleBoxFlat_26pdb")

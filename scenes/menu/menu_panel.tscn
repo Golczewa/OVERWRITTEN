@@ -1,46 +1,10 @@
 [gd_scene format=3 uid="uid://cov4er266dbmo"]
 
+[ext_resource type="Theme" uid="uid://da1tvrlo4v74u" path="res://asstets/menu/panel_theme1.tres" id="1_hmmmm"]
 [ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="1_l5j5w"]
 [ext_resource type="Script" uid="uid://20xrquao5m0c" path="res://scenes/menu/menu_panel.gd" id="2_lwcl5"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lwcl5"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 7
-border_width_top = 7
-border_width_right = 7
-border_width_bottom = 7
-border_color = Color(0.5455139, 0, 0.034204792, 1)
-
-[sub_resource type="Theme" id="Theme_ejjay"]
-default_font = ExtResource("1_l5j5w")
-Panel/styles/panel = SubResource("StyleBoxFlat_lwcl5")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l5j5w"]
-bg_color = Color(0.86528057, 0.10152186, 0.21743052, 1)
-border_width_bottom = 7
-border_color = Color(0.54509807, 0, 0.03529412, 1)
-
-[sub_resource type="Theme" id="Theme_lwcl5"]
-Panel/styles/panel = SubResource("StyleBoxFlat_l5j5w")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hmmmm"]
-bg_color = Color(0.691167, 1.755569e-05, 0.057135873, 1)
-border_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ejjay"]
-bg_color = Color(0.54509807, 0, 0.03529412, 1)
-border_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_26pdb"]
-bg_color = Color(0.8666667, 0.101960786, 0.21568628, 1)
-border_color = Color(0, 0, 0, 1)
-
-[sub_resource type="Theme" id="Theme_26pdb"]
-Button/colors/font_color = Color(0.8666667, 0.101960786, 0.21568628, 1)
-Button/font_sizes/font_size = 22
-Button/styles/hover = SubResource("StyleBoxFlat_hmmmm")
-Button/styles/normal = SubResource("StyleBoxFlat_ejjay")
-Button/styles/pressed = SubResource("StyleBoxFlat_26pdb")
+[ext_resource type="Theme" uid="uid://c11w2xmim6hpl" path="res://asstets/menu/panel_theme2.tres" id="3_druww"]
+[ext_resource type="Theme" uid="uid://dgfg2te01wwei" path="res://asstets/menu/panel_theme3.tres" id="4_nnjte"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_l5j5w"]
 font = ExtResource("1_l5j5w")
@@ -53,7 +17,7 @@ anchor_right = 1.0090001
 anchor_bottom = 1.0220001
 offset_right = -0.368042
 offset_bottom = -0.25604248
-theme = SubResource("Theme_ejjay")
+theme = ExtResource("1_hmmmm")
 script = ExtResource("2_lwcl5")
 
 [node name="Panel" type="Panel" parent="." unique_id=1200965099]
@@ -68,7 +32,7 @@ offset_top = -0.28200054
 offset_right = -0.028076172
 offset_bottom = 0.025997162
 grow_horizontal = 2
-theme = SubResource("Theme_lwcl5")
+theme = ExtResource("3_druww")
 
 [node name="Button" type="Button" parent="Panel" unique_id=1764462718]
 layout_mode = 1
@@ -81,7 +45,7 @@ offset_left = 0.031982422
 offset_top = 0.007999897
 offset_right = 0.18395996
 offset_bottom = -0.012001038
-theme = SubResource("Theme_26pdb")
+theme = ExtResource("4_nnjte")
 text = "X"
 
 [node name="Label" type="Label" parent="Panel" unique_id=863892912]
