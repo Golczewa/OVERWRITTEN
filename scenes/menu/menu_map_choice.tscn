@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bo6iv6ycgyodt" path="res://scenes/menu/menu_map_choice.gd" id="1_086vr"]
 [ext_resource type="PackedScene" uid="uid://q6ale2m8tx0" path="res://scenes/menu/level_panel.tscn" id="2_6dt88"]
+[ext_resource type="PackedScene" uid="uid://du4k8ns7pgxg8" path="res://scenes/menu/button.tscn" id="2_g5ekd"]
 [ext_resource type="PackedScene" uid="uid://bmps6hqseaixa" path="res://scenes/menu/3d stuff/steelmill.tscn" id="3_85pnu"]
+[ext_resource type="PackedScene" uid="uid://cov4er266dbmo" path="res://scenes/menu/menu_panel.tscn" id="3_pj20j"]
 
 [sub_resource type="Environment" id="Environment_g5ekd"]
 background_mode = 1
@@ -12,54 +14,75 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -55.0
+offset_top = 5.0
+offset_right = -55.0
+offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_086vr")
 
-[node name="Button" type="Button" parent="." unique_id=711566211]
+[node name="MeshInstance3D" parent="." unique_id=455693068 instance=ExtResource("3_85pnu")]
+
+[node name="Panel" parent="." unique_id=1519181035 instance=ExtResource("3_pj20j")]
 layout_mode = 0
-offset_left = 180.0
-offset_top = 85.0
-offset_right = 338.0
-offset_bottom = 181.0
-theme_override_font_sizes/font_size = 31
-text = "TEST MAP"
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 144.0
+offset_top = 32.0
+offset_right = 1122.0
+offset_bottom = 614.0
+title = "Map.ovr"
 
-[node name="Button2" type="Button" parent="." unique_id=1557703422]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Panel" unique_id=1462048294]
 layout_mode = 0
-offset_left = 71.0
-offset_top = 506.0
-offset_right = 175.0
-offset_bottom = 552.0
-text = "BACK"
+offset_left = 26.0
+offset_top = 64.0
+offset_right = 961.0
+offset_bottom = 551.0
+stretch = true
 
-[node name="Button3" type="Button" parent="." unique_id=517805468]
-layout_mode = 0
-offset_left = 374.0
-offset_top = 85.0
-offset_right = 532.0
-offset_bottom = 181.0
-theme_override_font_sizes/font_size = 31
-text = "LEVEL 0"
-
-[node name="Control" parent="." unique_id=332237915 instance=ExtResource("2_6dt88")]
-visible = false
-layout_mode = 1
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1462048294]
-layout_mode = 0
-offset_left = 571.0
-offset_top = 66.0
-offset_right = 1086.0
-offset_bottom = 578.0
-
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=931915920]
+[node name="SubViewport" type="SubViewport" parent="Panel/SubViewportContainer" unique_id=931915920]
 handle_input_locally = false
+size = Vector2i(935, 487)
 render_target_update_mode = 4
 
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=475865043]
-transform = Transform3D(0.25683153, -0.17248565, 0.9509397, -0.050196536, 0.9802362, 0.19135675, -0.9651518, -0.09688032, 0.24309736, 4.023552, 0.28710234, 1.2810218)
+[node name="Camera3D" type="Camera3D" parent="Panel/SubViewportContainer/SubViewport" unique_id=475865043]
+transform = Transform3D(0.4163063, -0.13720675, 0.89881223, 0.01716691, 0.98955816, 0.14310817, -0.9090624, -0.044146996, 0.4143147, 2.701212, 0.51259863, 1.6485406)
 environment = SubResource("Environment_g5ekd")
 fov = 83.0
 
-[node name="MeshInstance3D" parent="." unique_id=455693068 instance=ExtResource("3_85pnu")]
+[node name="Button" type="Button" parent="Panel" unique_id=711566211]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 40.0
+offset_right = 344.0
+offset_bottom = 136.0
+theme_override_font_sizes/font_size = 31
+text = "TEST MAP"
+
+[node name="Button2" parent="Panel" unique_id=2078812563 instance=ExtResource("2_g5ekd")]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 504.0
+offset_right = 187.0
+offset_bottom = 535.0
+text = "  Back"
+
+[node name="Button3" type="Button" parent="Panel" unique_id=517805468]
+layout_mode = 0
+offset_left = 380.0
+offset_top = 40.0
+offset_right = 538.0
+offset_bottom = 136.0
+theme_override_font_sizes/font_size = 31
+text = "LEVEL 0"
+
+[node name="Control" parent="Panel" unique_id=332237915 instance=ExtResource("2_6dt88")]
+visible = false
+layout_mode = 1
+offset_left = 6.0
+offset_top = -45.0
+offset_right = 6.0
+offset_bottom = -45.0
