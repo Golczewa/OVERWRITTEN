@@ -10,7 +10,7 @@ var gameScore={"time":0,
 func _ready() -> void:
 	get_parent().menu.connect(hideGameUI)
 	get_parent().game.connect(showGameUI)
-	$"CanvasLayer/skill issue".restart.connect(restart)
+	$CanvasLayer/skill_issue.restart.connect(restart)
 	$CanvasLayer/pause/VBoxContainer/Button2.pressed.connect(restart)
 	$Timer.timeout.connect(add_time)
 
@@ -35,7 +35,7 @@ func showGameUI():
 	show()
 	$CanvasLayer.show()
 	$CanvasLayer/pause.hide()
-	$"CanvasLayer/skill issue".hide()
+	$CanvasLayer/skill_issue.hide()
 	$CharacterBody2D/Camera2D/CanvasLayer.show()
 
 func hideGameUI():

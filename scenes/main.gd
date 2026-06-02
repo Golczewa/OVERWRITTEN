@@ -9,7 +9,9 @@ func _ready() -> void:
 	$game.process_mode=Node.PROCESS_MODE_DISABLED
 	$CanvasLayer/menu/Panel/VBoxContainer/Button2.pressed.connect(exit)
 	$game/CanvasLayer/pause/VBoxContainer/Button3.pressed.connect(back_to_menu)
-	
+	$game/CanvasLayer/skill_issue/VBoxContainer/Button2.pressed.connect(back_to_menu)
+	$game/CanvasLayer/skill_issue/AspectRatioContainer.close_button.pressed.connect(back_to_menu)
+
 func play_game(path:String):
 	emit_signal("game")
 	$game.process_mode=Node.PROCESS_MODE_INHERIT

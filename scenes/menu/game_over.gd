@@ -1,12 +1,16 @@
 extends Control
 
+var dragging = false
+var drag_offset = Vector2()
+
 @onready var player = get_tree().get_first_node_in_group("player")
 signal restart
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Button.pressed.connect(when_pressed)
+	$VBoxContainer/Button.pressed.connect(when_pressed)
 	hide()
 	player.player_died.connect(on_player_died)
+	$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Control.gui_input.connect(_on_panel_container_gui_input)
 
 func on_player_died():
 	show()
@@ -17,3 +21,17 @@ func when_pressed():
 	if get_tree().paused:
 		get_tree().paused=false
 		emit_signal("restart")
+
+func _on_panel_container_gui_input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			dragging = event.pressed
+			drag_offset = get_global_mouse_position() - global_position
+			
+	if event is InputEventMouseMotion and dragging:
+		var target_position = get_global_mouse_position() - drag_offset
+		var viewport_size = get_viewport_rect().size
+		var window_size = size
+		target_position.x = clamp(target_position.x, 0, viewport_size.x - window_size.x)
+		target_position.y = clamp(target_position.y, 0, viewport_size.y - window_size.y)
+		global_position = target_position

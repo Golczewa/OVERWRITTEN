@@ -22,11 +22,11 @@ offset_top = 165.0
 offset_right = 738.0
 offset_bottom = -148.112
 
-[node name="skill issue" parent="CanvasLayer" unique_id=1312501908 instance=ExtResource("3_lnu2h")]
-offset_left = 552.0
-offset_top = 294.0
-offset_right = 632.0
-offset_bottom = 360.0
+[node name="skill_issue" parent="CanvasLayer" unique_id=1312501908 instance=ExtResource("3_lnu2h")]
+offset_left = 255.0
+offset_top = 78.0
+offset_right = 884.0
+offset_bottom = 570.0
 
 [node name="ProgressBar" parent="CanvasLayer" unique_id=884770605 instance=ExtResource("5_p57ef")]
 offset_left = 165.0
