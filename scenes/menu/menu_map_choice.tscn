@@ -48,10 +48,10 @@ fov = 83.0
 
 [node name="Button" type="Button" parent="." unique_id=711566211]
 layout_mode = 0
-offset_left = 261.0
-offset_top = 76.0
-offset_right = 419.0
-offset_bottom = 172.0
+offset_left = 84.0
+offset_top = 71.0
+offset_right = 242.0
+offset_bottom = 167.0
 theme_override_font_sizes/font_size = 31
 text = "TEST MAP"
 
@@ -65,10 +65,10 @@ text = "  Back"
 
 [node name="Button3" type="Button" parent="." unique_id=517805468]
 layout_mode = 0
-offset_left = 461.0
-offset_top = 76.0
-offset_right = 619.0
-offset_bottom = 172.0
+offset_left = 83.0
+offset_top = 192.0
+offset_right = 241.0
+offset_bottom = 288.0
 theme_override_font_sizes/font_size = 31
 text = "LEVEL 0"
 
