@@ -14,6 +14,12 @@ script = ExtResource("1_lbhrr")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1286738117]
 process_mode = 3
 
+[node name="skill_issue" parent="CanvasLayer" unique_id=1312501908 instance=ExtResource("3_lnu2h")]
+offset_left = 255.0
+offset_top = 78.0
+offset_right = 884.0
+offset_bottom = 570.0
+
 [node name="pause" parent="CanvasLayer" unique_id=801102142 instance=ExtResource("5_iywne")]
 anchors_preset = -1
 anchor_bottom = 0.994
@@ -21,12 +27,6 @@ offset_left = 466.0
 offset_top = 165.0
 offset_right = 738.0
 offset_bottom = -148.112
-
-[node name="skill_issue" parent="CanvasLayer" unique_id=1312501908 instance=ExtResource("3_lnu2h")]
-offset_left = 255.0
-offset_top = 78.0
-offset_right = 884.0
-offset_bottom = 570.0
 
 [node name="ProgressBar" parent="CanvasLayer" unique_id=884770605 instance=ExtResource("5_p57ef")]
 offset_left = 165.0

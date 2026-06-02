@@ -28,7 +28,7 @@ func load_level(path:String):
 
 func restart():
 	curr_scene.restart_floor()
-	$"CanvasLayer/skill issue".hide()
+	$CanvasLayer/skill_issue.hide()
 	$CanvasLayer/pause.hide()
  	
 func showGameUI():

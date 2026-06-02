@@ -9,6 +9,7 @@ func _ready() -> void:
 	$VBoxContainer/Button2.pressed.connect(when_pressed)
 	$AspectRatioContainer.close_button.pressed.connect(when_pressed)
 	$AspectRatioContainer/VBoxContainer/PanelContainer.gui_input.connect(_on_panel_container_gui_input)
+	$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Control.gui_input.connect(_on_panel_container_gui_input)
 
 func  _input(event: InputEvent) -> void:
 	if get_tree().current_scene.state==1:

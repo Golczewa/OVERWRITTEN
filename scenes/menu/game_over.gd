@@ -5,11 +5,12 @@ var drag_offset = Vector2()
 
 @onready var player = get_tree().get_first_node_in_group("player")
 signal restart
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	$VBoxContainer/Button.pressed.connect(when_pressed)
 	hide()
 	player.player_died.connect(on_player_died)
+	$AspectRatioContainer/VBoxContainer/PanelContainer.gui_input.connect(_on_panel_container_gui_input)
 	$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Control.gui_input.connect(_on_panel_container_gui_input)
 
 func on_player_died():

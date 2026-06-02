@@ -8,6 +8,7 @@ func _ready() -> void:
 	hide()
 	$Button.pressed.connect(level_setup.bind(0))
 	$Button3.pressed.connect(level_setup.bind(1))
+	$AspectRatioContainer/VBoxContainer/PanelContainer.gui_input.connect(_on_panel_container_gui_input)
 	$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Control.gui_input.connect(_on_panel_container_gui_input)
 	
 	
