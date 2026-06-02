@@ -17,3 +17,6 @@ mesh = ExtResource("2_fd3cx")
 
 [node name="MeshInstance3D" parent="." unique_id=309136869 instance=ExtResource("3_7ais2")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0.5096286, -0.76457185, 1.5102026)
+
+[node name="MeshInstance3D2" parent="." unique_id=1127251825 instance=ExtResource("3_7ais2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.58607286, -0.18143207, 2.761448)
