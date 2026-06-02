@@ -88,6 +88,10 @@ label_settings = SubResource("LabelSettings_t0a87")
 [node name="map_choice" parent="." unique_id=1884821685 instance=ExtResource("2_vjb58")]
 visible = false
 layout_mode = 1
+offset_left = 67.0
+offset_top = 40.0
+offset_right = -50.0
+offset_bottom = -27.0
 
 [node name="Control" parent="." unique_id=374425218 instance=ExtResource("3_e0arn")]
 visible = false

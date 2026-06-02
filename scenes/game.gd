@@ -11,7 +11,7 @@ func _ready() -> void:
 	get_parent().menu.connect(hideGameUI)
 	get_parent().game.connect(showGameUI)
 	$"CanvasLayer/skill issue".restart.connect(restart)
-	$CanvasLayer/pause/Button3.pressed.connect(restart)
+	$CanvasLayer/pause/VBoxContainer/Button2.pressed.connect(restart)
 	$Timer.timeout.connect(add_time)
 
 func load_level(path:String):

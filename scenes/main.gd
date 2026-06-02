@@ -8,7 +8,7 @@ func _ready() -> void:
 	$game.hide()
 	$game.process_mode=Node.PROCESS_MODE_DISABLED
 	$CanvasLayer/menu/Panel/VBoxContainer/Button2.pressed.connect(exit)
-	$game/CanvasLayer/pause/Button2.pressed.connect(back_to_menu)
+	$game/CanvasLayer/pause/VBoxContainer/Button3.pressed.connect(back_to_menu)
 	
 func play_game(path:String):
 	emit_signal("game")

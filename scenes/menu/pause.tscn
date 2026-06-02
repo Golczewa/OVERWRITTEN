@@ -1,47 +1,35 @@
 [gd_scene format=3 uid="uid://bgyyaiqgaghs2"]
 
 [ext_resource type="Script" uid="uid://r4w6gwo8gjxc" path="res://scenes/menu/pause.gd" id="1_f1d2v"]
+[ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="2_4wejy"]
+[ext_resource type="PackedScene" uid="uid://du4k8ns7pgxg8" path="res://scenes/menu/button.tscn" id="3_1mvc1"]
 
 [node name="Control" type="Control" unique_id=801102142]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_f1d2v")
 
-[node name="Panel2" type="Panel" parent="." unique_id=414352634]
+[node name="AspectRatioContainer" parent="." unique_id=1461861251 instance=ExtResource("2_4wejy")]
 layout_mode = 0
-offset_left = -55.0
-offset_top = -90.0
-offset_right = 54.0
-offset_bottom = 90.0
+offset_right = 272.0
+offset_bottom = 331.0
+title = "Pause"
 
-[node name="Label" type="Label" parent="Panel2" unique_id=1574522979]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=947962906]
 layout_mode = 0
-offset_left = 29.0
-offset_top = 20.0
-offset_right = 80.0
-offset_bottom = 43.0
-text = "PAUSE"
+offset_left = 53.0
+offset_top = 128.0
+offset_right = 205.0
+offset_bottom = 229.0
 
-[node name="Button" type="Button" parent="." unique_id=782064507]
-layout_mode = 0
-offset_left = -41.0
-offset_top = -40.0
-offset_right = 42.0
-offset_bottom = -9.0
-text = "RESUME"
+[node name="Button" parent="VBoxContainer" unique_id=2078812563 instance=ExtResource("3_1mvc1")]
+layout_mode = 2
+text = "  Reasume"
 
-[node name="Button2" type="Button" parent="." unique_id=315599369]
-layout_mode = 0
-offset_left = -41.0
-offset_top = 36.0
-offset_right = 42.0
-offset_bottom = 67.0
-text = "MENU"
+[node name="Button2" parent="VBoxContainer" unique_id=336210084 instance=ExtResource("3_1mvc1")]
+layout_mode = 2
+text = "  Restart"
 
-[node name="Button3" type="Button" parent="." unique_id=499512439]
-layout_mode = 0
-offset_left = -41.0
-offset_top = -3.0
-offset_right = 42.0
-offset_bottom = 28.0
-text = "RESTART"
+[node name="Button3" parent="VBoxContainer" unique_id=1750761088 instance=ExtResource("3_1mvc1")]
+layout_mode = 2
+text = "  Menu"
