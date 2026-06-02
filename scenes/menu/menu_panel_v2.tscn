@@ -48,5 +48,3 @@ text = " X "
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("1_mtpdp")
-
-[connection signal="gui_input" from="VBoxContainer/PanelContainer" to="." method="_on_panel_container_gui_input"]

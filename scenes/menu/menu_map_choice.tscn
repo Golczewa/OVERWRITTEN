@@ -14,27 +14,24 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -55.0
-offset_top = 5.0
-offset_right = -55.0
-offset_bottom = 5.0
+offset_right = -117.0
+offset_bottom = -67.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_086vr")
 
 [node name="AspectRatioContainer" parent="." unique_id=1461861251 instance=ExtResource("5_pj20j")]
 layout_mode = 0
-offset_left = 120.0
-offset_top = 20.0
-offset_right = 1158.0
-offset_bottom = 613.0
+offset_right = 1035.0
+offset_bottom = 581.0
+title = "Map"
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1462048294]
 layout_mode = 0
-offset_left = 184.0
-offset_top = 92.0
-offset_right = 1119.0
-offset_bottom = 579.0
+offset_left = 61.0
+offset_top = 60.0
+offset_right = 996.0
+offset_bottom = 547.0
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=931915920]
@@ -60,10 +57,10 @@ text = "TEST MAP"
 
 [node name="Button2" parent="." unique_id=2078812563 instance=ExtResource("2_g5ekd")]
 layout_mode = 0
-offset_left = 184.0
-offset_top = 549.0
-offset_right = 311.0
-offset_bottom = 580.0
+offset_left = 64.0
+offset_top = 516.0
+offset_right = 191.0
+offset_bottom = 547.0
 text = "  Back"
 
 [node name="Button3" type="Button" parent="." unique_id=517805468]
