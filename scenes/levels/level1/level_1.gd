@@ -9,6 +9,7 @@ var floors_loaded:Array
 var player_state:Dictionary
 var checkpoint=1
 var real_curr_floor
+var level_id=1
 
 func _ready() -> void:
 	floors_loaded.append(floor1)

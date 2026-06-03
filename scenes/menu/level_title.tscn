@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://f60moiri3nt2"]
+
+[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="1_narx1"]
+[ext_resource type="Script" uid="uid://cjvwhehrcy1vs" path="res://scenes/menu/level_title.gd" id="2_6iqaq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6iqaq"]
+font = ExtResource("1_narx1")
+font_size = 32
+font_color = Color(0.47479695, 1.1130236e-06, 3.6098064e-07, 1)
+shadow_size = 5
+
+[node name="Label" type="Label" unique_id=629147929]
+offset_left = 405.0
+offset_top = 95.0
+offset_right = 823.0
+offset_bottom = 186.0
+text = "Test"
+label_settings = SubResource("LabelSettings_6iqaq")
+horizontal_alignment = 1
+script = ExtResource("2_6iqaq")

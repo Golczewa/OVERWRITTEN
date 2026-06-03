@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b0iqe6x2742im"]
+
+[ext_resource type="Script" uid="uid://c03bcjufsm8" path="res://scenes/levels/props/namedrop.gd" id="1_ksteo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21nsl"]
+size = Vector2(90, 91)
+
+[node name="Area2D" type="Area2D" unique_id=545860116]
+script = ExtResource("1_ksteo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=630869039]
+position = Vector2(45, 46)
+shape = SubResource("RectangleShape2D_21nsl")
