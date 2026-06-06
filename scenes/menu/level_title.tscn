@@ -18,3 +18,5 @@ text = "Test"
 label_settings = SubResource("LabelSettings_6iqaq")
 horizontal_alignment = 1
 script = ExtResource("2_6iqaq")
+
+[node name="Timer" type="Timer" parent="." unique_id=1311839064]

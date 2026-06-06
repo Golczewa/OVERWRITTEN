@@ -1,18 +1,12 @@
 [gd_scene format=3 uid="uid://cad8a5ncmngqb"]
 
 [ext_resource type="FontFile" uid="uid://d1feesbwk46ll" path="res://asstets/menu/DroidSansMono.ttf" id="1_44dvt"]
-[ext_resource type="Texture2D" uid="uid://ra7arf4xalh" path="res://asstets/menu/circle_empty.png" id="2_2fj6k"]
-[ext_resource type="Texture2D" uid="uid://05fq4ec4ik6e" path="res://asstets/menu/circle_full.png" id="3_ggd0v"]
+[ext_resource type="PackedScene" uid="uid://bk5dijd6c66fc" path="res://scenes/player/heal_meter.tscn" id="3_sbsl8"]
 [ext_resource type="PackedScene" uid="uid://jvxuc6sf5ovw" path="res://scenes/menu/boss_bar.tscn" id="4_menik"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wpqy0"]
 font = ExtResource("1_44dvt")
 font_color = Color(1, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_273u0"]
-font = ExtResource("1_44dvt")
-font_size = 64
-font_color = Color(0, 0.89411765, 0.85490197, 1)
 
 [node name="Camera2D" type="Camera2D" unique_id=518007863]
 zoom = Vector2(1.5, 1.5)
@@ -27,28 +21,15 @@ offset_bottom = 518.0
 label_settings = SubResource("LabelSettings_wpqy0")
 horizontal_alignment = 1
 
-[node name="ProgressBar" type="TextureProgressBar" parent="CanvasLayer" unique_id=1262579867]
-offset_left = 717.0
-offset_top = 464.0
-offset_right = 845.0
-offset_bottom = 592.0
-scale = Vector2(0.7, 0.7)
-max_value = 30.0
-step = 0.1
-fill_mode = 4
-texture_under = ExtResource("2_2fj6k")
-texture_progress = ExtResource("3_ggd0v")
-
-[node name="Label" type="Label" parent="CanvasLayer/ProgressBar" unique_id=1189659650]
-layout_mode = 0
-offset_left = 45.714287
-offset_top = 19.999996
-offset_right = 103.71429
-offset_bottom = 149.0
-label_settings = SubResource("LabelSettings_273u0")
-
 [node name="ProgressBar2" parent="CanvasLayer" unique_id=884770605 instance=ExtResource("4_menik")]
 offset_left = 192.0
 offset_top = 58.0
 offset_right = 978.0
 offset_bottom = 88.0
+
+[node name="Control" parent="CanvasLayer" unique_id=1428167716 instance=ExtResource("3_sbsl8")]
+offset_left = 790.0
+offset_top = 489.0
+offset_right = -206.28577
+offset_bottom = -34.714294
+scale = Vector2(0.7, 0.7)

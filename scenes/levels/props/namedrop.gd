@@ -17,7 +17,7 @@ func _on_body_entred(body):
 
 func namedrop():
 	var name_=name_pre.instantiate()
-	name_.text=level_title_
+	name_.text="Level "+str(level.level_id)+"\n"+level_title_
 	player.canvas.add_child(name_)
 	queue_free()
 	

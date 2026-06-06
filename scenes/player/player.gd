@@ -13,7 +13,7 @@ var heal_charge=3
 @export var heal_cd=30
 @onready var legs=$AnimatedSprite2D2
 @onready var heath_bar=$Camera2D/CanvasLayer/Label
-@onready var charges=$Camera2D/CanvasLayer/ProgressBar
+@onready var charges=$Camera2D/CanvasLayer/Control
 @onready var canvas=$Camera2D/CanvasLayer
 var left_weapon
 var right_weapon
@@ -34,7 +34,8 @@ var score
 func _ready() -> void:
 	score=get_parent().gameScore
 	$Camera2D/CanvasLayer.hide()
-	charges.max_value=heal_cd
+	charges.update_max(heal_cd)
+	charge_update()
 	charges.value=heal_cd
 	hp_update()
 	charge_update()
@@ -54,9 +55,9 @@ func _physics_process(_delta: float) -> void:
 	
 func _process(_delta: float) -> void:
 	if $Timer.time_left>0 and heal_charge!=3:
-		charges.value = heal_cd - $Timer.time_left
+		charges.update_value(heal_cd- $Timer.time_left)
 	else:
-		charges.value=heal_cd
+		charges.update_value(heal_cd)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -130,7 +131,7 @@ func hp_update():
 	heath_bar.text = "Integrity:\n" + str(player_health)+"%"
 
 func charge_update():
-	$Camera2D/CanvasLayer/ProgressBar/Label.text=str(heal_charge)
+	charges.update_charge(str(heal_charge))
 
 func replenish_charge():
 	if  charges_to_replenish > 0:

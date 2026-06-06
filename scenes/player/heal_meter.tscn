@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://bk5dijd6c66fc"]
+
+[ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="1_mqhgx"]
+[ext_resource type="Script" uid="uid://brom815a2dli8" path="res://scenes/player/heal_meter.gd" id="1_y05lr"]
+[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="2_mxo5j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mxo5j"]
+bg_color = Color(0.98925894, 0.3703291, 0.38824147, 0.98039216)
+
+[sub_resource type="Theme" id="Theme_y05lr"]
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_mxo5j")
+
+[sub_resource type="LabelSettings" id="LabelSettings_y05lr"]
+font = ExtResource("2_mxo5j")
+font_size = 128
+
+[node name="Control" type="Control" unique_id=1428167716]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -933.0
+offset_bottom = -472.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y05lr")
+
+[node name="AspectRatioContainer" parent="." unique_id=1461861251 instance=ExtResource("1_mqhgx")]
+layout_mode = 0
+offset_right = 219.0
+offset_bottom = 176.0
+title = "Heal"
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2023029031]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 39.0
+offset_right = 212.0
+offset_bottom = 169.0
+theme = SubResource("Theme_y05lr")
+value = 30.0
+fill_mode = 3
+show_percentage = false
+
+[node name="Label" type="Label" parent="." unique_id=1166317503]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 46.0
+offset_right = 151.0
+offset_bottom = 174.0
+text = "3"
+label_settings = SubResource("LabelSettings_y05lr")
