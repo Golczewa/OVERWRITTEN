@@ -1,20 +1,17 @@
 [gd_scene format=3 uid="uid://q6ale2m8tx0"]
 
 [ext_resource type="Script" uid="uid://l7x0dcmm4iv4" path="res://scenes/menu/level_panel.gd" id="1_dxkar"]
-[ext_resource type="FontFile" uid="uid://d1feesbwk46ll" path="res://asstets/menu/DroidSansMono.ttf" id="2_dxkar"]
+[ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="2_ij28o"]
 [ext_resource type="PackedScene" uid="uid://bpf5ntl6k4qfh" path="res://scenes/menu/weapon_card.tscn" id="3_dxkar"]
+[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="4_orue4"]
+[ext_resource type="PackedScene" uid="uid://du4k8ns7pgxg8" path="res://scenes/menu/button.tscn" id="5_iss5n"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ij28o"]
-font = ExtResource("2_dxkar")
+font = ExtResource("4_orue4")
 font_size = 128
 
-[sub_resource type="LabelSettings" id="LabelSettings_iss5n"]
-line_spacing = 2.0
-font = ExtResource("2_dxkar")
-font_size = 32
-
 [sub_resource type="LabelSettings" id="LabelSettings_8r5av"]
-font = ExtResource("2_dxkar")
+font = ExtResource("4_orue4")
 font_size = 32
 
 [node name="Control" type="Control" unique_id=332237915]
@@ -22,81 +19,72 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -126.0
+offset_bottom = -52.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dxkar")
 
-[node name="Panel" type="Panel" parent="." unique_id=199341933]
+[node name="AspectRatioContainer" parent="." unique_id=1461861251 instance=ExtResource("2_ij28o")]
 layout_mode = 0
-offset_left = -8.0
-offset_top = -23.0
-offset_right = 1185.0
-offset_bottom = 665.0
+offset_right = 760.0
+offset_bottom = 527.0
 
 [node name="Control" parent="." unique_id=1310289588 instance=ExtResource("3_dxkar")]
 layout_mode = 1
-offset_left = 23.0
-offset_top = 95.0
-offset_right = 23.0
-offset_bottom = 95.0
+offset_left = 21.0
+offset_top = 70.0
+offset_right = 21.0
+offset_bottom = 70.0
 
 [node name="Control2" parent="." unique_id=2034477685 instance=ExtResource("3_dxkar")]
 layout_mode = 1
-offset_left = 243.0
-offset_top = 94.0
-offset_right = 243.0
-offset_bottom = 94.0
+offset_left = 226.0
+offset_top = 71.0
+offset_right = 226.0
+offset_bottom = 71.0
 hand = "right"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1367755251]
 layout_mode = 0
-offset_left = 573.0
-offset_top = 39.0
-offset_right = 1123.0
-offset_bottom = 386.0
+offset_left = 437.0
+offset_top = 71.0
+offset_right = 734.0
+offset_bottom = 343.0
 stretch_mode = 4
 
 [node name="rank" type="Label" parent="." unique_id=114621718]
 layout_mode = 0
-offset_left = 565.0
-offset_top = 433.0
-offset_right = 1026.0
-offset_bottom = 604.0
+offset_left = 343.0
+offset_top = 393.0
+offset_right = 804.0
+offset_bottom = 564.0
 text = "Rank: "
 label_settings = SubResource("LabelSettings_ij28o")
 
-[node name="name" type="Label" parent="." unique_id=1880306399]
-layout_mode = 0
-offset_left = 28.0
-offset_top = 37.0
-offset_right = 220.0
-offset_bottom = 123.0
-text = "Level"
-label_settings = SubResource("LabelSettings_iss5n")
-
 [node name="score" type="Label" parent="." unique_id=945750506]
 layout_mode = 0
-offset_left = 573.0
-offset_top = 410.0
-offset_right = 707.0
-offset_bottom = 453.0
+offset_left = 344.0
+offset_top = 355.0
+offset_right = 478.0
+offset_bottom = 398.0
 text = "Score: "
 label_settings = SubResource("LabelSettings_8r5av")
 
-[node name="Button" type="Button" parent="." unique_id=863621191]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=559127815]
 layout_mode = 0
-offset_left = 322.0
-offset_top = 484.0
-offset_right = 511.0
-offset_bottom = 580.0
-theme_override_font_sizes/font_size = 32
-text = "Play"
+offset_left = 62.0
+offset_top = 422.0
+offset_right = 314.0
+offset_bottom = 462.0
+theme_override_constants/separation = 50
 
-[node name="Button2" type="Button" parent="." unique_id=763612268]
-layout_mode = 0
-offset_left = 107.0
-offset_top = 485.0
-offset_right = 296.0
-offset_bottom = 581.0
-theme_override_font_sizes/font_size = 32
-text = "Back"
+[node name="Button" parent="HBoxContainer" unique_id=2078812563 instance=ExtResource("5_iss5n")]
+layout_mode = 2
+text = "  Back"
+alignment = 1
+
+[node name="Button3" parent="HBoxContainer" unique_id=266685134 instance=ExtResource("5_iss5n")]
+layout_mode = 2
+text = "  Play"
+alignment = 1

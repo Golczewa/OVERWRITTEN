@@ -73,9 +73,8 @@ theme_override_font_sizes/font_size = 31
 text = "LEVEL 0"
 
 [node name="Control" parent="." unique_id=332237915 instance=ExtResource("2_6dt88")]
-visible = false
 layout_mode = 1
-offset_left = 150.0
-offset_top = -13.0
-offset_right = 150.0
-offset_bottom = -13.0
+offset_left = 163.0
+offset_top = 25.0
+offset_right = -112.0
+offset_bottom = -28.0

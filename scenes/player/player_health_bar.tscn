@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://r8w2qan8yww7"]
+
+[ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="1_l31cn"]
+
+[node name="Control" type="Control" unique_id=419692922]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -618.0
+offset_bottom = -552.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AspectRatioContainer" parent="." unique_id=1461861251 instance=ExtResource("1_l31cn")]
+layout_mode = 0
+offset_right = 534.0
+offset_bottom = 96.0
+title = "Integrity"
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=481463534]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 51.0
+offset_right = 520.0
+offset_bottom = 344.0
+value = 59.0
