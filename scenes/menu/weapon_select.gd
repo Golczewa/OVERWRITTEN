@@ -5,9 +5,14 @@ var to_untoggle:Button
 var hand: String
 var weapon_num:int
 signal closed
+var dragging = false
+var drag_offset = Vector2()
 
 func _ready() -> void:
-	$Panel/Button.pressed.connect(begone)
+	$AspectRatioContainer/VBoxContainer/PanelContainer.gui_input.connect(_on_panel_container_gui_input)
+	$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Control.gui_input.connect(_on_panel_container_gui_input)
+	$Button.pressed.connect(begone)
+	$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Button.pressed.connect(begone)
 	weapon_num = ConfigManager.player_config.get_value("weapons", hand)
 	var wep = ConfigManager.weapons.get_sections()
 	var row=row_pack.instantiate()
@@ -15,7 +20,7 @@ func _ready() -> void:
 		if i%4==0:
 			row=row_pack.instantiate()
 		if i%4==3:
-			$Panel/VBoxContainer.add_child(row)
+			$VBoxContainer.add_child(row)
 		var card=card_pack.instantiate()
 		card.setup(ConfigManager.weapons.get_value(str(i), "name", "unknown"), ConfigManager.weapons.get_value(str(i), "image", "res://icon.svg"))
 		card.mouse_entered.connect(display_disc.bind(i))
@@ -28,8 +33,8 @@ func _ready() -> void:
 	
 
 func display_disc(i):
-	$Panel/TextureRect.texture=load(ConfigManager.weapons.get_value(str(i), "image", "res://icon.svg"))
-	$Panel/Label.text=ConfigManager.weapons.get_value(str(i), "description")
+	$TextureRect.texture=load(ConfigManager.weapons.get_value(str(i), "image", "res://icon.svg"))
+	$Label.text=ConfigManager.weapons.get_value(str(i), "description")
 
 func begone():
 	equip()
@@ -59,3 +64,17 @@ func equip():
 
 func set_weapon_num(num:int):
 	weapon_num=num
+
+func _on_panel_container_gui_input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			dragging = event.pressed
+			drag_offset = get_global_mouse_position() - global_position
+			
+	if event is InputEventMouseMotion and dragging:
+		var target_position = get_global_mouse_position() - drag_offset
+		var viewport_size = get_viewport_rect().size
+		var window_size = size
+		target_position.x = clamp(target_position.x, 0, viewport_size.x - window_size.x)
+		target_position.y = clamp(target_position.y, 0, viewport_size.y - window_size.y)
+		global_position = target_position

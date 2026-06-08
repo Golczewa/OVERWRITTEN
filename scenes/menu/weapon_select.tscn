@@ -1,49 +1,51 @@
 [gd_scene format=3 uid="uid://eyhvly4b0fg3"]
 
 [ext_resource type="Script" uid="uid://c08ejvaev0dm8" path="res://scenes/menu/weapon_select.gd" id="1_gdfb8"]
+[ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="2_1yqu5"]
+[ext_resource type="PackedScene" uid="uid://du4k8ns7pgxg8" path="res://scenes/menu/button.tscn" id="3_58244"]
 
 [node name="Control" type="Control" unique_id=468939172]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -471.0
+offset_bottom = -164.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gdfb8")
 
-[node name="Panel" type="Panel" parent="." unique_id=1103120982]
+[node name="AspectRatioContainer" parent="." unique_id=1461861251 instance=ExtResource("2_1yqu5")]
 layout_mode = 0
-offset_left = -21.0
-offset_top = -11.0
-offset_right = 1172.0
-offset_bottom = 673.0
+offset_right = 680.0
+offset_bottom = 483.0
+title = "Weapons"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=973406392]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=973406392]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 30.0
-offset_right = 737.0
-offset_bottom = 559.0
+offset_left = 19.0
+offset_top = 49.0
+offset_right = 384.0
+offset_bottom = 379.0
 
-[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=1274662470]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1274662470]
 layout_mode = 0
-offset_left = 846.0
-offset_top = 36.0
-offset_right = 1078.0
-offset_bottom = 218.0
+offset_left = 412.0
+offset_top = 50.0
+offset_right = 644.0
+offset_bottom = 232.0
 
-[node name="Label" type="Label" parent="Panel" unique_id=1349081104]
+[node name="Label" type="Label" parent="." unique_id=1349081104]
 layout_mode = 0
-offset_left = 830.0
-offset_top = 225.0
-offset_right = 1095.0
-offset_bottom = 630.0
+offset_left = 395.0
+offset_top = 242.0
+offset_right = 653.0
+offset_bottom = 456.0
 
-[node name="Button" type="Button" parent="Panel" unique_id=1659947161]
+[node name="Button" parent="." unique_id=2078812563 instance=ExtResource("3_58244")]
 layout_mode = 0
-offset_left = 48.0
-offset_top = 537.0
-offset_right = 277.0
-offset_bottom = 602.0
-text = "Back
-"
+offset_left = 36.0
+offset_top = 421.0
+offset_right = 159.0
+offset_bottom = 452.0
+text = "  Done"

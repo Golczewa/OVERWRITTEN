@@ -12,6 +12,7 @@ func weapon_panel():
 	var panel=panel_pack.instantiate()
 	panel.hand=hand
 	panel.closed.connect(update_all)
+	panel.position=Vector2(80,40)
 	get_parent().add_child(panel)
 
 func update():
