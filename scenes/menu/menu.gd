@@ -16,7 +16,7 @@ func open_map_choice():
 
 func get_main_menu():
 	$Panel.show()
-	$map_choice.hide()
+	$map_choice.begone()
 	$Control.hide()
 
 func come():

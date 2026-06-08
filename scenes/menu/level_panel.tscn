@@ -19,15 +19,15 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -126.0
-offset_bottom = -52.0
+offset_right = -209.0
+offset_bottom = -120.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dxkar")
 
 [node name="AspectRatioContainer" parent="." unique_id=1461861251 instance=ExtResource("2_ij28o")]
 layout_mode = 0
-offset_right = 760.0
+offset_right = 943.0
 offset_bottom = 527.0
 
 [node name="Control" parent="." unique_id=1310289588 instance=ExtResource("3_dxkar")]
@@ -47,27 +47,27 @@ hand = "right"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1367755251]
 layout_mode = 0
-offset_left = 437.0
-offset_top = 71.0
-offset_right = 734.0
-offset_bottom = 343.0
+offset_left = 527.0
+offset_top = 66.0
+offset_right = 824.0
+offset_bottom = 338.0
 stretch_mode = 4
 
 [node name="rank" type="Label" parent="." unique_id=114621718]
 layout_mode = 0
-offset_left = 343.0
-offset_top = 393.0
-offset_right = 804.0
-offset_bottom = 564.0
+offset_left = 410.0
+offset_top = 396.0
+offset_right = 871.0
+offset_bottom = 567.0
 text = "Rank: "
 label_settings = SubResource("LabelSettings_ij28o")
 
 [node name="score" type="Label" parent="." unique_id=945750506]
 layout_mode = 0
-offset_left = 344.0
-offset_top = 355.0
-offset_right = 478.0
-offset_bottom = 398.0
+offset_left = 411.0
+offset_top = 359.0
+offset_right = 545.0
+offset_bottom = 402.0
 text = "Score: "
 label_settings = SubResource("LabelSettings_8r5av")
 
