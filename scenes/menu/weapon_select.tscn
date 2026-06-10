@@ -6,11 +6,9 @@
 
 [node name="Control" type="Control" unique_id=468939172]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -471.0
-offset_bottom = -164.0
+anchors_preset = 0
+offset_right = 681.0
+offset_bottom = 484.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gdfb8")
@@ -44,8 +42,8 @@ offset_bottom = 456.0
 
 [node name="Button" parent="." unique_id=2078812563 instance=ExtResource("3_58244")]
 layout_mode = 0
-offset_left = 36.0
+offset_left = 82.0
 offset_top = 421.0
-offset_right = 159.0
+offset_right = 218.0
 offset_bottom = 452.0
 text = "  Done"
