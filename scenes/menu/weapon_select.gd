@@ -9,6 +9,7 @@ var dragging = false
 var drag_offset = Vector2()
 
 func _ready() -> void:
+	get_parent().destroy.connect(begone)
 	$AspectRatioContainer/VBoxContainer/PanelContainer.gui_input.connect(_on_panel_container_gui_input)
 	$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Control.gui_input.connect(_on_panel_container_gui_input)
 	$Button.pressed.connect(begone)

@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://d0m7o7ingoi7t"]
 
 [ext_resource type="Script" uid="uid://bo6iv6ycgyodt" path="res://scenes/menu/menu_map_choice.gd" id="1_086vr"]
-[ext_resource type="PackedScene" uid="uid://q6ale2m8tx0" path="res://scenes/menu/level_panel.tscn" id="2_6dt88"]
 [ext_resource type="PackedScene" uid="uid://du4k8ns7pgxg8" path="res://scenes/menu/button.tscn" id="2_g5ekd"]
 [ext_resource type="PackedScene" uid="uid://bmps6hqseaixa" path="res://scenes/menu/3d stuff/steelmill.tscn" id="3_85pnu"]
 [ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="5_pj20j"]
@@ -71,11 +70,3 @@ offset_right = 241.0
 offset_bottom = 288.0
 theme_override_font_sizes/font_size = 31
 text = "LEVEL 0"
-
-[node name="Control" parent="." unique_id=332237915 instance=ExtResource("2_6dt88")]
-visible = false
-layout_mode = 1
-offset_left = 45.0
-offset_top = 41.0
-offset_right = -47.0
-offset_bottom = -12.0

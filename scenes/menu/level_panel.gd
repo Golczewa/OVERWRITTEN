@@ -33,6 +33,7 @@ func play():
 
 func go_back():
 	hide()
+	
 
 func update_all():
 	$Control.update()

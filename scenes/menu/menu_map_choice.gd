@@ -13,7 +13,7 @@ func _ready() -> void:
 	
 	
 func level_setup(num:int):
-	$Control.setup(num)
+	get_parent().setup_level_panel(num)
 
 func _on_panel_container_gui_input(event):
 	if event is InputEventMouseButton:
@@ -31,4 +31,4 @@ func _on_panel_container_gui_input(event):
 
 func begone():
 	hide()
-	$Control.hide()
+	get_parent().hide_level_panel()

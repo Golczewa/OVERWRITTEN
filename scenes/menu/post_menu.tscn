@@ -18,6 +18,7 @@ offset_left = 376.0
 offset_top = 153.0
 offset_right = 376.0
 offset_bottom = 153.0
+in_game = true
 
 [node name="Control2" parent="." unique_id=1779067292 instance=ExtResource("1_wxtlm")]
 layout_mode = 1
@@ -25,4 +26,5 @@ offset_left = 649.0
 offset_top = 155.0
 offset_right = 649.0
 offset_bottom = 155.0
+in_game = true
 hand = "right"

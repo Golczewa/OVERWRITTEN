@@ -35,6 +35,7 @@ enemies="the bad guys"
 player=""
 doors=""
 game=""
+menu=""
 
 [input]
 

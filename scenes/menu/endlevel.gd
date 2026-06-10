@@ -11,13 +11,14 @@ func _ready() -> void:
 	$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Control.gui_input.connect(_on_panel_container_gui_input)
 	
 func setup(score:Dictionary):
-	show()
 	count_score(score)
-	$time.text="Time: "+format_time(score["time"])
-	$deaths.text="Deaths: "+str(score["deaths"])
-	$used.text="Healing used: "+str(score["hused"])
-	$used2.text="Score: "+str(score["rank"])
+	$VBoxContainer/time.text="Time: "+format_time(score["time"])
+	$VBoxContainer/deaths.text="Deaths: "+str(score["deaths"])
+	$VBoxContainer/used.text="Healing used: "+str(score["hused"])
+	$VBoxContainer/used2.text="Score: "+str(score["rank"])
 	$rank.text="Rank: "+score["rank"]
+	get_parent().come()
+	show()
 
 func count_score(_score:Dictionary):
 	pass

@@ -25,6 +25,13 @@ func come():
 
 func begone():
 	get_parent().hide()
+
+func setup_level_panel(num:int)->void:
+	$Control2.setup(num)
+
+func hide_level_panel()->void:
+	$Control2.go_back()
+
 	
 #  ██████╗ ██╗   ██╗███████╗██████╗ ██╗    ██╗██████╗ ██╗████████╗████████╗███████╗███╗   ██╗
 # ██╔═══██╗██║   ██║██╔════╝██╔══██╗██║    ██║██╔══██╗██║╚══██╔══╝╚══██╔══╝██╔════╝████╗  ██║
