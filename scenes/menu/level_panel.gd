@@ -21,7 +21,7 @@ func setup(num:int):
 	if ConfigManager.levels.get_value(section_name, "unlocked") == true:
 		show()
 		$TextureRect.set_texture(load(ConfigManager.levels.get_value(section_name, "image")))
-		$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Label.text =" "+ ConfigManager.levels.get_value(section_name, "name")+".ovr"
+		$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Label.text =" "+ ConfigManager.levels.get_value(section_name, "name").replace(" ","_")+".ovr"
 		$rank.text = "Rank: " + ConfigManager.levels.get_value(section_name, "rank")
 		$score.text = "Best score: " + str(ConfigManager.levels.get_value(section_name, "score"))
 		path = ConfigManager.levels.get_value(section_name, "path")

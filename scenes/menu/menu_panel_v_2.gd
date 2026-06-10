@@ -1,24 +1,11 @@
 extends PanelContainer
 
-var dragging = false
-var drag_offset = Vector2()
+
 @export var title:String="Title";
 @onready var close_button:Button=$VBoxContainer/PanelContainer/HBoxContainer/Button;
 
 func _ready() -> void:
+	title=title.replace(" ","_")
 	$VBoxContainer/PanelContainer/HBoxContainer/Label.text=" "+title+".ovr"
 
 
-func _on_panel_container_gui_input(event):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			dragging = event.pressed
-			drag_offset = get_global_mouse_position() - global_position
-			
-	if event is InputEventMouseMotion and dragging:
-		var target_position = get_global_mouse_position() - drag_offset
-		var viewport_size = get_viewport_rect().size
-		var window_size = size
-		target_position.x = clamp(target_position.x, 0, viewport_size.x - window_size.x)
-		target_position.y = clamp(target_position.y, 0, viewport_size.y - window_size.y)
-		global_position = target_position
