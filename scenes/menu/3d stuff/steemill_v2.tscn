@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://b0fntd36ji6wt"]
+
+[ext_resource type="Shader" uid="uid://bkpd0riwdw5fg" path="res://scenes/menu/3d stuff/steelmill.gdshader" id="1_6r3jp"]
+[ext_resource type="ArrayMesh" uid="uid://cubodd3iog5vw" path="res://asstets/3d stuff/stealmill.obj" id="1_v2jp7"]
+[ext_resource type="PackedScene" uid="uid://k5d3enng1mx" path="res://scenes/menu/3d stuff/3Dbutton.tscn" id="3_dnxhx"]
+
+[sub_resource type="Environment" id="Environment_dnxhx"]
+background_mode = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6r3jp"]
+render_priority = 0
+shader = ExtResource("1_6r3jp")
+shader_parameter/hologram_color = Color(0.5372549, 0, 0.101960786, 1)
+shader_parameter/dot_scale = 50.0
+shader_parameter/dot_size = 0.2
+
+[node name="Node3D" type="Node3D" unique_id=810478375]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1716677928]
+transform = Transform3D(0.83269906, 0.08618269, -0.5469779, 0, 0.9878136, 0.15564145, 0.55372584, -0.12960249, 0.8225515, -1.9764898, 0.82060504, -0.28494287)
+environment = SubResource("Environment_dnxhx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=441258476]
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 0, 0.45453954, -2.8718421)
+material_override = SubResource("ShaderMaterial_6r3jp")
+mesh = ExtResource("1_v2jp7")
+
+[node name="Area3D" parent="." unique_id=1127251825 instance=ExtResource("3_dnxhx")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.4096454, -0.28229192, -2.1085358)

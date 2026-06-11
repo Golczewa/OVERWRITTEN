@@ -2,11 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bo6iv6ycgyodt" path="res://scenes/menu/menu_map_choice.gd" id="1_086vr"]
 [ext_resource type="PackedScene" uid="uid://du4k8ns7pgxg8" path="res://scenes/menu/button.tscn" id="2_g5ekd"]
-[ext_resource type="PackedScene" uid="uid://bmps6hqseaixa" path="res://scenes/menu/3d stuff/steelmill.tscn" id="3_85pnu"]
+[ext_resource type="PackedScene" uid="uid://b0fntd36ji6wt" path="res://scenes/menu/3d stuff/steemill_v2.tscn" id="3_g5ekd"]
 [ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="5_pj20j"]
-
-[sub_resource type="Environment" id="Environment_g5ekd"]
-background_mode = 1
 
 [node name="Control" type="Control" unique_id=1884821685]
 layout_mode = 3
@@ -38,12 +35,7 @@ handle_input_locally = false
 size = Vector2i(578, 487)
 render_target_update_mode = 4
 
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=475865043]
-transform = Transform3D(0.4163063, -0.13720675, 0.89881223, 0.01716691, 0.98955816, 0.14310817, -0.9090624, -0.044146996, 0.4143147, 2.701212, 0.51259863, 1.6485406)
-environment = SubResource("Environment_g5ekd")
-fov = 83.0
-
-[node name="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=455693068 instance=ExtResource("3_85pnu")]
+[node name="Node3D" parent="SubViewportContainer/SubViewport" unique_id=810478375 instance=ExtResource("3_g5ekd")]
 
 [node name="Button" type="Button" parent="." unique_id=711566211]
 layout_mode = 0
