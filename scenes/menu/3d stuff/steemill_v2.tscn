@@ -19,6 +19,7 @@ shader_parameter/dot_size = 0.2
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1716677928]
 transform = Transform3D(0.83269906, 0.08618269, -0.5469779, 0, 0.9878136, 0.15564145, 0.55372584, -0.12960249, 0.8225515, -1.9764898, 0.82060504, -0.28494287)
 environment = SubResource("Environment_dnxhx")
+current = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=441258476]
 transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 0, 0.45453954, -2.8718421)
