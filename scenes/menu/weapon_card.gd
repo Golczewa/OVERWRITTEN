@@ -11,15 +11,16 @@ func _ready() -> void:
 	
 	
 func weapon_panel():
-	var panel=panel_pack.instantiate()
-	panel.hand=hand
-	panel.closed.connect(update_all)
-	if not in_game:
-		panel.global_position=Vector2(200,60)
-		get_tree().get_first_node_in_group("menu").add_child(panel)
-	else:
-		panel.position=Vector2(100,40)
-		get_parent().add_child(panel)
+	if not is_panel_runing():
+		var panel=panel_pack.instantiate()
+		panel.hand=hand
+		panel.closed.connect(update_all)
+		if not in_game:
+			panel.global_position=Vector2(200,60)
+			get_tree().get_first_node_in_group("menu").add_child(panel)
+		else:
+			panel.position=Vector2(100,40)
+			get_parent().add_child(panel)
 
 func update():
 	var num = ConfigManager.player_config.get_value("weapons", hand)
@@ -29,4 +30,9 @@ func update():
 func update_all():
 	emit_signal("update_all_sig")
 
-	
+
+func is_panel_runing()->bool:
+	var result=get_tree().get_first_node_in_group("weapon_select")
+	if result:
+		return true
+	return false

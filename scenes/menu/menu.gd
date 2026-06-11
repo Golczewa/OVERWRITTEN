@@ -30,7 +30,13 @@ func setup_level_panel(num:int)->void:
 	$Control2.setup(num)
 
 func hide_level_panel()->void:
+	destroy_weapon_choice()
 	$Control2.go_back()
+
+func destroy_weapon_choice():
+	var wc=get_tree().get_first_node_in_group("weapon_select")
+	if wc:
+		wc.begone()
 
 	
 #  ██████╗ ██╗   ██╗███████╗██████╗ ██╗    ██╗██████╗ ██╗████████╗████████╗███████╗███╗   ██╗

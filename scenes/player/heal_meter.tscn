@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="2_mxo5j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mxo5j"]
-bg_color = Color(0.98925894, 0.3703291, 0.38824147, 0.98039216)
+bg_color = Color(0.9882353, 0.36862746, 0.3882353, 0.6627451)
 
 [sub_resource type="Theme" id="Theme_y05lr"]
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_mxo5j")

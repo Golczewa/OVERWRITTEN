@@ -32,6 +32,7 @@ func play():
 		hide()
 
 func go_back():
+	get_parent().destroy_weapon_choice()
 	hide()
 	
 

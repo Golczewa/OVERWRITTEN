@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="2_1yqu5"]
 [ext_resource type="PackedScene" uid="uid://du4k8ns7pgxg8" path="res://scenes/menu/button.tscn" id="3_58244"]
 
-[node name="Control" type="Control" unique_id=468939172]
+[node name="Control" type="Control" unique_id=468939172 groups=["weapon_select"]]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 681.0

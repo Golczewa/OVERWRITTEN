@@ -36,6 +36,7 @@ player=""
 doors=""
 game=""
 menu=""
+weapon_select=""
 
 [input]
 
