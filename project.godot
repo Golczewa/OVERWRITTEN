@@ -37,6 +37,7 @@ doors=""
 game=""
 menu=""
 weapon_select=""
+bullets=""
 
 [input]
 

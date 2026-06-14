@@ -15,6 +15,7 @@ func _ready() -> void:
 	$Timer.timeout.connect(add_time)
 
 func load_level(path:String):
+	remove_bullets()
 	if not curr_scene ==null:
 		curr_scene.queue_free()
 	var level_pre=load(path)
@@ -28,11 +29,13 @@ func load_level(path:String):
 
 func restart():
 	curr_scene.restart_floor()
+	remove_bullets()
 	$CanvasLayer/skill_issue.hide()
 	$CanvasLayer/pause.hide()
  	
 func showGameUI():
 	show()
+	remove_bullets()
 	$CanvasLayer.show()
 	$CanvasLayer/pause.hide()
 	$CanvasLayer/skill_issue.hide()
@@ -56,3 +59,8 @@ func add_time():
 
 func timer_stop():
 	$Timer.stop()
+
+func remove_bullets()->void:
+	var bullets:=get_tree().get_nodes_in_group("bullets")
+	for bullet in bullets:
+		bullet.queue_free()

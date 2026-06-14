@@ -7,7 +7,6 @@ signal game
 func _ready() -> void:
 	$game.hide()
 	$game.process_mode=Node.PROCESS_MODE_DISABLED
-	$CanvasLayer/menu/Panel/VBoxContainer/Button2.pressed.connect(exit)
 	$game/CanvasLayer/pause/VBoxContainer/Button3.pressed.connect(back_to_menu)
 	$game/CanvasLayer/skill_issue/VBoxContainer/Button2.pressed.connect(back_to_menu)
 	$game/CanvasLayer/skill_issue/AspectRatioContainer.close_button.pressed.connect(back_to_menu)
@@ -26,9 +25,6 @@ func back_to_menu():
 	$game.process_mode=Node.PROCESS_MODE_DISABLED
 	$CanvasLayer.process_mode=Node.PROCESS_MODE_INHERIT
 	state=0
-	
-func exit():
-	get_tree().quit()
 
 func end_level():
 	$game.timer_stop()

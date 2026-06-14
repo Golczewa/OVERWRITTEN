@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://iliwbvxt5w52"]
+
+[ext_resource type="Script" uid="uid://d3r8d8lv75ppo" path="res://scenes/menu/quit_panel.gd" id="1_3p7xm"]
+[ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="1_8k1th"]
+[ext_resource type="PackedScene" uid="uid://du4k8ns7pgxg8" path="res://scenes/menu/button.tscn" id="2_e01yi"]
+[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="3_e01yi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pchsw"]
+font = ExtResource("3_e01yi")
+font_size = 64
+font_color = Color(0.52156866, 0, 0.101960786, 1)
+
+[node name="Control" type="Control" unique_id=1983155444]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 550.0
+offset_bottom = 301.0
+script = ExtResource("1_3p7xm")
+
+[node name="AspectRatioContainer" parent="." unique_id=1461861251 instance=ExtResource("1_8k1th")]
+layout_mode = 0
+offset_right = 550.0
+offset_bottom = 301.0
+title = "are you sure"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1321260131]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 237.0
+offset_right = 483.0
+offset_bottom = 277.0
+theme_override_constants/separation = 200
+
+[node name="Button" parent="HBoxContainer" unique_id=2078812563 instance=ExtResource("2_e01yi")]
+layout_mode = 2
+text = "  Yes  "
+
+[node name="Button2" parent="HBoxContainer" unique_id=1293249099 instance=ExtResource("2_e01yi")]
+layout_mode = 2
+text = "  No  "
+
+[node name="Label" type="Label" parent="." unique_id=704248409]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 94.0
+offset_right = 458.0
+offset_bottom = 158.0
+text = "Quit game?"
+label_settings = SubResource("LabelSettings_pchsw")
