@@ -32,3 +32,4 @@ func end_level():
 	back_to_menu()
 	$CanvasLayer/menu/Panel.hide()
 	$CanvasLayer/menu/Control.setup(score)
+
