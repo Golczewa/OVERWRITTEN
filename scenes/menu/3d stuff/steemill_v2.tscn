@@ -31,3 +31,12 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.4096454, -0.28229192
 
 [node name="Area3D2" parent="." unique_id=626608947 instance=ExtResource("3_dnxhx")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.59575415, -0.3387503, -2.662819)
+level = 2
+
+[node name="Area3D3" parent="." unique_id=494076428 instance=ExtResource("3_dnxhx")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.2452115, 0.16939732, -2.7167635)
+level = 3
+
+[node name="Area3D4" parent="." unique_id=1944937586 instance=ExtResource("3_dnxhx")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.7601112, 0.16939732, -2.3021865)
+level = 4

@@ -32,14 +32,16 @@ title = "Map"
 layout_mode = 0
 offset_left = 193.0
 offset_top = 81.0
-offset_right = 847.0
+offset_right = 912.0
 offset_bottom = 568.0
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=931915920]
 handle_input_locally = false
+msaa_3d = 2
+canvas_item_default_texture_filter = 0
 physics_object_picking = true
-size = Vector2i(654, 487)
+size = Vector2i(719, 487)
 render_target_update_mode = 4
 
 [node name="Node3D" parent="SubViewportContainer/SubViewport" unique_id=810478375 instance=ExtResource("3_g5ekd")]
