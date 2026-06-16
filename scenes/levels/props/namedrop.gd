@@ -19,5 +19,8 @@ func namedrop():
 	var name_=name_pre.instantiate()
 	name_.text="Level "+str(level.level_id)+"\n"+level_title_
 	player.canvas.add_child(name_)
+	ConfigManager.levels.set_value("level_"+str(level.level_id),"namedroped",true)
+	ConfigManager.save_levels()
+	ConfigManager.reload_levels_config()
 	queue_free()
 	

@@ -54,3 +54,12 @@ func _load_cfg(path: String) -> ConfigFile:
 	if err != OK:
 		push_error("Config loading error: %s (code %s)" % [path, err])
 	return config
+
+func save_levels()->Error:
+	var err := levels.save(LEVELS_PATH)
+	if err != OK:
+		push_error("Config save error: %s (code %s)" % [LEVELS_PATH, err])
+	return err
+
+func reload_levels_config()->void:
+	levels=_load_cfg(LEVELS_PATH)
