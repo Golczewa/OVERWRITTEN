@@ -4,6 +4,7 @@ extends Area3D
 var unlocked:bool
 var level_section:String
 var levels:ConfigFile
+var curr_color:Color
 signal pressed_
 
 func _ready()->void:
@@ -15,8 +16,7 @@ func _ready()->void:
 	mouse_entered.connect(_on_hover)
 	mouse_exited.connect(_on_hover_exit)
 	input_event.connect(_on_klik)
-	if not unlocked:
-		change_color(Color.GRAY)
+	set_button_colors()
 
 func _on_klik(_camera, event, _pos, _normal, _idx)->void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and unlocked:
@@ -24,12 +24,31 @@ func _on_klik(_camera, event, _pos, _normal, _idx)->void:
 
 func _on_hover()->void:
 	if unlocked:
-		change_color(Color.ORANGE)
+		_change_color(curr_color.darkened(0.3))
 
 func _on_hover_exit():
 	if unlocked:
-		change_color(Color.YELLOW)
+		_change_color(curr_color)
 
-func change_color(col:Color)->void:
+func _change_color(col:Color)->Color:
 	$MeshInstance3D.material_override.emission=col
 	$MeshInstance3D.material_override.albedo_color=col
+	return col
+
+func set_button_colors()->void:
+	if unlocked:
+		match levels.get_value(level_section,"rank","-"):
+			"S":
+				curr_color=_change_color(Color.PURPLE)
+			"A":
+				curr_color=_change_color(Color.BLUE)
+			"B":
+				curr_color=_change_color(Color.GREEN)
+			"C":
+				curr_color=_change_color(Color.YELLOW)
+			"D":
+				curr_color=_change_color(Color.ORANGE)
+			_:
+				curr_color=_change_color(Color.WHITE)
+	else:
+		curr_color=_change_color(Color.GRAY.darkened(0.7))

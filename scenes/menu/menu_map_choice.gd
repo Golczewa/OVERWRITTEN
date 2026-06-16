@@ -7,7 +7,7 @@ var drag_offset = Vector2()
 func _ready() -> void:
 	hide()
 	$Button.pressed.connect(level_setup.bind(0))
-	$SubViewportContainer/SubViewport/Node3D/Area3D.pressed_.connect(level_setup.bind(1))
+	$SubViewportContainer/SubViewport/Node3D/Area3D.pressed_.connect(level_setup.bind($SubViewportContainer/SubViewport/Node3D/Area3D.level))
 	$AspectRatioContainer/VBoxContainer/PanelContainer.gui_input.connect(_on_panel_container_gui_input)
 	$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Control.gui_input.connect(_on_panel_container_gui_input)
 	

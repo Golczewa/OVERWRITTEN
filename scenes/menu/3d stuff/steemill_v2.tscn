@@ -28,6 +28,7 @@ mesh = ExtResource("1_v2jp7")
 
 [node name="Area3D" parent="." unique_id=1127251825 instance=ExtResource("3_dnxhx")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.4096454, -0.28229192, -2.1085358)
+level = 1
 
 [node name="Area3D2" parent="." unique_id=626608947 instance=ExtResource("3_dnxhx")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.59575415, -0.3387503, -2.662819)
