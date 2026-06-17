@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b0fntd36ji6wt" path="res://scenes/menu/3d stuff/steemill_v2.tscn" id="3_g5ekd"]
 [ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="5_4d16b"]
 [ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="5_pj20j"]
+[ext_resource type="PackedScene" uid="uid://bjll8nw7yfsi7" path="res://scenes/menu/level_label.tscn" id="6_4d16b"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8oyp7"]
 font = ExtResource("5_4d16b")
@@ -71,3 +72,7 @@ offset_right = 697.0
 offset_bottom = 96.0
 text = "Old steelmill"
 label_settings = SubResource("LabelSettings_8oyp7")
+
+[node name="PanelContainer" parent="." unique_id=1654148982 instance=ExtResource("6_4d16b")]
+visible = false
+layout_mode = 0
