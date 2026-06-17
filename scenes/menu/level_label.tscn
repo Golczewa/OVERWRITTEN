@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bjll8nw7yfsi7"]
+
+[ext_resource type="Theme" uid="uid://da1tvrlo4v74u" path="res://asstets/menu/panel_theme1.tres" id="1_vlowm"]
+[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="2_ce8nk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tmv81"]
+font = ExtResource("2_ce8nk")
+font_size = 32
+font_color = Color(0.54509807, 0, 0.03529412, 1)
+
+[node name="PanelContainer" type="PanelContainer" unique_id=1654148982]
+offset_right = 107.0
+offset_bottom = 71.0
+
+[node name="Panel" type="Panel" parent="." unique_id=1779297466]
+layout_mode = 2
+theme = ExtResource("1_vlowm")
+
+[node name="Label" type="Label" parent="." unique_id=586782095]
+layout_mode = 2
+text = " ??? "
+label_settings = SubResource("LabelSettings_tmv81")
+horizontal_alignment = 1
