@@ -32,13 +32,13 @@ func begone():
 	hide()
 	get_parent().hide_level_panel()
 
-func show_label(pos:Vector3)->void:
+func show_label(pos:Vector3,num:int)->void:
 	var button_pos=$SubViewportContainer/SubViewport/Node3D/Camera3D.unproject_position(pos)
 	var container = $SubViewportContainer
 	var viewport = $SubViewportContainer/SubViewport
 	var ratio = container.size / Vector2(viewport.size)
 	$PanelContainer.global_position = (container.global_position + button_pos * ratio) + Vector2(-55,-100)
-	$PanelContainer.show()
+	$PanelContainer.setup_label(num)
 
 func hide_label()->void:
 	$PanelContainer.hide()
@@ -46,7 +46,7 @@ func hide_label()->void:
 func setup_buttons()->void:
 	var buttons=$SubViewportContainer/SubViewport/Node3D/Node.get_children()
 	for button in buttons:
-		button.mouse_entered.connect(show_label.bind(button.global_position))
+		button.mouse_entered.connect(show_label.bind(button.global_position,button.level))
 		button.mouse_exited.connect(hide_label)
 		button.pressed_.connect(level_setup.bind(button.level))
 		button.set_button_colors()
