@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cbxoqo0eqwria"]
+
+[ext_resource type="Script" uid="uid://ldlptfqyh36y" path="res://scenes/menu/splash.gd" id="1_1j5u6"]
+[ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="1_qt77y"]
+[ext_resource type="Texture2D" uid="uid://cxbgagm43f0f5" path="res://asstets/godot_logo.png" id="2_1j5u6"]
+
+[node name="Control" type="Control" unique_id=1735869793]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -598.0
+offset_bottom = -121.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1j5u6")
+
+[node name="AspectRatioContainer" parent="." unique_id=1461861251 instance=ExtResource("1_qt77y")]
+layout_mode = 0
+offset_right = 554.0
+offset_bottom = 527.0
+title = "Credit where its due"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1114860155]
+modulate = Color(0.54509807, 0, 0.03529412, 1)
+layout_mode = 0
+offset_left = 68.0
+offset_top = 48.0
+offset_right = 494.0
+offset_bottom = 509.0
+texture = ExtResource("2_1j5u6")
+expand_mode = 1
+stretch_mode = 4

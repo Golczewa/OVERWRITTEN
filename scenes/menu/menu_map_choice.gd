@@ -37,11 +37,11 @@ func show_label(pos:Vector3,num:int)->void:
 	var container = $SubViewportContainer
 	var viewport = $SubViewportContainer/SubViewport
 	var ratio = container.size / Vector2(viewport.size)
-	$PanelContainer.global_position = (container.global_position + button_pos * ratio) + Vector2(-55,-100)
+	$PanelContainer.global_position = (container.global_position + button_pos * ratio) #+ Vector2(-55,-80)
 	$PanelContainer.setup_label(num)
 
 func hide_label()->void:
-	$PanelContainer.hide()
+	$PanelContainer.hide_label()
 
 func setup_buttons()->void:
 	var buttons=$SubViewportContainer/SubViewport/Node3D/Node.get_children()
