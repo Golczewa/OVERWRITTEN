@@ -1,25 +1,13 @@
 [gd_scene format=3 uid="uid://cad8a5ncmngqb"]
 
-[ext_resource type="FontFile" uid="uid://d1feesbwk46ll" path="res://asstets/menu/DroidSansMono.ttf" id="1_44dvt"]
+[ext_resource type="PackedScene" uid="uid://r8w2qan8yww7" path="res://scenes/player/player_health_bar.tscn" id="3_44dvt"]
 [ext_resource type="PackedScene" uid="uid://bk5dijd6c66fc" path="res://scenes/player/heal_meter.tscn" id="3_sbsl8"]
 [ext_resource type="PackedScene" uid="uid://jvxuc6sf5ovw" path="res://scenes/menu/boss_bar.tscn" id="4_menik"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_wpqy0"]
-font = ExtResource("1_44dvt")
-font_color = Color(1, 0, 0, 1)
 
 [node name="Camera2D" type="Camera2D" unique_id=518007863]
 zoom = Vector2(1.5, 1.5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1356407511]
-
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=1838252084]
-offset_left = 410.0
-offset_top = 495.0
-offset_right = 450.0
-offset_bottom = 518.0
-label_settings = SubResource("LabelSettings_wpqy0")
-horizontal_alignment = 1
 
 [node name="ProgressBar2" parent="CanvasLayer" unique_id=884770605 instance=ExtResource("4_menik")]
 offset_left = 192.0
@@ -28,8 +16,16 @@ offset_right = 978.0
 offset_bottom = 88.0
 
 [node name="Control" parent="CanvasLayer" unique_id=1428167716 instance=ExtResource("3_sbsl8")]
-offset_left = 790.0
+offset_left = 835.00006
 offset_top = 489.0
-offset_right = -206.28577
-offset_bottom = -34.714294
+offset_right = -164.99994
+offset_bottom = -37.0
+scale = Vector2(0.7, 0.7)
+
+[node name="Control2" parent="CanvasLayer" unique_id=419692922 instance=ExtResource("3_44dvt")]
+anchors_preset = 0
+offset_left = 404.0
+offset_top = 523.0
+offset_right = 777.0
+offset_bottom = 590.0
 scale = Vector2(0.7, 0.7)

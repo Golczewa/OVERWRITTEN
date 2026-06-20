@@ -12,7 +12,7 @@ var heal_amount=60
 var heal_charge=3
 @export var heal_cd=30
 @onready var legs=$AnimatedSprite2D2
-@onready var heath_bar=$Camera2D/CanvasLayer/Label
+@onready var heath_bar=$Camera2D/CanvasLayer/Control2/TextureProgressBar
 @onready var charges=$Camera2D/CanvasLayer/Control
 @onready var canvas=$Camera2D/CanvasLayer
 var left_weapon
@@ -40,6 +40,8 @@ func _ready() -> void:
 	hp_update()
 	charge_update()
 	$Timer.timeout.connect(replenish_charge)
+	heath_bar.max_value=player_health
+	
 
 func _physics_process(_delta: float) -> void:
 	$AnimatedSprite2D.look_at(get_global_mouse_position())
@@ -128,7 +130,7 @@ func heal():
 			$Timer.start(heal_cd)
 
 func hp_update():
-	heath_bar.text = "Integrity:\n" + str(player_health)+"%"
+	heath_bar.value=player_health
 
 func charge_update():
 	charges.update_charge(str(heal_charge))
