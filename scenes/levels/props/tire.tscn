@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dksc7l0hb7ibr"]
+
+[ext_resource type="Script" uid="uid://qcoaa5006d1m" path="res://scenes/levels/props/tire.gd" id="1_7cg3b"]
+[ext_resource type="Texture2D" uid="uid://dy2any4a3yi0q" path="res://asstets/props/tire.png" id="1_7lias"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(29, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7cg3b"]
+atlas = ExtResource("1_7lias")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6v8p3"]
+atlas = ExtResource("1_7lias")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7cg3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6v8p3")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7lias"]
+size = Vector2(29, 9)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 15.0
+
+[node name="Node2D" type="Node2D" unique_id=1829468191]
+script = ExtResource("1_7cg3b")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=829459688]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=905211522]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1135796083]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D" unique_id=1669017968]
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1952540194]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_7lias")
+disabled = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1823008755]
+shape = SubResource("CircleShape2D_g4v7s")
