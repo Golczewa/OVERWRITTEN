@@ -50,3 +50,12 @@ func setup_buttons()->void:
 		button.mouse_exited.connect(hide_label)
 		button.pressed_.connect(level_setup.bind(button.level))
 		button.set_button_colors()
+
+func open():
+	show()
+	for child in get_children():
+		child.hide()
+	await $AspectRatioContainer.open_animation()
+	for child in get_children():
+		if not child==$PanelContainer: 
+			child.show()

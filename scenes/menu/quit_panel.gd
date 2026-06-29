@@ -30,3 +30,11 @@ func _on_panel_container_gui_input(event):
 		target_position.x = clamp(target_position.x, 0, viewport_size.x - window_size.x)
 		target_position.y = clamp(target_position.y, 0, viewport_size.y - window_size.y)
 		global_position = target_position
+
+func open():
+	show()
+	$HBoxContainer.hide()
+	$Label.hide()
+	await $AspectRatioContainer.open_animation()
+	$HBoxContainer.show()
+	$Label.show()

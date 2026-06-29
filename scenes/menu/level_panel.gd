@@ -19,7 +19,7 @@ func _ready() -> void:
 func setup(num:int):
 	var section_name="level_"+str(num)
 	if ConfigManager.levels.get_value(section_name, "unlocked") == true:
-		show()
+		open()
 		$TextureRect.set_texture(load(ConfigManager.levels.get_value(section_name, "image")))
 		var namedroped:bool=ConfigManager.levels.get_value(section_name, "namedroped",false)
 		if namedroped:
@@ -57,3 +57,11 @@ func _on_panel_container_gui_input(event):
 		target_position.x = clamp(target_position.x, 0, viewport_size.x - window_size.x)
 		target_position.y = clamp(target_position.y, 0, viewport_size.y - window_size.y)
 		global_position = target_position
+
+func open():
+	show()
+	for child in get_children():
+		child.hide()	
+	await $AspectRatioContainer.open_animation()
+	for child in get_children():
+		child.show() 

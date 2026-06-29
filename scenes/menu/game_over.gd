@@ -14,7 +14,7 @@ func _ready() -> void:
 	$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Control.gui_input.connect(_on_panel_container_gui_input)
 
 func on_player_died():
-	show()
+	open()
 	get_tree().paused=true
 	
 
@@ -36,3 +36,11 @@ func _on_panel_container_gui_input(event):
 		target_position.x = clamp(target_position.x, 0, viewport_size.x - window_size.x)
 		target_position.y = clamp(target_position.y, 0, viewport_size.y - window_size.y)
 		global_position = target_position
+
+func open():
+	show()
+	for child in get_children():
+		child.hide()	
+	await $AspectRatioContainer.open_animation()
+	for child in get_children():
+		child.show() 

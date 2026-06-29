@@ -10,7 +10,7 @@ func _ready() -> void:
 	$Panel/VBoxContainer/Button2.pressed.connect(show_quit_game_panel)
 
 func open_map_choice():
-	$map_choice.show()
+	$map_choice.open()
 
 
 func get_main_menu():
@@ -38,7 +38,7 @@ func destroy_weapon_choice():
 		wc.begone()
 
 func show_quit_game_panel()->void:
-	$quit_game_panel.show()
+	$quit_game_panel.open()
 
 	
 #  ██████╗ ██╗   ██╗███████╗██████╗ ██╗    ██╗██████╗ ██╗████████╗████████╗███████╗███╗   ██╗

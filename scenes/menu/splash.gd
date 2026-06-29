@@ -4,9 +4,12 @@ var dragging = false
 var drag_offset = Vector2()
 
 func _ready() -> void:
+	$TextureRect.hide()
 	$AspectRatioContainer/VBoxContainer/PanelContainer.gui_input.connect(_on_panel_container_gui_input)
 	$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Control.gui_input.connect(_on_panel_container_gui_input)
 	$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Button.pressed.connect(begone)
+	await $AspectRatioContainer.open_animation()
+	$TextureRect.show()
 
 func _on_panel_container_gui_input(event):
 	if event is InputEventMouseButton:

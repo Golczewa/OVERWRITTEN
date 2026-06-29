@@ -48,3 +48,6 @@ text = " X "
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("1_mtpdp")
+
+[node name="Timer" type="Timer" parent="." unique_id=723212390]
+one_shot = true
