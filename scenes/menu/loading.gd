@@ -10,9 +10,13 @@ func rotate():
 		await $Timer.timeout
 
 func load_animation():
+	show()
+	is_loading=true
 	while is_loading:
 		await rotate()
 
-func _ready() -> void:
-	is_loading=true;
-	load_animation()
+
+
+func stop_loading():
+	is_loading=false
+	hide()

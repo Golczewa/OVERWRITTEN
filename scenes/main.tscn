@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d4httccfa0dba" path="res://scenes/game.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://dmmekfkqlsr3y" path="res://scenes/main.gd" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cwqiuufv88ki0" path="res://scenes/menu/menu.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://c5bnqv5xc0o6t" path="res://scenes/menu/loading.tscn" id="4_jyhfs"]
 
 [node name="main" type="Node" unique_id=1712365525]
 script = ExtResource("1_sugp2")
@@ -20,3 +21,6 @@ offset_left = -0.15200007
 offset_top = 3.0
 offset_right = -0.15209961
 offset_bottom = -0.23999023
+
+[node name="loading" parent="CanvasLayer" unique_id=644556888 instance=ExtResource("4_jyhfs")]
+visible = false

@@ -12,9 +12,11 @@ func _ready() -> void:
 	$game/CanvasLayer/skill_issue/AspectRatioContainer.close_button.pressed.connect(back_to_menu)
 
 func play_game(path:String):
+	$CanvasLayer/loading.load_animation()
 	emit_signal("game")
 	$game.process_mode=Node.PROCESS_MODE_INHERIT
 	$game.load_level(path)
+	$CanvasLayer/loading.stop_loading()
 	$CanvasLayer.hide()
 	$CanvasLayer.process_mode=Node.PROCESS_MODE_DISABLED
 	state=1
