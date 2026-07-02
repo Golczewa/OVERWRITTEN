@@ -12,6 +12,10 @@ func _ready() -> void:
 	$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Control.gui_input.connect(_on_panel_container_gui_input)
 
 func begone()->void:
+	for child in get_children():
+		if child !=$AspectRatioContainer:
+			child.hide()
+	await $AspectRatioContainer.close_animation()
 	hide()
 
 func quit_game()->void:

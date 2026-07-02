@@ -40,6 +40,10 @@ func display_disc(i):
 func begone():
 	equip()
 	emit_signal("closed")
+	for child in get_children():
+		if child !=$AspectRatioContainer:
+			child.hide()
+	await $AspectRatioContainer.close_animation()
 	queue_free()
 
 func untoggling(button:Button):

@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://c5bnqv5xc0o6t"]
+
+[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="1_p100p"]
+[ext_resource type="Script" uid="uid://8ucpol8q7lcm" path="res://scenes/menu/loading.gd" id="1_xqxwx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yf5fn"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font = ExtResource("1_p100p")
+font_size = 256
+font_color = Color(0.54509807, 0, 0.03529412, 1)
+
+[node name="Control" type="Control" unique_id=644556888]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xqxwx")
+
+[node name="Panel" type="Panel" parent="." unique_id=1008857124]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yf5fn")
+
+[node name="Label" type="Label" parent="." unique_id=813466203]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 196.0
+offset_right = 667.0
+offset_bottom = 452.0
+text = "/"
+label_settings = SubResource("LabelSettings_g4v7s")
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=536572398]
+wait_time = 0.3
+one_shot = true

@@ -81,10 +81,10 @@ theme_override_constants/separation = 50
 
 [node name="Button" parent="HBoxContainer" unique_id=2078812563 instance=ExtResource("5_iss5n")]
 layout_mode = 2
-text = "  Back"
+text = "  Back "
 alignment = 1
 
 [node name="Button3" parent="HBoxContainer" unique_id=266685134 instance=ExtResource("5_iss5n")]
 layout_mode = 2
-text = "  Play"
+text = "  Play "
 alignment = 1

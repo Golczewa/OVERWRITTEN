@@ -36,6 +36,10 @@ func play():
 		hide()
 
 func go_back():
+	for child in get_children():
+		if child !=$AspectRatioContainer:
+			child.hide()
+	await $AspectRatioContainer.close_animation()
 	get_parent().destroy_weapon_choice()
 	hide()
 	

@@ -29,6 +29,10 @@ func _on_panel_container_gui_input(event):
 		global_position = target_position
 
 func begone():
+	for child in get_children():
+		if child !=$AspectRatioContainer:
+			child.hide()
+	await $AspectRatioContainer.close_animation()
 	hide()
 	get_parent().hide_level_panel()
 

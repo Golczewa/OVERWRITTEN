@@ -22,9 +22,10 @@ func  _input(event: InputEvent) -> void:
 
 func  when_pressed():
 	if get_tree().paused and is_open:
-		hide()
+		begone()
 		get_tree().paused=false
 		is_open=false
+
 func _on_panel_container_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
@@ -46,3 +47,10 @@ func open():
 	await $AspectRatioContainer.open_animation()
 	for child in get_children():
 		child.show() 
+
+func begone():
+	for child in get_children():
+		if child !=$AspectRatioContainer:
+			child.hide()
+	await $AspectRatioContainer.close_animation()
+	hide()

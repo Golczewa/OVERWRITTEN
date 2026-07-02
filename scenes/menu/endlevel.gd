@@ -24,6 +24,10 @@ func count_score(_score:Dictionary):
 	pass
 
 func hidee():
+	for child in get_children():
+		if child !=$AspectRatioContainer:
+			child.hide()
+	await $AspectRatioContainer.close_animation()
 	hide()
 
 func format_time(time:int):
