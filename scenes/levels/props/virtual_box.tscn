@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c6ah02d8uk7au"]
+
+[ext_resource type="Script" uid="uid://djmpfmmrjomj7" path="res://scenes/levels/props/virtual_box.gd" id="1_bkbjm"]
+[ext_resource type="Texture2D" uid="uid://dxh1168lsya4w" path="res://asstets/props/virtual_box.png" id="1_kkfqv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kkfqv")
+}],
+"loop": 2,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(64, 64)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1062431422 groups=["enemies"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_bkbjm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1976896282]
+position = Vector2(32, 32)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=461037074]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_g4v7s")
