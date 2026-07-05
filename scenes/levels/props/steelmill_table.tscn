@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://c71vhww3onajj"]
+
+[ext_resource type="Texture2D" uid="uid://cnit8bg658uy4" path="res://asstets/props/steelmill_table.png" id="1_7amvd"]
+[ext_resource type="Script" uid="uid://bs5uytnsuyqub" path="res://scenes/levels/props/steelmill_table.gd" id="1_d28mc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d28mc"]
+atlas = ExtResource("1_7amvd")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qipcf"]
+atlas = ExtResource("1_7amvd")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8fpe"]
+atlas = ExtResource("1_7amvd")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqflj"]
+atlas = ExtResource("1_7amvd")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d28mc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qipcf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8fpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqflj")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(97, 64)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1381899432]
+collision_layer = 16
+script = ExtResource("1_d28mc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=759877177]
+position = Vector2(48, 32)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2120405853]
+position = Vector2(48.5, 32)
+shape = SubResource("RectangleShape2D_yf5fn")
