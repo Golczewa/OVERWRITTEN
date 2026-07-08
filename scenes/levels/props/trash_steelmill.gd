@@ -1,6 +1,6 @@
 extends AnimatedSprite2D
 
-@export_enum("hearth","plate1","screw1","screw2","eye","hand1","cable1","leg","weel","core","hand","cable","plate2","random") var skin:String="random"
+@export_enum("hearth","plate1","screw1","screw2","eye","hand1","cable1","leg","weel","core","hand","cable","plate2","random","generator") var skin:String="random"
 
 var skin_num: Dictionary = {
 	"hearth": 0,
@@ -18,9 +18,13 @@ var skin_num: Dictionary = {
 	"plate2": 12
 }
 
+var skin_int:int=0
+
 func _ready() -> void:
 	if skin=="random":
 		set_skin(randi() % skin_num.size())
+	elif skin=="generator":
+		set_skin(skin_int)
 	else:
 		set_skin(skin_num[skin])
 

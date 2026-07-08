@@ -21,6 +21,7 @@ ConfigManager="*res://autoload/config_manager.gd"
 
 [display]
 
+window/size/mode=2
 window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="uid://dnu7bhck42mbv"
 

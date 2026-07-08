@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cohjld5qw3j8c"]
+
+[ext_resource type="Script" uid="uid://8qnx76qux12f" path="res://scenes/levels/props/trash_area.gd" id="1_rn1uc"]
+
+[node name="ReferenceRect" type="ReferenceRect" unique_id=1995517954]
+offset_right = 295.0
+offset_bottom = 274.0
+border_color = Color(1, 0, 0, 0)
+script = ExtResource("1_rn1uc")

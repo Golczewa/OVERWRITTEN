@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ceu0cohg5lr7t" path="res://scenes/levels/props/pile_of_trash.tscn" id="5_w2p40"]
 [ext_resource type="PackedScene" uid="uid://dbspqfu56vr5r" path="res://scenes/levels/props/lamp_test.tscn" id="6_ct6n8"]
 [ext_resource type="PackedScene" uid="uid://bqml6iwreuavg" path="res://scenes/levels/props/black_backround.tscn" id="7_1k5hy"]
+[ext_resource type="PackedScene" uid="uid://cohjld5qw3j8c" path="res://scenes/levels/props/trash_area.tscn" id="8_8c65x"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_w2p40"]
 
@@ -138,6 +139,11 @@ sources/0 = SubResource("TileSetAtlasSource_w2p40")
 navigation_polygon = SubResource("NavigationPolygon_w2p40")
 enabled = false
 
+[node name="Sprite2D" parent="." unique_id=41209180 instance=ExtResource("7_1k5hy")]
+show_behind_parent = true
+position = Vector2(54.500042, 40.000034)
+scale = Vector2(9.601563, 7.4218755)
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1339393512]
 tile_map_data = PackedByteArray("AAD7//3/AAABAAAAAAD7//7/AAABAAAAAAD7////AAABAAAAAAD7/wAAAAABAAAAAAD7/wEAAAABAAAAAAD7/wIAAAABAAAAAAD7/wMAAAABAAAAAAD8//3/AAABAAAAAAD8//7/AAABAAAAAAD8////AAABAAAAAAD8/wAAAAABAAAAAAD8/wEAAAABAAAAAAD8/wIAAAABAAAAAAD8/wMAAAABAAAAAAD9//3/AAABAAAAAAD9//7/AAABAAAAAAD9////AAABAAAAAAD9/wAAAAABAAAAAAD9/wEAAAABAAAAAAD9/wIAAAABAAAAAAD9/wMAAAABAAAAAAD+//3/AAABAAAAAAD+//7/AAABAAAAAAD+////AAABAAAAAAD+/wAAAAABAAAAAAD+/wEAAAABAAAAAAD+/wIAAAABAAAAAAD+/wMAAAABAAAAAAD///3/AAABAAAAAAD///7/AAABAAAAAAD/////AAABAAAAAAD//wAAAAACAAAAAAD//wEAAAABAAAAAAD//wIAAAABAAAAAAD//wMAAAABAAAAAAAAAP3/AAABAAAAAAAAAP7/AAABAAAAAAAAAP//AAABAAAAAAAAAAAAAAABAAAAAAAAAAEAAAABAAAAAAAAAAIAAAABAAAAAAAAAAMAAAABAAAAAAABAP3/AAABAAAAAAABAP7/AAABAAAAAAABAP//AAABAAAAAAABAAAAAAABAAAAAAABAAEAAAABAAAAAAABAAIAAAABAAAAAAABAAMAAAABAAAAAAACAP3/AAABAAAAAAACAP7/AAABAAAAAAACAP//AAABAAAAAAACAAAAAAABAAAAAAACAAEAAAABAAAAAAACAAIAAAABAAAAAAACAAMAAAABAAAAAAADAP3/AAACAAAAAAADAP7/AAABAAAAAAADAP//AAABAAAAAAADAAAAAAABAAAAAAADAAEAAAABAAAAAAADAAIAAAACAAAAAAADAAMAAAABAAAAAAAEAP3/AAABAAAAAAAEAP7/AAABAAAAAAAEAP//AAABAAAAAAAEAAAAAAABAAAAAAAEAAEAAAABAAAAAAAEAAIAAAABAAAAAAAEAAMAAAABAAAAAAAFAP3/AAABAAAAAAAFAP7/AAABAAAAAAAFAP//AAABAAAAAAAFAAAAAAACAAAAAAAFAAEAAAABAAAAAAAFAAIAAAABAAAAAAAFAAMAAAABAAAAAAAGAP3/AAABAAAAAAAGAP7/AAABAAAAAAAGAP//AAABAAAAAAAGAAAAAAABAAAAAAAGAAEAAAABAAAAAAAGAAIAAAABAAAAAAAGAAMAAAABAAAAAAAHAP3/AAACAAAAAAAHAP7/AAABAAAAAAAHAP//AAABAAAAAAAHAAAAAAABAAAAAAAHAAEAAAABAAAAAAAHAAIAAAABAAAAAAAHAAMAAAACAAAAAAAIAP3/AAABAAAAAAAIAP7/AAABAAAAAAAIAP//AAABAAAAAAAIAAAAAAABAAAAAAAIAAEAAAABAAAAAAAIAAIAAAABAAAAAAAIAAMAAAABAAAAAAA=")
 tile_set = SubResource("TileSet_t8f2a")
@@ -150,10 +156,16 @@ tile_set = SubResource("TileSet_tgh02")
 tile_map_data = PackedByteArray("AAD7/wQAAAADAAAAAAD8/wQAAAADAAAAAAD9/wQAAAADAAAAAAD+/wQAAAADAAAAAAD//wQAAAADAAAAAAAAAAQAAAADAAAAAAABAAQAAAADAAAAAAADAAQAAAADAAAAAAAEAAQAAAADAAAAAAAFAAQAAAADAAAAAAAGAAQAAAADAAAAAAAHAAQAAAADAAAAAAAIAAQAAAADAAAAAAACAAQAAAADAAAAAAD7//3/AAAAAAAAAAD7//7/AAAAAAAAAAD7////AAAAAAAAAAD7/wAAAAAAAAAAAAD7/wEAAAAAAAAAAAD7/wIAAAAAAAAAAAD7/wMAAAAAAAAAAAD8//3/AAADAAAAAAD9//3/AAADAAAAAAD+//3/AAADAAAAAAD///3/AAADAAAAAAAAAP3/AAADAAAAAAABAP3/AAADAAAAAAACAP3/AAADAAAAAAADAP3/AAADAAAAAAAEAP3/AAADAAAAAAAFAP3/AAADAAAAAAAGAP3/AAADAAAAAAAHAP3/AAADAAAAAAAIAP3/AAABAAAAAAAIAP7/AAABAAAAAAAIAAIAAAABAAAAAAAIAAMAAAABAAAAAAA=")
 tile_set = SubResource("TileSet_ct6n8")
 
+[node name="ReferenceRect" parent="." unique_id=1995517954 instance=ExtResource("8_8c65x")]
+offset_left = 3.0
+offset_top = -83.0
+offset_right = 275.0
+offset_bottom = 120.0
+rand_seed = 444
+
 [node name="StaticBody2D" parent="." unique_id=324738227 instance=ExtResource("4_tgh02")]
 position = Vector2(37.000008, -77)
 rotation = 1.5707964
-scale = Vector2(1.5, 1.5)
 
 [node name="StaticBody2D2" parent="." unique_id=83620309 instance=ExtResource("4_w2p40")]
 position = Vector2(-55, 112)
@@ -161,12 +173,11 @@ position = Vector2(-55, 112)
 [node name="StaticBody2D3" parent="." unique_id=1378582776 instance=ExtResource("4_w2p40")]
 position = Vector2(-17, 76)
 rotation = 1.1431906
-skin = 1
+skin = "open_alot_1"
 
 [node name="StaticBody2D4" parent="." unique_id=1101111406 instance=ExtResource("4_w2p40")]
 position = Vector2(26, 98)
 rotation = 2.2863812
-skin = 4
 
 [node name="StaticBody2D5" parent="." unique_id=2014694285 instance=ExtResource("5_w2p40")]
 position = Vector2(-87.00001, -15)
@@ -176,7 +187,7 @@ scale = Vector2(1.5, 1.5)
 [node name="StaticBody2D6" parent="." unique_id=367967219 instance=ExtResource("4_w2p40")]
 position = Vector2(-122, 85)
 rotation = -0.38920844
-skin = 3
+skin = "open_small_2"
 
 [node name="AnimatedSprite2D" parent="." unique_id=790032022 instance=ExtResource("6_ct6n8")]
 position = Vector2(160, -85)
@@ -185,8 +196,3 @@ position = Vector2(160, -85)
 position = Vector2(160, 124)
 rotation = 3.1415927
 state = "dead"
-
-[node name="Sprite2D" parent="." unique_id=41209180 instance=ExtResource("7_1k5hy")]
-show_behind_parent = true
-position = Vector2(55.50004, 40.00003)
-scale = Vector2(9.601563, 7.4218755)
