@@ -15,7 +15,7 @@ script = ExtResource("1_jdo1s")
 position = Vector2(989, 96)
 
 [node name="Area2D2" parent="." unique_id=524909638 instance=ExtResource("3_jdo1s")]
-position = Vector2(3, 96)
+position = Vector2(-126, -32)
 rotation = 3.1415927
 
 [node name="enemies" type="Node2D" parent="." unique_id=854186879]

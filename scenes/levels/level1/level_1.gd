@@ -29,27 +29,35 @@ func _ready() -> void:
 	player_state=player.default_state
 
 func move_up():
+	if curr_floor >= len(floors):
+		return
 	if floors[curr_floor-1].cleard:
 		player_state=player.get_state()
 		checkpoint=curr_floor+1
 	remove_child(floors[curr_floor-1])
+	print(curr_floor,"->",curr_floor+1)
 	curr_floor=curr_floor+1
 	add_child(floors[curr_floor-1])
 	real_curr_floor=floors[curr_floor-1]
 	player.set_player_position(floors[curr_floor-1].spawn)
 
+
 func move_down():
+	if curr_floor <= 1:
+		return
 	remove_child(floors[curr_floor-1])
 	curr_floor=curr_floor-1
+	print(curr_floor,"->",curr_floor-1)
 	add_child(floors[curr_floor-1])
 	real_curr_floor=floors[curr_floor-1]
 	player.set_player_position(floors[curr_floor-1].exit)
 
 func restart_floor():
+	if curr_floor < 1 or curr_floor > len(floors):
+		curr_floor=checkpoint
 	remove_child(floors[curr_floor-1])
 	curr_floor=checkpoint
 	floors[curr_floor-1]=floors_loaded[curr_floor-1].instantiate()
-	curr_floor=checkpoint
 	add_child(floors[curr_floor-1])
 	real_curr_floor=floors[curr_floor-1]
 	player.set_player_position(floors[curr_floor-1].spawn)
