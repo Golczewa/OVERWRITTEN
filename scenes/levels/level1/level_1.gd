@@ -2,6 +2,8 @@ extends Node2D
 
 @onready var floor1=preload("res://scenes/levels/level1/level1_floor1.tscn")
 @onready var floor2=preload("res://scenes/levels/level1/level1_floor2.tscn")
+@onready var floor3=preload("res://scenes/levels/level1/level1_floor3.tscn")
+@onready var floor4=preload("res://scenes/levels/level1/level1_floor4.tscn")
 
 var player
 var curr_floor:int=1
@@ -15,6 +17,8 @@ var level_id=1
 func _ready() -> void:
 	floors_loaded.append(floor1)
 	floors_loaded.append(floor2)
+	floors_loaded.append(floor3)
+	floors_loaded.append(floor4)
 	for loaded_floor in floors_loaded:
 		var floor_ = loaded_floor.instantiate()
 		floors.append(floor_)

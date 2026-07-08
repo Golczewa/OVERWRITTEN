@@ -63,4 +63,4 @@ frame_progress = 1.0
 shape = SubResource("RectangleShape2D_ewhtn")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1340283198]
-position = Vector2(24, 0)
+position = Vector2(32, 0)

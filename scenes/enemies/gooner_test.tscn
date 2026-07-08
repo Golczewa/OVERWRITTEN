@@ -42,7 +42,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4aiw4")
 }],
-"loop": false,
+"loop": 0,
 "name": &"dead",
 "speed": 5.0
 }, {
@@ -50,7 +50,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xvhym")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 5.0
 }]
@@ -76,13 +76,13 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ve081")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_twk8v"]
-size = Vector2(32, 32.5)
+[sub_resource type="CircleShape2D" id="CircleShape2D_fc5aw"]
+radius = 16.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1837710199 groups=["enemies"]]
 collision_layer = 4
@@ -91,12 +91,12 @@ script = ExtResource("1_yphuh")
 test_max_health = 60
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1924938793]
-position = Vector2(10, 0)
 sprite_frames = SubResource("SpriteFrames_j0lpi")
+offset = Vector2(10, 0)
 
 [node name="AnimatedSprite2D2" parent="AnimatedSprite2D" unique_id=1235518650 instance=ExtResource("3_xvhym")]
 show_behind_parent = true
-position = Vector2(-11, 2)
+position = Vector2(0, 2)
 sprite_frames = SubResource("SpriteFrames_fc5aw")
 
 [node name="RayCast2D2" type="RayCast2D" parent="AnimatedSprite2D/AnimatedSprite2D2" unique_id=1779151189]
@@ -105,14 +105,13 @@ target_position = Vector2(400, 0)
 
 [node name="AnimatedSprite2D3" parent="AnimatedSprite2D" unique_id=1071073496 instance=ExtResource("5_xvhym")]
 show_behind_parent = true
-position = Vector2(-11, 0)
+position = Vector2(-1, 0)
 
 [node name="Marker2D" type="Marker2D" parent="AnimatedSprite2D" unique_id=1905502852]
 z_index = 1
 position = Vector2(-35, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=466690639]
-position = Vector2(7, -3)
-shape = SubResource("RectangleShape2D_twk8v")
+shape = SubResource("CircleShape2D_fc5aw")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1737912424]

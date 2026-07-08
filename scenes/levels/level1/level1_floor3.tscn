@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dnr7im7a2vu8p"]
+
+[ext_resource type="Script" uid="uid://spskqbweogsn" path="res://scenes/levels/level1/level_1_floor_3.gd" id="1_n60pq"]
+[ext_resource type="PackedScene" uid="uid://cy5q0ea223xwj" path="res://scenes/levels/level1/level1_floor3_map.tscn" id="1_vhngt"]
+[ext_resource type="PackedScene" uid="uid://gvdpfkhlvqdq" path="res://scenes/levels/props/transition.tscn" id="2_d2rcx"]
+[ext_resource type="PackedScene" uid="uid://bu878f6tabfh3" path="res://scenes/levels/props/transition_exit.tscn" id="3_n60pq"]
+[ext_resource type="PackedScene" uid="uid://c6ah02d8uk7au" path="res://scenes/levels/props/virtual_box.tscn" id="4_d2rcx"]
+[ext_resource type="PackedScene" uid="uid://b027hwxqycj2f" path="res://scenes/levels/props/enemy_spawner.tscn" id="5_iksbf"]
+
+[node name="Node2D" type="Node2D" unique_id=1682661883]
+script = ExtResource("1_n60pq")
+
+[node name="NavigationRegion2D" parent="." unique_id=387654834 instance=ExtResource("1_vhngt")]
+position = Vector2(2, 0)
+
+[node name="Area2D" parent="." unique_id=1410637359 instance=ExtResource("2_d2rcx")]
+position = Vector2(642, -93)
+rotation = -1.5707964
+
+[node name="Area2D2" parent="." unique_id=1270916431 instance=ExtResource("3_n60pq")]
+position = Vector2(5, 96)
+rotation = 3.1415927
+
+[node name="StaticBody2D" parent="." unique_id=179286510 instance=ExtResource("5_iksbf")]
+position = Vector2(959, 96)
+rotation = -3.1415925
+
+[node name="enemies" type="Node2D" parent="." unique_id=206605375]
+
+[node name="StaticBody2D" parent="enemies" unique_id=1062431422 instance=ExtResource("4_d2rcx")]
+position = Vector2(207, 65)
+
+[node name="StaticBody2D2" parent="enemies" unique_id=100492297 instance=ExtResource("4_d2rcx")]
+position = Vector2(509, 186)
+
+[node name="StaticBody2D3" parent="enemies" unique_id=1270408675 instance=ExtResource("4_d2rcx")]
+position = Vector2(503, -65)
+
+[node name="StaticBody2D4" parent="enemies" unique_id=1168804952 instance=ExtResource("4_d2rcx")]
+position = Vector2(737, 199)
+
+[node name="StaticBody2D5" parent="enemies" unique_id=165316500 instance=ExtResource("4_d2rcx")]
+position = Vector2(732, -60)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1205184320]
+color = Color(0.4045111, 0.40451115, 0.4045111, 1)
