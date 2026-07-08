@@ -1,77 +1,78 @@
 [gd_scene format=3 uid="uid://gvdpfkhlvqdq"]
 
 [ext_resource type="Script" uid="uid://brkdlpac127i8" path="res://scenes/levels/props/transition.gd" id="1_f0i4t"]
-[ext_resource type="Texture2D" uid="uid://gux4b8o7lnp1" path="res://asstets/props/rusty_entrance_doors.png" id="2_l46jt"]
+[ext_resource type="Texture2D" uid="uid://bvoap1pkrhdkt" path="res://asstets/props/entrance.png" id="2_l46jt"]
+[ext_resource type="Texture2D" uid="uid://0uh0rx1ddq6w" path="res://asstets/props/light_test.png" id="3_8mf42"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_l46jt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6mlov"]
 atlas = ExtResource("2_l46jt")
 region = Rect2(0, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8mf42"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_x53ti"]
 atlas = ExtResource("2_l46jt")
 region = Rect2(32, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1itbg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuv7u"]
 atlas = ExtResource("2_l46jt")
 region = Rect2(64, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d44t4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nd8h4"]
 atlas = ExtResource("2_l46jt")
 region = Rect2(96, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jyfoe"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pdig"]
 atlas = ExtResource("2_l46jt")
 region = Rect2(128, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fpk2x"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_seyn0"]
 atlas = ExtResource("2_l46jt")
 region = Rect2(160, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xldpj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8e0f"]
 atlas = ExtResource("2_l46jt")
 region = Rect2(32, 0, 32, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_j7crc"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_8mf42"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_l46jt")
+"texture": SubResource("AtlasTexture_6mlov")
 }],
-"loop": false,
+"loop": 0,
 "name": &"closed",
 "speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8mf42")
+"texture": SubResource("AtlasTexture_x53ti")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1itbg")
+"texture": SubResource("AtlasTexture_nuv7u")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_d44t4")
+"texture": SubResource("AtlasTexture_nd8h4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jyfoe")
+"texture": SubResource("AtlasTexture_8pdig")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fpk2x")
+"texture": SubResource("AtlasTexture_seyn0")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xldpj")
+"texture": SubResource("AtlasTexture_v8e0f")
 }],
-"loop": false,
+"loop": 0,
 "name": &"open",
 "speed": 1.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7fmn4"]
-size = Vector2(5, 64)
+size = Vector2(6, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8mcfx"]
 size = Vector2(36.5, 64)
@@ -82,12 +83,16 @@ script = ExtResource("1_f0i4t")
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1397525334]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D" unique_id=511924607]
-sprite_frames = SubResource("SpriteFrames_j7crc")
-animation = &"open"
+sprite_frames = SubResource("SpriteFrames_8mf42")
+animation = &"closed"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1499448396]
-position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_7fmn4")
+
+[node name="PointLight2D" type="PointLight2D" parent="StaticBody2D" unique_id=363599039]
+color = Color(0.28627452, 0.83137256, 0.29411766, 1)
+texture = ExtResource("3_8mf42")
+texture_scale = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=165821127]
 position = Vector2(-22.75, 0)

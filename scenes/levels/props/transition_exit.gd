@@ -13,7 +13,9 @@ func _ready() -> void:
 
 func on_body_enterd(body):
 	if body.is_in_group("player") and floor_.enemies==0:
+		$StaticBody2D/PointLight2D.enabled=false
 		move_on()
+		$StaticBody2D/PointLight2D.enabled=true
 
 func move_on():
 	$StaticBody2D/AnimatedSprite2D.play("default")
@@ -27,7 +29,9 @@ func _physics_process(_delta: float) -> void:
 	if check:
 		if floor_.enemies!=0:
 			$StaticBody2D/AnimatedSprite2D.play("closed")
+			$StaticBody2D/PointLight2D.color=Color.RED
 		else:
 			$StaticBody2D/AnimatedSprite2D.play("open")
+			$StaticBody2D/PointLight2D.color=Color(0.067,0.658,0.07)
 			check=false
 	

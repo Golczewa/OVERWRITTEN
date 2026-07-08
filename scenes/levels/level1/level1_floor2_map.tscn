@@ -156,5 +156,10 @@ position = Vector2(233.99994, 164)
 rotation = 1.5760323
 skin = "open_small_2"
 
+[node name="StaticBody2D6" parent="props" unique_id=1101876818 instance=ExtResource("4_pkr4y")]
+position = Vector2(-91, 151)
+rotation = -0.8045968
+skin = "open_alot_1"
+
 [node name="Area2D" parent="." unique_id=1422119035 instance=ExtResource("10_i53ty")]
 position = Vector2(850, 35)
