@@ -18,3 +18,9 @@ func hide_menu(body):
 	if body==player and floor_.enemies==0:
 		if menu:
 			menu.queue_free()
+
+func _process(_delta: float) -> void:
+	if floor_.enemies==0:
+		$PointLight2D.enabled=true
+	else:
+		$PointLight2D.enabled=false

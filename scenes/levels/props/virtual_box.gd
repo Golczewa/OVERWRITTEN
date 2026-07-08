@@ -1,6 +1,14 @@
 extends StaticBody2D
 
+var floor_
+
+func _ready() -> void:
+	floor_=get_parent().get_parent()
+	floor_.enemies=floor_.enemies+1
+
+
 func begone():
+	floor_.enemies=floor_.enemies-1
 	$CollisionShape2D.disabled=true
 	var tween = create_tween().set_parallel(true)
 	tween.tween_property($AnimatedSprite2D, "scale", Vector2(0,0), 0.2)

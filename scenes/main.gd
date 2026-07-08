@@ -22,6 +22,7 @@ func play_game(path:String):
 	state=1
 
 func back_to_menu():
+	$game/CanvasLayer/pause.is_open=false
 	get_tree().paused = false
 	emit_signal("menu")
 	$game.process_mode=Node.PROCESS_MODE_DISABLED

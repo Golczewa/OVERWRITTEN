@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://gvdpfkhlvqdq" path="res://scenes/levels/props/transition.tscn" id="2_2as5j"]
 [ext_resource type="PackedScene" uid="uid://bu878f6tabfh3" path="res://scenes/levels/props/transition_exit.tscn" id="3_jdo1s"]
 [ext_resource type="PackedScene" uid="uid://b027hwxqycj2f" path="res://scenes/levels/props/enemy_spawner.tscn" id="5_wu22h"]
+[ext_resource type="PackedScene" uid="uid://c6ah02d8uk7au" path="res://scenes/levels/props/virtual_box.tscn" id="6_mqs0u"]
 
 [node name="Node2D" type="Node2D" unique_id=481733774]
 script = ExtResource("1_jdo1s")
@@ -22,5 +23,10 @@ rotation = 3.1415927
 color = Color(0.4045111, 0.40451115, 0.4045111, 1)
 
 [node name="StaticBody2D" parent="." unique_id=179286510 instance=ExtResource("5_wu22h")]
-position = Vector2(1024, 4)
+position = Vector2(1024, 3)
 rotation = 1.5707964
+
+[node name="enemies" type="Node2D" parent="." unique_id=1926556154]
+
+[node name="StaticBody2D2" parent="enemies" unique_id=1062431422 instance=ExtResource("6_mqs0u")]
+position = Vector2(850, 67)

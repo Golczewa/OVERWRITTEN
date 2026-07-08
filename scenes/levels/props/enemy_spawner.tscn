@@ -1,53 +1,53 @@
 [gd_scene format=3 uid="uid://b027hwxqycj2f"]
 
 [ext_resource type="Script" uid="uid://b2d4kowi7po0r" path="res://scenes/levels/props/enemy_spawner.gd" id="1_devoi"]
-[ext_resource type="Texture2D" uid="uid://d00yvvktnetc5" path="res://asstets/walls/lee_dor.png.png" id="2_xl0gr"]
+[ext_resource type="Texture2D" uid="uid://cu3qryaqmqa3m" path="res://asstets/props/spawn_door.png" id="2_c4uhn"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_00s5r"]
-atlas = ExtResource("2_xl0gr")
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jpvg"]
+atlas = ExtResource("2_c4uhn")
 region = Rect2(0, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_63vqd"]
-atlas = ExtResource("2_xl0gr")
+[sub_resource type="AtlasTexture" id="AtlasTexture_qv4bq"]
+atlas = ExtResource("2_c4uhn")
 region = Rect2(32, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i0ei4"]
-atlas = ExtResource("2_xl0gr")
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsgus"]
+atlas = ExtResource("2_c4uhn")
 region = Rect2(64, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_568dl"]
-atlas = ExtResource("2_xl0gr")
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjdj6"]
+atlas = ExtResource("2_c4uhn")
 region = Rect2(96, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x8ooj"]
-atlas = ExtResource("2_xl0gr")
+[sub_resource type="AtlasTexture" id="AtlasTexture_eq3y8"]
+atlas = ExtResource("2_c4uhn")
 region = Rect2(128, 0, 32, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nmoyu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_00s5r")
+"texture": SubResource("AtlasTexture_3jpvg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_63vqd")
+"texture": SubResource("AtlasTexture_qv4bq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_i0ei4")
+"texture": SubResource("AtlasTexture_rsgus")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_568dl")
+"texture": SubResource("AtlasTexture_bjdj6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_x8ooj")
+"texture": SubResource("AtlasTexture_eq3y8")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 20.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ewhtn"]
-size = Vector2(13, 64)
+size = Vector2(6, 64)
 
 [node name="StaticBody2D" type="StaticBody2D" unique_id=179286510]
 z_index = 2
@@ -57,9 +57,9 @@ script = ExtResource("1_devoi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1041254118]
 sprite_frames = SubResource("SpriteFrames_nmoyu")
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1934107275]
-position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_ewhtn")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1340283198]
