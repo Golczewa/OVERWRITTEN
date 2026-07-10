@@ -47,13 +47,13 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sy0e2")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 20.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qlqt"]
-size = Vector2(41.75, 9)
+size = Vector2(41.75, 12.5)
 
 [node name="Area2D" type="Area2D" unique_id=1810676505]
 collision_mask = 15
@@ -64,5 +64,5 @@ position = Vector2(50, 7)
 sprite_frames = SubResource("SpriteFrames_kts4k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=423846278]
-position = Vector2(24, 10)
+position = Vector2(24, 6)
 shape = SubResource("RectangleShape2D_8qlqt")

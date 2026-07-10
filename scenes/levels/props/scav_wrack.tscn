@@ -16,10 +16,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3kj54"]
-size = Vector2(24, 46.3125)
+size = Vector2(20, 33)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6224y"]
-size = Vector2(14.5, 16.25)
+size = Vector2(14.25, 14.125)
 
 [node name="StaticBody2D" type="StaticBody2D" unique_id=324738227]
 collision_layer = 3
@@ -27,15 +27,15 @@ script = ExtResource("1_3kj54")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=531906735]
 position = Vector2(8, -1)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_kk8jy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=828813279]
-position = Vector2(-4, -0.15625)
+position = Vector2(-2, -2.5)
 shape = SubResource("RectangleShape2D_3kj54")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=957633053]
-position = Vector2(14.75, 1.875)
+position = Vector2(12, 1)
 shape = SubResource("RectangleShape2D_6224y")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1380382825]

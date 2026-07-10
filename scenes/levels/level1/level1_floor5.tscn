@@ -2,19 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://dcf014qvo5dua" path="res://scenes/levels/level1/level1_floor5_map.tscn" id="1_h3lmp"]
 [ext_resource type="Script" uid="uid://bc0dri8jmpa33" path="res://scenes/levels/level1/level_1_floor_5.gd" id="1_otsnt"]
-[ext_resource type="PackedScene" uid="uid://gvdpfkhlvqdq" path="res://scenes/levels/props/transition.tscn" id="2_otsnt"]
 [ext_resource type="PackedScene" uid="uid://bu878f6tabfh3" path="res://scenes/levels/props/transition_exit.tscn" id="3_tatkq"]
 [ext_resource type="PackedScene" uid="uid://b027hwxqycj2f" path="res://scenes/levels/props/enemy_spawner.tscn" id="5_tatkq"]
 [ext_resource type="PackedScene" uid="uid://clap81ynbqx0x" path="res://scenes/enemies/gooner_test.tscn" id="6_adioa"]
+[ext_resource type="PackedScene" uid="uid://rgpml3tss12d" path="res://scenes/levels/props/exit.tscn" id="7_m7b1t"]
+[ext_resource type="PackedScene" uid="uid://kkqb7cfxl6sm" path="res://scenes/enemies/scavenger_brute.tscn" id="7_prxvq"]
 
 [node name="Node2D" type="Node2D" unique_id=1899703556]
 script = ExtResource("1_otsnt")
 
 [node name="NavigationRegion2D" parent="." unique_id=1635069556 instance=ExtResource("1_h3lmp")]
-
-[node name="Area2D" parent="." unique_id=1410637359 instance=ExtResource("2_otsnt")]
-position = Vector2(384, -349)
-rotation = -1.5707964
 
 [node name="Area2D2" parent="." unique_id=947638094 instance=ExtResource("3_tatkq")]
 position = Vector2(99, 448)
@@ -34,3 +31,10 @@ rotation = 3.1415927
 
 [node name="CharacterBody2D" parent="enemies" unique_id=1837710199 instance=ExtResource("6_adioa")]
 position = Vector2(506, -154)
+
+[node name="CharacterBody2D2" parent="enemies" unique_id=625731905 instance=ExtResource("7_prxvq")]
+position = Vector2(120, -222)
+
+[node name="Area2D" parent="." unique_id=1227416673 instance=ExtResource("7_m7b1t")]
+position = Vector2(384, -349)
+rotation = 1.5707964

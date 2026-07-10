@@ -166,7 +166,7 @@ rotation = -1.5707964
 state = "dead"
 
 [node name="StaticBody2D5" parent="props" unique_id=324738227 instance=ExtResource("6_qu1af")]
-position = Vector2(729, 24)
+position = Vector2(727, 19)
 rotation = 1.5707964
 
 [node name="AnimatedSprite2D5" parent="props" unique_id=1413747988 instance=ExtResource("5_ujgwv")]
