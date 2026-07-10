@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://kkqb7cfxl6sm" path="res://scenes/enemies/scavenger_brute.tscn" id="6_yn208"]
 [ext_resource type="PackedScene" uid="uid://cwswxiilr1euu" path="res://scenes/levels/level1/level1_floor4_map.tscn" id="6_yo0sv"]
 [ext_resource type="PackedScene" uid="uid://b0iqe6x2742im" path="res://scenes/levels/props/namedrop.tscn" id="7_1lth2"]
+[ext_resource type="PackedScene" uid="uid://dico4xcxnqi3w" path="res://scenes/levels/props/double_doors.tscn" id="8_5b0ov"]
 
 [node name="Node2D" type="Node2D" unique_id=481733774]
 script = ExtResource("1_yo0sv")
@@ -27,10 +28,16 @@ color = Color(0.4045111, 0.40451115, 0.4045111, 1)
 position = Vector2(1024, 3)
 rotation = 1.5707964
 
+[node name="StaticBody2D2" parent="." unique_id=829349141 instance=ExtResource("5_yh03q")]
+position = Vector2(3, 352)
+
 [node name="enemies" type="Node2D" parent="." unique_id=1926556154]
 
-[node name="CharacterBody2D" parent="enemies" unique_id=625731905 instance=ExtResource("6_yn208")]
-position = Vector2(698, 136)
+[node name="CharacterBody2D2" parent="enemies" unique_id=2131328903 instance=ExtResource("6_yn208")]
+position = Vector2(751, 142)
 
 [node name="Area2D3" parent="." unique_id=545860116 instance=ExtResource("7_1lth2")]
 position = Vector2(113, 519)
+
+[node name="Area2D4" parent="." unique_id=867155296 instance=ExtResource("8_5b0ov")]
+position = Vector2(317, 128)

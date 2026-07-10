@@ -26,3 +26,7 @@ func spawn_wave():
 		$AnimatedSprite2D.play_backwards("default")
 	else :
 		wave_remain=0
+
+func setup(wave:Array)->void:
+	waves=wave
+	wave_remain=len(wave)-1
