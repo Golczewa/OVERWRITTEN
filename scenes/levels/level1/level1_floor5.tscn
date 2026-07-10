@@ -13,7 +13,7 @@ script = ExtResource("1_otsnt")
 [node name="NavigationRegion2D" parent="." unique_id=1635069556 instance=ExtResource("1_h3lmp")]
 
 [node name="Area2D" parent="." unique_id=1410637359 instance=ExtResource("2_otsnt")]
-position = Vector2(384, -157)
+position = Vector2(384, -349)
 rotation = -1.5707964
 
 [node name="Area2D2" parent="." unique_id=947638094 instance=ExtResource("3_tatkq")]
@@ -24,13 +24,13 @@ rotation = -3.1415927
 color = Color(0.4045111, 0.40451115, 0.4045111, 1)
 
 [node name="StaticBody2D" parent="." unique_id=179286510 instance=ExtResource("5_tatkq")]
-position = Vector2(99, -64)
+position = Vector2(35, -224)
 
 [node name="StaticBody2D2" parent="." unique_id=2063312251 instance=ExtResource("5_tatkq")]
-position = Vector2(669, -64)
+position = Vector2(734, -224)
 rotation = 3.1415927
 
 [node name="enemies" type="Node2D" parent="." unique_id=1384737383]
 
 [node name="CharacterBody2D" parent="enemies" unique_id=1837710199 instance=ExtResource("6_adioa")]
-position = Vector2(491, -42)
+position = Vector2(506, -154)

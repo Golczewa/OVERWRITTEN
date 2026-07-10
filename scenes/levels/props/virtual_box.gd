@@ -9,11 +9,10 @@ func _ready() -> void:
 
 func begone():
 	floor_.enemies=floor_.enemies-1
-	$CollisionShape2D.disabled=true
+	$CollisionShape2D.set_deferred("disabled",true)
 	var tween = create_tween().set_parallel(true)
 	tween.tween_property($AnimatedSprite2D, "scale", Vector2(0,0), 0.2)
 	tween.tween_property($AnimatedSprite2D, "modulate:a",0, 0.2)
-	tween.chain().tween_callback(queue_free)
 
 func take_damage(_damage: int,_knockback:int):
 	begone()
