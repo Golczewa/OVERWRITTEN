@@ -21,13 +21,16 @@ rotation = 3.1415927
 [node name="enemies" type="Node2D" parent="." unique_id=854186879]
 
 [node name="StaticBody2D" parent="enemies" unique_id=1062431422 instance=ExtResource("6_mqs0u")]
-position = Vector2(219, 64)
+position = Vector2(207, 88)
+rotation = 3.1415927
 
 [node name="StaticBody2D2" parent="enemies" unique_id=364397002 instance=ExtResource("6_mqs0u")]
-position = Vector2(474, 75)
+position = Vector2(395, 128.00002)
+rotation = 3.796091
 
 [node name="StaticBody2D3" parent="enemies" unique_id=1223698854 instance=ExtResource("6_mqs0u")]
-position = Vector2(683, 37)
+position = Vector2(677, 66)
+rotation = 2.6354473
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1491426377]
 color = Color(0.4045111, 0.40451115, 0.4045111, 1)

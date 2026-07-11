@@ -10,6 +10,7 @@ func _ready() -> void:
 func begone():
 	floor_.enemies=floor_.enemies-1
 	$CollisionShape2D.set_deferred("disabled",true)
+	$PointLight2D.hide()
 	var tween = create_tween().set_parallel(true)
 	tween.tween_property($AnimatedSprite2D, "scale", Vector2(0,0), 0.2)
 	tween.tween_property($AnimatedSprite2D, "modulate:a",0, 0.2)
