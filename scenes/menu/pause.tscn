@@ -24,7 +24,7 @@ offset_bottom = 229.0
 
 [node name="Button" parent="VBoxContainer" unique_id=2078812563 instance=ExtResource("3_1mvc1")]
 layout_mode = 2
-text = "  Reasume"
+text = "  Resume"
 
 [node name="Button2" parent="VBoxContainer" unique_id=336210084 instance=ExtResource("3_1mvc1")]
 layout_mode = 2

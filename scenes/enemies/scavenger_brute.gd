@@ -15,11 +15,15 @@ var player_sighted:bool = false
 var in_knocback:bool=false
 var dead=false
 var can_attack=false
+var spawn_dest=Vector2.ZERO
+var is_spawning=false
 @export var walk_range: int =200
 
 signal died
 
 func _ready() -> void:
+		if spawn_dest!=Vector2.ZERO and is_spawning:
+			await big_entrance(spawn_dest)
 		randomize()
 		floor_=get_parent().get_parent()
 		floor_.enemies=floor_.enemies+1
@@ -30,22 +34,23 @@ func _ready() -> void:
 		_randomise_target()
 		
 func take_damage(damage: int,knockback:int):
-	curr_health=curr_health-damage
-	if(knockback!=0):
-		legs.stop_walking()
-		var org_speed=speed
-		speed=knockback
-		if(direction==Vector2.ZERO):
-			direction=-Vector2($AnimatedSprite2D/RayCast2D.target_position-global_position).normalized()
-		else:
-			direction=-direction
-		in_knocback=true
-		get_tree().create_timer(0.1).timeout.connect(end_knockback.bind(org_speed))
-	_damage_effect()
-	if(!player_sighted):
-		player_sighted=true
-	if curr_health<=0:
-		_die()
+	if not is_spawning:
+		curr_health=curr_health-damage
+		if(knockback!=0):
+			legs.stop_walking()
+			var org_speed=speed
+			speed=knockback
+			if(direction==Vector2.ZERO):
+				direction=-Vector2($AnimatedSprite2D/RayCast2D.target_position-global_position).normalized()
+			else:
+				direction=-direction
+			in_knocback=true
+			get_tree().create_timer(0.1).timeout.connect(end_knockback.bind(org_speed))
+		_damage_effect()
+		if(!player_sighted):
+			player_sighted=true
+		if curr_health<=0:
+			_die()
 
 func end_knockback( org_speed):
 	speed=0
@@ -95,21 +100,22 @@ func _randomise_target():
 	nav_agent.target_position=target
 
 func _physics_process(_delta: float) -> void:
-	if(!in_knocback):
-		if(player_sighted):
-			chase()
-		else: 
-			_idle_moving()
-		var target_angle = direction.angle()
-		rotation = lerp_angle(rotation, target_angle, rot_speed * _delta)
-	velocity=direction*speed
-	if(!player_sighted):
-		player_sighted=can_see_player()
-		if player_sighted:
-			get_tree().call_group("enemies","trigger")
-	if can_attack:
-		weapon.attack()
-	move_and_slide()
+	if not is_spawning:
+		if(!in_knocback):
+			if(player_sighted):
+				chase()
+			else: 
+				_idle_moving()
+			var target_angle = direction.angle()
+			rotation = lerp_angle(rotation, target_angle, rot_speed * _delta)
+		velocity=direction*speed
+		if(!player_sighted):
+			player_sighted=can_see_player()
+			if player_sighted:
+				get_tree().call_group("enemies","trigger")
+		if can_attack:
+			weapon.attack()
+		move_and_slide()
 
 func can_see_player():
 	var dist = global_position.distance_to(player.global_position)
@@ -146,3 +152,14 @@ func player_out(_body):
 
 func trigger():
 	player_sighted=true
+
+func big_entrance(pos:Vector2)->void:
+	look_at(pos+Vector2(1,1))
+	legs.walk()
+	weapon.show()
+	modulate=Color.BLACK
+	var tween=create_tween().set_parallel(true)
+	tween.tween_property(self,"global_position",pos,0.5)
+	tween.tween_property(self,"modulate",Color.WHITE,0.5)
+	await tween.finished
+	is_spawning=false

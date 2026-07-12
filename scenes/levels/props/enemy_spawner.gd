@@ -3,6 +3,7 @@ var waves:Array
 var wave_remain
 var wave_counter=0
 var _floor
+var is_spawning_wave := false
 @export var mirrored:bool=false
 
 func _ready() -> void:
@@ -11,21 +12,27 @@ func _ready() -> void:
 		scale=Vector2(1,-1)
 	
 func spawn_wave():
-	if( wave_counter<=wave_remain):
+	if is_spawning_wave:
+		return
+	if wave_counter <= wave_remain:
+		is_spawning_wave = true
 		$AnimatedSprite2D.play("default")
-		var wave=waves[wave_counter]
+		var wave = waves[wave_counter]
 		for enemy in wave:
 			for i in range(enemy[0]):
-				var enemy_inst=enemy[1].instantiate()
+				var enemy_inst = enemy[1].instantiate()
 				var spawn_offset = Vector2(randf_range(-8, 8), randf_range(-8, 8))
-				enemy_inst.global_position=$Marker2D.global_position + spawn_offset
-				enemy_inst.player_sighted=true
+				enemy_inst.global_position = global_position
+				enemy_inst.spawn_dest = $Marker2D.global_position + spawn_offset
+				enemy_inst.player_sighted = true
+				enemy_inst.is_spawning = true
 				_floor.get_node("enemies").add_child(enemy_inst)
 				await get_tree().create_timer(1).timeout
-		wave_counter=wave_counter+1
+		wave_counter += 1
 		$AnimatedSprite2D.play_backwards("default")
-	else :
-		wave_remain=0
+		is_spawning_wave = false
+	else:
+		wave_remain = 0
 
 func setup(wave:Array)->void:
 	waves=wave

@@ -91,6 +91,7 @@ animations = [{
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=754723366 groups=["enemies"]]
 collision_layer = 4
 collision_mask = 3
+motion_mode = 1
 script = ExtResource("1_fhysm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=880978049]
