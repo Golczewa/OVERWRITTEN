@@ -8,7 +8,7 @@ var cleard=false
 
 func _ready() -> void:
 	var waves1=[[],[[1,sca_gooner]]]
-	var waves2=[[[1,sca_brute]],[[1,sca_brute]]]
+	var waves2=[[[1,sca_brute]],[]]
 	spawn=$Area2D4/Marker2D.global_position
 	exit=$Area2D3/Marker2D.global_position
 	$StaticBody2D.setup(waves2)

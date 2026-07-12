@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b3ueah6mp7i4o"]
+
+[ext_resource type="Texture2D" uid="uid://ce5gipmhqfgkk" path="res://asstets/props/vent_base.png" id="1_8ketg"]
+[ext_resource type="Script" uid="uid://bgjjbmqttj5el" path="res://scenes/levels/props/vent_seelmill.gd" id="1_61lnu"]
+[ext_resource type="Texture2D" uid="uid://ccbya2uqygbec" path="res://asstets/props/vent_fan.png" id="2_61lnu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jiq1j"]
+size = Vector2(43, 43)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1191431948]
+script = ExtResource("1_61lnu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=247366112]
+texture = ExtResource("1_8ketg")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=1693632503]
+texture = ExtResource("2_61lnu")
+offset = Vector2(-1, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=911646104]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_jiq1j")
