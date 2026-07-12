@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bu878f6tabfh3" path="res://scenes/levels/props/transition_exit.tscn" id="3_n60pq"]
 [ext_resource type="PackedScene" uid="uid://c6ah02d8uk7au" path="res://scenes/levels/props/virtual_box.tscn" id="4_d2rcx"]
 [ext_resource type="PackedScene" uid="uid://b027hwxqycj2f" path="res://scenes/levels/props/enemy_spawner.tscn" id="5_iksbf"]
+[ext_resource type="PackedScene" uid="uid://dnn8p00ywx8vr" path="res://scenes/enemies/virtual_scavenger.tscn" id="7_vdndi"]
 
 [node name="Node2D" type="Node2D" unique_id=1682661883]
 script = ExtResource("1_n60pq")
@@ -31,25 +32,22 @@ rotation = -3.1415925
 position = Vector2(243, 92)
 rotation = 3.1415927
 
-[node name="StaticBody2D2" parent="enemies" unique_id=100492297 instance=ExtResource("4_d2rcx")]
-position = Vector2(534, 233)
-rotation = -1.3334316
-
-[node name="StaticBody2D3" parent="enemies" unique_id=1270408675 instance=ExtResource("4_d2rcx")]
-position = Vector2(514, -39)
-rotation = 1.2653637
-
 [node name="StaticBody2D4" parent="enemies" unique_id=1168804952 instance=ExtResource("4_d2rcx")]
 position = Vector2(767, 222)
 rotation = 3.1415927
 
-[node name="StaticBody2D5" parent="enemies" unique_id=165316500 instance=ExtResource("4_d2rcx")]
-position = Vector2(769, -37)
-rotation = 2.4783676
-
 [node name="StaticBody2D6" parent="enemies" unique_id=1537455198 instance=ExtResource("4_d2rcx")]
 position = Vector2(297.99997, 95.00001)
 rotation = 3.1415927
+
+[node name="CharacterBody2D" parent="enemies" unique_id=754723366 instance=ExtResource("7_vdndi")]
+position = Vector2(755, -26)
+
+[node name="CharacterBody2D2" parent="enemies" unique_id=1270445672 instance=ExtResource("7_vdndi")]
+position = Vector2(488, 226)
+
+[node name="CharacterBody2D3" parent="enemies" unique_id=1383492671 instance=ExtResource("7_vdndi")]
+position = Vector2(511, -26)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1205184320]
 color = Color(0.4045111, 0.40451115, 0.4045111, 1)

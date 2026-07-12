@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bc6pj5kbichkq" path="res://scenes/levels/level1/level_1_floor_2.gd" id="1_jdo1s"]
 [ext_resource type="PackedScene" uid="uid://gvdpfkhlvqdq" path="res://scenes/levels/props/transition.tscn" id="2_2as5j"]
 [ext_resource type="PackedScene" uid="uid://bu878f6tabfh3" path="res://scenes/levels/props/transition_exit.tscn" id="3_jdo1s"]
+[ext_resource type="PackedScene" uid="uid://dnn8p00ywx8vr" path="res://scenes/enemies/virtual_scavenger.tscn" id="6_ak4pv"]
 [ext_resource type="PackedScene" uid="uid://c6ah02d8uk7au" path="res://scenes/levels/props/virtual_box.tscn" id="6_mqs0u"]
 
 [node name="Node2D" type="Node2D" unique_id=237794623]
@@ -28,9 +29,8 @@ rotation = 3.1415927
 position = Vector2(395, 128.00002)
 rotation = 3.796091
 
-[node name="StaticBody2D3" parent="enemies" unique_id=1223698854 instance=ExtResource("6_mqs0u")]
-position = Vector2(677, 66)
-rotation = 2.6354473
+[node name="CharacterBody2D" parent="enemies" unique_id=754723366 instance=ExtResource("6_ak4pv")]
+position = Vector2(607, 86)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1491426377]
 color = Color(0.4045111, 0.40451115, 0.4045111, 1)
