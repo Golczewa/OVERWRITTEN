@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b3ueah6mp7i4o" path="res://scenes/levels/props/vent_seelmill.tscn" id="6_s0tec"]
 [ext_resource type="PackedScene" uid="uid://c71vhww3onajj" path="res://scenes/levels/props/steelmill_table.tscn" id="7_ucanr"]
 [ext_resource type="PackedScene" uid="uid://b2hh5rx0awj0n" path="res://scenes/levels/props/scav_wrack.tscn" id="8_pk2o5"]
+[ext_resource type="PackedScene" uid="uid://b4aojcvvkdto3" path="res://scenes/levels/props/pipe_steelmill.tscn" id="9_frfkh"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mg1xu"]
 vertices = PackedVector2Array(185, 231, 94.96875, 231, 113.359375, 215.67969, 64.71875, 157.28125, 32.070313, 184.46094, 32.109375, 167, 409, 32.109375, 409, 32.039063, 415.9297, 32.0625, 415.95313, 39, 415.89063, 39, 479.9297, 351.9297, 473, 351.95313, 473, 351.89063, 479.89844, 327, 415.9297, 607.9297, 409, 607.9531, 409, 607.8906, 415.89844, 583, 473, 288.10938, 473, 288.03906, 480, 288.0625, 480.04688, 313, 172, 554, 32.101563, 554, 32.109375, 551, -7, 351.89844, -31.929688, 351.9297, -31.898438, 327, -7, 288.10938, 32.109375, 39, 32.046875, 39, 32.0625, 32.0625, 57, 32.109375, 415.92188, 409, 415.95313, 423, 415.89063, 423, 263, 409, 231, 618.47656, 217, 618.5078, 217, 607.8906, 231, 608.0469, 32.109375, 423, 32.046875, 423, 32.078125, 409, 185, 409, 217, 19.507813, 231, 19.476563, 231, 31.953125, 217, 32.109375, 313, 32.109375, 313, 32.039063, 345, 32.109375, 345, 32.039063, 377, 32.109375, 377, 32.039063, 377, 351.89063, 345, 288.10938, 345, 288.03906, 377, 288.10938, 409, 351.89063, 377, 288.03906, 409, 288.10938, 441, 351.89063, 409, 288.03906, 441, 288.10938, 441, 288.03906, -7, 288.03906, 25, 288.10938, 25, 351.89063, 25, 288.03906, 57, 288.10938, 57, 288.03906, 89, 288.10938, 89, 288.03906, 121, 288.10938, 121, 288.03906, 153, 288.10938, 153, 288.03906, 185, 288.10938, 57, 32.039063, 89, 32.109375, 89, 32.039063, 121, 32.109375, 121, 32.039063, 153, 32.109375, 153, 32.039063, 185, 32.109375, 185, 32.039063, 415.95313, 71, 415.89063, 71, 415.95313, 103, 415.89063, 103, 441, 351.95313, 409, 351.95313, 377, 351.95313, 345, 351.95313, 345, 351.89063, 415.95313, 455, 415.89063, 455, 415.95313, 487, 415.89063, 487, 415.95313, 519, 415.89063, 519, 415.95313, 551, 415.89063, 551, 415.95313, 583, 377, 607.9531, 377, 607.8906, 345, 607.9531, 345, 607.8906, 313, 607.9531, 313, 607.8906, 185, 607.9531, 185, 607.8906, 32.046875, 551, 32.109375, 519, 32.046875, 519, 32.109375, 487, 32.046875, 487, 32.109375, 455, 32.046875, 455, 185, 351.89063, 153, 351.95313, 153, 351.89063, 263, 231, 263, 287.95313, 121, 351.95313, 121, 351.89063, 89, 351.95313, 89, 351.89063, 57, 351.95313, 57, 351.89063, 25, 351.95313, -7, 351.95313, 32.046875, 167, 32.109375, 135, 32.046875, 135, 32.109375, 103, 32.046875, 103, 32.109375, 71, 32.046875, 71, 415.9297, 125, 364, 125, 172, 607.90625, -32.046875, 313, -32, 288.04688, 364, 231, 490, 313, 490, 327, -42, 327, -42, 313, 263, 352.04688)
@@ -186,3 +187,42 @@ skin = "empty2"
 [node name="StaticBody2D8" parent="props" unique_id=324738227 instance=ExtResource("8_pk2o5")]
 position = Vector2(82, 395)
 rotation = 1.5707964
+
+[node name="AnimatedSprite2D7" parent="props" unique_id=1783935627 instance=ExtResource("9_frfkh")]
+z_index = 10
+position = Vector2(93, 224)
+
+[node name="AnimatedSprite2D8" parent="props" unique_id=740140584 instance=ExtResource("9_frfkh")]
+z_index = 10
+position = Vector2(93, 160)
+
+[node name="AnimatedSprite2D8" parent="props/AnimatedSprite2D8" unique_id=444854566 instance=ExtResource("9_frfkh")]
+z_index = 10
+position = Vector2(0, -64)
+rotation = 3.1415927
+animation = &"curve"
+
+[node name="AnimatedSprite2D9" parent="props/AnimatedSprite2D8" unique_id=15028643 instance=ExtResource("9_frfkh")]
+z_index = 10
+position = Vector2(64, -64)
+rotation = 1.5707964
+
+[node name="AnimatedSprite2D8" parent="props/AnimatedSprite2D8/AnimatedSprite2D9" unique_id=868683095 instance=ExtResource("9_frfkh")]
+z_index = 10
+position = Vector2(-3.33786e-06, -64)
+rotation = 3.1415927
+
+[node name="AnimatedSprite2D8" parent="props/AnimatedSprite2D8/AnimatedSprite2D9/AnimatedSprite2D8" unique_id=597807707 instance=ExtResource("9_frfkh")]
+z_index = 10
+position = Vector2(5.841255e-06, 64)
+rotation = 3.1415927
+
+[node name="AnimatedSprite2D8" parent="props/AnimatedSprite2D8/AnimatedSprite2D9/AnimatedSprite2D8/AnimatedSprite2D8" unique_id=1534730442 instance=ExtResource("9_frfkh")]
+z_index = 10
+position = Vector2(-2.6782327e-05, -124)
+rotation = 3.1415927
+
+[node name="AnimatedSprite2D8" parent="props/AnimatedSprite2D8/AnimatedSprite2D9/AnimatedSprite2D8/AnimatedSprite2D8/AnimatedSprite2D8" unique_id=208774325 instance=ExtResource("9_frfkh")]
+z_index = 10
+position = Vector2(-1.4305115e-05, -63.999996)
+rotation = 3.1415927
