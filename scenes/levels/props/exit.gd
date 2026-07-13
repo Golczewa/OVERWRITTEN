@@ -1,6 +1,7 @@
 extends Area2D
 var floor_
 var level_;
+var check:bool=true 
 @onready var player = get_tree().get_first_node_in_group("player")
 
 func _ready() -> void:
@@ -14,6 +15,15 @@ func on_body_enterd(body):
 
 func exit():
 	$StaticBody2D/AnimatedSprite2D.play("default")
-	player.freeze_player()
-	await $StaticBody2D/AnimatedSprite2D.animation_finished
+	await player.exit_anim($Marker2D.global_position,global_position)
 	level_.end_level()
+
+func _physics_process(_delta: float) -> void:
+	if check:
+		if floor_.enemies!=0:
+			$StaticBody2D/AnimatedSprite2D.play("closed")
+			$StaticBody2D/PointLight2D.hide()
+		else:
+			$StaticBody2D/AnimatedSprite2D.play("open")
+			$StaticBody2D/PointLight2D.show()
+			check=false

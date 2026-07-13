@@ -10,6 +10,7 @@ var dash_cd:int=1
 var can_dash:bool=true
 var heal_amount=60
 var heal_charge=3
+var in_cutscene:bool=false
 @export var heal_cd=30
 @onready var legs=$AnimatedSprite2D2
 @onready var heath_bar=$Camera2D/CanvasLayer/Control2/TextureProgressBar
@@ -20,6 +21,7 @@ var right_weapon
 var left_up_weapon
 var right_up_weapon
 signal player_died
+
 var default_state={
 		"health": 100,
 		"charges": 3,
@@ -44,25 +46,26 @@ func _ready() -> void:
 	
 
 func _physics_process(_delta: float) -> void:
-	$AnimatedSprite2D.look_at(get_global_mouse_position())
-	if not is_dashing:
-		direction = Input.get_vector("move_left","move_right","move_up","move_down")
-		if direction:
-			velocity = direction * SPEED
-			legs.walk(velocity)
-		else:
-			velocity = velocity.move_toward(Vector2.ZERO,SPEED)
-			legs.stop()
-	move_and_slide()
+	if not in_cutscene:
+		$AnimatedSprite2D.look_at(get_global_mouse_position())
+		if not is_dashing:
+			direction = Input.get_vector("move_left","move_right","move_up","move_down")
+			if direction:
+				velocity = direction * SPEED
+				legs.walk(velocity)
+			else:
+				velocity = velocity.move_toward(Vector2.ZERO,SPEED)
+				legs.stop()
+		move_and_slide()
 	
 func _process(_delta: float) -> void:
-	if $Timer.time_left>0 and heal_charge!=3:
+	if $Timer.time_left>0 and heal_charge!=3 and not in_cutscene:
 		charges.update_value(heal_cd- $Timer.time_left)
 	else:
 		charges.update_value(heal_cd)
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton and not in_cutscene:
 		if event.button_index==MOUSE_BUTTON_LEFT:
 			if event.pressed:
 				right_weapon.attack()
@@ -76,7 +79,7 @@ func _input(event: InputEvent) -> void:
 			heal()
 
 func player_take_dmg(dmg):
-	if not is_dashing:
+	if not is_dashing and not in_cutscene:
 		player_health=player_health-dmg
 		hp_update()
 		if(player_health<=0):
@@ -91,7 +94,7 @@ func _damage_effect():
 	$AnimatedSprite2D.modulate=Color.WHITE
 
 func _dash():
-	if can_dash:
+	if can_dash and not in_cutscene:
 		var temp=SPEED
 		var dash_dir=direction
 		is_dashing=true
@@ -198,3 +201,13 @@ func equip_weapons():
 	right_weapon=$AnimatedSprite2D/righthand.equip()
 	left_weapon=$AnimatedSprite2D/lefthand.equip()
 	
+func exit_anim(pos_a:Vector2,pos_b:Vector2):
+	in_cutscene=true
+	var tween=create_tween().set_parallel(true)
+	global_position=pos_a
+	$AnimatedSprite2D.look_at(pos_b)
+	tween.tween_property(self,"global_position",pos_b,1)
+	tween.tween_property(self,"modulate",Color.BLACK,1)
+	await tween.finished
+	modulate=Color.WHITE
+	in_cutscene=false
