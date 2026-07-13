@@ -65,11 +65,19 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ku0l3"]
 size = Vector2(28, 29)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=943878568 groups=["enemies"]]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=943878568 node_paths=PackedStringArray("weapon", "legs", "body", "raycast", "marker", "to_hide_on_death") groups=["enemies"]]
 collision_layer = 4
 collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_b4jvi")
+max_health = 100
+weapon = NodePath("AnimatedSprite2D/AnimatedSprite2D2")
+legs = NodePath("AnimatedSprite2D2")
+body = NodePath("AnimatedSprite2D")
+raycast = NodePath("AnimatedSprite2D/AnimatedSprite2D2/RayCast2D")
+marker = NodePath("AnimatedSprite2D/Marker2D")
+to_hide_on_death = [NodePath("AnimatedSprite2D/AnimatedSprite2D3"), NodePath("AnimatedSprite2D/AnimatedSprite2D2"), NodePath("AnimatedSprite2D2")]
+speed = 40
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1323144180]
 sprite_frames = SubResource("SpriteFrames_tvbk2")

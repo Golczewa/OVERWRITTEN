@@ -1,34 +1,39 @@
+class_name EnemyWithGun
 extends CharacterBody2D
 
-@export var test_max_health: int =40
+@export var max_health: int =40
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var player = get_tree().get_first_node_in_group("player")
-@onready var weapon: AnimatedSprite2D=$AnimatedSprite2D/AnimatedSprite2D2
-@onready var legs=$AnimatedSprite2D/AnimatedSprite2D3
+@export var weapon: AnimatedSprite2D
+@export var legs:AnimatedSprite2D
+@export var body:AnimatedSprite2D
+@export var raycast:RayCast2D
+@export var marker:Marker2D
+@export var to_hide_on_death: Array[Node] = []
 var curr_health: int
 var floor_
 var direction: Vector2 = Vector2.ZERO
-var speed: int=70
-var rot_speed: int =15
-var view_distance: int =250
+@export var speed: int=70
+@export var rot_speed: int =15
+@export var view_distance: int =250
 var player_sighted:bool = false
 var in_knocback:bool=false
 var in_range:bool=false
-var walk_range: int =200
-var range_:int=400
+@export var walk_range: int =200
+@export var range_:int=400
 var dead=false
 var spawn_dest=Vector2.ZERO
 var is_spawning=false
 signal died
 
 func _ready() -> void:
-		$AnimatedSprite2D.play("default")
+		body.play("default")
 		if spawn_dest!=Vector2.ZERO and is_spawning:
 			await big_entrance(spawn_dest)
 		randomize()
 		floor_=get_parent().get_parent()
 		floor_.enemies=floor_.enemies+1
-		curr_health=test_max_health
+		curr_health=max_health
 		legs.walk()
 		_randomise_target()
 		
@@ -40,7 +45,7 @@ func take_damage(damage: int,knockback:int):
 			speed=knockback
 			legs.stop()
 			if(direction==Vector2.ZERO):
-				direction=Vector2($AnimatedSprite2D/Marker2D.global_position-global_position).normalized()
+				direction=Vector2(marker.global_position-global_position).normalized()
 			else:
 				direction=-direction
 			in_knocback=true
@@ -63,17 +68,17 @@ func  _die():
 	emit_signal("died")
 	floor_.enemies=floor_.enemies-1
 	dead=true
-	$AnimatedSprite2D.play("dead")
-	$AnimatedSprite2D.stop()
-	$AnimatedSprite2D.frame=(randi()%3)+1
+	body.play("dead")
+	body.stop()
+	body.frame=(randi()%3)+1
 	modulate = Color(0.25, 0.25, 0.25)
 	set_physics_process(false)
 	set_process(false)
 	$CollisionShape2D.set_deferred("disabled", true)
-	$AnimatedSprite2D/AnimatedSprite2D2/RayCast2D2.set_deferred("disabled", true)
-	legs.visible=not legs.visible
+	raycast.set_deferred("disabled", true)
 	legs.stop()
-	$AnimatedSprite2D/AnimatedSprite2D2.visible=not $AnimatedSprite2D/AnimatedSprite2D2.visible
+	for node in to_hide_on_death:
+		node.hide()
 	remove_from_group("enemies")
 
 func _damage_effect():
@@ -135,7 +140,7 @@ func  chase():
 	speed=150
 	rot_speed=20
 	weapon.target=player.global_position
-	$AnimatedSprite2D.look_at(player.global_position)
+	body.look_at(player.global_position)
 	if(global_position.distance_to(player.global_position)<=range_ and not is_path_blocked()):
 		direction=Vector2.ZERO
 		weapon.attack()
@@ -151,9 +156,9 @@ func  chase():
 			direction = global_position.direction_to(next_path)
 
 func is_path_blocked():
-	$AnimatedSprite2D/AnimatedSprite2D2/RayCast2D2.target_position=Vector2(range_,0)
-	if $AnimatedSprite2D/AnimatedSprite2D2/RayCast2D2.is_colliding():
-		var collider=$AnimatedSprite2D/AnimatedSprite2D2/RayCast2D2.get_collider()
+	raycast.target_position=Vector2(range_,0)
+	if raycast.is_colliding():
+		var collider=raycast.get_collider()
 		if collider and collider.is_in_group("player"):
 			return false
 		else:

@@ -40,7 +40,6 @@ func move_up():
 		player_state=player.get_state()
 		checkpoint=curr_floor+1
 	remove_child(floors[curr_floor-1])
-	print(curr_floor,"->",curr_floor+1)
 	curr_floor=curr_floor+1
 	add_child(floors[curr_floor-1])
 	real_curr_floor=floors[curr_floor-1]
@@ -52,7 +51,6 @@ func move_down():
 		return
 	remove_child(floors[curr_floor-1])
 	curr_floor=curr_floor-1
-	print(curr_floor,"->",curr_floor-1)
 	add_child(floors[curr_floor-1])
 	real_curr_floor=floors[curr_floor-1]
 	player.set_player_position(floors[curr_floor-1].exit)
