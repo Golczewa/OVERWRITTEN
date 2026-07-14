@@ -16,6 +16,7 @@ var in_cutscene:bool=false
 @onready var heath_bar=$Camera2D/CanvasLayer/Control2/TextureProgressBar
 @onready var charges=$Camera2D/CanvasLayer/Control
 @onready var canvas=$Camera2D/CanvasLayer
+@onready var hurt_pack=preload("res://scenes/player/hurt_efect.tscn")
 var left_weapon
 var right_weapon
 var left_up_weapon
@@ -89,9 +90,8 @@ func player_take_dmg(dmg):
 	
 		
 func _damage_effect():
-	$AnimatedSprite2D.modulate=Color.RED
-	await get_tree().create_timer(0.1).timeout
-	$AnimatedSprite2D.modulate=Color.WHITE
+	var hurt=hurt_pack.instantiate()
+	canvas.add_child(hurt)
 
 func _dash():
 	if can_dash and not in_cutscene:

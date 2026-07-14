@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c3xgtu8dvk30r"]
+
+[ext_resource type="Script" uid="uid://c41gkasj476y4" path="res://scenes/player/hurt_efect.gd" id="1_eq1dr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7il6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.59905666, 1.4318898e-06, 4.3317675e-07, 1)
+
+[sub_resource type="Theme" id="Theme_jiq1j"]
+Panel/styles/panel = SubResource("StyleBoxFlat_s7il6")
+
+[node name="Panel" type="Panel" unique_id=296518966]
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 1156.0
+offset_bottom = 652.0
+theme = SubResource("Theme_jiq1j")
+script = ExtResource("1_eq1dr")
