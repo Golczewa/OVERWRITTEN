@@ -17,6 +17,7 @@ var in_cutscene:bool=false
 @onready var charges=$Camera2D/CanvasLayer/Control
 @onready var canvas=$Camera2D/CanvasLayer
 @onready var hurt_pack=preload("res://scenes/player/hurt_efect.tscn")
+@onready var heal_pack=preload("res://scenes/player/heal_efect.tscn")
 var left_weapon
 var right_weapon
 var left_up_weapon
@@ -152,9 +153,8 @@ func set_player_position(pos):
 	global_position=pos
 
 func heal_effect():
-	$AnimatedSprite2D.modulate=Color.WEB_GREEN
-	await get_tree().create_timer(0.1).timeout
-	$AnimatedSprite2D.modulate=Color.WHITE
+	var heal_eff=heal_pack.instantiate()
+	canvas.add_child(heal_eff)
 	
 func freeze_player():
 	process_mode = Node.PROCESS_MODE_DISABLED 

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b7fdtnbpfjdra"]
+
+[ext_resource type="Script" uid="uid://cna3hf5eviiso" path="res://scenes/player/heal_efect.gd" id="1_dsmvp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ac4g"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0.5882353, 0.21568628, 1)
+
+[sub_resource type="Theme" id="Theme_aldd8"]
+Panel/styles/panel = SubResource("StyleBoxFlat_6ac4g")
+
+[node name="Panel" type="Panel" unique_id=1486758854]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(576, 324)
+theme = SubResource("Theme_aldd8")
+script = ExtResource("1_dsmvp")

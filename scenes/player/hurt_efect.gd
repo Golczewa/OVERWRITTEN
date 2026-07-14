@@ -6,7 +6,7 @@ func _ready() -> void:
 	hurt()
 
 
-func hurt(amplitude: float = 6.0, duration: float = 0.5, shakes: int = 6) -> void:
+func hurt(amplitude: float = 15, duration: float = 0.5, shakes: int = 6) -> void:
 	var base_pos := global_position
 	var step_time := duration / float(shakes)
 	var tween := create_tween()
