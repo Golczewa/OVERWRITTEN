@@ -56,6 +56,7 @@ func setup_buttons()->void:
 		button.set_button_colors()
 
 func open():
+	refresh_buttons()
 	show()
 	for child in get_children():
 		child.hide()
@@ -63,3 +64,8 @@ func open():
 	for child in get_children():
 		if not child==$PanelContainer: 
 			child.show()
+
+func refresh_buttons():
+	var buttons=$SubViewportContainer/SubViewport/Node3D/Node.get_children()
+	for button in buttons:
+		button.set_button_colors()

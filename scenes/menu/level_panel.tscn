@@ -5,10 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bpf5ntl6k4qfh" path="res://scenes/menu/weapon_card.tscn" id="3_dxkar"]
 [ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="4_orue4"]
 [ext_resource type="PackedScene" uid="uid://du4k8ns7pgxg8" path="res://scenes/menu/button.tscn" id="5_iss5n"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_ij28o"]
-font = ExtResource("4_orue4")
-font_size = 128
+[ext_resource type="PackedScene" uid="uid://ct1c2dxodhdj1" path="res://scenes/menu/rank_display.tscn" id="5_orue4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8r5av"]
 font = ExtResource("4_orue4")
@@ -53,15 +50,6 @@ offset_right = 824.0
 offset_bottom = 338.0
 stretch_mode = 4
 
-[node name="rank" type="Label" parent="." unique_id=114621718]
-layout_mode = 0
-offset_left = 410.0
-offset_top = 396.0
-offset_right = 871.0
-offset_bottom = 567.0
-text = "Rank: "
-label_settings = SubResource("LabelSettings_ij28o")
-
 [node name="score" type="Label" parent="." unique_id=945750506]
 layout_mode = 0
 offset_left = 411.0
@@ -70,6 +58,13 @@ offset_right = 545.0
 offset_bottom = 402.0
 text = "Score: "
 label_settings = SubResource("LabelSettings_8r5av")
+
+[node name="HBoxContainer2" parent="." unique_id=803312600 instance=ExtResource("5_orue4")]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 410.0
+offset_right = 663.0
+offset_bottom = 474.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=559127815]
 layout_mode = 0

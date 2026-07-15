@@ -3,16 +3,14 @@ extends Area3D
 @export var level:int=0
 var unlocked:bool
 var level_section:String
-var levels:ConfigFile
 var curr_color:Color
 signal pressed_
 
 func _ready()->void:
 	input_ray_pickable = true
 	$MeshInstance3D.material_override = $MeshInstance3D.material_override.duplicate()
-	levels=ConfigManager.levels
 	level_section="level_"+str(level)
-	unlocked=levels.get_value(level_section,"unlocked",false)
+	unlocked=ConfigManager.levels.get_value(level_section,"unlocked",false)
 	mouse_entered.connect(_on_hover)
 	mouse_exited.connect(_on_hover_exit)
 	input_event.connect(_on_klik)
@@ -37,7 +35,7 @@ func _change_color(col:Color)->Color:
 
 func set_button_colors()->void:
 	if unlocked:
-		match levels.get_value(level_section,"rank","-"):
+		match ConfigManager.levels.get_value(level_section,"rank","-"):
 			"S":
 				curr_color=_change_color(Color.PURPLE)
 			"A":

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://ct1c2dxodhdj1"]
+
+[ext_resource type="Script" uid="uid://cu85gt714swwp" path="res://scenes/menu/rank_display.gd" id="1_2ew7x"]
+[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="1_kkbyu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2ew7x"]
+font = ExtResource("1_kkbyu")
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_kkbyu"]
+font = ExtResource("1_kkbyu")
+font_size = 64
+
+[node name="HBoxContainer" type="HBoxContainer" unique_id=803312600]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_2ew7x")
+
+[node name="Label" type="Label" parent="." unique_id=1136295433]
+layout_mode = 2
+text = "Rank: "
+label_settings = SubResource("LabelSettings_2ew7x")
+
+[node name="Label2" type="Label" parent="." unique_id=1073828007]
+layout_mode = 2
+text = "-"
+label_settings = SubResource("LabelSettings_kkbyu")

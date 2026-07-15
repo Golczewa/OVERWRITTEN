@@ -26,7 +26,7 @@ func setup(num:int):
 			$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Label.text =" "+ ConfigManager.levels.get_value(section_name, "name").replace(" ","_")+".ovr"
 		else:
 			$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Label.text=" ???.ovr"
-		$rank.text = "Rank: " + ConfigManager.levels.get_value(section_name, "rank")
+		$HBoxContainer2.display(ConfigManager.levels.get_value(section_name, "rank"))
 		$score.text = "Best score: " + str(ConfigManager.levels.get_value(section_name, "score"))
 		path = ConfigManager.levels.get_value(section_name, "path")
 		update_all()

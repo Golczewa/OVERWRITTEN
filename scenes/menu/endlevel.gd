@@ -17,7 +17,7 @@ func setup(score:Dictionary):
 	$VBoxContainer/deaths.text="Deaths: "+str(score["deaths"])
 	$VBoxContainer/used.text="Healing used: "+str(score["hused"])
 	$VBoxContainer/used2.text="Score: "+str(score["score"])
-	$rank.text="Rank: "+score["rank"]
+	$HBoxContainer.display(score["rank"])
 	ConfigManager.levels.set_value("level_"+str(score["level"]),"score",score["score"])
 	ConfigManager.levels.set_value("level_"+str(score["level"]),"rank",score["rank"])
 	ConfigManager.save_levels()
