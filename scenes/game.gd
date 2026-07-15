@@ -1,7 +1,8 @@
 extends Node2D
 @onready var player=$CharacterBody2D
 var curr_scene
-var gameScore={"time":0,
+var gameScore={"level":0,
+"time":0,
 "deaths":0,
 "hused":0,
 "score":0,
@@ -27,6 +28,7 @@ func load_level(path:String):
 	$CharacterBody2D.equip_weapons()
 	resetScore()
 	$Timer.start(1)
+	gameScore["level"]=level.level_id
 
 func restart():
 	curr_scene.restart_floor()
@@ -48,6 +50,7 @@ func hideGameUI():
 	$CharacterBody2D/Camera2D/CanvasLayer.hide()
 
 func resetScore():
+	gameScore["level"]=0
 	gameScore["time"]=0
 	gameScore["deaths"]=0
 	gameScore["hused"]=0
