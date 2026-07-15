@@ -27,7 +27,7 @@ func setup(score:Dictionary):
 
 func count_score(_score:Dictionary)->void:
 	var time_grade=ConfigManager.levels.get_value("level_"+str(_score["level"]),"grading_time")
-	var max_score=2500
+	var max_score=1700
 	var time_score:int=0
 	max_score+=time_grade[0][0]
 	for t in time_grade:
@@ -39,20 +39,20 @@ func count_score(_score:Dictionary)->void:
 			time_score=t[0]
 	var death_score:int
 	if _score["deaths"]==0:
-		death_score=1500
+		death_score=1200
 	else:
 		death_score=1000/_score["deaths"]
 	var h_score:int
 	if _score["hused"]==0:
-		h_score=1000
+		h_score=500
 	else:
-		h_score=800/_score["hused"]
+		h_score=400/_score["hused"]
 	var result=time_score+death_score+h_score
 	_score["score"]=result
 	var grade:String
-	if result>=6*max_score/6 and _score["deaths"]==0:
+	if result>=5*max_score/6 and _score["deaths"]==0:
 		grade="S"
-	elif result>=5*max_score/6:
+	elif result>=4*max_score/6:
 		grade="A"
 	elif result>=3*max_score/6:
 		grade="B"

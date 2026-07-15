@@ -23,6 +23,8 @@ func load_level(path:String):
 	var level=level_pre.instantiate()
 	level.player=player
 	curr_scene=level
+	player.clear_cheats()
+	$CanvasLayer/Control.untoggle_all()
 	add_child(level)
 	remove_bullets()
 	$CharacterBody2D.equip_weapons()
@@ -68,3 +70,7 @@ func remove_bullets()->void:
 	var bullets:=get_tree().get_nodes_in_group("bullets")
 	for bullet in bullets:
 		bullet.queue_free()
+
+func open_cheats():
+	print("1")
+	$CanvasLayer/Control.open()

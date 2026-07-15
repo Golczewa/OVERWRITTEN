@@ -123,6 +123,8 @@ func _physics_process(_delta: float) -> void:
 		move_and_slide()
 
 func can_see_player():
+	if player.invincible:
+		return false
 	var dist = global_position.distance_to(player.global_position)
 	if dist > view_distance:
 		return false
@@ -166,7 +168,8 @@ func is_path_blocked():
 	return false
 
 func trigger():
-	player_sighted=true
+	if not player.invincible:
+		player_sighted=true
 
 func big_entrance(pos:Vector2)->void:
 	look_at(pos+Vector2(1,1))

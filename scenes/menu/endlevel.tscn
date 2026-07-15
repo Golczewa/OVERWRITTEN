@@ -15,7 +15,7 @@ font = ExtResource("4_76lw5")
 font_size = 32
 font_color = Color(0.54509807, 0, 0.03529412, 1)
 
-[node name="Control" type="Control" unique_id=374425218]
+[node name="Control2" type="Control" unique_id=374425218]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1000.0

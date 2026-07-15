@@ -30,6 +30,10 @@ text = "  Resume"
 layout_mode = 2
 text = "  Restart"
 
+[node name="Button4" parent="VBoxContainer" unique_id=2121996419 instance=ExtResource("3_1mvc1")]
+layout_mode = 2
+text = "  Cheats"
+
 [node name="Button3" parent="VBoxContainer" unique_id=1750761088 instance=ExtResource("3_1mvc1")]
 layout_mode = 2
 text = "  Menu"

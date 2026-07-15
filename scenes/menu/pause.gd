@@ -8,6 +8,7 @@ func _ready() -> void:
 	hide()
 	$VBoxContainer/Button.pressed.connect(when_pressed)
 	$VBoxContainer/Button2.pressed.connect(when_pressed)
+	$VBoxContainer/Button4.pressed.connect(open_cheats)
 	$AspectRatioContainer.close_button.pressed.connect(when_pressed)
 	$AspectRatioContainer/VBoxContainer/PanelContainer.gui_input.connect(_on_panel_container_gui_input)
 	$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Control.gui_input.connect(_on_panel_container_gui_input)
@@ -54,3 +55,6 @@ func begone():
 			child.hide()
 	await $AspectRatioContainer.close_animation()
 	hide()
+
+func open_cheats():
+	get_parent().get_parent().open_cheats()

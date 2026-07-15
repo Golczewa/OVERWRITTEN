@@ -24,6 +24,9 @@ var left_up_weapon
 var right_up_weapon
 signal player_died
 
+var invincible:bool=false
+var invisible:bool=false
+
 var default_state={
 		"health": 100,
 		"charges": 3,
@@ -81,7 +84,9 @@ func _input(event: InputEvent) -> void:
 			heal()
 
 func player_take_dmg(dmg):
-	if not is_dashing and not in_cutscene:
+	if invincible:
+		return
+	if not is_dashing or not in_cutscene:
 		player_health=player_health-dmg
 		hp_update()
 		if(player_health<=0):
@@ -211,3 +216,16 @@ func exit_anim(pos_a:Vector2,pos_b:Vector2):
 	await tween.finished
 	modulate=Color.WHITE
 	in_cutscene=false
+
+func clear_cheats():
+	invincible=false
+	invisible=false
+
+func make_invincible():
+	invincible=!invincible
+	print(invincible)
+
+func make_invisible():
+	invisible=!invisible
+	visible=!visible
+	print(invisible)
