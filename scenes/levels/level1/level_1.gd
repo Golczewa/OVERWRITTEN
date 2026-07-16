@@ -18,6 +18,7 @@ var real_curr_floor
 var level_id=1
 
 func _ready() -> void:
+	get_parent().kill_swich.connect(kill_swich)
 	floors_loaded.append(floor1)
 	floors_loaded.append(floor2)
 	floors_loaded.append(floor3)
@@ -69,3 +70,6 @@ func restart_floor():
 func end_level():
 	get_tree().current_scene.end_level()
 	queue_free()
+
+func kill_swich():
+	floors[curr_floor-1].kill_all()

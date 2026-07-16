@@ -9,6 +9,8 @@ var gameScore={"level":0,
 "rank":"-",
 "cheats":false
 }
+signal kill_swich
+
 func _ready() -> void:
 	get_parent().menu.connect(hideGameUI)
 	get_parent().game.connect(showGameUI)
@@ -75,3 +77,7 @@ func remove_bullets()->void:
 func open_cheats():
 	print("1")
 	$CanvasLayer/Control.open()
+
+func kill_all():
+	print("kill")
+	emit_signal("kill_swich")

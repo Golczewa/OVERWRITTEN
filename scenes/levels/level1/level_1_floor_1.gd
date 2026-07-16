@@ -9,3 +9,7 @@ func _ready() -> void:
 	exit=$Area2D/Marker2D.global_position
 
 
+func kill_all():
+	var enemies_= $enemies.get_children()
+	for enemy in enemies_:
+		enemy.take_damage(99999,0)

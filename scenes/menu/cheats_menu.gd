@@ -8,6 +8,7 @@ func _ready() -> void:
 	hide()
 	$VBoxContainer/Button.pressed.connect(toogle_invincible)
 	$VBoxContainer/Button2.pressed.connect(toogle_invisible)
+	$VBoxContainer/Button3.pressed.connect(toogle_kill_swich)
 	$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Button.pressed.connect(begone)
 	$AspectRatioContainer/VBoxContainer/PanelContainer.gui_input.connect(_on_panel_container_gui_input)
 	$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Control.gui_input.connect(_on_panel_container_gui_input)
@@ -51,3 +52,6 @@ func untoggle_all():
 	var buttons=$VBoxContainer.get_children()
 	for button in buttons:
 		button.button_pressed=false
+
+func toogle_kill_swich():
+	player.enable_killswich()

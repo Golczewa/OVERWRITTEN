@@ -20,3 +20,8 @@ func _physics_process(_delta: float) -> void:
 		$StaticBody2D2.spawn_wave()
 		if $StaticBody2D.wave_remain<=0:
 			cleard=true
+
+func kill_all():
+	var enemies_= $enemies.get_children()
+	for enemy in enemies_:
+		enemy.take_damage(99999,0)

@@ -41,3 +41,8 @@ layout_mode = 2
 toggle_mode = true
 text = "  Invisibility
 "
+
+[node name="Button3" parent="VBoxContainer" unique_id=504656796 instance=ExtResource("2_2oy7s")]
+layout_mode = 2
+toggle_mode = true
+text = "  Kill swich"

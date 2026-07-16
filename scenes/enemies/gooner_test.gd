@@ -54,7 +54,7 @@ func take_damage(damage: int,knockback:int):
 		_damage_effect()
 		if(!player_sighted) and not  player.invisible:
 			player_sighted=true
-		if curr_health<=0:
+		if curr_health<=0 and not dead:
 			_die()
 
 func end_knockback(org_speed):

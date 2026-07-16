@@ -26,6 +26,7 @@ signal player_died
 
 var invincible:bool=false
 var invisible:bool=false
+var kill_swich:bool=false
 
 var default_state={
 		"health": 100,
@@ -84,6 +85,8 @@ func _input(event: InputEvent) -> void:
 			heal()
 		elif event.keycode==KEY_QUOTELEFT and event.pressed:
 			get_parent().open_cheats()
+		elif event.keycode==KEY_K and event.pressed and kill_swich:
+			get_parent().kill_all()
 
 func player_take_dmg(dmg):
 	if invincible:
@@ -222,6 +225,7 @@ func exit_anim(pos_a:Vector2,pos_b:Vector2):
 func clear_cheats():
 	invincible=false
 	invisible=false
+	kill_swich=false
 	show()
 
 func make_invincible():
@@ -234,3 +238,8 @@ func make_invisible():
 	visible=!visible
 	score["cheats"]=true
 	print(invisible)
+
+func enable_killswich():
+	kill_swich=!kill_swich
+	score["cheats"]=true
+	print(kill_swich)

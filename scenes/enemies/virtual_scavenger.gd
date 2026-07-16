@@ -29,7 +29,7 @@ func _ready() -> void:
 		
 func take_damage(damage: int,_knockback:int):
 	curr_health=curr_health-damage
-	if curr_health<=0:
+	if curr_health<=0 and not dead:
 		_die()
 
 
@@ -43,6 +43,7 @@ func  _die():
 	tween.tween_property($AnimatedSprite2D, "modulate:a",0, 0.2)
 	tween.tween_property($AnimatedSprite2D2, "scale", Vector2(0,0), 0.2)
 	tween.tween_property($AnimatedSprite2D2, "modulate:a",0, 0.2)
+	dead=true
 	set_physics_process(false)
 	set_process(false)
 
