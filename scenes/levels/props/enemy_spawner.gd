@@ -24,7 +24,6 @@ func spawn_wave():
 				var spawn_offset = Vector2(randf_range(-8, 8), randf_range(-8, 8))
 				enemy_inst.global_position = global_position
 				enemy_inst.spawn_dest = $Marker2D.global_position + spawn_offset
-				enemy_inst.player_sighted = true
 				enemy_inst.is_spawning = true
 				_floor.get_node("enemies").add_child(enemy_inst)
 				await get_tree().create_timer(1).timeout

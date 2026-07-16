@@ -2,6 +2,7 @@ extends HBoxContainer
 
 
 func display(rank:String):
+	$Label.text="Rank: "
 	match rank:
 		"S":
 			$Label2.modulate=Color.PURPLE
@@ -13,6 +14,9 @@ func display(rank:String):
 			$Label2.modulate=Color.YELLOW
 		"D":
 			$Label2.modulate=Color.ORANGE
+		"Cheats":
+			rank=""
+			$Label.text="Cheats used"
 		_:
 			$Label2.modulate=Color.WHITE
 			rank="-"

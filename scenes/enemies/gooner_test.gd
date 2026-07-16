@@ -30,6 +30,7 @@ func _ready() -> void:
 		body.play("default")
 		if spawn_dest!=Vector2.ZERO and is_spawning:
 			await big_entrance(spawn_dest)
+			trigger()
 		randomize()
 		floor_=get_parent().get_parent()
 		floor_.enemies=floor_.enemies+1
@@ -51,12 +52,12 @@ func take_damage(damage: int,knockback:int):
 			in_knocback=true
 			get_tree().create_timer(0.1).timeout.connect(end_knockback.bind(org_speed))
 		_damage_effect()
-		if(!player_sighted):
+		if(!player_sighted) and not  player.invisible:
 			player_sighted=true
 		if curr_health<=0:
 			_die()
 
-func end_knockback( org_speed):
+func end_knockback(org_speed):
 	speed=0
 	direction=-direction
 	await get_tree().create_timer(1).timeout
@@ -123,7 +124,7 @@ func _physics_process(_delta: float) -> void:
 		move_and_slide()
 
 func can_see_player():
-	if player.invincible:
+	if player.invisible:
 		return false
 	var dist = global_position.distance_to(player.global_position)
 	if dist > view_distance:
@@ -168,7 +169,7 @@ func is_path_blocked():
 	return false
 
 func trigger():
-	if not player.invincible:
+	if not player.invisible:
 		player_sighted=true
 
 func big_entrance(pos:Vector2)->void:

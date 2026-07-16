@@ -82,6 +82,8 @@ func _input(event: InputEvent) -> void:
 			_dash()
 		elif  event.keycode==KEY_F and event.pressed:
 			heal()
+		elif event.keycode==KEY_QUOTELEFT and event.pressed:
+			get_parent().open_cheats()
 
 func player_take_dmg(dmg):
 	if invincible:
@@ -220,12 +222,15 @@ func exit_anim(pos_a:Vector2,pos_b:Vector2):
 func clear_cheats():
 	invincible=false
 	invisible=false
+	show()
 
 func make_invincible():
 	invincible=!invincible
+	score["cheats"]=true
 	print(invincible)
 
 func make_invisible():
 	invisible=!invisible
 	visible=!visible
+	score["cheats"]=true
 	print(invisible)

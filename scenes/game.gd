@@ -6,7 +6,8 @@ var gameScore={"level":0,
 "deaths":0,
 "hused":0,
 "score":0,
-"rank":"-"
+"rank":"-",
+"cheats":false
 }
 func _ready() -> void:
 	get_parent().menu.connect(hideGameUI)

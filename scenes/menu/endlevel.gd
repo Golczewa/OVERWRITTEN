@@ -17,7 +17,10 @@ func setup(score:Dictionary):
 	$VBoxContainer/deaths.text="Deaths: "+str(score["deaths"])
 	$VBoxContainer/used.text="Healing used: "+str(score["hused"])
 	$VBoxContainer/used2.text="Score: "+str(score["score"])
-	$HBoxContainer.display(score["rank"])
+	if score["cheats"]:
+		$HBoxContainer.display("Cheats")
+	else:
+		$HBoxContainer.display(score["rank"])
 	ConfigManager.levels.set_value("level_"+str(score["level"]),"score",score["score"])
 	ConfigManager.levels.set_value("level_"+str(score["level"]),"rank",score["rank"])
 	ConfigManager.save_levels()
@@ -26,6 +29,8 @@ func setup(score:Dictionary):
 	show()
 
 func count_score(_score:Dictionary)->void:
+	if _score["cheats"]:
+		return
 	var time_grade=ConfigManager.levels.get_value("level_"+str(_score["level"]),"grading_time")
 	var max_score=1700
 	var time_score:int=0
