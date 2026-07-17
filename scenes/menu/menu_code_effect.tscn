@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://cagpq2ycw3mwg"]
+
+[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="1_38ebu"]
+[ext_resource type="Script" uid="uid://bfh44y41c5yhp" path="res://scenes/menu/menu_code_effect.gd" id="1_iyhdt"]
+
+[node name="Label" type="RichTextLabel" unique_id=1579308870]
+modulate = Color(1, 1, 1, 0.57254905)
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_fonts/normal_font = ExtResource("1_38ebu")
+theme_override_fonts/bold_font = ExtResource("1_38ebu")
+theme_override_fonts/bold_italics_font = ExtResource("1_38ebu")
+theme_override_fonts/italics_font = ExtResource("1_38ebu")
+theme_override_fonts/mono_font = ExtResource("1_38ebu")
+bbcode_enabled = true
+text = "#define SYS_FLUX_REG_ADDR  0x7FFF00A12C
+#define DECOHERENCE_LIMIT  0.0001042f
+#define KERNEL_PAGESIZE    4096
+
+struct MatrixState {
+    volatile uint64_t alignment_vector;
+    double thermodynamic_entropy;
+    bool is_stabilized;
+    bool is_[color=#8b0009]overwritten[/color];
+};
+
+class HardwareInterface {
+public:
+    virtual ~HardwareInterface() = default;
+    virtual bool execute_alignment_sequence(double target_frequency) = 0;
+    virtual void diagnose_system_bus() = 0;
+    virtual void force_[color=#8b0009]overwritten[/color]_buffer_purge() = 0;
+};
+
+template <typename T, size_t CoreCount, bool [color=#8b0009]Overwritten[/color]Safety = true>
+class QuantumFluxController : public HardwareInterface {
+private:
+    std::vector<MatrixState> core_matrix;
+    std::unique_ptr<double[]> harmonic_cache;
+    bool system_lock = false;
+    uint32_t [color=#8b0009]overwritten[/color]_register_mask = 0x00FF00FF;
+
+    bool verify_coherence_matrix() const {
+        uint8_t validation_mask = 0b11111111;
+        for (const auto& core : core_matrix) {
+            if (!core.is_stabilized || core.is_[color=#8b0009]overwritten[/color]) {
+                validation_mask &= ~(1 << 0);
+            }
+        }
+        return (validation_mask & 0x01) == 0x01;
+    }
+
+public:
+    QuantumFluxController() {
+        core_matrix.resize(CoreCount);
+        harmonic_cache = std::make_unique<double[]>(KERNEL_PAGESIZE);
+        
+        std::random_device rd;
+        std::mt19937_64 generator(rd());
+        std::uniform_real_distribution<double> distribution(0.0, 1.0);
+
+        for (size_t i = 0; i < CoreCount; ++i) {
+            core_matrix[i].alignment_vector = (SYS_FLUX_REG_ADDR ^ (i << 12)) & 0xFFFFFFFF00FFULL;
+            core_matrix[i].thermodynamic_entropy = distribution(generator);
+            core_matrix[i].is_stabilized = false;
+            core_matrix[i].is_[color=#8b0009]overwritten[/color] = false;
+        }
+    }
+
+    bool execute_alignment_sequence(double target_frequency) override {
+        system_lock = true;
+        std::cout << \"[SYSTEM] Activating core array: \" << CoreCount << \" nodes detected.\\n\";
+        
+        for (size_t i = 0; i < CoreCount; ++i) {
+            core_matrix[i].alignment_vector ^= (static_cast<uint64_t>(target_frequency) << 4);
+            double delta = std::abs(core_matrix[i].thermodynamic_entropy - DECOHERENCE_LIMIT);
+
+            std::cout << \"  [NODE \" << i << \"] VECTOR: 0x\" << std::hex << core_matrix[i].alignment_vector 
+                      << \" | DELTA: \" << std::dec << delta << \"\\n\";
+
+            std::this_thread::sleep_for(std::chrono::milliseconds(250));
+
+            if (delta > DECOHERENCE_LIMIT) {
+                core_matrix[i].is_stabilized = true;
+            }
+        }
+        
+        system_lock = false;
+        return verify_coherence_matrix();
+    }
+
+    void force_[color=#8b0009]overwritten[/color]_buffer_purge() override {
+        [color=#8b0009]overwritten[/color]_register_mask &= ~0x0000FFFF;
+        for (auto& core : core_matrix) {
+            core.is_[color=#8b0009]overwritten[/color] = false;
+        }
+        std::cout << \"[SYSTEM] [color=#8b0009]Overwritten[/color] registers successfully purged and re-indexed.\\n\";
+    }
+
+    void diagnose_system_bus() override {
+        std::cout << \"[DIAGNOSTIC] Bus Address: 0x\" << std::hex << SYS_FLUX_REG_ADDR << \"\\n\";
+        std::cout << \"[DIAGNOSTIC] Cache Alloc: \" << std::dec << (KERNEL_PAGESIZE * sizeof(double)) << \" bytes\\n\";
+        std::cout << \"[DIAGNOSTIC] [color=#8b0009]Overwritten[/color] Lock Mask: 0x\" << std::hex << [color=#8b0009]overwritten[/color]_register_mask << \"\\n\";
+    }
+};
+
+int main() {
+    std::cout << \"=========================================================\\n\";
+    std::cout << \"        OSCILLATOR SYNC PROTOCOL v5.01_STABLE            \\n\";
+    std::cout << \"=========================================================\\n\\n\";
+
+    std::unique_ptr<HardwareInterface> device = std::make_unique<QuantumFluxController<double, 4, true>>();
+
+    device->diagnose_system_bus();
+    std::cout << \"\\n\";
+
+    double target_hz = 1420.405751;
+    bool success = device->execute_alignment_sequence(target_hz);
+
+    std::cout << \"\\n\";
+    device->force_[color=#8b0009]overwritten[/color]_buffer_purge();
+
+    std::cout << \"\\n---------------------------------------------------------\\n\";
+    if (success) {
+        std::cout << \"[STATUS] COHERENCE ACQUIRED. CORE VOLTAGE STABILIZED.\\n\";
+    } else {
+        std::cout << \"[CRITICAL] SYSTEM DECOHERENCE DETECTED! INITIATING PURGE.\\n\";
+    }
+    std::cout << \"=========================================================\\n\";
+
+    return 0;
+}"
+script = ExtResource("1_iyhdt")

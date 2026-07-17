@@ -21,10 +21,11 @@ func setup(score:Dictionary):
 		$HBoxContainer.display("Cheats")
 	else:
 		$HBoxContainer.display(score["rank"])
-	ConfigManager.levels.set_value("level_"+str(score["level"]),"score",score["score"])
-	ConfigManager.levels.set_value("level_"+str(score["level"]),"rank",score["rank"])
-	ConfigManager.save_levels()
-	ConfigManager.reload_levels_config()
+	if score["score"]>ConfigManager.levels.get_value("level_"+str(score["level"]),"score",0):
+		ConfigManager.levels.set_value("level_"+str(score["level"]),"score",score["score"])
+		ConfigManager.levels.set_value("level_"+str(score["level"]),"rank",score["rank"])
+		ConfigManager.save_levels()
+		ConfigManager.reload_levels_config()
 	get_parent().come()
 	show()
 
