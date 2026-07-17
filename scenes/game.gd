@@ -76,7 +76,7 @@ func remove_bullets()->void:
 
 func open_cheats():
 	print("1")
-	$CanvasLayer/Control.open()
+	$CanvasLayer/Control.toggle()
 
 func kill_all():
 	print("kill")

@@ -73,3 +73,10 @@ func end_level():
 
 func kill_swich():
 	floors[curr_floor-1].kill_all()
+
+func jump_floor(floor_num:int):
+	remove_child(floors[curr_floor-1])
+	curr_floor=floor_num
+	add_child(floors[curr_floor-1])
+	real_curr_floor=floors[curr_floor-1]
+	player.set_player_position(floors[curr_floor-1].exit)

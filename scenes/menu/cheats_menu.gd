@@ -2,6 +2,7 @@ extends Control
 
 var dragging = false
 var drag_offset = Vector2()
+var is_open:bool=false
 @onready var player=get_tree().get_first_node_in_group("player")
 
 func _ready() -> void:
@@ -9,6 +10,9 @@ func _ready() -> void:
 	$VBoxContainer/Button.pressed.connect(toogle_invincible)
 	$VBoxContainer/Button2.pressed.connect(toogle_invisible)
 	$VBoxContainer/Button3.pressed.connect(toogle_kill_swich)
+	$VBoxContainer/Button4.pressed.connect(jump_up)
+	$VBoxContainer/Button5.pressed.connect(jump_down)
+	$Button.pressed.connect(begone)
 	$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Button.pressed.connect(begone)
 	$AspectRatioContainer/VBoxContainer/PanelContainer.gui_input.connect(_on_panel_container_gui_input)
 	$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Control.gui_input.connect(_on_panel_container_gui_input)
@@ -36,6 +40,7 @@ func open():
 		child.show() 
 
 func begone():
+	is_open=false
 	for child in get_children():
 		if child !=$AspectRatioContainer:
 			child.hide()
@@ -55,3 +60,19 @@ func untoggle_all():
 
 func toogle_kill_swich():
 	player.enable_killswich()
+
+func toggle():
+	if is_open:
+		is_open=false
+		begone()
+	else:
+		is_open=true
+		open()
+
+func jump_up():
+	get_parent().get_parent().curr_scene.move_up()
+	player.enable_floor_jumping()
+
+func jump_down():
+	get_parent().get_parent().curr_scene.move_down()
+	player.enable_floor_jumping()

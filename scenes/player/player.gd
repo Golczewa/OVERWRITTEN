@@ -27,6 +27,7 @@ signal player_died
 var invincible:bool=false
 var invisible:bool=false
 var kill_swich:bool=false
+var floor_jumping:bool=false
 
 var default_state={
 		"health": 100,
@@ -243,3 +244,6 @@ func enable_killswich():
 	kill_swich=!kill_swich
 	score["cheats"]=true
 	print(kill_swich)
+
+func enable_floor_jumping():
+	score["cheats"]=true

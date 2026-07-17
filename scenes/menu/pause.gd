@@ -15,10 +15,15 @@ func _ready() -> void:
 func  _input(event: InputEvent) -> void:
 	if get_tree().current_scene.state==1:
 		if event is InputEventKey:
-			if event.keycode==KEY_ESCAPE and event.pressed and not is_open:
-				open()
-				is_open=true
-				get_tree().paused=true
+			if event.keycode==KEY_ESCAPE and event.pressed:
+				if not is_open:
+					open()
+					is_open=true	
+					get_tree().paused=true
+				else:
+					begone()
+					is_open=false
+					get_tree().paused=false
 
 func  when_pressed():
 	if get_tree().paused and is_open:
