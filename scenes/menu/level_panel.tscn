@@ -44,26 +44,26 @@ hand = "right"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1367755251]
 layout_mode = 0
-offset_left = 527.0
-offset_top = 66.0
-offset_right = 824.0
-offset_bottom = 338.0
+offset_left = 477.0
+offset_top = 69.0
+offset_right = 825.0
+offset_bottom = 341.0
 stretch_mode = 4
 
 [node name="score" type="Label" parent="." unique_id=945750506]
 layout_mode = 0
-offset_left = 411.0
+offset_left = 475.0
 offset_top = 359.0
-offset_right = 545.0
+offset_right = 609.0
 offset_bottom = 402.0
 text = "Score: "
 label_settings = SubResource("LabelSettings_8r5av")
 
 [node name="HBoxContainer2" parent="." unique_id=803312600 instance=ExtResource("5_orue4")]
 layout_mode = 0
-offset_left = 407.0
+offset_left = 471.0
 offset_top = 410.0
-offset_right = 663.0
+offset_right = 727.0
 offset_bottom = 474.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=559127815]

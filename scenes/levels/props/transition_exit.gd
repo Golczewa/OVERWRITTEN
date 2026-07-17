@@ -4,6 +4,7 @@ var floor_
 var level_;
 var check:bool=true
 @onready var player = get_tree().get_first_node_in_group("player")
+@onready var marker=$Marker2D
 
 func _ready() -> void:
 	$StaticBody2D/AnimatedSprite2D.play("closed")
