@@ -1,6 +1,13 @@
 [gd_scene format=3 uid="uid://3833fblnti03"]
 
-[ext_resource type="Script" uid="uid://brqi06yasonyv" path="res://scenes/levels/level1/level_1.gd" id="1_jedq5"]
+[ext_resource type="Script" uid="uid://cb4ypqr5ddld1" path="res://scenes/levels/level_template.gd" id="1_dvtaw"]
+[ext_resource type="PackedScene" uid="uid://b7ar7b5gj3apb" path="res://scenes/levels/level1/level1_floor1.tscn" id="2_1nwpw"]
+[ext_resource type="PackedScene" uid="uid://b5ryoyw846v45" path="res://scenes/levels/level1/level1_floor2.tscn" id="2_65gyt"]
+[ext_resource type="PackedScene" uid="uid://dnr7im7a2vu8p" path="res://scenes/levels/level1/level1_floor3.tscn" id="3_1nwpw"]
+[ext_resource type="PackedScene" uid="uid://dcvq625thfsg8" path="res://scenes/levels/level1/level1_floor4.tscn" id="4_5bog2"]
+[ext_resource type="PackedScene" uid="uid://dhh5oyb8sj2u" path="res://scenes/levels/level1/level1_floor6.tscn" id="5_yc1fu"]
+[ext_resource type="PackedScene" uid="uid://bsedhe4qniw3x" path="res://scenes/levels/level1/level1_floor5.tscn" id="6_pbuwt"]
 
 [node name="Node2D" type="Node2D" unique_id=69403825]
-script = ExtResource("1_jedq5")
+script = ExtResource("1_dvtaw")
+floors_loaded = Array[PackedScene]([ExtResource("2_1nwpw"), ExtResource("2_65gyt"), ExtResource("3_1nwpw"), ExtResource("4_5bog2"), ExtResource("5_yc1fu"), ExtResource("6_pbuwt")])
