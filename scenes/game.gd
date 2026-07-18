@@ -61,6 +61,7 @@ func resetScore():
 	gameScore["hused"]=0
 	gameScore["score"]=0
 	gameScore["rank"]="-"
+	gameScore["cheats"]=false
 	
 func add_time():
 	gameScore["time"]=gameScore["time"]+1

@@ -79,3 +79,7 @@ label_settings = SubResource("LabelSettings_bw75o")
 layout_mode = 2
 text = "Score:"
 label_settings = SubResource("LabelSettings_bw75o")
+
+[node name="Timer" type="Timer" parent="VBoxContainer" unique_id=775157328]
+wait_time = 0.05
+one_shot = true

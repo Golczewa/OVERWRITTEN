@@ -9,7 +9,7 @@ var floors:Array
 var player_state:Dictionary
 var checkpoint=1
 var real_curr_floor
-var level_id=1
+@export var level_id=1
 
 func _ready() -> void:
 	get_parent().kill_swich.connect(kill_swich)

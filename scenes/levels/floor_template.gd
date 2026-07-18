@@ -1,8 +1,11 @@
 extends Node2D
+
+class_name Floor
+
 var enemies=0
 var cleard=false
-var spawn
-var exit
+var spawn:Vector2
+var exit:Vector2
 var waves
 @export var exit_node:Node
 @export var spawn_node:Node
@@ -16,8 +19,14 @@ func set_waves()->void:
 
 func _ready() -> void:
 	set_waves()
-	spawn=spawn_node.marker.global_position
-	exit=exit_node.marker.global_position
+	if spawn_node is Marker2D:
+		spawn=spawn_node.global_position
+	else:
+		spawn=spawn_node.marker.global_position
+	if exit_node is Marker2D:
+		exit=exit_node.global_position
+	else:
+		exit=exit_node.marker.global_position
 	for i in range(len(enemy_spawners)):
 		enemy_spawners[i].waves=waves[i]
 		enemy_spawners[i].wave_remain=len(waves[i])-1

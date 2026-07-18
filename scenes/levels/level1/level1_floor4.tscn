@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://dcvq625thfsg8"]
 
-[ext_resource type="Script" uid="uid://dps5ds7atv3nt" path="res://scenes/levels/level1/level_1_floor_4.gd" id="1_yo0sv"]
 [ext_resource type="PackedScene" uid="uid://gvdpfkhlvqdq" path="res://scenes/levels/props/transition.tscn" id="3_5b0ov"]
 [ext_resource type="PackedScene" uid="uid://bu878f6tabfh3" path="res://scenes/levels/props/transition_exit.tscn" id="4_yq0qq"]
 [ext_resource type="PackedScene" uid="uid://b027hwxqycj2f" path="res://scenes/levels/props/enemy_spawner.tscn" id="5_yh03q"]
@@ -9,8 +8,19 @@
 [ext_resource type="PackedScene" uid="uid://b0iqe6x2742im" path="res://scenes/levels/props/namedrop.tscn" id="7_1lth2"]
 [ext_resource type="PackedScene" uid="uid://dico4xcxnqi3w" path="res://scenes/levels/props/double_doors.tscn" id="8_5b0ov"]
 
-[node name="Node2D" type="Node2D" unique_id=481733774]
-script = ExtResource("1_yo0sv")
+[sub_resource type="GDScript" id="GDScript_5b0ov"]
+script/source = "extends Floor
+
+func set_waves()->void:
+	waves=[[[[1,sca_gooner]],[[1,sca_brute]]],[[[0,sca_gooner]]]]
+"
+
+[node name="Node2D" type="Node2D" unique_id=1391729112 node_paths=PackedStringArray("exit_node", "spawn_node", "enemy_spawners")]
+script = SubResource("GDScript_5b0ov")
+exit_node = NodePath("Area2D")
+spawn_node = NodePath("Area2D2")
+enemy_spawners = [NodePath("StaticBody2D"), NodePath("StaticBody2D2")]
+metadata/_custom_type_script = "uid://cramwugkt2of"
 
 [node name="NavigationRegion2D" parent="." unique_id=1950434595 instance=ExtResource("6_yo0sv")]
 

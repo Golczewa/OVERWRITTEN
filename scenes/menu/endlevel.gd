@@ -2,6 +2,7 @@ extends Control
 
 var dragging = false
 var drag_offset = Vector2()
+var stop_animation:bool=false
 
 func _ready() -> void:
 	hide()
@@ -17,6 +18,7 @@ func setup(score:Dictionary):
 	$VBoxContainer/deaths.text="Deaths: "+str(score["deaths"])
 	$VBoxContainer/used.text="Healing used: "+str(score["hused"])
 	$VBoxContainer/used2.text="Score: "+str(score["score"])
+	score_animation(score["score"])
 	if score["cheats"]:
 		$HBoxContainer.display("Cheats")
 	else:
@@ -104,3 +106,20 @@ func open():
 	await $AspectRatioContainer.open_animation()
 	for child in get_children():
 		child.show() 
+
+func score_animation(s:int):
+	$VBoxContainer/used2.text="Score: "
+	for i in range(s):
+		if stop_animation:
+			$VBoxContainer/used2.text="Score: "+str(s)
+			stop_animation=false
+			break
+		$VBoxContainer/used2.text="Score: "+str(i)
+		$VBoxContainer/Timer.start()
+		await $VBoxContainer/Timer.timeout
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and !stop_animation :
+		if event.button_index==MOUSE_BUTTON_LEFT:
+			if event.pressed:
+				stop_animation=true

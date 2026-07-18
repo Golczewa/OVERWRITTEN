@@ -212,15 +212,30 @@ func equip_weapons():
 	right_weapon=$AnimatedSprite2D/righthand.equip()
 	left_weapon=$AnimatedSprite2D/lefthand.equip()
 	
-func exit_anim(pos_a:Vector2,pos_b:Vector2):
+func exit_anim(pos_a:Vector2,pos_b:Vector2,anim_time:int=1):
+	legs.walk(pos_b)
 	in_cutscene=true
 	var tween=create_tween().set_parallel(true)
 	global_position=pos_a
 	$AnimatedSprite2D.look_at(pos_b)
-	tween.tween_property(self,"global_position",pos_b,1)
-	tween.tween_property(self,"modulate",Color.BLACK,1)
+	tween.tween_property(self,"global_position",pos_b,anim_time)
+	tween.tween_property(self,"modulate",Color.BLACK,anim_time)
 	await tween.finished
 	modulate=Color.WHITE
+	legs.stop_walking()
+	in_cutscene=false
+
+func entrance_anim(pos_a:Vector2,pos_b:Vector2,anim_time:int=1):
+	legs.walk(pos_b)
+	in_cutscene=true
+	var tween=create_tween().set_parallel(true)
+	global_position=pos_a
+	$AnimatedSprite2D.look_at(pos_b)
+	modulate=Color.BLACK
+	tween.tween_property(self,"global_position",pos_b,anim_time)
+	tween.tween_property(self,"modulate",Color.WHITE,anim_time)
+	await tween.finished
+	legs.stop_walking()
 	in_cutscene=false
 
 func clear_cheats():
