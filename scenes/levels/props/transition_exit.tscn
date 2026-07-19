@@ -75,7 +75,7 @@ animations = [{
 size = Vector2(6, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8mcfx"]
-size = Vector2(36.5, 64)
+size = Vector2(31.5, 64)
 
 [node name="Area2D" type="Area2D" unique_id=1410637359]
 script = ExtResource("1_3s3hs")
@@ -95,7 +95,7 @@ texture = ExtResource("3_6mlov")
 texture_scale = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=165821127]
-position = Vector2(-22.75, 0)
+position = Vector2(-20.25, 0)
 shape = SubResource("RectangleShape2D_8mcfx")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=3891957]

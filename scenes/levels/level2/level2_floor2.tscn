@@ -1,17 +1,20 @@
 [gd_scene format=3 uid="uid://dl1f7j37v4x4u"]
 
-[ext_resource type="Script" uid="uid://cramwugkt2of" path="res://scenes/levels/floor_template.gd" id="1_yw3wt"]
+[ext_resource type="Script" uid="uid://j3txa34pvkm0" path="res://scenes/levels/level2/level_2_floor_2.gd" id="1_xyhyu"]
 [ext_resource type="PackedScene" uid="uid://byg7xx3i7oqgd" path="res://scenes/levels/level2/level2_floor2_ map.tscn" id="2_e1wh4"]
 [ext_resource type="PackedScene" uid="uid://gvdpfkhlvqdq" path="res://scenes/levels/props/transition.tscn" id="3_7u8tw"]
 [ext_resource type="PackedScene" uid="uid://bu878f6tabfh3" path="res://scenes/levels/props/transition_exit.tscn" id="4_i8q6f"]
 [ext_resource type="PackedScene" uid="uid://eapp1741qlvm" path="res://scenes/levels/props/doors.tscn" id="5_i8q6f"]
 [ext_resource type="PackedScene" uid="uid://dico4xcxnqi3w" path="res://scenes/levels/props/double_doors.tscn" id="6_3sfku"]
 [ext_resource type="PackedScene" uid="uid://b027hwxqycj2f" path="res://scenes/levels/props/enemy_spawner.tscn" id="7_gydyh"]
+[ext_resource type="PackedScene" uid="uid://clap81ynbqx0x" path="res://scenes/enemies/gooner_test.tscn" id="8_kd6my"]
+[ext_resource type="PackedScene" uid="uid://kkqb7cfxl6sm" path="res://scenes/enemies/scavenger_brute.tscn" id="9_xyhyu"]
 
-[node name="Floor" type="Node2D" unique_id=233839026 node_paths=PackedStringArray("exit_node", "spawn_node")]
-script = ExtResource("1_yw3wt")
+[node name="Floor" type="Node2D" unique_id=233839026 node_paths=PackedStringArray("exit_node", "spawn_node", "enemy_spawners")]
+script = ExtResource("1_xyhyu")
 exit_node = NodePath("Area2D")
 spawn_node = NodePath("Area2D2")
+enemy_spawners = [NodePath("StaticBody2D"), NodePath("StaticBody2D2")]
 metadata/_custom_type_script = "uid://cramwugkt2of"
 
 [node name="NavigationRegion2D" parent="." unique_id=1285003952 instance=ExtResource("2_e1wh4")]
@@ -46,3 +49,14 @@ mirrored = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1798699713]
 color = Color(0.4045111, 0.40451115, 0.4045111, 1)
+
+[node name="enemies" type="Node2D" parent="." unique_id=2028666092]
+
+[node name="CharacterBody2D" parent="enemies" unique_id=1837710199 instance=ExtResource("8_kd6my")]
+position = Vector2(250, 129)
+
+[node name="CharacterBody2D2" parent="enemies" unique_id=857212358 instance=ExtResource("8_kd6my")]
+position = Vector2(582, 413)
+
+[node name="CharacterBody2D3" parent="enemies" unique_id=625731905 instance=ExtResource("9_xyhyu")]
+position = Vector2(233, 446)

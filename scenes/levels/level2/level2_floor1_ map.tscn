@@ -16,7 +16,7 @@ agent_radius = 25.0
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dsi1d"]
 load_path = "res://.godot/imported/stealmill_tiles.png-949ca0137ba14154277caa3c742b6fb9.ctex"
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5u07k"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r8igv"]
 texture = SubResource("CompressedTexture2D_dsi1d")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -34,7 +34,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_pp5ef"]
 tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_5u07k")
+sources/0 = SubResource("TileSetAtlasSource_r8igv")
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_cwg1q"]
 polygon = PackedVector2Array(-16, -16, -9.054746, -16, -8.940128, 16, -16, 16)
@@ -63,7 +63,7 @@ polygon = PackedVector2Array(16, 16, 9.712372, 16, 9.746452, -16, 16, -16)
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yj4v3"]
 load_path = "res://.godot/imported/rusty_wall.png-e2e6f93eb7d240d413c2b9b9f198b161.ctex"
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ojsm"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m577r"]
 texture = SubResource("CompressedTexture2D_yj4v3")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -95,7 +95,7 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_0ojsm")
+sources/0 = SubResource("TileSetAtlasSource_m577r")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" unique_id=1700990452]
 navigation_polygon = SubResource("NavigationPolygon_dsi1d")
