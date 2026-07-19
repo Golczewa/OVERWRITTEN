@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://sy828mfp74w6"]
+
+[ext_resource type="Texture2D" uid="uid://dnfnx1rcxm4wh" path="res://asstets/props/barrel.png" id="1_vwk70"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arh45"]
+atlas = ExtResource("1_vwk70")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jiq1j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arh45")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jiq1j"]
+radius = 19.026299
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=294150438]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=493083224]
+sprite_frames = SubResource("SpriteFrames_jiq1j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=200425768]
+shape = SubResource("CircleShape2D_jiq1j")

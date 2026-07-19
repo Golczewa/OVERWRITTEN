@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://d3wncsnwtpaki"]
+
+[ext_resource type="Texture2D" uid="uid://dmr0kimrwnvcn" path="res://asstets/props/barrel_spill.png" id="1_ut7au"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jiq1j"]
+size = Vector2(53, 31)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=267250925]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1140050084]
+texture = ExtResource("1_ut7au")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1822674471]
+position = Vector2(26.5, -42.5)
+shape = SubResource("RectangleShape2D_jiq1j")

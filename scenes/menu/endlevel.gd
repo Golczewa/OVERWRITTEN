@@ -121,5 +121,5 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and in_animation :
 		if event.button_index==MOUSE_BUTTON_LEFT:
 			if event.pressed:
-				score_tween.custom_step(1000.0)
+				score_tween.custom_step(1000)
 				in_animation=false

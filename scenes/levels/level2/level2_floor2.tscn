@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dl1f7j37v4x4u"]
+
+[ext_resource type="Script" uid="uid://cramwugkt2of" path="res://scenes/levels/floor_template.gd" id="1_yw3wt"]
+[ext_resource type="PackedScene" uid="uid://byg7xx3i7oqgd" path="res://scenes/levels/level2/level2_floor2_ map.tscn" id="2_e1wh4"]
+[ext_resource type="PackedScene" uid="uid://gvdpfkhlvqdq" path="res://scenes/levels/props/transition.tscn" id="3_7u8tw"]
+[ext_resource type="PackedScene" uid="uid://bu878f6tabfh3" path="res://scenes/levels/props/transition_exit.tscn" id="4_i8q6f"]
+[ext_resource type="PackedScene" uid="uid://eapp1741qlvm" path="res://scenes/levels/props/doors.tscn" id="5_i8q6f"]
+[ext_resource type="PackedScene" uid="uid://dico4xcxnqi3w" path="res://scenes/levels/props/double_doors.tscn" id="6_3sfku"]
+[ext_resource type="PackedScene" uid="uid://b027hwxqycj2f" path="res://scenes/levels/props/enemy_spawner.tscn" id="7_gydyh"]
+
+[node name="Floor" type="Node2D" unique_id=233839026 node_paths=PackedStringArray("exit_node", "spawn_node")]
+script = ExtResource("1_yw3wt")
+exit_node = NodePath("Area2D")
+spawn_node = NodePath("Area2D2")
+metadata/_custom_type_script = "uid://cramwugkt2of"
+
+[node name="NavigationRegion2D" parent="." unique_id=1285003952 instance=ExtResource("2_e1wh4")]
+
+[node name="Area2D" parent="." unique_id=1410637359 instance=ExtResource("3_7u8tw")]
+position = Vector2(416, 35)
+rotation = -1.5707964
+
+[node name="Area2D2" parent="." unique_id=1054312759 instance=ExtResource("4_i8q6f")]
+position = Vector2(416, 541)
+rotation = 1.5707964
+
+[node name="Area2D3" parent="." unique_id=219715312 instance=ExtResource("5_i8q6f")]
+position = Vector2(224, 221)
+rotation = 1.5707964
+
+[node name="Area2D4" parent="." unique_id=2016989141 instance=ExtResource("5_i8q6f")]
+position = Vector2(224, 355)
+rotation = 1.5707964
+
+[node name="Area2D5" parent="." unique_id=867155296 instance=ExtResource("6_3sfku")]
+position = Vector2(476, 288)
+
+[node name="StaticBody2D" parent="." unique_id=179286510 instance=ExtResource("7_gydyh")]
+position = Vector2(733, 256)
+rotation = 3.1415927
+
+[node name="StaticBody2D2" parent="." unique_id=83079007 instance=ExtResource("7_gydyh")]
+position = Vector2(733, 320)
+rotation = 3.1415927
+mirrored = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1798699713]
+color = Color(0.4045111, 0.40451115, 0.4045111, 1)
