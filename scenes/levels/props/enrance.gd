@@ -11,7 +11,6 @@ func _ready() -> void:
 	level_=floor_.get_parent()
 
 func on_body_enterd(body):
-	print("enter")
 	if body.is_in_group("player"):
 		enter(body)
 

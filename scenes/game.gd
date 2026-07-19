@@ -76,9 +76,7 @@ func remove_bullets()->void:
 		bullet.queue_free()
 
 func open_cheats():
-	print("1")
 	$CanvasLayer/Control.toggle()
 
 func kill_all():
-	print("kill")
 	emit_signal("kill_swich")

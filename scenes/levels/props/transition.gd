@@ -13,7 +13,6 @@ func _ready() -> void:
 	level_=floor_.get_parent()
 
 func on_body_enterd(body):
-	print(floor_.enemies)
 	if body.is_in_group("player") and floor_.enemies==0:
 		$StaticBody2D/PointLight2D.enabled=false
 		move_on()
