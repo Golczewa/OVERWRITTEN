@@ -1,6 +1,6 @@
 extends RichTextLabel
 
-@export var scroll_speed: float = 40.0
+@export var scroll_speed: float = 80.0
 var scrollbar: VScrollBar
 var loop_point: float = 0.0
 var can_scroll: bool = false
@@ -11,6 +11,7 @@ func _ready() -> void:
 	scrollbar = get_v_scroll_bar()
 	scrollbar.modulate = Color(1, 1, 1, 0)
 	scrollbar.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	scrollbar.step = 0.0
 	var original_text = text
 	text = original_text + "\n\n\n\n" + original_text
 	await get_tree().process_frame

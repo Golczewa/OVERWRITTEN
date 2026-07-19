@@ -247,18 +247,15 @@ func clear_cheats():
 func make_invincible():
 	invincible=!invincible
 	score["cheats"]=true
-	print(invincible)
 
 func make_invisible():
 	invisible=!invisible
 	visible=!visible
 	score["cheats"]=true
-	print(invisible)
 
 func enable_killswich():
 	kill_swich=!kill_swich
 	score["cheats"]=true
-	print(kill_swich)
 
 func enable_floor_jumping():
 	score["cheats"]=true

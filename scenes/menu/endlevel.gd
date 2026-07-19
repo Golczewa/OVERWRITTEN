@@ -2,7 +2,8 @@ extends Control
 
 var dragging = false
 var drag_offset = Vector2()
-var stop_animation:bool=false
+var in_animation:bool=false
+var score_tween:Tween
 
 func _ready() -> void:
 	hide()
@@ -13,16 +14,9 @@ func _ready() -> void:
 	
 func setup(score:Dictionary):
 	count_score(score)
-	print("level_"+str(score["level"]))
 	$VBoxContainer/time.text="Time: "+format_time(score["time"])
 	$VBoxContainer/deaths.text="Deaths: "+str(score["deaths"])
 	$VBoxContainer/used.text="Healing used: "+str(score["hused"])
-	$VBoxContainer/used2.text="Score: "+str(score["score"])
-	score_animation(score["score"])
-	if score["cheats"]:
-		$HBoxContainer.display("Cheats")
-	else:
-		$HBoxContainer.display(score["rank"])
 	if score["score"]>ConfigManager.levels.get_value("level_"+str(score["level"]),"score",0):
 		ConfigManager.levels.set_value("level_"+str(score["level"]),"score",score["score"])
 		ConfigManager.levels.set_value("level_"+str(score["level"]),"rank",score["rank"])
@@ -30,6 +24,12 @@ func setup(score:Dictionary):
 		ConfigManager.reload_levels_config()
 	get_parent().come()
 	show()
+	await score_animation(score["score"])
+	$VBoxContainer/used2.text="Score: "+str(score["score"])
+	if score["cheats"]:
+		$HBoxContainer.display("Cheats")
+	else:
+		$HBoxContainer.display(score["rank"])
 
 func count_score(_score:Dictionary)->void:
 	if _score["cheats"]:
@@ -107,19 +107,19 @@ func open():
 	for child in get_children():
 		child.show() 
 
-func score_animation(s:int):
+func score_animation(s:int,time=5):
+	in_animation=true
 	$VBoxContainer/used2.text="Score: "
-	for i in range(s):
-		if stop_animation:
-			$VBoxContainer/used2.text="Score: "+str(s)
-			stop_animation=false
-			break
-		$VBoxContainer/used2.text="Score: "+str(i)
-		$VBoxContainer/Timer.start()
-		await $VBoxContainer/Timer.timeout
+	score_tween = create_tween()
+	score_tween.tween_method(update_score,0,s,time)
+	await score_tween.finished
+
+func update_score(s:int):
+	$VBoxContainer/used2.text="Score: "+str(s)
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and !stop_animation :
+	if event is InputEventMouseButton and in_animation :
 		if event.button_index==MOUSE_BUTTON_LEFT:
 			if event.pressed:
-				stop_animation=true
+				score_tween.custom_step(1000.0)
+				in_animation=false
