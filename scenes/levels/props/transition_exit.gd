@@ -1,7 +1,7 @@
 extends Area2D
 
 var floor_
-var level_;
+var level_
 var check:bool=true
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var marker=$Marker2D

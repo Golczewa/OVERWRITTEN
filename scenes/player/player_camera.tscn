@@ -23,7 +23,6 @@ offset_bottom = -37.0
 scale = Vector2(0.7, 0.7)
 
 [node name="Control2" parent="CanvasLayer" unique_id=419692922 instance=ExtResource("3_44dvt")]
-anchors_preset = 0
 offset_left = 404.0
 offset_top = 523.0
 offset_right = 777.0

@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://clap81ynbqx0x" path="res://scenes/enemies/gooner_test.tscn" id="5_35l1y"]
 [ext_resource type="PackedScene" uid="uid://gvdpfkhlvqdq" path="res://scenes/levels/props/transition.tscn" id="5_grpmd"]
 [ext_resource type="PackedScene" uid="uid://cnukyg5amafvv" path="res://scenes/enemies/scavenger_hunter.tscn" id="6_35l1y"]
-[ext_resource type="PackedScene" uid="uid://bdwlvl0qdr800" path="res://scenes/levels/props/enrance.tscn" id="8_ii8pg"]
+[ext_resource type="PackedScene" uid="uid://w11kiwjryi55" path="res://scenes/levels/props/elevator.tscn" id="8_ii8pg"]
 
 [node name="Node2D" type="Node2D" unique_id=1600190573]
 script = ExtResource("1_mk54j")
@@ -38,5 +38,5 @@ position = Vector2(342, -198)
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=831006016]
 color = Color(0.4045111, 0.40451115, 0.4045111, 1)
 
-[node name="StaticBody2D2" parent="." unique_id=124000147 instance=ExtResource("8_ii8pg")]
-position = Vector2(76, 136)
+[node name="Area2D3" parent="." unique_id=1922010572 instance=ExtResource("8_ii8pg")]
+position = Vector2(237, 140)

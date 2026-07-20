@@ -55,8 +55,5 @@ color = Color(0.4045111, 0.40451115, 0.4045111, 1)
 [node name="CharacterBody2D" parent="enemies" unique_id=1837710199 instance=ExtResource("8_kd6my")]
 position = Vector2(250, 129)
 
-[node name="CharacterBody2D2" parent="enemies" unique_id=857212358 instance=ExtResource("8_kd6my")]
-position = Vector2(582, 413)
-
 [node name="CharacterBody2D3" parent="enemies" unique_id=625731905 instance=ExtResource("9_xyhyu")]
 position = Vector2(233, 446)
