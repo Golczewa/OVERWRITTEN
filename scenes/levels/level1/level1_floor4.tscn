@@ -15,10 +15,10 @@ func set_waves()->void:
 	waves=[[[[1,sca_gooner]],[[1,sca_brute]]],[[[0,sca_gooner]]]]
 "
 
-[node name="Node2D" type="Node2D" unique_id=1391729112 node_paths=PackedStringArray("exit_node", "spawn_node", "enemy_spawners")]
+[node name="Node2D" type="Node2D" unique_id=1391729112 node_paths=PackedStringArray("down_node", "up_node", "enemy_spawners")]
 script = SubResource("GDScript_5b0ov")
-exit_node = NodePath("Area2D")
-spawn_node = NodePath("Area2D2")
+down_node = NodePath("Area2D2")
+up_node = NodePath("Area2D")
 enemy_spawners = [NodePath("StaticBody2D"), NodePath("StaticBody2D2")]
 metadata/_custom_type_script = "uid://cramwugkt2of"
 

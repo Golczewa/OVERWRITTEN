@@ -83,3 +83,11 @@ label_settings = SubResource("LabelSettings_bw75o")
 [node name="Timer" type="Timer" parent="VBoxContainer" unique_id=775157328]
 wait_time = 0.05
 one_shot = true
+
+[node name="Button2" parent="." unique_id=470688942 instance=ExtResource("5_s7ghl")]
+layout_mode = 0
+offset_left = 813.0
+offset_top = 524.0
+offset_right = 914.0
+offset_bottom = 555.0
+text = "  Next"

@@ -2,47 +2,131 @@
 
 [ext_resource type="Texture2D" uid="uid://bfqtecnk8hw27" path="res://asstets/props/le_door.png" id="1_prr7n"]
 [ext_resource type="Script" uid="uid://b3bdnpfh4ljga" path="res://scenes/levels/props/double_doors.gd" id="1_x88ls"]
+[ext_resource type="Texture2D" uid="uid://cq8mq25b3mvm1" path="res://asstets/walls/doors_steemill2.png" id="3_23rci"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x88ls"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jg5l"]
 atlas = ExtResource("1_prr7n")
 region = Rect2(0, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_23rci"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_u00nb"]
 atlas = ExtResource("1_prr7n")
 region = Rect2(32, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1mr0c"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2o06u"]
 atlas = ExtResource("1_prr7n")
 region = Rect2(64, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2mhkl"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_uoeke"]
 atlas = ExtResource("1_prr7n")
 region = Rect2(96, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yntnm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bb2h6"]
 atlas = ExtResource("1_prr7n")
 region = Rect2(128, 0, 32, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_pypc2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xpcq"]
+atlas = ExtResource("3_23rci")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3waq2"]
+atlas = ExtResource("3_23rci")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6uxn"]
+atlas = ExtResource("3_23rci")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qb4g5"]
+atlas = ExtResource("3_23rci")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tblcv"]
+atlas = ExtResource("3_23rci")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1mr0c"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_x88ls")
+"texture": SubResource("AtlasTexture_3jg5l")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_23rci")
+"texture": SubResource("AtlasTexture_u00nb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1mr0c")
+"texture": SubResource("AtlasTexture_2o06u")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2mhkl")
+"texture": SubResource("AtlasTexture_uoeke")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yntnm")
+"texture": SubResource("AtlasTexture_bb2h6")
 }],
-"loop": false,
-"name": &"open",
+"loop": 0,
+"name": &"open0",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xpcq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3waq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6uxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qb4g5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tblcv")
+}],
+"loop": 0,
+"name": &"open1",
+"speed": 20.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2mhkl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jg5l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u00nb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2o06u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uoeke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bb2h6")
+}],
+"loop": 0,
+"name": &"open0",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xpcq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3waq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6uxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qb4g5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tblcv")
+}],
+"loop": 0,
+"name": &"open1",
 "speed": 20.0
 }]
 
@@ -64,14 +148,14 @@ collision_layer = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D" unique_id=107322879]
 position = Vector2(0, -32)
-sprite_frames = SubResource("SpriteFrames_pypc2")
-animation = &"open"
+sprite_frames = SubResource("SpriteFrames_1mr0c")
+animation = &"open0"
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="StaticBody2D" unique_id=59349463]
 position = Vector2(0, 32)
 scale = Vector2(1, -1)
-sprite_frames = SubResource("SpriteFrames_pypc2")
-animation = &"open"
+sprite_frames = SubResource("SpriteFrames_2mhkl")
+animation = &"open0"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1263993742]
 shape = SubResource("RectangleShape2D_8b7lw")

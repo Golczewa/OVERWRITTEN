@@ -4,16 +4,19 @@ var dragging = false
 var drag_offset = Vector2()
 var in_animation:bool=false
 var score_tween:Tween
+var level_num:int
 
 func _ready() -> void:
 	hide()
 	$Button.pressed.connect(hidee)
+	$Button2.pressed.connect(go_next)
 	$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Button.pressed.connect(hidee)
 	$AspectRatioContainer/VBoxContainer/PanelContainer.gui_input.connect(_on_panel_container_gui_input)
 	$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Control.gui_input.connect(_on_panel_container_gui_input)
 	
 func setup(score:Dictionary):
 	count_score(score)
+	level_num=score["level"]
 	$VBoxContainer/time.text="Time: "+format_time(score["time"])
 	$VBoxContainer/deaths.text="Deaths: "+str(score["deaths"])
 	$VBoxContainer/used.text="Healing used: "+str(score["hused"])
@@ -124,3 +127,8 @@ func _input(event: InputEvent) -> void:
 			if event.pressed:
 				score_tween.custom_step(1000)
 				in_animation=false
+
+func go_next():
+	hidee()
+	print(level_num)
+	get_tree().get_first_node_in_group("game").load_next_level(level_num)

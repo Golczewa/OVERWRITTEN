@@ -43,6 +43,7 @@ func restart():
  	
 func showGameUI():
 	show()
+	process_mode = Node.PROCESS_MODE_INHERIT
 	remove_bullets()
 	$CanvasLayer.show()
 	$CanvasLayer/pause.hide()
@@ -51,6 +52,7 @@ func showGameUI():
 
 func hideGameUI():
 	hide()
+	process_mode = Node.PROCESS_MODE_DISABLED
 	$CanvasLayer.hide()
 	$CharacterBody2D/Camera2D/CanvasLayer.hide()
 
@@ -80,3 +82,9 @@ func open_cheats():
 
 func kill_all():
 	emit_signal("kill_swich")
+
+func load_next_level(level_id:int):
+	level_id+=1
+	var level_path:String=ConfigManager.levels.get_value("level_"+str(level_id),"path")
+	print(level_path)
+	load_level(level_path)

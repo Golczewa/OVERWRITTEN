@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dj2ovwcp267bp" path="res://scenes/levels/props/doors.gd" id="1_26m4p"]
 [ext_resource type="Texture2D" uid="uid://bfqtecnk8hw27" path="res://asstets/props/le_door.png" id="2_l42pt"]
+[ext_resource type="Texture2D" uid="uid://cq8mq25b3mvm1" path="res://asstets/walls/doors_steemill2.png" id="3_3jg5l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3jg5l"]
 atlas = ExtResource("2_l42pt")
@@ -23,6 +24,26 @@ region = Rect2(96, 0, 32, 64)
 atlas = ExtResource("2_l42pt")
 region = Rect2(128, 0, 32, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xpcq"]
+atlas = ExtResource("3_3jg5l")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3waq2"]
+atlas = ExtResource("3_3jg5l")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6uxn"]
+atlas = ExtResource("3_3jg5l")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qb4g5"]
+atlas = ExtResource("3_3jg5l")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tblcv"]
+atlas = ExtResource("3_3jg5l")
+region = Rect2(128, 0, 32, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_78wek"]
 animations = [{
 "frames": [{
@@ -41,8 +62,28 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bb2h6")
 }],
-"loop": false,
-"name": &"open",
+"loop": 0,
+"name": &"open0",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xpcq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3waq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6uxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qb4g5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tblcv")
+}],
+"loop": 0,
+"name": &"open1",
 "speed": 20.0
 }]
 
@@ -53,19 +94,20 @@ size = Vector2(6, 64)
 polygon = PackedVector2Array(-3, -32, -3, 32, 3, 32, 3, -32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tr1cs"]
-size = Vector2(148, 64)
+size = Vector2(129, 64)
 
 [node name="Area2D" type="Area2D" unique_id=219715312]
 z_index = 2
 collision_mask = 13
 script = ExtResource("1_26m4p")
+skin = "steelmill1"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=947692820]
 collision_layer = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D" unique_id=1580280737]
 sprite_frames = SubResource("SpriteFrames_78wek")
-animation = &"open"
+animation = &"open1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=740416489]
 shape = SubResource("RectangleShape2D_4x3mg")

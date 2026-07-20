@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bc5xmevlw01co" path="res://scenes/levels/level2/level2_floor5_ map.tscn" id="2_sno20"]
 [ext_resource type="PackedScene" uid="uid://w11kiwjryi55" path="res://scenes/levels/props/elevator.tscn" id="3_4wuda"]
 [ext_resource type="PackedScene" uid="uid://rgpml3tss12d" path="res://scenes/levels/props/exit.tscn" id="4_7fue8"]
+[ext_resource type="PackedScene" uid="uid://eapp1741qlvm" path="res://scenes/levels/props/doors.tscn" id="5_sno20"]
 
 [node name="Floor" type="Node2D" unique_id=534768665 node_paths=PackedStringArray("down_node", "up_node")]
 script = ExtResource("1_dgg0u")
@@ -24,3 +25,8 @@ rotation = 1.5707964
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=238273234]
 color = Color(0.54497385, 0.5449744, 0.5449741, 1)
+
+[node name="Area2D3" parent="." unique_id=219715312 instance=ExtResource("5_sno20")]
+position = Vector2(319, 637)
+rotation = 1.5707964
+skin = "steelmill2"
