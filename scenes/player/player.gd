@@ -213,11 +213,11 @@ func equip_weapons():
 	left_weapon=$AnimatedSprite2D/lefthand.equip()
 	
 func exit_anim(pos_a:Vector2,pos_b:Vector2,anim_time:int=1):
-	legs.walk(pos_b)
 	in_cutscene=true
 	var tween=create_tween().set_parallel(true)
 	global_position=pos_a
 	$AnimatedSprite2D.look_at(pos_b)
+	legs.walk_anim(pos_b)
 	tween.tween_property(self,"global_position",pos_b,anim_time)
 	tween.tween_property(self,"modulate",Color.BLACK,anim_time)
 	await tween.finished
@@ -226,11 +226,11 @@ func exit_anim(pos_a:Vector2,pos_b:Vector2,anim_time:int=1):
 	in_cutscene=false
 
 func entrance_anim(pos_a:Vector2,pos_b:Vector2,anim_time:int=1):
-	legs.walk(pos_b)
 	in_cutscene=true
 	var tween=create_tween().set_parallel(true)
 	global_position=pos_a
 	$AnimatedSprite2D.look_at(pos_b)
+	legs.walk_anim(pos_b)
 	modulate=Color.BLACK
 	tween.tween_property(self,"global_position",pos_b,anim_time)
 	tween.tween_property(self,"modulate",Color.WHITE,anim_time)

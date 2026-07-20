@@ -9,10 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://b0iqe6x2742im" path="res://scenes/levels/props/namedrop.tscn" id="5_ludok"]
 [ext_resource type="PackedScene" uid="uid://b027hwxqycj2f" path="res://scenes/levels/props/enemy_spawner.tscn" id="6_khal1"]
 
-[node name="Floor" type="Node2D" unique_id=1309954943 node_paths=PackedStringArray("exit_node", "spawn_node", "enemy_spawners")]
+[node name="Floor" type="Node2D" unique_id=1309954943 node_paths=PackedStringArray("down_node", "up_node", "enemy_spawners")]
 script = ExtResource("1_1ngfn")
-exit_node = NodePath("Area2D")
-spawn_node = NodePath("StaticBody2D")
+down_node = NodePath("StaticBody2D")
+up_node = NodePath("Area2D")
 enemy_spawners = [NodePath("StaticBody2D2"), NodePath("StaticBody2D3")]
 metadata/_custom_type_script = "uid://cramwugkt2of"
 

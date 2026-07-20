@@ -6,13 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://bu878f6tabfh3" path="res://scenes/levels/props/transition_exit.tscn" id="4_mkx14"]
 [ext_resource type="PackedScene" uid="uid://b027hwxqycj2f" path="res://scenes/levels/props/enemy_spawner.tscn" id="5_r0n8q"]
 [ext_resource type="PackedScene" uid="uid://cnukyg5amafvv" path="res://scenes/enemies/scavenger_hunter.tscn" id="6_4njcl"]
-[ext_resource type="PackedScene" uid="uid://kkqb7cfxl6sm" path="res://scenes/enemies/scavenger_brute.tscn" id="7_y52yv"]
 [ext_resource type="PackedScene" uid="uid://clap81ynbqx0x" path="res://scenes/enemies/gooner_test.tscn" id="8_51b2x"]
 
-[node name="Floor" type="Node2D" unique_id=2132011549 node_paths=PackedStringArray("exit_node", "spawn_node", "enemy_spawners")]
+[node name="Floor" type="Node2D" unique_id=2132011549 node_paths=PackedStringArray("down_node", "up_node", "enemy_spawners")]
 script = ExtResource("1_51b2x")
-exit_node = NodePath("Area2D")
-spawn_node = NodePath("Area2D2")
+down_node = NodePath("Area2D2")
+up_node = NodePath("Area2D")
 enemy_spawners = [NodePath("StaticBody2D"), NodePath("StaticBody2D2")]
 metadata/_custom_type_script = "uid://cramwugkt2of"
 
@@ -40,9 +39,6 @@ rotation = 3.1415927
 
 [node name="CharacterBody2D" parent="enemies" unique_id=943878568 instance=ExtResource("6_4njcl")]
 position = Vector2(204, 212)
-
-[node name="CharacterBody2D2" parent="enemies" unique_id=625731905 instance=ExtResource("7_y52yv")]
-position = Vector2(774, -8)
 
 [node name="CharacterBody2D3" parent="enemies" unique_id=1837710199 instance=ExtResource("8_51b2x")]
 position = Vector2(910, 262)

@@ -7,8 +7,8 @@ var cleard=false
 var spawn:Vector2
 var exit:Vector2
 var waves
-@export var exit_node:Node
-@export var spawn_node:Node
+@export var down_node:Node
+@export var up_node:Node
 @export var enemy_spawners:Array[Node]
 
 @onready var sca_brute=preload("res://scenes/enemies/scavenger_brute.tscn")
@@ -20,14 +20,14 @@ func set_waves()->void:
 
 func _ready() -> void:
 	set_waves()
-	if spawn_node is Marker2D:
-		spawn=spawn_node.global_position
+	if down_node is Marker2D:
+		spawn=down_node.global_position
 	else:
-		spawn=spawn_node.marker.global_position
-	if exit_node is Marker2D:
-		exit=exit_node.global_position
+		spawn=down_node.marker.global_position
+	if up_node is Marker2D:
+		exit=up_node.global_position
 	else:
-		exit=exit_node.marker.global_position
+		exit=up_node.marker.global_position
 	for i in range(len(enemy_spawners)):
 		enemy_spawners[i].waves=waves[i]
 		enemy_spawners[i].wave_remain=len(waves[i])-1

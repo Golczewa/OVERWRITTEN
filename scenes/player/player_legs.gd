@@ -12,3 +12,8 @@ func stop_walking():
 func _physics_process(_delta: float) -> void:
 	if dir_:
 		rotation=dir_.angle()
+
+func walk_anim(pos:Vector2):
+	play("walk2")
+	look_at(pos)
+	dir_=null

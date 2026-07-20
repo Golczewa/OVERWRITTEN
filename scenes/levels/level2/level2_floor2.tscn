@@ -10,10 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://clap81ynbqx0x" path="res://scenes/enemies/gooner_test.tscn" id="8_kd6my"]
 [ext_resource type="PackedScene" uid="uid://kkqb7cfxl6sm" path="res://scenes/enemies/scavenger_brute.tscn" id="9_xyhyu"]
 
-[node name="Floor" type="Node2D" unique_id=233839026 node_paths=PackedStringArray("exit_node", "spawn_node", "enemy_spawners")]
+[node name="Floor" type="Node2D" unique_id=233839026 node_paths=PackedStringArray("down_node", "up_node", "enemy_spawners")]
 script = ExtResource("1_xyhyu")
-exit_node = NodePath("Area2D")
-spawn_node = NodePath("Area2D2")
+down_node = NodePath("Area2D2")
+up_node = NodePath("Area2D")
 enemy_spawners = [NodePath("StaticBody2D"), NodePath("StaticBody2D2")]
 metadata/_custom_type_script = "uid://cramwugkt2of"
 

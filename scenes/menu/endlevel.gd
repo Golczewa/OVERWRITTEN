@@ -107,7 +107,8 @@ func open():
 	for child in get_children():
 		child.show() 
 
-func score_animation(s:int,time=5):
+func score_animation(s:int):
+	var time=s/300
 	in_animation=true
 	$VBoxContainer/used2.text="Score: "
 	score_tween = create_tween()
