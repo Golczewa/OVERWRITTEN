@@ -40,6 +40,10 @@ func destroy_weapon_choice():
 func show_quit_game_panel()->void:
 	$quit_game_panel.open()
 
+func show_next_level(num:int):
+	$map_choice.open()
+	$Control2.setup(num)
+
 	
 #  ██████╗ ██╗   ██╗███████╗██████╗ ██╗    ██╗██████╗ ██╗████████╗████████╗███████╗███╗   ██╗
 # ██╔═══██╗██║   ██║██╔════╝██╔══██╗██║    ██║██╔══██╗██║╚══██╔══╝╚══██╔══╝██╔════╝████╗  ██║

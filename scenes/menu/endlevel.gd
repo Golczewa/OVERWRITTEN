@@ -130,5 +130,4 @@ func _input(event: InputEvent) -> void:
 
 func go_next():
 	hidee()
-	print(level_num)
-	get_tree().get_first_node_in_group("game").load_next_level(level_num)
+	get_parent().show_next_level(level_num+1)

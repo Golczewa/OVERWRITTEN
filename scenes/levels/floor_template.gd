@@ -15,11 +15,11 @@ var waves
 @onready var sca_gooner=preload("res://scenes/enemies/gooner_test.tscn")
 @onready var sca_hunter=preload("res://scenes/enemies/scavenger_hunter.tscn")
 
-func set_waves()->void:
+func _set_waves()->void:
 	waves=[[[[]]]]
 
 func _ready() -> void:
-	set_waves()
+	_set_waves()
 	if down_node is Marker2D:
 		spawn=down_node.global_position
 	else:

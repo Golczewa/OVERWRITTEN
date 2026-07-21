@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://f4nnmwy3tgu6"]
+
+[ext_resource type="Texture2D" uid="uid://d3lmwo3vgck20" path="res://asstets/menu/barr.svg" id="1_b2ptn"]
+[ext_resource type="Script" uid="uid://corpej7yxw3ov" path="res://scenes/menu/boss_bar_2.gd" id="1_rvw0o"]
+[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="2_bi2j3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7il6"]
+bg_color = Color(1.0210502, 0.12815453, 0.26125696, 0.41568628)
+
+[sub_resource type="Theme" id="Theme_jiq1j"]
+Panel/styles/panel = SubResource("StyleBoxFlat_s7il6")
+
+[sub_resource type="LabelSettings" id="LabelSettings_jiq1j"]
+font = ExtResource("2_bi2j3")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control" unique_id=2016817758]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 756.0
+offset_bottom = 71.0
+script = ExtResource("1_rvw0o")
+
+[node name="Panel" type="Panel" parent="." unique_id=1778916260]
+layout_mode = 0
+offset_right = 756.0
+offset_bottom = 71.0
+theme = SubResource("Theme_jiq1j")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1275135641]
+modulate = Color(0.54509807, 0, 0.03529412, 1)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 24.0
+offset_right = 630.1428
+offset_bottom = 64.0
+scale = Vector2(1.2, 1)
+step = 0.0
+value = 100.0
+texture_progress = ExtResource("1_b2ptn")
+
+[node name="Label" type="Label" parent="." unique_id=146601975]
+layout_mode = 0
+offset_left = 255.0
+offset_right = 498.0
+offset_bottom = 48.0
+text = "???"
+label_settings = SubResource("LabelSettings_jiq1j")
+horizontal_alignment = 1

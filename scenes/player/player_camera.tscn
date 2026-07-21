@@ -1,30 +1,30 @@
 [gd_scene format=3 uid="uid://cad8a5ncmngqb"]
 
+[ext_resource type="PackedScene" uid="uid://f4nnmwy3tgu6" path="res://scenes/menu/boss_bar2.tscn" id="3_2fj6k"]
 [ext_resource type="PackedScene" uid="uid://r8w2qan8yww7" path="res://scenes/player/player_health_bar.tscn" id="3_44dvt"]
 [ext_resource type="PackedScene" uid="uid://bk5dijd6c66fc" path="res://scenes/player/heal_meter.tscn" id="3_sbsl8"]
-[ext_resource type="PackedScene" uid="uid://jvxuc6sf5ovw" path="res://scenes/menu/boss_bar.tscn" id="4_menik"]
 
 [node name="Camera2D" type="Camera2D" unique_id=518007863]
 zoom = Vector2(1.5, 1.5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1356407511]
 
-[node name="ProgressBar2" parent="CanvasLayer" unique_id=884770605 instance=ExtResource("4_menik")]
-offset_left = 192.0
-offset_top = 58.0
-offset_right = 978.0
-offset_bottom = 88.0
-
 [node name="Control" parent="CanvasLayer" unique_id=1428167716 instance=ExtResource("3_sbsl8")]
-offset_left = 835.00006
-offset_top = 489.0
-offset_right = -164.99994
-offset_bottom = -37.0
+offset_left = 860.0
+offset_top = 494.0
+offset_right = -140.0
+offset_bottom = -32.0
 scale = Vector2(0.7, 0.7)
 
 [node name="Control2" parent="CanvasLayer" unique_id=419692922 instance=ExtResource("3_44dvt")]
-offset_left = 404.0
-offset_top = 523.0
-offset_right = 777.0
-offset_bottom = 590.0
+offset_left = 317.0
+offset_top = 539.0
+offset_right = 774.1428
+offset_bottom = 606.0
 scale = Vector2(0.7, 0.7)
+
+[node name="ProgressBar2" parent="CanvasLayer" unique_id=2016817758 instance=ExtResource("3_2fj6k")]
+offset_left = 237.0
+offset_top = 42.0
+offset_right = 993.0
+offset_bottom = 113.0
