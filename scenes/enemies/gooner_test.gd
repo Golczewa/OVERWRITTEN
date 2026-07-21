@@ -146,7 +146,7 @@ func  chase():
 	body.look_at(player.global_position)
 	if(global_position.distance_to(player.global_position)<=range_ and not is_path_blocked()):
 		direction=Vector2.ZERO
-		weapon.attack()
+		_fire_weapon()
 		legs.stop_walking()
 	else:
 		if global_position.distance_to(player.global_position)<=range_ and not is_path_blocked():
@@ -182,3 +182,6 @@ func big_entrance(pos:Vector2)->void:
 	tween.tween_property(self,"modulate",Color.WHITE,0.5)
 	await tween.finished
 	is_spawning=false
+
+func _fire_weapon():
+	weapon.attack()

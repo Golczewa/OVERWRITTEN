@@ -9,6 +9,12 @@ font_size = 32
 font_color = Color(0.47479695, 1.1130236e-06, 3.6098064e-07, 1)
 shadow_size = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7il6"]
+bg_color = Color(1.0209242, 0.12906991, 0.26104832, 0.14901961)
+
+[sub_resource type="Theme" id="Theme_6iqaq"]
+Panel/styles/panel = SubResource("StyleBoxFlat_s7il6")
+
 [node name="Label" type="Label" unique_id=629147929 groups=["title"]]
 offset_left = 405.0
 offset_top = 95.0
@@ -20,3 +26,10 @@ horizontal_alignment = 1
 script = ExtResource("2_6iqaq")
 
 [node name="Timer" type="Timer" parent="." unique_id=1311839064]
+
+[node name="Panel" type="Panel" parent="." unique_id=1304546682]
+layout_mode = 0
+offset_left = -24.0
+offset_right = 445.0
+offset_bottom = 75.0
+theme = SubResource("Theme_6iqaq")

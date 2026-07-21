@@ -1,5 +1,5 @@
 extends Floor
 
 
-func set_waves()->void:
+func _set_waves()->void:
 	waves=[[[[1,sca_brute]],[[1,sca_brute]]],[[[1,sca_gooner]],[[1,sca_hunter]]]]

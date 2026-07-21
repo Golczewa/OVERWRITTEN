@@ -13,7 +13,8 @@ func boss_is_in(name:String,hp:int,time=1.5)->void:
 	await tween.finished
 
 func boss_is_out():
-	modulate.a=0
+	var tween=create_tween()
+	tween.tween_property(self,"modulate:a",0,0.5)
 
 func update(heath:int):
 	$TextureProgressBar.value=heath

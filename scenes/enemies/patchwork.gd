@@ -4,6 +4,7 @@ var bullet_test = preload("res://scenes/effects/bullet_test.tscn")
 var cooldown=1
 var skin
 var target=Vector2(0,0)
+@onready var hunter:EnemyWithGun=get_parent().get_parent()
 
 
 func _process(_delta: float) -> void:
@@ -16,6 +17,8 @@ func attack():
 	if can_attack:
 		can_attack=false
 		for i in range(0,3):
+			if hunter.dead or hunter.in_knocback:
+				break
 			var random_angle
 			var bullet = bullet_test.instantiate()
 			bullet.perce=0
