@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://dtpatdolkg1hm"]
 
-[ext_resource type="Script" uid="uid://cramwugkt2of" path="res://scenes/levels/floor_template.gd" id="1_dgg0u"]
+[ext_resource type="Script" uid="uid://cr5edot1xpm7g" path="res://scenes/levels/level2/level_2_floor_5.gd" id="1_sno20"]
 [ext_resource type="PackedScene" uid="uid://bc5xmevlw01co" path="res://scenes/levels/level2/level2_floor5_ map.tscn" id="2_sno20"]
 [ext_resource type="PackedScene" uid="uid://w11kiwjryi55" path="res://scenes/levels/props/elevator.tscn" id="3_4wuda"]
 [ext_resource type="PackedScene" uid="uid://rgpml3tss12d" path="res://scenes/levels/props/exit.tscn" id="4_7fue8"]
 [ext_resource type="PackedScene" uid="uid://eapp1741qlvm" path="res://scenes/levels/props/doors.tscn" id="5_sno20"]
+[ext_resource type="PackedScene" uid="uid://magiaqpb7yte" path="res://scenes/enemies/henry_intro.tscn" id="6_4wuda"]
 
 [node name="Floor" type="Node2D" unique_id=534768665 node_paths=PackedStringArray("down_node", "up_node")]
-script = ExtResource("1_dgg0u")
+script = ExtResource("1_sno20")
 down_node = NodePath("Area2D")
 up_node = NodePath("Area2D2")
 metadata/_custom_type_script = "uid://cramwugkt2of"
@@ -27,6 +28,9 @@ rotation = 1.5707964
 color = Color(0.54497385, 0.5449744, 0.5449741, 1)
 
 [node name="Area2D3" parent="." unique_id=219715312 instance=ExtResource("5_sno20")]
-position = Vector2(319, 637)
+position = Vector2(320, 636)
 rotation = 1.5707964
 skin = "steelmill2"
+
+[node name="Area2D4" parent="." unique_id=1532377437 instance=ExtResource("6_4wuda")]
+position = Vector2(244, 697)

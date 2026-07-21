@@ -40,3 +40,9 @@ func bodies_in() -> int:
 		if body.is_in_group("player") or body.is_in_group("enemies"):
 			bodies_count=bodies_count+1
 	return bodies_count
+
+func disable_doors():
+	$StaticBody2D/AnimatedSprite2D.play_backwards("open"+str(skin_num[skin]))
+	$StaticBody2D/CollisionShape2D.set_deferred("disabled", false)
+	$StaticBody2D/LightOccluder2D.show()
+	locked=true

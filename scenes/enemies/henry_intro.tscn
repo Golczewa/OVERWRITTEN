@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://magiaqpb7yte"]
+
+[ext_resource type="PackedScene" uid="uid://bkriveic7mop1" path="res://scenes/enemies/henry.tscn" id="1_hwpkq"]
+[ext_resource type="Script" uid="uid://tbjptpto63jb" path="res://scenes/enemies/henry_intro.gd" id="1_lp1al"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aldd8"]
+size = Vector2(386, 150)
+
+[node name="Area2D" type="Area2D" unique_id=1532377437]
+script = ExtResource("1_lp1al")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1196181470]
+position = Vector2(63, -166)
+shape = SubResource("RectangleShape2D_aldd8")
+
+[node name="CharacterBody2D" parent="." unique_id=349374792 instance=ExtResource("1_hwpkq")]
+position = Vector2(91, -331)
+rotation = -1.5707964

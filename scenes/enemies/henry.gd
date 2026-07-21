@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var weapon: Area2D=$AnimatedSprite2D/Area2D
 @onready var gun=$AnimatedSprite2D/AnimatedSprite2D2
 @onready var legs=$AnimatedSprite2D/AnimatedSprite2D3
+@onready var boss_bar=player.get_node("Camera2D/CanvasLayer/ProgressBar2")
 var curr_health: int
 var direction: Vector2 = Vector2.ZERO
 var speed: int=50
@@ -17,17 +18,14 @@ var in_knocback:bool=false
 var dead=false
 var can_attack=false
 var range_:int=400
-var boss_bar
+var in_cutscene:bool=false
 @export var walk_range: int =200
 
 signal died
 
 func _ready() -> void:
-		boss_bar=player.get_node("Camera2D/CanvasLayer/ProgressBar2")
-		boss_bar.boss_is_in("Henry",test_max_health)
 		randomize()
 		floor_=get_parent().get_parent()
-		floor_.enemies=floor_.enemies+1
 		weapon.body_entered.connect(player_in)
 		weapon.body_exited.connect(player_out)
 		curr_health=test_max_health
@@ -36,6 +34,8 @@ func _ready() -> void:
 		player_sighted=true	
 		
 func take_damage(damage: int,knockback:int):
+	if in_cutscene:
+		return
 	curr_health=curr_health-damage
 	boss_bar.update(curr_health)
 	if(knockback!=0):
@@ -104,24 +104,25 @@ func _randomise_target():
 	nav_agent.target_position=target
 
 func _physics_process(_delta: float) -> void:
-	if(!in_knocback):
-		if(player_sighted):
-			chase()
-		else: 
-			_idle_moving()
-			var offset = Vector2.RIGHT.rotated(rotation) * 100
-			var target_pos = global_position + offset
-			gun.target = target_pos
-		var target_angle = direction.angle()
-		rotation = lerp_angle(rotation, target_angle, rot_speed * _delta)
-	velocity=direction*speed
-	if(!player_sighted):
-		player_sighted=can_see_player()
-		if player_sighted:
-			get_tree().call_group("enemies","trigger")
-	if can_attack:
-		weapon.attack()
-	move_and_slide()
+	if not in_cutscene:
+		if(!in_knocback):
+			if(player_sighted):
+				chase()
+			else: 
+				_idle_moving()
+				var offset = Vector2.RIGHT.rotated(rotation) * 100
+				var target_pos = global_position + offset
+				gun.target = target_pos
+			var target_angle = direction.angle()
+			rotation = lerp_angle(rotation, target_angle, rot_speed * _delta)
+		velocity=direction*speed
+		if(!player_sighted):
+			player_sighted=can_see_player()
+			if player_sighted:
+				get_tree().call_group("enemies","trigger")
+		if can_attack:
+			weapon.attack()
+		move_and_slide()
 
 func can_see_player():
 	if  player.invisible:

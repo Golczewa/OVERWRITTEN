@@ -259,3 +259,9 @@ func enable_killswich():
 
 func enable_floor_jumping():
 	score["cheats"]=true
+
+func focus_camera(pos:Vector2):
+	$Camera2D.global_position=pos
+
+func retrun_camera():
+	$Camera2D.global_position=global_position
