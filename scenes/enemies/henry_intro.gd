@@ -4,7 +4,7 @@ extends Area2D
 @onready var henry=$CharacterBody2D
 
 func _ready() -> void:
-	henry.in_cutscene=true
+	henry.toogle_cutscene()
 	body_entered.connect(play_cuscene)
 
 func play_cuscene(body:Node):
@@ -17,15 +17,16 @@ func play_cuscene(body:Node):
 	var tween=create_tween()
 	tween.tween_property(henry,"rotation_degrees",90,2)
 	await tween.finished
+	henry.legs.stop_walking()
 	await henry.boss_bar.boss_is_in("Henry",henry.test_max_health)
 	player.retrun_camera()
 	player.in_cutscene=false
 	var henry_pos=henry.global_position
 	remove_child(henry)
-	get_parent().add_child(henry)
+	get_parent().get_node("enemies").add_child(henry)
 	henry.global_position=henry_pos
 	get_parent().enemies+=1
-	henry.in_cutscene=false
+	henry.toogle_cutscene()
 
 
 	

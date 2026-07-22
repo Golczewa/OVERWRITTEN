@@ -174,3 +174,8 @@ func is_path_blocked():
 		else:
 			return true
 	return false
+
+func toogle_cutscene()->bool:
+	gun.in_cutscene=!gun.in_cutscene
+	in_cutscene=!in_cutscene
+	return in_cutscene

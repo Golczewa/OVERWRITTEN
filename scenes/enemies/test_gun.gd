@@ -2,6 +2,7 @@ extends AnimatedSprite2D
 var can_attack = true
 var bullet_test = preload("res://scenes/effects/bullet_test.tscn")
 var cooldown=1
+var in_cutscene:bool=false
 @export var mirrored=false
 var target:Vector2
 
@@ -11,7 +12,8 @@ func _ready() -> void:
 		scale=Vector2(1,-1)
 		
 func _process(_delta: float) -> void:
-	look_at(target)
+	if not in_cutscene:
+		look_at(target)
 
 func end_cd():
 	can_attack=true

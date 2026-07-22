@@ -175,6 +175,7 @@ func trigger():
 func big_entrance(pos:Vector2)->void:
 	look_at(pos+Vector2(1,1))
 	legs.walk()
+	weapon.target=pos+Vector2(1000,1000)
 	weapon.show()
 	modulate=Color.BLACK
 	var tween=create_tween().set_parallel(true)
