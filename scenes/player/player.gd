@@ -3,12 +3,12 @@ extends CharacterBody2D
 
 var SPEED = 500.0
 var dash=900
-var player_health=100
+var player_health=150
 var direction=Vector2.ZERO
 var is_dashing:bool=false
 var dash_cd:int=1
 var can_dash:bool=true
-var heal_amount=60
+var heal_amount=80
 var heal_charge=3
 var in_cutscene:bool=false
 @export var heal_cd=30
@@ -30,7 +30,7 @@ var kill_swich:bool=false
 var floor_jumping:bool=false
 
 var default_state={
-		"health": 100,
+		"health": 150,
 		"charges": 3,
 		"replenish_queue": 0,
 		"can_dash": true,

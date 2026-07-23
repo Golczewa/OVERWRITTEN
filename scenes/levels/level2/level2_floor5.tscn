@@ -34,3 +34,5 @@ skin = "steelmill2"
 
 [node name="Area2D4" parent="." unique_id=1532377437 instance=ExtResource("6_4wuda")]
 position = Vector2(244, 697)
+
+[node name="enemies" type="Node2D" parent="." unique_id=1642767858]

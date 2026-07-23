@@ -7,8 +7,7 @@ const begin_h=80
 const anim_time=0.1
 
 func _ready() -> void:
-	title=title.replace(" ","_")
-	$VBoxContainer/PanelContainer/HBoxContainer/Label.text=" "+title+".ovr"
+	format_title()
 
 
 func open_animation():
@@ -31,3 +30,8 @@ func close_animation():
 	await tween.finished
 	hide()
 	size.y=height
+
+func format_title(text=title)->void:
+	title=text
+	title=title.replace(" ","_")
+	$VBoxContainer/PanelContainer/HBoxContainer/Label.text=" "+title+".ovr"

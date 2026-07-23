@@ -24,7 +24,7 @@ offset_bottom = 606.0
 scale = Vector2(0.7, 0.7)
 
 [node name="ProgressBar2" parent="CanvasLayer" unique_id=2016817758 instance=ExtResource("3_2fj6k")]
-offset_left = 237.0
-offset_top = 42.0
-offset_right = 993.0
-offset_bottom = 113.0
+offset_left = 339.0
+offset_top = 50.0
+offset_right = 885.0
+offset_bottom = 118.0
