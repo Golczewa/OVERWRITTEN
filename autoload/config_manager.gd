@@ -1,14 +1,17 @@
 extends Node
 
 const WEAPONS_PATH := "res://config/weapons.cfg"
-const PLAYER_PATH := "res://config/player.cfg"
 const LEVELS_PATH := "res://config/levels.cfg"
-const LEVELS_JSON_PATH := "res://config/levels.json"
+const PLAYER_USER_PATH := "user://player.cfg"
+const LEVELS_PROGRESS_PATH := "user://levels_progress.cfg"
+const LEVELS_PROGRESS_DEFAULTS_PATH := "res://config/levels_progress.defaults.cfg"
+
+const PROGRESS_KEYS: Array[String] = ["unlocked", "score", "rank", "namedroped"]
 
 var weapons: ConfigFile
-var player_config: ConfigFile
 var levels: ConfigFile
-var levels_json: Variant
+var levels_progress: ConfigFile
+var player_config: ConfigFile
 
 
 func _ready() -> void:
@@ -17,35 +20,68 @@ func _ready() -> void:
 
 func load_all() -> void:
 	weapons = _load_cfg(WEAPONS_PATH)
-	player_config = _load_cfg(PLAYER_PATH)
 	levels = _load_cfg(LEVELS_PATH)
+	levels_progress = _load_or_create_levels_progress()
+	player_config = _load_or_create_player_config()
+
+
+func get_level_value(section: String, key: String, default = null):
+	if key in PROGRESS_KEYS:
+		return levels_progress.get_value(section, key, default)
+	return levels.get_value(section, key, default)
+
+
+func set_level_value(section: String, key: String, value) -> void:
+	if key not in PROGRESS_KEYS:
+		push_error("Cannot set static level key: %s" % key)
+		return
+	levels_progress.set_value(section, key, value)
 
 
 func reload_player_config() -> void:
-	player_config = _load_cfg(PLAYER_PATH)
+	player_config = _load_cfg(PLAYER_USER_PATH)
 
 
 func save_player_config() -> Error:
-	var err := player_config.save(PLAYER_PATH)
+	var err := player_config.save(PLAYER_USER_PATH)
 	if err != OK:
-		push_error("Config save error: %s (code %s)" % [PLAYER_PATH, err])
+		push_error("Config save error: %s (code %s)" % [PLAYER_USER_PATH, err])
 	return err
 
 
-func load_levels_json() -> Variant:
-	var file := FileAccess.open(LEVELS_JSON_PATH, FileAccess.READ)
-	if file == null:
-		push_error("Failed to open: %s" % LEVELS_JSON_PATH)
-		return null
-	var content := file.get_as_text()
-	file.close()
-	var json := JSON.new()
-	var error := json.parse(content)
-	if error != OK:
-		push_error("JSON parsing error in %s" % LEVELS_JSON_PATH)
-		return null
-	levels_json = json.data
-	return levels_json
+func save_levels_progress() -> Error:
+	var err := levels_progress.save(LEVELS_PROGRESS_PATH)
+	if err != OK:
+		push_error("Config save error: %s (code %s)" % [LEVELS_PROGRESS_PATH, err])
+	return err
+
+
+func reload_levels_progress() -> void:
+	levels_progress = _load_cfg(LEVELS_PROGRESS_PATH)
+
+
+func _load_or_create_player_config() -> ConfigFile:
+	if not FileAccess.file_exists(PLAYER_USER_PATH):
+		var config := ConfigFile.new()
+		config.set_value("weapons", "left", 1)
+		config.set_value("weapons", "right", 2)
+		config.save(PLAYER_USER_PATH)
+	return _load_cfg(PLAYER_USER_PATH)
+
+
+func _load_or_create_levels_progress() -> ConfigFile:
+	if FileAccess.file_exists(LEVELS_PROGRESS_PATH):
+		return _load_cfg(LEVELS_PROGRESS_PATH)
+
+	var config := _load_cfg(LEVELS_PROGRESS_DEFAULTS_PATH)
+	for section in levels.get_sections():
+		if not config.has_section(section):
+			config.set_value(section, "unlocked", false)
+			config.set_value(section, "score", 0)
+			config.set_value(section, "rank", "-")
+			config.set_value(section, "namedroped", false)
+	config.save(LEVELS_PROGRESS_PATH)
+	return config
 
 
 func _load_cfg(path: String) -> ConfigFile:
@@ -54,12 +90,3 @@ func _load_cfg(path: String) -> ConfigFile:
 	if err != OK:
 		push_error("Config loading error: %s (code %s)" % [path, err])
 	return config
-
-func save_levels()->Error:
-	var err := levels.save(LEVELS_PATH)
-	if err != OK:
-		push_error("Config save error: %s (code %s)" % [LEVELS_PATH, err])
-	return err
-
-func reload_levels_config()->void:
-	levels=_load_cfg(LEVELS_PATH)

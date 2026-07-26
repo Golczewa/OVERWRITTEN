@@ -11,7 +11,7 @@
 [sub_resource type="GDScript" id="GDScript_5b0ov"]
 script/source = "extends Floor
 
-func set_waves()->void:
+func _set_waves()->void:
 	waves=[[[[1,sca_gooner]],[[1,sca_brute]]],[[[0,sca_gooner]]]]
 "
 

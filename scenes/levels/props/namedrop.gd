@@ -9,7 +9,7 @@ func _ready() -> void:
 	level=get_parent().get_parent()
 	player=get_tree().get_first_node_in_group("player")
 	body_entered.connect(_on_body_entred)
-	level_title_=ConfigManager.levels.get_value("level_"+str(level.level_id),"name","Error")
+	level_title_=ConfigManager.get_level_value("level_"+str(level.level_id),"name","Error")
 
 func _on_body_entred(body):
 	if body==player:
@@ -19,8 +19,8 @@ func namedrop():
 	var name_=name_pre.instantiate()
 	name_.text="Level "+str(level.level_id)+"\n"+level_title_
 	player.canvas.add_child(name_)
-	ConfigManager.levels.set_value("level_"+str(level.level_id),"namedroped",true)
-	ConfigManager.save_levels()
-	ConfigManager.reload_levels_config()
+	ConfigManager.set_level_value("level_"+str(level.level_id),"namedroped",true)
+	ConfigManager.save_levels_progress()
+	ConfigManager.reload_levels_progress()
 	queue_free()
 	

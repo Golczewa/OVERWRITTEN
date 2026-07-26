@@ -20,11 +20,11 @@ func setup(score:Dictionary):
 	$VBoxContainer/time.text="Time: "+format_time(score["time"])
 	$VBoxContainer/deaths.text="Deaths: "+str(score["deaths"])
 	$VBoxContainer/used.text="Healing used: "+str(score["hused"])
-	if score["score"]>ConfigManager.levels.get_value("level_"+str(score["level"]),"score",0):
-		ConfigManager.levels.set_value("level_"+str(score["level"]),"score",score["score"])
-		ConfigManager.levels.set_value("level_"+str(score["level"]),"rank",score["rank"])
-		ConfigManager.save_levels()
-		ConfigManager.reload_levels_config()
+	if score["score"]>ConfigManager.get_level_value("level_"+str(score["level"]),"score",0):
+		ConfigManager.set_level_value("level_"+str(score["level"]),"score",score["score"])
+		ConfigManager.set_level_value("level_"+str(score["level"]),"rank",score["rank"])
+		ConfigManager.save_levels_progress()
+		ConfigManager.reload_levels_progress()
 	get_parent().come()
 	show()
 	await score_animation(score["score"])
@@ -37,7 +37,7 @@ func setup(score:Dictionary):
 func count_score(_score:Dictionary)->void:
 	if _score["cheats"]:
 		return
-	var time_grade=ConfigManager.levels.get_value("level_"+str(_score["level"]),"grading_time")
+	var time_grade=ConfigManager.get_level_value("level_"+str(_score["level"]),"grading_time")
 	var max_score=1700
 	var time_score:int=0
 	max_score+=time_grade[0][0]

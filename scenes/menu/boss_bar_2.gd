@@ -7,7 +7,6 @@ func _ready() -> void:
 	$AspectRatioContainer/VBoxContainer/PanelContainer.gui_input.connect(_on_panel_container_gui_input)
 	$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Control.gui_input.connect(_on_panel_container_gui_input)
 	modulate.a=0
-	boss_is_in("???",4204)
 
 func boss_is_in(boss_name:String,hp:int,time=1.5)->void:
 	$AspectRatioContainer.format_title(boss_name)
