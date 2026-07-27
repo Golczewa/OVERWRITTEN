@@ -1,23 +1,23 @@
 extends AnimatedSprite2D
-var can_attack: bool = true
-var bullet_test: PackedScene = preload("res://scenes/effects/bullet_test.tscn")
-var cooldown: float = 0.3
-var is_owned_by_player: bool = true
-var skin: String
+var can_attack = true
+var bullet_test = preload("res://scenes/effects/bullet_test.tscn")
+var cooldown=0.3
+var is_owned_by_player=true
+var skin
+
 
 
 func _physics_process(_delta: float) -> void:
 	look_at(get_global_mouse_position())
 
-func end_cd() -> void:
+func end_cd():
 	can_attack=true
 
-## Fires a single bullet toward the cursor if the muzzle is clear.
-func attack() -> void:
+func attack():
 	if can_attack:
 		if not is_hand_in_wall():
-			var random_angle: float
-			var bullet: Area2D = bullet_test.instantiate()
+			var random_angle
+			var bullet = bullet_test.instantiate()
 			random_angle = deg_to_rad(randf_range(-4, 4))
 			bullet.shot_by_player=true
 			bullet.direction = ($Marker2D.global_position - $Marker2D2.global_position).normalized()
@@ -29,9 +29,9 @@ func attack() -> void:
 		play("0")
 		get_tree().create_timer(cooldown).timeout.connect(end_cd)
 
-func is_hand_in_wall() -> bool:
-	var bodies: Array[Node2D] = $Area2D.get_overlapping_bodies()
-	for body: Node2D in bodies:
+func is_hand_in_wall():
+	var bodies=$Area2D.get_overlapping_bodies()
+	for body in bodies:
 			if not body.is_in_group("enemies") and not body.is_in_group("player"):
 				return true
 	return false

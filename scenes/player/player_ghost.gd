@@ -1,8 +1,7 @@
 extends GPUParticles2D
 
-## Emits dash particles in the opposite of the given direction.
-func dashEffect(direction: Vector2) -> void:
-	var dirx: float = direction.x
-	var diry: float = direction.y
+func dashEffect(direction:Vector2):
+	var dirx=direction.x
+	var diry=direction.y
 	process_material.direction=Vector3(-dirx,-diry,0)
 	emitting=true
