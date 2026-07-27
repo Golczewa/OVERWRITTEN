@@ -2,18 +2,18 @@ extends CharacterBody2D
 
 @export var test_max_health: int =50
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
-@onready var player = get_tree().get_first_node_in_group("player")
-@onready var weapon: Area2D=$AnimatedSprite2D/Area2D
+@onready var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
+@onready var weapon: Area2D = $AnimatedSprite2D/Area2D
 var curr_health: int
 var direction: Vector2 = Vector2.ZERO
-var speed: int=50
+var speed: int =50
 var rot_speed: int =15
-var floor_
+var floor_: Floor
 var view_distance: int =250
-var player_sighted:bool = false
-var in_knocback:bool=false
-var dead=false
-var can_attack=false
+var player_sighted: bool = false
+var in_knocback: bool = false
+var dead: bool = false
+var can_attack: bool = false
 @export var walk_range: int =200
 
 signal died
@@ -28,10 +28,11 @@ func _ready() -> void:
 		curr_health=test_max_health
 		_randomise_target()
 		
-func take_damage(damage: int,knockback:int):
+## Applies damage and optional knockback to this enemy.
+func take_damage(damage: int, knockback: int) -> void:
 	curr_health=curr_health-damage
 	if(knockback!=0):
-		var org_speed=speed
+		var org_speed: int = speed
 		speed=knockback
 		if(direction==Vector2.ZERO):
 			direction=-Vector2($AnimatedSprite2D/RayCast2D.target_position-global_position).normalized()
@@ -45,14 +46,14 @@ func take_damage(damage: int,knockback:int):
 	if curr_health<=0:
 		_die()
 
-func end_knockback( org_speed):
+func end_knockback(org_speed: int) -> void:
 	speed=0
 	direction=-direction
 	await get_tree().create_timer(1).timeout
 	speed=org_speed
 	in_knocback=false
 
-func  _die():
+func _die() -> void:
 	dead=true
 	floor_.enemies=floor_.enemies-1
 	emit_signal("died")
@@ -64,25 +65,25 @@ func  _die():
 	$AnimatedSprite2D/RayCast2D.set_deferred("disabled", true)
 	remove_from_group("enemies")
 
-func _damage_effect():
+func _damage_effect() -> void:
 	modulate=Color.RED
 	await get_tree().create_timer(0.1).timeout
 	modulate=Color.WHITE
 
-func _idle_moving():
+func _idle_moving() -> void:
 	if nav_agent.is_navigation_finished():
 		speed=50
 		rot_speed=15
 		direction=Vector2.ZERO
 		_randomise_target()
 		return
-	var next_path=nav_agent.get_next_path_position()
+	var next_path: Vector2 = nav_agent.get_next_path_position()
 	direction = global_position.direction_to(next_path)
 
-func _randomise_target():
-	var x=randf_range(-walk_range,walk_range)
-	var y=randf_range(-walk_range,walk_range)
-	var target=global_position+Vector2(x,y)
+func _randomise_target() -> void:
+	var x: float = randf_range(-walk_range,walk_range)
+	var y: float = randf_range(-walk_range,walk_range)
+	var target: Vector2 = global_position+Vector2(x,y)
 	nav_agent.target_position=target
 
 func _physics_process(_delta: float) -> void:
@@ -91,7 +92,7 @@ func _physics_process(_delta: float) -> void:
 			chase()
 		else: 
 			_idle_moving()
-		var target_angle = direction.angle()
+		var target_angle: float = direction.angle()
 		rotation = lerp_angle(rotation, target_angle, rot_speed * _delta)
 	velocity=direction*speed
 	if(!player_sighted):
@@ -102,37 +103,38 @@ func _physics_process(_delta: float) -> void:
 		weapon.attack()
 	move_and_slide()
 
-func can_see_player():
-	var dist = global_position.distance_to(player.global_position)
+func can_see_player() -> bool:
+	var dist: float = global_position.distance_to(player.global_position)
 	if dist > view_distance:
 		return false
-	var space_state=get_world_2d().direct_space_state
-	var query=PhysicsRayQueryParameters2D.create(global_position, player.global_position)
+	var space_state: PhysicsDirectSpaceState2D = get_world_2d().direct_space_state
+	var query: PhysicsRayQueryParameters2D = PhysicsRayQueryParameters2D.create(global_position, player.global_position)
 	query.collision_mask = 3 
 	query.exclude = [self.get_rid()]
-	var result = space_state.intersect_ray(query)
+	var result: Dictionary = space_state.intersect_ray(query)
 	if result:
 		if result.collider == player:
 			return true
 	return false
 
-func  chase():
+func chase() -> void:
 	speed=200
 	rot_speed=20
 	nav_agent.target_position=player.global_position
 	if nav_agent.is_navigation_finished():
 		direction = global_position.direction_to(player.global_position)
 	else:
-		var next_path=nav_agent.get_next_path_position()
+		var next_path: Vector2 = nav_agent.get_next_path_position()
 		direction = global_position.direction_to(next_path)
 
-func player_in(_body):
+func player_in(_body: Node2D) -> void:
 	if _body.is_in_group("player"):
 		can_attack=true
 
-func player_out(_body):
+func player_out(_body: Node2D) -> void:
 	if _body.is_in_group("player"):
 		can_attack=false
 
-func trigger():
+## Forces this enemy to start chasing the player.
+func trigger() -> void:
 	player_sighted=true

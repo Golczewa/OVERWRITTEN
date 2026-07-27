@@ -1,18 +1,19 @@
 extends Area2D
-var damage=10
-var knockback=200
-var cooldown=0.25
-var can_attack=true
+var damage: int = 10
+var knockback: int = 200
+var cooldown: float = 0.25
+var can_attack: bool = true
 
 func _ready() -> void:
 	$AnimatedSprite2D.frame=0
 
-func attack():
+## Performs a punch against overlapping enemies.
+func attack() -> void:
 	if can_attack:
 		can_attack=false
-		var bodies=get_overlapping_bodies()
+		var bodies: Array[Node2D] = get_overlapping_bodies()
 		$AnimatedSprite2D.play("default")
-		for body in bodies:
+		for body: Node2D in bodies:
 			if body.is_in_group("enemies"):
 				body.take_damage(damage,knockback)
 		await  $AnimatedSprite2D.animation_finished
@@ -22,5 +23,5 @@ func attack():
 func _physics_process(_delta: float) -> void:
 	look_at(get_global_mouse_position())
 
-func end_cd():
+func end_cd() -> void:
 	can_attack=true

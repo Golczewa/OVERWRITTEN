@@ -1,11 +1,11 @@
 extends Control
 
-@onready var value=$ProgressBar.value
-@onready var charge_number=$Label.text
-@onready var max_value=$ProgressBar.max_value
+@onready var value: float = $ProgressBar.value
+@onready var charge_number: String = $Label.text
+@onready var max_value: float = $ProgressBar.max_value
 
-var dragging = false
-var drag_offset = Vector2()
+var dragging: bool = false
+var drag_offset: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
     show()
@@ -14,29 +14,33 @@ func _ready() -> void:
     $AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Button.pressed.connect(begone)
 
 
-func _on_panel_container_gui_input(event):
+func _on_panel_container_gui_input(event: InputEvent) -> void:
     if event is InputEventMouseButton:
         if event.button_index == MOUSE_BUTTON_LEFT:
             dragging = event.pressed
             drag_offset = get_global_mouse_position() - global_position
             
     if event is InputEventMouseMotion and dragging:
-        var target_position = get_global_mouse_position() - drag_offset
-        var viewport_size = get_viewport_rect().size
-        var window_size = size
+        var target_position: Vector2 = get_global_mouse_position() - drag_offset
+        var viewport_size: Vector2 = get_viewport_rect().size
+        var window_size: Vector2 = size
         target_position.x = clamp(target_position.x, 0, viewport_size.x - window_size.x)
         target_position.y = clamp(target_position.y, 0, viewport_size.y - window_size.y)
         global_position = target_position
 
-func begone():
+## Hides the heal meter panel.
+func begone() -> void:
     hide()
 
 
-func update_max(max_:int):
+## Sets the progress bar maximum value.
+func update_max(max_: int) -> void:
     $ProgressBar.max_value=max_
 
-func update_value(val:int):
+## Sets the current progress bar value.
+func update_value(val: int) -> void:
     $ProgressBar.value=val
 
-func update_charge(num:String):
+## Updates the displayed charge count label.
+func update_charge(num: String) -> void:
     $Label.text=num
