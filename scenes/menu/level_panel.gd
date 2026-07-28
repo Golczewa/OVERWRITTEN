@@ -2,8 +2,9 @@ extends Control
 
 var dragging = false
 var drag_offset = Vector2()
-var path:String
-	
+var path: String
+
+
 func _ready() -> void:
 	hide()
 	$HBoxContainer/Button3.pressed.connect(play)
@@ -11,49 +12,57 @@ func _ready() -> void:
 	$Control.update_all_sig.connect(update_all)
 	$Control2.update_all_sig.connect(update_all)
 	$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Button.pressed.connect(go_back)
-	$AspectRatioContainer/VBoxContainer/PanelContainer.gui_input.connect(_on_panel_container_gui_input)
-	$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Control.gui_input.connect(_on_panel_container_gui_input)
+	$AspectRatioContainer/VBoxContainer/PanelContainer.gui_input.connect(
+		_on_panel_container_gui_input
+	)
+	$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Control.gui_input.connect(
+		_on_panel_container_gui_input
+	)
 
 
-
-func setup(num:int):
-	var section_name="level_"+str(num)
+func setup(num: int):
+	var section_name = "level_" + str(num)
 	if ConfigManager.get_level_value(section_name, "unlocked") == true:
 		open()
 		$TextureRect.set_texture(load(ConfigManager.get_level_value(section_name, "image")))
-		var namedroped:bool=ConfigManager.get_level_value(section_name, "namedroped",false)
+		var namedroped: bool = ConfigManager.get_level_value(section_name, "namedroped", false)
 		if namedroped:
-			$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Label.text =" "+ ConfigManager.get_level_value(section_name, "name").replace(" ","_")+".ovr"
+			$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Label.text = (
+				" " + ConfigManager.get_level_value(section_name, "name").replace(" ", "_") + ".ovr"
+			)
 		else:
-			$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Label.text=" ???.ovr"
+			$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Label.text = " ???.ovr"
 		$HBoxContainer2.display(ConfigManager.get_level_value(section_name, "rank"))
 		$score.text = "Best score: " + str(ConfigManager.get_level_value(section_name, "score"))
 		path = ConfigManager.get_level_value(section_name, "path")
 		update_all()
 
+
 func play():
-		get_tree().current_scene.play_game(path)
-		hide()
+	get_tree().current_scene.play_game(path)
+	hide()
+
 
 func go_back():
 	for child in get_children():
-		if child !=$AspectRatioContainer:
+		if child != $AspectRatioContainer:
 			child.hide()
 	await $AspectRatioContainer.close_animation()
 	get_parent().destroy_weapon_choice()
 	hide()
-	
+
 
 func update_all():
 	$Control.update()
 	$Control2.update()
+
 
 func _on_panel_container_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			dragging = event.pressed
 			drag_offset = get_global_mouse_position() - global_position
-			
+
 	if event is InputEventMouseMotion and dragging:
 		var target_position = get_global_mouse_position() - drag_offset
 		var viewport_size = get_viewport_rect().size
@@ -62,10 +71,11 @@ func _on_panel_container_gui_input(event):
 		target_position.y = clamp(target_position.y, 0, viewport_size.y - window_size.y)
 		global_position = target_position
 
+
 func open():
 	show()
 	for child in get_children():
-		child.hide()	
+		child.hide()
 	await $AspectRatioContainer.open_animation()
 	for child in get_children():
-		child.show() 
+		child.show()

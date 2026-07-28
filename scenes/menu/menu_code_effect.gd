@@ -5,6 +5,7 @@ var scrollbar: VScrollBar
 var loop_point: float = 0.0
 var can_scroll: bool = false
 
+
 func _ready() -> void:
 	scroll_active = true
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -17,6 +18,7 @@ func _ready() -> void:
 	await get_tree().process_frame
 	await get_tree().process_frame
 	loop_point = scrollbar.max_value / 2.0
+
 
 func _process(delta: float) -> void:
 	scrollbar.value += scroll_speed * delta

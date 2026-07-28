@@ -1,16 +1,18 @@
 extends StaticBody2D
-var waves:Array
+var waves: Array
 var wave_remain
-var wave_counter=0
+var wave_counter = 0
 var _floor
 var is_spawning_wave := false
-@export var mirrored:bool=false
+@export var mirrored: bool = false
+
 
 func _ready() -> void:
-	_floor=get_parent()
+	_floor = get_parent()
 	if mirrored:
-		scale=Vector2(1,-1)
-	
+		scale = Vector2(1, -1)
+
+
 func spawn_wave():
 	if is_spawning_wave:
 		return
@@ -33,6 +35,7 @@ func spawn_wave():
 	else:
 		wave_remain = 0
 
-func setup(wave:Array)->void:
-	waves=wave
-	wave_remain=len(wave)-1
+
+func setup(wave: Array) -> void:
+	waves = wave
+	wave_remain = len(wave) - 1

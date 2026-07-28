@@ -1,23 +1,23 @@
 extends HBoxContainer
 
 
-func display(rank:String):
-	$Label.text="Rank: "
+func display(rank: String):
+	$Label.text = "Rank: "
 	match rank:
 		"S":
-			$Label2.modulate=Color.PURPLE
+			$Label2.modulate = Color.PURPLE
 		"A":
-			$Label2.modulate=Color.BLUE
+			$Label2.modulate = Color.BLUE
 		"B":
-			$Label2.modulate=Color.GREEN
+			$Label2.modulate = Color.GREEN
 		"C":
-			$Label2.modulate=Color.YELLOW
+			$Label2.modulate = Color.YELLOW
 		"D":
-			$Label2.modulate=Color.ORANGE
+			$Label2.modulate = Color.ORANGE
 		"Cheats":
-			rank=""
-			$Label.text="Cheats used"
+			rank = ""
+			$Label.text = "Cheats used"
 		_:
-			$Label2.modulate=Color.WHITE
-			rank="-"
-	$Label2.text=rank
+			$Label2.modulate = Color.WHITE
+			rank = "-"
+	$Label2.text = rank
