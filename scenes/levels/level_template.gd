@@ -2,7 +2,7 @@ extends Node2D
 
 class_name Level
 
-@onready var player:Node
+@onready var player: Node
 var curr_floor: int = 1
 var floors: Array
 @export var floors_loaded: Array[PackedScene]

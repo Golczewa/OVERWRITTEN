@@ -206,6 +206,7 @@ func load_state(state: Dictionary):
 	unfreeze_player()
 	hp_update()
 	charge_update()
+	$Camera2D/CanvasLayer/ProgressBar2.modulate.a = 0
 	var title = get_tree().get_first_node_in_group("title")
 	if title != null:
 		title.queue_free()
