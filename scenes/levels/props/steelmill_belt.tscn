@@ -96,6 +96,7 @@ size = Vector2(187, 42)
 [node name="StaticBody2D" type="StaticBody2D" unique_id=1386804506]
 collision_layer = 2
 script = ExtResource("1_ut5gg")
+state = "on"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=184029356]
 sprite_frames = SubResource("SpriteFrames_jiq1j")
@@ -122,3 +123,13 @@ scale = Vector2(1.125, 1.203125)
 color = Color(1, 0, 0, 1)
 texture = ExtResource("3_g4aax")
 texture_scale = 0.1
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1286627126]
+position = Vector2(-70, 0)
+
+[node name="Marker2D2" type="Marker2D" parent="." unique_id=1600433254]
+position = Vector2(127, 0)
+
+[node name="Timer" type="Timer" parent="." unique_id=1402570855]
+wait_time = 0.5
+one_shot = true
