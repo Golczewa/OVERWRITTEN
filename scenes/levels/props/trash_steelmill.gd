@@ -55,7 +55,6 @@ func set_skin(num: int) -> void:
 
 func travel_and_melt(pos_a: Vector2, pos_b: Vector2, travel_time = 2.7) -> void:
 	global_position = pos_a
-	print(global_position)
 	var tween = create_tween()
 	tween.tween_property(self, "global_position", pos_b, travel_time)
 	await tween.finished

@@ -112,12 +112,11 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1668156600]
 sprite_frames = SubResource("SpriteFrames_jiq1j")
-frame_progress = 0.06559271
+frame_progress = 0.33435595
 script = ExtResource("2_4wm7r")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=275328591]
 position = Vector2(1.9073486e-06, 1.9073486e-06)
 scale = Vector2(0.5546875, 0.5546875)
 color = Color(0.9882353, 0.48235294, 0, 1)
-energy = 0.38
 texture = ExtResource("2_qnsvs")

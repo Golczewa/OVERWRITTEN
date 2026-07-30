@@ -135,7 +135,6 @@ func _physics_process(_delta: float) -> void:
 		if can_attack:
 			weapon.attack()
 		move_and_slide()
-		print(speed)
 
 
 func can_see_player():

@@ -17,7 +17,6 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if state == "on" and not on_cooldown:
 		var trash: Node = trash_pack.instantiate()
-		print($Marker2D2.global_position, $Marker2D.global_position)
 		add_child(trash)
 		trash.rotate(randf_range(0, 6.28))
 		trash.travel_and_melt($Marker2D.global_position, $Marker2D2.global_position)

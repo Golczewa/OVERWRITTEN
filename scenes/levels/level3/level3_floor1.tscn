@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b7p1rhnrc2hvx"]
+
+[ext_resource type="Script" uid="uid://cramwugkt2of" path="res://scenes/levels/floor_template.gd" id="1_3muqr"]
+[ext_resource type="PackedScene" uid="uid://citrstanhe7yw" path="res://scenes/levels/level3/level3_floor1_map.tscn" id="2_lb4w2"]
+[ext_resource type="PackedScene" uid="uid://gvdpfkhlvqdq" path="res://scenes/levels/props/transition.tscn" id="3_lb4w2"]
+[ext_resource type="PackedScene" uid="uid://bdwlvl0qdr800" path="res://scenes/levels/props/enrance.tscn" id="4_xlpmp"]
+
+[node name="Floor" type="Node2D" unique_id=822097042 node_paths=PackedStringArray("down_node", "up_node")]
+script = ExtResource("1_3muqr")
+down_node = NodePath("StaticBody2D")
+up_node = NodePath("Area2D")
+metadata/_custom_type_script = "uid://cramwugkt2of"
+
+[node name="NavigationRegion2D" parent="." unique_id=421630345 instance=ExtResource("2_lb4w2")]
+
+[node name="Area2D" parent="." unique_id=1410637359 instance=ExtResource("3_lb4w2")]
+position = Vector2(707, 203)
+
+[node name="StaticBody2D" parent="." unique_id=124000147 instance=ExtResource("4_xlpmp")]
+position = Vector2(-3, 372)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1126238001]
+color = Color(0.69965345, 0.69965345, 0.69965345, 1)
