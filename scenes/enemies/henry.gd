@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var test_max_health: int = 200
+@export var test_max_health: int = 250
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var weapon: Area2D = $AnimatedSprite2D/Area2D
@@ -135,6 +135,7 @@ func _physics_process(_delta: float) -> void:
 		if can_attack:
 			weapon.attack()
 		move_and_slide()
+		print(speed)
 
 
 func can_see_player():
@@ -155,7 +156,10 @@ func can_see_player():
 
 
 func chase():
-	speed = 200
+	if curr_health <= test_max_health / 2:
+		speed = 300
+	else:
+		speed = 200
 	rot_speed = 20
 	gun.target = player.global_position
 	$AnimatedSprite2D.look_at(player.global_position)

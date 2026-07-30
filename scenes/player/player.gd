@@ -280,8 +280,9 @@ func enable_floor_jumping():
 	score["cheats"] = true
 
 
-func focus_camera(pos: Vector2):
-	$Camera2D.global_position = pos
+func focus_camera(pos: Vector2, travel_time = 1):
+	var tween = create_tween()
+	tween.tween_property($Camera2D, "global_position", pos, travel_time)
 
 
 func retrun_camera():
