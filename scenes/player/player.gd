@@ -95,7 +95,8 @@ func player_take_dmg(dmg):
 		if player_health <= 0:
 			player_died.emit()
 			score["deaths"] = score["deaths"] + 1
-		_damage_effect()
+		else:
+			_damage_effect()
 
 
 func _damage_effect():
