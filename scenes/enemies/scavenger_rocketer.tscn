@@ -2,15 +2,59 @@
 
 [ext_resource type="Script" uid="uid://dim2ehejf6rhe" path="res://scenes/enemies/gooner_test.gd" id="1_56krr"]
 [ext_resource type="Texture2D" uid="uid://casaix5baxr53" path="res://asstets/enemies/scavenger_rocketer_head.png" id="2_8lbkl"]
+[ext_resource type="Texture2D" uid="uid://bkr3f70sphx6l" path="res://asstets/enemies/rocketer_corpse.png" id="2_o3g64"]
 [ext_resource type="Texture2D" uid="uid://qlbu2l21gcxa" path="res://asstets/enemies/scavenger_rocketer_hands.png" id="3_kkets"]
 [ext_resource type="PackedScene" uid="uid://dp46gvqyyq8py" path="res://scenes/enemies/triple_r.tscn" id="3_nkq2n"]
 [ext_resource type="PackedScene" uid="uid://cnijtad8hhrio" path="res://scenes/enemies/legs.tscn" id="4_kkets"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_628fs"]
+atlas = ExtResource("2_o3g64")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpnq1"]
+atlas = ExtResource("2_o3g64")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kj36u"]
+atlas = ExtResource("2_o3g64")
+region = Rect2(256, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pg6c"]
+atlas = ExtResource("2_o3g64")
+region = Rect2(384, 0, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_628fs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_628fs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpnq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kj36u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pg6c")
+}],
+"loop": 0,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8lbkl")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nkq2n"]
 radius = 17.0
 
 [node name="EnemyWithGun" type="CharacterBody2D" unique_id=1440674812 node_paths=PackedStringArray("weapon", "legs", "body", "raycast", "marker", "to_hide_on_death")]
-position = Vector2(1, 0)
 script = ExtResource("1_56krr")
 max_health = 80
 weapon = NodePath("Sprite2D/AnimatedSprite2D")
@@ -22,9 +66,9 @@ to_hide_on_death = [NodePath("Sprite2D"), NodePath("AnimatedSprite2D")]
 range_ = 800
 metadata/_custom_type_script = "uid://dim2ehejf6rhe"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1529435934]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=306693649]
 position = Vector2(22, -4)
-texture = ExtResource("2_8lbkl")
+sprite_frames = SubResource("SpriteFrames_628fs")
 
 [node name="AnimatedSprite2D" parent="Sprite2D" unique_id=877183211 instance=ExtResource("3_nkq2n")]
 show_behind_parent = true
@@ -50,3 +94,5 @@ shape = SubResource("CircleShape2D_nkq2n")
 visible = false
 show_behind_parent = true
 position = Vector2(-1, 0)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=144676313]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dp46gvqyyq8py"]
 
 [ext_resource type="Texture2D" uid="uid://7hporae8mupb" path="res://asstets/player/triple_laucher.png" id="1_a7qf8"]
+[ext_resource type="Script" uid="uid://dcr8hr5y8u2ww" path="res://scenes/enemies/triple_r.gd" id="2_i8w26"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nn178"]
 atlas = ExtResource("1_a7qf8")
@@ -31,6 +32,7 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=877183211]
 sprite_frames = SubResource("SpriteFrames_i8w26")
+script = ExtResource("2_i8w26")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1307290339]
 position = Vector2(3, -1)
