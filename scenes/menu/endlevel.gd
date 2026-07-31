@@ -45,11 +45,13 @@ func setup(score: Dictionary):
 func count_score(_score: Dictionary) -> void:
 	if _score["cheats"]:
 		return
-	var time_grade:Array = ConfigManager.get_level_value("level_" + str(_score["level"]), "grading_time")
+	var time_grade: Array = ConfigManager.get_level_value(
+		"level_" + str(_score["level"]), "grading_time"
+	)
 	var max_score = 1700
 	var time_score: int = 0
-	max_score+=time_grade[0]/time_grade[1]
-	time_score=time_grade[0]/_score["time"]
+	max_score += time_grade[0] / time_grade[1]
+	time_score = time_grade[0] / _score["time"]
 	var death_score: int
 	if _score["deaths"] == 0:
 		death_score = 1200

@@ -68,7 +68,6 @@ func reload_levels_progress() -> void:
 	levels_progress = _load_cfg(LEVELS_PROGRESS_PATH)
 
 
-
 ## Loads player configuration file or creates a default one if absent.
 func _load_or_create_player_config() -> ConfigFile:
 	if not FileAccess.file_exists(PLAYER_USER_PATH):

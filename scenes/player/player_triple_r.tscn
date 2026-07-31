@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://7hporae8mupb" path="res://asstets/player/triple_laucher.png" id="1_2imax"]
 [ext_resource type="Texture2D" uid="uid://dqalvdhpngak" path="res://asstets/player/playerHand.png" id="2_4txer"]
-[ext_resource type="Script" uid="uid://dfbm30t6o3vps" path="res://scenes/player/player_weapon.gd" id="2_mudg7"]
+[ext_resource type="Script" uid="uid://bi3p03jyem56l" path="res://scenes/player/player_triple_r.gd" id="2_mudg7"]
 [ext_resource type="PackedScene" uid="uid://bp8rfuaig8wcf" path="res://scenes/effects/rocket.tscn" id="3_mudg7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nn178"]
@@ -19,7 +19,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nn178")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"cd",
 "speed": 5.0
 }, {
@@ -37,6 +37,7 @@ size = Vector2(16.5, 3)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=168125216 node_paths=PackedStringArray("bullet_spawn", "bullet_director", "weapon_area")]
 sprite_frames = SubResource("SpriteFrames_jiq1j")
+animation = &"cd"
 offset = Vector2(19, 8)
 script = ExtResource("2_mudg7")
 cooldown = 2.0

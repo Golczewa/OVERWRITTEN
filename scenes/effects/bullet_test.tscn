@@ -10,7 +10,7 @@ size = Vector2(4, 2)
 offsets = PackedFloat32Array(0, 0)
 colors = PackedColorArray(1, 1, 1, 0.6392157, 1, 0.8392157, 0, 1)
 
-[node name="Area2D" type="Area2D" unique_id=1962568695]
+[node name="Area2D" type="Area2D" unique_id=1962568695 groups=["bullets"]]
 collision_mask = 1023
 script = ExtResource("1_87sy2")
 

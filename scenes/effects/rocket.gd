@@ -1,5 +1,5 @@
 extends Area2D
-var speed: int = 200
+var speed: int = 300
 var perce: int = 0
 var perced: int = 0
 var dmg: int = 30
@@ -17,6 +17,7 @@ func _ready() -> void:
 	velocity = direction * speed
 	bullet_hit_wall_inst = bullet_hit_wall.instantiate()
 	$RayCast2D.target_position = Vector2((speed) * get_physics_process_delta_time(), 0)
+	$AnimatedSprite2D.play("default")
 
 
 func _on_body_enterd(body):
