@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://brysa1ib4uxgf"]
+
+[ext_resource type="Script" uid="uid://dim2ehejf6rhe" path="res://scenes/enemies/gooner_test.gd" id="1_56krr"]
+[ext_resource type="Texture2D" uid="uid://casaix5baxr53" path="res://asstets/enemies/scavenger_rocketer_head.png" id="2_8lbkl"]
+[ext_resource type="Texture2D" uid="uid://qlbu2l21gcxa" path="res://asstets/enemies/scavenger_rocketer_hands.png" id="3_kkets"]
+[ext_resource type="PackedScene" uid="uid://dp46gvqyyq8py" path="res://scenes/enemies/triple_r.tscn" id="3_nkq2n"]
+[ext_resource type="PackedScene" uid="uid://cnijtad8hhrio" path="res://scenes/enemies/legs.tscn" id="4_kkets"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nkq2n"]
+radius = 17.0
+
+[node name="EnemyWithGun" type="CharacterBody2D" unique_id=1440674812 node_paths=PackedStringArray("weapon", "legs", "body", "raycast", "marker", "to_hide_on_death")]
+position = Vector2(1, 0)
+script = ExtResource("1_56krr")
+max_health = 80
+weapon = NodePath("Sprite2D/AnimatedSprite2D")
+legs = NodePath("AnimatedSprite2D")
+body = NodePath("AnimatedSprite2D")
+raycast = NodePath("Sprite2D/AnimatedSprite2D/RayCast2D")
+marker = NodePath("Sprite2D/Marker2D")
+to_hide_on_death = [NodePath("Sprite2D"), NodePath("AnimatedSprite2D")]
+range_ = 800
+metadata/_custom_type_script = "uid://dim2ehejf6rhe"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1529435934]
+position = Vector2(22, -4)
+texture = ExtResource("2_8lbkl")
+
+[node name="AnimatedSprite2D" parent="Sprite2D" unique_id=877183211 instance=ExtResource("3_nkq2n")]
+show_behind_parent = true
+position = Vector2(0, 5)
+
+[node name="RayCast2D" type="RayCast2D" parent="Sprite2D/AnimatedSprite2D" unique_id=1344205282]
+position = Vector2(-11, -1)
+target_position = Vector2(126, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=778356356]
+show_behind_parent = true
+texture = ExtResource("3_kkets")
+
+[node name="Marker2D" type="Marker2D" parent="Sprite2D" unique_id=233875568]
+position = Vector2(-40, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=401271180]
+visible = false
+position = Vector2(4, 0)
+shape = SubResource("CircleShape2D_nkq2n")
+
+[node name="AnimatedSprite2D" parent="." unique_id=1071073496 instance=ExtResource("4_kkets")]
+visible = false
+show_behind_parent = true
+position = Vector2(-1, 0)

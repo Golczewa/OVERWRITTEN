@@ -4,6 +4,7 @@ class_name PlayerWeapon
 
 var can_attack = true
 
+@export var dmg := 30
 @export var cooldown = 0.6
 @export var bullet_pack: PackedScene
 @export var bullet_spawn: Marker2D
@@ -35,7 +36,7 @@ func is_hand_in_wall():
 func _spawn_bullet(rot_angle = 0, spred_angle = 2):
 	var bullet = bullet_pack.instantiate()
 	bullet.perce = 0
-	bullet.dmg = 15
+	bullet.dmg = dmg
 	var random_angle = deg_to_rad(randf_range(-spred_angle, spred_angle))
 	bullet.shot_by_player = true
 	var spawn_pos = bullet_spawn.global_position

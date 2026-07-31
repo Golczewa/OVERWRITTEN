@@ -40,6 +40,7 @@ sprite_frames = SubResource("SpriteFrames_jiq1j")
 animation = &"cd"
 offset = Vector2(19, 8)
 script = ExtResource("2_mudg7")
+dmg = 25
 cooldown = 2.0
 bullet_pack = ExtResource("3_mudg7")
 bullet_spawn = NodePath("Marker2D")

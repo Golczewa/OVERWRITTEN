@@ -50,9 +50,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mxdtc"]
-radius = 12.0
-height = 38.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_mxdtc"]
+radius = 17.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=625731905 groups=["enemies"]]
 z_index = 1
@@ -80,6 +79,6 @@ skin = "2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=413708611]
 position = Vector2(-1, 1)
-shape = SubResource("CapsuleShape2D_mxdtc")
+shape = SubResource("CircleShape2D_mxdtc")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1533406768]

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var test_max_health: int = 200
+@export var test_max_health: int = 250
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var weapon: Area2D = $AnimatedSprite2D/Area2D

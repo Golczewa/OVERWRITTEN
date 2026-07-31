@@ -1,10 +1,10 @@
 extends PlayerWeapon
 
-var rocket_spred := -0.25
+var rocket_spred := -0.15
 
 
 func attack():
-	if can_attack:
+	if can_attack and not is_hand_in_wall():
 		can_attack = false
 		var angle = rocket_spred
 		for i in range(3):

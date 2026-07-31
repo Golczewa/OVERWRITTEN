@@ -1,8 +1,8 @@
 extends Area2D
-var speed: int = 300
+var speed: int = 400
 var perce: int = 0
 var perced: int = 0
-var dmg: int = 30
+var dmg: int = 35
 var velocity
 var direction
 var target

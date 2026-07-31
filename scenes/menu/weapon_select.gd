@@ -25,8 +25,6 @@ func _ready() -> void:
 	for i in range(len(wep)):
 		if i % 4 == 0:
 			row = row_pack.instantiate()
-		if i % 4 == 3:
-			$VBoxContainer.add_child(row)
 		var card = card_pack.instantiate()
 		card.setup(
 			ConfigManager.weapons.get_value(str(i), "name", "unknown"),
@@ -35,11 +33,12 @@ func _ready() -> void:
 		card.mouse_entered.connect(display_disc.bind(i))
 		card.pressed.connect(untoggling.bind(card))
 		card.pressed.connect(set_weapon_num.bind(i))
-		print(i)
 		if i == weapon_num:
 			card.button_pressed = true
 			to_untoggle = card
 		row.add_child(card)
+		if i % 4 == 3 or i == len(wep) - 1:
+			$VBoxContainer.add_child(row)
 
 
 func display_disc(i):
