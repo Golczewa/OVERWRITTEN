@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cw1bqhu2chn80"]
+
+[ext_resource type="Texture2D" uid="uid://7hporae8mupb" path="res://asstets/player/triple_laucher.png" id="1_2imax"]
+[ext_resource type="Texture2D" uid="uid://dqalvdhpngak" path="res://asstets/player/playerHand.png" id="2_4txer"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mudg7"]
+atlas = ExtResource("1_2imax")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nn178"]
+atlas = ExtResource("1_2imax")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jiq1j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mudg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nn178")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1986141820]
+sprite_frames = SubResource("SpriteFrames_jiq1j")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1088266034]
+show_behind_parent = true
+position = Vector2(-15, -3)
+scale = Vector2(1, -1)
+texture = ExtResource("2_4txer")

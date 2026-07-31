@@ -90,7 +90,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8jn8b")
 }],
-"loop": false,
+"loop": 0,
 "name": &"0",
 "speed": 18.0
 }, {
@@ -116,7 +116,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mgit2")
 }],
-"loop": false,
+"loop": 0,
 "name": &"1",
 "speed": 18.0
 }, {
@@ -142,7 +142,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3tb44")
 }],
-"loop": false,
+"loop": 0,
 "name": &"2",
 "speed": 18.0
 }]
@@ -158,8 +158,6 @@ script = ExtResource("1_b38jh")
 position = Vector2(32, -10)
 sprite_frames = SubResource("SpriteFrames_hw0gn")
 animation = &"2"
-frame = 6
-frame_progress = 1.0
 offset = Vector2(12, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2091999505]

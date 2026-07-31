@@ -35,6 +35,7 @@ func _ready() -> void:
 		card.mouse_entered.connect(display_disc.bind(i))
 		card.pressed.connect(untoggling.bind(card))
 		card.pressed.connect(set_weapon_num.bind(i))
+		print(i)
 		if i == weapon_num:
 			card.button_pressed = true
 			to_untoggle = card
