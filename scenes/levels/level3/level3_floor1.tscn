@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://citrstanhe7yw" path="res://scenes/levels/level3/level3_floor1_map.tscn" id="2_lb4w2"]
 [ext_resource type="PackedScene" uid="uid://gvdpfkhlvqdq" path="res://scenes/levels/props/transition.tscn" id="3_lb4w2"]
 [ext_resource type="PackedScene" uid="uid://bdwlvl0qdr800" path="res://scenes/levels/props/enrance.tscn" id="4_xlpmp"]
-[ext_resource type="PackedScene" uid="uid://brysa1ib4uxgf" path="res://scenes/enemies/scavenger_rocketer.tscn" id="5_cgjav"]
+[ext_resource type="PackedScene" uid="uid://b0iqe6x2742im" path="res://scenes/levels/props/namedrop.tscn" id="6_74elj"]
 
 [node name="Floor" type="Node2D" unique_id=822097042 node_paths=PackedStringArray("down_node", "up_node")]
 script = ExtResource("1_3muqr")
@@ -15,16 +15,15 @@ metadata/_custom_type_script = "uid://cramwugkt2of"
 [node name="NavigationRegion2D" parent="." unique_id=421630345 instance=ExtResource("2_lb4w2")]
 
 [node name="Area2D" parent="." unique_id=1410637359 instance=ExtResource("3_lb4w2")]
-position = Vector2(707, 203)
+position = Vector2(573, 384)
 
 [node name="StaticBody2D" parent="." unique_id=124000147 instance=ExtResource("4_xlpmp")]
-position = Vector2(-3, 372)
+position = Vector2(3, 385)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1126238001]
 color = Color(0.69965345, 0.69965345, 0.69965345, 1)
 
 [node name="enemies" type="Node2D" parent="." unique_id=1049844210]
 
-[node name="EnemyWithGun" parent="enemies" unique_id=1440674812 node_paths=PackedStringArray("to_hide_on_death") instance=ExtResource("5_cgjav")]
-position = Vector2(529, 87)
-to_hide_on_death = [null, NodePath("AnimatedSprite2D")]
+[node name="Area2D2" parent="." unique_id=545860116 instance=ExtResource("6_74elj")]
+position = Vector2(62, 325)
