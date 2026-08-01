@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://dbspqfu56vr5r"]
 
-[ext_resource type="Texture2D" uid="uid://cgjotri0t0mhd" path="res://asstets/props/stealmail_lamp.png" id="1_0eppn"]
 [ext_resource type="Texture2D" uid="uid://dsdld16o7vgly" path="res://asstets/props/steelmill_lamp2.png" id="1_gxtd8"]
+[ext_resource type="Texture2D" uid="uid://dfxvl50jvls0n" path="res://asstets/props/lamp.png" id="2_gxtd8"]
 [ext_resource type="Texture2D" uid="uid://0uh0rx1ddq6w" path="res://asstets/props/light_test.png" id="2_xotw0"]
 [ext_resource type="Script" uid="uid://8v8urfgumhjs" path="res://scenes/levels/props/lamp_test.gd" id="3_fwrmw"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fvnwh"]
-atlas = ExtResource("1_0eppn")
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwrmw"]
+atlas = ExtResource("2_gxtd8")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bhlov"]
@@ -21,7 +21,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fvnwh")
+"texture": SubResource("AtlasTexture_fwrmw")
 }],
 "loop": 1,
 "name": &"default",

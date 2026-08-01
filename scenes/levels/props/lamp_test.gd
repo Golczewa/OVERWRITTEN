@@ -4,9 +4,9 @@ extends AnimatedSprite2D
 @export var color:Color=Color.YELLOW
 
 func _ready() -> void:
-	modulate=color
 	$PointLight2D.color=color
 	if state == "default":
+		modulate=color
 		play("default")
 	elif state == "dead":
 		play("dead")

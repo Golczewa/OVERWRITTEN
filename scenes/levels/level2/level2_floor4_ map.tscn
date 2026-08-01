@@ -155,7 +155,9 @@ collision_layer = 17
 
 [node name="AnimatedSprite2D" parent="props" unique_id=790032022 instance=ExtResource("6_tt5qk")]
 position = Vector2(192, -21)
+color = Color(1, 1, 1, 1)
 
 [node name="AnimatedSprite2D2" parent="props" unique_id=1716995844 instance=ExtResource("6_tt5qk")]
 position = Vector2(193, 149)
 rotation = 3.1415927
+color = Color(1, 0.9441207, 0.9354384, 1)

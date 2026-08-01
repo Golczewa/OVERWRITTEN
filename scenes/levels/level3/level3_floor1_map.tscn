@@ -76,8 +76,8 @@ sources/0 = SubResource("TileSetAtlasSource_mdfxl")
 navigation_polygon = SubResource("NavigationPolygon_1lgr3")
 
 [node name="Sprite2D" parent="." unique_id=41209180 instance=ExtResource("1_bndxw")]
-position = Vector2(345, 224.00002)
-scale = Vector2(11.921876, 7.6015625)
+position = Vector2(322.50003, 235.99995)
+scale = Vector2(12.2734375, 8.1875)
 
 [node name="lava" type="Node2D" parent="." unique_id=1625227954]
 
