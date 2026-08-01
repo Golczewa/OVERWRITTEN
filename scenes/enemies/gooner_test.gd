@@ -53,7 +53,8 @@ func take_damage(damage: int, knockback: int):
 				direction = -direction
 			in_knocback = true
 			get_tree().create_timer(0.1).timeout.connect(end_knockback.bind(org_speed))
-		_damage_effect()
+		if damage != 0:
+			_damage_effect()
 		if (!player_sighted) and not player.invisible:
 			player_sighted = true
 		if curr_health <= 0 and not dead:
@@ -83,7 +84,8 @@ func _die():
 	raycast.set_deferred("disabled", true)
 	legs.stop()
 	for node in to_hide_on_death:
-		node.hide()
+		if node:
+			node.hide()
 	remove_from_group("enemies")
 
 
