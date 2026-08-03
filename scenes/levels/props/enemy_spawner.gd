@@ -20,10 +20,8 @@ func spawn_wave():
 		is_spawning_wave = true
 		$AnimatedSprite2D.play("default")
 		var wave = waves[wave_counter]
-		var something_spawned = false
 		for enemy in wave:
 			for i in range(enemy[0]):
-				something_spawned = true
 				var enemy_inst = enemy[1].instantiate()
 				var spawn_offset = Vector2(randf_range(-8, 8), randf_range(-8, 8))
 				enemy_inst.global_position = global_position

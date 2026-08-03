@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://lvo2pdtbl3rn"]
+
+[ext_resource type="Script" uid="uid://cramwugkt2of" path="res://scenes/levels/floor_template.gd" id="1_6dw8k"]
+[ext_resource type="PackedScene" uid="uid://byeff2nv3wkbw" path="res://scenes/levels/level3/level3_floor2_map.tscn" id="2_5janj"]
+[ext_resource type="PackedScene" uid="uid://gvdpfkhlvqdq" path="res://scenes/levels/props/transition.tscn" id="3_5janj"]
+[ext_resource type="PackedScene" uid="uid://bu878f6tabfh3" path="res://scenes/levels/props/transition_exit.tscn" id="4_4yh0g"]
+[ext_resource type="PackedScene" uid="uid://eapp1741qlvm" path="res://scenes/levels/props/doors.tscn" id="5_2qe50"]
+
+[node name="Floor" type="Node2D" unique_id=1079065797 node_paths=PackedStringArray("down_node", "up_node")]
+script = ExtResource("1_6dw8k")
+down_node = NodePath("Area2D2")
+up_node = NodePath("Area2D")
+metadata/_custom_type_script = "uid://cramwugkt2of"
+
+[node name="NavigationRegion2D" parent="." unique_id=85138117 instance=ExtResource("2_5janj")]
+
+[node name="Area2D" parent="." unique_id=1410637359 instance=ExtResource("3_5janj")]
+position = Vector2(671, -573)
+rotation = -1.5707964
+
+[node name="Area2D2" parent="." unique_id=1924466041 instance=ExtResource("4_4yh0g")]
+position = Vector2(3, 64)
+rotation = 3.1415927
+
+[node name="Area2D3" parent="." unique_id=219715312 instance=ExtResource("5_2qe50")]
+position = Vector2(765, 65)
+locked = true
+skin = "steelmill2"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2081626323]
+color = Color(0.4313402, 0.43134028, 0.43134007, 1)

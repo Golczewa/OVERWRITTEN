@@ -1,3 +1,514 @@
-[gd_scene format=3 uid="uid://byeff2nv3wkbw"]
+[gd_scene format=4 uid="uid://byeff2nv3wkbw"]
+
+[ext_resource type="PackedScene" uid="uid://bqml6iwreuavg" path="res://scenes/levels/props/black_backround.tscn" id="1_hnton"]
+[ext_resource type="PackedScene" uid="uid://dqhm3a6wmllxj" path="res://scenes/levels/props/molten_steel.tscn" id="2_ueebs"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_1uhq0"]
+vertices = PackedVector2Array(192.88281, -32.882813, 192.88281, -31.101563, 167, -31.25, 167, -32.757813, 167, -31.070313, 159.10938, -31.109375, 159.10156, -32.882813, 167, -32.921875, 608.8828, -32.882813, 608.8828, -31.101563, 583, -31.25, 583, -32.757813, 583, -31.070313, 575.1094, -31.109375, 575.10156, -32.882813, 583, -32.921875, 383.2422, -519, 383.10938, -543.9375, 384.8828, -543.9297, 384.7578, -519, 448.8828, -32.882813, 448.8828, -31.101563, 423, -31.25, 423, -32.757813, 391, -32.757813, 423, -31.070313, 391, -31.242188, 377, -33.171875, 391, -31.070313, 359, -31.242188, 359, -31.070313, 327, -31.242188, 384.92188, -519, 384.7578, -487, 384.92188, -487, 384.7578, -455, 384.92188, -455, 384.7578, -423, 384.92188, -423, 384.7578, -391, 384.92188, -391, 384.7578, -359, 384.92188, -359, 384.7578, -327, 384.92188, -327, 384.7578, -295, 384.92188, -295, 384.7578, -263, 384.92188, -263, 384.7578, -231, 384.92188, -231, 384.7578, -199, 384.92188, -199, 384.7578, -167, 384.92188, -167, 384.7578, -135, 384.92188, -135, 384.7578, -103, 384.92188, -103, 384.7578, -71, 384.92188, -71, 384.7578, -39, 423, -32.921875, 383.2422, -39, 383.07813, -71, 383.2422, -71, 383.07813, -103, 383.2422, -103, 383.07813, -135, 383.2422, -135, 383.07813, -167, 383.2422, -167, 383.07813, -199, 383.2422, -199, 383.07813, -231, 383.2422, -231, 383.07813, -263, 383.2422, -263, 383.07813, -295, 383.2422, -295, 383.07813, -327, 383.2422, -327, 383.07813, -359, 383.2422, -359, 383.07813, -391, 383.2422, -391, 383.07813, -423, 383.2422, -423, 383.07813, -455, 383.2422, -455, 383.07813, -487, 383.2422, -487, 383.07813, -519, 327, -31.070313, 319.10938, -31.109375, 319.10156, -32.882813, 391, -39, 377, -39, 32.882813, -31.101563, 32.046875, -31.109375, 32.0625, -32.882813, 32.882813, -32.882813, 735.9375, -31.109375, 735.1094, -31.109375, 735.10156, -32.882813, 735.9297, -32.882813, 665, 25, 679, 18.773438, 685.2031, 18.789063, 685.22656, 25, 665, -83.17969, 679, -89, 735.8906, -153, 659.14844, -83.14844, 659.1797, -89, 735.8906, -185, 249, -83.17969, 243.14844, -83.14844, 243.17969, -89, 263, -89, 89, -83.17969, 83.14844, -83.14844, 83.17969, -89, 103, -89, 505, -83.17969, 499.14844, -83.14844, 499.1797, -89, 735.8906, -217, 519, -89, 746.5781, 57, 746.64844, 71, 735.89844, 71, 736.0469, 57, 735.9297, -543.9297, 735.9531, -537, 735.8906, -537, 679, -544.0469, 735.9297, 95.92969, 729, 95.953125, 729, 95.890625, 32.109375, 71, 23.15625, 71, 23.203125, 57, 31.953125, 57, 57, 95.89844, 32.0625, 95.92969, 109.22656, 25, 32.109375, -537, 32.046875, -537, 32.0625, -543.9297, 57, -543.89844, 313, -543.8906, 313, -543.9531, 327, -543.9219, 327, -89, 281, -543.8906, 735.9531, -505, 735.8906, -505, 735.9531, -473, 735.8906, -473, 735.9531, -441, 735.8906, -441, 735.9531, -409, 735.8906, -409, 735.9531, -377, 735.8906, -377, 735.9531, -345, 735.8906, -345, 735.9531, -313, 735.8906, -313, 735.9531, -281, 735.8906, -281, 735.9531, -249, 735.8906, -249, 735.9531, -217, 735.9531, -185, 735.9531, -153, 735.9531, -121, 735.8906, -121, 735.9531, -89, 697, 95.953125, 697, 95.890625, 665, 95.953125, 665, 95.890625, 633, 95.953125, 633, 95.890625, 601, 95.953125, 601, 95.890625, 569, 95.953125, 569, 95.890625, 537, 95.953125, 537, 95.890625, 505, 95.953125, 505, 95.890625, 473, 95.953125, 473, 95.890625, 441, 95.953125, 441, 95.890625, 409, 95.953125, 409, 95.890625, 377, 95.953125, 377, 95.890625, 345, 95.953125, 345, 95.890625, 313, 95.953125, 313, 95.890625, 281, 95.953125, 281, 95.890625, 249, 95.953125, 249, 95.890625, 217, 95.953125, 217, 95.890625, 185, 95.953125, 185, 95.890625, 153, 95.953125, 153, 95.890625, 121, 95.953125, 121, 95.890625, 89, 95.953125, 89, 95.890625, 57, 95.953125, 32.046875, -89, 32.109375, -121, 32.046875, -121, 32.109375, -153, 32.046875, -153, 32.109375, -185, 32.046875, -185, 32.109375, -217, 32.046875, -217, 32.109375, -249, 32.046875, -249, 32.109375, -281, 32.046875, -281, 32.109375, -313, 32.046875, -313, 32.109375, -345, 32.046875, -345, 32.109375, -377, 32.046875, -377, 32.109375, -409, 32.046875, -409, 32.109375, -441, 32.046875, -441, 32.109375, -473, 32.046875, -473, 32.109375, -505, 32.046875, -505, 57, -543.9531, 89, -543.8906, 89, -543.9531, 121, -543.8906, 121, -543.9531, 153, -543.8906, 153, -543.9531, 185, -543.8906, 185, -543.9531, 217, -543.8906, 217, -543.9531, 249, -543.8906, 249, -543.9531, 281, -543.9531, 441, -89, 441, -543.9531, 473, -543.8906, 473, -543.9531, 505, -543.8906, 505, -543.9531, 537, -543.8906, 537, -543.9531, 569, -543.8906, 569, -543.9531, 601, -543.8906, 601, -543.9531, 633, -543.8906, 633, -543.9531, 665, -543.8906, 665, -551, 679, -551, 735.9922, 25, 32.007813, 25, 89, 25, 519, 18.773438, 525.2031, 18.789063, 525.22656, 25, 505, 25, 103, 18.773438, 109.203125, 18.789063, 263, 18.773438, 269.20313, 18.789063, 269.22656, 25, 249, 25)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(2, 4, 5, 6), PackedInt32Array(3, 2, 6), PackedInt32Array(7, 3, 6), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(10, 12, 13, 14), PackedInt32Array(11, 10, 14), PackedInt32Array(15, 11, 14), PackedInt32Array(16, 17, 18, 19), PackedInt32Array(20, 21, 22, 23), PackedInt32Array(24, 22, 25, 26, 27), PackedInt32Array(26, 28, 29, 27), PackedInt32Array(29, 30, 31), PackedInt32Array(19, 32, 33), PackedInt32Array(33, 34, 35), PackedInt32Array(35, 36, 37), PackedInt32Array(37, 38, 39), PackedInt32Array(39, 40, 41), PackedInt32Array(41, 42, 43), PackedInt32Array(43, 44, 45), PackedInt32Array(45, 46, 47), PackedInt32Array(47, 48, 49), PackedInt32Array(49, 50, 51), PackedInt32Array(51, 52, 53), PackedInt32Array(53, 54, 55), PackedInt32Array(55, 56, 57), PackedInt32Array(57, 58, 59), PackedInt32Array(59, 60, 61), PackedInt32Array(24, 62, 23), PackedInt32Array(63, 64, 65, 61), PackedInt32Array(65, 66, 67, 59, 61), PackedInt32Array(67, 68, 69, 57, 59), PackedInt32Array(69, 70, 71, 55, 57), PackedInt32Array(71, 72, 73, 53, 55), PackedInt32Array(73, 74, 75, 51, 53), PackedInt32Array(75, 76, 77, 49, 51), PackedInt32Array(77, 78, 79, 47, 49), PackedInt32Array(79, 80, 81, 45, 47), PackedInt32Array(81, 82, 83, 43, 45), PackedInt32Array(83, 84, 85, 41, 43), PackedInt32Array(85, 86, 87, 39, 41), PackedInt32Array(87, 88, 89, 37, 39), PackedInt32Array(89, 90, 91, 35, 37), PackedInt32Array(91, 92, 16, 33, 35), PackedInt32Array(31, 93, 94, 95), PackedInt32Array(31, 95, 27, 29), PackedInt32Array(16, 19, 33), PackedInt32Array(61, 96, 24, 27), PackedInt32Array(24, 23, 22), PackedInt32Array(63, 61, 27), PackedInt32Array(63, 27, 97), PackedInt32Array(98, 99, 100, 101), PackedInt32Array(102, 103, 104, 105), PackedInt32Array(106, 107, 108, 109), PackedInt32Array(107, 106, 110, 111), PackedInt32Array(112, 111, 110, 113, 114, 115), PackedInt32Array(116, 117, 118, 119), PackedInt32Array(120, 121, 122, 123), PackedInt32Array(124, 125, 126, 127, 115, 128), PackedInt32Array(129, 130, 131, 132), PackedInt32Array(133, 134, 135, 136), PackedInt32Array(137, 138, 139, 131), PackedInt32Array(140, 141, 142, 143), PackedInt32Array(144, 145, 140, 146), PackedInt32Array(147, 148, 149, 150), PackedInt32Array(151, 152, 153, 154), PackedInt32Array(151, 154, 119, 155), PackedInt32Array(135, 156, 157, 136), PackedInt32Array(157, 158, 159), PackedInt32Array(159, 160, 161), PackedInt32Array(161, 162, 163), PackedInt32Array(163, 164, 165), PackedInt32Array(165, 166, 167), PackedInt32Array(167, 168, 169), PackedInt32Array(169, 170, 171), PackedInt32Array(171, 172, 173), PackedInt32Array(173, 174, 127), PackedInt32Array(127, 175, 115), PackedInt32Array(115, 176, 112), PackedInt32Array(112, 177, 178), PackedInt32Array(178, 179, 111), PackedInt32Array(139, 180, 181), PackedInt32Array(181, 182, 183), PackedInt32Array(183, 184, 185), PackedInt32Array(185, 186, 187), PackedInt32Array(187, 188, 189), PackedInt32Array(189, 190, 191), PackedInt32Array(191, 192, 193), PackedInt32Array(193, 194, 195), PackedInt32Array(195, 196, 197), PackedInt32Array(197, 198, 199), PackedInt32Array(199, 200, 201), PackedInt32Array(201, 202, 203), PackedInt32Array(203, 204, 205), PackedInt32Array(205, 206, 207), PackedInt32Array(207, 208, 209), PackedInt32Array(209, 210, 211), PackedInt32Array(211, 212, 213), PackedInt32Array(213, 214, 215), PackedInt32Array(215, 216, 217), PackedInt32Array(217, 218, 219, 146), PackedInt32Array(219, 220, 144, 146), PackedInt32Array(122, 221, 222), PackedInt32Array(222, 223, 224), PackedInt32Array(224, 225, 226), PackedInt32Array(226, 227, 228), PackedInt32Array(228, 229, 230), PackedInt32Array(230, 231, 232), PackedInt32Array(232, 233, 234), PackedInt32Array(234, 235, 236), PackedInt32Array(236, 237, 238), PackedInt32Array(238, 239, 240), PackedInt32Array(240, 241, 242), PackedInt32Array(242, 243, 244), PackedInt32Array(244, 245, 246), PackedInt32Array(246, 247, 147, 150), PackedInt32Array(150, 248, 249, 119), PackedInt32Array(249, 250, 251, 119), PackedInt32Array(251, 252, 253, 119), PackedInt32Array(253, 254, 255, 119), PackedInt32Array(255, 256, 257, 119), PackedInt32Array(257, 258, 259, 119), PackedInt32Array(259, 260, 155, 119), PackedInt32Array(155, 261, 151), PackedInt32Array(262, 263, 264, 126), PackedInt32Array(264, 265, 266, 126), PackedInt32Array(266, 267, 268), PackedInt32Array(268, 269, 270), PackedInt32Array(270, 271, 272), PackedInt32Array(272, 273, 274), PackedInt32Array(274, 275, 276), PackedInt32Array(276, 277, 278, 136), PackedInt32Array(109, 279, 132), PackedInt32Array(143, 280, 281), PackedInt32Array(282, 283, 284, 285), PackedInt32Array(143, 281, 286, 287, 146, 140), PackedInt32Array(288, 289, 290, 291), PackedInt32Array(126, 266, 268), PackedInt32Array(291, 290, 132, 131, 139, 181), PackedInt32Array(291, 181, 183), PackedInt32Array(291, 183, 185), PackedInt32Array(291, 185, 187), PackedInt32Array(291, 187, 189), PackedInt32Array(291, 189, 191), PackedInt32Array(291, 191, 193), PackedInt32Array(291, 193, 195), PackedInt32Array(291, 195, 197), PackedInt32Array(291, 197, 199), PackedInt32Array(291, 199, 201), PackedInt32Array(291, 201, 203), PackedInt32Array(291, 203, 205), PackedInt32Array(291, 205, 207), PackedInt32Array(291, 207, 209, 146), PackedInt32Array(146, 209, 211), PackedInt32Array(146, 211, 213), PackedInt32Array(146, 213, 215), PackedInt32Array(146, 215, 217), PackedInt32Array(126, 268, 270), PackedInt32Array(126, 270, 272), PackedInt32Array(126, 272, 274), PackedInt32Array(286, 281, 120, 123), PackedInt32Array(126, 274, 276), PackedInt32Array(126, 276, 136, 157, 159), PackedInt32Array(126, 159, 161), PackedInt32Array(126, 161, 163), PackedInt32Array(126, 163, 165), PackedInt32Array(126, 165, 167), PackedInt32Array(126, 167, 169), PackedInt32Array(126, 169, 171), PackedInt32Array(126, 171, 173), PackedInt32Array(126, 173, 127), PackedInt32Array(246, 150, 119, 244), PackedInt32Array(242, 244, 119), PackedInt32Array(240, 242, 119), PackedInt32Array(238, 240, 119), PackedInt32Array(236, 238, 119), PackedInt32Array(234, 236, 119), PackedInt32Array(232, 234, 119), PackedInt32Array(230, 232, 119), PackedInt32Array(228, 230, 119), PackedInt32Array(226, 228, 119), PackedInt32Array(224, 226, 119), PackedInt32Array(222, 224, 119, 118), PackedInt32Array(112, 178, 111), PackedInt32Array(115, 114, 128), PackedInt32Array(124, 128, 282, 285), PackedInt32Array(106, 109, 132), PackedInt32Array(123, 122, 222), PackedInt32Array(118, 123, 222), PackedInt32Array(116, 119, 288, 291), PackedInt32Array(132, 290, 285), PackedInt32Array(132, 285, 284), PackedInt32Array(132, 284, 106)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, -576, 768, -576, 772, 132, -2, 130)])
+agent_radius = 25.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uv4ce"]
+load_path = "res://.godot/imported/steemill_tiles2.png-c01570e262ce7ceedd8c8c6039357a97.ctex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hnton"]
+texture = SubResource("CompressedTexture2D_uv4ce")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ueebs"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_hnton")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1uhq0"]
+polygon = PackedVector2Array(-16, -16, -9.054746, -16, -8.940128, 16, -16, 16)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hnton"]
+polygon = PackedVector2Array(16, -16, 9.054746, -16, 8.940128, 16, 16, 16)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ueebs"]
+polygon = PackedVector2Array(16, 16, 16, 9.054746, -16, 8.940128, -16, 16)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hkrfm"]
+polygon = PackedVector2Array(16, -16, 16, -9.054746, -16, -8.940128, -16, -16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ibga5"]
+load_path = "res://.godot/imported/steemill_wall2.png-345f0724f6d9edbf5bc6627238e0cf14.ctex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ugv13"]
+texture = SubResource("CompressedTexture2D_ibga5")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_1uhq0")
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -8.940128, -16, -8.997437, 16, -16, 16)
+1:0/0 = 0
+1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_hnton")
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 8.940128, -16, 8.997437, 16, 16, 16)
+2:0/0 = 0
+2:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_ueebs")
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 16, 16, 8.940128, -16, 8.997437, -16, 16)
+3:0/0 = 0
+3:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_hkrfm")
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, -8.940128, -16, -8.997437, -16, -16)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, -16, 9.892229, 16, 10.051028, 16, 16)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, -9.892229, 16, -10.051028, 16, -16)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 16, 9.892229, 16, 10.051028, -16, 16, -16)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, -9.892229, 16, -10.051028, -16, -16, -16)
+
+[sub_resource type="TileSet" id="TileSet_kly32"]
+tile_size = Vector2i(32, 32)
+occlusion_layer_0/light_mask = 1
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_ugv13")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_m1tsn"]
+polygon = PackedVector2Array(-16, -16, -9.054746, -16, -8.940128, 16, -16, 16)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_nvqx0"]
+polygon = PackedVector2Array(16, -16, 9.054746, -16, 8.940128, 16, 16, 16)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_82wmi"]
+polygon = PackedVector2Array(16, 16, 16, 9.054746, -16, 8.940128, -16, 16)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_72n7y"]
+polygon = PackedVector2Array(16, -16, 16, -9.054746, -16, -8.940128, -16, -16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k5tuj"]
+load_path = "res://.godot/imported/steemill_wall2.png-345f0724f6d9edbf5bc6627238e0cf14.ctex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fvfq5"]
+texture = SubResource("CompressedTexture2D_k5tuj")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_m1tsn")
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -8.940128, -16, -8.997437, 16, -16, 16)
+1:0/0 = 0
+1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_nvqx0")
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 8.940128, -16, 8.997437, 16, 16, 16)
+2:0/0 = 0
+2:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_82wmi")
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 16, 16, 8.940128, -16, 8.997437, -16, 16)
+3:0/0 = 0
+3:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_72n7y")
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, -8.940128, -16, -8.997437, -16, -16)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, -16, 9.892229, 16, 10.051028, 16, 16)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, -9.892229, 16, -10.051028, 16, -16)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 16, 9.892229, 16, 10.051028, -16, 16, -16)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, -9.892229, 16, -10.051028, -16, -16, -16)
+
+[sub_resource type="TileSet" id="TileSet_3gybi"]
+tile_size = Vector2i(32, 32)
+occlusion_layer_0/light_mask = 1
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_fvfq5")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" unique_id=85138117]
+navigation_polygon = SubResource("NavigationPolygon_1uhq0")
+
+[node name="Sprite2D" parent="." unique_id=41209180 instance=ExtResource("1_hnton")]
+position = Vector2(417, -245.50006)
+scale = Vector2(14.03125, 12.1640625)
+
+[node name="lava" type="Node2D" parent="." unique_id=2101759272]
+
+[node name="AnimatedSprite2D" parent="lava" unique_id=1668156600 instance=ExtResource("2_ueebs")]
+position = Vector2(16, -48)
+
+[node name="AnimatedSprite2D2" parent="lava" unique_id=1979860055 instance=ExtResource("2_ueebs")]
+position = Vector2(16, -16)
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D3" parent="lava" unique_id=85578805 instance=ExtResource("2_ueebs")]
+position = Vector2(48, -16)
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D4" parent="lava" unique_id=693737719 instance=ExtResource("2_ueebs")]
+position = Vector2(48, -48)
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D5" parent="lava" unique_id=1881259006 instance=ExtResource("2_ueebs")]
+position = Vector2(80, -48)
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D6" parent="lava" unique_id=1579872006 instance=ExtResource("2_ueebs")]
+position = Vector2(112, -48)
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D7" parent="lava" unique_id=193081214 instance=ExtResource("2_ueebs")]
+position = Vector2(144, -48)
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D8" parent="lava" unique_id=1495552452 instance=ExtResource("2_ueebs")]
+position = Vector2(176, -48)
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D9" parent="lava" unique_id=1302581138 instance=ExtResource("2_ueebs")]
+position = Vector2(208, -48)
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D10" parent="lava" unique_id=284020054 instance=ExtResource("2_ueebs")]
+position = Vector2(240, -48)
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D11" parent="lava" unique_id=1182183991 instance=ExtResource("2_ueebs")]
+position = Vector2(272, -48)
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D12" parent="lava" unique_id=118826977 instance=ExtResource("2_ueebs")]
+position = Vector2(304, -48)
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D13" parent="lava" unique_id=224089072 instance=ExtResource("2_ueebs")]
+position = Vector2(336, -48)
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D14" parent="lava" unique_id=1893568345 instance=ExtResource("2_ueebs")]
+position = Vector2(80, -16)
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D15" parent="lava" unique_id=1080179308 instance=ExtResource("2_ueebs")]
+position = Vector2(112, -16)
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D16" parent="lava" unique_id=1739015216 instance=ExtResource("2_ueebs")]
+position = Vector2(144, -16)
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D17" parent="lava" unique_id=1418685299 instance=ExtResource("2_ueebs")]
+position = Vector2(176, -16)
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D18" parent="lava" unique_id=1119521507 instance=ExtResource("2_ueebs")]
+position = Vector2(208, -16)
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D19" parent="lava" unique_id=470298495 instance=ExtResource("2_ueebs")]
+position = Vector2(240, -16)
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D20" parent="lava" unique_id=1370511350 instance=ExtResource("2_ueebs")]
+position = Vector2(272, -16)
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D21" parent="lava" unique_id=1988357224 instance=ExtResource("2_ueebs")]
+position = Vector2(304, -16)
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D22" parent="lava" unique_id=90682010 instance=ExtResource("2_ueebs")]
+position = Vector2(336, -16)
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D23" parent="lava" unique_id=823892395 instance=ExtResource("2_ueebs")]
+position = Vector2(752, -48)
+rotation = 3.1415927
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D24" parent="lava" unique_id=1745469265 instance=ExtResource("2_ueebs")]
+position = Vector2(720, -48)
+rotation = 3.1415927
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D25" parent="lava" unique_id=1901279612 instance=ExtResource("2_ueebs")]
+position = Vector2(688, -48)
+rotation = 3.1415927
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D26" parent="lava" unique_id=1339299823 instance=ExtResource("2_ueebs")]
+position = Vector2(656, -48)
+rotation = 3.1415927
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D27" parent="lava" unique_id=1417033102 instance=ExtResource("2_ueebs")]
+position = Vector2(624, -48)
+rotation = 3.1415927
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D28" parent="lava" unique_id=324280383 instance=ExtResource("2_ueebs")]
+position = Vector2(592, -48)
+rotation = 3.1415927
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D29" parent="lava" unique_id=1119170622 instance=ExtResource("2_ueebs")]
+position = Vector2(560, -48)
+rotation = 3.1415927
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D30" parent="lava" unique_id=298983243 instance=ExtResource("2_ueebs")]
+position = Vector2(528, -48)
+rotation = 3.1415927
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D31" parent="lava" unique_id=1660404290 instance=ExtResource("2_ueebs")]
+position = Vector2(496, -48)
+rotation = 3.1415927
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D32" parent="lava" unique_id=1505571674 instance=ExtResource("2_ueebs")]
+position = Vector2(464, -48)
+rotation = 3.1415927
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D33" parent="lava" unique_id=1778654640 instance=ExtResource("2_ueebs")]
+position = Vector2(432, -48)
+rotation = 3.1415927
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D34" parent="lava" unique_id=891918670 instance=ExtResource("2_ueebs")]
+position = Vector2(752, -16)
+rotation = 3.1415927
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D35" parent="lava" unique_id=912008969 instance=ExtResource("2_ueebs")]
+position = Vector2(720, -16)
+rotation = 3.1415927
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D36" parent="lava" unique_id=2074611656 instance=ExtResource("2_ueebs")]
+position = Vector2(688, -16)
+rotation = 3.1415927
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D37" parent="lava" unique_id=1938547449 instance=ExtResource("2_ueebs")]
+position = Vector2(656, -16)
+rotation = 3.1415927
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D38" parent="lava" unique_id=1777335413 instance=ExtResource("2_ueebs")]
+position = Vector2(624, -16)
+rotation = 3.1415927
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D39" parent="lava" unique_id=893056885 instance=ExtResource("2_ueebs")]
+position = Vector2(592, -16)
+rotation = 3.1415927
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D40" parent="lava" unique_id=944886010 instance=ExtResource("2_ueebs")]
+position = Vector2(560, -16)
+rotation = 3.1415927
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D41" parent="lava" unique_id=1354838029 instance=ExtResource("2_ueebs")]
+position = Vector2(528, -16)
+rotation = 3.1415927
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D42" parent="lava" unique_id=1082984109 instance=ExtResource("2_ueebs")]
+position = Vector2(496, -16)
+rotation = 3.1415927
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D43" parent="lava" unique_id=1550039454 instance=ExtResource("2_ueebs")]
+position = Vector2(464, -16)
+rotation = 3.1415927
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D44" parent="lava" unique_id=1387301457 instance=ExtResource("2_ueebs")]
+position = Vector2(432, -16)
+rotation = 3.1415927
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D45" parent="lava" unique_id=2140406769 instance=ExtResource("2_ueebs")]
+position = Vector2(368, -336)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D46" parent="lava" unique_id=279914608 instance=ExtResource("2_ueebs")]
+position = Vector2(400, -336)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D47" parent="lava" unique_id=1370441432 instance=ExtResource("2_ueebs")]
+position = Vector2(400, -304)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D48" parent="lava" unique_id=534835581 instance=ExtResource("2_ueebs")]
+position = Vector2(400, -272)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D49" parent="lava" unique_id=630086613 instance=ExtResource("2_ueebs")]
+position = Vector2(400, -240)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D50" parent="lava" unique_id=557587931 instance=ExtResource("2_ueebs")]
+position = Vector2(400, -208)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D51" parent="lava" unique_id=1751476440 instance=ExtResource("2_ueebs")]
+position = Vector2(400, -176)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D52" parent="lava" unique_id=449066116 instance=ExtResource("2_ueebs")]
+position = Vector2(400, -144)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D53" parent="lava" unique_id=1837685952 instance=ExtResource("2_ueebs")]
+position = Vector2(400, -112)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D54" parent="lava" unique_id=1922436435 instance=ExtResource("2_ueebs")]
+position = Vector2(400, -80)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D55" parent="lava" unique_id=1449772848 instance=ExtResource("2_ueebs")]
+position = Vector2(400, -48)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D56" parent="lava" unique_id=920099758 instance=ExtResource("2_ueebs")]
+position = Vector2(368, -48)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D57" parent="lava" unique_id=1351138594 instance=ExtResource("2_ueebs")]
+position = Vector2(368, -16)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D58" parent="lava" unique_id=1602034065 instance=ExtResource("2_ueebs")]
+position = Vector2(400, -16)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D59" parent="lava" unique_id=252314239 instance=ExtResource("2_ueebs")]
+position = Vector2(368, -80)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D60" parent="lava" unique_id=162629824 instance=ExtResource("2_ueebs")]
+position = Vector2(368, -112)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D61" parent="lava" unique_id=1379510793 instance=ExtResource("2_ueebs")]
+position = Vector2(368, -144)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D62" parent="lava" unique_id=1357807915 instance=ExtResource("2_ueebs")]
+position = Vector2(368, -176)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D63" parent="lava" unique_id=77982337 instance=ExtResource("2_ueebs")]
+position = Vector2(368, -208)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D64" parent="lava" unique_id=141507587 instance=ExtResource("2_ueebs")]
+position = Vector2(368, -240)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D65" parent="lava" unique_id=846797919 instance=ExtResource("2_ueebs")]
+position = Vector2(368, -272)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D66" parent="lava" unique_id=629448904 instance=ExtResource("2_ueebs")]
+position = Vector2(368, -304)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D67" parent="lava" unique_id=426439777 instance=ExtResource("2_ueebs")]
+position = Vector2(368, -560)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D68" parent="lava" unique_id=24473131 instance=ExtResource("2_ueebs")]
+position = Vector2(368, -528)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D69" parent="lava" unique_id=1179720505 instance=ExtResource("2_ueebs")]
+position = Vector2(368, -496)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D70" parent="lava" unique_id=784168028 instance=ExtResource("2_ueebs")]
+position = Vector2(368, -464)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D71" parent="lava" unique_id=2117860845 instance=ExtResource("2_ueebs")]
+position = Vector2(368, -432)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D72" parent="lava" unique_id=1963255439 instance=ExtResource("2_ueebs")]
+position = Vector2(368, -400)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D73" parent="lava" unique_id=1609451254 instance=ExtResource("2_ueebs")]
+position = Vector2(368, -368)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D74" parent="lava" unique_id=1187545304 instance=ExtResource("2_ueebs")]
+position = Vector2(400, -368)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D75" parent="lava" unique_id=1041932811 instance=ExtResource("2_ueebs")]
+position = Vector2(400, -400)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D76" parent="lava" unique_id=85145583 instance=ExtResource("2_ueebs")]
+position = Vector2(400, -432)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D77" parent="lava" unique_id=546315540 instance=ExtResource("2_ueebs")]
+position = Vector2(400, -464)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D78" parent="lava" unique_id=1584775700 instance=ExtResource("2_ueebs")]
+position = Vector2(400, -496)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D79" parent="lava" unique_id=1387321826 instance=ExtResource("2_ueebs")]
+position = Vector2(400, -528)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="AnimatedSprite2D80" parent="lava" unique_id=1272122784 instance=ExtResource("2_ueebs")]
+position = Vector2(400, -560)
+rotation = -1.5707964
+metadata/_scene_painted = true
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=377660275]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAMAAEAAAAAAAAAAAANAAEAAAAAAAAAAAANAAIAAAAAAAAAAAAMAAIAAAAAAAAAAAALAAIAAAAAAAAAAAAKAAIAAAAAAAAAAAAKAAMAAAAAAAAAAAAJAAMAAAAAAAAAAAAIAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAGAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAIAAAAAAAAAAAADAAIAAAAAAAAAAAACAAIAAAAAAAAAAAABAAIAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAALAAEAAAAAAAAAAAAJAAIAAAAAAAAAAAAIAAIAAAAAAAAAAAAHAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAACAAMAAAAAAAAAAAABAAMAAAAAAAAAAAADAAMAAAAAAAAAAAALAAMAAAAAAAAAAAAMAAMAAAAAAAAAAAANAAMAAAAAAAAAAAAOAAMAAAAAAAAAAAAPAAMAAAAAAAAAAAAQAAMAAAAAAAAAAAAQAAIAAAAAAAAAAAARAAIAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAOAAEAAAAAAAAAAAAOAAIAAAAAAAAAAAAPAAAAAAAAAAAAAAAPAAEAAAAAAAAAAAAPAAIAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAEAAAAAAAAAAAARAAAAAAAAAAAAAAARAAEAAAAAAAAAAAARAAMAAAAAAAAAAAASAAAAAAAAAAAAAAASAAEAAAAAAAAAAAASAAIAAAAAAAAAAAASAAMAAAAAAAAAAAATAAAAAAAAAAAAAAATAAEAAAAAAAAAAAATAAIAAAAAAAAAAAATAAMAAAAAAAAAAAAUAAAAAAAAAAAAAAAUAAEAAAAAAAAAAAAUAAIAAAAAAAAAAAAUAAMAAAAAAAAAAAAVAAAAAAAAAAAAAAAVAAEAAAAAAAAAAAAVAAIAAAAAAAAAAAAVAAMAAAAAAAAAAAAWAAAAAAAAAAAAAAAWAAEAAAAAAAAAAAAWAAIAAAAAAAAAAAAWAAMAAAAAAAAAAAAXAAAAAAAAAAAAAAAXAAEAAAAAAAAAAAAXAAIAAAAAAAAAAAAXAAMAAAAAAAAAAAAAAP3/AAAAAAAAAAABAP3/AAAAAAAAAAACAP3/AAAAAAAAAAADAP3/AAAAAAAAAAAEAP3/AAAAAAAAAAAFAP3/AAAAAAAAAAAGAP3/AAAAAAAAAAAHAP3/AAAAAAAAAAAIAP3/AAAAAAAAAAAJAP3/AAAAAAAAAAAKAP3/AAAAAAAAAAANAP3/AAAAAAAAAAAOAP3/AAAAAAAAAAAPAP3/AAAAAAAAAAAQAP3/AAAAAAAAAAARAP3/AAAAAAAAAAASAP3/AAAAAAAAAAATAP3/AAAAAAAAAAAUAP3/AAAAAAAAAAAVAP3/AAAAAAAAAAAWAP3/AAAAAAAAAAAXAP3/AAAAAAAAAAABAPj/AAAAAAAAAAABAPn/AAAAAAAAAAABAPr/AAAAAAAAAAABAPv/AAAAAAAAAAABAPz/AAAAAAAAAAACAPj/AAAAAAAAAAACAPn/AAAAAAAAAAACAPr/AAAAAAAAAAACAPv/AAAAAAAAAAACAPz/AAAAAAAAAAADAPj/AAAAAAAAAAADAPn/AAAAAAAAAAADAPr/AAAAAAAAAAADAPv/AAAAAAAAAAADAPz/AAAAAAAAAAAEAPj/AAAAAAAAAAAEAPn/AAAAAAAAAAAEAPr/AAAAAAAAAAAEAPv/AAAAAAAAAAAEAPz/AAAAAAAAAAAFAPj/AAAAAAAAAAAFAPn/AAAAAAAAAAAFAPr/AAAAAAAAAAAFAPv/AAAAAAAAAAAFAPz/AAAAAAAAAAAGAPj/AAAAAAAAAAAGAPn/AAAAAAAAAAAGAPr/AAAAAAAAAAAGAPv/AAAAAAAAAAAGAPz/AAAAAAAAAAAHAPj/AAAAAAAAAAAHAPn/AAAAAAAAAAAHAPr/AAAAAAAAAAAHAPv/AAAAAAAAAAAHAPz/AAAAAAAAAAAIAPj/AAAAAAAAAAAIAPn/AAAAAAAAAAAIAPr/AAAAAAAAAAAIAPv/AAAAAAAAAAAIAPz/AAAAAAAAAAAJAPj/AAAAAAAAAAAJAPn/AAAAAAAAAAAJAPr/AAAAAAAAAAAJAPv/AAAAAAAAAAAJAPz/AAAAAAAAAAAKAPj/AAAAAAAAAAAKAPn/AAAAAAAAAAAKAPr/AAAAAAAAAAAKAPv/AAAAAAAAAAAKAPz/AAAAAAAAAAAAAPj/AAAAAAAAAAAAAPn/AAAAAAAAAAAAAPr/AAAAAAAAAAAAAPv/AAAAAAAAAAAAAPz/AAAAAAAAAAANAPj/AAAAAAAAAAANAPn/AAAAAAAAAAANAPr/AAAAAAAAAAANAPv/AAAAAAAAAAANAPz/AAAAAAAAAAAOAPj/AAAAAAAAAAAOAPn/AAAAAAAAAAAOAPr/AAAAAAAAAAAOAPv/AAAAAAAAAAAOAPz/AAAAAAAAAAAPAPj/AAAAAAAAAAAPAPn/AAAAAAAAAAAPAPr/AAAAAAAAAAAPAPv/AAAAAAAAAAAPAPz/AAAAAAAAAAAQAPj/AAAAAAAAAAAQAPn/AAAAAAAAAAAQAPr/AAAAAAAAAAAQAPv/AAAAAAAAAAAQAPz/AAAAAAAAAAARAPj/AAAAAAAAAAARAPn/AAAAAAAAAAARAPr/AAAAAAAAAAARAPv/AAAAAAAAAAARAPz/AAAAAAAAAAASAPj/AAAAAAAAAAASAPn/AAAAAAAAAAASAPr/AAAAAAAAAAASAPv/AAAAAAAAAAASAPz/AAAAAAAAAAATAPj/AAAAAAAAAAATAPn/AAAAAAAAAAATAPr/AAAAAAAAAAATAPv/AAAAAAAAAAATAPz/AAAAAAAAAAAUAPj/AAAAAAAAAAAUAPn/AAAAAAAAAAAUAPr/AAAAAAAAAAAUAPv/AAAAAAAAAAAUAPz/AAAAAAAAAAAVAPj/AAAAAAAAAAAVAPn/AAAAAAAAAAAVAPr/AAAAAAAAAAAVAPv/AAAAAAAAAAAVAPz/AAAAAAAAAAAWAPj/AAAAAAAAAAAWAPn/AAAAAAAAAAAWAPr/AAAAAAAAAAAWAPv/AAAAAAAAAAAWAPz/AAAAAAAAAAAXAPj/AAAAAAAAAAAXAPn/AAAAAAAAAAAXAPr/AAAAAAAAAAAXAPv/AAAAAAAAAAAXAPz/AAAAAAAAAAAAAPb/AAAAAAAAAAAAAPf/AAAAAAAAAAABAPb/AAAAAAAAAAABAPf/AAAAAAAAAAACAPb/AAAAAAAAAAACAPf/AAAAAAAAAAADAPb/AAAAAAAAAAADAPf/AAAAAAAAAAAEAPb/AAAAAAAAAAAEAPf/AAAAAAAAAAAFAPb/AAAAAAAAAAAFAPf/AAAAAAAAAAAGAPb/AAAAAAAAAAAGAPf/AAAAAAAAAAAHAPb/AAAAAAAAAAAHAPf/AAAAAAAAAAAIAPb/AAAAAAAAAAAIAPf/AAAAAAAAAAAJAPb/AAAAAAAAAAAJAPf/AAAAAAAAAAAKAPb/AAAAAAAAAAAKAPf/AAAAAAAAAAANAPb/AAAAAAAAAAANAPf/AAAAAAAAAAAOAPb/AAAAAAAAAAAOAPf/AAAAAAAAAAAPAPb/AAAAAAAAAAAPAPf/AAAAAAAAAAAQAPb/AAAAAAAAAAAQAPf/AAAAAAAAAAARAPb/AAAAAAAAAAARAPf/AAAAAAAAAAASAPb/AAAAAAAAAAASAPf/AAAAAAAAAAATAPb/AAAAAAAAAAATAPf/AAAAAAAAAAAUAPb/AAAAAAAAAAAUAPf/AAAAAAAAAAAVAPb/AAAAAAAAAAAVAPf/AAAAAAAAAAAWAPb/AAAAAAAAAAAWAPf/AAAAAAAAAAAXAPb/AAAAAAAAAAAXAPf/AAAAAAAAAAAAAPX/AAAAAAAAAAABAPX/AAAAAAAAAAACAPX/AAAAAAAAAAADAPX/AAAAAAAAAAAEAPX/AAAAAAAAAAAFAPX/AAAAAAAAAAAGAPX/AAAAAAAAAAAHAPX/AAAAAAAAAAAIAPX/AAAAAAAAAAAJAPX/AAAAAAAAAAAKAPX/AAAAAAAAAAANAPX/AAAAAAAAAAAOAPX/AAAAAAAAAAAPAPX/AAAAAAAAAAAQAPX/AAAAAAAAAAARAPX/AAAAAAAAAAASAPX/AAAAAAAAAAATAPX/AAAAAAAAAAAUAPX/AAAAAAAAAAAVAPX/AAAAAAAAAAAWAPX/AAAAAAAAAAAXAPX/AAAAAAAAAAAHAP7/AAAAAAMAAAAIAP7/AAAAAAMAAAAIAP//AAAAAAMAAAAHAP//AAAAAAMAAAACAP7/AAAAAAMAAAADAP7/AAAAAAMAAAADAP//AAAAAAMAAAACAP//AAAAAAMAAAAPAP7/AAAAAAMAAAAQAP7/AAAAAAMAAAAQAP//AAAAAAMAAAAPAP//AAAAAAMAAAAVAP//AAAAAAMAAAAUAP7/AAAAAAMAAAAUAP//AAAAAAMAAAAVAP7/AAAAAAMAAAAAAO7/AAAAAAAAAAAAAO//AAAAAAAAAAAAAPD/AAAAAAAAAAAAAPH/AAAAAAAAAAAAAPL/AAAAAAAAAAAAAPP/AAAAAAAAAAAAAPT/AAAAAAAAAAABAO7/AAAAAAAAAAACAO7/AAAAAAAAAAADAO7/AAAAAAAAAAAEAO7/AAAAAAAAAAAFAO7/AAAAAAAAAAAGAO7/AAAAAAAAAAAHAO7/AAAAAAAAAAAIAO7/AAAAAAAAAAAJAO7/AAAAAAAAAAAKAO7/AAAAAAAAAAAKAO//AAAAAAAAAAAKAPD/AAAAAAAAAAAKAPH/AAAAAAAAAAAKAPL/AAAAAAAAAAAKAPP/AAAAAAAAAAAKAPT/AAAAAAAAAAABAO//AAAAAAAAAAABAPD/AAAAAAAAAAABAPH/AAAAAAAAAAABAPL/AAAAAAAAAAABAPP/AAAAAAAAAAABAPT/AAAAAAAAAAACAO//AAAAAAAAAAACAPD/AAAAAAAAAAACAPH/AAAAAAAAAAACAPL/AAAAAAAAAAACAPP/AAAAAAAAAAACAPT/AAAAAAAAAAADAO//AAAAAAAAAAADAPD/AAAAAAAAAAADAPH/AAAAAAAAAAADAPL/AAAAAAAAAAADAPP/AAAAAAAAAAADAPT/AAAAAAAAAAAEAO//AAAAAAAAAAAEAPD/AAAAAAAAAAAEAPH/AAAAAAAAAAAEAPL/AAAAAAAAAAAEAPP/AAAAAAAAAAAEAPT/AAAAAAAAAAAFAO//AAAAAAAAAAAFAPD/AAAAAAAAAAAFAPH/AAAAAAAAAAAFAPL/AAAAAAAAAAAFAPP/AAAAAAAAAAAFAPT/AAAAAAAAAAAGAO//AAAAAAAAAAAGAPD/AAAAAAAAAAAGAPH/AAAAAAAAAAAGAPL/AAAAAAAAAAAGAPP/AAAAAAAAAAAGAPT/AAAAAAAAAAAHAO//AAAAAAAAAAAHAPD/AAAAAAAAAAAHAPH/AAAAAAAAAAAHAPL/AAAAAAAAAAAHAPP/AAAAAAAAAAAHAPT/AAAAAAAAAAAIAO//AAAAAAAAAAAIAPD/AAAAAAAAAAAIAPH/AAAAAAAAAAAIAPL/AAAAAAAAAAAIAPP/AAAAAAAAAAAIAPT/AAAAAAAAAAAJAO//AAAAAAAAAAAJAPD/AAAAAAAAAAAJAPH/AAAAAAAAAAAJAPL/AAAAAAAAAAAJAPP/AAAAAAAAAAAJAPT/AAAAAAAAAAANAO7/AAAAAAAAAAANAO//AAAAAAAAAAANAPD/AAAAAAAAAAANAPH/AAAAAAAAAAANAPL/AAAAAAAAAAANAPP/AAAAAAAAAAANAPT/AAAAAAAAAAAOAO7/AAAAAAAAAAAOAO//AAAAAAAAAAAOAPD/AAAAAAAAAAAOAPH/AAAAAAAAAAAOAPL/AAAAAAAAAAAOAPP/AAAAAAAAAAAOAPT/AAAAAAAAAAAPAO7/AAAAAAAAAAAPAO//AAAAAAAAAAAPAPD/AAAAAAAAAAAPAPH/AAAAAAAAAAAPAPL/AAAAAAAAAAAPAPP/AAAAAAAAAAAPAPT/AAAAAAAAAAAQAO7/AAAAAAAAAAAQAO//AAAAAAAAAAAQAPD/AAAAAAAAAAAQAPH/AAAAAAAAAAAQAPL/AAAAAAAAAAAQAPP/AAAAAAAAAAAQAPT/AAAAAAAAAAARAO7/AAAAAAAAAAARAO//AAAAAAAAAAARAPD/AAAAAAAAAAARAPH/AAAAAAAAAAARAPL/AAAAAAAAAAARAPP/AAAAAAAAAAARAPT/AAAAAAAAAAASAO7/AAAAAAAAAAASAO//AAAAAAAAAAASAPD/AAAAAAAAAAASAPH/AAAAAAAAAAASAPL/AAAAAAAAAAASAPP/AAAAAAAAAAASAPT/AAAAAAAAAAATAO7/AAAAAAAAAAATAO//AAAAAAAAAAATAPD/AAAAAAAAAAATAPH/AAAAAAAAAAATAPL/AAAAAAAAAAATAPP/AAAAAAAAAAATAPT/AAAAAAAAAAAUAO7/AAAAAAAAAAAUAO//AAAAAAAAAAAUAPD/AAAAAAAAAAAUAPH/AAAAAAAAAAAUAPL/AAAAAAAAAAAUAPP/AAAAAAAAAAAUAPT/AAAAAAAAAAAVAO7/AAAAAAAAAAAVAO//AAAAAAAAAAAVAPD/AAAAAAAAAAAVAPH/AAAAAAAAAAAVAPL/AAAAAAAAAAAVAPP/AAAAAAAAAAAVAPT/AAAAAAAAAAAWAO7/AAAAAAAAAAAWAO//AAAAAAAAAAAWAPD/AAAAAAAAAAAWAPH/AAAAAAAAAAAWAPL/AAAAAAAAAAAWAPP/AAAAAAAAAAAWAPT/AAAAAAAAAAAXAO7/AAAAAAAAAAAXAO//AAAAAAAAAAAXAPD/AAAAAAAAAAAXAPH/AAAAAAAAAAAXAPL/AAAAAAAAAAAXAPP/AAAAAAAAAAAXAPT/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_ueebs")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1700356671]
+tile_map_data = PackedByteArray("AAAAAAMAAAAAAAAAAAAAAPX/AAAAAAAAAAAAAPb/AAAAAAAAAAAAAPf/AAAAAAAAAAAAAPj/AAAAAAAAAAAAAPn/AAAAAAAAAAAAAPr/AAAAAAAAAAAAAPv/AAAAAAAAAAAAAPz/AAAAAAAAAAAAAP3/AAAAAAAAAAAAAP7/AAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAAAAAAAAAAXAPX/AAABAAAAAAAXAPb/AAABAAAAAAAXAPf/AAABAAAAAAAXAPv/AAABAAAAAAAXAPr/AAABAAAAAAAXAPn/AAABAAAAAAAXAPz/AAABAAAAAAAXAP3/AAABAAAAAAAXAP7/AAABAAAAAAAXAP//AAABAAAAAAAXAAAAAAABAAAAAAAXAAMAAAABAAAAAAAXAPj/AAABAAAAAAABAP7/AAACAAEAAAABAP//AAACAAEAAAAGAP7/AAACAAEAAAAGAP//AAACAAEAAAAOAP7/AAACAAEAAAAOAP//AAACAAEAAAATAP7/AAACAAEAAAATAP//AAACAAEAAAAWAP7/AAADAAEAAAAWAP//AAADAAEAAAARAP7/AAADAAEAAAARAP//AAADAAEAAAAJAP7/AAADAAEAAAAJAP//AAADAAEAAAAEAP7/AAADAAEAAAAEAP//AAADAAEAAAAMAPz/AAACAAEAAAAMAPv/AAACAAEAAAAMAPr/AAACAAEAAAAMAPn/AAACAAEAAAAMAPj/AAACAAEAAAAMAPf/AAACAAEAAAAMAPb/AAACAAEAAAAMAPX/AAACAAEAAAALAPX/AAADAAEAAAALAPb/AAADAAEAAAALAPf/AAADAAEAAAALAPj/AAADAAEAAAALAPn/AAADAAEAAAALAPr/AAADAAEAAAALAPv/AAADAAEAAAALAPz/AAADAAEAAAALAP3/AAADAAEAAAAMAPT/AAACAAEAAAAMAO7/AAACAAEAAAAMAO//AAACAAEAAAAMAPD/AAACAAEAAAAMAPH/AAACAAEAAAAMAPL/AAACAAEAAAAMAPP/AAACAAEAAAALAO7/AAADAAEAAAALAO//AAADAAEAAAALAPD/AAADAAEAAAALAPH/AAADAAEAAAALAPL/AAADAAEAAAALAPP/AAADAAEAAAALAPT/AAADAAEAAAAAAO7/AAAAAAAAAAAAAO//AAAAAAAAAAAAAPD/AAAAAAAAAAAAAPH/AAAAAAAAAAAAAPL/AAAAAAAAAAAAAPP/AAAAAAAAAAAAAPT/AAAAAAAAAAAXAO7/AAABAAAAAAAXAO//AAABAAAAAAAXAPD/AAABAAAAAAAXAPH/AAABAAAAAAAXAPL/AAABAAAAAAAXAPP/AAABAAAAAAAXAPT/AAABAAAAAAA=")
+tile_set = SubResource("TileSet_kly32")
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="." unique_id=189892599]
+tile_map_data = PackedByteArray("AAAAAAMAAAACAAAAAAABAAMAAAACAAAAAAACAAMAAAACAAAAAAADAAMAAAACAAAAAAAEAAMAAAACAAAAAAAFAAMAAAACAAAAAAAGAAMAAAACAAAAAAAHAAMAAAACAAAAAAAIAAMAAAACAAAAAAAJAAMAAAACAAAAAAAKAAMAAAACAAAAAAALAAMAAAACAAAAAAAMAAMAAAACAAAAAAANAAMAAAACAAAAAAAOAAMAAAACAAAAAAAPAAMAAAACAAAAAAAQAAMAAAACAAAAAAARAAMAAAACAAAAAAASAAMAAAACAAAAAAATAAMAAAACAAAAAAAUAAMAAAACAAAAAAAVAAMAAAACAAAAAAAWAAMAAAACAAAAAAAXAAMAAAACAAAAAAAEAP7/AAABAAEAAAAFAP7/AAABAAEAAAAGAP7/AAABAAEAAAABAP7/AAABAAEAAAAAAP7/AAABAAEAAAAJAP7/AAABAAEAAAAKAP7/AAABAAEAAAANAP7/AAABAAEAAAAOAP7/AAABAAEAAAARAP7/AAABAAEAAAASAP7/AAABAAEAAAATAP7/AAABAAEAAAAWAP7/AAABAAEAAAAXAP7/AAABAAEAAAARAP//AAAAAAEAAAASAP//AAAAAAEAAAATAP//AAAAAAEAAAAWAP//AAAAAAEAAAAXAP//AAAAAAEAAAAOAP//AAAAAAEAAAANAP//AAAAAAEAAAAMAP//AAAAAAEAAAALAP//AAAAAAEAAAAKAP//AAAAAAEAAAAJAP//AAAAAAEAAAAGAP//AAAAAAEAAAAFAP//AAAAAAEAAAAEAP//AAAAAAEAAAABAP//AAAAAAEAAAAAAP//AAAAAAEAAAAMAP3/AAACAAEAAAALAO7/AAADAAAAAAAMAO7/AAADAAAAAAANAO7/AAADAAAAAAAOAO7/AAADAAAAAAAPAO7/AAADAAAAAAAQAO7/AAADAAAAAAARAO7/AAADAAAAAAAWAO7/AAADAAAAAAAAAO7/AAADAAAAAAABAO7/AAADAAAAAAACAO7/AAADAAAAAAADAO7/AAADAAAAAAAEAO7/AAADAAAAAAAFAO7/AAADAAAAAAAGAO7/AAADAAAAAAAHAO7/AAADAAAAAAAIAO7/AAADAAAAAAAJAO7/AAADAAAAAAAKAO7/AAADAAAAAAAXAPP/AAABAAAAAAAXAO7/AAADAAAAAAATAO7/AAADAAAAAAASAO7/AAADAAAAAAA=")
+tile_set = SubResource("TileSet_3gybi")
