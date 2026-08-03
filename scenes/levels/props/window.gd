@@ -1,11 +1,11 @@
 extends StaticBody2D
 
 var shard_pack: PackedScene = preload("res://scenes/effects/window_shard.tscn")
-@onready var floor_: Floor = get_parent().get_parent()
+@onready var floor_: Floor = get_parent().get_parent().get_parent()
 var broken := false
 
 
-func shatter(body: Node):
+func shatter(body: Node, shards_number = 8):
 	if broken:
 		return
 	broken = true
@@ -14,7 +14,7 @@ func shatter(body: Node):
 		$AnimatedSprite2D.play("broken")
 		var direction: Vector2 = body.direction
 		direction = direction.normalized()
-		for i in range(6):
+		for i in range(shards_number):
 			var random_pos = direction.rotated(randf_range(-0.78, 0.78)) * randf_range(20, 60)
 			spawn_shard(global_position + random_pos)
 

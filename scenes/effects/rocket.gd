@@ -31,7 +31,10 @@ func _on_body_enterd(body):
 	elif body.is_in_group("player"):
 		if not shot_by_player:
 			body.player_take_dmg(dmg)
-
+			if perced == perce:
+				spawn_explosion()
+				queue_free()
+			perced = perced + 1
 
 func _physics_process(delta: float) -> void:
 	if $RayCast2D.is_colliding():

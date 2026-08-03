@@ -35,6 +35,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jiq1j"]
 size = Vector2(32, 26)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_s7il6"]
+polygon = PackedVector2Array(-16, -13, -16, 13, 16, 13, 16, -13)
+
 [node name="StaticBody2D" type="StaticBody2D" unique_id=133605722]
 script = ExtResource("1_ecst6")
 
@@ -44,3 +47,6 @@ sprite_frames = SubResource("SpriteFrames_jiq1j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1095360517]
 shape = SubResource("RectangleShape2D_jiq1j")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1775986855]
+occluder = SubResource("OccluderPolygon2D_s7il6")
