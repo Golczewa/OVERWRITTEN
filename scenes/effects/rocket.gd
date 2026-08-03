@@ -25,6 +25,7 @@ func _on_body_enterd(body):
 		if shot_by_player:
 			body.take_damage(dmg, 0)
 			if perced == perce:
+				spawn_explosion()
 				queue_free()
 			perced = perced + 1
 	elif body.is_in_group("player"):
@@ -35,7 +36,11 @@ func _on_body_enterd(body):
 func _physics_process(delta: float) -> void:
 	if $RayCast2D.is_colliding():
 		var collider = $RayCast2D.get_collider()
-		if not collider.is_in_group("enemies") and not collider.is_in_group("player"):
+		if (
+			not collider.is_in_group("enemies")
+			and not collider.is_in_group("player")
+			and not collider.is_in_group("window")
+		):
 			bullet_hit_wall_inst.global_position = $RayCast2D.get_collision_point()
 			bullet_hit_wall_inst.rotation = velocity.angle()
 			get_tree().get_first_node_in_group("game").curr_scene.real_curr_floor.add_child(
@@ -43,5 +48,14 @@ func _physics_process(delta: float) -> void:
 			)
 			queue_free()
 		elif collider.is_in_group("window"):
+			print("contact")
 			collider.shatter(self)
 	position = position + velocity * delta
+
+
+func spawn_explosion():
+	bullet_hit_wall_inst.global_position = global_position
+	bullet_hit_wall_inst.rotation = velocity.angle()
+	get_tree().get_first_node_in_group("game").curr_scene.real_curr_floor.add_child(
+		bullet_hit_wall_inst
+	)
