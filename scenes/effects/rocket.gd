@@ -36,6 +36,7 @@ func _on_body_enterd(body):
 				queue_free()
 			perced = perced + 1
 
+
 func _physics_process(delta: float) -> void:
 	if $RayCast2D.is_colliding():
 		var collider = $RayCast2D.get_collider()
