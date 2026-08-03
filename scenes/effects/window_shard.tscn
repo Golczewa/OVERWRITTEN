@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://gwgaufijgrad"]
+
+[ext_resource type="Texture2D" uid="uid://ck61486yvsmnw" path="res://asstets/efects/shard.png" id="1_phecm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1h8id"]
+atlas = ExtResource("1_phecm")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5frr"]
+atlas = ExtResource("1_phecm")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0l4gw"]
+atlas = ExtResource("1_phecm")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8qjt"]
+atlas = ExtResource("1_phecm")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jiq1j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1h8id")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5frr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0l4gw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8qjt")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=551914394]
+sprite_frames = SubResource("SpriteFrames_jiq1j")

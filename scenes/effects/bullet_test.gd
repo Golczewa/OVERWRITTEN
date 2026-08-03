@@ -40,11 +40,13 @@ func _physics_process(delta: float) -> void:
 		$Line2D.remove_point(0)
 	if $RayCast2D.is_colliding():
 		var collider = $RayCast2D.get_collider()
-		if not collider.is_in_group("enemies") and not collider.is_in_group("player"):
+		if not collider.is_in_group("enemies") and not collider.is_in_group("player") and not collider.is_in_group("window"):
 			bullet_hit_wall_inst.global_position = $RayCast2D.get_collision_point()
 			bullet_hit_wall_inst.rotation = velocity.angle()
 			get_tree().get_first_node_in_group("game").curr_scene.real_curr_floor.add_child(
 				bullet_hit_wall_inst
 			)
 			queue_free()
+		elif collider.is_in_group("window"):
+			collider.shatter(self)
 	position = position + velocity * delta

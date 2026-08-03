@@ -38,7 +38,6 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	print(enemies, waves_number, cleared)
 	if enemies == 0:
 		if waves_number != 0:
 			for spawner in enemy_spawners:

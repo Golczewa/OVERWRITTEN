@@ -44,6 +44,7 @@ menu=""
 weapon_select=""
 bullets=""
 title=""
+window=""
 
 [input]
 

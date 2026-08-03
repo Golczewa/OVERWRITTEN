@@ -42,4 +42,6 @@ func _physics_process(delta: float) -> void:
 				bullet_hit_wall_inst
 			)
 			queue_free()
+		elif collider.is_in_group("window"):
+			collider.shatter(self)
 	position = position + velocity * delta
