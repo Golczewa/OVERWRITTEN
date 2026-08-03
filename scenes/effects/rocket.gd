@@ -8,7 +8,7 @@ var direction
 var target
 var shot_by_player: bool = false
 var trace_len = 3
-var bullet_hit_wall = preload("res://scenes/effects/shoot_the_wall.tscn")
+var bullet_hit_wall = preload("res://scenes/effects/rocket_explosion.tscn")
 var bullet_hit_wall_inst
 
 

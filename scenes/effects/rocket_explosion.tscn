@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://caviuqcdjj66h"]
+
+[ext_resource type="Texture2D" uid="uid://bsy575g8qrh4t" path="res://asstets/efects/explosion.png" id="1_jbyia"]
+[ext_resource type="Script" uid="uid://bir08fo0tcgli" path="res://scenes/effects/rocket_explosion.gd" id="2_nlfac"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlfac"]
+atlas = ExtResource("1_jbyia")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70o2h"]
+atlas = ExtResource("1_jbyia")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ti7xd"]
+atlas = ExtResource("1_jbyia")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8eoi"]
+atlas = ExtResource("1_jbyia")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2is3"]
+atlas = ExtResource("1_jbyia")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cguwk"]
+atlas = ExtResource("1_jbyia")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnbb6"]
+atlas = ExtResource("1_jbyia")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jiq1j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlfac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlfac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70o2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ti7xd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8eoi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2is3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cguwk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnbb6")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1328222306]
+sprite_frames = SubResource("SpriteFrames_jiq1j")
+frame = 7
+frame_progress = 1.0
+script = ExtResource("2_nlfac")
