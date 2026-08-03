@@ -2,7 +2,7 @@ extends StaticBody2D
 var waves: Array
 var wave_remain
 var wave_counter = 0
-var _floor
+var _floor:Floor
 var is_spawning_wave := false
 @export var mirrored: bool = false
 
@@ -20,8 +20,10 @@ func spawn_wave():
 		is_spawning_wave = true
 		$AnimatedSprite2D.play("default")
 		var wave = waves[wave_counter]
+		var something_spawned=false
 		for enemy in wave:
 			for i in range(enemy[0]):
+				something_spawned=true
 				var enemy_inst = enemy[1].instantiate()
 				var spawn_offset = Vector2(randf_range(-8, 8), randf_range(-8, 8))
 				enemy_inst.global_position = global_position
@@ -32,6 +34,8 @@ func spawn_wave():
 		wave_counter += 1
 		$AnimatedSprite2D.play_backwards("default")
 		is_spawning_wave = false
+		if something_spawned:
+			_floor.waves_number-=1
 	else:
 		wave_remain = 0
 

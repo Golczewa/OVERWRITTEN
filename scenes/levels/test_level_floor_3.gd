@@ -4,7 +4,7 @@ var spawn
 var exit
 @onready var sca_brute = preload("res://scenes/enemies/scavenger_brute.tscn")
 @onready var sca_gooner = preload("res://scenes/enemies/gooner_test.tscn")
-var cleard = false
+var cleared = false
 
 
 func _ready() -> void:
@@ -13,4 +13,4 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if enemies == 0:
-		cleard = true
+		cleared = true

@@ -3,10 +3,11 @@ extends Node2D
 class_name Floor
 
 var enemies = 0
-var cleard = false
+var cleared = false
 var spawn: Vector2
 var exit: Vector2
-var waves
+var waves: Array
+var waves_number: int = 0
 @export var down_node: Node
 @export var up_node: Node
 @export var enemy_spawners: Array[Node]
@@ -33,16 +34,18 @@ func _ready() -> void:
 	for i in range(len(enemy_spawners)):
 		enemy_spawners[i].waves = waves[i]
 		enemy_spawners[i].wave_remain = len(waves[i]) - 1
+		if waves_number < len(waves[i]):
+			waves_number = len(waves[i])
 
 
 func _physics_process(_delta: float) -> void:
+	print(enemies,waves_number,cleared)
 	if enemies == 0:
-		var all_done = true
-		for spawner in enemy_spawners:
-			spawner.spawn_wave()
-			if spawner.wave_remain > 0:
-				all_done = false
-		cleard = all_done
+		if waves_number != 0:
+			for spawner in enemy_spawners:
+				spawner.spawn_wave()
+		else:
+			cleared = true
 
 
 func kill_all():

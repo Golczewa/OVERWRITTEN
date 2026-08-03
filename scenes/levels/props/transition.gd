@@ -15,13 +15,14 @@ func _ready() -> void:
 
 
 func on_body_enterd(body):
-	if body.is_in_group("player") and floor_.enemies == 0:
+	if body.is_in_group("player") and floor_.cleared:
 		$StaticBody2D/PointLight2D.enabled = false
 		move_on()
 		$StaticBody2D/PointLight2D.enabled = true
 
 
 func move_on():
+	print(floor_.cleared,floor_.waves_number,floor_.enemies)
 	$StaticBody2D/AnimatedSprite2D.play("default")
 	player.freeze_player()
 	await $StaticBody2D/AnimatedSprite2D.animation_finished
@@ -32,7 +33,7 @@ func move_on():
 
 func _physics_process(_delta: float) -> void:
 	if check:
-		if not floor_.cleard:
+		if not floor_.cleared:
 			$StaticBody2D/AnimatedSprite2D.play("closed")
 			$StaticBody2D/PointLight2D.color = Color.RED
 		else:

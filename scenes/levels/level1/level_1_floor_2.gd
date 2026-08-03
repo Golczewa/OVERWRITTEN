@@ -2,7 +2,7 @@ extends Node2D
 var enemies = 0
 var spawn
 var exit
-var cleard = false
+var cleared = false
 var enemy_spawner
 
 
@@ -13,7 +13,7 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if enemies == 0:
-		cleard = true
+		cleared = true
 
 
 func kill_all():

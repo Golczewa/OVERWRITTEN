@@ -1,14 +1,17 @@
 [gd_scene format=3 uid="uid://b5ryoyw846v45"]
 
 [ext_resource type="PackedScene" uid="uid://bwugfjcubs3x7" path="res://scenes/levels/level1/level1_floor2_map.tscn" id="1_32ni8"]
-[ext_resource type="Script" uid="uid://bc6pj5kbichkq" path="res://scenes/levels/level1/level_1_floor_2.gd" id="1_jdo1s"]
+[ext_resource type="Script" uid="uid://cramwugkt2of" path="res://scenes/levels/floor_template.gd" id="1_mqs0u"]
 [ext_resource type="PackedScene" uid="uid://gvdpfkhlvqdq" path="res://scenes/levels/props/transition.tscn" id="2_2as5j"]
 [ext_resource type="PackedScene" uid="uid://bu878f6tabfh3" path="res://scenes/levels/props/transition_exit.tscn" id="3_jdo1s"]
 [ext_resource type="PackedScene" uid="uid://dnn8p00ywx8vr" path="res://scenes/enemies/virtual_scavenger.tscn" id="6_ak4pv"]
 [ext_resource type="PackedScene" uid="uid://c6ah02d8uk7au" path="res://scenes/levels/props/virtual_box.tscn" id="6_mqs0u"]
 
-[node name="Node2D" type="Node2D" unique_id=237794623]
-script = ExtResource("1_jdo1s")
+[node name="Node2D" type="Node2D" unique_id=522621746 node_paths=PackedStringArray("down_node", "up_node")]
+script = ExtResource("1_mqs0u")
+down_node = NodePath("Area2D2")
+up_node = NodePath("Area2D")
+metadata/_custom_type_script = "uid://cramwugkt2of"
 
 [node name="NavigationRegion2D" parent="." unique_id=854845431 instance=ExtResource("1_32ni8")]
 
@@ -17,7 +20,7 @@ position = Vector2(989, 96)
 
 [node name="Area2D2" parent="." unique_id=524909638 instance=ExtResource("3_jdo1s")]
 position = Vector2(-126, -32)
-rotation = 3.1415927
+rotation = -3.1415925
 
 [node name="enemies" type="Node2D" parent="." unique_id=854186879]
 

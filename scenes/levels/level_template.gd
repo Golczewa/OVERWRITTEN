@@ -27,7 +27,7 @@ func _ready() -> void:
 func move_up():
 	if curr_floor >= len(floors):
 		return
-	if floors[curr_floor - 1].cleard:
+	if floors[curr_floor - 1].cleared:
 		player_state = player.get_state()
 		checkpoint = curr_floor + 1
 	remove_child(floors[curr_floor - 1])

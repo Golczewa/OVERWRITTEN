@@ -13,7 +13,7 @@ func _ready() -> void:
 
 
 func on_body_enterd(body):
-	if body.is_in_group("player") and floor_.enemies == 0:
+	if body.is_in_group("player") and floor_.cleared:
 		exit()
 
 
@@ -25,7 +25,7 @@ func exit():
 
 func _physics_process(_delta: float) -> void:
 	if check:
-		if not floor_.cleard:
+		if not floor_.cleared:
 			$StaticBody2D/AnimatedSprite2D.play("closed")
 			$StaticBody2D/PointLight2D.hide()
 		else:

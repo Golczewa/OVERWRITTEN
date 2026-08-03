@@ -17,14 +17,14 @@ func _ready() -> void:
 
 
 func open_doors(body: Node2D):
-	if body.is_in_group("player") and floor_.cleard:
+	if body.is_in_group("player") and floor_.cleared:
 		$StaticBody2D/StaticBody2D/PointLight2D.hide()
 		$StaticBody2D/StaticBody2D/AnimatedSprite2D.play("default")
 		$StaticBody2D/StaticBody2D/CollisionShape2D.set_deferred("disabled", true)
 
 
 func close_doors(body: Node2D):
-	if body.is_in_group("player") and floor_.cleard:
+	if body.is_in_group("player") and floor_.cleared:
 		$StaticBody2D/StaticBody2D/AnimatedSprite2D.play_backwards("default")
 		$StaticBody2D/StaticBody2D/CollisionShape2D.set_deferred("disabled", false)
 		await $StaticBody2D/StaticBody2D/AnimatedSprite2D.animation_finished
@@ -32,7 +32,7 @@ func close_doors(body: Node2D):
 
 
 func move_on(body: Node2D):
-	if body.is_in_group("player") and floor_.cleard:
+	if body.is_in_group("player") and floor_.cleared:
 		$StaticBody2D/StaticBody2D/AnimatedSprite2D.play_backwards("default")
 		player.freeze_player()
 		await $StaticBody2D/StaticBody2D/AnimatedSprite2D.animation_finished
@@ -45,7 +45,7 @@ func move_on(body: Node2D):
 
 func _physics_process(_delta: float) -> void:
 	if check:
-		if not floor_.cleard:
+		if not floor_.cleared:
 			$StaticBody2D/StaticBody2D/AnimatedSprite2D.play("closed")
 			$StaticBody2D/StaticBody2D/PointLight2D.color = Color.RED
 		else:

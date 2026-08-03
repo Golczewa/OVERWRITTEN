@@ -8,8 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://rgpml3tss12d" path="res://scenes/levels/props/exit.tscn" id="7_m7b1t"]
 [ext_resource type="PackedScene" uid="uid://kkqb7cfxl6sm" path="res://scenes/enemies/scavenger_brute.tscn" id="7_prxvq"]
 
-[node name="Node2D" type="Node2D" unique_id=1899703556]
+[node name="Node2D" type="Node2D" unique_id=1899703556 node_paths=PackedStringArray("down_node", "up_node", "enemy_spawners")]
 script = ExtResource("1_otsnt")
+down_node = NodePath("Area2D2")
+up_node = NodePath("Area2D")
+enemy_spawners = [NodePath("StaticBody2D"), NodePath("StaticBody2D2")]
 
 [node name="NavigationRegion2D" parent="." unique_id=1635069556 instance=ExtResource("1_h3lmp")]
 

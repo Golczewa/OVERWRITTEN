@@ -2,7 +2,7 @@ extends Node2D
 var enemies = 0
 var spawn
 var exit
-var cleard = true
+var cleared = true
 
 
 func _ready() -> void:
