@@ -22,7 +22,7 @@ func on_body_enterd(body):
 
 
 func move_on():
-	print(floor_.cleared,floor_.waves_number,floor_.enemies)
+	print(floor_.cleared, floor_.waves_number, floor_.enemies)
 	$StaticBody2D/AnimatedSprite2D.play("default")
 	player.freeze_player()
 	await $StaticBody2D/AnimatedSprite2D.animation_finished

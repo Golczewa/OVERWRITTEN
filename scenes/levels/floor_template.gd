@@ -34,12 +34,11 @@ func _ready() -> void:
 	for i in range(len(enemy_spawners)):
 		enemy_spawners[i].waves = waves[i]
 		enemy_spawners[i].wave_remain = len(waves[i]) - 1
-		if waves_number < len(waves[i]):
-			waves_number = len(waves[i])
+		waves_number += len(waves[i])
 
 
 func _physics_process(_delta: float) -> void:
-	print(enemies,waves_number,cleared)
+	print(enemies, waves_number, cleared)
 	if enemies == 0:
 		if waves_number != 0:
 			for spawner in enemy_spawners:
@@ -52,3 +51,10 @@ func kill_all():
 	var enemies_ = $enemies.get_children()
 	for enemy in enemies_:
 		enemy.take_damage(99999, 0)
+
+
+func add_enemy(enemy: CharacterBody2D, pos: Vector2) -> void:
+	enemy.global_position = pos
+	$enemies.add_child(enemy)
+	enemies += 1
+	cleared = false

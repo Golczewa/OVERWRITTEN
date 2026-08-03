@@ -25,7 +25,5 @@ func play_cuscene(body: Node):
 	player.in_cutscene = false
 	var henry_pos = henry.global_position
 	remove_child(henry)
-	get_parent().get_node("enemies").add_child(henry)
-	henry.global_position = henry_pos
-	get_parent().enemies += 1
+	get_parent().add_enemy(henry, henry_pos)
 	henry.toogle_cutscene()
