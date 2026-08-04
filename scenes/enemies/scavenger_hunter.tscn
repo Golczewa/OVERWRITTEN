@@ -77,7 +77,7 @@ body = NodePath("AnimatedSprite2D")
 raycast = NodePath("AnimatedSprite2D/AnimatedSprite2D2/RayCast2D")
 marker = NodePath("AnimatedSprite2D/Marker2D")
 to_hide_on_death = [NodePath("AnimatedSprite2D/AnimatedSprite2D3"), NodePath("AnimatedSprite2D/AnimatedSprite2D2"), NodePath("AnimatedSprite2D2")]
-speed = 40
+chase_speed = 80
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1323144180]
 sprite_frames = SubResource("SpriteFrames_tvbk2")

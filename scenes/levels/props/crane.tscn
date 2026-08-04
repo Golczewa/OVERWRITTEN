@@ -13,6 +13,7 @@ size = Vector2(32, 32)
 polygon = PackedVector2Array(16, 0, 32, 0, 32, -32, 64, -32, 64, 48, 16, 48)
 
 [node name="StaticBody2D" type="StaticBody2D" unique_id=1317572530]
+z_index = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=10254219]
 texture = ExtResource("1_wskhs")

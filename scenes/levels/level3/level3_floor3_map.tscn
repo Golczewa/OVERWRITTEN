@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://q1ishniinl3r"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uv4ce"]
+load_path = "res://.godot/imported/steemill_tiles2.png-c01570e262ce7ceedd8c8c6039357a97.ctex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qcav8"]
+texture = SubResource("CompressedTexture2D_uv4ce")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_4wmv7"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_qcav8")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" unique_id=881885441]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=927338364]
+tile_set = SubResource("TileSet_4wmv7")

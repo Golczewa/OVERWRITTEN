@@ -66,6 +66,7 @@ body = NodePath("Sprite2D")
 raycast = NodePath("Sprite2D/AnimatedSprite2D/RayCast2D")
 marker = NodePath("Sprite2D/Marker2D")
 to_hide_on_death = [NodePath("AnimatedSprite2D"), NodePath("Sprite2D/AnimatedSprite2D")]
+chase_speed = 100
 range_ = 500
 metadata/_custom_type_script = "uid://dim2ehejf6rhe"
 

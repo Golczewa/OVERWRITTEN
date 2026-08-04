@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var SPEED = 500.0
 var dash = 900
-var max_health=150
+var max_health = 150
 var player_health = 150
 var direction = Vector2.ZERO
 var is_dashing: bool = false
@@ -29,7 +29,9 @@ var invisible: bool = false
 var kill_swich: bool = false
 var floor_jumping: bool = false
 
-var default_state = {"health": 150, "charges": 3, "replenish_queue": 0, "can_dash": true, "cd": 0}
+var default_state = {
+	"health": max_health, "charges": 3, "replenish_queue": 0, "can_dash": true, "cd": 0
+}
 var charges_to_replenish: int = 0
 var ghost = preload("res://scenes/player/player_ghost2.tscn")
 var score
@@ -87,16 +89,29 @@ func _input(event: InputEvent) -> void:
 
 
 func player_take_dmg(dmg):
-	if invincible:
+	if invincible or in_cutscene:
 		return
-	if not is_dashing or not in_cutscene:
+	if not is_dashing:
 		player_health = player_health - dmg
 		hp_update()
 		if player_health <= 0:
-			player_died.emit()
-			score["deaths"] = score["deaths"] + 1
+			die()
 		else:
 			_damage_effect()
+
+
+func die(death_duration := 0.5):
+	in_cutscene = true
+	hide_stuff()
+	modulate = Color(0.25, 0.25, 0.25)
+	z_index = 1
+	$AnimatedSprite2D.play("dead")
+	$AnimatedSprite2D.stop()
+	$AnimatedSprite2D.frame = randi_range(0, 3)
+	await get_tree().create_timer(death_duration).timeout
+	in_cutscene = false
+	player_died.emit()
+	score["deaths"] = score["deaths"] + 1
 
 
 func _damage_effect():
@@ -148,7 +163,7 @@ func heal():
 
 func hp_update():
 	heath_bar.value = player_health
-	print(heath_bar.max_value,heath_bar.value,player_health)
+	print(heath_bar.max_value, heath_bar.value, player_health)
 
 
 func charge_update():
@@ -202,6 +217,10 @@ func load_state(state: Dictionary):
 		$Timer.start(state["cd"])
 	is_dashing = false
 	SPEED = 500.0
+	modulate = Color.WHITE
+	z_index = 3
+	show_stuff()
+	$AnimatedSprite2D.play("new_animation")
 	set_collision_mask_value(3, true)
 	set_collision_layer_value(1, true)
 	unfreeze_player()
@@ -289,3 +308,15 @@ func focus_camera(pos: Vector2, travel_time = 1):
 
 func retrun_camera():
 	$Camera2D.global_position = global_position
+
+
+func hide_stuff():
+	for weapon in $AnimatedSprite2D.get_children():
+		weapon.hide()
+	$AnimatedSprite2D2.hide()
+
+
+func show_stuff():
+	for weapon in $AnimatedSprite2D.get_children():
+		weapon.show()
+	$AnimatedSprite2D2.show()

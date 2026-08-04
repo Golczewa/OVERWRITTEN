@@ -13,7 +13,9 @@ extends CharacterBody2D
 var curr_health: int
 var floor_
 var direction: Vector2 = Vector2.ZERO
-@export var speed: int = 70
+var speed: int = 50
+@export var patrol_speed: int = 50
+@export var chase_speed: int = 150
 @export var rot_speed: int = 15
 @export var view_distance: int = 250
 var player_sighted: bool = false
@@ -98,7 +100,7 @@ func _damage_effect():
 
 func _idle_moving():
 	if nav_agent.is_navigation_finished():
-		speed = 50
+		speed = patrol_speed
 		rot_speed = 15
 		direction = Vector2.ZERO
 		_randomise_target()
@@ -152,7 +154,7 @@ func can_see_player():
 
 
 func chase():
-	speed = 150
+	speed = chase_speed
 	rot_speed = 20
 	weapon.target = player.global_position
 	body.look_at(player.global_position)

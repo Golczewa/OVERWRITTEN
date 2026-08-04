@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://447ossqu1f1u"]
+
+[ext_resource type="Texture2D" uid="uid://c8wedwgyo8bk1" path="res://asstets/player/john_overwritten_parts.png" id="1_vey7a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvdp0"]
+atlas = ExtResource("1_vey7a")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5q48"]
+atlas = ExtResource("1_vey7a")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4cb2"]
+atlas = ExtResource("1_vey7a")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jiq1j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvdp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5q48")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4cb2")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=813738051]
+sprite_frames = SubResource("SpriteFrames_jiq1j")

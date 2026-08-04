@@ -10,30 +10,30 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("1_437ls")
 }],
-"loop": false,
+"loop": 0,
 "name": &"0",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hh8a5"]
-size = Vector2(31, 4.5)
+size = Vector2(25, 2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=397550067]
 sprite_frames = SubResource("SpriteFrames_5tg5p")
 animation = &"0"
-offset = Vector2(15, 8)
+offset = Vector2(8, 8)
 script = ExtResource("2_5tg5p")
 
 [node name="Marker2D2" type="Marker2D" parent="." unique_id=322943486]
-position = Vector2(30, 8)
+position = Vector2(23, 8)
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=299397309]
-position = Vector2(33, 8)
+position = Vector2(29, 8)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=602791272]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=855039605]
-position = Vector2(18, 8)
+position = Vector2(11, 8)
 shape = SubResource("RectangleShape2D_hh8a5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=677753002]
