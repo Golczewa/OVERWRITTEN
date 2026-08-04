@@ -1,8 +1,7 @@
 extends Control
 
-@onready var value = $ProgressBar.value
-@onready var charge_number = $Label.text
-@onready var max_value = $ProgressBar.max_value
+var charge_number: int
+@onready var bars: Array = $Control.get_children()
 
 var dragging = false
 var drag_offset = Vector2()
@@ -39,12 +38,17 @@ func begone():
 
 
 func update_max(max_: int):
-	$ProgressBar.max_value = max_
+	for bar in bars:
+		bar.max_value = max_
 
 
 func update_value(val: int):
-	$ProgressBar.value = val
+	if charge_number < 3:
+		bars[charge_number].value = val
 
 
-func update_charge(num: String):
-	$Label.text = num
+func update_charge(num: int):
+	charge_number = num
+	for i in range(num, len(bars)):
+		print(i)
+		bars[i].value = 0

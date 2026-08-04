@@ -2,17 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="1_mqhgx"]
 [ext_resource type="Script" uid="uid://brom815a2dli8" path="res://scenes/player/heal_meter.gd" id="1_y05lr"]
-[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="2_mxo5j"]
+[ext_resource type="Texture2D" uid="uid://c6koe7khi1kqa" path="res://asstets/menu/battery.png" id="4_nba2d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mxo5j"]
 bg_color = Color(0.9882353, 0.36862746, 0.3882353, 0.6627451)
 
 [sub_resource type="Theme" id="Theme_y05lr"]
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_mxo5j")
-
-[sub_resource type="LabelSettings" id="LabelSettings_y05lr"]
-font = ExtResource("2_mxo5j")
-font_size = 128
 
 [node name="Control" type="Control" unique_id=1428167716]
 layout_mode = 3
@@ -27,27 +23,52 @@ script = ExtResource("1_y05lr")
 
 [node name="AspectRatioContainer" parent="." unique_id=1461861251 instance=ExtResource("1_mqhgx")]
 layout_mode = 0
-offset_right = 219.0
+offset_right = 258.0
 offset_bottom = 176.0
-title = "Heal"
+title = "Battery"
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2023029031]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1299794661]
 layout_mode = 0
-offset_left = 7.0
-offset_top = 39.0
-offset_right = 212.0
-offset_bottom = 169.0
+offset_left = 20.0
+offset_top = -39.0
+offset_right = 273.0
+offset_bottom = 214.0
+texture = ExtResource("4_nba2d")
+
+[node name="Control" type="Control" parent="." unique_id=764119299]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="bar3" type="ProgressBar" parent="Control" unique_id=1003021582]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 69.0
+offset_right = 88.0
+offset_bottom = 139.0
 theme = SubResource("Theme_y05lr")
 step = 0.0
-value = 30.0
-fill_mode = 3
+value = 100.0
 show_percentage = false
 
-[node name="Label" type="Label" parent="." unique_id=1166317503]
+[node name="bar2" type="ProgressBar" parent="Control" unique_id=1037893013]
 layout_mode = 0
-offset_left = 79.0
-offset_top = 46.0
-offset_right = 151.0
-offset_bottom = 174.0
-text = "3"
-label_settings = SubResource("LabelSettings_y05lr")
+offset_left = 97.0
+offset_top = 69.0
+offset_right = 143.0
+offset_bottom = 139.0
+theme = SubResource("Theme_y05lr")
+step = 0.0
+value = 100.0
+show_percentage = false
+
+[node name="bar1" type="ProgressBar" parent="Control" unique_id=309065669]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 69.0
+offset_right = 197.0
+offset_bottom = 139.0
+theme = SubResource("Theme_y05lr")
+step = 0.0
+value = 100.0
+show_percentage = false

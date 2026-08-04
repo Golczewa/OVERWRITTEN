@@ -698,22 +698,30 @@ energy = 1.62
 texture = ExtResource("11_k5tuj")
 
 [node name="PointLight2D2" type="PointLight2D" parent="light" unique_id=668177958]
-position = Vector2(199, -32)
-color = Color(0.9882353, 0.79607844, 0, 1)
-energy = 1.62
-texture = ExtResource("11_k5tuj")
-
-[node name="PointLight2D2" type="PointLight2D" parent="light/PointLight2D2" unique_id=918964709]
-position = Vector2(182, -299.09802)
-rotation = 1.5707964
-scale = Vector2(3.714752, 1)
+position = Vector2(243, -32)
+scale = Vector2(1.6875, 1)
 color = Color(0.9882353, 0.79607844, 0, 1)
 energy = 1.62
 texture = ExtResource("11_k5tuj")
 
 [node name="PointLight2D3" type="PointLight2D" parent="light" unique_id=784578914]
-position = Vector2(512, -32)
-scale = Vector2(3.8906248, 1)
+position = Vector2(585.5, -32)
+scale = Vector2(2.7421875, 1)
+color = Color(0.9882353, 0.79607844, 0, 1)
+energy = 1.62
+texture = ExtResource("11_k5tuj")
+
+[node name="PointLight2D4" type="PointLight2D" parent="light" unique_id=918964709]
+position = Vector2(390, -316.34692)
+rotation = 1.5707964
+scale = Vector2(3.944857, 1.6875)
+color = Color(0.9882353, 0.79607844, 0, 1)
+energy = 1.62
+texture = ExtResource("11_k5tuj")
+
+[node name="PointLight2D5" type="PointLight2D" parent="light" unique_id=1269310902]
+position = Vector2(382.5, -22)
+scale = Vector2(0.49218744, 0.82812494)
 color = Color(0.9882353, 0.79607844, 0, 1)
 energy = 1.62
 texture = ExtResource("11_k5tuj")

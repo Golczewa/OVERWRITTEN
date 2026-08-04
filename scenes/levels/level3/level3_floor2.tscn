@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://lvo2pdtbl3rn"]
 
-[ext_resource type="Script" uid="uid://cramwugkt2of" path="res://scenes/levels/floor_template.gd" id="1_6dw8k"]
+[ext_resource type="Script" uid="uid://bsd7vle44abux" path="res://scenes/levels/level3/level_3_floor_2.gd" id="1_0lrqg"]
 [ext_resource type="PackedScene" uid="uid://byeff2nv3wkbw" path="res://scenes/levels/level3/level3_floor2_map.tscn" id="2_5janj"]
 [ext_resource type="PackedScene" uid="uid://gvdpfkhlvqdq" path="res://scenes/levels/props/transition.tscn" id="3_5janj"]
 [ext_resource type="PackedScene" uid="uid://bu878f6tabfh3" path="res://scenes/levels/props/transition_exit.tscn" id="4_4yh0g"]
@@ -8,10 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://eapp1741qlvm" path="res://scenes/levels/props/doors.tscn" id="6_2d7uh"]
 [ext_resource type="PackedScene" uid="uid://brysa1ib4uxgf" path="res://scenes/enemies/scavenger_rocketer.tscn" id="7_0lrqg"]
 
-[node name="Floor" type="Node2D" unique_id=1079065797 node_paths=PackedStringArray("down_node", "up_node")]
-script = ExtResource("1_6dw8k")
+[node name="Floor" type="Node2D" unique_id=1079065797 node_paths=PackedStringArray("down_node", "up_node", "enemy_spawners")]
+script = ExtResource("1_0lrqg")
 down_node = NodePath("Area2D2")
 up_node = NodePath("Area2D")
+enemy_spawners = [NodePath("StaticBody2D"), NodePath("StaticBody2D2"), NodePath("StaticBody2D3")]
 metadata/_custom_type_script = "uid://cramwugkt2of"
 
 [node name="NavigationRegion2D" parent="." unique_id=85138117 instance=ExtResource("2_5janj")]

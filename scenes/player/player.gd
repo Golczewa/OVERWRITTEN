@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var SPEED = 500.0
 var dash = 900
+var max_health=150
 var player_health = 150
 var direction = Vector2.ZERO
 var is_dashing: bool = false
@@ -39,11 +40,10 @@ func _ready() -> void:
 	$Camera2D/CanvasLayer.hide()
 	charges.update_max(heal_cd)
 	charge_update()
-	charges.value = heal_cd
 	hp_update()
 	charge_update()
 	$Timer.timeout.connect(replenish_charge)
-	heath_bar.max_value = player_health
+	heath_bar.max_value = max_health
 
 
 func _physics_process(_delta: float) -> void:
@@ -132,8 +132,8 @@ func dash_again():
 
 func heal():
 	if heal_charge > 0:
-		if player_health + heal_amount > 100:
-			player_health = 100
+		if player_health + heal_amount > max_health:
+			player_health = max_health
 		else:
 			player_health = player_health + heal_amount
 		hp_update()
@@ -148,10 +148,11 @@ func heal():
 
 func hp_update():
 	heath_bar.value = player_health
+	print(heath_bar.max_value,heath_bar.value,player_health)
 
 
 func charge_update():
-	charges.update_charge(str(heal_charge))
+	charges.update_charge(heal_charge)
 
 
 func replenish_charge():
@@ -159,7 +160,6 @@ func replenish_charge():
 		heal_charge += 1
 		charges_to_replenish -= 1
 		charge_update()
-		charges.value = heal_cd
 		if charges_to_replenish > 0 and heal_charge < 3:
 			$Timer.start(heal_cd)
 

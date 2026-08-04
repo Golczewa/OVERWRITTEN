@@ -32,8 +32,7 @@ func setup(score: Dictionary):
 		ConfigManager.set_level_value("level_" + str(score["level"]), "rank", score["rank"])
 	ConfigManager.save_levels_progress()
 	ConfigManager.reload_levels_progress()
-	get_parent().come()
-	show()
+	open()
 	await score_animation(score["score"])
 	$VBoxContainer/used2.text = "Score: " + str(score["score"])
 	if score["cheats"]:
@@ -113,6 +112,7 @@ func _on_panel_container_gui_input(event):
 func open():
 	for child in get_children():
 		child.hide()
+	show()
 	await $AspectRatioContainer.open_animation()
 	for child in get_children():
 		child.show()

@@ -37,5 +37,4 @@ func end_level():
 	$game.timer_stop()
 	var score = $game.gameScore
 	back_to_menu()
-	$CanvasLayer/menu/Panel.hide()
 	$CanvasLayer/menu/Control.setup(score)
