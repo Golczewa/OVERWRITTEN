@@ -44,3 +44,11 @@ position = Vector2(103, -404)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2081626323]
 color = Color(0.6419338, 0.64193404, 0.64193386, 1)
+
+[node name="StaticBody2D2" parent="." unique_id=857221617 instance=ExtResource("5_2qe50")]
+position = Vector2(765, -481)
+rotation = 3.1415927
+
+[node name="StaticBody2D3" parent="." unique_id=1484904838 instance=ExtResource("5_2qe50")]
+position = Vector2(158, -573)
+rotation = 1.5707964

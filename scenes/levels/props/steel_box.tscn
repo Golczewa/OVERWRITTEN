@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cjq4kxi30n77n"]
+
+[ext_resource type="Texture2D" uid="uid://dh0ce72dk0ue8" path="res://asstets/props/steel_box.png" id="1_dlxih"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jiq1j"]
+size = Vector2(64, 64)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jiq1j"]
+polygon = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -31, 32, -32)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=472800672]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=346001353]
+texture = ExtResource("1_dlxih")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=533749126]
+shape = SubResource("RectangleShape2D_jiq1j")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=22256993]
+occluder = SubResource("OccluderPolygon2D_jiq1j")
