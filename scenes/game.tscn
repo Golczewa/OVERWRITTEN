@@ -16,10 +16,10 @@ script = ExtResource("1_lbhrr")
 process_mode = 3
 
 [node name="skill_issue" parent="CanvasLayer" unique_id=1312501908 instance=ExtResource("3_lnu2h")]
-offset_left = 255.0
-offset_top = 78.0
-offset_right = 884.0
-offset_bottom = 570.0
+offset_left = 358.0
+offset_top = 128.0
+offset_right = 856.0
+offset_bottom = 487.0
 
 [node name="pause" parent="CanvasLayer" unique_id=801102142 instance=ExtResource("5_iywne")]
 anchors_preset = -1

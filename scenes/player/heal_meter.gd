@@ -49,6 +49,9 @@ func update_value(val: int):
 
 func update_charge(num: int):
 	charge_number = num
-	for i in range(num, len(bars)):
+	for i in range(len(bars)):
 		print(i)
-		bars[i].value = 0
+		if i > num:
+			bars[i].value = 0
+		else:
+			bars[i].value = bars[i].max_value

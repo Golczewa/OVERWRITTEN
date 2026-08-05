@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var SPEED = 500.0
 var dash = 900
-var max_health=150
+var max_health = 150
 var player_health = 150
 var direction = Vector2.ZERO
 var is_dashing: bool = false
@@ -16,8 +16,10 @@ var in_cutscene: bool = false
 @onready var heath_bar = $Camera2D/CanvasLayer/Control2/TextureProgressBar
 @onready var charges = $Camera2D/CanvasLayer/Control
 @onready var canvas = $Camera2D/CanvasLayer
-@onready var hurt_pack = preload("res://scenes/player/hurt_efect.tscn")
-@onready var heal_pack = preload("res://scenes/player/heal_efect.tscn")
+@onready var hurt_pack: PackedScene = preload("res://scenes/player/hurt_efect.tscn")
+@onready var heal_pack: PackedScene = preload("res://scenes/player/heal_efect.tscn")
+@onready var parts_pack: PackedScene = preload("res://scenes/player/player_parts.tscn")
+@onready var explosion_pack: PackedScene = preload("res://scenes/effects/rocket_explosion.tscn")
 var left_weapon
 var right_weapon
 var left_up_weapon
@@ -29,7 +31,9 @@ var invisible: bool = false
 var kill_swich: bool = false
 var floor_jumping: bool = false
 
-var default_state = {"health": max_health, "charges": 3, "replenish_queue": 0, "can_dash": true, "cd": 0}
+var default_state = {
+	"health": max_health, "charges": 3, "replenish_queue": 0, "can_dash": true, "cd": 0
+}
 var charges_to_replenish: int = 0
 var ghost = preload("res://scenes/player/player_ghost2.tscn")
 var score
@@ -87,7 +91,7 @@ func _input(event: InputEvent) -> void:
 
 
 func player_take_dmg(dmg):
-	if invincible or  in_cutscene:
+	if invincible or in_cutscene:
 		return
 	if not is_dashing:
 		player_health = player_health - dmg
@@ -97,19 +101,23 @@ func player_take_dmg(dmg):
 		else:
 			_damage_effect()
 
-func die(death_duration:=0.5):
-	in_cutscene=true
+
+func die(death_duration := 1.5):
+	in_cutscene = true
 	hide_stuff()
 	modulate = Color(0.25, 0.25, 0.25)
-	z_index=1
-	$AnimatedSprite2D.play("dead")
-	$AnimatedSprite2D.stop()
-	$AnimatedSprite2D.frame=randi_range(0,3)
+	z_index = 1
+	var death_number: int = randi_range(0, 4)
+	if death_number == 4:
+		explode()
+	else:
+		$AnimatedSprite2D.play("dead")
+		$AnimatedSprite2D.stop()
+		$AnimatedSprite2D.frame = death_number
 	await get_tree().create_timer(death_duration).timeout
-	in_cutscene=false
+	in_cutscene = false
 	player_died.emit()
 	score["deaths"] = score["deaths"] + 1
-
 
 
 func _damage_effect():
@@ -161,7 +169,7 @@ func heal():
 
 func hp_update():
 	heath_bar.value = player_health
-	print(heath_bar.max_value,heath_bar.value,player_health)
+	print(heath_bar.max_value, heath_bar.value, player_health)
 
 
 func charge_update():
@@ -207,6 +215,8 @@ func get_state() -> Dictionary:
 
 func load_state(state: Dictionary):
 	$Timer.stop()
+	$AnimatedSprite2D.show()
+	show()
 	player_health = state["health"]
 	heal_charge = state["charges"]
 	charges_to_replenish = state["replenish_queue"]
@@ -215,8 +225,8 @@ func load_state(state: Dictionary):
 		$Timer.start(state["cd"])
 	is_dashing = false
 	SPEED = 500.0
-	modulate=Color.WHITE
-	z_index=3
+	modulate = Color.WHITE
+	z_index = 3
 	show_stuff()
 	$AnimatedSprite2D.play("new_animation")
 	set_collision_mask_value(3, true)
@@ -307,10 +317,12 @@ func focus_camera(pos: Vector2, travel_time = 1):
 func retrun_camera():
 	$Camera2D.global_position = global_position
 
+
 func hide_stuff():
 	for weapon in $AnimatedSprite2D.get_children():
 		weapon.hide()
 	$AnimatedSprite2D2.hide()
+
 
 func show_stuff():
 	for weapon in $AnimatedSprite2D.get_children():
@@ -318,3 +330,25 @@ func show_stuff():
 	$AnimatedSprite2D2.show()
 
 
+func explode(explosion_time = 0.3, spread = 100):
+	print("explosion")
+	$AnimatedSprite2D.hide()
+	var curr_floor: Floor = get_parent().curr_scene.real_curr_floor
+	var explosion: Node = explosion_pack.instantiate()
+	explosion.scale *= 2
+	add_child(explosion)
+	for i in range(5):
+		print("part", i)
+		var part = parts_pack.instantiate()
+		part.frame = i
+		part.rotate(randf_range(0, 3.14))
+		part.modulate = Color(0.25, 0.25, 0.25)
+		part.global_position = global_position
+		curr_floor.add_child(part)
+		var tween: Tween = create_tween()
+		tween.tween_property(
+			part,
+			"global_position",
+			global_position + Vector2(randf_range(-spread, spread), randf_range(-spread, spread)),
+			explosion_time
+		)
