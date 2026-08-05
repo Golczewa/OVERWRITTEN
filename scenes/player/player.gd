@@ -104,6 +104,7 @@ func player_take_dmg(dmg):
 
 func die(death_duration := 1.5):
 	in_cutscene = true
+	invisible=true
 	hide_stuff()
 	modulate = Color(0.25, 0.25, 0.25)
 	z_index = 1
@@ -223,6 +224,7 @@ func load_state(state: Dictionary):
 	can_dash = state["can_dash"]
 	if charges_to_replenish > 0:
 		$Timer.start(state["cd"])
+	invisible=false
 	is_dashing = false
 	SPEED = 500.0
 	modulate = Color.WHITE

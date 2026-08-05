@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://clap81ynbqx0x"]
 
-[ext_resource type="Script" uid="uid://dim2ehejf6rhe" path="res://scenes/enemies/gooner_test.gd" id="1_yphuh"]
+[ext_resource type="Script" uid="uid://dim2ehejf6rhe" path="res://scenes/enemies/enemy_with_gun.gd" id="1_yphuh"]
 [ext_resource type="Texture2D" uid="uid://b7twfvry48epk" path="res://asstets/enemies/scavenger_gooner_corpse.png" id="2_xvhym"]
 [ext_resource type="Texture2D" uid="uid://ctmdd472ojvj5" path="res://asstets/enemies/scavenger_gooner.png" id="3_twk8v"]
 [ext_resource type="PackedScene" uid="uid://pdn2oykes4m1" path="res://scenes/enemies/test_gun.tscn" id="3_xvhym"]

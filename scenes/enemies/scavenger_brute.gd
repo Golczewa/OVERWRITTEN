@@ -116,7 +116,7 @@ func _randomise_target():
 func _physics_process(_delta: float) -> void:
 	if not is_spawning:
 		if !in_knocback:
-			if player_sighted:
+			if player_sighted and not player.invisible:
 				chase()
 			else:
 				_idle_moving()

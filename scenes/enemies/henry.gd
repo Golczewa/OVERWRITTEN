@@ -118,7 +118,7 @@ func _randomise_target():
 func _physics_process(_delta: float) -> void:
 	if not in_cutscene:
 		if !in_knocback:
-			if player_sighted:
+			if player_sighted and not player.invisible:
 				chase()
 			else:
 				_idle_moving()
@@ -132,7 +132,7 @@ func _physics_process(_delta: float) -> void:
 			player_sighted = can_see_player()
 			if player_sighted:
 				get_tree().call_group("enemies", "trigger")
-		if can_attack:
+		if can_attack and not player.invisible:
 			weapon.attack()
 		move_and_slide()
 

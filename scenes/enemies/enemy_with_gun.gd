@@ -119,7 +119,7 @@ func _randomise_target():
 func _physics_process(_delta: float) -> void:
 	if not is_spawning:
 		if !in_knocback:
-			if player_sighted:
+			if player_sighted and not player.invisible:
 				chase()
 			else:
 				_idle_moving()
@@ -192,7 +192,7 @@ func trigger():
 func big_entrance(pos: Vector2) -> void:
 	look_at(pos + Vector2(1, 1))
 	legs.walk()
-	weapon.target = pos + Vector2(1000, 1000)
+	weapon.target = pos *5
 	weapon.show()
 	modulate = Color.BLACK
 	var tween = create_tween().set_parallel(true)

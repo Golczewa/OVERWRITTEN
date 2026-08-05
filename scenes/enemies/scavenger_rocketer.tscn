@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://brysa1ib4uxgf"]
 
-[ext_resource type="Script" uid="uid://dim2ehejf6rhe" path="res://scenes/enemies/gooner_test.gd" id="1_56krr"]
+[ext_resource type="Script" uid="uid://dim2ehejf6rhe" path="res://scenes/enemies/enemy_with_gun.gd" id="1_56krr"]
 [ext_resource type="Texture2D" uid="uid://casaix5baxr53" path="res://asstets/enemies/scavenger_rocketer_head.png" id="2_8lbkl"]
 [ext_resource type="Texture2D" uid="uid://bkr3f70sphx6l" path="res://asstets/enemies/rocketer_corpse.png" id="2_o3g64"]
 [ext_resource type="Texture2D" uid="uid://qlbu2l21gcxa" path="res://asstets/enemies/scavenger_rocketer_hands.png" id="3_kkets"]
