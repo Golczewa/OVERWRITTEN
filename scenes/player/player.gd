@@ -337,7 +337,7 @@ func explode(explosion_time = 0.3, spread = 100):
 	$AnimatedSprite2D.hide()
 	var curr_floor: Floor = get_parent().curr_scene.real_curr_floor
 	var explosion: Node = explosion_pack.instantiate()
-	explosion.scale *= 2
+	explosion.scale *= 3
 	add_child(explosion)
 	for i in range(5):
 		print("part", i)

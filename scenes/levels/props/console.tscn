@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c1f24m6unsimj"]
+
+[ext_resource type="Texture2D" uid="uid://dvd3ueleekd3e" path="res://asstets/props/console.png" id="1_w4b10"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jiq1j"]
+size = Vector2(27, 128)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=172624978]
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=791576579]
+texture = ExtResource("1_w4b10")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1550216691]
+position = Vector2(-2.5, 0)
+shape = SubResource("RectangleShape2D_jiq1j")
