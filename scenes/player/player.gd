@@ -104,7 +104,7 @@ func player_take_dmg(dmg):
 
 func die(death_duration := 1.5):
 	in_cutscene = true
-	invisible=true
+	invisible = true
 	hide_stuff()
 	modulate = Color(0.25, 0.25, 0.25)
 	z_index = 1
@@ -170,7 +170,6 @@ func heal():
 
 func hp_update():
 	heath_bar.value = player_health
-	print(heath_bar.max_value, heath_bar.value, player_health)
 
 
 func charge_update():
@@ -224,7 +223,7 @@ func load_state(state: Dictionary):
 	can_dash = state["can_dash"]
 	if charges_to_replenish > 0:
 		$Timer.start(state["cd"])
-	invisible=false
+	invisible = false
 	is_dashing = false
 	SPEED = 500.0
 	modulate = Color.WHITE
@@ -333,14 +332,12 @@ func show_stuff():
 
 
 func explode(explosion_time = 0.3, spread = 100):
-	print("explosion")
 	$AnimatedSprite2D.hide()
 	var curr_floor: Floor = get_parent().curr_scene.real_curr_floor
 	var explosion: Node = explosion_pack.instantiate()
 	explosion.scale *= 3
 	add_child(explosion)
 	for i in range(5):
-		print("part", i)
 		var part = parts_pack.instantiate()
 		part.frame = i
 		part.rotate(randf_range(0, 3.14))

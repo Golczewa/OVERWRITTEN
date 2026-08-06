@@ -84,145 +84,181 @@ scale = Vector2(12.2734375, 8.1875)
 
 [node name="AnimatedSprite2D" parent="lava" unique_id=1668156600 instance=ExtResource("1_1lgr3")]
 position = Vector2(17, 272)
+rotation = 3.1415927
 
 [node name="AnimatedSprite2D2" parent="lava" unique_id=210213607 instance=ExtResource("1_1lgr3")]
 position = Vector2(48, 272)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D3" parent="lava" unique_id=401227155 instance=ExtResource("1_1lgr3")]
 position = Vector2(80, 272)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D4" parent="lava" unique_id=1730543641 instance=ExtResource("1_1lgr3")]
 position = Vector2(16, 304)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D5" parent="lava" unique_id=918446641 instance=ExtResource("1_1lgr3")]
 position = Vector2(48, 304)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D6" parent="lava" unique_id=921599652 instance=ExtResource("1_1lgr3")]
 position = Vector2(80, 304)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D7" parent="lava" unique_id=322302838 instance=ExtResource("1_1lgr3")]
 position = Vector2(112, 272)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D8" parent="lava" unique_id=979269633 instance=ExtResource("1_1lgr3")]
 position = Vector2(144, 272)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D9" parent="lava" unique_id=242266240 instance=ExtResource("1_1lgr3")]
 position = Vector2(176, 272)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D10" parent="lava" unique_id=1908394902 instance=ExtResource("1_1lgr3")]
 position = Vector2(208, 304)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D11" parent="lava" unique_id=1934166826 instance=ExtResource("1_1lgr3")]
 position = Vector2(208, 272)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D12" parent="lava" unique_id=1245083230 instance=ExtResource("1_1lgr3")]
 position = Vector2(240, 272)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D13" parent="lava" unique_id=1518869550 instance=ExtResource("1_1lgr3")]
 position = Vector2(272, 272)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D14" parent="lava" unique_id=1252413824 instance=ExtResource("1_1lgr3")]
 position = Vector2(560, 272)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D15" parent="lava" unique_id=2040799199 instance=ExtResource("1_1lgr3")]
 position = Vector2(560, 304)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D16" parent="lava" unique_id=2129795235 instance=ExtResource("1_1lgr3")]
 position = Vector2(528, 272)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D17" parent="lava" unique_id=1672842824 instance=ExtResource("1_1lgr3")]
 position = Vector2(528, 304)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D18" parent="lava" unique_id=1923080513 instance=ExtResource("1_1lgr3")]
 position = Vector2(496, 272)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D19" parent="lava" unique_id=1828483301 instance=ExtResource("1_1lgr3")]
 position = Vector2(464, 272)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D20" parent="lava" unique_id=1903601085 instance=ExtResource("1_1lgr3")]
 position = Vector2(432, 272)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D21" parent="lava" unique_id=398976277 instance=ExtResource("1_1lgr3")]
 position = Vector2(400, 272)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D22" parent="lava" unique_id=2058323649 instance=ExtResource("1_1lgr3")]
 position = Vector2(368, 272)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D23" parent="lava" unique_id=976848609 instance=ExtResource("1_1lgr3")]
 position = Vector2(336, 272)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D24" parent="lava" unique_id=1417619455 instance=ExtResource("1_1lgr3")]
 position = Vector2(304, 272)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D25" parent="lava" unique_id=1409566468 instance=ExtResource("1_1lgr3")]
 position = Vector2(112, 304)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D26" parent="lava" unique_id=497523360 instance=ExtResource("1_1lgr3")]
 position = Vector2(144, 304)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D27" parent="lava" unique_id=831132970 instance=ExtResource("1_1lgr3")]
 position = Vector2(176, 304)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D28" parent="lava" unique_id=1336149166 instance=ExtResource("1_1lgr3")]
 position = Vector2(240, 304)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D29" parent="lava" unique_id=1745236402 instance=ExtResource("1_1lgr3")]
 position = Vector2(272, 304)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D30" parent="lava" unique_id=1093211231 instance=ExtResource("1_1lgr3")]
 position = Vector2(304, 304)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D31" parent="lava" unique_id=2077733688 instance=ExtResource("1_1lgr3")]
 position = Vector2(336, 304)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D32" parent="lava" unique_id=709395707 instance=ExtResource("1_1lgr3")]
 position = Vector2(368, 304)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D33" parent="lava" unique_id=1784881472 instance=ExtResource("1_1lgr3")]
 position = Vector2(400, 304)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D34" parent="lava" unique_id=1278051800 instance=ExtResource("1_1lgr3")]
 position = Vector2(432, 304)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D35" parent="lava" unique_id=787365320 instance=ExtResource("1_1lgr3")]
 position = Vector2(464, 304)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="AnimatedSprite2D36" parent="lava" unique_id=458619094 instance=ExtResource("1_1lgr3")]
 position = Vector2(496, 304)
+rotation = 3.1415927
 metadata/_scene_painted = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1800069035]
