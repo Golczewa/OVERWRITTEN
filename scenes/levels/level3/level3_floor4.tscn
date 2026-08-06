@@ -1,14 +1,20 @@
 [gd_scene format=3 uid="uid://4cbkwgolk3fc"]
 
-[ext_resource type="Script" uid="uid://cramwugkt2of" path="res://scenes/levels/floor_template.gd" id="1_2beno"]
+[ext_resource type="Script" uid="uid://c10mjelyoxod5" path="res://scenes/levels/level3/level_3_floor_4.gd" id="1_4x1o1"]
 [ext_resource type="PackedScene" uid="uid://bexj0r3mnwchh" path="res://scenes/levels/level3/level3_floor4_map.tscn" id="2_0cn0f"]
 [ext_resource type="PackedScene" uid="uid://bu878f6tabfh3" path="res://scenes/levels/props/transition_exit.tscn" id="3_0cn0f"]
 [ext_resource type="PackedScene" uid="uid://w11kiwjryi55" path="res://scenes/levels/props/elevator.tscn" id="4_nftfu"]
+[ext_resource type="PackedScene" uid="uid://eapp1741qlvm" path="res://scenes/levels/props/doors.tscn" id="5_jnn8v"]
+[ext_resource type="PackedScene" uid="uid://b027hwxqycj2f" path="res://scenes/levels/props/enemy_spawner.tscn" id="6_vtmej"]
+[ext_resource type="PackedScene" uid="uid://cnukyg5amafvv" path="res://scenes/enemies/scavenger_hunter.tscn" id="7_qpwfj"]
+[ext_resource type="PackedScene" uid="uid://clap81ynbqx0x" path="res://scenes/enemies/gooner_test.tscn" id="8_8mfhj"]
+[ext_resource type="PackedScene" uid="uid://brysa1ib4uxgf" path="res://scenes/enemies/scavenger_rocketer.tscn" id="9_4x1o1"]
 
-[node name="Floor" type="Node2D" unique_id=854294009 node_paths=PackedStringArray("down_node", "up_node")]
-script = ExtResource("1_2beno")
+[node name="Floor" type="Node2D" unique_id=854294009 node_paths=PackedStringArray("down_node", "up_node", "enemy_spawners")]
+script = ExtResource("1_4x1o1")
 down_node = NodePath("Area2D")
 up_node = NodePath("Area2D2")
+enemy_spawners = [NodePath("StaticBody2D"), NodePath("StaticBody2D2"), NodePath("StaticBody2D3"), NodePath("StaticBody2D4")]
 metadata/_custom_type_script = "uid://cramwugkt2of"
 
 [node name="NavigationRegion2D" parent="." unique_id=136660010 instance=ExtResource("2_0cn0f")]
@@ -22,3 +28,33 @@ position = Vector2(-480, -688)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=504688774]
 color = Color(0.6419338, 0.64193404, 0.64193386, 1)
+
+[node name="Area2D3" parent="." unique_id=219715312 instance=ExtResource("5_jnn8v")]
+position = Vector2(356, -96)
+skin = "steelmill2"
+
+[node name="StaticBody2D" parent="." unique_id=179286510 instance=ExtResource("6_vtmej")]
+position = Vector2(-224, -4)
+rotation = -1.5707964
+
+[node name="StaticBody2D2" parent="." unique_id=2112486190 instance=ExtResource("6_vtmej")]
+position = Vector2(-541, -512)
+
+[node name="StaticBody2D3" parent="." unique_id=168018823 instance=ExtResource("6_vtmej")]
+position = Vector2(477, -544)
+rotation = 3.1415927
+
+[node name="StaticBody2D4" parent="." unique_id=1614665145 instance=ExtResource("6_vtmej")]
+position = Vector2(477, -192)
+rotation = 3.1415927
+
+[node name="enemies" type="Node2D" parent="." unique_id=1911253113]
+
+[node name="CharacterBody2D" parent="enemies" unique_id=943878568 instance=ExtResource("7_qpwfj")]
+position = Vector2(424, -255)
+
+[node name="CharacterBody2D2" parent="enemies" unique_id=1837710199 instance=ExtResource("8_8mfhj")]
+position = Vector2(-465, -484)
+
+[node name="EnemyWithGun" parent="enemies" unique_id=1440674812 instance=ExtResource("9_4x1o1")]
+position = Vector2(281, -564)

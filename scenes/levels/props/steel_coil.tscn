@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://ekuae61xiicy"]
+
+[ext_resource type="Script" uid="uid://dqqv1cgtqfror" path="res://scenes/levels/props/steel_coil.gd" id="1_odi5r"]
+[ext_resource type="Texture2D" uid="uid://fxo3o4hnbpbp" path="res://asstets/props/steel_coil.png" id="1_swchx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odi5r"]
+atlas = ExtResource("1_swchx")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vwfu"]
+atlas = ExtResource("1_swchx")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jiq1j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odi5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vwfu")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jiq1j"]
+radius = 31.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_s7il6"]
+polygon = PackedVector2Array(0, -32, 16, -28, 27, -16, 31, -1, 27, 14, 17, 25, 0, 30, 0, 30, -15, 26, -27, 15, -31, -1, -27, -17, -15, -28)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=104964677]
+script = ExtResource("1_odi5r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=813643182]
+sprite_frames = SubResource("SpriteFrames_jiq1j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1151666945]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_jiq1j")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=2033496895]
+occluder = SubResource("OccluderPolygon2D_s7il6")
