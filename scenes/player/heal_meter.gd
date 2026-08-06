@@ -50,7 +50,6 @@ func update_value(val: int):
 func update_charge(num: int):
 	charge_number = num
 	for i in range(len(bars)):
-		print(i)
 		if i > num:
 			bars[i].value = 0
 		else:

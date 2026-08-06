@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://4cbkwgolk3fc"]
+
+[ext_resource type="Script" uid="uid://cramwugkt2of" path="res://scenes/levels/floor_template.gd" id="1_2beno"]
+[ext_resource type="PackedScene" uid="uid://bexj0r3mnwchh" path="res://scenes/levels/level3/level3_floor4_map.tscn" id="2_0cn0f"]
+[ext_resource type="PackedScene" uid="uid://bu878f6tabfh3" path="res://scenes/levels/props/transition_exit.tscn" id="3_0cn0f"]
+[ext_resource type="PackedScene" uid="uid://w11kiwjryi55" path="res://scenes/levels/props/elevator.tscn" id="4_nftfu"]
+
+[node name="Floor" type="Node2D" unique_id=854294009 node_paths=PackedStringArray("down_node", "up_node")]
+script = ExtResource("1_2beno")
+down_node = NodePath("Area2D")
+up_node = NodePath("Area2D2")
+metadata/_custom_type_script = "uid://cramwugkt2of"
+
+[node name="NavigationRegion2D" parent="." unique_id=136660010 instance=ExtResource("2_0cn0f")]
+
+[node name="Area2D" parent="." unique_id=1410637359 instance=ExtResource("3_0cn0f")]
+position = Vector2(160, -3)
+rotation = 1.5707964
+
+[node name="Area2D2" parent="." unique_id=1922010572 instance=ExtResource("4_nftfu")]
+position = Vector2(-480, -688)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=504688774]
+color = Color(0.6419338, 0.64193404, 0.64193386, 1)

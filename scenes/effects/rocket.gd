@@ -52,7 +52,6 @@ func _physics_process(delta: float) -> void:
 			)
 			queue_free()
 		elif collider.is_in_group("window"):
-			print("contact")
 			collider.shatter(self)
 	position = position + velocity * delta
 

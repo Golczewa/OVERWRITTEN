@@ -10,7 +10,6 @@ func shatter(body: Node, shards_number = 8):
 		return
 	broken = true
 	if body.is_in_group("bullets"):
-		print("shattering now by", body)
 		$AnimatedSprite2D.play("broken")
 		var direction: Vector2 = body.direction
 		direction = direction.normalized()
