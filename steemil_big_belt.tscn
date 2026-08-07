@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://fvm578f5hyvf"]
+
+[ext_resource type="Texture2D" uid="uid://cisv2arih7ie5" path="res://asstets/props/big_belt.png" id="1_7of45"]
+[ext_resource type="Script" uid="uid://cn481723w7lax" path="res://steemil_big_belt.gd" id="1_djt3k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djt3k"]
+atlas = ExtResource("1_7of45")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_216yr"]
+atlas = ExtResource("1_7of45")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kg1p"]
+atlas = ExtResource("1_7of45")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0api"]
+atlas = ExtResource("1_7of45")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yadf"]
+atlas = ExtResource("1_7of45")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ie6yp"]
+atlas = ExtResource("1_7of45")
+region = Rect2(1280, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8ixp"]
+atlas = ExtResource("1_7of45")
+region = Rect2(1536, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rw76x"]
+atlas = ExtResource("1_7of45")
+region = Rect2(1792, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jiq1j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djt3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_216yr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7kg1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0api")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6yadf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ie6yp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8ixp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rw76x")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 40.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jiq1j"]
+size = Vector2(201, 187)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1125804811]
+script = ExtResource("1_djt3k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1725447302]
+position = Vector2(30, -12)
+rotation = 1.5707964
+sprite_frames = SubResource("SpriteFrames_jiq1j")
+frame = 4
+frame_progress = 0.15860124
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=733145980]
+position = Vector2(14, 10)
+shape = SubResource("RectangleShape2D_jiq1j")
+disabled = true
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=2034172027]
+position = Vector2(-85, -83)
+
+[node name="Marker2D2" type="Marker2D" parent="." unique_id=1151626538]
+position = Vector2(113, -83)
+
+[node name="Marker2D3" type="Marker2D" parent="." unique_id=1448133931]
+position = Vector2(13, 127)
+
+[node name="Timer" type="Timer" parent="." unique_id=146060146]
+wait_time = 0.5
+one_shot = true

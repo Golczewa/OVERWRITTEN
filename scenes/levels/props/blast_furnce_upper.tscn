@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bw06yqrcnjj2e"]
+
+[ext_resource type="PackedScene" uid="uid://bqml6iwreuavg" path="res://scenes/levels/props/black_backround.tscn" id="2_kdcwc"]
+[ext_resource type="Texture2D" uid="uid://cswaqot70ta7n" path="res://asstets/props/blast_furnace.png" id="3_mibdx"]
+[ext_resource type="Texture2D" uid="uid://0uh0rx1ddq6w" path="res://asstets/props/light_test.png" id="4_mfkth"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87agk"]
+atlas = ExtResource("3_mibdx")
+region = Rect2(0, 0, 832, 832)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xttp6"]
+atlas = ExtResource("3_mibdx")
+region = Rect2(832, 0, 832, 832)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jiq1j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87agk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xttp6")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s7il6"]
+radius = 369.04877
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=2131448793]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1920377784]
+
+[node name="Sprite2D" parent="Node2D" unique_id=41209180 instance=ExtResource("2_kdcwc")]
+position = Vector2(1.499999, -1.5000091)
+scale = Vector2(3.7734373, 4.1015625)
+
+[node name="Sprite2D2" parent="Node2D" unique_id=1789367017 instance=ExtResource("2_kdcwc")]
+position = Vector2(-226.37502, -0.99999523)
+scale = Vector2(1.2910154, 2.7031252)
+
+[node name="Sprite2D3" parent="Node2D" unique_id=1317338261 instance=ExtResource("2_kdcwc")]
+position = Vector2(220.99998, -3.5000093)
+scale = Vector2(1.2910154, 2.6484375)
+
+[node name="Sprite2D4" parent="Node2D" unique_id=428649640 instance=ExtResource("2_kdcwc")]
+position = Vector2(7.6875076, 0.74998474)
+scale = Vector2(2.3173828, 4.8007813)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=521114113]
+sprite_frames = SubResource("SpriteFrames_jiq1j")
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=9221858]
+shape = SubResource("CircleShape2D_s7il6")
+disabled = true
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=659111686]
+color = Color(0.9882353, 0.79607844, 0, 1)
+texture = ExtResource("4_mfkth")
+texture_scale = 7.45

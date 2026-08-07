@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dfnmq8n1u0uit"]
 
 [ext_resource type="Texture2D" uid="uid://cswaqot70ta7n" path="res://asstets/props/blast_furnace.png" id="1_6wh22"]
-[ext_resource type="Script" uid="uid://d1hbk8fwxijug" path="res://scenes/levels/props/blast_furnace.gd" id="1_xttp6"]
 [ext_resource type="Texture2D" uid="uid://0uh0rx1ddq6w" path="res://asstets/props/light_test.png" id="2_87agk"]
 [ext_resource type="PackedScene" uid="uid://bqml6iwreuavg" path="res://scenes/levels/props/black_backround.tscn" id="4_25lkb"]
 
@@ -37,7 +36,6 @@ size = Vector2(16, 58)
 size = Vector2(128, 15)
 
 [node name="StaticBody2D" type="StaticBody2D" unique_id=2131448793]
-script = ExtResource("1_xttp6")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1920377784]
 
@@ -59,6 +57,7 @@ scale = Vector2(2.3173828, 4.8007813)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=521114113]
 sprite_frames = SubResource("SpriteFrames_jiq1j")
+frame = 1
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=9221858]
@@ -77,6 +76,7 @@ position = Vector2(0, 367.5)
 shape = SubResource("RectangleShape2D_jiq1j")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=659111686]
+visible = false
 color = Color(0.9882353, 0.79607844, 0, 1)
 texture = ExtResource("2_87agk")
 texture_scale = 7.45

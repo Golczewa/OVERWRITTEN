@@ -543,7 +543,6 @@ tile_set = SubResource("TileSet_wqodp")
 [node name="StaticBody2D" parent="props" unique_id=2131448793 instance=ExtResource("2_6ou6q")]
 z_index = 11
 position = Vector2(-32, -855)
-skin = "lower"
 
 [node name="StaticBody2D2" parent="props" unique_id=1386804506 instance=ExtResource("3_wqodp")]
 position = Vector2(-209, -207)
