@@ -5,9 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://lvo2pdtbl3rn" path="res://scenes/levels/level3/level3_floor2.tscn" id="3_aod77"]
 [ext_resource type="PackedScene" uid="uid://ipvj1csh6hp1" path="res://scenes/levels/level3/level3_floor3.tscn" id="4_lirhk"]
 [ext_resource type="PackedScene" uid="uid://4cbkwgolk3fc" path="res://scenes/levels/level3/level3_floor4.tscn" id="5_mguho"]
+[ext_resource type="PackedScene" uid="uid://mkcw56hc7xl0" path="res://scenes/levels/level3/level3_floor5.tscn" id="6_ohtdt"]
 
 [node name="Level" type="Node2D" unique_id=169919419]
 script = ExtResource("1_3xs1f")
-floors_loaded = Array[PackedScene]([ExtResource("2_mn1kv"), ExtResource("3_aod77"), ExtResource("4_lirhk"), ExtResource("5_mguho")])
+floors_loaded = Array[PackedScene]([ExtResource("2_mn1kv"), ExtResource("3_aod77"), ExtResource("4_lirhk"), ExtResource("5_mguho"), ExtResource("6_ohtdt")])
 level_id = 3
 metadata/_custom_type_script = "uid://cb4ypqr5ddld1"

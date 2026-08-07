@@ -59,5 +59,6 @@ disabled = true
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=659111686]
 color = Color(0.9882353, 0.79607844, 0, 1)
+energy = 1.93
 texture = ExtResource("4_mfkth")
 texture_scale = 7.45

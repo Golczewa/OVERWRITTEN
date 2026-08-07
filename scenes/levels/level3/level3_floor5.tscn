@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://mkcw56hc7xl0"]
+
+[ext_resource type="Script" uid="uid://dgk41kmmhvu0b" path="res://scenes/levels/level3/level_3_floor_5.gd" id="1_psphx"]
+[ext_resource type="PackedScene" uid="uid://duujn570fmy2k" path="res://scenes/levels/level3/level3_floor5_map.tscn" id="2_atapt"]
+[ext_resource type="PackedScene" uid="uid://w11kiwjryi55" path="res://scenes/levels/props/elevator.tscn" id="3_atapt"]
+[ext_resource type="PackedScene" uid="uid://rgpml3tss12d" path="res://scenes/levels/props/exit.tscn" id="4_plshg"]
+[ext_resource type="PackedScene" uid="uid://b027hwxqycj2f" path="res://scenes/levels/props/enemy_spawner.tscn" id="5_psphx"]
+[ext_resource type="PackedScene" uid="uid://cnukyg5amafvv" path="res://scenes/enemies/scavenger_hunter.tscn" id="6_6x5vq"]
+[ext_resource type="PackedScene" uid="uid://kkqb7cfxl6sm" path="res://scenes/enemies/scavenger_brute.tscn" id="8_rflot"]
+
+[node name="Floor" type="Node2D" unique_id=1004790619 node_paths=PackedStringArray("down_node", "up_node", "enemy_spawners")]
+script = ExtResource("1_psphx")
+down_node = NodePath("Area2D")
+up_node = NodePath("Area2D2")
+enemy_spawners = [NodePath("StaticBody2D"), NodePath("StaticBody2D2")]
+metadata/_custom_type_script = "uid://cramwugkt2of"
+
+[node name="NavigationRegion2D" parent="." unique_id=827026908 instance=ExtResource("2_atapt")]
+
+[node name="Area2D" parent="." unique_id=1922010572 instance=ExtResource("3_atapt")]
+position = Vector2(-479, -592)
+rotation = 3.1415927
+dir = "down"
+
+[node name="Area2D2" parent="." unique_id=1227416673 instance=ExtResource("4_plshg")]
+position = Vector2(-65, -1437)
+rotation = 1.5707964
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1740744868]
+color = Color(0.6419338, 0.64193404, 0.64193386, 1)
+
+[node name="StaticBody2D" parent="." unique_id=179286510 instance=ExtResource("5_psphx")]
+position = Vector2(-541, -992)
+
+[node name="StaticBody2D2" parent="." unique_id=1912091998 instance=ExtResource("5_psphx")]
+position = Vector2(445, -992)
+rotation = 3.1415927
+
+[node name="enemies" type="Node2D" parent="." unique_id=453703225]
+
+[node name="CharacterBody2D" parent="enemies" unique_id=943878568 instance=ExtResource("6_6x5vq")]
+position = Vector2(-315, -1361)
+
+[node name="CharacterBody2D3" parent="enemies" unique_id=625731905 instance=ExtResource("8_rflot")]
+position = Vector2(-47, -980)
+
+[node name="CharacterBody2D4" parent="enemies" unique_id=314263432 instance=ExtResource("6_6x5vq")]
+position = Vector2(214, -1354)

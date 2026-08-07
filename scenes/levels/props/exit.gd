@@ -7,6 +7,7 @@ var check: bool = true
 
 
 func _ready() -> void:
+	$StaticBody2D/PointLight2D.show()
 	body_entered.connect(on_body_enterd)
 	floor_ = get_parent()
 	level_ = floor_.get_parent()
@@ -19,6 +20,7 @@ func on_body_enterd(body):
 
 func exit():
 	$StaticBody2D/AnimatedSprite2D.play("default")
+	$StaticBody2D/PointLight2D.hide()
 	await player.exit_anim($Marker2D.global_position, global_position)
 	level_.end_level()
 
