@@ -94,7 +94,6 @@ size = Vector2(51, 54)
 size = Vector2(187, 42)
 
 [node name="StaticBody2D" type="StaticBody2D" unique_id=1386804506]
-collision_layer = 2
 script = ExtResource("1_ut5gg")
 state = "on"
 

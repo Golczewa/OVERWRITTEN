@@ -21,6 +21,7 @@ shape = SubResource("RectangleShape2D_87sy2")
 texture = ExtResource("2_87sy2")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=979256463]
+z_index = 2
 target_position = Vector2(0, 0)
 collision_mask = 15
 

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bqml6iwreuavg" path="res://scenes/levels/props/black_backround.tscn" id="1_814vu"]
 [ext_resource type="PackedScene" uid="uid://bw06yqrcnjj2e" path="res://scenes/levels/props/blast_furnce_upper.tscn" id="2_814vu"]
+[ext_resource type="PackedScene" uid="uid://b4aojcvvkdto3" path="res://scenes/levels/props/pipe_steelmill.tscn" id="2_scc3f"]
 [ext_resource type="PackedScene" uid="uid://fvm578f5hyvf" path="res://steemil_big_belt.tscn" id="3_4knp5"]
 [ext_resource type="PackedScene" uid="uid://dbspqfu56vr5r" path="res://scenes/levels/props/lamp_test.tscn" id="4_puyd0"]
 [ext_resource type="PackedScene" uid="uid://c70qnsnsoidsb" path="res://scenes/levels/props/crane.tscn" id="5_bu5j8"]
@@ -115,6 +116,36 @@ navigation_polygon = SubResource("NavigationPolygon_4knp5")
 [node name="Sprite2D" parent="." unique_id=41209180 instance=ExtResource("1_814vu")]
 position = Vector2(-29.499939, -999.5001)
 scale = Vector2(18.648438, 14.7109375)
+
+[node name="pipes" type="Node2D" parent="." unique_id=172273097]
+
+[node name="AnimatedSprite2D" parent="pipes" unique_id=1783935627 instance=ExtResource("2_scc3f")]
+position = Vector2(-298, -1177)
+rotation = 2.3561945
+
+[node name="AnimatedSprite2D2" parent="pipes" unique_id=15737907 instance=ExtResource("2_scc3f")]
+position = Vector2(-343.00006, -1222)
+rotation = 2.3561945
+
+[node name="AnimatedSprite2D3" parent="pipes" unique_id=104081868 instance=ExtResource("2_scc3f")]
+position = Vector2(-388, -1267)
+rotation = 2.3561945
+
+[node name="pipes2" type="Node2D" parent="." unique_id=464472066]
+position = Vector2(-960, -873)
+rotation = 1.5707964
+
+[node name="AnimatedSprite2D" parent="pipes2" unique_id=663802970 instance=ExtResource("2_scc3f")]
+position = Vector2(-298, -1177)
+rotation = 2.3561945
+
+[node name="AnimatedSprite2D2" parent="pipes2" unique_id=1427132930 instance=ExtResource("2_scc3f")]
+position = Vector2(-343.00006, -1222)
+rotation = 2.3561945
+
+[node name="AnimatedSprite2D3" parent="pipes2" unique_id=982282891 instance=ExtResource("2_scc3f")]
+position = Vector2(-388, -1267)
+rotation = 2.3561945
 
 [node name="StaticBody2D" parent="." unique_id=2131448793 instance=ExtResource("2_814vu")]
 position = Vector2(-48, -896)
