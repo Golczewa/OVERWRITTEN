@@ -4,7 +4,7 @@ func _ready() -> void:
 	$Timer.start(1)
 	await $Timer.timeout
 	await $Control.open()
-	$Timer.start()
+	$Timer.start(3)
 	await $Timer.timeout
 	await $Control.begone()
 	$Timer.start(1)

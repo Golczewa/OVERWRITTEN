@@ -32,5 +32,4 @@ offset_right = 320.88794
 offset_bottom = 58.175964
 
 [node name="Timer" type="Timer" parent="." unique_id=1682123817]
-wait_time = 5.0
 one_shot = true

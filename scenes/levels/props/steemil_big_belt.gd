@@ -1,5 +1,6 @@
 extends StaticBody2D
 
+@export_enum("vertical","horizontal") var orientation:String="vertical"
 var on_cooldown := false
 var trash_pack: PackedScene = preload("res://scenes/levels/props/trash_steelmill.tscn")
 @onready var pos_a: Vector2 = $Marker2D.global_position
@@ -18,10 +19,16 @@ func _physics_process(_delta: float) -> void:
 			add_child(trash)
 			trash.rotate(randf_range(0, 6.28))
 			var offset = randf_range(-20, 20)
-			var trash_pos = Vector2(randf_range(pos_a.x, pos_b.x), pos_a.y + offset)
-			trash.travel_and_melt(
-				trash_pos, Vector2(trash_pos.x, $Marker2D3.global_position.y + offset)
-			)
+			if orientation=="vertical":
+				var trash_pos = Vector2(randf_range(pos_a.x, pos_b.x), pos_a.y + offset)
+				trash.travel_and_melt(
+					trash_pos, Vector2(trash_pos.x, $Marker2D3.global_position.y + offset)
+				)
+			else :
+				var trash_pos = Vector2(pos_a.x + offset,randf_range(pos_a.y, pos_b.y))
+				trash.travel_and_melt(
+					trash_pos, Vector2($Marker2D3.global_position.x + offset,trash_pos.y)
+				)
 		on_cooldown = true
 		$Timer.start()
 

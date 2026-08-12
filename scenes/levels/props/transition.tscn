@@ -77,6 +77,9 @@ size = Vector2(6, 64)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8mcfx"]
 size = Vector2(29.5, 64)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jiq1j"]
+polygon = PackedVector2Array(-3, 32, 3, 32, 3, -32, -3, -32)
+
 [node name="Area2D" type="Area2D" unique_id=1410637359]
 script = ExtResource("1_f0i4t")
 
@@ -100,3 +103,6 @@ shape = SubResource("RectangleShape2D_8mcfx")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=3891957]
 position = Vector2(-80, 0)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=739061954]
+occluder = SubResource("OccluderPolygon2D_jiq1j")

@@ -76,6 +76,9 @@ size = Vector2(6, 64)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jiq1j"]
 size = Vector2(48, 46)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jiq1j"]
+polygon = PackedVector2Array(-3, 32, 3, 32, 3, -32, -3, -32)
+
 [node name="StaticBody2D" type="StaticBody2D" unique_id=124000147]
 script = ExtResource("1_4wcqd")
 
@@ -98,3 +101,6 @@ position = Vector2(76, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1205987479]
 position = Vector2(-76, 0)
 shape = SubResource("RectangleShape2D_jiq1j")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=949866403]
+occluder = SubResource("OccluderPolygon2D_jiq1j")
