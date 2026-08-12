@@ -85,6 +85,7 @@ animations = [{
 radius = 16.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1837710199 node_paths=PackedStringArray("weapon", "legs", "body", "raycast", "marker", "to_hide_on_death") groups=["enemies"]]
+z_index = 1
 collision_layer = 4
 collision_mask = 3
 motion_mode = 1

@@ -6,11 +6,10 @@
 
 [node name="Control" type="Control" unique_id=1735869793]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -598.0
-offset_bottom = -121.0
+anchor_right = 0.48100004
+anchor_bottom = 0.813
+offset_right = -0.11206055
+offset_bottom = 0.17596436
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1j5u6")

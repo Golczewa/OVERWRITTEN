@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dogsf0jphl0cq"]
+
+[ext_resource type="PackedScene" uid="uid://cbxoqo0eqwria" path="res://scenes/menu/splash.tscn" id="1_fpraa"]
+[ext_resource type="Script" uid="uid://d3bhbi5nn246s" path="res://scenes/menu/splash_screen.gd" id="1_rr7ju"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7il6"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_jiq1j"]
+Panel/styles/panel = SubResource("StyleBoxFlat_s7il6")
+
+[node name="Control" type="Control" unique_id=576012924]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rr7ju")
+
+[node name="Panel" type="Panel" parent="." unique_id=2009185046]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme = SubResource("Theme_jiq1j")
+
+[node name="Control" parent="." unique_id=1735869793 instance=ExtResource("1_fpraa")]
+layout_mode = 1
+offset_left = 321.0
+offset_top = 58.0
+offset_right = 320.88794
+offset_bottom = 58.175964
+
+[node name="Timer" type="Timer" parent="." unique_id=1682123817]
+wait_time = 5.0
+one_shot = true

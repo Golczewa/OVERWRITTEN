@@ -35,15 +35,14 @@ script = ExtResource("1_yqeox")
 layout_mode = 0
 offset_left = -26.0
 offset_top = -20.0
-offset_right = 1176.0
-offset_bottom = 684.0
+offset_right = 1126.0
+offset_bottom = 628.0
 texture = ExtResource("2_y1o0p")
 
 [node name="Control3" parent="Panel" unique_id=725100487 instance=ExtResource("3_f2fum")]
 layout_mode = 1
 offset_left = 90.0
 offset_right = 1268.0
-offset_bottom = 703.0
 
 [node name="TextureRect" type="TextureRect" parent="Panel" unique_id=452749659]
 modulate = Color(0.5358087, 0, 0.10357297, 1)

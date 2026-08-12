@@ -70,6 +70,7 @@ func end_knockback(org_speed):
 func _die():
 	dead = true
 	floor_.enemies = floor_.enemies - 1
+	z_index=0
 	emit_signal("died")
 	$AnimatedSprite2D.play("dead")
 	$AnimatedSprite2D.stop()

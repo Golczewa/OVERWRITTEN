@@ -79,6 +79,7 @@ func _die():
 	body.play("dead")
 	body.stop()
 	body.frame = (randi() % 3) + 1
+	z_index=0
 	modulate = Color(0.25, 0.25, 0.25)
 	set_physics_process(false)
 	set_process(false)

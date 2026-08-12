@@ -74,6 +74,7 @@ func _die():
 	$AnimatedSprite2D.play("dead")
 	$AnimatedSprite2D.stop()
 	$AnimatedSprite2D.frame = 1
+	z_index=0
 	modulate = Color(0.25, 0.25, 0.25)
 	set_physics_process(false)
 	set_process(false)

@@ -5,7 +5,7 @@ var drag_offset = Vector2()
 
 
 func _ready() -> void:
-	$TextureRect.hide()
+	hide()
 	$AspectRatioContainer/VBoxContainer/PanelContainer.gui_input.connect(
 		_on_panel_container_gui_input
 	)
@@ -13,8 +13,6 @@ func _ready() -> void:
 		_on_panel_container_gui_input
 	)
 	$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Button.pressed.connect(begone)
-	await $AspectRatioContainer.open_animation()
-	$TextureRect.show()
 
 
 func _on_panel_container_gui_input(event):
@@ -38,3 +36,11 @@ func begone():
 			child.hide()
 	await $AspectRatioContainer.close_animation()
 	hide()
+
+func open():
+	show()
+	for child in get_children():
+		child.hide()
+	await $AspectRatioContainer.open_animation()
+	for child in get_children():
+		child.show()
