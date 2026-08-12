@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c71n8lnvahgo3" path="res://scenes/levels/level4/level4_floor1_map.tscn" id="2_igabg"]
 [ext_resource type="PackedScene" uid="uid://gvdpfkhlvqdq" path="res://scenes/levels/props/transition.tscn" id="3_igabg"]
 [ext_resource type="PackedScene" uid="uid://bdwlvl0qdr800" path="res://scenes/levels/props/enrance.tscn" id="4_hoqsf"]
+[ext_resource type="PackedScene" uid="uid://b0iqe6x2742im" path="res://scenes/levels/props/namedrop.tscn" id="5_xl04k"]
 
 [node name="Floor" type="Node2D" unique_id=762716611 node_paths=PackedStringArray("down_node", "up_node")]
 script = ExtResource("1_1g0mq")
@@ -23,3 +24,7 @@ rotation = -1.5707964
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1719197821]
 color = Color(0.89492244, 0.89492244, 0.8949223, 1)
+
+[node name="Area2D2" parent="." unique_id=545860116 instance=ExtResource("5_xl04k")]
+position = Vector2(308, -289)
+scale = Vector2(2, 2)

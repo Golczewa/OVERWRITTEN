@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dx6coyedjwi70"]
+
+[ext_resource type="Texture2D" uid="uid://cyt586grhlxsc" path="res://asstets/props/shelf.png" id="1_ctjlc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jiq1j"]
+size = Vector2(38, 102)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jiq1j"]
+polygon = PackedVector2Array(-20, -53, -17, -53, -16, -52, -16, -49, -17, -48, -20, -48, -21, -49, -21, -52)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=17327290]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1735414469]
+texture = ExtResource("1_ctjlc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=887698890]
+shape = SubResource("RectangleShape2D_jiq1j")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=177101199]
+occluder = SubResource("OccluderPolygon2D_jiq1j")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="." unique_id=1662520482]
+position = Vector2(37, 0)
+occluder = SubResource("OccluderPolygon2D_jiq1j")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="." unique_id=379501457]
+position = Vector2(0, 101)
+occluder = SubResource("OccluderPolygon2D_jiq1j")
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="." unique_id=130332099]
+position = Vector2(37, 101)
+occluder = SubResource("OccluderPolygon2D_jiq1j")
