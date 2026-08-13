@@ -1,16 +1,21 @@
 [gd_scene format=3 uid="uid://450qhw04sdgh"]
 
-[ext_resource type="Script" uid="uid://cramwugkt2of" path="res://scenes/levels/floor_template.gd" id="1_ged0v"]
+[ext_resource type="Script" uid="uid://dtuv115s22x7k" path="res://scenes/levels/level4/level_4_floor_2.gd" id="1_42867"]
 [ext_resource type="PackedScene" uid="uid://cei62ti8jckab" path="res://scenes/levels/level4/level4_floor2_map.tscn" id="2_1vpbq"]
 [ext_resource type="PackedScene" uid="uid://gvdpfkhlvqdq" path="res://scenes/levels/props/transition.tscn" id="3_kn32g"]
 [ext_resource type="PackedScene" uid="uid://bu878f6tabfh3" path="res://scenes/levels/props/transition_exit.tscn" id="4_kn32g"]
 [ext_resource type="PackedScene" uid="uid://eapp1741qlvm" path="res://scenes/levels/props/doors.tscn" id="5_day18"]
 [ext_resource type="PackedScene" uid="uid://b027hwxqycj2f" path="res://scenes/levels/props/enemy_spawner.tscn" id="6_x2csq"]
+[ext_resource type="PackedScene" uid="uid://cnukyg5amafvv" path="res://scenes/enemies/scavenger_hunter.tscn" id="7_noymc"]
+[ext_resource type="PackedScene" uid="uid://brysa1ib4uxgf" path="res://scenes/enemies/scavenger_rocketer.tscn" id="8_vvyj8"]
+[ext_resource type="PackedScene" uid="uid://kkqb7cfxl6sm" path="res://scenes/enemies/scavenger_brute.tscn" id="9_edk7o"]
+[ext_resource type="PackedScene" uid="uid://clap81ynbqx0x" path="res://scenes/enemies/gooner_test.tscn" id="10_42867"]
 
-[node name="Floor" type="Node2D" unique_id=873432605 node_paths=PackedStringArray("down_node", "up_node")]
-script = ExtResource("1_ged0v")
+[node name="Floor" type="Node2D" unique_id=873432605 node_paths=PackedStringArray("down_node", "up_node", "enemy_spawners")]
+script = ExtResource("1_42867")
 down_node = NodePath("Area2D2")
 up_node = NodePath("Area2D")
+enemy_spawners = [NodePath("StaticBody2D3"), NodePath("StaticBody2D4"), NodePath("StaticBody2D"), NodePath("StaticBody2D2")]
 metadata/_custom_type_script = "uid://cramwugkt2of"
 
 [node name="NavigationRegion2D" parent="." unique_id=2015208180 instance=ExtResource("2_1vpbq")]
@@ -50,3 +55,20 @@ rotation = 1.5707964
 position = Vector2(992, 3)
 rotation = 1.5707964
 mirrored = true
+
+[node name="enemies" type="Node2D" parent="." unique_id=739903240]
+
+[node name="CharacterBody2D" parent="enemies" unique_id=943878568 instance=ExtResource("7_noymc")]
+position = Vector2(162, 136)
+
+[node name="EnemyWithGun" parent="enemies" unique_id=1440674812 instance=ExtResource("8_vvyj8")]
+position = Vector2(743, 53)
+
+[node name="CharacterBody2D2" parent="enemies" unique_id=625731905 instance=ExtResource("9_edk7o")]
+position = Vector2(389, 334)
+
+[node name="CharacterBody2D3" parent="enemies" unique_id=1837710199 instance=ExtResource("10_42867")]
+position = Vector2(69, 498)
+
+[node name="CharacterBody2D4" parent="enemies" unique_id=220127915 instance=ExtResource("10_42867")]
+position = Vector2(208, 543)

@@ -12,7 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://cjq4kxi30n77n" path="res://scenes/levels/props/steel_box.tscn" id="9_g2ywk"]
 [ext_resource type="PackedScene" uid="uid://celr313hqg5fq" path="res://scenes/levels/props/cabinet.tscn" id="10_6ri67"]
 [ext_resource type="PackedScene" uid="uid://7t52ndlogwmr" path="res://scenes/levels/props/waring_sign.tscn" id="12_c5goy"]
+[ext_resource type="PackedScene" uid="uid://b3ueah6mp7i4o" path="res://scenes/levels/props/vent_seelmill.tscn" id="13_n4tn6"]
 [ext_resource type="Texture2D" uid="uid://b4n04w13r6f14" path="res://asstets/props/spill.png" id="13_syev4"]
+[ext_resource type="PackedScene" uid="uid://d3wncsnwtpaki" path="res://scenes/levels/props/barrel_spill.tscn" id="14_c3kdu"]
+[ext_resource type="PackedScene" uid="uid://b4aojcvvkdto3" path="res://scenes/levels/props/pipe_steelmill.tscn" id="15_cdvrm"]
+[ext_resource type="PackedScene" uid="uid://sy828mfp74w6" path="res://scenes/levels/props/barrel.tscn" id="15_kjmiq"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_fm6fj"]
 vertices = PackedVector2Array(1120, 280, 1062.0469, 280, 1120, 276.5625, 790, 337, 705, 307, 789, 303, 877, 303, 878, 337, 741, 474.7578, 753.0781, 469.0703, 781.4531, 462.5, 790, 465.60938, 790, 511.20313, 775.6172, 533.1172, 741, 551, 1062, 339.89844, 1062, 420.17188, 1052.5078, 424.35938, 878, 437, 886.52344, 413.64844, 1050.5625, 324.59375, 1040.4688, 281.28125, 1062, 280, 1062, 316.10938, 411, 594, 411, 585.78125, 434.89063, 602.5078, 557, 270, 617, 49, 617, 307, 536.5625, 474.1328, 507.72656, 468.14844, 557, 156, 601, 32.109375, 999, 31.953125, 1033.7188, 167.46875, 877, 45, 921, 32.109375, 761, 32.109375, 789, 45, 705, 49, 729, 32.109375, 313, 32.109375, 313, 32.039063, 319.9297, 32.0625, 320, 64.046875, 319.9297, 223.92969, 313, 223.95313, 313, 223.89063, 319.89844, 199, 1113, 32.109375, 1113, 32.039063, 1120, 32.0625, 1120, 162.35156, 57, 223.89844, 32.0625, 223.92969, 32.109375, 199, 1062, 607.9219, 1049, 607.9531, 1049, 607.8906, 1062, 446.27344, 281, 448.10938, 281, 448.03906, 294, 448.0703, 294, 582, 32.046875, 582, 32.109375, 551, 249, 448.10938, 32.109375, 455, 32.046875, 455, 32.0625, 448.0625, 57, 448.10938, 452, 98, 452, 32.0625, 473, 32.109375, 32.109375, 295, 32.046875, 295, 32.078125, 281, 153, 281, 601, 32.039063, 633, 32.109375, 633, 32.039063, 665, 32.109375, 665, 32.039063, 697, 32.109375, 697, 32.039063, 729, 32.039063, 761, 32.039063, 793, 32.109375, 793, 32.039063, 825, 32.109375, 825, 32.039063, 857, 32.109375, 857, 32.039063, 889, 32.109375, 889, 32.039063, 1081, 32.109375, 1081, 32.039063, 249, 448.03906, 167, 447.95313, 31.953125, 537, 153, 448.10938, 57, 448.03906, 89, 448.10938, 89, 448.03906, 121, 448.10938, 121, 448.03906, 57, 32.109375, 57, 32.039063, 89, 32.109375, 89, 32.039063, 121, 32.109375, 167, 224.04688, 121, 32.039063, 153, 32.109375, 153, 32.039063, 185, 32.109375, 185, 32.039063, 217, 32.109375, 217, 32.039063, 249, 32.109375, 249, 223.89063, 249, 32.039063, 281, 32.109375, 281, 32.039063, 473, 32.039063, 505, 32.109375, 953, 607.8906, 921, 607.9531, 921, 607.8906, 889, 607.9531, 889, 607.8906, 857, 607.9531, 857, 607.8906, 878, 595, 825, 607.9531, 825, 607.8906, 793, 607.9531, 793, 607.8906, 761, 607.9531, 761, 607.8906, 790, 595, 729, 607.9531, 729, 607.8906, 790, 542.53125, 697, 607.9531, 697, 607.8906, 665, 607.9531, 665, 607.8906, 633, 607.9531, 633, 607.8906, 653, 551, 601, 607.9531, 601, 607.8906, 569, 607.9531, 569, 607.8906, 537, 607.9531, 537, 607.8906, 542.21875, 572.4922, 561.8203, 550.52344, 505, 607.9531, 505, 607.8906, 514.27344, 581.72656, 473, 607.9531, 473, 607.8906, 490.90625, 592.6172, 441, 607.9531, 441, 607.8906, 464.22656, 605.0781, 409, 607.9531, 409, 607.8906, 377, 607.9531, 377, 594, 153, 391, 32.046875, 391, 32.109375, 359, 32.046875, 359, 32.109375, 327, 32.046875, 327, 153, 223.89063, 121, 223.95313, 121, 223.89063, 89, 223.95313, 89, 223.89063, 57, 223.95313, 32.046875, 199, 32.109375, 167, 32.046875, 167, 32.109375, 135, 32.046875, 135, 32.109375, 103, 281, 223.95313, 281, 223.89063, 249, 223.95313, 921, 25, 999, 25, 967, 608.0469, 967, 615, 953, 615, 411, 464, 377, 464, 377, 398.10156, 424.1172, 447.39063, 25, 551, 25, 537, 25, 103, 25, 89, 31.953125, 89, 320, 199, 167, 281, 203, 281, 203, 337, 167, 391, 275, 337, 275, 281, 377, 281, 369.89844, 391, 377, 98, 443, 156, 505, 25, 519, 25, 519, 31.953125, 32.0625, 32.0625, 443, 270, 369.90625, 398.07813, 507.39844, 468.25, 503.71875, 459, 790, 416.6797, 790, 439, 741, 443.39063, 741, 399, 780.96094, 386.53906, 500.52344, 578.8828, 567.78906, 521.6719, 653, 458.34375, 790, 383.8125, 878, 410.47656, 653, 399, 451.47656, 436.4922, 558.53906, 493.71094, 642.9375, 436.96094, 653, 432.20313, 480.6172, 440.75)
@@ -344,6 +348,7 @@ position = Vector2(661, 248)
 
 [node name="StaticBody2D26" parent="props" unique_id=1564178057 instance=ExtResource("5_uht3s")]
 position = Vector2(661, 227)
+rotation = 0.6981317
 
 [node name="StaticBody2D27" parent="props" unique_id=2008939119 instance=ExtResource("4_k3bux")]
 position = Vector2(698.00006, 452.99997)
@@ -429,6 +434,46 @@ rotation = 3.1415927
 position = Vector2(239, 296)
 rotation = 1.5707964
 
+[node name="StaticBody2D50" parent="props" unique_id=1191431948 instance=ExtResource("13_n4tn6")]
+position = Vector2(217, 39)
+
+[node name="StaticBody2D51" parent="props" unique_id=1083201695 instance=ExtResource("13_n4tn6")]
+position = Vector2(264, 39)
+
+[node name="StaticBody2D52" parent="props" unique_id=710007015 instance=ExtResource("13_n4tn6")]
+position = Vector2(310, 39)
+
+[node name="StaticBody2D53" parent="props" unique_id=267250925 instance=ExtResource("14_c3kdu")]
+position = Vector2(278, 191)
+rotation = 3.1415927
+
+[node name="StaticBody2D54" parent="props" unique_id=294150438 instance=ExtResource("15_kjmiq")]
+position = Vector2(313, 223)
+
+[node name="StaticBody2D55" parent="props" unique_id=1678251761 instance=ExtResource("15_kjmiq")]
+position = Vector2(74, 226)
+rotation = 2.909464
+
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1830478822]
 position = Vector2(154, 316)
 texture = ExtResource("13_syev4")
+
+[node name="pipe" type="Node2D" parent="." unique_id=1854940992]
+z_index = 3
+
+[node name="AnimatedSprite2D" parent="pipe" unique_id=1783935627 instance=ExtResource("15_cdvrm")]
+position = Vector2(39, 171)
+rotation = 1.5707964
+
+[node name="AnimatedSprite2D2" parent="pipe" unique_id=845741223 instance=ExtResource("15_cdvrm")]
+position = Vector2(103, 171)
+animation = &"curve"
+
+[node name="AnimatedSprite2D3" parent="pipe" unique_id=125207156 instance=ExtResource("15_cdvrm")]
+position = Vector2(103, 108)
+
+[node name="AnimatedSprite2D4" parent="pipe" unique_id=2009691835 instance=ExtResource("15_cdvrm")]
+position = Vector2(103, 44)
+
+[node name="AnimatedSprite2D5" parent="pipe" unique_id=2076025690 instance=ExtResource("15_cdvrm")]
+position = Vector2(103, 39)
