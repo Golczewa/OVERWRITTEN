@@ -37,6 +37,7 @@ func begone():
 	await $AspectRatioContainer.close_animation()
 	hide()
 
+
 func open():
 	show()
 	for child in get_children():

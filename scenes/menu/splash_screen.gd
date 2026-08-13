@@ -1,5 +1,6 @@
 extends Control
 
+
 func _ready() -> void:
 	$Timer.start(1)
 	await $Timer.timeout
