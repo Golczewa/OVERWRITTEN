@@ -2,14 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://c7dras6px7ygo" path="res://scenes/levels/props/window.tscn" id="1_utici"]
 [ext_resource type="PackedScene" uid="uid://bqml6iwreuavg" path="res://scenes/levels/props/black_backround.tscn" id="1_wi5xl"]
+[ext_resource type="Texture2D" uid="uid://bbk2vnch32h3q" path="res://asstets/tiles/carpet.png" id="2_x3r45"]
 [ext_resource type="PackedScene" uid="uid://ekuae61xiicy" path="res://scenes/levels/props/steel_coil.tscn" id="3_n5rw6"]
 [ext_resource type="PackedScene" uid="uid://dx6coyedjwi70" path="res://scenes/levels/props/shelf.tscn" id="4_0eo14"]
 [ext_resource type="PackedScene" uid="uid://bn4nlbvpeol31" path="res://scenes/levels/props/post.tscn" id="4_t2k05"]
 [ext_resource type="PackedScene" uid="uid://ccejfivnmcve4" path="res://scenes/levels/props/box.tscn" id="5_pqxfn"]
+[ext_resource type="PackedScene" uid="uid://gj30vfnvc6xg" path="res://scenes/levels/props/small_box.tscn" id="6_nw1x7"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_hoqsf"]
-vertices = PackedVector2Array(640, -287.9297, 640, -97.3125, 615.6328, -98.03906, 633, -287.89844, 633, -287.95313, 609, -287.9297, 609, -259, 507.59375, -32.046875, 505, -32.039063, 505, -32.109375, 504.1172, -45, 473, -32.039063, 473, -32.109375, 359, -27.242188, 345, -27.203125, 345, -32.109375, 359, -31.953125, 345, -292.20313, 359, -292.2422, 359, -288.04688, 345, -287.89063, 332, -32.078125, 332, -287, 441, -32.039063, 441, -32.109375, 471, -264, 511.75, -73.4375, 441, -287.89063, 441, -287.95313, 471, -287.89063, 313, -287.89844, 313, -287.95313, 288.0625, -287, 288.0625, -287.9297, 498, -264, 498, -259, 508, -259, 508, -249, 598, -249, 598, -259, 532.5625, -94.25, 561, -101.88281, 589.4375, -94.25, 596.1406, -87.53906)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 4, 0), PackedInt32Array(5, 3, 2, 6), PackedInt32Array(7, 8, 9), PackedInt32Array(10, 7, 9), PackedInt32Array(10, 9, 11, 12), PackedInt32Array(13, 14, 15, 16), PackedInt32Array(17, 18, 19, 20), PackedInt32Array(15, 21, 22, 20), PackedInt32Array(10, 12, 23, 24, 25, 26), PackedInt32Array(27, 28, 29, 25), PackedInt32Array(30, 31, 20, 22), PackedInt32Array(32, 33, 30, 22), PackedInt32Array(25, 34, 35), PackedInt32Array(35, 36, 37), PackedInt32Array(38, 39, 6, 2), PackedInt32Array(16, 15, 20, 19, 27, 25, 24), PackedInt32Array(40, 26, 25, 35, 37), PackedInt32Array(40, 37, 38, 41), PackedInt32Array(41, 38, 2, 42), PackedInt32Array(42, 2, 43)])
+vertices = PackedVector2Array(640, -287.9297, 640, -97.3125, 615.6328, -98.03906, 633, -287.89844, 633, -287.95313, 609, -287.9297, 609, -259, 507.59375, -32.046875, 505, -32.039063, 505, -32.109375, 504.1172, -45, 473, -32.039063, 473, -32.109375, 359, -27.242188, 345, -27.203125, 345, -32.109375, 359, -31.953125, 345, -292.20313, 359, -292.2422, 359, -288.04688, 345, -287.89063, 332, -32.078125, 332, -66, 441, -32.039063, 441, -32.109375, 471, -264, 511.75, -73.4375, 441, -287.89063, 441, -287.95313, 471, -287.89063, 313, -287.89844, 313, -287.95313, 332, -287, 288.0625, -287, 288.0625, -287.9297, 498, -264, 498, -259, 508, -259, 508, -249, 598, -249, 598, -259, 332, -91.03125, 342.09375, -85.859375, 596.1406, -87.53906, 589.4375, -94.25, 561, -101.88281, 532.5625, -94.25)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 4, 0), PackedInt32Array(5, 3, 2, 6), PackedInt32Array(7, 8, 9), PackedInt32Array(10, 7, 9), PackedInt32Array(10, 9, 11, 12), PackedInt32Array(13, 14, 15, 16), PackedInt32Array(17, 18, 19, 20), PackedInt32Array(15, 21, 22), PackedInt32Array(10, 12, 23, 24, 25, 26), PackedInt32Array(27, 28, 29, 25), PackedInt32Array(30, 31, 20, 32), PackedInt32Array(33, 34, 30, 32), PackedInt32Array(25, 35, 36), PackedInt32Array(36, 37, 38), PackedInt32Array(39, 40, 6, 2), PackedInt32Array(41, 32, 20, 19, 27, 25, 42), PackedInt32Array(38, 39, 2, 43, 44), PackedInt32Array(38, 44, 45), PackedInt32Array(38, 45, 46, 25, 36), PackedInt32Array(24, 16, 15, 22, 42, 25), PackedInt32Array(46, 26, 25)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(259, -317, 259, -2, 669, -3, 669, -318)])
 agent_radius = 25.0
 
@@ -106,11 +108,27 @@ occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_n5rw6")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gghdu"]
+texture = ExtResource("2_x3r45")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_vqwp0"]
+tile_size = Vector2i(32, 32)
+sources/1 = SubResource("TileSetAtlasSource_gghdu")
+
 [node name="NavigationRegion2D" type="NavigationRegion2D" unique_id=337296511]
 navigation_polygon = SubResource("NavigationPolygon_hoqsf")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1295456738]
-rotation = 0.99483776
+rotation = 1.2444198
 color = Color(0.9411765, 0.67058825, 0, 0.60784316)
 shadow_enabled = true
 
@@ -129,6 +147,11 @@ tile_set = SubResource("TileSet_wi5xl")
 [node name="TileMapLayer3" type="TileMapLayer" parent="." unique_id=1187853678]
 tile_map_data = PackedByteArray("AAAUAPb/AAABAAAAAAAUAP//AAABAAAAAAAIAPb/AAAAAAAAAAAIAPf/AAAAAAAAAAAIAPj/AAAAAAAAAAAIAPn/AAAAAAAAAAAIAPr/AAAAAAAAAAAIAPv/AAAAAAAAAAAIAPz/AAAAAAAAAAAIAP3/AAAAAAAAAAAIAP7/AAAAAAAAAAAIAP//AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_t2k05")
+
+[node name="TileMapLayer4" type="TileMapLayer" parent="." unique_id=2119374997]
+modulate = Color(0.8493602, 0.41781807, 0, 1)
+tile_map_data = PackedByteArray("AAALAPn/AQAAAAAAAAALAPr/AQAAAAAAAAALAPv/AQAAAAAAAAALAPz/AQAAAAAAAAAMAPz/AQAAAAAAAAANAPz/AQAAAAAAAAAOAPz/AQAAAAAAAAAOAPv/AQAAAAAAAAAOAPr/AQAAAAAAAAAOAPn/AQAAAAAAAAANAPn/AQAAAAAAAAAMAPn/AQAAAAAAAAAMAPr/AQAAAAAAAAAMAPv/AQAAAAAAAAANAPv/AQAAAAAAAAANAPr/AQAAAAAAAAALAP3/AQAEAAAAAAAMAP3/AQAEAAAAAAANAP3/AQAEAAAAAAAOAP3/AQAEAAAAAAAKAPz/AQAHAAAAAAAKAPv/AQAHAAAAAAAKAPr/AQAHAAAAAAAKAPn/AQAHAAAAAAAPAPn/AQAGAAAAAAAPAPr/AQAGAAAAAAAPAPv/AQAGAAAAAAAPAPz/AQAGAAAAAAALAPj/AQAFAAAAAAAMAPj/AQAFAAAAAAANAPj/AQAFAAAAAAAOAPj/AQAFAAAAAAA=")
+tile_set = SubResource("TileSet_vqwp0")
 
 [node name="windows" type="Node2D" parent="." unique_id=322298754]
 
@@ -180,6 +203,10 @@ rotation = 1.5707964
 [node name="StaticBody2D6" parent="props" unique_id=135723987 instance=ExtResource("5_pqxfn")]
 position = Vector2(288, -188)
 rotation = 1.9198622
+
+[node name="StaticBody2D7" parent="props" unique_id=976812764 instance=ExtResource("6_nw1x7")]
+position = Vector2(287.00003, -67.99999)
+rotation = 0.4712389
 
 [node name="Area2D" parent="." unique_id=1422119035 instance=ExtResource("4_t2k05")]
 position = Vector2(553, -285)

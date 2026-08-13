@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://gj30vfnvc6xg"]
+
+[ext_resource type="Texture2D" uid="uid://7a6sprluywbp" path="res://asstets/props/small_box.png" id="1_7rrau"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jiq1j"]
+size = Vector2(32, 32)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=976812764]
+collision_layer = 16
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1467061136]
+texture = ExtResource("1_7rrau")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1185764640]
+shape = SubResource("RectangleShape2D_jiq1j")
