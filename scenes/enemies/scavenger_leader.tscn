@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://cpne4lxw3tky5"]
 
+[ext_resource type="Script" uid="uid://xq8nasfdsali" path="res://scenes/enemies/scavenger_leader.gd" id="1_ax7ho"]
 [ext_resource type="Texture2D" uid="uid://c6hl8g71fw5xx" path="res://asstets/enemies/scavenger_leader_body.png" id="1_rppon"]
 [ext_resource type="Texture2D" uid="uid://cghj8gl4lqgpm" path="res://asstets/enemies/scavenger_leader_head.png" id="2_cx8lh"]
 [ext_resource type="Texture2D" uid="uid://bx6x6gioue88d" path="res://asstets/enemies/scavenger_leader_shield.png" id="2_d8gqy"]
 [ext_resource type="Texture2D" uid="uid://c2xmm1vxmog3j" path="res://asstets/enemies/scavenger_leader.png" id="2_h1rju"]
+[ext_resource type="Texture2D" uid="uid://dilobk7t5leed" path="res://asstets/enemies/scavenger_leader_chainsword.png" id="3_vfrd0"]
 [ext_resource type="Texture2D" uid="uid://oimf0va12y0v" path="res://asstets/enemies/scavenger_leader_laucher.png" id="5_h1rju"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d8gqy"]
@@ -41,6 +43,47 @@ animations = [{
 "loop": 1,
 "name": &"default",
 "speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3hye"]
+atlas = ExtResource("3_vfrd0")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_suvb7"]
+atlas = ExtResource("3_vfrd0")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_474l8"]
+atlas = ExtResource("3_vfrd0")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgev4"]
+atlas = ExtResource("3_vfrd0")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3s11r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3hye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_suvb7")
+}],
+"loop": 1,
+"name": &"attack",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_474l8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgev4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 15.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jiq1j"]
@@ -134,34 +177,43 @@ animations = [{
 radius = 15.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=526774511]
+script = ExtResource("1_ax7ho")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1716684835]
+[node name="body" type="AnimatedSprite2D" parent="." unique_id=1716684835]
 sprite_frames = SubResource("SpriteFrames_s7il6")
 
-[node name="legs" type="AnimatedSprite2D" parent="AnimatedSprite2D" unique_id=1342086779]
+[node name="legs" type="AnimatedSprite2D" parent="body" unique_id=1342086779]
 show_behind_parent = true
 sprite_frames = SubResource("SpriteFrames_jiq1j")
-frame = 1
-frame_progress = 0.5453766
+frame_progress = 0.04108915
 
-[node name="shield" type="StaticBody2D" parent="AnimatedSprite2D" unique_id=115113230]
+[node name="sword" type="AnimatedSprite2D" parent="body" unique_id=209221972]
+show_behind_parent = true
+sprite_frames = SubResource("SpriteFrames_3s11r")
+animation = &"attack"
+frame_progress = 0.9032826
+
+[node name="shield" type="StaticBody2D" parent="body" unique_id=115113230]
 show_behind_parent = true
 
-[node name="Sprite2D" type="Sprite2D" parent="AnimatedSprite2D/shield" unique_id=358391396]
+[node name="Sprite2D" type="Sprite2D" parent="body/shield" unique_id=358391396]
 texture = ExtResource("2_d8gqy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/shield" unique_id=582071385]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="body/shield" unique_id=582071385]
+visible = false
 position = Vector2(19, 0.5)
 shape = SubResource("RectangleShape2D_jiq1j")
 
-[node name="head" type="AnimatedSprite2D" parent="AnimatedSprite2D" unique_id=323936529]
+[node name="head" type="AnimatedSprite2D" parent="body" unique_id=323936529]
 sprite_frames = SubResource("SpriteFrames_1wqiw")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D" unique_id=377461196]
+[node name="laucher" type="AnimatedSprite2D" parent="body" unique_id=377461196]
 show_behind_parent = true
+rotation = -1.8762289
 sprite_frames = SubResource("SpriteFrames_pnqb6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=116831680]
+visible = false
 shape = SubResource("CircleShape2D_jiq1j")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=137855195]
