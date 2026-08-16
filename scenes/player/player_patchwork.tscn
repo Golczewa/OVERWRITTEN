@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bn0qmamv5kro2" path="res://asstets/enemies/patchwork.png" id="1_437ls"]
 [ext_resource type="Script" uid="uid://dj0ff7uioldw8" path="res://scenes/player/player_patchwork.gd" id="2_5tg5p"]
 [ext_resource type="Texture2D" uid="uid://dqalvdhpngak" path="res://asstets/player/playerHand.png" id="2_ouqbr"]
+[ext_resource type="PackedScene" uid="uid://c7334xe3kn3dl" path="res://scenes/effects/bullet_test.tscn" id="3_5tg5p"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5tg5p"]
 animations = [{
@@ -18,11 +19,16 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hh8a5"]
 size = Vector2(25, 2)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=397550067]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=397550067 node_paths=PackedStringArray("bullet_spawn", "bullet_director", "weapon_area")]
 sprite_frames = SubResource("SpriteFrames_5tg5p")
 animation = &"0"
 offset = Vector2(8, 8)
 script = ExtResource("2_5tg5p")
+dmg = 15
+bullet_pack = ExtResource("3_5tg5p")
+bullet_spawn = NodePath("Marker2D2")
+bullet_director = NodePath("Marker2D")
+weapon_area = NodePath("Area2D")
 
 [node name="Marker2D2" type="Marker2D" parent="." unique_id=322943486]
 position = Vector2(23, 8)

@@ -55,14 +55,16 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qlqt"]
 size = Vector2(41.75, 12.5)
 
-[node name="Area2D" type="Area2D" unique_id=1810676505]
-collision_mask = 15
-script = ExtResource("1_ku1og")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=329227536]
-position = Vector2(50, 7)
+[node name="Area2D" type="AnimatedSprite2D" unique_id=1698438607 node_paths=PackedStringArray("mele_area")]
 sprite_frames = SubResource("SpriteFrames_kts4k")
+offset = Vector2(50, 7)
+script = ExtResource("1_ku1og")
+mele_area = NodePath("Area2D")
+metadata/_custom_type_script = "uid://dfbm30t6o3vps"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=423846278]
+[node name="Area2D" type="Area2D" parent="." unique_id=1854019530]
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=423846278]
 position = Vector2(24, 6)
 shape = SubResource("RectangleShape2D_8qlqt")

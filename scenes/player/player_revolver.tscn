@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ph5jxrv7cha4" path="res://asstets/player/revolver_player.png" id="1_d5d1h"]
 [ext_resource type="Script" uid="uid://bvvkqj5bslth" path="res://scenes/player/player_revolver.gd" id="2_cghyl"]
+[ext_resource type="PackedScene" uid="uid://c7334xe3kn3dl" path="res://scenes/effects/bullet_test.tscn" id="3_jf0n7"]
 [ext_resource type="Texture2D" uid="uid://dqalvdhpngak" path="res://asstets/player/playerHand.png" id="3_yyisv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uutei"]
@@ -18,11 +19,19 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cghyl"]
 size = Vector2(18, 2)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1733857797]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1733857797 node_paths=PackedStringArray("bullet_spawn", "bullet_director", "weapon_area")]
 sprite_frames = SubResource("SpriteFrames_uutei")
 animation = &"0"
+frame_progress = 1.0
 offset = Vector2(21, 8)
 script = ExtResource("2_cghyl")
+dmg = 20
+cooldown = 0.4
+bullet_pack = ExtResource("3_jf0n7")
+bullet_spawn = NodePath("Marker2D2")
+bullet_director = NodePath("Marker2D")
+weapon_area = NodePath("Area2D")
+rot_offset = 0.05
 
 [node name="Marker2D2" type="Marker2D" parent="." unique_id=1316597167]
 position = Vector2(30, 8)

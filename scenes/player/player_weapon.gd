@@ -3,17 +3,28 @@ extends AnimatedSprite2D
 class_name PlayerWeapon
 
 var can_attack = true
-
+var left_hand = false
+var weapon_rot: float
 @export var dmg := 30
 @export var cooldown = 0.6
+@export var knockback = 500
 @export var bullet_pack: PackedScene
 @export var bullet_spawn: Marker2D
 @export var bullet_director: Marker2D
 @export var weapon_area: Area2D
+@export var mele_area: Area2D
+@export var rot_offset = 0.02
+
+
+func _ready() -> void:
+	if left_hand:
+		weapon_rot = rot_offset
+	else:
+		weapon_rot = -rot_offset
 
 
 func _physics_process(_delta: float) -> void:
-	look_at(get_global_mouse_position())
+	look_at(get_global_mouse_position().rotated(weapon_rot))
 
 
 func end_cd():

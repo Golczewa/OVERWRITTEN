@@ -1,0 +1,14 @@
+extends PlayerWeapon
+
+
+func attack():
+	if can_attack:
+		play("0")
+		var bodies = mele_area.get_overlapping_bodies()
+		for body in bodies:
+			if body.is_in_group("enemies"):
+				body.take_damage(dmg, knockback)
+		can_attack = false
+		get_tree().create_timer(cooldown).timeout.connect(end_cd)
+		await animation_finished
+		frame = 0

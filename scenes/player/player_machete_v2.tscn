@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://byrdojof2wfwb"]
+
+[ext_resource type="Texture2D" uid="uid://bu3tg78yuhiir" path="res://asstets/player/john_overwritten_machete2.png" id="1_qmelj"]
+[ext_resource type="Script" uid="uid://bp4p5yqq1s7ab" path="res://scenes/player/player_machete_v_2.gd" id="2_qmelj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1s1h1"]
+atlas = ExtResource("1_qmelj")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_noihs"]
+atlas = ExtResource("1_qmelj")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uddee"]
+atlas = ExtResource("1_qmelj")
+region = Rect2(256, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sx3rw"]
+atlas = ExtResource("1_qmelj")
+region = Rect2(384, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jn8b"]
+atlas = ExtResource("1_qmelj")
+region = Rect2(512, 0, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kjfne"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1s1h1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_noihs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uddee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sx3rw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jn8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jn8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jn8b")
+}],
+"loop": 0,
+"name": &"0",
+"speed": 17.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmelj"]
+size = Vector2(43, 43)
+
+[node name="PlayerWeapon" type="AnimatedSprite2D" unique_id=1009187423 node_paths=PackedStringArray("mele_area")]
+sprite_frames = SubResource("SpriteFrames_kjfne")
+animation = &"0"
+offset = Vector2(41, -10)
+script = ExtResource("2_qmelj")
+dmg = 25
+cooldown = 0.7
+mele_area = NodePath("Area2D")
+metadata/_custom_type_script = "uid://dfbm30t6o3vps"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2052555784]
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=929749621]
+position = Vector2(35.5, -11.5)
+shape = SubResource("RectangleShape2D_qmelj")

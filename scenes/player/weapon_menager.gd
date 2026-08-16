@@ -13,6 +13,7 @@ func equip():
 	)
 	var weapon = weapon_pack.instantiate()
 	if hand == "left":
+		weapon.left_hand = true
 		weapon.scale = Vector2(1, -1)
 	add_child(weapon)
 	return weapon

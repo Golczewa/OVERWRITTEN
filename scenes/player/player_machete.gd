@@ -7,6 +7,15 @@ var is_owned_by_player = false
 var can_attack: bool = true
 var parent
 @export var skin: String = "0"
+var left_hand = false
+var weapon_rot: float
+
+
+func _ready() -> void:
+	if left_hand:
+		weapon_rot = 0.02
+	else:
+		weapon_rot = -0.02
 
 
 func _physics_process(_delta: float) -> void:
