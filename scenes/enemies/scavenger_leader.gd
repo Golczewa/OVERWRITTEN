@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 @onready var rocket_pack: PackedScene = preload("res://scenes/effects/rocket.tscn")
+@onready var hrocket_pack: PackedScene = preload("res://scenes/effects/hoaming_rocket.tscn")
+@onready var danger_zone_pack: PackedScene = preload("res://scenes/effects/death_from_above.tscn")
 
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
 @onready var shield: StaticBody2D = $body/shield
@@ -31,7 +33,7 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if in_cutscene or !player:
 		return
-	$RayCast2D.target_position = player.global_position
+	$RayCast2D.target_position = player.position
 	walk()
 	chose_attack()
 	velocity = direction * speed
@@ -46,7 +48,8 @@ func walk() -> void:
 	if distance(global_position, player_cords) < 150:
 		$body/legs.play("default")
 		speed = 60
-		nav_agent.target_position = -player_cords
+		var opposite: Vector2 = -(global_position - player_cords)
+		nav_agent.target_position = opposite
 	elif (
 		200 > distance(global_position, player_cords)
 		and distance(global_position, player_cords) > 150
@@ -66,7 +69,10 @@ func walk() -> void:
 func chose_attack() -> void:
 	if in_cooldown or dead:
 		return
-	fire_laucher()
+	if can_see_player():
+		fire_laucher()
+	else:
+		fire_above()
 	in_cooldown = true
 	get_tree().create_timer(attack_cooldonwn).timeout.connect(end_cooldown)
 
@@ -81,7 +87,7 @@ func distance(pos_a: Vector2, pos_b: Vector2) -> float:
 	return diff.length()
 
 
-func take_damage(damage: int, knockback: int) -> void:
+func take_damage(damage: int, _knockback: int) -> void:
 	health -= damage
 	damage_effect()
 	if health <= 0:
@@ -97,7 +103,6 @@ func damage_effect() -> void:
 
 
 func fire_laucher(cooldown: float = 0.3) -> void:
-	print("fire")
 	if dead:
 		return
 	laucher.look_at(player.global_position.rotated(0.05))
@@ -105,13 +110,11 @@ func fire_laucher(cooldown: float = 0.3) -> void:
 	if dead:
 		return
 	await get_tree().create_timer(cooldown).timeout
-	print("fireeeee")
 	spanwn_rocket(0.15)
 	spanwn_rocket(-0.15)
 	if dead:
 		return
 	await get_tree().create_timer(cooldown).timeout
-	print("fireeeee")
 	spanwn_rocket(0)
 	laucher.play("off")
 
@@ -125,3 +128,38 @@ func spanwn_rocket(rot_degree: float) -> void:
 	rocket.direction = dir.rotated(rot_degree)
 	rocket.rotate(rot_degree)
 	curr_floor.add_child(rocket)
+
+
+func fire_hoaming_rocket() -> void:
+	#TODO
+	var dir = (rocket_directory.global_position - rocket_spawn.global_position).normalized()
+	var hrocket = hrocket_pack.instantiate()
+	laucher.look_at(player.global_position.rotated(0.05))
+	hrocket.global_position = rocket_spawn.global_position
+	hrocket.look_at(rocket_directory.global_position)
+	hrocket.direction = dir
+	curr_floor.add_child(hrocket)
+
+
+func fire_above(spawn_range: Vector2 = Vector2(80, 80)) -> void:
+	laucher.look_at(player.global_position.rotated(0.05))
+	laucher.play("default")
+	await laucher.animation_finished
+	var spawn_area: Array[Vector2] = [
+		player.global_position - spawn_range, player.global_position + spawn_range
+	]
+	for i in range(4):
+		var spawn_x = randf_range(spawn_area[0].x, spawn_area[1].x)
+		var spawn_y = randf_range(spawn_area[0].y, spawn_area[1].y)
+		var daneger_zone: Area2D = danger_zone_pack.instantiate()
+		daneger_zone.waiting_time = 0.5
+		daneger_zone.global_position = Vector2(spawn_x, spawn_y)
+		curr_floor.add_child(daneger_zone)
+	laucher.play("empty")
+
+
+func can_see_player() -> bool:
+	if $RayCast2D.is_colliding():
+		var collider = $RayCast2D.get_collider()
+		return collider.is_in_group("player")
+	return true

@@ -158,12 +158,21 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wjjhc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjjhc")
 }],
 "loop": 0,
 "name": &"default",
 "speed": 15.0
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofaud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofaud")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ofaud")
 }, {
@@ -233,7 +242,6 @@ sprite_frames = SubResource("SpriteFrames_1wqiw")
 [node name="laucher" type="AnimatedSprite2D" parent="body" unique_id=377461196]
 show_behind_parent = true
 sprite_frames = SubResource("SpriteFrames_pnqb6")
-animation = &"on"
 
 [node name="Marker2D" type="Marker2D" parent="body/laucher" unique_id=610100303]
 position = Vector2(28, -24)
