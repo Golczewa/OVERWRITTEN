@@ -3,9 +3,10 @@
 [ext_resource type="Script" uid="uid://cb4ypqr5ddld1" path="res://scenes/levels/level_template.gd" id="1_bon0b"]
 [ext_resource type="PackedScene" uid="uid://bmsn01haow0do" path="res://scenes/levels/level4/level4_floor1.tscn" id="2_atbh8"]
 [ext_resource type="PackedScene" uid="uid://450qhw04sdgh" path="res://scenes/levels/level4/level4_floor2.tscn" id="3_lbn3a"]
+[ext_resource type="PackedScene" uid="uid://yxy15un1vvir" path="res://scenes/levels/level4/level4_floor3.tscn" id="4_pso0i"]
 
 [node name="Level" type="Node2D" unique_id=957190425]
 script = ExtResource("1_bon0b")
-floors_loaded = Array[PackedScene]([ExtResource("2_atbh8"), ExtResource("3_lbn3a")])
+floors_loaded = Array[PackedScene]([ExtResource("2_atbh8"), ExtResource("3_lbn3a"), ExtResource("4_pso0i")])
 level_id = 4
 metadata/_custom_type_script = "uid://cb4ypqr5ddld1"

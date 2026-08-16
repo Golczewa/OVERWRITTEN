@@ -136,6 +136,14 @@ region = Rect2(576, 0, 96, 96)
 atlas = ExtResource("5_h1rju")
 region = Rect2(672, 0, 96, 96)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffxi0"]
+atlas = ExtResource("5_h1rju")
+region = Rect2(672, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo466"]
+atlas = ExtResource("5_h1rju")
+region = Rect2(0, 0, 96, 96)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_pnqb6"]
 animations = [{
 "frames": [{
@@ -153,7 +161,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"default",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -168,15 +176,32 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_v3wsp")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"empty",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffxi0")
+}],
+"loop": 1,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mo466")
+}],
+"loop": 1,
+"name": &"on",
 "speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jiq1j"]
 radius = 15.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=526774511]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=526774511 groups=["enemies"]]
+motion_mode = 1
 script = ExtResource("1_ax7ho")
 
 [node name="body" type="AnimatedSprite2D" parent="." unique_id=1716684835]
@@ -190,8 +215,7 @@ frame_progress = 0.04108915
 [node name="sword" type="AnimatedSprite2D" parent="body" unique_id=209221972]
 show_behind_parent = true
 sprite_frames = SubResource("SpriteFrames_3s11r")
-animation = &"attack"
-frame_progress = 0.9032826
+frame_progress = 0.21742576
 
 [node name="shield" type="StaticBody2D" parent="body" unique_id=115113230]
 show_behind_parent = true
@@ -200,7 +224,6 @@ show_behind_parent = true
 texture = ExtResource("2_d8gqy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="body/shield" unique_id=582071385]
-visible = false
 position = Vector2(19, 0.5)
 shape = SubResource("RectangleShape2D_jiq1j")
 
@@ -209,11 +232,20 @@ sprite_frames = SubResource("SpriteFrames_1wqiw")
 
 [node name="laucher" type="AnimatedSprite2D" parent="body" unique_id=377461196]
 show_behind_parent = true
-rotation = -1.8762289
 sprite_frames = SubResource("SpriteFrames_pnqb6")
+animation = &"on"
+
+[node name="Marker2D" type="Marker2D" parent="body/laucher" unique_id=610100303]
+position = Vector2(28, -24)
+
+[node name="Marker2D2" type="Marker2D" parent="body/laucher" unique_id=319095363]
+position = Vector2(23, -24)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=116831680]
 visible = false
 shape = SubResource("CircleShape2D_jiq1j")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=137855195]
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1829255067]
+target_position = Vector2(43, 0)

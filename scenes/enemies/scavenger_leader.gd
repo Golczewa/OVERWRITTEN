@@ -1,14 +1,18 @@
 extends CharacterBody2D
 
+@onready var rocket_pack: PackedScene = preload("res://scenes/effects/rocket.tscn")
+
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
-@onready var boss_bar: Control = player.get_node("Camera2D/CanvasLayer/ProgressBar2")
 @onready var shield: StaticBody2D = $body/shield
 @onready var legs: AnimatedSprite2D = $body/legs
 @onready var sword: AnimatedSprite2D = $body/sword
 @onready var laucher: AnimatedSprite2D = $body/laucher
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
+@onready var rocket_spawn: Marker2D = $body/laucher/Marker2D2
+@onready var rocket_directory: Marker2D = $body/laucher/Marker2D
 
 var max_health := 500
+var health: int = max_health
 var speed := 30
 var in_cutscene := false
 var rot_speed := 15
@@ -16,22 +20,42 @@ var shield_rot_speed := 5
 var dead := false
 var direction := Vector2.ZERO
 var in_cooldown := false
+var attack_cooldonwn := 3
+var curr_floor: Floor
+
+
+func _ready() -> void:
+	curr_floor = get_parent().get_parent()
 
 
 func _physics_process(_delta: float) -> void:
-	if in_cutscene:
+	if in_cutscene or !player:
 		return
+	$RayCast2D.target_position = player.global_position
+	walk()
+	chose_attack()
 	velocity = direction * speed
 	$body/head.look_at(player.global_position)
 	move_and_slide()
 
 
 func walk() -> void:
+	if !player:
+		return
 	var player_cords = player.global_position
-	if distance(global_position, player_cords) < 50:
+	if distance(global_position, player_cords) < 150:
+		$body/legs.play("default")
 		speed = 60
 		nav_agent.target_position = -player_cords
+	elif (
+		200 > distance(global_position, player_cords)
+		and distance(global_position, player_cords) > 150
+	):
+		speed = 0
+		nav_agent.target_position = global_position
+		$body/legs.stop()
 	else:
+		$body/legs.play("default")
 		speed = 30
 		nav_agent.target_position = player_cords
 	var next_pos = nav_agent.get_next_path_position()
@@ -39,6 +63,65 @@ func walk() -> void:
 	direction = global_position.direction_to(next_pos)
 
 
+func chose_attack() -> void:
+	if in_cooldown or dead:
+		return
+	fire_laucher()
+	in_cooldown = true
+	get_tree().create_timer(attack_cooldonwn).timeout.connect(end_cooldown)
+
+
+func end_cooldown() -> void:
+	in_cooldown = false
+	laucher.play("on")
+
+
 func distance(pos_a: Vector2, pos_b: Vector2) -> float:
 	var diff := pos_a - pos_b
 	return diff.length()
+
+
+func take_damage(damage: int, knockback: int) -> void:
+	health -= damage
+	damage_effect()
+	if health <= 0:
+		die()
+
+
+func die() -> void:
+	pass  #TODO
+
+
+func damage_effect() -> void:
+	pass  #TODO
+
+
+func fire_laucher(cooldown: float = 0.3) -> void:
+	print("fire")
+	if dead:
+		return
+	laucher.look_at(player.global_position.rotated(0.05))
+	spanwn_rocket(0)
+	if dead:
+		return
+	await get_tree().create_timer(cooldown).timeout
+	print("fireeeee")
+	spanwn_rocket(0.15)
+	spanwn_rocket(-0.15)
+	if dead:
+		return
+	await get_tree().create_timer(cooldown).timeout
+	print("fireeeee")
+	spanwn_rocket(0)
+	laucher.play("off")
+
+
+func spanwn_rocket(rot_degree: float) -> void:
+	var dir = (rocket_directory.global_position - rocket_spawn.global_position).normalized()
+	var rocket: Node = rocket_pack.instantiate()
+	rocket.global_position = rocket_spawn.global_position
+	rocket.look_at(rocket_directory.global_position)
+	print(rocket.global_position, rocket_spawn.global_position, global_position)
+	rocket.direction = dir.rotated(rot_degree)
+	rocket.rotate(rot_degree)
+	curr_floor.add_child(rocket)
