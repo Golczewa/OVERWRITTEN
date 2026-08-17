@@ -35,6 +35,7 @@ func _ready() -> void:
 	curr_floor = get_parent().get_parent()
 	sword.play("default")
 	add_collision_exception_with(shield)
+	$RayCast2D.add_exception(shield)
 
 
 func _physics_process(_delta: float) -> void:
@@ -45,6 +46,7 @@ func _physics_process(_delta: float) -> void:
 		if get_slide_collision_count() > 0:
 			is_charging = false
 			sword.play("default")
+			rotate_by($body, 0)
 			for i in get_slide_collision_count():
 				var collision = get_slide_collision(i)
 				var collider = collision.get_collider()
@@ -136,6 +138,8 @@ func take_damage(damage: int, _knockback: int) -> void:
 func die(explosion_time = 0.3, spread = 100) -> void:
 	in_cutscene=true
 	$body.hide()
+	$CollisionShape2D.set_deferred("disabled", true)
+	$body/shield/CollisionShape2D.set_deferred("disabled", true)
 	var explosion=explosion_pack.instantiate()
 	explosion.scale *= 3
 	add_child(explosion)

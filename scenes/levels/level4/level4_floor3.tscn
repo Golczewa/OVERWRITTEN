@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cramwugkt2of" path="res://scenes/levels/floor_template.gd" id="1_fi3sb"]
 [ext_resource type="PackedScene" uid="uid://cker8a6odv760" path="res://scenes/levels/level4/level4_floor3_map.tscn" id="2_471ew"]
 [ext_resource type="PackedScene" uid="uid://bu878f6tabfh3" path="res://scenes/levels/props/transition_exit.tscn" id="3_xnrun"]
-[ext_resource type="PackedScene" uid="uid://gvdpfkhlvqdq" path="res://scenes/levels/props/transition.tscn" id="4_471ew"]
+[ext_resource type="PackedScene" uid="uid://rgpml3tss12d" path="res://scenes/levels/props/exit.tscn" id="5_jaj7q"]
 [ext_resource type="PackedScene" uid="uid://cpne4lxw3tky5" path="res://scenes/enemies/scavenger_leader.tscn" id="5_xnrun"]
 
 [node name="Floor" type="Node2D" unique_id=1878265113 node_paths=PackedStringArray("down_node", "up_node")]
@@ -18,11 +18,11 @@ metadata/_custom_type_script = "uid://cramwugkt2of"
 position = Vector2(447, 829)
 rotation = 1.5707964
 
-[node name="Area2D2" parent="." unique_id=1982071918 instance=ExtResource("4_471ew")]
-position = Vector2(448, 3)
-rotation = -1.5707964
-
 [node name="enemies" type="Node2D" parent="." unique_id=1644491747]
 
 [node name="CharacterBody2D" parent="enemies" unique_id=526774511 instance=ExtResource("5_xnrun")]
 position = Vector2(435, 196)
+
+[node name="Area2D2" parent="." unique_id=1227416673 instance=ExtResource("5_jaj7q")]
+position = Vector2(448, 3)
+rotation = 1.5707964

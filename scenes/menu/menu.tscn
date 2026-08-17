@@ -36,7 +36,7 @@ offset_bottom = 0.039978027
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yqeox")
-titles = Array[String](["By Golczewa", "Game that understands", "One of the games", "Dont read the code!", "Features John Overwritten!", "Made in the best engine"])
+titles = Array[String](["By Golczewa", "Game that understands", "One of the games", "Dont read the code!", "Features John Overwritten!", "Made in the best engine", "Give the boys my regards"])
 
 [node name="Panel" type="TextureRect" parent="." unique_id=1341140100]
 layout_mode = 0
