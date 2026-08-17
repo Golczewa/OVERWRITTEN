@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var rocket_pack: PackedScene = preload("res://scenes/effects/rocket.tscn")
 @onready var hrocket_pack: PackedScene = preload("res://scenes/effects/hoaming_rocket.tscn")
 @onready var danger_zone_pack: PackedScene = preload("res://scenes/effects/death_from_above.tscn")
+@onready var ghost_pack: PackedScene = preload("res://scenes/enemies/scavenger_leader_ghost.tscn")
 
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
 @onready var shield: StaticBody2D = $body/shield
@@ -16,6 +17,8 @@ extends CharacterBody2D
 var max_health := 500
 var health: int = max_health
 var speed := 30
+var charge_speed := 900
+var is_charging := false
 var in_cutscene := false
 var rot_speed := 0.5
 var shield_rot_speed := 5
@@ -29,10 +32,23 @@ var curr_floor: Floor
 func _ready() -> void:
 	curr_floor = get_parent().get_parent()
 	sword.play("default")
+	add_collision_exception_with(shield)
 
 
 func _physics_process(_delta: float) -> void:
 	if in_cutscene or !player:
+		return
+	if is_charging:
+		move_and_slide()
+		if get_slide_collision_count() > 0:
+			is_charging = false
+			for i in get_slide_collision_count():
+				var collision = get_slide_collision(i)
+				var collider = collision.get_collider()
+				if collider is CharacterBody2D:
+					if collider.is_in_group("player"):
+						player.player_take_dmg(75)
+						break
 		return
 	$RayCast2D.target_position = $RayCast2D.to_local(player.global_position)
 	var target_angle = (player.global_position - global_position).angle()
@@ -74,7 +90,7 @@ func chose_attack() -> void:
 	if in_cooldown or dead:
 		return
 	if can_see_player():
-		fire_laucher()
+		charge()
 	else:
 		fire_hoaming_rocket()
 	in_cooldown = true
@@ -103,7 +119,10 @@ func die() -> void:
 
 
 func damage_effect() -> void:
-	pass  #TODO
+	if health > 0:
+		modulate = Color.RED
+		await get_tree().create_timer(0.1).timeout
+		modulate = Color.WHITE
 
 
 func fire_laucher(cooldown: float = 0.3) -> void:
@@ -167,7 +186,29 @@ func can_see_player() -> bool:
 	return true
 
 
-func rotate_by(item: Node2D, angle: float, time = 0.1):
+func rotate_by(item: Node2D, angle: float, time: float = 0.1) -> void:
 	var tween: Tween = create_tween()
 	tween.tween_property(item, "rotation", angle, time)
 	await tween.finished
+
+
+func charge() -> void:
+	is_charging = true
+	var charge_dir: Vector2 = (player.global_position - global_position).normalized()
+	rotate_by(shield, 0)
+	rotate_by(sword, 0)
+	rotate_by(laucher, -1.8)
+	rotate_by(legs, 0)
+	rotate_by($body/head, 0)
+	await rotate_by($body, charge_dir.angle())
+	velocity = charge_dir * charge_speed
+	add_ghosts(charge_dir)
+
+
+func add_ghosts(dir: Vector2):
+	while is_charging:
+		var ghost = ghost_pack.instantiate()
+		ghost.global_position = global_position
+		ghost.look_at(dir)
+		get_tree().current_scene.add_child(ghost)
+		await get_tree().create_timer(0.01).timeout
