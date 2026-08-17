@@ -47,15 +47,6 @@ render_target_update_mode = 4
 
 [node name="Node3D" parent="SubViewportContainer/SubViewport" unique_id=810478375 instance=ExtResource("3_g5ekd")]
 
-[node name="Button" type="Button" parent="." unique_id=711566211]
-layout_mode = 0
-offset_left = 810.0
-offset_top = 452.0
-offset_right = 968.0
-offset_bottom = 548.0
-theme_override_font_sizes/font_size = 31
-text = "TEST MAP"
-
 [node name="Button2" parent="." unique_id=2078812563 instance=ExtResource("2_g5ekd")]
 layout_mode = 0
 offset_left = 64.0

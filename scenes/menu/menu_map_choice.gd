@@ -7,7 +7,6 @@ var drag_offset = Vector2()
 
 func _ready() -> void:
 	hide()
-	$Button.pressed.connect(level_setup.bind(0))
 	$AspectRatioContainer/VBoxContainer/PanelContainer.gui_input.connect(
 		_on_panel_container_gui_input
 	)

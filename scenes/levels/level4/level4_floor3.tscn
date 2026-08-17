@@ -15,14 +15,14 @@ metadata/_custom_type_script = "uid://cramwugkt2of"
 [node name="NavigationRegion2D" parent="." unique_id=970224383 instance=ExtResource("2_471ew")]
 
 [node name="Area2D" parent="." unique_id=1410637359 instance=ExtResource("3_xnrun")]
-position = Vector2(320, 573)
+position = Vector2(447, 829)
 rotation = 1.5707964
 
 [node name="Area2D2" parent="." unique_id=1982071918 instance=ExtResource("4_471ew")]
-position = Vector2(320, 3)
+position = Vector2(448, 3)
 rotation = -1.5707964
 
 [node name="enemies" type="Node2D" parent="." unique_id=1644491747]
 
 [node name="CharacterBody2D" parent="enemies" unique_id=526774511 instance=ExtResource("5_xnrun")]
-position = Vector2(322, 88)
+position = Vector2(435, 196)
