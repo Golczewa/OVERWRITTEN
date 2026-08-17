@@ -4,6 +4,8 @@ extends CharacterBody2D
 @onready var hrocket_pack: PackedScene = preload("res://scenes/effects/hoaming_rocket.tscn")
 @onready var danger_zone_pack: PackedScene = preload("res://scenes/effects/death_from_above.tscn")
 @onready var ghost_pack: PackedScene = preload("res://scenes/enemies/scavenger_leader_ghost.tscn")
+@onready var parts_pack:PackedScene = preload("res://scenes/enemies/scavenger_leader_parts.tscn")
+@onready var explosion_pack:PackedScene  = preload("res://scenes/effects/rocket_explosion.tscn")
 
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
 @onready var shield: StaticBody2D = $body/shield
@@ -42,6 +44,7 @@ func _physics_process(_delta: float) -> void:
 		move_and_slide()
 		if get_slide_collision_count() > 0:
 			is_charging = false
+			sword.play("default")
 			for i in get_slide_collision_count():
 				var collision = get_slide_collision(i)
 				var collider = collision.get_collider()
@@ -90,9 +93,24 @@ func chose_attack() -> void:
 	if in_cooldown or dead:
 		return
 	if can_see_player():
-		charge()
+		match randi_range(0, 3):
+			0:
+				charge()
+				attack_cooldonwn=3
+			1, 2:
+				fire_laucher()
+				attack_cooldonwn=2
+			3:
+				fire_hoaming_rocket()
+				attack_cooldonwn=3
 	else:
-		fire_hoaming_rocket()
+		match randi_range(0, 2):
+			0:
+				fire_hoaming_rocket()
+				attack_cooldonwn=3
+			_:
+				fire_above()
+				attack_cooldonwn=2
 	in_cooldown = true
 	get_tree().create_timer(attack_cooldonwn).timeout.connect(end_cooldown)
 
@@ -109,14 +127,32 @@ func distance(pos_a: Vector2, pos_b: Vector2) -> float:
 
 func take_damage(damage: int, _knockback: int) -> void:
 	health -= damage
+	print(health)
 	damage_effect()
 	if health <= 0:
 		die()
 
 
-func die() -> void:
-	pass  #TODO
-
+func die(explosion_time = 0.3, spread = 100) -> void:
+	in_cutscene=true
+	$body.hide()
+	var explosion=explosion_pack.instantiate()
+	explosion.scale *= 3
+	add_child(explosion)
+	for i in range(6):
+		var part = parts_pack.instantiate()
+		part.frame = i
+		part.rotate(randf_range(0, 3.14))
+		part.modulate = Color(0.25, 0.25, 0.25)
+		part.global_position = global_position
+		curr_floor.add_child(part)
+		var tween: Tween = create_tween()
+		tween.tween_property(
+			part,
+			"global_position",
+			global_position + Vector2(randf_range(-spread, spread), randf_range(-spread, spread)),
+			explosion_time
+		)
 
 func damage_effect() -> void:
 	if health > 0:
@@ -159,6 +195,7 @@ func fire_hoaming_rocket() -> void:
 	hrocket.global_position = rocket_spawn.global_position
 	hrocket.look_at(rocket_directory.global_position)
 	hrocket.direction = dir
+	hrocket.sender = self
 	curr_floor.add_child(hrocket)
 
 
@@ -194,13 +231,15 @@ func rotate_by(item: Node2D, angle: float, time: float = 0.1) -> void:
 
 func charge() -> void:
 	is_charging = true
+	sword.play("attack")
 	var charge_dir: Vector2 = (player.global_position - global_position).normalized()
 	rotate_by(shield, 0)
 	rotate_by(sword, 0)
 	rotate_by(laucher, -1.8)
 	rotate_by(legs, 0)
 	rotate_by($body/head, 0)
-	await rotate_by($body, charge_dir.angle())
+	rotate_by($body, charge_dir.angle())
+	await get_tree().create_timer(0.5).timeout
 	velocity = charge_dir * charge_speed
 	add_ghosts(charge_dir)
 

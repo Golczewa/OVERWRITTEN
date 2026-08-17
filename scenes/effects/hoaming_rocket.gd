@@ -13,6 +13,7 @@ var trace_len = 3
 var bullet_hit_wall = preload("res://scenes/effects/rocket_explosion.tscn")
 var bullet_hit_wall_inst
 var player: CharacterBody2D
+var sender: Node2D
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 
 
@@ -27,12 +28,10 @@ func _ready() -> void:
 
 func _on_body_enterd(body):
 	if body.is_in_group("enemies"):
-		if shot_by_player:
-			body.take_damage(dmg, 0)
-			if perced == perce:
-				spawn_explosion()
-				queue_free()
-			perced = perced + 1
+		if body == sender:
+			body.take_damage(3 * dmg, 0)
+			spawn_explosion()
+			queue_free()
 	elif body.is_in_group("player"):
 		if not shot_by_player:
 			body.player_take_dmg(dmg)

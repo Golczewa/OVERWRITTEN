@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://iumx4q2lqrkd"]
+
+[ext_resource type="Texture2D" uid="uid://ctx02ycfjuln1" path="res://asstets/enemies/scavenger_leader_parts.png" id="1_tsxi1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nba7q"]
+atlas = ExtResource("1_tsxi1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6nlc"]
+atlas = ExtResource("1_tsxi1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rb7oa"]
+atlas = ExtResource("1_tsxi1")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3naa8"]
+atlas = ExtResource("1_tsxi1")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0hvk"]
+atlas = ExtResource("1_tsxi1")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14euc"]
+atlas = ExtResource("1_tsxi1")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jiq1j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nba7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6nlc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rb7oa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3naa8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0hvk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14euc")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=837866692]
+sprite_frames = SubResource("SpriteFrames_jiq1j")
