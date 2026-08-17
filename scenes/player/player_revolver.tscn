@@ -31,7 +31,7 @@ bullet_pack = ExtResource("3_jf0n7")
 bullet_spawn = NodePath("Marker2D2")
 bullet_director = NodePath("Marker2D")
 weapon_area = NodePath("Area2D")
-rot_offset = 0.05
+rot_offset = 0.03
 
 [node name="Marker2D2" type="Marker2D" parent="." unique_id=1316597167]
 position = Vector2(30, 8)

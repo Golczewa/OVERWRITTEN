@@ -17,7 +17,7 @@ var max_health := 500
 var health: int = max_health
 var speed := 30
 var in_cutscene := false
-var rot_speed := 15
+var rot_speed := 0.5
 var shield_rot_speed := 5
 var dead := false
 var direction := Vector2.ZERO
@@ -28,16 +28,20 @@ var curr_floor: Floor
 
 func _ready() -> void:
 	curr_floor = get_parent().get_parent()
+	sword.play("default")
 
 
 func _physics_process(_delta: float) -> void:
 	if in_cutscene or !player:
 		return
-	$RayCast2D.target_position = player.position
+	$RayCast2D.target_position = $RayCast2D.to_local(player.global_position)
+	var target_angle = (player.global_position - global_position).angle()
+	shield.rotation = lerp_angle(shield.rotation, target_angle, rot_speed * _delta)
 	walk()
 	chose_attack()
 	velocity = direction * speed
 	$body/head.look_at(player.global_position)
+	sword.look_at(player.global_position)
 	move_and_slide()
 
 
@@ -72,7 +76,7 @@ func chose_attack() -> void:
 	if can_see_player():
 		fire_laucher()
 	else:
-		fire_above()
+		fire_hoaming_rocket()
 	in_cooldown = true
 	get_tree().create_timer(attack_cooldonwn).timeout.connect(end_cooldown)
 
@@ -105,7 +109,7 @@ func damage_effect() -> void:
 func fire_laucher(cooldown: float = 0.3) -> void:
 	if dead:
 		return
-	laucher.look_at(player.global_position.rotated(0.05))
+	await rotate_by(laucher, (player.global_position - global_position).rotated(0.05).angle())
 	spanwn_rocket(0)
 	if dead:
 		return
@@ -124,17 +128,15 @@ func spanwn_rocket(rot_degree: float) -> void:
 	var rocket: Node = rocket_pack.instantiate()
 	rocket.global_position = rocket_spawn.global_position
 	rocket.look_at(rocket_directory.global_position)
-	print(rocket.global_position, rocket_spawn.global_position, global_position)
 	rocket.direction = dir.rotated(rot_degree)
 	rocket.rotate(rot_degree)
 	curr_floor.add_child(rocket)
 
 
 func fire_hoaming_rocket() -> void:
-	#TODO
 	var dir = (rocket_directory.global_position - rocket_spawn.global_position).normalized()
 	var hrocket = hrocket_pack.instantiate()
-	laucher.look_at(player.global_position.rotated(0.05))
+	await rotate_by(laucher, (player.global_position - global_position).rotated(-1).angle())
 	hrocket.global_position = rocket_spawn.global_position
 	hrocket.look_at(rocket_directory.global_position)
 	hrocket.direction = dir
@@ -142,7 +144,7 @@ func fire_hoaming_rocket() -> void:
 
 
 func fire_above(spawn_range: Vector2 = Vector2(80, 80)) -> void:
-	laucher.look_at(player.global_position.rotated(0.05))
+	await rotate_by(laucher, (player.global_position - global_position).rotated(0.05).angle())
 	laucher.play("default")
 	await laucher.animation_finished
 	var spawn_area: Array[Vector2] = [
@@ -163,3 +165,9 @@ func can_see_player() -> bool:
 		var collider = $RayCast2D.get_collider()
 		return collider.is_in_group("player")
 	return true
+
+
+func rotate_by(item: Node2D, angle: float, time = 0.1):
+	var tween: Tween = create_tween()
+	tween.tween_property(item, "rotation", angle, time)
+	await tween.finished

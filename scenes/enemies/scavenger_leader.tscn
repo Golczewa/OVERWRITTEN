@@ -72,7 +72,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"attack",
-"speed": 15.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -224,7 +224,8 @@ frame_progress = 0.04108915
 [node name="sword" type="AnimatedSprite2D" parent="body" unique_id=209221972]
 show_behind_parent = true
 sprite_frames = SubResource("SpriteFrames_3s11r")
-frame_progress = 0.21742576
+frame = 1
+frame_progress = 0.43975312
 
 [node name="shield" type="StaticBody2D" parent="body" unique_id=115113230]
 show_behind_parent = true
@@ -244,13 +245,12 @@ show_behind_parent = true
 sprite_frames = SubResource("SpriteFrames_pnqb6")
 
 [node name="Marker2D" type="Marker2D" parent="body/laucher" unique_id=610100303]
-position = Vector2(28, -24)
+position = Vector2(44, -24)
 
 [node name="Marker2D2" type="Marker2D" parent="body/laucher" unique_id=319095363]
-position = Vector2(23, -24)
+position = Vector2(29, -24)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=116831680]
-visible = false
 shape = SubResource("CircleShape2D_jiq1j")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=137855195]

@@ -1,8 +1,10 @@
 extends Area2D
-var speed: int = 350
+var speed: int = 300
 var perce: int = 0
 var perced: int = 0
 var dmg: int = 50
+var living_time = 1.5
+var hoaming = true
 var velocity
 var direction
 var target
@@ -20,6 +22,7 @@ func _ready() -> void:
 	$RayCast2D.target_position = Vector2((speed) * get_physics_process_delta_time(), 0)
 	$AnimatedSprite2D.play("default")
 	player = get_tree().get_first_node_in_group("player")
+	get_tree().create_timer(living_time).timeout.connect(stop_hoaming)
 
 
 func _on_body_enterd(body):
@@ -55,13 +58,14 @@ func _physics_process(delta: float) -> void:
 			queue_free()
 		elif collider.is_in_group("window"):
 			collider.shatter(self)
-	travel()
+	if hoaming:
+		travel()
+		look_at(player.global_position)
 	velocity = direction * speed
 	position = position + velocity * delta
 
 
 func spawn_explosion():
-	print("hrocket explode")
 	bullet_hit_wall_inst.global_position = global_position
 	bullet_hit_wall_inst.rotation = velocity.angle()
 	get_tree().get_first_node_in_group("game").curr_scene.real_curr_floor.add_child(
@@ -71,5 +75,9 @@ func spawn_explosion():
 
 func travel():
 	nav_agent.target_position = player.global_position
-	direction = nav_agent.get_next_path_position()
-	print("hoaming...", direction)
+	var next_pos = nav_agent.get_next_path_position()
+	direction = global_position.direction_to(next_pos)
+
+
+func stop_hoaming() -> void:
+	hoaming = false
