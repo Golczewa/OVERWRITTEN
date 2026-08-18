@@ -16,6 +16,12 @@ func shatter(body: Node, shards_number = 8):
 		for i in range(shards_number):
 			var random_pos = direction.rotated(randf_range(-0.78, 0.78)) * randf_range(20, 60)
 			spawn_shard(global_position + random_pos)
+	elif body is PlayerWeapon:
+		$AnimatedSprite2D.play("broken")
+		var direction = (global_position - body.global_position).normalized()
+		for i in range(shards_number):
+			var random_pos = direction.rotated(randf_range(-0.78, 0.78)) * randf_range(20, 60)
+			spawn_shard(global_position + random_pos)
 
 
 func spawn_shard(end_pos: Vector2, time = 0.1):
