@@ -15,6 +15,7 @@ extends CharacterBody2D
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var rocket_spawn: Marker2D = $body/laucher/Marker2D2
 @onready var rocket_directory: Marker2D = $body/laucher/Marker2D
+@onready var boss_bar = player.get_node("Camera2D/CanvasLayer/ProgressBar2")
 
 var max_health := 500
 var health: int = max_health
@@ -30,6 +31,8 @@ var in_cooldown := false
 var attack_cooldonwn := 3
 var curr_floor: Floor
 
+signal end_charge
+
 
 func _ready() -> void:
 	curr_floor = get_parent().get_parent()
@@ -40,6 +43,12 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if in_cutscene or !player:
+		if is_charging:
+			move_and_slide()
+			if get_slide_collision_count() > 0:
+				is_charging = false
+				sword.play("default")
+				end_charge.emit()
 		return
 	if is_charging:
 		move_and_slide()
@@ -47,12 +56,14 @@ func _physics_process(_delta: float) -> void:
 			is_charging = false
 			sword.play("default")
 			rotate_by($body, 0)
+			end_charge.emit()
 			for i in get_slide_collision_count():
 				var collision = get_slide_collision(i)
 				var collider = collision.get_collider()
+				print(collider.name)
 				if collider is CharacterBody2D:
 					if collider.is_in_group("player"):
-						player.player_take_dmg(75)
+						player.player_take_dmg(65)
 						break
 		return
 	$RayCast2D.target_position = $RayCast2D.to_local(player.global_position)
@@ -130,12 +141,15 @@ func distance(pos_a: Vector2, pos_b: Vector2) -> float:
 func take_damage(damage: int, _knockback: int) -> void:
 	health -= damage
 	print(health)
+	boss_bar.update(health)
 	damage_effect()
 	if health <= 0:
 		die()
 
 
 func die(explosion_time = 0.3, spread = 100) -> void:
+	curr_floor.enemies = curr_floor.enemies - 1
+	boss_bar.boss_is_out()
 	in_cutscene=true
 	$body.hide()
 	$CollisionShape2D.set_deferred("disabled", true)
@@ -255,3 +269,19 @@ func add_ghosts(dir: Vector2):
 		ghost.look_at(dir)
 		get_tree().current_scene.add_child(ghost)
 		await get_tree().create_timer(0.01).timeout
+
+func toogle_cutscene():
+	in_cutscene=!in_cutscene
+
+func charge_cutscene() -> void:
+	is_charging = true
+	sword.play("attack")
+	var charge_dir: Vector2=Vector2(1,0)
+	await get_tree().create_timer(0.5).timeout
+	velocity = charge_dir * charge_speed
+	add_ghosts(charge_dir)
+
+func turn_cutscene():
+	var tween=	create_tween()
+	tween.tween_property(self,"rotation_degrees",-90,2)
+	await tween.finished
