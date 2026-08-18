@@ -26,3 +26,6 @@ rotation = 1.5707964
 
 [node name="Node2D" parent="." unique_id=994559580 instance=ExtResource("5_xnrun")]
 position = Vector2(3, 448)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=187076377]
+color = Color(0.89492244, 0.89492244, 0.8949223, 1)

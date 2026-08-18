@@ -4,8 +4,8 @@ extends CharacterBody2D
 @onready var hrocket_pack: PackedScene = preload("res://scenes/effects/hoaming_rocket.tscn")
 @onready var danger_zone_pack: PackedScene = preload("res://scenes/effects/death_from_above.tscn")
 @onready var ghost_pack: PackedScene = preload("res://scenes/enemies/scavenger_leader_ghost.tscn")
-@onready var parts_pack:PackedScene = preload("res://scenes/enemies/scavenger_leader_parts.tscn")
-@onready var explosion_pack:PackedScene  = preload("res://scenes/effects/rocket_explosion.tscn")
+@onready var parts_pack: PackedScene = preload("res://scenes/enemies/scavenger_leader_parts.tscn")
+@onready var explosion_pack: PackedScene = preload("res://scenes/effects/rocket_explosion.tscn")
 
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
 @onready var shield: StaticBody2D = $body/shield
@@ -109,21 +109,21 @@ func chose_attack() -> void:
 		match randi_range(0, 3):
 			0:
 				charge()
-				attack_cooldonwn=3
+				attack_cooldonwn = 3
 			1, 2:
 				fire_laucher()
-				attack_cooldonwn=2
+				attack_cooldonwn = 2
 			3:
 				fire_hoaming_rocket()
-				attack_cooldonwn=3
+				attack_cooldonwn = 3
 	else:
 		match randi_range(0, 2):
 			0:
 				fire_hoaming_rocket()
-				attack_cooldonwn=3
+				attack_cooldonwn = 3
 			_:
 				fire_above()
-				attack_cooldonwn=2
+				attack_cooldonwn = 2
 	in_cooldown = true
 	get_tree().create_timer(attack_cooldonwn).timeout.connect(end_cooldown)
 
@@ -150,11 +150,11 @@ func take_damage(damage: int, _knockback: int) -> void:
 func die(explosion_time = 0.3, spread = 100) -> void:
 	curr_floor.enemies = curr_floor.enemies - 1
 	boss_bar.boss_is_out()
-	in_cutscene=true
+	in_cutscene = true
 	$body.hide()
 	$CollisionShape2D.set_deferred("disabled", true)
 	$body/shield/CollisionShape2D.set_deferred("disabled", true)
-	var explosion=explosion_pack.instantiate()
+	var explosion = explosion_pack.instantiate()
 	explosion.scale *= 3
 	add_child(explosion)
 	for i in range(6):
@@ -171,6 +171,7 @@ func die(explosion_time = 0.3, spread = 100) -> void:
 			global_position + Vector2(randf_range(-spread, spread), randf_range(-spread, spread)),
 			explosion_time
 		)
+
 
 func damage_effect() -> void:
 	if health > 0:
@@ -270,18 +271,21 @@ func add_ghosts(dir: Vector2):
 		get_tree().current_scene.add_child(ghost)
 		await get_tree().create_timer(0.01).timeout
 
+
 func toogle_cutscene():
-	in_cutscene=!in_cutscene
+	in_cutscene = !in_cutscene
+
 
 func charge_cutscene() -> void:
 	is_charging = true
 	sword.play("attack")
-	var charge_dir: Vector2=Vector2(1,0)
+	var charge_dir: Vector2 = Vector2(1, 0)
 	await get_tree().create_timer(0.5).timeout
 	velocity = charge_dir * charge_speed
 	add_ghosts(charge_dir)
 
+
 func turn_cutscene():
-	var tween=	create_tween()
-	tween.tween_property(self,"rotation_degrees",-90,2)
+	var tween = create_tween()
+	tween.tween_property(self, "rotation_degrees", -90, 2)
 	await tween.finished

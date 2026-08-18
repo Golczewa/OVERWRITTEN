@@ -1,6 +1,7 @@
 extends Control
 
-@export var titles:Array[String]=["By Golczewa"]
+@export var titles: Array[String] = ["By Golczewa"]
+
 
 func _ready() -> void:
 	get_tree().current_scene.menu.connect(come)
@@ -10,8 +11,8 @@ func _ready() -> void:
 	$map_choice/AspectRatioContainer.close_button.pressed.connect(get_main_menu)
 	$Control/Button.pressed.connect(get_main_menu)
 	$Panel/VBoxContainer/Button2.pressed.connect(show_quit_game_panel)
-	var title_num=randi_range(0,len(titles)-1)
-	$Panel/Label2.text=titles[title_num]
+	var title_num = randi_range(0, len(titles) - 1)
+	$Panel/Label2.text = titles[title_num]
 
 
 func open_map_choice():

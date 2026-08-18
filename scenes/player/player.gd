@@ -30,7 +30,7 @@ var invincible: bool = false
 var invisible: bool = false
 var kill_swich: bool = false
 var floor_jumping: bool = false
-var camera_fallow:Node2D
+var camera_fallow: Node2D
 
 var default_state = {
 	"health": max_health, "charges": 3, "replenish_queue": 0, "can_dash": true, "cd": 0
@@ -63,9 +63,9 @@ func _physics_process(_delta: float) -> void:
 				velocity = velocity.move_toward(Vector2.ZERO, SPEED)
 				legs.stop()
 		move_and_slide()
-	else :
+	else:
 		if camera_fallow:
-			$Camera2D.global_position=camera_fallow.global_position
+			$Camera2D.global_position = camera_fallow.global_position
 
 
 func _process(_delta: float) -> void:
@@ -319,12 +319,13 @@ func focus_camera(pos: Vector2, travel_time = 1):
 	tween.tween_property($Camera2D, "global_position", pos, travel_time)
 	await tween.finished
 
-func set_camera_fallow(who:Node2D):
-	camera_fallow=who
+
+func set_camera_fallow(who: Node2D):
+	camera_fallow = who
 
 
 func retrun_camera():
-	camera_fallow=null
+	camera_fallow = null
 	$Camera2D.global_position = global_position
 
 

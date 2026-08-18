@@ -26,6 +26,7 @@ var in_range: bool = false
 var dead = false
 var spawn_dest = Vector2.ZERO
 var is_spawning = false
+var can_attack: bool = false
 signal died
 
 
@@ -204,4 +205,11 @@ func big_entrance(pos: Vector2) -> void:
 
 
 func _fire_weapon():
-	weapon.attack()
+	if can_attack:
+		weapon.attack()
+	else:
+		get_tree().create_timer(1).timeout.connect(set_can_attack)
+
+
+func set_can_attack():
+	can_attack = true

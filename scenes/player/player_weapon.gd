@@ -24,7 +24,8 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	look_at(get_global_mouse_position().rotated(weapon_rot))
+	look_at(get_global_mouse_position())
+	rotation += weapon_rot
 
 
 func end_cd():

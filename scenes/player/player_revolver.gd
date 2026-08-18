@@ -7,6 +7,7 @@ func attack():
 	if can_attack:
 		_spawn_bullet(0, 4)
 		get_tree().create_timer(cooldown).timeout.connect(end_cd)
+		can_attack = false
 
 # extends AnimatedSprite2D
 # var can_attack = true

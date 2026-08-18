@@ -46,7 +46,7 @@ bullet_pack = ExtResource("3_mudg7")
 bullet_spawn = NodePath("Marker2D")
 bullet_director = NodePath("Marker2D2")
 weapon_area = NodePath("Area2D")
-rot_offset = 0.01
+rot_offset = 0.03
 metadata/_custom_type_script = "uid://dfbm30t6o3vps"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1088266034]
