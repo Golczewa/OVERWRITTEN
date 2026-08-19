@@ -32,7 +32,7 @@ func end_cd():
 	can_attack = true
 
 
-func attack():
+func attack(_event: String) -> void:
 	if can_attack:
 		get_tree().create_timer(cooldown).timeout.connect(end_cd)
 
@@ -45,9 +45,9 @@ func is_hand_in_wall():
 	return false
 
 
-func _spawn_bullet(rot_angle = 0, spred_angle = 2):
+func _spawn_bullet(rot_angle = 0, spred_angle = 2, pierce = 0):
 	var bullet = bullet_pack.instantiate()
-	bullet.perce = 0
+	bullet.perce = pierce
 	bullet.dmg = dmg
 	var random_angle = deg_to_rad(randf_range(-spred_angle, spred_angle))
 	bullet.shot_by_player = true

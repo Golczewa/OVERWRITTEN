@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ce2wib3130occ"]
+
+[ext_resource type="Script" uid="uid://xu2mdwm8ty1v" path="res://scenes/effects/shoot_the_wall.gd" id="1_fbcwm"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jiq1j"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 46.149998
+initial_velocity_max = 46.149998
+gravity = Vector3(0, 0, 0)
+scale_min = 2.0
+scale_max = 2.0
+color = Color(1, 0.8039216, 0, 1)
+
+[node name="GPUParticles2D" type="GPUParticles2D" unique_id=838024039]
+emitting = false
+lifetime = 0.33
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_jiq1j")
+script = ExtResource("1_fbcwm")

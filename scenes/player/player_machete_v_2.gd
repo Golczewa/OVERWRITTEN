@@ -1,7 +1,7 @@
 extends PlayerWeapon
 
 
-func attack():
+func attack(_event):
 	if can_attack:
 		play("0")
 		var bodies = mele_area.get_overlapping_bodies()

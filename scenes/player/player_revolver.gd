@@ -1,11 +1,11 @@
 extends PlayerWeapon
 
 
-func attack():
+func attack(_event):
 	if is_hand_in_wall():
 		return
 	if can_attack:
-		_spawn_bullet(0, 4)
+		_spawn_bullet(0, 4, 1)
 		get_tree().create_timer(cooldown).timeout.connect(end_cd)
 		can_attack = false
 

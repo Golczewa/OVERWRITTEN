@@ -59,12 +59,14 @@ size = Vector2(6, 128)
 script = ExtResource("1_emc65")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1314641855]
+visible = false
 position = Vector2(57.999996, 41)
 rotation = -1.0995574
 scale = Vector2(0.6151056, 0.6662621)
 texture = ExtResource("4_o105g")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2043541229]
+visible = false
 position = Vector2(42.378532, -56.69651)
 rotation = -2.146755
 scale = Vector2(0.6151056, 0.66626203)

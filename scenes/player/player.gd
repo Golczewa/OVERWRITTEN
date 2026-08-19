@@ -73,17 +73,14 @@ func _process(_delta: float) -> void:
 		charges.update_value(heal_cd - $Timer.time_left)
 	else:
 		charges.update_value(heal_cd)
+	if Input.is_action_just_pressed("attack_left"):
+		left_weapon.attack("attack_left")
+	if Input.is_action_just_pressed("attack_right"):
+		right_weapon.attack("attack_right")
 
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and not in_cutscene:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			if event.pressed:
-				right_weapon.attack()
-		elif event.button_index == MOUSE_BUTTON_RIGHT:
-			if event.pressed:
-				left_weapon.attack()
-	elif event is InputEventKey:
+	if event is InputEventKey:
 		if event.keycode == KEY_SHIFT and event.pressed:
 			_dash()
 		elif event.keycode == KEY_F and event.pressed:

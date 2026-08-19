@@ -1,7 +1,7 @@
 extends PlayerWeapon
 
 
-func attack():
+func attack(_event):
 	if can_attack:
 		can_attack = false
 		if not is_hand_in_wall():
