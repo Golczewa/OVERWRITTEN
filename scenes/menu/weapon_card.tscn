@@ -1,12 +1,40 @@
 [gd_scene format=3 uid="uid://bpf5ntl6k4qfh"]
 
 [ext_resource type="Script" uid="uid://b52abn5ec2n20" path="res://scenes/menu/weapon_card.gd" id="1_6anpk"]
-[ext_resource type="Texture2D" uid="uid://bqwfb4qaeux6k" path="res://icon.svg" id="1_gtl4y"]
-[ext_resource type="FontFile" uid="uid://d1feesbwk46ll" path="res://asstets/menu/DroidSansMono.ttf" id="2_6anpk"]
+[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="3_6anpk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u1kcl"]
+bg_color = Color(0.5372549, 0, 0, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.5455139, 0, 0.034204792, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gtl4y"]
+bg_color = Color(0.4392157, 0.101960786, 0.14509805, 0.58431375)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.5455139, 0, 0.034204792, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6anpk"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.5455139, 0, 0.034204792, 1)
+
+[sub_resource type="Theme" id="Theme_gtl4y"]
+Button/styles/hover = SubResource("StyleBoxFlat_u1kcl")
+Button/styles/normal = SubResource("StyleBoxFlat_gtl4y")
+Button/styles/pressed = SubResource("StyleBoxFlat_6anpk")
 
 [sub_resource type="LabelSettings" id="LabelSettings_u1kcl"]
-font = ExtResource("2_6anpk")
-font_size = 32
+font = ExtResource("3_6anpk")
+font_size = 28
 
 [node name="Control" type="Control" unique_id=1310289588]
 layout_mode = 3
@@ -22,22 +50,25 @@ script = ExtResource("1_6anpk")
 [node name="button" type="Button" parent="." unique_id=1245102975]
 layout_mode = 0
 offset_right = 196.0
-offset_bottom = 204.0
+offset_bottom = 173.0
+theme = SubResource("Theme_gtl4y")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1166471362]
 layout_mode = 0
-offset_left = 33.0
-offset_top = 16.0
-offset_right = 161.0
-offset_bottom = 144.0
-texture = ExtResource("1_gtl4y")
+offset_left = 46.0
+offset_top = -21.0
+offset_right = 190.0
+offset_bottom = 75.0
+rotation = 0.286234
 
 [node name="Label" type="Label" parent="." unique_id=1399336506]
+custom_minimum_size = Vector2(1, 1)
 layout_mode = 0
-offset_left = 8.0
-offset_top = 153.0
-offset_right = 187.0
-offset_bottom = 196.0
-text = "Weapon"
+offset_left = 11.0
+offset_top = 99.0
+offset_right = 190.0
+offset_bottom = 142.0
+text = "Glass canon"
 label_settings = SubResource("LabelSettings_u1kcl")
 horizontal_alignment = 1
+autowrap_mode = 3

@@ -10,7 +10,7 @@ initial_velocity_max = 46.149998
 gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
-color = Color(1, 0.8039216, 0, 1)
+color = Color(1, 0.7372549, 0, 1)
 
 [node name="GPUParticles2D" type="GPUParticles2D" unique_id=838024039]
 emitting = false

@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bl0mvsi18ij2l" path="res://scenes/menu/post_menu.gd" id="1_f38p2"]
 [ext_resource type="PackedScene" uid="uid://bpf5ntl6k4qfh" path="res://scenes/menu/weapon_card.tscn" id="1_wxtlm"]
+[ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="2_6lxor"]
 
-[node name="Control" type="Control" unique_id=77048239]
+[node name="Control" type="Control" unique_id=504853177 node_paths=PackedStringArray("panel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,20 +12,28 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_f38p2")
+panel = NodePath("AspectRatioContainer")
+metadata/_custom_type_script = "uid://8vimbe8e08su"
+
+[node name="AspectRatioContainer" parent="." unique_id=1461861251 instance=ExtResource("2_6lxor")]
+layout_mode = 0
+offset_right = 582.0
+offset_bottom = 544.0
+title = "Pneumatic post"
 
 [node name="Control" parent="." unique_id=1310289588 instance=ExtResource("1_wxtlm")]
 layout_mode = 1
-offset_left = 376.0
-offset_top = 153.0
-offset_right = 376.0
-offset_bottom = 153.0
+offset_left = 66.0
+offset_top = 70.0
+offset_right = 66.0
+offset_bottom = 70.0
 in_game = true
 
 [node name="Control2" parent="." unique_id=1779067292 instance=ExtResource("1_wxtlm")]
 layout_mode = 1
-offset_left = 649.0
-offset_top = 155.0
-offset_right = 649.0
-offset_bottom = 155.0
+offset_left = 321.0
+offset_top = 73.0
+offset_right = 321.0
+offset_bottom = 73.0
 in_game = true
 hand = "right"

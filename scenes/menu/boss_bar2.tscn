@@ -16,6 +16,7 @@ script = ExtResource("1_rvw0o")
 layout_mode = 0
 offset_right = 780.0
 offset_bottom = 98.0
+allow_spaces = true
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1275135641]
 modulate = Color(0.54509807, 0, 0.03529412, 1)

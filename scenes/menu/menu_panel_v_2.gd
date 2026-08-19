@@ -1,7 +1,10 @@
 extends PanelContainer
 
+
+@export var allow_spaces:bool=false
 @export var title: String = "Title"
 @onready var close_button: Button = $VBoxContainer/PanelContainer/HBoxContainer/Button
+
 const begin_h = 80
 const anim_time = 0.1
 
@@ -34,6 +37,7 @@ func close_animation():
 
 
 func format_title(text = title) -> void:
-	title = text
-	title = title.replace(" ", "_")
+	if not allow_spaces:
+		title = text
+		title = title.replace(" ", "_")
 	$VBoxContainer/PanelContainer/HBoxContainer/Label.text = " " + title + ".ovr"

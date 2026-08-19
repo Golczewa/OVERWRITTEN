@@ -6,5 +6,6 @@ func _ready() -> void:
 
 
 func life():
+	print("emitted")
 	emitting = true
 	finished.connect(queue_free)
