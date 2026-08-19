@@ -5,7 +5,7 @@ var shard_pack: PackedScene = preload("res://scenes/effects/window_shard.tscn")
 var broken := false
 
 
-func shatter(body: Node, shards_number = 8):
+func shatter(body: Node2D, shards_number = 8):
 	if broken:
 		return
 	broken = true

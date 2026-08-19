@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://iuedbxgfku1v"]
 
 [ext_resource type="Texture2D" uid="uid://18vttnag6lfo" path="res://asstets/player/chainsaw_sword.png" id="1_yycl8"]
-[ext_resource type="Script" uid="uid://dfbm30t6o3vps" path="res://scenes/player/player_weapon.gd" id="2_m4w4o"]
+[ext_resource type="Script" uid="uid://b07d28o8w673d" path="res://scenes/player/player_chainsaw.gd" id="2_yycl8"]
 [ext_resource type="Texture2D" uid="uid://dqalvdhpngak" path="res://asstets/player/playerHand.png" id="3_h53pi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6pfbh"]
@@ -50,9 +50,11 @@ size = Vector2(34, 36)
 
 [node name="PlayerWeapon" type="AnimatedSprite2D" unique_id=2082288448 node_paths=PackedStringArray("mele_area")]
 sprite_frames = SubResource("SpriteFrames_jiq1j")
-animation = &"attack"
 offset = Vector2(5, -4)
-script = ExtResource("2_m4w4o")
+script = ExtResource("2_yycl8")
+dmg = 3
+cooldown = 0.0
+knockback = 0
 mele_area = NodePath("Area2D")
 metadata/_custom_type_script = "uid://dfbm30t6o3vps"
 
