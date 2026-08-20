@@ -9,6 +9,9 @@ func attack(_event):
 		get_tree().create_timer(cooldown).timeout.connect(end_cd)
 		can_attack = false
 
+func _upper():
+	if upper:
+		$Sprite2D.play("upper")
 # extends AnimatedSprite2D
 # var can_attack = true
 # var bullet_test = preload("res://scenes/effects/bullet_test.tscn")

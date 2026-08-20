@@ -17,3 +17,7 @@ func attack(_event):
 func end_cd():
 	play("default")
 	can_attack = true
+
+func _upper():
+	if upper:
+		$Sprite2D.play("upper")
