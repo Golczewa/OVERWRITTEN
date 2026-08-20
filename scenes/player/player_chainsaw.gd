@@ -34,6 +34,7 @@ func spawn_spark(node: Node2D) -> void:
 	node.add_child(sparks)
 	sparks.global_position = node.global_position
 
+
 func _upper():
 	if upper:
 		$Sprite2D.play("upper")

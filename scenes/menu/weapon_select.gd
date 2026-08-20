@@ -28,7 +28,8 @@ func _ready() -> void:
 		var card = card_pack.instantiate()
 		card.setup(
 			ConfigManager.weapons.get_value(str(i), "name", "unknown"),
-			ConfigManager.weapons.get_value(str(i), "image", "res://icon.svg")
+			ConfigManager.weapons.get_value(str(i), "image", "res://icon.svg"),
+			ConfigManager.player_config.get_value("unlocked_weapons", str(i))
 		)
 		card.mouse_entered.connect(display_disc.bind(i))
 		card.pressed.connect(untoggling.bind(card))
@@ -42,8 +43,16 @@ func _ready() -> void:
 
 
 func display_disc(i):
-	$TextureRect.texture = load(ConfigManager.weapons.get_value(str(i), "image", "res://icon.svg"))
-	$Label.text = ConfigManager.weapons.get_value(str(i), "description")
+	if ConfigManager.player_config.get_value("unlocked_weapons", str(i)):
+		$TextureRect.texture = load(
+			ConfigManager.weapons.get_value(str(i), "image", "res://icon.svg")
+		)
+		$Label2.text = ConfigManager.weapons.get_value(str(i), "name")
+		$Label.text = ConfigManager.weapons.get_value(str(i), "description")
+	else:
+		$TextureRect.texture = load("res://asstets/menu/locked.png")
+		$Label2.text = "???"
+		$Label.text = ""
 
 
 func begone():
@@ -69,7 +78,7 @@ func equip():
 	if weapon_num == current_weapon:
 		return
 	var other_hand = null
-	for side in ["left", "right"]:
+	for side in ["left", "right", "left_upper", "right_upper"]:
 		if side != hand and ConfigManager.player_config.get_value("weapons", side) == weapon_num:
 			other_hand = side
 			break

@@ -11,6 +11,7 @@ func attack(_event):
 		play("0")
 		get_tree().create_timer(cooldown).timeout.connect(end_cd)
 
+
 func _upper():
 	if upper:
 		$Sprite2D.play("upper")

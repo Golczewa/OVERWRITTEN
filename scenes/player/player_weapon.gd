@@ -4,7 +4,7 @@ class_name PlayerWeapon
 
 var can_attack = true
 var left_hand = false
-var upper=false
+var upper = false
 var weapon_rot: float
 @export var dmg := 30
 @export var cooldown = 0.6
@@ -62,6 +62,7 @@ func _spawn_bullet(rot_angle = 0, spred_angle = 2, pierce = 0):
 	get_tree().get_first_node_in_group("game").curr_scene.real_curr_floor.add_child(bullet)
 	bullet.look_at(bullet_director.global_position)
 	bullet.rotate(rot_angle)
+
 
 func _upper():
 	pass

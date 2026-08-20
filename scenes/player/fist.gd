@@ -7,7 +7,7 @@ func attack(_event):
 		var bodies = mele_area.get_overlapping_bodies()
 		if upper:
 			play("upper")
-		else :
+		else:
 			play("default")
 		for body in bodies:
 			if body.is_in_group("enemies"):
@@ -18,10 +18,10 @@ func attack(_event):
 		frame = 0
 		get_tree().create_timer(cooldown).timeout.connect(end_cd)
 
+
 func _upper():
-	animation="upper"
-	frame=0
-	
+	animation = "upper"
+	frame = 0
 
 # extends Area2D
 # var damage = 10

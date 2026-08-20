@@ -15,6 +15,7 @@ func attack(_event):
 		await animation_finished
 		frame = 0
 
+
 func _upper():
 	if upper:
 		$Sprite2D.play("upper")
