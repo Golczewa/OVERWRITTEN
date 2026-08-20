@@ -2,21 +2,19 @@ extends Control
 
 class_name MenuWindow
 
-@export var panel:PanelContainer
+@export var panel: PanelContainer
 
 var dragging = false
 var drag_offset = Vector2()
 var in_animation: bool = false
 
+
 func _ready() -> void:
 	hide()
-	panel.gui_input.connect(
-		_on_panel_container_gui_input
-	)
-	panel.gui_input.connect(
-		_on_panel_container_gui_input
-	)
+	panel.upper_panel.gui_input.connect(_on_panel_container_gui_input)
+	panel.upper_bar.gui_input.connect(_on_panel_container_gui_input)
 	panel.close_button.pressed.connect(begone)
+
 
 func _on_panel_container_gui_input(event):
 	if event is InputEventMouseButton:
@@ -41,6 +39,7 @@ func open():
 	for child in get_children():
 		if not child == panel:
 			child.show()
+
 
 func begone():
 	for child in get_children():

@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dj0ff7uioldw8" path="res://scenes/player/player_patchwork.gd" id="2_5tg5p"]
 [ext_resource type="Texture2D" uid="uid://dqalvdhpngak" path="res://asstets/player/playerHand.png" id="2_ouqbr"]
 [ext_resource type="PackedScene" uid="uid://c7334xe3kn3dl" path="res://scenes/effects/bullet_test.tscn" id="3_5tg5p"]
+[ext_resource type="Texture2D" uid="uid://cc1qdby3jfcoa" path="res://asstets/player/other_arm.png" id="5_hh8a5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5tg5p"]
 animations = [{
@@ -18,6 +19,25 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hh8a5"]
 size = Vector2(25, 2)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_03cxe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ouqbr")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_hh8a5")
+}],
+"loop": 0,
+"name": &"upper",
+"speed": 5.0
+}]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=397550067 node_paths=PackedStringArray("bullet_spawn", "bullet_director", "weapon_area")]
 sprite_frames = SubResource("SpriteFrames_5tg5p")
@@ -42,8 +62,8 @@ position = Vector2(29, 8)
 position = Vector2(11, 8)
 shape = SubResource("RectangleShape2D_hh8a5")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=677753002]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1487951454]
 show_behind_parent = true
 position = Vector2(2, 5)
 scale = Vector2(1, -1)
-texture = ExtResource("2_ouqbr")
+sprite_frames = SubResource("SpriteFrames_03cxe")

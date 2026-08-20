@@ -78,11 +78,11 @@ hand = "left"
 
 [node name="rightuphand" parent="AnimatedSprite2D" unique_id=1345014296 instance=ExtResource("4_tuyoq")]
 position = Vector2(-8, 4)
-hand = "right"
+hand = "right_upper"
 
 [node name="leftuphand" parent="AnimatedSprite2D" unique_id=173200585 instance=ExtResource("4_tuyoq")]
 position = Vector2(-8, -4)
-hand = "left"
+hand = "right_upper"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1840891722]
 shape = SubResource("RectangleShape2D_dqkch")

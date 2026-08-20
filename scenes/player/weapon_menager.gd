@@ -1,6 +1,6 @@
 extends Node2D
 
-@export_enum("left", "right") var hand: String
+@export_enum("left", "right", "left_upper", "right_upper") var hand: String
 
 
 func equip():
@@ -12,7 +12,7 @@ func equip():
 		ConfigManager.weapons.get_value(str(num), "path", "res://scenes/player/fist.tscn")
 	)
 	var weapon = weapon_pack.instantiate()
-	if hand == "left":
+	if hand == "left" or hand == "left_upper":
 		weapon.left_hand = true
 		weapon.scale = Vector2(1, -1)
 	add_child(weapon)

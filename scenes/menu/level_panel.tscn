@@ -33,6 +33,7 @@ offset_left = 21.0
 offset_top = 70.0
 offset_right = -726.0
 offset_bottom = -253.0
+hand = "left"
 
 [node name="Control2" parent="." unique_id=2034477685 instance=ExtResource("3_dxkar")]
 layout_mode = 1
@@ -41,6 +42,14 @@ offset_top = 70.0
 offset_right = -519.0
 offset_bottom = -254.0
 hand = "right"
+
+[node name="Control3" parent="." unique_id=624613275 instance=ExtResource("3_dxkar")]
+layout_mode = 1
+offset_left = 21.0
+offset_top = 249.0
+offset_right = -727.0
+offset_bottom = -104.0
+hand = "left"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1367755251]
 layout_mode = 0
@@ -68,10 +77,10 @@ offset_bottom = 474.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=559127815]
 layout_mode = 0
-offset_left = 62.0
-offset_top = 422.0
-offset_right = 314.0
-offset_bottom = 462.0
+offset_left = 38.0
+offset_top = 446.0
+offset_right = 324.0
+offset_bottom = 486.0
 theme_override_constants/separation = 50
 
 [node name="Button" parent="HBoxContainer" unique_id=2078812563 instance=ExtResource("5_iss5n")]
@@ -83,3 +92,11 @@ alignment = 1
 layout_mode = 2
 text = "  Play "
 alignment = 1
+
+[node name="Control4" parent="." unique_id=2125409759 instance=ExtResource("3_dxkar")]
+layout_mode = 1
+offset_left = 228.0
+offset_top = 249.0
+offset_right = -520.0
+offset_bottom = -104.0
+hand = "left"

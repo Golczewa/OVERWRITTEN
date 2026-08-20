@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dqalvdhpngak" path="res://asstets/player/playerHand.png" id="2_4txer"]
 [ext_resource type="Script" uid="uid://bi3p03jyem56l" path="res://scenes/player/player_triple_r.gd" id="2_mudg7"]
 [ext_resource type="PackedScene" uid="uid://bp8rfuaig8wcf" path="res://scenes/effects/rocket.tscn" id="3_mudg7"]
+[ext_resource type="Texture2D" uid="uid://cc1qdby3jfcoa" path="res://asstets/player/other_arm.png" id="5_nn178"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nn178"]
 atlas = ExtResource("1_2imax")
@@ -32,6 +33,25 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_s7il6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4txer")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_nn178")
+}],
+"loop": 0,
+"name": &"upper",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jiq1j"]
 size = Vector2(16.5, 3)
 
@@ -48,11 +68,12 @@ weapon_area = NodePath("Area2D")
 rot_offset = 0.03
 metadata/_custom_type_script = "uid://dfbm30t6o3vps"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1088266034]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1398361947]
 show_behind_parent = true
 position = Vector2(2, 5)
 scale = Vector2(1, -1)
-texture = ExtResource("2_4txer")
+sprite_frames = SubResource("SpriteFrames_s7il6")
+animation = &"upper"
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1785736480]
 position = Vector2(22, 7)

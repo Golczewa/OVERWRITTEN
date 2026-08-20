@@ -254,6 +254,8 @@ func add_ghost():
 func equip_weapons():
 	right_weapon = $AnimatedSprite2D/righthand.equip()
 	left_weapon = $AnimatedSprite2D/lefthand.equip()
+	left_up_weapon=$AnimatedSprite2D/leftuphand.equip()
+	right_up_weapon=$AnimatedSprite2D/rightuphand.equip()
 
 
 func exit_anim(pos_a: Vector2, pos_b: Vector2, anim_time: int = 1):

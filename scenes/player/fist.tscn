@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bkhtemel8lin2" path="res://asstets/player/fist.png" id="1_13ffo"]
 [ext_resource type="Script" uid="uid://docl282vob1qf" path="res://scenes/player/fist.gd" id="1_ku1og"]
+[ext_resource type="Texture2D" uid="uid://cymummawncy4v" path="res://asstets/player/fist2.aseprite.png" id="2_sbfs3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ku1og"]
 atlas = ExtResource("1_13ffo")
@@ -21,6 +22,26 @@ region = Rect2(384, 0, 128, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sy0e2"]
 atlas = ExtResource("1_13ffo")
+region = Rect2(512, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kts4k"]
+atlas = ExtResource("2_sbfs3")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qlqt"]
+atlas = ExtResource("2_sbfs3")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iw3to"]
+atlas = ExtResource("2_sbfs3")
+region = Rect2(256, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ylij"]
+atlas = ExtResource("2_sbfs3")
+region = Rect2(384, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6mepe"]
+atlas = ExtResource("2_sbfs3")
 region = Rect2(512, 0, 128, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kts4k"]
@@ -49,6 +70,26 @@ animations = [{
 }],
 "loop": 0,
 "name": &"default",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kts4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qlqt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iw3to")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ylij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6mepe")
+}],
+"loop": 0,
+"name": &"upper",
 "speed": 20.0
 }]
 

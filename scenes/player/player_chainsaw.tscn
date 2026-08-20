@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://18vttnag6lfo" path="res://asstets/player/chainsaw_sword.png" id="1_yycl8"]
 [ext_resource type="Script" uid="uid://b07d28o8w673d" path="res://scenes/player/player_chainsaw.gd" id="2_yycl8"]
 [ext_resource type="Texture2D" uid="uid://dqalvdhpngak" path="res://asstets/player/playerHand.png" id="3_h53pi"]
+[ext_resource type="Texture2D" uid="uid://cc1qdby3jfcoa" path="res://asstets/player/other_arm.png" id="4_m4w4o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6pfbh"]
 atlas = ExtResource("1_yycl8")
@@ -45,6 +46,25 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_h53pi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_h53pi")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_m4w4o")
+}],
+"loop": 0,
+"name": &"upper",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jiq1j"]
 size = Vector2(34, 36)
 
@@ -58,11 +78,11 @@ knockback = 0
 mele_area = NodePath("Area2D")
 metadata/_custom_type_script = "uid://dfbm30t6o3vps"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=608913677]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=166676482]
 show_behind_parent = true
 position = Vector2(2, 5)
 scale = Vector2(1, -1)
-texture = ExtResource("3_h53pi")
+sprite_frames = SubResource("SpriteFrames_h53pi")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=676419828]
 collision_mask = 15

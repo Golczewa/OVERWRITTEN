@@ -2,7 +2,7 @@ extends Control
 var panel_pack = preload("res://scenes/menu/weapon_select.tscn")
 @export var in_game: bool = false
 var where_add_menu
-@export var hand = "left"
+@export_enum("left", "right", "left_upper", "right_upper") var hand: String
 signal update_all_sig
 
 

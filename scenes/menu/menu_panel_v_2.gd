@@ -1,9 +1,10 @@
 extends PanelContainer
 
-
-@export var allow_spaces:bool=false
+@export var allow_spaces: bool = false
 @export var title: String = "Title"
 @onready var close_button: Button = $VBoxContainer/PanelContainer/HBoxContainer/Button
+@onready var upper_panel: PanelContainer = $VBoxContainer/PanelContainer
+@onready var upper_bar: Control = $VBoxContainer/PanelContainer/HBoxContainer/Control
 
 const begin_h = 80
 const anim_time = 0.1

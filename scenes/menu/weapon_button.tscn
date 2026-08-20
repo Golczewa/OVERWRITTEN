@@ -2,11 +2,41 @@
 
 [ext_resource type="Script" uid="uid://slvrdhtf1ckb" path="res://scenes/menu/weapon_button.gd" id="1_8mc0j"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8mc0j"]
+bg_color = Color(0.5372549, 0, 0, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.5455139, 0, 0.034204792, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2hsta"]
+bg_color = Color(0.4392157, 0.101960786, 0.14509805, 0.58431375)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.5455139, 0, 0.034204792, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rf2aw"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.5455139, 0, 0.034204792, 1)
+
+[sub_resource type="Theme" id="Theme_uq21j"]
+Button/styles/hover = SubResource("StyleBoxFlat_8mc0j")
+Button/styles/normal = SubResource("StyleBoxFlat_2hsta")
+Button/styles/pressed = SubResource("StyleBoxFlat_rf2aw")
+
 [sub_resource type="ImageTexture" id="ImageTexture_ptp5o"]
 
 [node name="Button" type="Button" unique_id=167595797]
-offset_right = 116.0
-offset_bottom = 38.0
+offset_right = 115.0
+offset_bottom = 56.0
+theme = SubResource("Theme_uq21j")
 toggle_mode = true
 icon = SubResource("ImageTexture_ptp5o")
 script = ExtResource("1_8mc0j")
