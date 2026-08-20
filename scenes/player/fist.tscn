@@ -87,6 +87,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6mepe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6mepe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6mepe")
 }],
 "loop": 0,
 "name": &"upper",
@@ -94,10 +100,11 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qlqt"]
-size = Vector2(41.75, 12.5)
+size = Vector2(49.875, 17.25)
 
 [node name="Area2D" type="AnimatedSprite2D" unique_id=1698438607 node_paths=PackedStringArray("mele_area")]
 sprite_frames = SubResource("SpriteFrames_kts4k")
+animation = &"upper"
 offset = Vector2(50, 7)
 script = ExtResource("1_ku1og")
 mele_area = NodePath("Area2D")
@@ -107,5 +114,5 @@ metadata/_custom_type_script = "uid://dfbm30t6o3vps"
 collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=423846278]
-position = Vector2(24, 6)
+position = Vector2(28.0625, 3.625)
 shape = SubResource("RectangleShape2D_8qlqt")

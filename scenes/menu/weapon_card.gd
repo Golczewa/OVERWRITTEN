@@ -25,11 +25,21 @@ func weapon_panel():
 
 
 func update():
-	var num = ConfigManager.player_config.get_value("weapons", hand)
-	$Label.text = ConfigManager.weapons.get_value(str(num), "name", "skill issue")
-	$TextureRect.texture = load(
-		ConfigManager.weapons.get_value(str(num), "image", "res://icon.svg")
-	)
+	if ConfigManager.player_config.get_value("hands",hand,false):
+		$button.disabled=false
+		var num = ConfigManager.player_config.get_value("weapons", hand)
+		$Label.text = ConfigManager.weapons.get_value(str(num), "name", "skill issue")
+		$TextureRect.texture = load(
+			ConfigManager.weapons.get_value(str(num), "image", "res://icon.svg")
+		)
+		$TextureRect.rotation_degrees=16.4
+		$TextureRect.position=Vector2(46,-21)
+	else :
+		$Label.text="Locked"
+		$TextureRect.texture=load("res://asstets/menu/locked.png")
+		$TextureRect.rotation=0
+		$TextureRect.position=Vector2(28,8)
+		$button.disabled=true
 
 
 func update_all():

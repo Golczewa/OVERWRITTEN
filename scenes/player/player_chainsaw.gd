@@ -9,6 +9,7 @@ func _ready() -> void:
 		weapon_rot = rot_offset
 	else:
 		weapon_rot = -rot_offset
+	_upper()
 
 
 func attack(_event: String) -> void:

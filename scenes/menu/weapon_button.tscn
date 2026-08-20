@@ -2,6 +2,14 @@
 
 [ext_resource type="Script" uid="uid://slvrdhtf1ckb" path="res://scenes/menu/weapon_button.gd" id="1_8mc0j"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uq21j"]
+bg_color = Color(0.24115604, 0.24115604, 0.24115604, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.09239707, 0.09239706, 0.09239706, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8mc0j"]
 bg_color = Color(0.5372549, 0, 0, 1)
 border_width_left = 7
@@ -27,6 +35,7 @@ border_width_bottom = 7
 border_color = Color(0.5455139, 0, 0.034204792, 1)
 
 [sub_resource type="Theme" id="Theme_uq21j"]
+Button/styles/disabled = SubResource("StyleBoxFlat_uq21j")
 Button/styles/hover = SubResource("StyleBoxFlat_8mc0j")
 Button/styles/normal = SubResource("StyleBoxFlat_2hsta")
 Button/styles/pressed = SubResource("StyleBoxFlat_rf2aw")
@@ -34,9 +43,12 @@ Button/styles/pressed = SubResource("StyleBoxFlat_rf2aw")
 [sub_resource type="ImageTexture" id="ImageTexture_ptp5o"]
 
 [node name="Button" type="Button" unique_id=167595797]
-offset_right = 115.0
-offset_bottom = 56.0
+custom_minimum_size = Vector2(88, 64)
+offset_right = 64.0
+offset_bottom = 64.0
 theme = SubResource("Theme_uq21j")
 toggle_mode = true
 icon = SubResource("ImageTexture_ptp5o")
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("1_8mc0j")

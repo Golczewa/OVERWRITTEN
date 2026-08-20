@@ -11,6 +11,8 @@ func _ready() -> void:
 	$HBoxContainer/Button.pressed.connect(go_back)
 	$Control.update_all_sig.connect(update_all)
 	$Control2.update_all_sig.connect(update_all)
+	$Control3.update_all_sig.connect(update_all)
+	$Control4.update_all_sig.connect(update_all)
 	$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Button.pressed.connect(go_back)
 	$AspectRatioContainer/VBoxContainer/PanelContainer.gui_input.connect(
 		_on_panel_container_gui_input
@@ -55,6 +57,8 @@ func go_back():
 func update_all():
 	$Control.update()
 	$Control2.update()
+	$Control3.update()
+	$Control4.update()
 
 
 func _on_panel_container_gui_input(event):

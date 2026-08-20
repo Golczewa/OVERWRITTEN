@@ -2,8 +2,9 @@ extends Node2D
 
 @export_enum("left", "right", "left_upper", "right_upper") var hand: String
 
-
 func equip():
+	if not ConfigManager.player_config.get_value("hands",hand,false):
+		return
 	ConfigManager.reload_player_config()
 	for child in get_children():
 		child.queue_free()

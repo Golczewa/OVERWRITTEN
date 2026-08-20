@@ -11,12 +11,17 @@ func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
 	$Control.update_all_sig.connect(update_all)
 	$Control2.update_all_sig.connect(update_all)
+	$Control3.update_all_sig.connect(update_all)
+	$Control4.update_all_sig.connect(update_all)
 	open()
 
 
 func update_all():
 	$Control.update()
 	$Control2.update()
+	$Control3.update()
+	$Control4.update()
+
 	player.equip_weapons()
 
 

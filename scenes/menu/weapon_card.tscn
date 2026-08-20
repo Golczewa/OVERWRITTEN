@@ -3,6 +3,14 @@
 [ext_resource type="Script" uid="uid://b52abn5ec2n20" path="res://scenes/menu/weapon_card.gd" id="1_6anpk"]
 [ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="3_6anpk"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v67j5"]
+bg_color = Color(0.24115604, 0.24115604, 0.24115604, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.09239707, 0.09239706, 0.09239706, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u1kcl"]
 bg_color = Color(0.5372549, 0, 0, 1)
 border_width_left = 7
@@ -28,6 +36,7 @@ border_width_bottom = 7
 border_color = Color(0.5455139, 0, 0.034204792, 1)
 
 [sub_resource type="Theme" id="Theme_gtl4y"]
+Button/styles/disabled = SubResource("StyleBoxFlat_v67j5")
 Button/styles/hover = SubResource("StyleBoxFlat_u1kcl")
 Button/styles/normal = SubResource("StyleBoxFlat_gtl4y")
 Button/styles/pressed = SubResource("StyleBoxFlat_6anpk")
