@@ -104,7 +104,6 @@ size = Vector2(49.875, 17.25)
 
 [node name="Area2D" type="AnimatedSprite2D" unique_id=1698438607 node_paths=PackedStringArray("mele_area")]
 sprite_frames = SubResource("SpriteFrames_kts4k")
-animation = &"upper"
 offset = Vector2(50, 7)
 script = ExtResource("1_ku1og")
 mele_area = NodePath("Area2D")

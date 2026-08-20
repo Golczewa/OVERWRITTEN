@@ -20,8 +20,9 @@ func attack(_event):
 
 
 func _upper():
-	animation = "upper"
-	frame = 0
+	if upper:
+		animation = "upper"
+		frame = 0
 
 # extends Area2D
 # var damage = 10

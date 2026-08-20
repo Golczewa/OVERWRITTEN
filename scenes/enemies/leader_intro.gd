@@ -9,9 +9,10 @@ func _ready() -> void:
 	$Area2D.body_entered.connect(play_cuscene)
 
 
-func play_cuscene(body: Node):
+func play_cuscene(body: Node2D):
 	if body != player:
 		return
+	print("intro",body.global_position)
 	player.in_cutscene = true
 	$Area2D/CollisionShape2D.set_deferred("disabled", true)
 	await player.focus_camera(leader.global_position)
@@ -23,12 +24,13 @@ func play_cuscene(body: Node):
 	player.set_camera_fallow(leader)
 	await leader.end_charge
 	leader.turn_cutscene()
-	await leader.boss_bar.boss_is_in("Hash V-Scavengers Leader", leader.max_health)
+	await leader.boss_bar.boss_is_in("Hash V - Scavengers Leader", leader.max_health)
 	player.retrun_camera()
 	leader.rotation = 0
 	player.in_cutscene = false
 	var leader_pos = leader.global_position
 	remove_child(leader)
+	print(leader_pos)
 	get_parent().add_enemy(leader, leader_pos)
 	leader.toogle_cutscene()
 	$StaticBody2D/CollisionShape2D.set_deferred("disabled", false)

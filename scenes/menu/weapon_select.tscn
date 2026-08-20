@@ -47,7 +47,6 @@ offset_left = 395.0
 offset_top = 256.0
 offset_right = 653.0
 offset_bottom = 456.0
-text = "dwad"
 label_settings = SubResource("LabelSettings_fupg1")
 
 [node name="Button" parent="." unique_id=2078812563 instance=ExtResource("3_58244")]
@@ -65,7 +64,6 @@ offset_left = 393.0
 offset_top = 220.0
 offset_right = 669.0
 offset_bottom = 263.0
-text = "Test"
 label_settings = SubResource("LabelSettings_11d8w")
 horizontal_alignment = 1
 autowrap_mode = 3

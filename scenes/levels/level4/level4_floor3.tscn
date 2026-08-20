@@ -13,19 +13,22 @@ up_node = NodePath("Area2D2")
 metadata/_custom_type_script = "uid://cramwugkt2of"
 
 [node name="NavigationRegion2D" parent="." unique_id=970224383 instance=ExtResource("2_471ew")]
+position = Vector2(1371, -834)
 
 [node name="Area2D" parent="." unique_id=1410637359 instance=ExtResource("3_xnrun")]
-position = Vector2(447, 829)
+position = Vector2(1818, -5)
 rotation = 1.5707964
 
 [node name="enemies" type="Node2D" parent="." unique_id=1644491747]
+position = Vector2(1371, -834)
 
 [node name="Area2D2" parent="." unique_id=1227416673 instance=ExtResource("5_jaj7q")]
-position = Vector2(448, 3)
+position = Vector2(1819, -831)
 rotation = 1.5707964
 
 [node name="Node2D" parent="." unique_id=994559580 instance=ExtResource("5_xnrun")]
-position = Vector2(3, 448)
+position = Vector2(1374, -386)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=187076377]
+position = Vector2(1371, -834)
 color = Color(0.89492244, 0.89492244, 0.8949223, 1)

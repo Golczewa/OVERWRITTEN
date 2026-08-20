@@ -38,7 +38,7 @@ func close_animation():
 
 
 func format_title(text = title) -> void:
+	title = text
 	if not allow_spaces:
-		title = text
 		title = title.replace(" ", "_")
 	$VBoxContainer/PanelContainer/HBoxContainer/Label.text = " " + title + ".ovr"
