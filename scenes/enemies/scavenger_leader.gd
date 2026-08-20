@@ -60,7 +60,6 @@ func _physics_process(_delta: float) -> void:
 			for i in get_slide_collision_count():
 				var collision = get_slide_collision(i)
 				var collider = collision.get_collider()
-				print(collider.name)
 				if collider is CharacterBody2D:
 					if collider.is_in_group("player"):
 						player.player_take_dmg(65)
@@ -140,7 +139,6 @@ func distance(pos_a: Vector2, pos_b: Vector2) -> float:
 
 func take_damage(damage: int, _knockback: int) -> void:
 	health -= damage
-	print(health)
 	boss_bar.update(health)
 	damage_effect()
 	if health <= 0:

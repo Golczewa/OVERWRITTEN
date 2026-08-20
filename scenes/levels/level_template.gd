@@ -35,7 +35,6 @@ func move_up():
 	add_child(floors[curr_floor - 1])
 	real_curr_floor = floors[curr_floor - 1]
 	player.set_player_position(floors[curr_floor - 1].spawn)
-	print(floors[curr_floor - 1].exit)
 
 
 func move_down():
@@ -46,7 +45,6 @@ func move_down():
 	add_child(floors[curr_floor - 1])
 	real_curr_floor = floors[curr_floor - 1]
 	player.set_player_position(floors[curr_floor - 1].exit)
-	print(floors[curr_floor - 1].exit)
 
 
 func restart_floor():

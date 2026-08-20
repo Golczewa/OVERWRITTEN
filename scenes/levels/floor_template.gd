@@ -56,6 +56,5 @@ func kill_all():
 func add_enemy(enemy: CharacterBody2D, pos: Vector2) -> void:
 	$enemies.add_child(enemy)
 	enemy.global_position = pos
-	print(enemy.global_position)
 	enemies += 1
 	cleared = false
