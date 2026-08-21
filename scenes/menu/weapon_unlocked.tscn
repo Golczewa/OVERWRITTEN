@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://qqll3vtcakei" path="res://asstets/menu/revolver.png" id="3_pbqj5"]
 [ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="4_pbqj5"]
 [ext_resource type="Shader" uid="uid://djkehn2m8iwkj" path="res://shaders/weapon_unlocked.gdshader" id="5_100cu"]
+[ext_resource type="PackedScene" uid="uid://du4k8ns7pgxg8" path="res://scenes/menu/button.tscn" id="7_1sl7g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1sl7g"]
 shader = ExtResource("5_100cu")
@@ -25,8 +26,10 @@ font_size = 32
 [node name="MenuWindow" type="Control" unique_id=167829374 node_paths=PackedStringArray("panel")]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 643.0
-offset_bottom = 415.0
+offset_left = 273.0
+offset_top = 117.0
+offset_right = 916.0
+offset_bottom = 532.0
 script = ExtResource("1_100cu")
 panel = NodePath("AspectRatioContainer")
 metadata/_custom_type_script = "uid://8vimbe8e08su"
@@ -38,7 +41,6 @@ offset_bottom = 415.0
 title = "Weapon unlocked"
 
 [node name="shader" type="TextureRect" parent="." unique_id=916182359]
-modulate = Color(0.42476186, 0.6067884, 1, 1)
 material = SubResource("ShaderMaterial_1sl7g")
 layout_mode = 0
 offset_left = 50.0
@@ -48,20 +50,35 @@ offset_bottom = 316.0
 texture = ExtResource("3_n06g0")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=457821732]
-layout_mode = 0
-offset_left = 119.0
-offset_top = 40.0
-offset_right = 528.0
-offset_bottom = 301.0
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.411
+anchor_right = 0.5
+anchor_bottom = 0.411
+offset_left = -186.5
+offset_top = -120.565
+offset_right = 203.5
+offset_bottom = 120.435
 texture = ExtResource("3_pbqj5")
 stretch_mode = 4
 
 [node name="Label" type="Label" parent="." unique_id=1380361190]
+modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 50.0
-offset_top = 332.0
+offset_top = 292.0
 offset_right = 600.0
-offset_bottom = 364.0
+offset_bottom = 324.0
 text = "Name"
 label_settings = SubResource("LabelSettings_jiq1j")
 horizontal_alignment = 1
+
+[node name="Button" parent="." unique_id=2078812563 instance=ExtResource("7_1sl7g")]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 361.0
+offset_right = 378.0
+offset_bottom = 392.0
+text = "  Nice"
