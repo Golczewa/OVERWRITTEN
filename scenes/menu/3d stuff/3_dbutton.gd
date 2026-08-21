@@ -11,7 +11,7 @@ func _ready() -> void:
 	input_ray_pickable = true
 	$MeshInstance3D.material_override = $MeshInstance3D.material_override.duplicate()
 	level_section = "level_" + str(level)
-	unlocked = ConfigManager.get_level_value(level_section, "unlocked", false)
+	unlocked = ConfigManager.levels_progress.get_value(level_section, "unlocked", false)
 	mouse_entered.connect(_on_hover)
 	mouse_exited.connect(_on_hover_exit)
 	input_event.connect(_on_klik)
@@ -45,8 +45,9 @@ func _change_color(col: Color) -> Color:
 
 
 func set_button_colors() -> void:
+	unlocked = ConfigManager.levels_progress.get_value(level_section, "unlocked", false)
 	if unlocked:
-		match ConfigManager.get_level_value(level_section, "rank", "-"):
+		match ConfigManager.levels_progress.get_value(level_section, "rank", "-"):
 			"S":
 				curr_color = _change_color(Color.PURPLE)
 			"A":

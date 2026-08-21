@@ -24,6 +24,7 @@ func _ready() -> void:
 func setup(score: Dictionary):
 	count_score(score)
 	level_num = score["level"]
+	$HBoxContainer.display("-")
 	$VBoxContainer/time.text = "Time: " + format_time(score["time"])
 	$VBoxContainer/deaths.text = "Deaths: " + str(score["deaths"])
 	$VBoxContainer/used.text = "Healing used: " + str(score["hused"])

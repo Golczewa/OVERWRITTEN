@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var ghost_pack: PackedScene = preload("res://scenes/enemies/scavenger_leader_ghost.tscn")
 @onready var parts_pack: PackedScene = preload("res://scenes/enemies/scavenger_leader_parts.tscn")
 @onready var explosion_pack: PackedScene = preload("res://scenes/effects/rocket_explosion.tscn")
+@onready var hand_pickup_pack: PackedScene = preload("res://scenes/player/hand_pickup.tscn")
 
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
 @onready var shield: StaticBody2D = $body/shield
@@ -169,6 +170,10 @@ func die(explosion_time = 0.3, spread = 100) -> void:
 			global_position + Vector2(randf_range(-spread, spread), randf_range(-spread, spread)),
 			explosion_time
 		)
+	var hand_pickup:Node2D=hand_pickup_pack.instantiate()
+	hand_pickup.hand="left_upper"
+	curr_floor.add_child(hand_pickup)
+	hand_pickup.global_position=global_position
 
 
 func damage_effect() -> void:

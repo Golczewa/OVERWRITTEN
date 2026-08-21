@@ -2,32 +2,42 @@ extends AnimatedSprite2D
 
 @export_enum("right", "left_upper", "right_upper") var hand: String = "right"
 
-var dancing:bool=true
-var dance_tween:Tween
-@onready var player:CharacterBody2D=get_tree().get_first_node_in_group("player")
+var dance_tween: Tween
+var check: bool = true
+@onready var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
+@onready var curr_floor: Floor = get_parent()
+
 
 func _ready() -> void:
-    if ConfigManager.player_config.get_value("hands",hand,true):
-        queue_free()
-    $Area2D.body_entered.connect(on_body_entered)
-    if hand=="right":
-        frame=0
-    else :
-        frame=1
-    dance()
+	if ConfigManager.player_config.get_value("hands", hand, true):
+		queue_free()
+		return
+	$Area2D.body_entered.connect(on_body_entered)
+	frame = 0 if hand == "right" else 1
 
 
-func dance(_offset:float=10,time:float=0.5):
-    while dancing:
-        dance_tween=create_tween()
-        dance_tween.tween_property(self,"global_position",global_position+Vector2(0,_offset),time)
-        dance_tween.tween_property(self,"global_position",global_position-Vector2(0,_offset),time)
-        await dance_tween.finished
+func _physics_process(_delta: float) -> void:
+	if curr_floor.cleared and check:
+		check = false
+		dance()
 
 
-func on_body_entered(body:Node2D):
-    if body == player:
-        ConfigManager.player_config.set_value("hands",hand,true)
-        ConfigManager.save_player_config()
-        player.equip_weapons()
-        queue_free()
+func dance(size_offset: float = 0.15, time: float = 0.5) -> void:
+	if dance_tween:
+		dance_tween.kill()
+	dance_tween = create_tween()
+	dance_tween.set_loops()
+	dance_tween.set_trans(Tween.TRANS_SINE)
+	dance_tween.set_ease(Tween.EASE_IN_OUT)
+	dance_tween.tween_property(self, "scale", Vector2.ONE * (1 + size_offset), time)
+	dance_tween.tween_property(self, "scale", Vector2.ONE * (1 - size_offset), time)
+
+
+func on_body_entered(body: Node2D) -> void:
+	if body == player:
+		if dance_tween:
+			dance_tween.kill()
+		ConfigManager.player_config.set_value("hands", hand, true)
+		ConfigManager.save_player_config()
+		player.equip_weapons()
+		queue_free()
