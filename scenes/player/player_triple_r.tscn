@@ -73,7 +73,6 @@ show_behind_parent = true
 position = Vector2(2, 5)
 scale = Vector2(1, -1)
 sprite_frames = SubResource("SpriteFrames_s7il6")
-animation = &"upper"
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1785736480]
 position = Vector2(22, 7)

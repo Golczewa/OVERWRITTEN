@@ -6,6 +6,7 @@ signal game
 
 
 func _ready() -> void:
+	#ConfigManager.reset_all()
 	$game.hide()
 	$game.process_mode = Node.PROCESS_MODE_DISABLED
 	$game/CanvasLayer/pause/VBoxContainer/Button3.pressed.connect(back_to_menu)

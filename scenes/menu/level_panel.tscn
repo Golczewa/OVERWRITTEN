@@ -81,7 +81,7 @@ offset_left = 38.0
 offset_top = 446.0
 offset_right = 324.0
 offset_bottom = 486.0
-theme_override_constants/separation = 50
+theme_override_constants/separation = 100
 
 [node name="Button" parent="HBoxContainer" unique_id=2078812563 instance=ExtResource("5_iss5n")]
 layout_mode = 2

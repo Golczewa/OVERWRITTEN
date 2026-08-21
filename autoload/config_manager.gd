@@ -2,7 +2,9 @@ extends Node
 
 const WEAPONS_PATH := "res://config/weapons.cfg"
 const LEVELS_PATH := "res://config/levels.cfg"
+
 const PLAYER_USER_PATH := "user://player.cfg"
+const PLAYER_DEFAULTS_PATH := "res://config/player.defaults.cfg"
 const LEVELS_PROGRESS_PATH := "user://levels_progress.cfg"
 const LEVELS_PROGRESS_DEFAULTS_PATH := "res://config/levels_progress.defaults.cfg"
 
@@ -68,13 +70,30 @@ func reload_levels_progress() -> void:
 	levels_progress = _load_cfg(LEVELS_PROGRESS_PATH)
 
 
-## Loads player configuration file or creates a default one if absent.
+## Resets the player config back to its shipped default, overwriting the user file on disk.
+func reset_player_config() -> void:
+	player_config = _copy_default_to_user(PLAYER_DEFAULTS_PATH, PLAYER_USER_PATH)
+
+
+## Resets level progress back to its shipped default (plus any missing level sections),
+## overwriting the user file on disk.
+func reset_levels_progress() -> void:
+	levels_progress = _build_default_levels_progress_config()
+	var err := levels_progress.save(LEVELS_PROGRESS_PATH)
+	if err != OK:
+		push_error("Config save error: %s (code %s)" % [LEVELS_PROGRESS_PATH, err])
+
+
+## Resets every user config (player + level progress) back to its shipped default.
+func reset_all() -> void:
+	reset_player_config()
+	reset_levels_progress()
+
+
+## Loads player configuration file, creating it from the default template if absent.
 func _load_or_create_player_config() -> ConfigFile:
 	if not FileAccess.file_exists(PLAYER_USER_PATH):
-		var config := ConfigFile.new()
-		config.set_value("weapons", "left", 1)
-		config.set_value("weapons", "right", 2)
-		config.save(PLAYER_USER_PATH)
+		return _copy_default_to_user(PLAYER_DEFAULTS_PATH, PLAYER_USER_PATH)
 	return _load_cfg(PLAYER_USER_PATH)
 
 
@@ -98,6 +117,14 @@ func _build_default_levels_progress_config() -> ConfigFile:
 			config.set_value(section, "rank", "-")
 			config.set_value(section, "namedroped", false)
 	return config
+
+
+## Copies a bundled default config (res://) over the destination user path, then loads it.
+func _copy_default_to_user(defaults_path: String, user_path: String) -> ConfigFile:
+	var err := DirAccess.copy_absolute(defaults_path, user_path)
+	if err != OK:
+		push_error("Config copy error: %s -> %s (code %s)" % [defaults_path, user_path, err])
+	return _load_cfg(user_path)
 
 
 ## Helper method to load a ConfigFile from the specified file path.

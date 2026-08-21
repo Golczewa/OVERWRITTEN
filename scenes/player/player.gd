@@ -278,8 +278,8 @@ func exit_anim(pos_a: Vector2, pos_b: Vector2, anim_time: int = 1):
 
 func entrance_anim(pos_a: Vector2, pos_b: Vector2, anim_time: int = 1):
 	in_cutscene = true
-	var tween = create_tween().set_parallel(true)
 	global_position = pos_a
+	var tween = create_tween().set_parallel(true)
 	$AnimatedSprite2D.look_at(pos_b)
 	legs.walk_anim(pos_b)
 	modulate = Color.BLACK
