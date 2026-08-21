@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://clap81ynbqx0x" path="res://scenes/enemies/gooner_test.tscn" id="6_adioa"]
 [ext_resource type="PackedScene" uid="uid://rgpml3tss12d" path="res://scenes/levels/props/exit.tscn" id="7_m7b1t"]
 [ext_resource type="PackedScene" uid="uid://kkqb7cfxl6sm" path="res://scenes/enemies/scavenger_brute.tscn" id="7_prxvq"]
+[ext_resource type="PackedScene" uid="uid://cm7t0o20f14m5" path="res://scenes/player/hand_pickup.tscn" id="8_m7b1t"]
 
 [node name="Node2D" type="Node2D" unique_id=1899703556 node_paths=PackedStringArray("down_node", "up_node", "enemy_spawners")]
 script = ExtResource("1_otsnt")
@@ -41,3 +42,7 @@ position = Vector2(120, -222)
 [node name="Area2D" parent="." unique_id=1227416673 instance=ExtResource("7_m7b1t")]
 position = Vector2(384, -349)
 rotation = 1.5707964
+
+[node name="AnimatedSprite2D" parent="." unique_id=380287644 instance=ExtResource("8_m7b1t")]
+position = Vector2(141, 60.000004)
+rotation = -1.1274827

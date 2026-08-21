@@ -36,7 +36,7 @@ func set_color(c: Color):
 	$shader.material.set_shader_parameter("stripe_colors", colors)
 
 
-func rainbow(time: float = 5, pale: float = 0.7):
+func rainbow(time: float = 1, pale: float = 0.8):
 	var base_colors: Array[Color] = [
 		Color.RED,
 		Color.ORANGE,
