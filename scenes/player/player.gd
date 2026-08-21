@@ -74,13 +74,17 @@ func _process(_delta: float) -> void:
 	else:
 		charges.update_value(heal_cd)
 	if Input.is_action_just_pressed("attack_left"):
-		left_weapon.attack("attack_left")
+		if left_weapon:
+			left_weapon.attack("attack_left")
 	if Input.is_action_just_pressed("attack_right"):
-		right_weapon.attack("attack_right")
+		if right_weapon:
+			right_weapon.attack("attack_right")
 	if Input.is_action_just_pressed("attack_left_up"):
-		left_up_weapon.attack("attack_left_up")
+		if left_up_weapon:
+			left_up_weapon.attack("attack_left_up")
 	if Input.is_action_just_pressed("attack_right_up"):
-		right_up_weapon.attack("attack_right_up")
+		if right_up_weapon:
+			right_up_weapon.attack("attack_right_up")
 
 
 func _input(event: InputEvent) -> void:

@@ -24,19 +24,23 @@ func _ready() -> void:
 
 func setup(num: int):
 	var section_name = "level_" + str(num)
-	if ConfigManager.get_level_value(section_name, "unlocked") == true:
+	if ConfigManager.levels_progress.get_value(section_name, "unlocked") == true:
 		open()
-		$TextureRect.set_texture(load(ConfigManager.get_level_value(section_name, "image")))
-		var namedroped: bool = ConfigManager.get_level_value(section_name, "namedroped", false)
+		$TextureRect.set_texture(load(ConfigManager.levels.get_value(section_name, "image")))
+		var namedroped: bool = ConfigManager.levels.get_value(section_name, "namedroped", false)
 		if namedroped:
 			$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Label.text = (
-				" " + ConfigManager.get_level_value(section_name, "name").replace(" ", "_") + ".ovr"
+				" "
+				+ ConfigManager.levels.get_value(section_name, "name").replace(" ", "_")
+				+ ".ovr"
 			)
 		else:
 			$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Label.text = " ???.ovr"
-		$HBoxContainer2.display(ConfigManager.get_level_value(section_name, "rank"))
-		$score.text = "Best score: " + str(ConfigManager.get_level_value(section_name, "score"))
-		path = ConfigManager.get_level_value(section_name, "path")
+		$HBoxContainer2.display(ConfigManager.levels_progress.get_value(section_name, "rank"))
+		$score.text = (
+			"Best score: " + str(ConfigManager.levels_progress.get_value(section_name, "score"))
+		)
+		path = ConfigManager.levels.get_value(section_name, "path")
 		update_all()
 
 

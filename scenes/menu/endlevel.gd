@@ -5,6 +5,7 @@ var drag_offset = Vector2()
 var in_animation: bool = false
 var score_tween: Tween
 var level_num: int
+var unlock_screen_pack: PackedScene = preload("res://scenes/menu/weapon_unlocked.tscn")
 
 
 func _ready() -> void:
@@ -32,6 +33,7 @@ func setup(score: Dictionary):
 		ConfigManager.set_level_value("level_" + str(score["level"]), "rank", score["rank"])
 	ConfigManager.save_levels_progress()
 	ConfigManager.reload_levels_progress()
+	unlock_next_level()
 	open()
 	await score_animation(score["score"])
 	$VBoxContainer/used2.text = "Score: " + str(score["score"])
@@ -83,6 +85,7 @@ func hidee():
 			child.hide()
 	await $AspectRatioContainer.close_animation()
 	hide()
+	unlock_weapon(level_num + 1)
 
 
 func format_time(time: int):
@@ -142,3 +145,21 @@ func _input(event: InputEvent) -> void:
 func go_next():
 	hidee()
 	get_parent().show_next_level(level_num + 1)
+
+
+func unlock_weapon(num):
+	if ConfigManager.player_config.get_value("unlocked_weapons", str(num), true):
+		return
+	ConfigManager.player_config.set_value("unlocked_weapons", str(num), true)
+	ConfigManager.save_player_config()
+	var unlocked_screen: MenuWindow = unlock_screen_pack.instantiate()
+	get_parent().add_child(unlocked_screen)
+	unlocked_screen.show()
+	unlocked_screen.unlock_weapon(num)
+
+
+func unlock_next_level():
+	if ConfigManager.levels_progress.get_value("level_" + str(level_num + 1), "unlocked", true):
+		return
+	ConfigManager.levels_progress.set_value("level_" + str(level_num + 1), "unlocked", true)
+	ConfigManager.save_levels_progress()

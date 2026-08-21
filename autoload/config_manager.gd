@@ -78,10 +78,7 @@ func reset_player_config() -> void:
 ## Resets level progress back to its shipped default (plus any missing level sections),
 ## overwriting the user file on disk.
 func reset_levels_progress() -> void:
-	levels_progress = _build_default_levels_progress_config()
-	var err := levels_progress.save(LEVELS_PROGRESS_PATH)
-	if err != OK:
-		push_error("Config save error: %s (code %s)" % [LEVELS_PROGRESS_PATH, err])
+	levels_progress = _copy_default_to_user(LEVELS_PROGRESS_DEFAULTS_PATH, LEVELS_PROGRESS_PATH)
 
 
 ## Resets every user config (player + level progress) back to its shipped default.
