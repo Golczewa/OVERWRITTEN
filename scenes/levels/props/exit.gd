@@ -2,7 +2,7 @@ extends Area2D
 var floor_
 var level_
 var check: bool = true
-@onready var player = get_tree().get_first_node_in_group("player")
+@onready var player:CharacterBody2D = get_tree().get_first_node_in_group("player")
 @onready var marker = $Marker2D
 
 
@@ -22,6 +22,7 @@ func exit():
 	$StaticBody2D/AnimatedSprite2D.play("default")
 	$StaticBody2D/PointLight2D.hide()
 	await player.exit_anim($Marker2D.global_position, global_position)
+	player.global_position=Vector2.ZERO
 	level_.end_level()
 
 

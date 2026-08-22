@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dc5s330eldovl" path="res://scenes/levels/level2/level_2_floor_1.gd" id="1_1ngfn"]
 [ext_resource type="PackedScene" uid="uid://bmxjqrc0n5ewc" path="res://scenes/levels/level2/level2_floor1_ map.tscn" id="2_undik"]
 [ext_resource type="PackedScene" uid="uid://kkqb7cfxl6sm" path="res://scenes/enemies/scavenger_brute.tscn" id="3_1ngfn"]
-[ext_resource type="PackedScene" uid="uid://bdwlvl0qdr800" path="res://scenes/levels/props/enrance.tscn" id="3_ludok"]
+[ext_resource type="PackedScene" uid="uid://bdwlvl0qdr800" path="res://scenes/levels/props/entrance.tscn" id="3_ludok"]
 [ext_resource type="PackedScene" uid="uid://gvdpfkhlvqdq" path="res://scenes/levels/props/transition.tscn" id="4_khal1"]
 [ext_resource type="PackedScene" uid="uid://clap81ynbqx0x" path="res://scenes/enemies/gooner_test.tscn" id="4_knmx7"]
 [ext_resource type="PackedScene" uid="uid://b0iqe6x2742im" path="res://scenes/levels/props/namedrop.tscn" id="5_ludok"]
