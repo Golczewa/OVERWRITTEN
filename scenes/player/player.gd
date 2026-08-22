@@ -197,7 +197,6 @@ func replenish_charge():
 func set_player_position(pos):
 	$Camera2D/CanvasLayer.show()
 	global_position = pos
-	print(global_position,pos)
 
 
 func heal_effect():

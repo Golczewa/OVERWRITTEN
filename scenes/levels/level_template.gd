@@ -19,10 +19,10 @@ func _ready() -> void:
 		floors.append(floor_)
 	add_child(floors[0])
 	real_curr_floor = floors[0]
-	player.set_player_position(floors[0].spawn)
+	await get_tree().process_frame
 	player.load_state(player.default_state)
 	player_state = player.default_state
-
+	player.set_player_position(floors[0].spawn)
 
 func move_up():
 	if curr_floor >= len(floors):

@@ -15,6 +15,7 @@ func _ready() -> void:
 
 func on_body_enterd(body):
 	if body.is_in_group("player") and floor_.cleared:
+		$CollisionShape2D.set_deferred("disabled",true)
 		exit()
 
 

@@ -35,6 +35,7 @@ func setup(score: Dictionary):
 	ConfigManager.save_levels_progress()
 	ConfigManager.reload_levels_progress()
 	unlock_next_level()
+	get_tree().get_first_node_in_group("game").unload_level()
 	open()
 	await score_animation(score["score"])
 	$VBoxContainer/used2.text = "Score: " + str(score["score"])
