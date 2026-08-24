@@ -32,16 +32,9 @@ func setup(num: int):
 		open()
 		if ConfigManager.levels_progress.get_value(section_name, "namedroped", false):
 			$TextureRect.set_texture(load(ConfigManager.levels.get_value(section_name, "image")))
+			$AspectRatioContainer.format_title(ConfigManager.levels.get_value(section_name, "name"))
 		else:
 			$TextureRect.set_texture(load("res://asstets/level_thumbnail/unknown.png"))
-		var namedroped: bool = ConfigManager.levels.get_value(section_name, "namedroped", false)
-		if namedroped:
-			$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Label.text = (
-				" "
-				+ ConfigManager.levels.get_value(section_name, "name").replace(" ", "_")
-				+ ".ovr"
-			)
-		else:
 			$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Label.text = " ???.ovr"
 		$HBoxContainer2.display(ConfigManager.levels_progress.get_value(section_name, "rank"))
 		$score.text = (
@@ -93,4 +86,5 @@ func open():
 		child.hide()
 	await $AspectRatioContainer.open_animation()
 	for child in get_children():
-		child.show()
+		if not child == $AspectRatioContainer:
+			child.show()

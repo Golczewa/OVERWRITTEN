@@ -3,6 +3,10 @@ extends AnimatedSprite2D
 @export var edge_margin: float = 40.0
 
 
+func _ready() -> void:
+	play("3d")
+
+
 func update_arrow_pos(enemy_pos: Vector2, camera: Camera2D) -> void:
 	var viewport_size: Vector2 = get_viewport().get_visible_rect().size
 	var half_size: Vector2 = (viewport_size / camera.zoom) / 2.0

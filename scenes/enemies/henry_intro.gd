@@ -20,7 +20,7 @@ func play_cuscene(body: Node):
 	tween.tween_property(henry, "rotation_degrees", 90, 2)
 	await tween.finished
 	henry.legs.stop_walking()
-	await henry.boss_bar.boss_is_in("Henry", henry.test_max_health)
+	await henry.boss_bar.boss_is_in("Henry - Scavenger lieutenant", henry.test_max_health)
 	player.retrun_camera()
 	player.in_cutscene = false
 	var henry_pos = henry.global_position

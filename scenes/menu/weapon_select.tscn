@@ -5,6 +5,16 @@
 [ext_resource type="PackedScene" uid="uid://du4k8ns7pgxg8" path="res://scenes/menu/button.tscn" id="3_58244"]
 [ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="4_fupg1"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11d8w"]
+bg_color = Color(1, 0.22745098, 0.30588236, 0.3019608)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Theme" id="Theme_fupg1"]
+Panel/styles/panel = SubResource("StyleBoxFlat_11d8w")
+
 [sub_resource type="LabelSettings" id="LabelSettings_fupg1"]
 font = ExtResource("4_fupg1")
 
@@ -27,6 +37,14 @@ offset_right = 680.0
 offset_bottom = 483.0
 title = "Weapons"
 
+[node name="Panel" type="Panel" parent="." unique_id=95768150]
+layout_mode = 0
+offset_left = 391.0
+offset_top = 45.0
+offset_right = 661.0
+offset_bottom = 460.0
+theme = SubResource("Theme_fupg1")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=973406392]
 layout_mode = 0
 offset_left = 19.0
@@ -42,12 +60,14 @@ offset_right = 644.0
 offset_bottom = 224.0
 
 [node name="Label" type="Label" parent="." unique_id=1349081104]
+custom_maximum_size = Vector2(258, 200)
 layout_mode = 0
-offset_left = 395.0
+offset_left = 397.0
 offset_top = 256.0
 offset_right = 653.0
 offset_bottom = 456.0
 label_settings = SubResource("LabelSettings_fupg1")
+autowrap_mode = 3
 
 [node name="Button" parent="." unique_id=2078812563 instance=ExtResource("3_58244")]
 layout_mode = 0
