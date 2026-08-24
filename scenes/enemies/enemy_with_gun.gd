@@ -9,6 +9,7 @@ extends CharacterBody2D
 @export var body: AnimatedSprite2D
 @export var raycast: RayCast2D
 @export var marker: Marker2D
+@export var arrow: AnimatedSprite2D
 @export var to_hide_on_death: Array[Node] = []
 var curr_health: int
 var floor_
@@ -121,6 +122,7 @@ func _randomise_target():
 func _physics_process(_delta: float) -> void:
 	if not is_spawning:
 		if !in_knocback:
+			arrow.update_arrow_pos(global_position, player.camera)
 			if player_sighted and not player.invisible:
 				chase()
 			else:

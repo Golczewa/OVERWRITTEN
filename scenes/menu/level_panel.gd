@@ -3,7 +3,7 @@ extends Control
 var dragging = false
 var drag_offset = Vector2()
 var path: String
-@export var max_level:int=5
+@export var max_level: int = 5
 
 
 func _ready() -> void:
@@ -24,15 +24,15 @@ func _ready() -> void:
 
 
 func setup(num: int):
-	if num>=max_level:
+	if num >= max_level:
 		go_back()
 		return
 	var section_name = "level_" + str(num)
 	if ConfigManager.levels_progress.get_value(section_name, "unlocked") == true:
 		open()
-		if ConfigManager.levels_progress.get_value(section_name, "namedroped",false):
+		if ConfigManager.levels_progress.get_value(section_name, "namedroped", false):
 			$TextureRect.set_texture(load(ConfigManager.levels.get_value(section_name, "image")))
-		else :
+		else:
 			$TextureRect.set_texture(load("res://asstets/level_thumbnail/unknown.png"))
 		var namedroped: bool = ConfigManager.levels.get_value(section_name, "namedroped", false)
 		if namedroped:

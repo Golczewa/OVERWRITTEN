@@ -16,6 +16,7 @@ var in_cutscene: bool = false
 @onready var heath_bar = $Camera2D/CanvasLayer/Control2/TextureProgressBar
 @onready var charges = $Camera2D/CanvasLayer/Control
 @onready var canvas = $Camera2D/CanvasLayer
+@onready var camera: Camera2D = $Camera2D
 @onready var hurt_pack: PackedScene = preload("res://scenes/player/hurt_efect.tscn")
 @onready var heal_pack: PackedScene = preload("res://scenes/player/heal_efect.tscn")
 @onready var parts_pack: PackedScene = preload("res://scenes/player/player_parts.tscn")

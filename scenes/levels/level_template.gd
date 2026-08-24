@@ -24,6 +24,7 @@ func _ready() -> void:
 	player_state = player.default_state
 	player.set_player_position(floors[0].spawn)
 
+
 func move_up():
 	if curr_floor >= len(floors):
 		return

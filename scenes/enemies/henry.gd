@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var weapon: Area2D = $AnimatedSprite2D/Area2D
 @onready var gun = $AnimatedSprite2D/AnimatedSprite2D2
 @onready var legs = $AnimatedSprite2D/AnimatedSprite2D3
+@onready var arrow: AnimatedSprite2D = $AnimatedSprite2D2
 @onready var boss_bar = player.get_node("Camera2D/CanvasLayer/ProgressBar2")
 var curr_health: int
 var direction: Vector2 = Vector2.ZERO
@@ -82,6 +83,7 @@ func _die():
 	$AnimatedSprite2D/RayCast2D.set_deferred("disabled", true)
 	legs.stop_walking()
 	legs.visible = not legs.visible
+	arrow.hide()
 	gun.hide()
 	boss_bar.boss_is_out()
 	$AnimatedSprite2D/Area2D/AnimatedSprite2D.visible = not (
@@ -119,6 +121,7 @@ func _randomise_target():
 func _physics_process(_delta: float) -> void:
 	if not in_cutscene:
 		if !in_knocback:
+			arrow.update_arrow_pos(global_position, player.camera)
 			if player_sighted and not player.invisible:
 				chase()
 			else:

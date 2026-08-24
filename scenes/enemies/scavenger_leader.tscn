@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c2xmm1vxmog3j" path="res://asstets/enemies/scavenger_leader.png" id="2_h1rju"]
 [ext_resource type="Texture2D" uid="uid://dilobk7t5leed" path="res://asstets/enemies/scavenger_leader_chainsword.png" id="3_vfrd0"]
 [ext_resource type="Texture2D" uid="uid://oimf0va12y0v" path="res://asstets/enemies/scavenger_leader_laucher.png" id="5_h1rju"]
+[ext_resource type="PackedScene" uid="uid://yqxpfo2l2m20" path="res://scenes/effects/arrow.tscn" id="8_wxdaf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d8gqy"]
 atlas = ExtResource("1_rppon")
@@ -259,3 +260,5 @@ shape = SubResource("CircleShape2D_jiq1j")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1829255067]
 target_position = Vector2(43, 0)
+
+[node name="AnimatedSprite2D" parent="." unique_id=1822404430 instance=ExtResource("8_wxdaf")]

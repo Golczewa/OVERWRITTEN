@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://yqxpfo2l2m20"]
+
+[ext_resource type="Script" uid="uid://cxgqnse7u5pij" path="res://scenes/effects/arrow.gd" id="1_rsrv0"]
+[ext_resource type="Texture2D" uid="uid://bfgg82qnbxdi5" path="res://asstets/menu/arrow.png" id="1_x5f8e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jiq1j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_x5f8e")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1822404430]
+top_level = true
+light_mask = 4
+scale = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_jiq1j")
+script = ExtResource("1_rsrv0")
+edge_margin = 20.0

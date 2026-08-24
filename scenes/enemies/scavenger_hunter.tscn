@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cr0aeyk2ua2ki" path="res://asstets/enemies/hunter_corpse.png" id="2_y7tc8"]
 [ext_resource type="PackedScene" uid="uid://cnijtad8hhrio" path="res://scenes/enemies/legs.tscn" id="3_ku0l3"]
 [ext_resource type="Texture2D" uid="uid://0i53iptkdel5" path="res://asstets/enemies/scavenger_hunter_hands.png" id="4_y7tc8"]
+[ext_resource type="PackedScene" uid="uid://yqxpfo2l2m20" path="res://scenes/effects/arrow.tscn" id="7_y7tc8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ikgbx"]
 atlas = ExtResource("2_y7tc8")
@@ -65,7 +66,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_sji23"]
 radius = 17.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=943878568 node_paths=PackedStringArray("weapon", "legs", "body", "raycast", "marker", "to_hide_on_death") groups=["enemies"]]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=943878568 node_paths=PackedStringArray("weapon", "legs", "body", "raycast", "marker", "arrow", "to_hide_on_death") groups=["enemies"]]
 z_index = 1
 collision_layer = 4
 collision_mask = 3
@@ -77,7 +78,8 @@ legs = NodePath("AnimatedSprite2D2")
 body = NodePath("AnimatedSprite2D")
 raycast = NodePath("AnimatedSprite2D/AnimatedSprite2D2/RayCast2D")
 marker = NodePath("AnimatedSprite2D/Marker2D")
-to_hide_on_death = [NodePath("AnimatedSprite2D/AnimatedSprite2D3"), NodePath("AnimatedSprite2D/AnimatedSprite2D2"), NodePath("AnimatedSprite2D2")]
+arrow = NodePath("AnimatedSprite2D3")
+to_hide_on_death = [NodePath("AnimatedSprite2D/AnimatedSprite2D3"), NodePath("AnimatedSprite2D/AnimatedSprite2D2"), NodePath("AnimatedSprite2D2"), NodePath("AnimatedSprite2D3")]
 chase_speed = 80
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1323144180]
@@ -109,3 +111,5 @@ shape = SubResource("CircleShape2D_sji23")
 [node name="AnimatedSprite2D2" parent="." unique_id=1071073496 instance=ExtResource("3_ku0l3")]
 show_behind_parent = true
 position = Vector2(0, 1)
+
+[node name="AnimatedSprite2D3" parent="." unique_id=1822404430 instance=ExtResource("7_y7tc8")]

@@ -17,6 +17,7 @@ extends CharacterBody2D
 @onready var rocket_spawn: Marker2D = $body/laucher/Marker2D2
 @onready var rocket_directory: Marker2D = $body/laucher/Marker2D
 @onready var boss_bar = player.get_node("Camera2D/CanvasLayer/ProgressBar2")
+@onready var arrow = $AnimatedSprite2D
 
 var max_health := 500
 var health: int = max_health
@@ -44,6 +45,7 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if in_cutscene or !player:
+		arrow.update_arrow_pos()
 		if is_charging:
 			move_and_slide()
 			if get_slide_collision_count() > 0:
@@ -150,6 +152,7 @@ func die(explosion_time = 0.3, spread = 100) -> void:
 	curr_floor.enemies = curr_floor.enemies - 1
 	boss_bar.boss_is_out()
 	in_cutscene = true
+	arrow.hide()
 	$body.hide()
 	$CollisionShape2D.set_deferred("disabled", true)
 	$body/shield/CollisionShape2D.set_deferred("disabled", true)
@@ -170,10 +173,10 @@ func die(explosion_time = 0.3, spread = 100) -> void:
 			global_position + Vector2(randf_range(-spread, spread), randf_range(-spread, spread)),
 			explosion_time
 		)
-	var hand_pickup:Node2D=hand_pickup_pack.instantiate()
-	hand_pickup.hand="left_upper"
+	var hand_pickup: Node2D = hand_pickup_pack.instantiate()
+	hand_pickup.hand = "left_upper"
 	curr_floor.add_child(hand_pickup)
-	hand_pickup.global_position=global_position
+	hand_pickup.global_position = global_position
 
 
 func damage_effect() -> void:

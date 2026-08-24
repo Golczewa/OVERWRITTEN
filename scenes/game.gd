@@ -94,6 +94,7 @@ func load_next_level(level_id: int):
 	var level_path: String = ConfigManager.get_level_value("level_" + str(level_id), "path")
 	get_parent().play_game(level_path)
 
+
 func unload_level():
 	if curr_scene:
 		curr_scene.queue_free()

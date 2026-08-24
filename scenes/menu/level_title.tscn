@@ -10,6 +10,7 @@ font_color = Color(0.47479695, 1.1130236e-06, 3.6098064e-07, 1)
 shadow_size = 5
 
 [node name="Label" type="Label" unique_id=629147929 groups=["title"]]
+light_mask = 2
 offset_left = 405.0
 offset_top = 95.0
 offset_right = 823.0

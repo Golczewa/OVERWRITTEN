@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var weapon: Area2D = $AnimatedSprite2D/Area2D
 @onready var legs = $AnimatedSprite2D/AnimatedSprite2D2
+@onready var arrow: AnimatedSprite2D = $AnimatedSprite2D2
 var curr_health: int
 var direction: Vector2 = Vector2.ZERO
 var speed: int = 50
@@ -82,6 +83,7 @@ func _die():
 	$AnimatedSprite2D/RayCast2D.set_deferred("disabled", true)
 	legs.stop_walking()
 	legs.visible = not legs.visible
+	arrow.hide()
 	$AnimatedSprite2D/Area2D/AnimatedSprite2D.visible = not (
 		$AnimatedSprite2D/Area2D/AnimatedSprite2D.visible
 	)
@@ -117,6 +119,7 @@ func _randomise_target():
 func _physics_process(_delta: float) -> void:
 	if not is_spawning:
 		if !in_knocback:
+			arrow.update_arrow_pos(global_position, player.camera)
 			if player_sighted and not player.invisible:
 				chase()
 			else:

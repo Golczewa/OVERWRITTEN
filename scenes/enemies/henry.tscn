@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bw33stdcmiq6l" path="res://scenes/enemies/machete.tscn" id="4_1tacw"]
 [ext_resource type="PackedScene" uid="uid://by50psneamwru" path="res://scenes/enemies/henry_gun.tscn" id="5_bad0o"]
 [ext_resource type="Texture2D" uid="uid://utysrvollxcy" path="res://asstets/enemies/v2137_goon.png" id="6_bad0o"]
+[ext_resource type="PackedScene" uid="uid://yqxpfo2l2m20" path="res://scenes/effects/arrow.tscn" id="8_otiuk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iqkd3"]
 atlas = ExtResource("2_an1b6")
@@ -50,7 +51,7 @@ region = Rect2(128, 0, 128, 64)
 atlas = ExtResource("6_bad0o")
 region = Rect2(256, 0, 128, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_tmyn0"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_xhcor"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -99,7 +100,7 @@ skin = "1"
 [node name="AnimatedSprite2D2" parent="AnimatedSprite2D" unique_id=1235518650 instance=ExtResource("5_bad0o")]
 show_behind_parent = true
 position = Vector2(1, -10)
-sprite_frames = SubResource("SpriteFrames_tmyn0")
+sprite_frames = SubResource("SpriteFrames_xhcor")
 frame = 2
 frame_progress = 1.0
 
@@ -111,3 +112,5 @@ target_position = Vector2(400, 0)
 shape = SubResource("RectangleShape2D_ogqcr")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=734336109]
+
+[node name="AnimatedSprite2D2" parent="." unique_id=1822404430 instance=ExtResource("8_otiuk")]
