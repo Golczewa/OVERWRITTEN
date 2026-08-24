@@ -81,9 +81,9 @@ func _on_panel_container_gui_input(event):
 
 
 func open():
-	show()
 	for child in get_children():
 		child.hide()
+	show()
 	await $AspectRatioContainer.open_animation()
 	for child in get_children():
 		if not child == $AspectRatioContainer:
