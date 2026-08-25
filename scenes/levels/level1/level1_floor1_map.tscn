@@ -157,11 +157,12 @@ tile_map_data = PackedByteArray("AAD7/wQAAAADAAAAAAD8/wQAAAADAAAAAAD9/wQAAAADAAA
 tile_set = SubResource("TileSet_ct6n8")
 
 [node name="ReferenceRect" parent="." unique_id=1995517954 instance=ExtResource("8_8c65x")]
-offset_left = 3.0
+offset_left = -145.0
 offset_top = -83.0
 offset_right = 275.0
 offset_bottom = 120.0
 rand_seed = 444
+density = 30
 
 [node name="StaticBody2D" parent="." unique_id=324738227 instance=ExtResource("4_tgh02")]
 position = Vector2(37.000008, -77)
@@ -180,9 +181,8 @@ position = Vector2(26, 98)
 rotation = 2.2863812
 
 [node name="StaticBody2D5" parent="." unique_id=2014694285 instance=ExtResource("5_w2p40")]
-position = Vector2(-87.00001, -15)
+position = Vector2(-102, -39)
 rotation = -3.0979595
-scale = Vector2(1.5, 1.5)
 
 [node name="StaticBody2D6" parent="." unique_id=367967219 instance=ExtResource("4_w2p40")]
 position = Vector2(-122, 85)

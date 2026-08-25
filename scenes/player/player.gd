@@ -44,6 +44,7 @@ var score
 func _ready() -> void:
 	score = get_parent().gameScore
 	$Camera2D/CanvasLayer.hide()
+	$AnimatedSprite2D.play("default")
 	charges.update_max(heal_cd)
 	charge_update()
 	hp_update()
@@ -239,7 +240,7 @@ func load_state(state: Dictionary):
 	modulate = Color.WHITE
 	z_index = 3
 	show_stuff()
-	$AnimatedSprite2D.play("new_animation")
+	$AnimatedSprite2D.play("default")
 	set_collision_mask_value(3, true)
 	set_collision_layer_value(1, true)
 	unfreeze_player()
@@ -369,3 +370,27 @@ func explode(explosion_time = 0.3, spread = 100):
 			global_position + Vector2(randf_range(-spread, spread), randf_range(-spread, spread)),
 			explosion_time
 		)
+
+
+func get_up_cutscene():
+	$AnimatedSprite2D.position = Vector2(-8, 1)
+	in_cutscene = true
+	$AnimatedSprite2D.look_at(Vector2.RIGHT)
+	for weapon in $AnimatedSprite2D.get_children():
+		weapon.hide()
+	$AnimatedSprite2D2.hide()
+	$AnimatedSprite2D.play("turn_on")
+	$AnimatedSprite2D.stop()
+	$AnimatedSprite2D.frame=0
+	await get_tree().create_timer(3).timeout
+	$AnimatedSprite2D.play("turn_on")
+	await $AnimatedSprite2D.animation_finished
+	await get_tree().create_timer(2).timeout
+	$AnimatedSprite2D.play("get_up")
+	await $AnimatedSprite2D.animation_finished
+	$AnimatedSprite2D.play("default")
+	$AnimatedSprite2D2.show()
+	for weapon in $AnimatedSprite2D.get_children():
+		weapon.show()
+	in_cutscene = false
+	$AnimatedSprite2D.position = Vector2.ZERO

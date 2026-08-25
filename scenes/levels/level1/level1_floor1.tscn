@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://25td1cyhdt8b" path="res://scenes/levels/level1/level1_floor1_map.tscn" id="1_doynn"]
 [ext_resource type="Script" uid="uid://cramwugkt2of" path="res://scenes/levels/floor_template.gd" id="1_n6fr6"]
 [ext_resource type="PackedScene" uid="uid://gvdpfkhlvqdq" path="res://scenes/levels/props/transition.tscn" id="2_7tjud"]
+[ext_resource type="PackedScene" uid="uid://cme8f2dhdagf" path="res://scenes/player/player_cutscene_triger.tscn" id="4_puwvw"]
 
 [node name="Node2D" type="Node2D" unique_id=1279704020 node_paths=PackedStringArray("down_node", "up_node")]
 script = ExtResource("1_n6fr6")
@@ -16,7 +17,11 @@ metadata/_custom_type_script = "uid://cramwugkt2of"
 position = Vector2(285, 32)
 
 [node name="Marker2D2" type="Marker2D" parent="." unique_id=1054578562]
-position = Vector2(39, 7)
+position = Vector2(96, 11)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1818859340]
 color = Color(0.4045111, 0.40451115, 0.4045111, 1)
+
+[node name="Area2D2" parent="." unique_id=1307086545 instance=ExtResource("4_puwvw")]
+position = Vector2(24, -53)
+cutscene = "get_up_cutscene"
