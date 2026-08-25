@@ -11,6 +11,7 @@
 
 [node name="Node2D" type="Node2D" unique_id=1899703556 node_paths=PackedStringArray("down_node", "up_node", "enemy_spawners")]
 script = ExtResource("1_otsnt")
+cutscenes = 1
 down_node = NodePath("Area2D2")
 up_node = NodePath("Area2D")
 enemy_spawners = [NodePath("StaticBody2D"), NodePath("StaticBody2D2")]

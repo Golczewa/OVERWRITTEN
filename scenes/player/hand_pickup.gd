@@ -17,7 +17,7 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	if curr_floor.cleared and check:
+	if curr_floor.enemies_cleared and check:
 		check = false
 		dance()
 
@@ -40,4 +40,5 @@ func on_body_entered(body: Node2D) -> void:
 		ConfigManager.player_config.set_value("hands", hand, true)
 		ConfigManager.save_player_config()
 		player.equip_weapons()
+		curr_floor.cutscenes -= 1
 		queue_free()

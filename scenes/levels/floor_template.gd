@@ -4,10 +4,12 @@ class_name Floor
 
 var enemies = 0
 var cleared = false
+var enemies_cleared := false
 var spawn: Vector2
 var exit: Vector2
 var waves: Array
 var waves_number: int = 0
+@export var cutscenes: int = 0
 @export var down_node: Node
 @export var up_node: Node
 @export var enemy_spawners: Array[Node]
@@ -44,7 +46,9 @@ func _physics_process(_delta: float) -> void:
 			for spawner in enemy_spawners:
 				spawner.spawn_wave()
 		else:
-			cleared = true
+			enemies_cleared = true
+			if cutscenes <= 0:
+				cleared = true
 
 
 func kill_all():

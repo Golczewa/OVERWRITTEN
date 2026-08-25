@@ -3,7 +3,7 @@ extends Node2D
 @export_enum("left", "right", "left_upper", "right_upper") var hand: String
 
 
-func equip():
+func equip() -> PlayerWeapon:
 	if not ConfigManager.player_config.get_value("hands", hand, false):
 		return
 	ConfigManager.reload_player_config()
