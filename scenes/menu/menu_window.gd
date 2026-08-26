@@ -9,6 +9,7 @@ var drag_offset = Vector2()
 var in_animation: bool = false
 signal hiding
 
+
 func _ready() -> void:
 	hide()
 	panel.upper_panel.gui_input.connect(_on_panel_container_gui_input)

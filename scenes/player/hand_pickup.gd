@@ -4,17 +4,24 @@ extends AnimatedSprite2D
 
 var dance_tween: Tween
 var check: bool = true
+var messege: String
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
 @onready var curr_floor: Floor = get_parent()
-@onready var tutorial_window_pack:PackedScene=preload("res://scenes/menu/tutorial_window.tscn")
+@onready var tutorial_window_pack: PackedScene = preload("res://scenes/menu/tutorial_window.tscn")
 signal end_signal
+
 
 func _ready() -> void:
 	if ConfigManager.player_config.get_value("hands", hand, true):
 		queue_free()
 		return
 	$Area2D.body_entered.connect(on_body_entered)
-	frame = 0 if hand == "right" else 1
+	if hand == "right":
+		frame = 0
+		messege = "Your hand!"
+	else:
+		frame = 1
+		messege = "Compatible hand!"
 
 
 func _physics_process(_delta: float) -> void:
@@ -24,9 +31,9 @@ func _physics_process(_delta: float) -> void:
 
 
 func dance(size_offset: float = 0.15, time: float = 0.5) -> void:
-	var tutorial_window=tutorial_window_pack.instantiate()
+	var tutorial_window = tutorial_window_pack.instantiate()
 	player.canvas.add_child(tutorial_window)
-	tutorial_window.setup(self,Vector2(32,32),end_signal,"compatible hand!")
+	tutorial_window.setup(self, Vector2(32, 32), end_signal, messege)
 	if dance_tween:
 		dance_tween.kill()
 	dance_tween = create_tween()

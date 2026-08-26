@@ -45,7 +45,7 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if in_cutscene or !player:
-		arrow.update_arrow_pos(global_position,player.camera)
+		arrow.update_arrow_pos(global_position, player.camera)
 		if is_charging:
 			move_and_slide()
 			if get_slide_collision_count() > 0:

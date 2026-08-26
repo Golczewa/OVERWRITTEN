@@ -381,7 +381,7 @@ func get_up_cutscene():
 	$AnimatedSprite2D2.hide()
 	$AnimatedSprite2D.play("turn_on")
 	$AnimatedSprite2D.stop()
-	$AnimatedSprite2D.frame=0
+	$AnimatedSprite2D.frame = 0
 	await get_tree().create_timer(3).timeout
 	$AnimatedSprite2D.play("turn_on")
 	await $AnimatedSprite2D.animation_finished

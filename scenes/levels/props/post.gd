@@ -2,12 +2,19 @@ extends Area2D
 var player
 var menu_pack = preload("res://scenes/menu/post_menu.tscn")
 var unlock_screen_pack: PackedScene = preload("res://scenes/menu/weapon_unlocked.tscn")
+var tutorial_window_pack: PackedScene = preload("res://scenes/menu/tutorial_window.tscn")
 var menu
 var floor_: Floor
+signal done
 
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
+	if not ConfigManager.player_config.get_value("unlocked_weapons", str(1), true):
+		print("Dwadawdawdaw")
+		var tutorial_window = tutorial_window_pack.instantiate()
+		player.canvas.add_child(tutorial_window)
+		tutorial_window.setup($Marker2D, Vector2(88, 29), done, "Special delivery!")
 	floor_ = get_parent().get_parent()
 	body_entered.connect(show_menu)
 	body_exited.connect(hide_menu)
@@ -42,3 +49,4 @@ func unlock_revolver():
 	player.canvas.add_child(unlocked_screen)
 	unlocked_screen.unlock_weapon(1)
 	floor_.cutscenes -= 1
+	done.emit()

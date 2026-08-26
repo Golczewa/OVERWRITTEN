@@ -55,3 +55,6 @@ shape = SubResource("RectangleShape2D_62hgh")
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1223690469]
 texture = ExtResource("3_nglee")
 texture_scale = 1.52
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1148778175]
+position = Vector2(-11, -14)

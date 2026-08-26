@@ -42,10 +42,10 @@ position = Vector2(35, 1.5)
 
 [node name="MenuWindow" type="Control" parent="." unique_id=622026082 node_paths=PackedStringArray("panel")]
 anchors_preset = 0
-offset_left = 720.0
-offset_top = 181.0
-offset_right = 938.0
-offset_bottom = 362.0
+offset_left = 18.0
+offset_top = 440.0
+offset_right = 236.0
+offset_bottom = 621.0
 script = ExtResource("2_10skb")
 panel = NodePath("AspectRatioContainer")
 metadata/_custom_type_script = "uid://8vimbe8e08su"
