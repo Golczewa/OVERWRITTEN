@@ -6,7 +6,8 @@ var dance_tween: Tween
 var check: bool = true
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
 @onready var curr_floor: Floor = get_parent()
-
+@onready var tutorial_window_pack:PackedScene=preload("res://scenes/menu/tutorial_window.tscn")
+signal end_signal
 
 func _ready() -> void:
 	if ConfigManager.player_config.get_value("hands", hand, true):
@@ -23,6 +24,9 @@ func _physics_process(_delta: float) -> void:
 
 
 func dance(size_offset: float = 0.15, time: float = 0.5) -> void:
+	var tutorial_window=tutorial_window_pack.instantiate()
+	get_parent().add_child(tutorial_window)
+	tutorial_window.setup(global_position-Vector2(16,16),Vector2(32,32),end_signal)
 	if dance_tween:
 		dance_tween.kill()
 	dance_tween = create_tween()
@@ -41,4 +45,5 @@ func on_body_entered(body: Node2D) -> void:
 		ConfigManager.save_player_config()
 		player.equip_weapons()
 		curr_floor.cutscenes -= 1
+		end_signal.emit()
 		queue_free()

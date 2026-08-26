@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://7fjgaiyg5t81"]
+
+[ext_resource type="Script" uid="uid://bsi3olkvoibbm" path="res://scenes/menu/tutorial_window_2.gd" id="1_a5vwx"]
+[ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="2_idl47"]
+[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="3_idl47"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_a5vwx"]
+font = ExtResource("3_idl47")
+font_size = 24
+
+[node name="MenuWindow" type="Control" unique_id=1748503282 node_paths=PackedStringArray("marker", "panel")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 823.0
+offset_top = 204.0
+offset_right = 1134.0
+offset_bottom = 462.0
+script = ExtResource("1_a5vwx")
+marker = NodePath("Marker2D")
+panel = NodePath("AspectRatioContainer")
+metadata/_custom_type_script = "uid://8vimbe8e08su"
+
+[node name="AspectRatioContainer" parent="." unique_id=1461861251 instance=ExtResource("2_idl47")]
+layout_mode = 0
+offset_right = 311.0
+offset_bottom = 258.0
+title = "Warning"
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=713809794]
+position = Vector2(4, 36)
+
+[node name="Label" type="Label" parent="." unique_id=1941098066]
+custom_maximum_size = Vector2(271, 24)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 46.0
+offset_right = 291.0
+offset_bottom = 70.0
+label_settings = SubResource("LabelSettings_a5vwx")
+autowrap_mode = 3
