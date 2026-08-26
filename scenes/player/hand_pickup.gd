@@ -25,8 +25,8 @@ func _physics_process(_delta: float) -> void:
 
 func dance(size_offset: float = 0.15, time: float = 0.5) -> void:
 	var tutorial_window=tutorial_window_pack.instantiate()
-	get_parent().add_child(tutorial_window)
-	tutorial_window.setup(global_position-Vector2(16,16),Vector2(32,32),end_signal)
+	player.canvas.add_child(tutorial_window)
+	tutorial_window.setup(self,Vector2(32,32),end_signal)
 	if dance_tween:
 		dance_tween.kill()
 	dance_tween = create_tween()

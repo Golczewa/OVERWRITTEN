@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://7fjgaiyg5t81"]
 
-[ext_resource type="Script" uid="uid://bsi3olkvoibbm" path="res://scenes/menu/tutorial_window_2.gd" id="1_a5vwx"]
 [ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="2_idl47"]
 [ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="3_idl47"]
+
+[sub_resource type="GDScript" id="GDScript_a5vwx"]
+script/source = "extends MenuWindow
+
+@export var marker :Marker2D"
 
 [sub_resource type="LabelSettings" id="LabelSettings_a5vwx"]
 font = ExtResource("3_idl47")
@@ -15,7 +19,7 @@ offset_left = 823.0
 offset_top = 204.0
 offset_right = 1134.0
 offset_bottom = 462.0
-script = ExtResource("1_a5vwx")
+script = SubResource("GDScript_a5vwx")
 marker = NodePath("Marker2D")
 panel = NodePath("AspectRatioContainer")
 metadata/_custom_type_script = "uid://8vimbe8e08su"
