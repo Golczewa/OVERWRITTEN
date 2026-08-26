@@ -7,7 +7,7 @@ class_name MenuWindow
 var dragging = false
 var drag_offset = Vector2()
 var in_animation: bool = false
-
+signal hiding
 
 func _ready() -> void:
 	hide()
@@ -48,3 +48,4 @@ func begone():
 			child.hide()
 	await panel.close_animation()
 	hide()
+	hiding.emit()

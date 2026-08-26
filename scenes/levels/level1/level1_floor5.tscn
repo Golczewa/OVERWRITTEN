@@ -46,4 +46,4 @@ rotation = 1.5707964
 
 [node name="AnimatedSprite2D" parent="." unique_id=380287644 instance=ExtResource("8_m7b1t")]
 position = Vector2(141, 60.000004)
-rotation = -1.1274827
+rotation = -1.1257373

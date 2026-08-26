@@ -10,33 +10,34 @@ var window_size:Vector2
 @export var window_pack:PackedScene = preload("res://scenes/menu/tutorial_window_2.tscn")
 signal test
 
+func _ready() -> void:
+	$MenuWindow.hiding.connect(queue_free)
 
-func setup(targ:Node2D,window_size_:Vector2,end_signal:Signal):
-	target=targ
-	window_size=window_size_*1.5
-	border_l=world_to_canvas(target.global_position)
-	$Panel.global_position=world_to_canvas(target.global_position)
-	border_r=world_to_canvas(target.global_position+Vector2(window_size.x,0))
+func setup(targ: Node2D, window_size_: Vector2, end_signal: Signal, content:String):
+	target = targ
+	window_size = window_size_
 	end_signal.connect(queue_free)
-	$Panel.size=window_size
+	update_positions()
+	$MenuWindow/Label.text=content
 	$MenuWindow.open()
 
-# 	spawn_window()
+
+
+func update_positions():
+	var cam_scale: Vector2 = get_viewport().canvas_transform.get_scale()
+	var center: Vector2 = world_to_canvas(target.global_position)
+	var scaled_size: Vector2 = window_size * cam_scale
+	$Panel.global_position = center - scaled_size / 2.0
+	border_l = center - Vector2(scaled_size.x / 2.0, scaled_size.y / 2.0)
+	border_r = center + Vector2(scaled_size.x / 2.0, -scaled_size.y / 2.0)
 
 func _process(_delta):
-	border_l=world_to_canvas(target.global_position)
-	$Panel.global_position=world_to_canvas(target.global_position)
-	border_r=world_to_canvas(target.global_position+Vector2(window_size.x,0))
+	update_positions()
 	queue_redraw()
 
 
-# func spawn_window():
-# 	var player:CharacterBody2D=get_tree().get_first_node_in_group("player")
-# 	var window:MenuWindow=window_pack.instantiate()
-# 	player.canvas.add_child(window)
-# 	marker_b=window.marker
-# 	window.open()
-# 	window.panel.close_button.pressed.connect(queue_free)
+func world_to_canvas(world_pos: Vector2) -> Vector2:
+	return get_viewport().canvas_transform * world_pos
 
 
 func _draw():
@@ -55,7 +56,3 @@ func _draw():
 		draw_line(from, point_a, line_color, line_width)
 		draw_line(point_a, point_b, line_color, line_width)
 		draw_line(point_b, to, line_color, line_width)
-
-	
-func world_to_canvas(world_pos: Vector2) -> Vector2:
-	return get_viewport().canvas_transform * world_pos
