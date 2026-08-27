@@ -372,6 +372,12 @@ func explode(explosion_time = 0.3, spread = 100):
 		)
 
 
+func clear_stray_warnings():
+	for child: Control in canvas.get_children():
+		if child.z_index == -123:
+			child.queue_free()
+
+
 func get_up_cutscene():
 	$AnimatedSprite2D.position = Vector2(-8, 1)
 	in_cutscene = true

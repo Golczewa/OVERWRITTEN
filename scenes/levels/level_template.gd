@@ -26,6 +26,7 @@ func _ready() -> void:
 
 
 func move_up():
+	player.clear_stray_warnings()
 	if curr_floor >= len(floors):
 		return
 	if floors[curr_floor - 1].cleared:
@@ -39,6 +40,7 @@ func move_up():
 
 
 func move_down():
+	player.clear_stray_warnings()
 	if curr_floor <= 1:
 		return
 	remove_child(floors[curr_floor - 1])

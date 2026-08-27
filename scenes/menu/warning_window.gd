@@ -21,7 +21,7 @@ func setup(targ: Node2D, window_size_: Vector2, end_signal: Signal, content: Str
 	update_positions()
 	$MenuWindow/Label.text = content
 	$MenuWindow.open()
-	z_index = -1
+	z_index = -123
 
 
 func update_positions():
