@@ -69,6 +69,7 @@ offset_top = -21.0
 offset_right = 190.0
 offset_bottom = 75.0
 rotation = 0.286234
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="." unique_id=1399336506]
 custom_minimum_size = Vector2(1, 1)

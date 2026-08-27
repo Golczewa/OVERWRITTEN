@@ -2,7 +2,7 @@ extends Area2D
 var player
 var menu_pack = preload("res://scenes/menu/post_menu.tscn")
 var unlock_screen_pack: PackedScene = preload("res://scenes/menu/weapon_unlocked.tscn")
-var tutorial_window_pack: PackedScene = preload("res://scenes/menu/tutorial_window.tscn")
+var tutorial_window_pack: PackedScene = preload("res://scenes/menu/warning_window.tscn")
 var menu
 var floor_: Floor
 signal done
@@ -14,7 +14,7 @@ func _ready() -> void:
 		print("Dwadawdawdaw")
 		var tutorial_window = tutorial_window_pack.instantiate()
 		player.canvas.add_child(tutorial_window)
-		tutorial_window.setup($Marker2D, Vector2(88, 29), done, "Special delivery!")
+		tutorial_window.setup($Marker2D, Vector2(108, 49), done, "Special delivery!")
 	floor_ = get_parent().get_parent()
 	body_entered.connect(show_menu)
 	body_exited.connect(hide_menu)

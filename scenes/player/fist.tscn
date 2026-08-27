@@ -106,6 +106,9 @@ size = Vector2(49.875, 17.25)
 sprite_frames = SubResource("SpriteFrames_kts4k")
 offset = Vector2(50, 7)
 script = ExtResource("1_ku1og")
+dmg = 15
+cooldown = 0.4
+knockback = 300
 mele_area = NodePath("Area2D")
 metadata/_custom_type_script = "uid://dfbm30t6o3vps"
 

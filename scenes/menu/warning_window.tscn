@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cw5fy2fi548vw"]
 
-[ext_resource type="Script" uid="uid://ca0633vmwox0a" path="res://scenes/menu/tutorial_window.gd" id="1_8tm7o"]
-[ext_resource type="Script" uid="uid://8vimbe8e08su" path="res://scenes/menu/menu_window.gd" id="2_10skb"]
-[ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="3_kvapl"]
-[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="4_doqsh"]
+[ext_resource type="Script" uid="uid://ca0633vmwox0a" path="res://scenes/menu/warning_window.gd" id="1_hh58h"]
+[ext_resource type="Script" uid="uid://8vimbe8e08su" path="res://scenes/menu/menu_window.gd" id="2_2lff1"]
+[ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="3_7w3s5"]
+[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="4_n11dh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7il6"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -17,24 +17,22 @@ border_color = Color(0.54509807, 0, 0.03529412, 1)
 Panel/styles/panel = SubResource("StyleBoxFlat_s7il6")
 
 [sub_resource type="LabelSettings" id="LabelSettings_4ojcm"]
-font = ExtResource("4_doqsh")
+font = ExtResource("4_n11dh")
 font_size = 24
 
 [node name="Control" type="Control" unique_id=1849072817 node_paths=PackedStringArray("marker_b")]
 light_mask = 4
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_8tm7o")
+script = ExtResource("1_hh58h")
 marker_b = NodePath("MenuWindow/Marker2D")
 line_color = Color(0.54509807, 0, 0.03529412, 1)
 line_width = 3.0
 
 [node name="Panel" type="Panel" parent="." unique_id=1125524027]
 layout_mode = 0
-offset_left = 338.0
-offset_top = 272.0
-offset_right = 408.0
-offset_bottom = 337.0
+offset_right = 98.0
+offset_bottom = 65.0
 theme = SubResource("Theme_jiq1j")
 
 [node name="Marker2D" type="Marker2D" parent="Panel" unique_id=1667648043]
@@ -46,11 +44,11 @@ offset_left = 18.0
 offset_top = 440.0
 offset_right = 236.0
 offset_bottom = 621.0
-script = ExtResource("2_10skb")
+script = ExtResource("2_2lff1")
 panel = NodePath("AspectRatioContainer")
 metadata/_custom_type_script = "uid://8vimbe8e08su"
 
-[node name="AspectRatioContainer" parent="MenuWindow" unique_id=1461861251 instance=ExtResource("3_kvapl")]
+[node name="AspectRatioContainer" parent="MenuWindow" unique_id=1461861251 instance=ExtResource("3_7w3s5")]
 layout_mode = 0
 offset_right = 311.0
 offset_bottom = 258.0

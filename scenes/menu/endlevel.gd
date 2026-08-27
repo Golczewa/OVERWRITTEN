@@ -137,11 +137,9 @@ func update_score(s: int):
 
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and in_animation:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			if event.pressed:
-				score_tween.custom_step(1000)
-				in_animation = false
+	if event.is_action_pressed("skip_cuscene") and in_animation:
+		score_tween.custom_step(1000)
+		in_animation = false
 
 
 func go_next():

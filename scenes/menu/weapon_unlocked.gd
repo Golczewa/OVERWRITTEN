@@ -74,10 +74,8 @@ func begone():
 
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and not is_revealed:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			if event.pressed:
-				reveal.emit()
+	if event.is_action_pressed("skip_cuscene"):
+		reveal.emit()
 
 
 func open():

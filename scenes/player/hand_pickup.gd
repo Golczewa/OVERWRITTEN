@@ -7,7 +7,7 @@ var check: bool = true
 var messege: String
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
 @onready var curr_floor: Floor = get_parent()
-@onready var tutorial_window_pack: PackedScene = preload("res://scenes/menu/tutorial_window.tscn")
+@onready var tutorial_window_pack: PackedScene = preload("res://scenes/menu/warning_window.tscn")
 signal end_signal
 
 
