@@ -21,14 +21,14 @@ func setup(targ: Node2D, window_size_: Vector2, end_signal: Signal, content: Str
 	update_positions()
 	$MenuWindow/Label.text = content
 	$MenuWindow.open()
-	z_index=-1
+	z_index = -1
 
 
 func update_positions():
 	var cam_scale: Vector2 = get_viewport().canvas_transform.get_scale()
 	var center: Vector2 = world_to_canvas(target.global_position)
 	var scaled_size: Vector2 = window_size * cam_scale
-	$Panel.size=scaled_size
+	$Panel.size = scaled_size
 	$Panel.global_position = center - scaled_size / 2.0
 	border_l = center - Vector2(scaled_size.x / 2.0, scaled_size.y / 2.0)
 	border_r = center + Vector2(scaled_size.x / 2.0, -scaled_size.y / 2.0)

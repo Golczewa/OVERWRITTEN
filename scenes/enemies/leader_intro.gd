@@ -13,6 +13,7 @@ func play_cuscene(body: Node2D):
 	if body != player:
 		return
 	player.in_cutscene = true
+	player.canvas.hide()
 	$Area2D/CollisionShape2D.set_deferred("disabled", true)
 	await player.focus_camera(leader.global_position)
 	leader.charge_cutscene()
@@ -31,4 +32,6 @@ func play_cuscene(body: Node2D):
 	remove_child(leader)
 	get_parent().add_enemy(leader, leader_pos)
 	leader.toogle_cutscene()
+	leader.keep_arrow = true
+	player.canvas.show()
 	$StaticBody2D/CollisionShape2D.set_deferred("disabled", false)

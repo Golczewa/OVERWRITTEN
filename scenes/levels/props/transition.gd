@@ -5,7 +5,7 @@ var level_
 var check = true
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var marker = $Marker2D
-@onready var warning_window_pack:PackedScene=preload("res://scenes/menu/warning_window.tscn")
+@onready var warning_window_pack: PackedScene = preload("res://scenes/menu/warning_window.tscn")
 signal close
 
 
@@ -44,7 +44,8 @@ func _physics_process(_delta: float) -> void:
 			spanw_warning()
 			check = false
 
+
 func spanw_warning():
-	var warning_window=warning_window_pack.instantiate()
+	var warning_window = warning_window_pack.instantiate()
 	player.canvas.add_child(warning_window)
-	warning_window.setup(self,Vector2(74,74),close,"Open doors")
+	warning_window.setup(self, Vector2(74, 74), close, "Open doors")

@@ -62,3 +62,4 @@ func add_enemy(enemy: CharacterBody2D, pos: Vector2) -> void:
 	enemy.global_position = pos
 	enemies += 1
 	cleared = false
+	enemies_cleared = false

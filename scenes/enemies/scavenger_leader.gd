@@ -32,6 +32,7 @@ var direction := Vector2.ZERO
 var in_cooldown := false
 var attack_cooldonwn := 3
 var curr_floor: Floor
+var keep_arrow := false
 
 signal end_charge
 
@@ -45,7 +46,8 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if in_cutscene or !player:
-		arrow.update_arrow_pos(global_position, player.camera)
+		if keep_arrow:
+			arrow.update_arrow_pos(global_position, player.camera)
 		if is_charging:
 			move_and_slide()
 			if get_slide_collision_count() > 0:
@@ -68,6 +70,8 @@ func _physics_process(_delta: float) -> void:
 						player.player_take_dmg(65)
 						break
 		return
+	if keep_arrow:
+		arrow.update_arrow_pos(global_position, player.camera)
 	$RayCast2D.target_position = $RayCast2D.to_local(player.global_position)
 	var target_angle = (player.global_position - global_position).angle()
 	shield.rotation = lerp_angle(shield.rotation, target_angle, rot_speed * _delta)
