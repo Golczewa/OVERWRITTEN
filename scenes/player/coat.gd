@@ -1,4 +1,4 @@
-extends AnimatedSprite2D
+extends Node2D
 
 var dance_tween: Tween
 var check: bool = true
@@ -9,26 +9,32 @@ var messege: String
 signal end_signal
 
 
+func _ready() -> void:
+	$Area2D.body_entered.connect(on_body_entered)
+
+
 func _physics_process(_delta: float) -> void:
-	if ConfigManager.player_config.get_value("state","cloth",false):
+	if ConfigManager.player_config.get_value("state", "cloth", false):
+		curr_floor.cutscenes -= 1
 		queue_free()
+	else:
+		var tutorial_window = tutorial_window_pack.instantiate()
+		player.canvas.add_child(tutorial_window)
+		tutorial_window.setup(self, Vector2(64, 32), end_signal, messege)
 	if curr_floor.enemies_cleared and check:
 		check = false
 		dance()
 
 
 func dance(size_offset: float = 0.15, time: float = 0.5) -> void:
-	var tutorial_window = tutorial_window_pack.instantiate()
-	player.canvas.add_child(tutorial_window)
-	tutorial_window.setup(self, Vector2(64, 32), end_signal, messege)
 	if dance_tween:
 		dance_tween.kill()
 	dance_tween = create_tween()
 	dance_tween.set_loops()
 	dance_tween.set_trans(Tween.TRANS_SINE)
 	dance_tween.set_ease(Tween.EASE_IN_OUT)
-	dance_tween.tween_property(self, "scale", Vector2.ONE * (1 + size_offset), time)
-	dance_tween.tween_property(self, "scale", Vector2.ONE * (1 - size_offset), time)
+	dance_tween.tween_property($AnimatedSprite2D, "scale", Vector2.ONE * (1 + size_offset), time)
+	dance_tween.tween_property($AnimatedSprite2D, "scale", Vector2.ONE * (1 - size_offset), time)
 
 
 func on_body_entered(body: Node2D) -> void:

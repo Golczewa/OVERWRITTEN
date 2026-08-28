@@ -19,5 +19,6 @@ func equip() -> PlayerWeapon:
 	if hand == "left" or hand == "left_upper":
 		weapon.left_hand = true
 		weapon.scale = Vector2(1, -1)
+	weapon.cloth = ConfigManager.player_config.get_value("state","cloth",false)
 	add_child(weapon)
 	return weapon

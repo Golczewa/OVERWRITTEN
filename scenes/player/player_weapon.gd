@@ -6,6 +6,7 @@ var can_attack = true
 var left_hand = false
 var upper = false
 var weapon_rot: float
+var cloth: bool
 @export var dmg := 30
 @export var cooldown = 0.6
 @export var knockback = 500

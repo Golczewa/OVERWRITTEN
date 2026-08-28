@@ -38,3 +38,5 @@ func spawn_spark(node: Node2D) -> void:
 func _upper():
 	if upper:
 		$Sprite2D.play("upper")
+	elif cloth:
+		$Sprite2D.play("default_cloth")

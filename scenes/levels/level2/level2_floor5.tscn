@@ -9,6 +9,7 @@
 
 [node name="Floor" type="Node2D" unique_id=534768665 node_paths=PackedStringArray("down_node", "up_node")]
 script = ExtResource("1_sno20")
+cutscenes = 1
 down_node = NodePath("Area2D")
 up_node = NodePath("Area2D2")
 metadata/_custom_type_script = "uid://cramwugkt2of"

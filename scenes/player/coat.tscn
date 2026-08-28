@@ -14,6 +14,17 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1105032934]
-sprite_frames = SubResource("SpriteFrames_jiq1j")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jiq1j"]
+size = Vector2(49, 35)
+
+[node name="Node2D" type="Node2D" unique_id=1433697882]
 script = ExtResource("2_byvi7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1105032934]
+sprite_frames = SubResource("SpriteFrames_jiq1j")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=296490120]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1891076770]
+position = Vector2(1.5, 0.5)
+shape = SubResource("RectangleShape2D_jiq1j")

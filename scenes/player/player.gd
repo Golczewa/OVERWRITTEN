@@ -45,7 +45,6 @@ func _ready() -> void:
 	get_dresed()
 	score = get_parent().gameScore
 	$Camera2D/CanvasLayer.hide()
-	$AnimatedSprite2D.play("default")
 	charges.update_max(heal_cd)
 	charge_update()
 	hp_update()
@@ -221,6 +220,7 @@ func get_state() -> Dictionary:
 func load_state(state: Dictionary):
 	$Timer.stop()
 	$AnimatedSprite2D.show()
+	$Node2D.hide()
 	show()
 	get_dresed()
 	player_health = state["health"]
@@ -235,7 +235,6 @@ func load_state(state: Dictionary):
 	modulate = Color.WHITE
 	z_index = 3
 	show_stuff()
-	$AnimatedSprite2D.play("default")
 	set_collision_mask_value(3, true)
 	set_collision_layer_value(1, true)
 	unfreeze_player()
@@ -350,11 +349,10 @@ func clear_stray_warnings():
 		if child.z_index == -123:
 			child.queue_free()
 
+
 func get_dresed():
-	var cloth:bool=ConfigManager.player_config.get_value("state", "cloth", false)
-	print(cloth)
+	var cloth: bool = ConfigManager.player_config.get_value("state", "cloth", false)
 	if cloth:
 		body.frame = 1
 	else:
 		body.frame = 0
-	print(cloth,body.frame)

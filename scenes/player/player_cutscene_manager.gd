@@ -30,6 +30,7 @@ func get_up_cutscene():
 
 func dying(death_duration := 1.5):
 	player.body.hide()
+	show()
 	var death_number: int = randi_range(0, 4)
 	if death_number == 4:
 		explode()
@@ -45,8 +46,7 @@ func hide_player_stuff():
 	player.in_cutscene = true
 	player.body.hide()
 	player.canvas.hide()
-	for weapon in player.body.get_children():
-		weapon.hide()
+	player.legs.hide()
 
 
 func show_player_stuff():
@@ -54,8 +54,7 @@ func show_player_stuff():
 	player.in_cutscene = false
 	player.body.show()
 	player.canvas.show()
-	for weapon in player.body.get_children():
-		weapon.show()
+	player.legs.show()
 
 
 func explode(explosion_time = 0.3, spread = 100):
@@ -84,10 +83,7 @@ func stop_cutscene():
 	hide()
 	in_stopable_cutscene = false
 	player.in_cutscene = false
-	player.body.show()
-	player.canvas.show()
-	for weapon in player.body.get_children():
-		weapon.show()
+	show_player_stuff()
 
 
 func _input(event: InputEvent) -> void:

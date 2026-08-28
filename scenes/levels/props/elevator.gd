@@ -6,6 +6,8 @@ var check = true
 @export_enum("up", "down") var dir = "up"
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var marker = $Marker2D
+@onready var warning_window_pack: PackedScene = preload("res://scenes/menu/warning_window.tscn")
+signal close
 
 
 func _ready() -> void:
@@ -39,6 +41,7 @@ func move_on(body: Node2D):
 		player.unfreeze_player()
 		if dir == "up":
 			level_.call_deferred("move_up")
+			close.emit()
 		else:
 			level_.call_deferred("move_down")
 
@@ -51,4 +54,12 @@ func _physics_process(_delta: float) -> void:
 		else:
 			$StaticBody2D/StaticBody2D/AnimatedSprite2D.play("open")
 			$StaticBody2D/StaticBody2D/PointLight2D.color = Color(0.067, 0.658, 0.07)
+			if dir == "up":
+				spanw_warning()
 			check = false
+
+
+func spanw_warning():
+	var warning_window = warning_window_pack.instantiate()
+	player.canvas.add_child(warning_window)
+	warning_window.setup($Marker2D2, Vector2(140, 140), close, "Working elevator")

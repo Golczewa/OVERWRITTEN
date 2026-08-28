@@ -13,6 +13,8 @@ func attack(_event):
 func _upper():
 	if upper:
 		$Sprite2D.play("upper")
+	elif cloth:
+		$Sprite2D.play("default_cloth")
 # extends AnimatedSprite2D
 # var can_attack = true
 # var bullet_test = preload("res://scenes/effects/bullet_test.tscn")

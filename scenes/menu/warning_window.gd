@@ -7,7 +7,6 @@ var window_size: Vector2
 @export var marker_b: Marker2D
 @export var line_color: Color = Color.WHITE
 @export var line_width: float = 2.0
-signal test
 
 
 func _ready() -> void:
