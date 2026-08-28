@@ -42,6 +42,7 @@ var score
 
 
 func _ready() -> void:
+	get_dresed()
 	score = get_parent().gameScore
 	$Camera2D/CanvasLayer.hide()
 	$AnimatedSprite2D.play("default")
@@ -221,6 +222,7 @@ func load_state(state: Dictionary):
 	$Timer.stop()
 	$AnimatedSprite2D.show()
 	show()
+	get_dresed()
 	player_health = state["health"]
 	heal_charge = state["charges"]
 	charges_to_replenish = state["replenish_queue"]
@@ -347,3 +349,12 @@ func clear_stray_warnings():
 	for child: Control in canvas.get_children():
 		if child.z_index == -123:
 			child.queue_free()
+
+func get_dresed():
+	var cloth:bool=ConfigManager.player_config.get_value("state", "cloth", false)
+	print(cloth)
+	if cloth:
+		body.frame = 1
+	else:
+		body.frame = 0
+	print(cloth,body.frame)

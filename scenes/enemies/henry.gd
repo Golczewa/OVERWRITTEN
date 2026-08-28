@@ -8,6 +8,7 @@ extends CharacterBody2D
 @onready var legs = $AnimatedSprite2D/AnimatedSprite2D3
 @onready var arrow: AnimatedSprite2D = $AnimatedSprite2D2
 @onready var boss_bar = player.get_node("Camera2D/CanvasLayer/ProgressBar2")
+@onready var coat_pack:PackedScene=preload("res://scenes/player/coat.tscn")
 var curr_health: int
 var direction: Vector2 = Vector2.ZERO
 var speed: int = 50
@@ -90,6 +91,7 @@ func _die():
 		$AnimatedSprite2D/Area2D/AnimatedSprite2D.visible
 	)
 	remove_from_group("enemies")
+	drop_cloth()
 
 
 func _damage_effect():
@@ -204,3 +206,8 @@ func toogle_cutscene() -> bool:
 	gun.in_cutscene = !gun.in_cutscene
 	in_cutscene = !in_cutscene
 	return in_cutscene
+
+func drop_cloth():
+	var coat:AnimatedSprite2D=coat_pack.instantiate()
+	get_parent().get_parent().add_child(coat)
+	coat.global_position=global_position

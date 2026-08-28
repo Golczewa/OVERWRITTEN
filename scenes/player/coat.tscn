@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://8ngfpqo5ewk3"]
+
+[ext_resource type="Texture2D" uid="uid://jr3mhmqos288" path="res://asstets/player/coat.png" id="1_j6adm"]
+[ext_resource type="Script" uid="uid://cj12ysjqbk6pl" path="res://scenes/player/coat.gd" id="2_byvi7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jiq1j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_j6adm")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1105032934]
+sprite_frames = SubResource("SpriteFrames_jiq1j")
+script = ExtResource("2_byvi7")
