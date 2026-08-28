@@ -10,5 +10,5 @@ func _ready() -> void:
 
 func trigger(body: Node2D):
 	if body == player and cutscene:
-		player.call(cutscene)
+		player.animation_manager.call(cutscene)
 	$CollisionShape2D.set_deferred("disabled", true)

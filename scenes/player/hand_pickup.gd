@@ -13,6 +13,7 @@ signal end_signal
 
 func _ready() -> void:
 	if ConfigManager.player_config.get_value("hands", hand, true):
+		curr_floor.cutscenes -= 1
 		queue_free()
 		return
 	$Area2D.body_entered.connect(on_body_entered)

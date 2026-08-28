@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://eahvexcdkbyl"]
 
 [ext_resource type="Texture2D" uid="uid://byco8efm2dweg" path="res://asstets/player/john_overriten_corpse.png" id="1_1rxj8"]
+[ext_resource type="Script" uid="uid://tiyl3xyq3n8p" path="res://scenes/player/player_cutscene_manager.gd" id="1_yp5bs"]
 [ext_resource type="Texture2D" uid="uid://dhmlcuhsbjuhm" path="res://asstets/player/stary_wstal.png" id="2_yp5bs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0owmy"]
@@ -162,6 +163,7 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D" unique_id=1226772294]
+script = ExtResource("1_yp5bs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1722811207]
 sprite_frames = SubResource("SpriteFrames_10nri")

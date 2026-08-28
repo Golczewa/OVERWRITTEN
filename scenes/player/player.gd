@@ -12,15 +12,15 @@ var heal_amount = 80
 var heal_charge = 3
 var in_cutscene: bool = false
 @export var heal_cd = 30
+@export var animation_manager: Node2D
 @onready var legs = $AnimatedSprite2D2
 @onready var heath_bar = $Camera2D/CanvasLayer/Control2/TextureProgressBar
 @onready var charges = $Camera2D/CanvasLayer/Control
 @onready var canvas = $Camera2D/CanvasLayer
 @onready var camera: Camera2D = $Camera2D
+@onready var body: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hurt_pack: PackedScene = preload("res://scenes/player/hurt_efect.tscn")
 @onready var heal_pack: PackedScene = preload("res://scenes/player/heal_efect.tscn")
-@onready var parts_pack: PackedScene = preload("res://scenes/player/player_parts.tscn")
-@onready var explosion_pack: PackedScene = preload("res://scenes/effects/rocket_explosion.tscn")
 var left_weapon
 var right_weapon
 var left_up_weapon
@@ -113,20 +113,13 @@ func player_take_dmg(dmg):
 			_damage_effect()
 
 
-func die(death_duration := 1.5):
+func die():
 	in_cutscene = true
 	invisible = true
 	hide_stuff()
 	modulate = Color(0.25, 0.25, 0.25)
 	z_index = 1
-	var death_number: int = randi_range(0, 4)
-	if death_number == 4:
-		explode()
-	else:
-		$AnimatedSprite2D.play("dead")
-		$AnimatedSprite2D.stop()
-		$AnimatedSprite2D.frame = death_number
-	await get_tree().create_timer(death_duration).timeout
+	await animation_manager.dying()
 	in_cutscene = false
 	player_died.emit()
 	score["deaths"] = score["deaths"] + 1
@@ -350,55 +343,7 @@ func show_stuff():
 	$AnimatedSprite2D2.show()
 
 
-func explode(explosion_time = 0.3, spread = 100):
-	$AnimatedSprite2D.hide()
-	var curr_floor: Floor = get_parent().curr_scene.real_curr_floor
-	var explosion: Node = explosion_pack.instantiate()
-	explosion.scale *= 3
-	add_child(explosion)
-	for i in range(5):
-		var part = parts_pack.instantiate()
-		part.frame = i
-		part.rotate(randf_range(0, 3.14))
-		part.modulate = Color(0.25, 0.25, 0.25)
-		part.global_position = global_position
-		curr_floor.add_child(part)
-		var tween: Tween = create_tween()
-		tween.tween_property(
-			part,
-			"global_position",
-			global_position + Vector2(randf_range(-spread, spread), randf_range(-spread, spread)),
-			explosion_time
-		)
-
-
 func clear_stray_warnings():
 	for child: Control in canvas.get_children():
 		if child.z_index == -123:
 			child.queue_free()
-
-
-func get_up_cutscene():
-	$AnimatedSprite2D.position = Vector2(-8, 1)
-	in_cutscene = true
-	canvas.hide()
-	$AnimatedSprite2D.look_at(Vector2.RIGHT)
-	for weapon in $AnimatedSprite2D.get_children():
-		weapon.hide()
-	$AnimatedSprite2D2.hide()
-	$AnimatedSprite2D.play("turn_on")
-	$AnimatedSprite2D.stop()
-	$AnimatedSprite2D.frame = 0
-	await get_tree().create_timer(3).timeout
-	$AnimatedSprite2D.play("turn_on")
-	await $AnimatedSprite2D.animation_finished
-	await get_tree().create_timer(2).timeout
-	$AnimatedSprite2D.play("get_up")
-	await $AnimatedSprite2D.animation_finished
-	$AnimatedSprite2D.play("default")
-	$AnimatedSprite2D2.show()
-	for weapon in $AnimatedSprite2D.get_children():
-		weapon.show()
-	in_cutscene = false
-	canvas.show()
-	$AnimatedSprite2D.position = Vector2.ZERO
