@@ -51,7 +51,7 @@ region = Rect2(128, 0, 128, 64)
 atlas = ExtResource("6_bad0o")
 region = Rect2(256, 0, 128, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_xhcor"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_otiuk"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -100,7 +100,7 @@ skin = "1"
 [node name="AnimatedSprite2D2" parent="AnimatedSprite2D" unique_id=1235518650 instance=ExtResource("5_bad0o")]
 show_behind_parent = true
 position = Vector2(1, -10)
-sprite_frames = SubResource("SpriteFrames_xhcor")
+sprite_frames = SubResource("SpriteFrames_otiuk")
 frame = 2
 frame_progress = 1.0
 
