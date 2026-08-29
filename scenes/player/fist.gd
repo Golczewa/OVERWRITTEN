@@ -7,6 +7,8 @@ func attack(_event):
 		var bodies = mele_area.get_overlapping_bodies()
 		if upper:
 			play("upper")
+		elif cloth:
+			play("cloth")
 		else:
 			play("default")
 		for body in bodies:
@@ -23,6 +25,9 @@ func _upper():
 	if upper:
 		animation = "upper"
 		frame = 0
+	elif cloth:
+		animation="cloth"
+		frame=0
 
 # extends Area2D
 # var damage = 10

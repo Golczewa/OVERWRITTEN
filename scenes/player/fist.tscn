@@ -1,8 +1,29 @@
 [gd_scene format=3 uid="uid://clo2bdo08tpn"]
 
 [ext_resource type="Texture2D" uid="uid://bkhtemel8lin2" path="res://asstets/player/fist.png" id="1_13ffo"]
+[ext_resource type="Texture2D" uid="uid://crv0nl4xar6wa" path="res://asstets/player/fist2.png" id="1_iad6r"]
 [ext_resource type="Script" uid="uid://docl282vob1qf" path="res://scenes/player/fist.gd" id="1_ku1og"]
 [ext_resource type="Texture2D" uid="uid://cymummawncy4v" path="res://asstets/player/fist2.aseprite.png" id="2_sbfs3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4yoh"]
+atlas = ExtResource("1_iad6r")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7wmh"]
+atlas = ExtResource("1_iad6r")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1ebe"]
+atlas = ExtResource("1_iad6r")
+region = Rect2(256, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6q2ud"]
+atlas = ExtResource("1_iad6r")
+region = Rect2(384, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u56iy"]
+atlas = ExtResource("1_iad6r")
+region = Rect2(512, 0, 128, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ku1og"]
 atlas = ExtResource("1_13ffo")
@@ -46,7 +67,22 @@ region = Rect2(512, 0, 128, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kts4k"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4yoh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7wmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1ebe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6q2ud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u56iy")
+}],
 "loop": 0,
 "name": &"cloth",
 "speed": 20.0
@@ -109,6 +145,7 @@ size = Vector2(49.875, 17.25)
 
 [node name="Area2D" type="AnimatedSprite2D" unique_id=1698438607 node_paths=PackedStringArray("mele_area")]
 sprite_frames = SubResource("SpriteFrames_kts4k")
+animation = &"cloth"
 offset = Vector2(50, 7)
 script = ExtResource("1_ku1og")
 dmg = 15
