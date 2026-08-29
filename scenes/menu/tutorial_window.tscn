@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://d1y45jvayjig6"]
+
+[ext_resource type="Script" uid="uid://bdkey6uromtwa" path="res://scenes/menu/tutorial_window.gd" id="1_8tm7o"]
+[ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="2_8tm7o"]
+[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="3_8tm7o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jiq1j"]
+font = ExtResource("3_8tm7o")
+font_size = 32
+
+[node name="MenuWindow" type="Control" unique_id=375545716 node_paths=PackedStringArray("panel")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 337.0
+offset_bottom = 453.0
+script = ExtResource("1_8tm7o")
+panel = NodePath("AspectRatioContainer")
+metadata/_custom_type_script = "uid://8vimbe8e08su"
+
+[node name="AspectRatioContainer" parent="." unique_id=1461861251 instance=ExtResource("2_8tm7o")]
+layout_mode = 0
+offset_right = 337.0
+offset_bottom = 453.0
+title = "Tutorial"
+
+[node name="Label" type="Label" parent="." unique_id=1545072702]
+custom_maximum_size = Vector2(303, 361)
+layout_mode = 0
+offset_left = 18.0
+offset_top = 57.0
+offset_right = 321.0
+offset_bottom = 418.0
+label_settings = SubResource("LabelSettings_jiq1j")
+horizontal_alignment = 1
+autowrap_mode = 3

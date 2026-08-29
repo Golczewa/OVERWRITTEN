@@ -3,6 +3,7 @@ extends Node2D
 var dance_tween: Tween
 var check: bool = true
 var messege: String
+var window := false
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
 @onready var curr_floor: Floor = get_parent()
 @onready var tutorial_window_pack: PackedScene = preload("res://scenes/menu/warning_window.tscn")
@@ -18,9 +19,7 @@ func _physics_process(_delta: float) -> void:
 		curr_floor.cutscenes -= 1
 		queue_free()
 	else:
-		var tutorial_window = tutorial_window_pack.instantiate()
-		player.canvas.add_child(tutorial_window)
-		tutorial_window.setup(self, Vector2(64, 32), end_signal, messege)
+		spawn_warning()
 	if curr_floor.enemies_cleared and check:
 		check = false
 		dance()
@@ -48,3 +47,12 @@ func on_body_entered(body: Node2D) -> void:
 		curr_floor.cutscenes -= 1
 		end_signal.emit()
 		queue_free()
+
+
+func spawn_warning():
+	if window:
+		return
+	var tutorial_window = tutorial_window_pack.instantiate()
+	player.canvas.add_child(tutorial_window)
+	tutorial_window.setup(self, Vector2(64, 32), end_signal, "your coat")
+	window = true

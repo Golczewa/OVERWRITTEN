@@ -87,15 +87,15 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("attack_right_up"):
 		if right_up_weapon:
 			right_up_weapon.attack("attack_right_up")
+	if Input.is_action_just_pressed("dash"):
+		_dash()
+	if Input.is_action_just_pressed("heal"):
+		heal()
 
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
-		if event.keycode == KEY_SHIFT and event.pressed:
-			_dash()
-		elif event.keycode == KEY_F and event.pressed:
-			heal()
-		elif event.keycode == KEY_QUOTELEFT and event.pressed:
+		if event.keycode == KEY_QUOTELEFT and event.pressed:
 			get_parent().open_cheats()
 		elif event.keycode == KEY_K and event.pressed and kill_swich:
 			get_parent().kill_all()
@@ -345,6 +345,7 @@ func show_stuff():
 
 
 func clear_stray_warnings():
+	$Camera2D/CanvasLayer/MenuWindow.begone()
 	for child: Control in canvas.get_children():
 		if child.z_index == -123:
 			child.queue_free()

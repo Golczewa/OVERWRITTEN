@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cramwugkt2of" path="res://scenes/levels/floor_template.gd" id="1_n6fr6"]
 [ext_resource type="PackedScene" uid="uid://gvdpfkhlvqdq" path="res://scenes/levels/props/transition.tscn" id="2_7tjud"]
 [ext_resource type="PackedScene" uid="uid://cme8f2dhdagf" path="res://scenes/player/player_cutscene_triger.tscn" id="4_puwvw"]
+[ext_resource type="PackedScene" uid="uid://v2ex2eqoohml" path="res://scenes/levels/props/tutorial_trigger.tscn" id="5_0thnj"]
 
 [node name="Node2D" type="Node2D" unique_id=1279704020 node_paths=PackedStringArray("down_node", "up_node")]
 script = ExtResource("1_n6fr6")
@@ -25,3 +26,7 @@ color = Color(0.4045111, 0.40451115, 0.4045111, 1)
 [node name="Area2D2" parent="." unique_id=1307086545 instance=ExtResource("4_puwvw")]
 position = Vector2(24, -53)
 cutscene = "get_up_cutscene"
+
+[node name="Area2D3" parent="." unique_id=1603698753 instance=ExtResource("5_0thnj")]
+text = "Use [key] [key] [key] [key] to move"
+action_array = Array[String](["move_up", "move_down", "move_left", "move_right"])

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://v2ex2eqoohml"]
+
+[ext_resource type="Script" uid="uid://c6co2ng5u75lf" path="res://scenes/levels/props/tutorial_trigger.gd" id="1_kdmxw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jiq1j"]
+
+[node name="Area2D" type="Area2D" unique_id=1603698753]
+script = ExtResource("1_kdmxw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1273889777]
+shape = SubResource("RectangleShape2D_jiq1j")

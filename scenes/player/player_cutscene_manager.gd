@@ -36,9 +36,9 @@ func dying(death_duration := 1.5):
 		explode()
 	else:
 		if ConfigManager.player_config.get_value("state", "cloth", false):
-			$AnimatedSprite2D.animation="dead_but_dresed"
-		else :
-			$AnimatedSprite2D.animation="dead"
+			$AnimatedSprite2D.animation = "dead_but_dresed"
+		else:
+			$AnimatedSprite2D.animation = "dead"
 		$AnimatedSprite2D.frame = death_number
 	await get_tree().create_timer(death_duration).timeout
 

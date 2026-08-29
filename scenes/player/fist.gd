@@ -26,8 +26,8 @@ func _upper():
 		animation = "upper"
 		frame = 0
 	elif cloth:
-		animation="cloth"
-		frame=0
+		animation = "cloth"
+		frame = 0
 
 # extends Area2D
 # var damage = 10

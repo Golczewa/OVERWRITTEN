@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bu878f6tabfh3" path="res://scenes/levels/props/transition_exit.tscn" id="3_jdo1s"]
 [ext_resource type="PackedScene" uid="uid://dnn8p00ywx8vr" path="res://scenes/enemies/virtual_scavenger.tscn" id="6_ak4pv"]
 [ext_resource type="PackedScene" uid="uid://c6ah02d8uk7au" path="res://scenes/levels/props/virtual_box.tscn" id="6_mqs0u"]
+[ext_resource type="PackedScene" uid="uid://v2ex2eqoohml" path="res://scenes/levels/props/tutorial_trigger.tscn" id="7_ak4pv"]
 
 [node name="Node2D" type="Node2D" unique_id=522621746 node_paths=PackedStringArray("down_node", "up_node")]
 script = ExtResource("1_mqs0u")
@@ -38,3 +39,9 @@ position = Vector2(607, 86)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1491426377]
 color = Color(0.4045111, 0.40451115, 0.4045111, 1)
+
+[node name="Area2D3" parent="." unique_id=1603698753 instance=ExtResource("7_ak4pv")]
+position = Vector2(-42, 91)
+scale = Vector2(7, 7)
+text = "Use [key] to use weapon in your left hand"
+action_array = Array[String](["attack_left"])
