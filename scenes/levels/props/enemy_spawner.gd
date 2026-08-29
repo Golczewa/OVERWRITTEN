@@ -5,6 +5,7 @@ var wave_counter = 0
 var _floor: Floor
 var is_spawning_wave := false
 @export var mirrored: bool = false
+@export var give_warning: bool = false
 
 
 func _ready() -> void:
@@ -23,6 +24,8 @@ func spawn_wave():
 		for enemy in wave:
 			for i in range(enemy[0]):
 				var enemy_inst = enemy[1].instantiate()
+				if give_warning:
+					enemy_inst.with_warning = true
 				var spawn_offset = Vector2(randf_range(-8, 8), randf_range(-8, 8))
 				enemy_inst.global_position = global_position
 				enemy_inst.spawn_dest = $Marker2D.global_position + spawn_offset

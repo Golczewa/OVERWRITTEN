@@ -29,6 +29,7 @@ rotation = -3.1415925
 [node name="StaticBody2D" parent="enemies" unique_id=1062431422 instance=ExtResource("6_mqs0u")]
 position = Vector2(207, 88)
 rotation = 3.1415927
+with_warning = true
 
 [node name="StaticBody2D2" parent="enemies" unique_id=364397002 instance=ExtResource("6_mqs0u")]
 position = Vector2(395, 128.00002)
@@ -43,5 +44,5 @@ color = Color(0.4045111, 0.40451115, 0.4045111, 1)
 [node name="Area2D3" parent="." unique_id=1603698753 instance=ExtResource("7_ak4pv")]
 position = Vector2(-42, 91)
 scale = Vector2(7, 7)
-text = "Use [key] to use weapon in your left hand"
+text = "Press [key] to use weapon in your left hand"
 action_array = Array[String](["attack_left"])

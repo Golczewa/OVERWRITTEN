@@ -1,9 +1,12 @@
 extends CharacterBody2D
 
 @export var test_max_health: int = 1
+@export var with_warning: bool = false
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var legs = $AnimatedSprite2D2
+@onready var arrow: AnimatedSprite2D = $AnimatedSprite2D3
+@onready var warning_pack: PackedScene = preload("res://scenes/menu/warning_window.tscn")
 var curr_health: int
 var floor_
 var direction: Vector2 = Vector2.ZERO
@@ -27,6 +30,10 @@ func _ready() -> void:
 	legs.walk()
 	$AnimatedSprite2D.play("default")
 	_randomise_target()
+	if with_warning:
+		var warning = warning_pack.instantiate()
+		player.canvas.add_child(warning)
+		warning.setup(self, Vector2(64, 64), died, "Enemy simulation")
 
 
 func take_damage(damage: int, _knockback: int):
@@ -45,6 +52,7 @@ func _die():
 	tween.tween_property($AnimatedSprite2D2, "scale", Vector2(0, 0), 0.2)
 	tween.tween_property($AnimatedSprite2D2, "modulate:a", 0, 0.2)
 	dead = true
+	arrow.hide()
 	set_physics_process(false)
 	set_process(false)
 
@@ -69,6 +77,7 @@ func _randomise_target():
 
 func _physics_process(_delta: float) -> void:
 	if !in_knocback:
+		arrow.update_arrow_pos(global_position, player.camera)
 		_idle_moving()
 		var target_angle = direction.angle()
 		rotation = lerp_angle(rotation, target_angle, rot_speed * _delta)

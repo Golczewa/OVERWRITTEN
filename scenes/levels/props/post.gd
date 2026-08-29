@@ -5,16 +5,12 @@ var unlock_screen_pack: PackedScene = preload("res://scenes/menu/weapon_unlocked
 var tutorial_window_pack: PackedScene = preload("res://scenes/menu/warning_window.tscn")
 var menu
 var floor_: Floor
+var window := false
 signal done
 
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
-	if not ConfigManager.player_config.get_value("unlocked_weapons", str(1), true):
-		print("Dwadawdawdaw")
-		var tutorial_window = tutorial_window_pack.instantiate()
-		player.canvas.add_child(tutorial_window)
-		tutorial_window.setup($Marker2D, Vector2(108, 49), done, "Special delivery!")
 	floor_ = get_parent().get_parent()
 	body_entered.connect(show_menu)
 	body_exited.connect(hide_menu)
@@ -36,6 +32,14 @@ func hide_menu(body):
 func _process(_delta: float) -> void:
 	if floor_.enemies_cleared:
 		$PointLight2D.enabled = true
+		if (
+			not ConfigManager.player_config.get_value("unlocked_weapons", str(1), true)
+			and not window
+		):
+			var tutorial_window = tutorial_window_pack.instantiate()
+			player.canvas.add_child(tutorial_window)
+			tutorial_window.setup($Marker2D, Vector2(108, 49), done, "Special delivery!")
+			window = true
 	else:
 		$PointLight2D.enabled = false
 

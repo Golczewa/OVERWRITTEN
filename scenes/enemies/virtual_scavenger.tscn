@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://6wtk3htq4ekr" path="res://asstets/enemies/virtual_legs.png" id="2_renea"]
 [ext_resource type="Script" uid="uid://dbj6alxoapjxn" path="res://scenes/enemies/legs.gd" id="4_bocn7"]
 [ext_resource type="Texture2D" uid="uid://0uh0rx1ddq6w" path="res://asstets/props/light_test.png" id="5_yu5yy"]
+[ext_resource type="PackedScene" uid="uid://yqxpfo2l2m20" path="res://scenes/effects/arrow.tscn" id="6_bocn7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vm2f1"]
 atlas = ExtResource("1_cjccf")
@@ -114,3 +115,5 @@ script = ExtResource("4_bocn7")
 color = Color(0.7647059, 0.14509805, 0.20392157, 1)
 texture = ExtResource("5_yu5yy")
 texture_scale = 0.6
+
+[node name="AnimatedSprite2D3" parent="." unique_id=1822404430 instance=ExtResource("6_bocn7")]

@@ -8,6 +8,7 @@ var messege: String
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
 @onready var curr_floor: Floor = get_parent()
 @onready var tutorial_window_pack: PackedScene = preload("res://scenes/menu/warning_window.tscn")
+@onready var window: MenuWindow = player.get_node("Camera2D/CanvasLayer/MenuWindow")
 signal end_signal
 
 
@@ -54,4 +55,28 @@ func on_body_entered(body: Node2D) -> void:
 		player.equip_weapons()
 		curr_floor.cutscenes -= 1
 		end_signal.emit()
+		spawn_tutorial_window()
 		queue_free()
+
+
+func spawn_tutorial_window():
+	if hand == "right":
+		var key = get_action_key_name("attack_right")
+		window.setup("Press " + key + " to use weapon in your right hand")
+	elif hand == "left_upper":
+		var key = get_action_key_name("attack_left_up")
+		window.setup("Press " + key + " to use weapon in your upper left hand")
+	else:
+		var key = get_action_key_name("attack_right_up")
+		window.setup("Press " + key + " to use weapon in your upper right hand")
+
+
+func get_action_key_name(action: String) -> String:
+	var events = InputMap.action_get_events(action)
+	for event in events:
+		if event is InputEventKey:
+			var code = event.physical_keycode if event.physical_keycode != 0 else event.keycode
+			return OS.get_keycode_string(code)
+		elif event is InputEventMouseButton:
+			return event.as_text()
+	return "Unbound"

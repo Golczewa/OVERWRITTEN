@@ -2,6 +2,8 @@ class_name EnemyWithGun
 extends CharacterBody2D
 
 @export var max_health: int = 40
+@export var with_warning: bool = false
+@onready var warning_pack: PackedScene = preload("res://scenes/menu/warning_window.tscn")
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var player = get_tree().get_first_node_in_group("player")
 @export var weapon: AnimatedSprite2D
@@ -204,6 +206,10 @@ func big_entrance(pos: Vector2) -> void:
 	tween.tween_property(self, "modulate", Color.WHITE, 0.5)
 	await tween.finished
 	is_spawning = false
+	if with_warning:
+		var warning = warning_pack.instantiate()
+		player.canvas.add_child(warning)
+		warning.setup(self, Vector2(64, 64), died, "An actual enemy!")
 
 
 func _fire_weapon():

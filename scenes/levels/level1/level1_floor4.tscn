@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cwswxiilr1euu" path="res://scenes/levels/level1/level1_floor4_map.tscn" id="6_yo0sv"]
 [ext_resource type="PackedScene" uid="uid://b0iqe6x2742im" path="res://scenes/levels/props/namedrop.tscn" id="7_1lth2"]
 [ext_resource type="PackedScene" uid="uid://dico4xcxnqi3w" path="res://scenes/levels/props/double_doors.tscn" id="8_5b0ov"]
+[ext_resource type="PackedScene" uid="uid://v2ex2eqoohml" path="res://scenes/levels/props/tutorial_trigger.tscn" id="8_yq0qq"]
 
 [sub_resource type="GDScript" id="GDScript_5b0ov"]
 script/source = "extends Floor
@@ -51,3 +52,15 @@ position = Vector2(113, 519)
 
 [node name="Area2D4" parent="." unique_id=867155296 instance=ExtResource("8_5b0ov")]
 position = Vector2(317, 128)
+
+[node name="Area2D5" parent="." unique_id=1603698753 instance=ExtResource("8_yq0qq")]
+position = Vector2(161, 446.00003)
+scale = Vector2(15, 7)
+text = "Press [key] to dash"
+action_array = Array[String](["dash"])
+
+[node name="Area2D6" parent="." unique_id=601576929 instance=ExtResource("8_yq0qq")]
+position = Vector2(412.00003, 130)
+scale = Vector2(7, 7)
+text = "Press [key] to heal yourself"
+action_array = Array[String](["heal"])
