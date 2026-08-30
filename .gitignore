@@ -5,3 +5,4 @@
 .idea/
 CMakePresets.json
 .vscode/
+export_presets.cfg

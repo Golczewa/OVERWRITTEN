@@ -66,6 +66,7 @@ func begone():
 
 
 func untoggling(button: Button):
+	AudioPlayer.play(AudioPlayer.weapon_equip)
 	if to_untoggle != null:
 		to_untoggle.button_pressed = false
 	if to_untoggle == button:

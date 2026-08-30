@@ -15,6 +15,7 @@ func _ready() -> void:
 
 
 func play_game(path: String):
+	AudioPlayer.stop_music()
 	$CanvasLayer/loading.load_animation()
 	emit_signal("game")
 	$game.process_mode = Node.PROCESS_MODE_INHERIT
@@ -26,6 +27,7 @@ func play_game(path: String):
 
 
 func back_to_menu():
+	AudioPlayer.play_music(AudioPlayer.menu_theme)
 	$game/CanvasLayer/pause.is_open = false
 	get_tree().paused = false
 	emit_signal("menu")
