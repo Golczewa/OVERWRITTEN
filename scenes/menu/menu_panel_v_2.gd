@@ -8,14 +8,17 @@ extends PanelContainer
 
 const begin_h = 80
 const anim_time = 0.1
-
+var open:=false
 
 func _ready() -> void:
 	format_title()
 
 
 func open_animation():
+	if open:
+		return
 	show()
+	open=true
 	AudioPlayer.play(AudioPlayer.menu_window_open)
 	var height = size.y
 	var centre = height / 2 - 80
@@ -28,6 +31,9 @@ func open_animation():
 
 
 func close_animation():
+	if not open:
+		return
+	open=false
 	AudioPlayer.play(AudioPlayer.menu_window_close)
 	var height = size.y
 	var centre = height / 2 - 80

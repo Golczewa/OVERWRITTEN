@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://dwp0ca40lalfh"]
 
-[ext_resource type="Script" uid="uid://rvp304ot6x1b" path="res://autoload/node.gd" id="1_46rrk"]
+[ext_resource type="Script" uid="uid://bih2s6fu4krgt" path="res://autoload/audio_player.gd" id="1_ulgtw"]
 
 [node name="Node" type="Node" unique_id=1803999892]
-script = ExtResource("1_46rrk")
+script = ExtResource("1_ulgtw")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=259282318]
 volume_db = 1.351
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1521465258]

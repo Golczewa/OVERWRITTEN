@@ -13,6 +13,7 @@ func _ready() -> void:
 	$Panel/VBoxContainer/Button2.pressed.connect(show_quit_game_panel)
 	var title_num = randi_range(0, len(titles) - 1)
 	$Panel/Label2.text = titles[title_num]
+	AudioPlayer.play_music(AudioPlayer.menu_theme)
 
 
 func open_map_choice():
@@ -20,7 +21,6 @@ func open_map_choice():
 
 
 func get_main_menu():
-	$Panel.show()
 	$map_choice.begone()
 	$Control.hide()
 

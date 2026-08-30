@@ -54,5 +54,5 @@ func spawn_warning():
 		return
 	var tutorial_window = tutorial_window_pack.instantiate()
 	player.canvas.add_child(tutorial_window)
-	tutorial_window.setup(self, Vector2(64, 32), end_signal, "your coat")
+	tutorial_window.setup(self, Vector2(64, 32), end_signal, "Your coat")
 	window = true
