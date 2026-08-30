@@ -1,8 +1,9 @@
 extends Area2D
-var player
+@onready var player =get_tree().get_first_node_in_group("player")
 var menu_pack = preload("res://scenes/menu/post_menu.tscn")
 var unlock_screen_pack: PackedScene = preload("res://scenes/menu/weapon_unlocked.tscn")
-var tutorial_window_pack: PackedScene = preload("res://scenes/menu/warning_window.tscn")
+var warning_window_pack: PackedScene = preload("res://scenes/menu/warning_window.tscn")
+@onready var tutorial_window: MenuWindow = player.get_node("Camera2D/CanvasLayer/MenuWindow")
 var menu
 var floor_: Floor
 var window := false
@@ -10,7 +11,6 @@ signal done
 
 
 func _ready() -> void:
-	player = get_tree().get_first_node_in_group("player")
 	floor_ = get_parent().get_parent()
 	body_entered.connect(show_menu)
 	body_exited.connect(hide_menu)
@@ -36,9 +36,9 @@ func _process(_delta: float) -> void:
 			not ConfigManager.player_config.get_value("unlocked_weapons", str(1), true)
 			and not window
 		):
-			var tutorial_window = tutorial_window_pack.instantiate()
-			player.canvas.add_child(tutorial_window)
-			tutorial_window.setup($Marker2D, Vector2(108, 49), done, "Special delivery!")
+			var warning_window = warning_window_pack.instantiate()
+			player.canvas.add_child(warning_window)
+			warning_window.setup($Marker2D, Vector2(108, 49), done, "Special delivery!")
 			window = true
 	else:
 		$PointLight2D.enabled = false
@@ -54,3 +54,4 @@ func unlock_revolver():
 	unlocked_screen.unlock_weapon(1)
 	floor_.cutscenes -= 1
 	done.emit()
+	tutorial_window.setup("You can change weapon in your hand in post menu. Just press weapon icon to open your stash")
