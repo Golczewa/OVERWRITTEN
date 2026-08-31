@@ -57,6 +57,7 @@ func on_body_entered(body: Node2D) -> void:
 		end_signal.emit()
 		spawn_tutorial_window()
 		queue_free()
+		AudioPlayer.play_game_sfx(AudioPlayer.pickup_hand)
 
 
 func spawn_tutorial_window():

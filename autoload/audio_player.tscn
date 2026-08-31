@@ -2,10 +2,21 @@
 
 [ext_resource type="Script" uid="uid://bih2s6fu4krgt" path="res://autoload/audio_player.gd" id="1_ulgtw"]
 
-[node name="Node" type="Node" unique_id=1803999892]
+[node name="Node" type="Node" unique_id=1803999892 node_paths=PackedStringArray("game_sfx_players")]
 process_mode = 3
 script = ExtResource("1_ulgtw")
+game_sfx_players = [NodePath("AudioStreamPlayer3"), NodePath("AudioStreamPlayer4"), NodePath("AudioStreamPlayer5"), NodePath("AudioStreamPlayer6"), NodePath("AudioStreamPlayer7")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=259282318]
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1521465258]
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="." unique_id=618687236]
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="." unique_id=843031291]
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="." unique_id=392339245]
+
+[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="." unique_id=1179062745]
+
+[node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="." unique_id=2059861052]

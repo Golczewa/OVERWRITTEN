@@ -24,6 +24,8 @@ func setup(targ: Node2D, window_size_: Vector2, end_signal: Signal, content: Str
 
 
 func update_positions():
+	if not target:
+		return
 	var cam_scale: Vector2 = get_viewport().canvas_transform.get_scale()
 	var center: Vector2 = world_to_canvas(target.global_position)
 	var scaled_size: Vector2 = window_size * cam_scale
