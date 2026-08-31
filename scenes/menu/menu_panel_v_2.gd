@@ -15,11 +15,10 @@ func _ready() -> void:
 
 
 func open_animation():
-	if open:
-		return
+	if not open:
+		AudioPlayer.play(AudioPlayer.menu_window_open)
 	show()
 	open=true
-	AudioPlayer.play(AudioPlayer.menu_window_open)
 	var height = size.y
 	var centre = height / 2 - 80
 	position.y = centre
@@ -31,10 +30,9 @@ func open_animation():
 
 
 func close_animation():
-	if not open:
-		return
+	if open:
+		AudioPlayer.play(AudioPlayer.menu_window_close)
 	open=false
-	AudioPlayer.play(AudioPlayer.menu_window_close)
 	var height = size.y
 	var centre = height / 2 - 80
 	var tween = create_tween().set_parallel(true)
