@@ -27,6 +27,7 @@ func on_player_died():
 func when_pressed():
 	if get_tree().paused:
 		get_tree().paused = false
+		AudioPlayer.death_unpause()
 		emit_signal("restart")
 
 

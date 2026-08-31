@@ -119,6 +119,7 @@ func die():
 	hide_stuff()
 	modulate = Color(0.25, 0.25, 0.25)
 	z_index = 1
+	AudioPlayer.death_pause()
 	await animation_manager.dying()
 	in_cutscene = false
 	player_died.emit()
@@ -244,6 +245,7 @@ func load_state(state: Dictionary):
 	var title = get_tree().get_first_node_in_group("title")
 	if title != null:
 		title.queue_free()
+	clear_stray_warnings()
 
 
 func add_ghost():

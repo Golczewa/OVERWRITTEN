@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if not in_cutscene:
-		look_at(target)
+		look_at(target.rotated(0.02))
 
 
 func end_cd():

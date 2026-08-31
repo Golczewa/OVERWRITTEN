@@ -26,16 +26,19 @@ func _input(event: InputEvent) -> void:
 					open()
 					is_open = true
 					get_tree().paused = true
+					AudioPlayer.pause_effect()
 				else:
 					begone()
 					is_open = false
 					get_tree().paused = false
+					AudioPlayer.unpause_effect()
 
 
 func when_pressed():
 	if get_tree().paused and is_open:
 		begone()
 		get_tree().paused = false
+		AudioPlayer.unpause_effect()
 		is_open = false
 
 

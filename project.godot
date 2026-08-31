@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="OVERWRITTEN"
-run/main_scene="uid://dogsf0jphl0cq"
+run/main_scene="uid://bhv8006gbu02"
 config/features=PackedStringArray("4.7", "Mobile")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
@@ -21,7 +21,7 @@ boot_splash/minimum_display_time=1000
 
 [audio]
 
-buses/default_bus_layout=""
+buses/default_bus_layout="uid://nwbjaipwkjhv"
 
 [autoload]
 

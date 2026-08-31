@@ -1,0 +1,35 @@
+[gd_resource type="AudioBusLayout" format=3 uid="uid://nwbjaipwkjhv"]
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_ik1vl"]
+resource_name = "Reverb"
+
+[sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_ik1vl"]
+resource_name = "Distortion"
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_ik1vl"]
+resource_name = "LowPassFilter"
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_dyd15"]
+resource_name = "LowPassFilter"
+
+[resource]
+bus/1/name = &"Pause"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = -18.984375
+bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectReverb_ik1vl")
+bus/1/effect/0/enabled = true
+bus/1/effect/1/effect = SubResource("AudioEffectDistortion_ik1vl")
+bus/1/effect/1/enabled = false
+bus/1/effect/2/effect = SubResource("AudioEffectLowPassFilter_ik1vl")
+bus/1/effect/2/enabled = true
+bus/2/name = &"Death"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = 0.0
+bus/2/send = &"Master"
+bus/2/effect/0/effect = SubResource("AudioEffectLowPassFilter_dyd15")
+bus/2/effect/0/enabled = true

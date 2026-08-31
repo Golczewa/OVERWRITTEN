@@ -1,5 +1,5 @@
 extends Area2D
-@onready var player =get_tree().get_first_node_in_group("player")
+@onready var player = get_tree().get_first_node_in_group("player")
 var menu_pack = preload("res://scenes/menu/post_menu.tscn")
 var unlock_screen_pack: PackedScene = preload("res://scenes/menu/weapon_unlocked.tscn")
 var warning_window_pack: PackedScene = preload("res://scenes/menu/warning_window.tscn")
@@ -54,4 +54,6 @@ func unlock_revolver():
 	unlocked_screen.unlock_weapon(1)
 	floor_.cutscenes -= 1
 	done.emit()
-	tutorial_window.setup("You can change weapon in your hand in post menu. Just press weapon icon to open your stash")
+	tutorial_window.setup(
+		"You can change weapon in your hand in post menu. Just press weapon icon to open your stash"
+	)

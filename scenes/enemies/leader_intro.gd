@@ -12,6 +12,7 @@ func _ready() -> void:
 func play_cuscene(body: Node2D):
 	if body != player:
 		return
+	AudioPlayer.volume_down()
 	player.in_cutscene = true
 	$Area2D/CollisionShape2D.set_deferred("disabled", true)
 	await player.focus_camera(leader.global_position)
@@ -32,4 +33,5 @@ func play_cuscene(body: Node2D):
 	get_parent().add_enemy(leader, leader_pos)
 	leader.toogle_cutscene()
 	leader.keep_arrow = true
+	AudioPlayer.volume_up()
 	$StaticBody2D/CollisionShape2D.set_deferred("disabled", false)

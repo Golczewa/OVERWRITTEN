@@ -59,5 +59,6 @@ func _draw():
 		draw_line(point_a, point_b, line_color, line_width)
 		draw_line(point_b, to, line_color, line_width)
 
+
 func _exit_tree() -> void:
 	$MenuWindow.begone()

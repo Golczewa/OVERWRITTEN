@@ -23,8 +23,9 @@ func _ready() -> void:
 	player.load_state(player.default_state)
 	player_state = player.default_state
 	player.set_player_position(floors[0].spawn)
-	var song="level_"+str(level_id)+"_theme"
+	var song = "level_" + str(level_id) + "_theme"
 	AudioPlayer.play_with_entrance(AudioPlayer.get(song))
+
 
 func move_up():
 	player.clear_stray_warnings()
