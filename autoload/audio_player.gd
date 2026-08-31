@@ -1,10 +1,10 @@
 extends Node
 
 @export var music_volume: float = -2
-@export var sfx_volume: float = 1
+@export var sfx_volume: float = 3
 
-@onready var sfx_player: AudioStreamPlayer = $AudioStreamPlayer
-@onready var music_player: AudioStreamPlayer = $AudioStreamPlayer2
+@onready var sfx_player: AudioStreamPlayer = $UI_SFX
+@onready var music_player: AudioStreamPlayer = $MUSIC
 @export var game_sfx_players: Array[AudioStreamPlayer]
 
 #UI SFX
@@ -24,7 +24,8 @@ var level_4_theme: Resource = preload("res://asstets/music/Anexodus FULL TRACK L
 
 #IN GAME SFX
 
-@onready var pickup_hand: Resource = preload("res://asstets/sfx/normalized/append.wav")
+@onready var pickup_hand: Resource = preload("res://asstets/sfx/normalized/Append.wav")
+@onready var startup: Resource=preload("res://asstets/sfx/startup.wav")
 
 
 func _ready() -> void:

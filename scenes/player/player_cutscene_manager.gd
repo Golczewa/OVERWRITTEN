@@ -17,6 +17,7 @@ func get_up_cutscene():
 	if in_stopable_cutscene:
 		await get_tree().create_timer(2).timeout
 	if in_stopable_cutscene:
+		AudioPlayer.play_game_sfx(AudioPlayer.startup)
 		$AnimatedSprite2D.play("turn_on")
 	await $AnimatedSprite2D.animation_finished
 	if in_stopable_cutscene:

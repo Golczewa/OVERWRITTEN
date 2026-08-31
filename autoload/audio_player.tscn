@@ -5,11 +5,11 @@
 [node name="Node" type="Node" unique_id=1803999892 node_paths=PackedStringArray("game_sfx_players")]
 process_mode = 3
 script = ExtResource("1_ulgtw")
-game_sfx_players = [NodePath("AudioStreamPlayer3"), NodePath("AudioStreamPlayer4"), NodePath("AudioStreamPlayer5"), NodePath("AudioStreamPlayer6"), NodePath("AudioStreamPlayer7")]
+game_sfx_players = [NodePath("AudioStreamPlayer3"), NodePath("AudioStreamPlayer5"), NodePath("AudioStreamPlayer4"), NodePath("AudioStreamPlayer7"), NodePath("AudioStreamPlayer6")]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=259282318]
+[node name="UI_SFX" type="AudioStreamPlayer" parent="." unique_id=259282318]
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1521465258]
+[node name="MUSIC" type="AudioStreamPlayer" parent="." unique_id=1521465258]
 
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="." unique_id=618687236]
 
