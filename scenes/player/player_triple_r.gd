@@ -5,6 +5,7 @@ var rocket_spred := -0.15
 
 func attack(_event):
 	if can_attack and not is_hand_in_wall():
+		AudioPlayer.play_game_sfx(AudioPlayer.lauch)
 		can_attack = false
 		var angle = rocket_spred
 		for i in range(3):

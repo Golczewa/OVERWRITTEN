@@ -23,6 +23,7 @@ func end_cd():
 
 func attack():
 	if can_attack:
+		AudioPlayer.play_game_sfx(AudioPlayer.revolver_shot)
 		var random_angle
 		var bullet = bullet_test.instantiate()
 		random_angle = deg_to_rad(randf_range(-5, 5))

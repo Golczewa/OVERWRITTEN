@@ -215,6 +215,7 @@ func spanwn_rocket(rot_degree: float) -> void:
 	rocket.direction = dir.rotated(rot_degree)
 	rocket.rotate(rot_degree)
 	curr_floor.add_child(rocket)
+	AudioPlayer.play_game_sfx(AudioPlayer.lauch)
 
 
 func fire_hoaming_rocket() -> void:
@@ -226,6 +227,7 @@ func fire_hoaming_rocket() -> void:
 	hrocket.direction = dir
 	hrocket.sender = self
 	curr_floor.add_child(hrocket)
+	AudioPlayer.play_game_sfx(AudioPlayer.lauch)
 
 
 func fire_above(spawn_range: Vector2 = Vector2(80, 80)) -> void:
@@ -243,6 +245,7 @@ func fire_above(spawn_range: Vector2 = Vector2(80, 80)) -> void:
 		daneger_zone.global_position = Vector2(spawn_x, spawn_y)
 		curr_floor.add_child(daneger_zone)
 	laucher.play("empty")
+	AudioPlayer.play_game_sfx(AudioPlayer.lauch)
 
 
 func can_see_player() -> bool:

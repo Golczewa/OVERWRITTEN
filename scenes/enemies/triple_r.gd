@@ -18,6 +18,7 @@ func end_cd():
 
 func attack():
 	if can_attack:
+		AudioPlayer.play_game_sfx(AudioPlayer.lauch)
 		can_attack = false
 		var rot = -0.35
 		for i in range(3):

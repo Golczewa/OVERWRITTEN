@@ -29,6 +29,7 @@ var level_4_theme: Resource = preload("res://asstets/music/Anexodus FULL TRACK L
 @onready var explosion1: Resource = preload("res://asstets/sfx/normalized/explosion.wav")
 @onready var explosion2: Resource = preload("res://asstets/sfx/normalized/explosion2.wav")
 @onready var revolver_shot: Resource = preload("res://asstets/sfx/normalized/rev_shot.wav")
+@onready var lauch: Resource = preload("res://asstets/sfx/normalized/lauch.wav")
 
 
 func _ready() -> void:
@@ -43,7 +44,7 @@ func play(sound: Resource):
 	sfx_player.play()
 
 
-func play_game_sfx(sound: AudioStream, max_count := 2) -> void:
+func play_game_sfx(sound: AudioStream, max_count := 3) -> void:
 	var free_stream: AudioStreamPlayer = null
 	var same_sound_count := 0
 	for stream in game_sfx_players:
