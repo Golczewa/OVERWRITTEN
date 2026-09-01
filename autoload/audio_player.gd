@@ -25,7 +25,10 @@ var level_4_theme: Resource = preload("res://asstets/music/Anexodus FULL TRACK L
 #IN GAME SFX
 
 @onready var pickup_hand: Resource = preload("res://asstets/sfx/normalized/Append.wav")
-@onready var startup: Resource=preload("res://asstets/sfx/startup.wav")
+@onready var startup: Resource = preload("res://asstets/sfx/startup.wav")
+@onready var explosion1: Resource = preload("res://asstets/sfx/normalized/explosion.wav")
+@onready var explosion2: Resource = preload("res://asstets/sfx/normalized/explosion2.wav")
+@onready var revolver_shot: Resource = preload("res://asstets/sfx/normalized/rev_shot.wav")
 
 
 func _ready() -> void:
@@ -40,12 +43,19 @@ func play(sound: Resource):
 	sfx_player.play()
 
 
-func play_game_sfx(sound: Resource):
+func play_game_sfx(sound: AudioStream, max_count := 2) -> void:
+	var free_stream: AudioStreamPlayer = null
+	var same_sound_count := 0
 	for stream in game_sfx_players:
-		if not stream.playing:
-			stream.stream = sound
-			stream.play()
-			break
+		if stream.playing and stream.stream == sound:
+			same_sound_count += 1
+			if same_sound_count >= max_count:
+				return
+		elif not stream.playing and free_stream == null:
+			free_stream = stream
+	if free_stream:
+		free_stream.stream = sound
+		free_stream.play()
 
 
 func play_music(sound: Resource):

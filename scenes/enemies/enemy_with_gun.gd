@@ -100,6 +100,7 @@ func _damage_effect():
 	if curr_health > 0:
 		modulate = Color.RED
 		await get_tree().create_timer(0.1).timeout
+	if curr_health > 0:
 		modulate = Color.WHITE
 
 

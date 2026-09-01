@@ -22,6 +22,7 @@ func open_animation():
 	open = true
 	var height = size.y
 	var centre = height / 2 - 80
+	print(centre)
 	position.y = centre
 	size.y = begin_h
 	var tween = create_tween().set_parallel(true)

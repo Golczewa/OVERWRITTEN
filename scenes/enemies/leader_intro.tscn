@@ -55,6 +55,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7il6"]
 size = Vector2(6, 128)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wqiw"]
+size = Vector2(20, 284)
+
 [node name="Node2D" type="Node2D" unique_id=994559580]
 script = ExtResource("1_emc65")
 
@@ -100,3 +103,10 @@ disabled = true
 [node name="Sprite2D3" parent="." unique_id=41209180 instance=ExtResource("5_o105g")]
 z_index = 1
 position = Vector2(-69, 0)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=391771350]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=182552861]
+position = Vector2(469, 0)
+shape = SubResource("RectangleShape2D_1wqiw")
+disabled = true

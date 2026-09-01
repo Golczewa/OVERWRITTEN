@@ -5,6 +5,7 @@ func attack(_event):
 	if is_hand_in_wall():
 		return
 	if can_attack:
+		AudioPlayer.play_game_sfx(AudioPlayer.revolver_shot)
 		_spawn_bullet(0, 4, 1)
 		get_tree().create_timer(cooldown).timeout.connect(end_cd)
 		can_attack = false
