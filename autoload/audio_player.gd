@@ -9,12 +9,12 @@ extends Node
 
 #UI SFX
 @onready
-var menu_window_open: Resource = preload("res://asstets/sfx/normalized/Ting_Pitched_Down.wav")
+var menu_window_open: Resource = preload("res://asstets/sfx/Ting_Pitched_Down.wav")
 @onready var menu_window_close: Resource = preload(
-	"res://asstets/sfx/normalized/Ting_Pitched_Down_Backwards2.wav"
+	"res://asstets/sfx/Ting_Pitched_Down_Backwards2.wav"
 )
 @onready
-var weapon_equip: Resource = preload("res://asstets/sfx/normalized/Click_Combo_5_Pitched_Up.wav")
+var weapon_equip: Resource = preload("res://asstets/sfx/Click_Combo_5_Pitched_Up.wav")
 
 #MUSIC
 @onready var menu_theme: Resource = preload("res://asstets/music/Polaris FULL TRACK.ogg")
@@ -24,18 +24,19 @@ var level_4_theme: Resource = preload("res://asstets/music/Anexodus FULL TRACK L
 
 #IN GAME SFX
 
-@onready var pickup_hand: Resource = preload("res://asstets/sfx/normalized/Append.wav")
+@onready var pickup_hand: Resource = preload("res://asstets/sfx/Append.wav")
 @onready var startup: Resource = preload("res://asstets/sfx/startup.wav")
-@onready var explosion1: Resource = preload("res://asstets/sfx/normalized/explosion.wav")
-@onready var explosion2: Resource = preload("res://asstets/sfx/normalized/explosion2.wav")
-@onready var revolver_shot: Resource = preload("res://asstets/sfx/normalized/rev_shot.wav")
-@onready var lauch: Resource = preload("res://asstets/sfx/normalized/lauch.wav")
-@onready var shatter: Resource=preload("res://asstets/sfx/normalized/window_shatter.wav")
+@onready var explosion1: Resource = preload("res://asstets/sfx/explosion.wav")
+@onready var explosion2: Resource = preload("res://asstets/sfx/explosion2.wav")
+@onready var revolver_shot: Resource = preload("res://asstets/sfx/rev_shot.wav")
+@onready var lauch: Resource = preload("res://asstets/sfx/lauch.wav")
+@onready var shatter: Resource=preload("res://asstets/sfx/window_shatter.wav")
+@onready var chainsaw_running:Resource
 
-@onready var bullet_rickoshet1:Resource=preload("res://asstets/sfx/normalized/bullet_rickoshet1.wav")
-@onready var bullet_rickoshet2:Resource=preload("res://asstets/sfx/normalized/bullet_rickoshet2.wav")
-@onready var bullet_rickoshet3:Resource=preload("res://asstets/sfx/normalized/bullet_rickoshet3.wav")
-@onready var bullet_rickoshet4:Resource=preload("res://asstets/sfx/normalized/bullet_rickoshet4.wav")
+@onready var bullet_rickoshet1:Resource=preload("res://asstets/sfx/bullet_rickoshet1.wav")
+@onready var bullet_rickoshet2:Resource=preload("res://asstets/sfx/bullet_rickoshet2.wav")
+@onready var bullet_rickoshet3:Resource=preload("res://asstets/sfx/bullet_rickoshet3.wav")
+@onready var bullet_rickoshet4:Resource=preload("res://asstets/sfx/bullet_rickoshet4.wav")
 
 func _ready() -> void:
 	sfx_player.volume_db = sfx_volume

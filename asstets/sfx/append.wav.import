@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://yet804sk1m6b"
-path="res://.godot/imported/lauch.wav-bc5f916c424f5c633b539cda151d4a15.sample"
+uid="uid://j100w8mh0fbq"
+path="res://.godot/imported/append.wav-ae60648b075eb3315ead2cd8c235d876.sample"
 
 [deps]
 
-source_file="res://asstets/sfx/normalized/lauch.wav"
-dest_files=["res://.godot/imported/lauch.wav-bc5f916c424f5c633b539cda151d4a15.sample"]
+source_file="res://asstets/sfx/append.wav"
+dest_files=["res://.godot/imported/append.wav-ae60648b075eb3315ead2cd8c235d876.sample"]
 
 [params]
 
