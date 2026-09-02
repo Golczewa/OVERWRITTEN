@@ -24,6 +24,7 @@ func shatter(body: Node2D, shards_number = 8):
 			spawn_shard(global_position + random_pos)
 	AudioPlayer.play_game_sfx(AudioPlayer.shatter)
 
+
 func spawn_shard(end_pos: Vector2, time = 0.1):
 	var tween := create_tween()
 	var shard = shard_pack.instantiate()

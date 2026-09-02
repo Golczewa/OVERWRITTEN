@@ -6,15 +6,13 @@ extends Node
 @onready var sfx_player: AudioStreamPlayer = $UI_SFX
 @onready var music_player: AudioStreamPlayer = $MUSIC
 @export var game_sfx_players: Array[AudioStreamPlayer]
+@export var game_sfx_loop_players: Array[AudioStreamPlayer]
 
 #UI SFX
+@onready var menu_window_open: Resource = preload("res://asstets/sfx/Ting_Pitched_Down.wav")
 @onready
-var menu_window_open: Resource = preload("res://asstets/sfx/Ting_Pitched_Down.wav")
-@onready var menu_window_close: Resource = preload(
-	"res://asstets/sfx/Ting_Pitched_Down_Backwards2.wav"
-)
-@onready
-var weapon_equip: Resource = preload("res://asstets/sfx/Click_Combo_5_Pitched_Up.wav")
+var menu_window_close: Resource = preload("res://asstets/sfx/Ting_Pitched_Down_Backwards2.wav")
+@onready var weapon_equip: Resource = preload("res://asstets/sfx/Click_Combo_5_Pitched_Up.wav")
 
 #MUSIC
 @onready var menu_theme: Resource = preload("res://asstets/music/Polaris FULL TRACK.ogg")
@@ -30,13 +28,20 @@ var level_4_theme: Resource = preload("res://asstets/music/Anexodus FULL TRACK L
 @onready var explosion2: Resource = preload("res://asstets/sfx/explosion2.wav")
 @onready var revolver_shot: Resource = preload("res://asstets/sfx/rev_shot.wav")
 @onready var lauch: Resource = preload("res://asstets/sfx/lauch.wav")
-@onready var shatter: Resource=preload("res://asstets/sfx/window_shatter.wav")
-@onready var chainsaw_running:Resource
+@onready var shatter: Resource = preload("res://asstets/sfx/window_shatter.wav")
+@onready var chainsaw_running: Resource = preload("res://asstets/sfx/chainsaw_runing.wav")
+@onready var chainsaw_warning: Resource = preload("res://asstets/sfx/leader_chainsaw_warning.wav")
+@onready var punch: Resource = preload("res://asstets/sfx/punch_sometching.wav")
+@onready var swosh: Resource = preload("res://asstets/sfx/punch_air.wav")
+@onready var slash:Resource=preload("res://asstets/sfx/sword.wav")
+@onready var patchwork_shot:Resource=preload("res://asstets/sfx/pach_gunshot.wav")
+@onready var coat:Resource=preload("res://asstets/sfx/cloth.wav")
 
-@onready var bullet_rickoshet1:Resource=preload("res://asstets/sfx/bullet_rickoshet1.wav")
-@onready var bullet_rickoshet2:Resource=preload("res://asstets/sfx/bullet_rickoshet2.wav")
-@onready var bullet_rickoshet3:Resource=preload("res://asstets/sfx/bullet_rickoshet3.wav")
-@onready var bullet_rickoshet4:Resource=preload("res://asstets/sfx/bullet_rickoshet4.wav")
+@onready var bullet_rickoshet1: Resource = preload("res://asstets/sfx/bullet_rickoshet1.wav")
+@onready var bullet_rickoshet2: Resource = preload("res://asstets/sfx/bullet_rickoshet2.wav")
+@onready var bullet_rickoshet3: Resource = preload("res://asstets/sfx/bullet_rickoshet3.wav")
+@onready var bullet_rickoshet4: Resource = preload("res://asstets/sfx/bullet_rickoshet4.wav")
+
 
 func _ready() -> void:
 	sfx_player.volume_db = sfx_volume
@@ -63,6 +68,24 @@ func play_game_sfx(sound: AudioStream, max_count := 3) -> void:
 	if free_stream:
 		free_stream.stream = sound
 		free_stream.play()
+
+
+func play_game_sfx_loop(sound: AudioStreamWAV, max_count := 2) -> AudioStreamPlayer:
+	var loop: AudioStreamWAV = sound.duplicate()
+	loop.loop_mode = AudioStreamWAV.LOOP_FORWARD
+	var free_stream: AudioStreamPlayer = null
+	var same_sound_count := 0
+	for stream in game_sfx_loop_players:
+		if stream.playing and stream.stream == loop:
+			same_sound_count += 1
+			if same_sound_count >= max_count:
+				return
+		elif not stream.playing and free_stream == null:
+			free_stream = stream
+	if free_stream:
+		free_stream.stream = loop
+		free_stream.play()
+	return free_stream
 
 
 func play_music(sound: Resource):

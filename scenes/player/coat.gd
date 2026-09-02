@@ -40,6 +40,7 @@ func on_body_entered(body: Node2D) -> void:
 	if body == player:
 		if dance_tween:
 			dance_tween.kill()
+		AudioPlayer.play_game_sfx(AudioPlayer.coat)
 		ConfigManager.player_config.set_value("state", "cloth", true)
 		ConfigManager.save_player_config()
 		player.equip_weapons()

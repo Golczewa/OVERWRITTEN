@@ -22,6 +22,7 @@ layout_mode = 0
 offset_right = 337.0
 offset_bottom = 453.0
 title = "Tutorial"
+min_height = 453.0
 
 [node name="Label" type="Label" parent="." unique_id=1545072702]
 custom_maximum_size = Vector2(303, 361)

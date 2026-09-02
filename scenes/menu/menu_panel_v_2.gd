@@ -2,6 +2,7 @@ extends PanelContainer
 
 @export var allow_spaces: bool = false
 @export var title: String = "Title"
+@export var min_height:float
 @onready var close_button: Button = $VBoxContainer/PanelContainer/HBoxContainer/Button
 @onready var upper_panel: PanelContainer = $VBoxContainer/PanelContainer
 @onready var upper_bar: Control = $VBoxContainer/PanelContainer/HBoxContainer/Control
@@ -20,7 +21,11 @@ func open_animation():
 		AudioPlayer.play(AudioPlayer.menu_window_open)
 	show()
 	open = true
-	var height = size.y
+	var height
+	if min_height:
+		height=min_height
+	else:
+		height = size.y
 	var centre = height / 2 - 80
 	print(centre)
 	position.y = centre

@@ -3,6 +3,7 @@ extends PlayerWeapon
 
 func attack(_event):
 	if can_attack:
+		var hit_something:bool=false
 		can_attack = false
 		var bodies = mele_area.get_overlapping_bodies()
 		if upper:
@@ -14,8 +15,17 @@ func attack(_event):
 		for body in bodies:
 			if body.is_in_group("enemies"):
 				body.take_damage(dmg, knockback)
+				hit_something=true
 			elif body.is_in_group("window"):
 				body.shatter(self)
+			elif body.is_in_group("player"):
+				continue
+			else :
+				hit_something=true
+		if hit_something:
+			AudioPlayer.play_game_sfx(AudioPlayer.punch)
+		else:
+			AudioPlayer.play_game_sfx(AudioPlayer.swosh)
 		await animation_finished
 		frame = 0
 		get_tree().create_timer(cooldown).timeout.connect(end_cd)

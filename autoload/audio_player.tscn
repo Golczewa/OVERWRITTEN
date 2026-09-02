@@ -2,10 +2,11 @@
 
 [ext_resource type="Script" uid="uid://bih2s6fu4krgt" path="res://autoload/audio_player.gd" id="1_ulgtw"]
 
-[node name="Node" type="Node" unique_id=1803999892 node_paths=PackedStringArray("game_sfx_players")]
+[node name="Node" type="Node" unique_id=1803999892 node_paths=PackedStringArray("game_sfx_players", "game_sfx_loop_players")]
 process_mode = 3
 script = ExtResource("1_ulgtw")
-game_sfx_players = [NodePath("AudioStreamPlayer3"), NodePath("AudioStreamPlayer5"), NodePath("AudioStreamPlayer4"), NodePath("AudioStreamPlayer7"), NodePath("AudioStreamPlayer6"), NodePath("AudioStreamPlayer8"), NodePath("AudioStreamPlayer9"), NodePath("AudioStreamPlayer10"), NodePath("AudioStreamPlayer11")]
+game_sfx_players = [NodePath("AudioStreamPlayer3"), NodePath("AudioStreamPlayer5"), NodePath("AudioStreamPlayer4"), NodePath("AudioStreamPlayer7"), NodePath("AudioStreamPlayer6"), NodePath("AudioStreamPlayer8"), NodePath("AudioStreamPlayer9"), NodePath("AudioStreamPlayer10"), NodePath("AudioStreamPlayer11"), NodePath("AudioStreamPlayer12"), NodePath("AudioStreamPlayer13")]
+game_sfx_loop_players = [NodePath("SFX_loop1"), NodePath("SFX_loop2"), NodePath("SFX_loop3"), NodePath("SFX_loop4"), NodePath("SFX_loop5")]
 
 [node name="UI_SFX" type="AudioStreamPlayer" parent="." unique_id=259282318]
 
@@ -28,3 +29,17 @@ game_sfx_players = [NodePath("AudioStreamPlayer3"), NodePath("AudioStreamPlayer5
 [node name="AudioStreamPlayer10" type="AudioStreamPlayer" parent="." unique_id=898404177]
 
 [node name="AudioStreamPlayer11" type="AudioStreamPlayer" parent="." unique_id=545805553]
+
+[node name="SFX_loop1" type="AudioStreamPlayer" parent="." unique_id=299117886]
+
+[node name="SFX_loop2" type="AudioStreamPlayer" parent="." unique_id=2122251416]
+
+[node name="SFX_loop3" type="AudioStreamPlayer" parent="." unique_id=644018639]
+
+[node name="SFX_loop4" type="AudioStreamPlayer" parent="." unique_id=1017470312]
+
+[node name="SFX_loop5" type="AudioStreamPlayer" parent="." unique_id=811829233]
+
+[node name="AudioStreamPlayer12" type="AudioStreamPlayer" parent="." unique_id=885232716]
+
+[node name="AudioStreamPlayer13" type="AudioStreamPlayer" parent="." unique_id=1884927832]

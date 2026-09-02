@@ -21,6 +21,7 @@ func attack():
 		for i in range(0, 3):
 			if hunter.dead or hunter.in_knocback:
 				break
+			AudioPlayer.play_game_sfx(AudioPlayer.patchwork_shot,4)
 			var random_angle
 			var bullet = bullet_test.instantiate()
 			bullet.perce = 0

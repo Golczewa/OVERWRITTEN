@@ -33,6 +33,7 @@ var in_cooldown := false
 var attack_cooldonwn := 3
 var curr_floor: Floor
 var keep_arrow := false
+var chainsaw_sound: AudioStreamPlayer
 
 signal end_charge
 
@@ -49,6 +50,8 @@ func _physics_process(_delta: float) -> void:
 		if keep_arrow:
 			arrow.update_arrow_pos(global_position, player.camera)
 		if is_charging:
+			if chainsaw_sound:
+				chainsaw_sound.stop()
 			move_and_slide()
 			if get_slide_collision_count() > 0:
 				is_charging = false
@@ -62,6 +65,8 @@ func _physics_process(_delta: float) -> void:
 			sword.play("default")
 			rotate_by($body, 0)
 			end_charge.emit()
+			if chainsaw_sound:
+				chainsaw_sound.stop()
 			for i in get_slide_collision_count():
 				var collision = get_slide_collision(i)
 				var collider = collision.get_collider()
@@ -262,6 +267,7 @@ func rotate_by(item: Node2D, angle: float, time: float = 0.1) -> void:
 
 
 func charge() -> void:
+	AudioPlayer.play_game_sfx(AudioPlayer.chainsaw_warning)
 	is_charging = true
 	sword.play("attack")
 	var charge_dir: Vector2 = (player.global_position - global_position).normalized()
@@ -274,6 +280,7 @@ func charge() -> void:
 	await get_tree().create_timer(0.5).timeout
 	velocity = charge_dir * charge_speed
 	add_ghosts(charge_dir)
+	chainsaw_sound = AudioPlayer.play_game_sfx_loop(AudioPlayer.chainsaw_running)
 
 
 func add_ghosts(dir: Vector2):

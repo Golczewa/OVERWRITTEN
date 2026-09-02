@@ -7,5 +7,5 @@ func _ready() -> void:
 
 func life():
 	emitting = true
-	AudioPlayer.play_game_sfx(AudioPlayer.get("bullet_rickoshet"+str(randi_range(1,4))),5)
+	AudioPlayer.play_game_sfx(AudioPlayer.get("bullet_rickoshet" + str(randi_range(1, 4))), 5)
 	finished.connect(queue_free)
