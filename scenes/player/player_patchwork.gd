@@ -7,7 +7,7 @@ func attack(_event):
 		if not is_hand_in_wall():
 			for i in range(0, 3):
 				_spawn_bullet()
-				AudioPlayer.play_game_sfx(AudioPlayer.patchwork_shot,4)
+				AudioPlayer.play_game_sfx(AudioPlayer.patchwork_shot, 4)
 				await get_tree().create_timer(0.2).timeout
 		play("0")
 		get_tree().create_timer(cooldown).timeout.connect(end_cd)

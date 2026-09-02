@@ -33,9 +33,9 @@ var level_4_theme: Resource = preload("res://asstets/music/Anexodus FULL TRACK L
 @onready var chainsaw_warning: Resource = preload("res://asstets/sfx/leader_chainsaw_warning.wav")
 @onready var punch: Resource = preload("res://asstets/sfx/punch_sometching.wav")
 @onready var swosh: Resource = preload("res://asstets/sfx/punch_air.wav")
-@onready var slash:Resource=preload("res://asstets/sfx/sword.wav")
-@onready var patchwork_shot:Resource=preload("res://asstets/sfx/pach_gunshot.wav")
-@onready var coat:Resource=preload("res://asstets/sfx/cloth.wav")
+@onready var slash: Resource = preload("res://asstets/sfx/sword.wav")
+@onready var patchwork_shot: Resource = preload("res://asstets/sfx/pach_gunshot.wav")
+@onready var coat: Resource = preload("res://asstets/sfx/cloth.wav")
 
 @onready var bullet_rickoshet1: Resource = preload("res://asstets/sfx/bullet_rickoshet1.wav")
 @onready var bullet_rickoshet2: Resource = preload("res://asstets/sfx/bullet_rickoshet2.wav")
@@ -71,19 +71,21 @@ func play_game_sfx(sound: AudioStream, max_count := 3) -> void:
 
 
 func play_game_sfx_loop(sound: AudioStreamWAV, max_count := 2) -> AudioStreamPlayer:
-	var loop: AudioStreamWAV = sound.duplicate()
-	loop.loop_mode = AudioStreamWAV.LOOP_FORWARD
 	var free_stream: AudioStreamPlayer = null
 	var same_sound_count := 0
 	for stream in game_sfx_loop_players:
-		if stream.playing and stream.stream == loop:
+		if (
+			stream.playing
+			and stream.stream is AudioStreamWAV
+			and stream.stream.resource_path == sound.resource_path
+		):
 			same_sound_count += 1
 			if same_sound_count >= max_count:
-				return
+				return null
 		elif not stream.playing and free_stream == null:
 			free_stream = stream
 	if free_stream:
-		free_stream.stream = loop
+		free_stream.stream = sound
 		free_stream.play()
 	return free_stream
 
@@ -96,7 +98,6 @@ func play_music(sound: Resource):
 	if music_player.pitch_scale != 1:
 		music_player.pitch_scale = 1
 	music_player.stream = sound
-	print(music_player.volume_db)
 	music_player.play()
 
 
@@ -149,3 +150,10 @@ func death_unpause(time = 1):
 	var tween := create_tween()
 	tween.tween_property(music_player, "pitch_scale", 1, time)
 	await tween.finished
+
+
+func stop_all_sfx():
+	for player in game_sfx_players:
+		player.stop()
+	for player in game_sfx_loop_players:
+		player.stop()

@@ -224,6 +224,7 @@ func load_state(state: Dictionary):
 	$Node2D.hide()
 	show()
 	get_dresed()
+	AudioPlayer.stop_all_sfx()
 	player_health = state["health"]
 	heal_charge = state["charges"]
 	charges_to_replenish = state["replenish_queue"]

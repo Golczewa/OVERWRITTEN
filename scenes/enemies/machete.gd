@@ -30,7 +30,7 @@ func attack():
 			if body.is_in_group("player"):
 				body.player_take_dmg(machete_dmg)
 				AudioPlayer.play_game_sfx(AudioPlayer.slash)
-			else :
+			else:
 				AudioPlayer.play_game_sfx(AudioPlayer.swosh)
 		can_attack = false
 		get_tree().create_timer(cooldown).timeout.connect(end_cd)

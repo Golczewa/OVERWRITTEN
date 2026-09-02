@@ -2,7 +2,7 @@ extends PanelContainer
 
 @export var allow_spaces: bool = false
 @export var title: String = "Title"
-@export var min_height:float
+@export var min_height: float
 @onready var close_button: Button = $VBoxContainer/PanelContainer/HBoxContainer/Button
 @onready var upper_panel: PanelContainer = $VBoxContainer/PanelContainer
 @onready var upper_bar: Control = $VBoxContainer/PanelContainer/HBoxContainer/Control
@@ -23,11 +23,10 @@ func open_animation():
 	open = true
 	var height
 	if min_height:
-		height=min_height
+		height = min_height
 	else:
 		height = size.y
 	var centre = height / 2 - 80
-	print(centre)
 	position.y = centre
 	size.y = begin_h
 	var tween = create_tween().set_parallel(true)

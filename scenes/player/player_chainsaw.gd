@@ -2,6 +2,9 @@ extends PlayerWeapon
 
 @onready var sparks_pack: PackedScene = preload("res://scenes/effects/chainsaw_spark.tscn")
 
+var event: String
+var chainsaw_sound: AudioStreamPlayer
+
 
 func _ready() -> void:
 	play("default")
@@ -14,9 +17,15 @@ func _ready() -> void:
 
 func attack(_event: String) -> void:
 	play("attack")
+	event = _event
+	if chainsaw_sound == null:
+		chainsaw_sound = AudioPlayer.play_game_sfx_loop(AudioPlayer.chainsaw_running)
 	while Input.is_action_pressed(_event):
 		check_for_enemies()
 		await get_tree().create_timer(cooldown).timeout
+	if chainsaw_sound:
+		chainsaw_sound.stop()
+		chainsaw_sound = null
 	play("default")
 
 
