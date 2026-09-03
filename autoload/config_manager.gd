@@ -18,8 +18,12 @@ var player_config: ConfigFile
 var encrypted := true
 var encrypton_key: PackedByteArray
 
+var encrypted := true
+var encrypton_key: PackedByteArray
+
 
 func _ready() -> void:
+	encrypton_key = "9ee585b96c20d9c300f2f4fdf7a664c7799697f6063ed19b6be36537e06394fd".hex_decode()
 	encrypton_key = "9ee585b96c20d9c300f2f4fdf7a664c7799697f6063ed19b6be36537e06394fd".hex_decode()
 	load_all()
 
@@ -52,6 +56,11 @@ func save_levels_progress() -> Error:
 		err = levels_progress.save_encrypted(LEVELS_PROGRESS_PATH, encrypton_key)
 	else:
 		err = levels_progress.save(LEVELS_PROGRESS_PATH)
+	var err
+	if encrypted:
+		err = levels_progress.save_encrypted(LEVELS_PROGRESS_PATH, encrypton_key)
+	else:
+		err = levels_progress.save(LEVELS_PROGRESS_PATH)
 	if err != OK:
 		push_error("Config save error: %s (code %s)" % [LEVELS_PROGRESS_PATH, err])
 	return err
@@ -67,9 +76,19 @@ func reset_player_config() -> void:
 		config.save_encrypted(PLAYER_USER_PATH, encrypton_key)
 	else:
 		return _copy_default_to_user(PLAYER_DEFAULTS_PATH, PLAYER_USER_PATH)
+	if encrypted:
+		var config: ConfigFile = _load_cfg(PLAYER_DEFAULTS_PATH)
+		config.save_encrypted(PLAYER_USER_PATH, encrypton_key)
+	else:
+		return _copy_default_to_user(PLAYER_DEFAULTS_PATH, PLAYER_USER_PATH)
 
 
 func reset_levels_progress() -> void:
+	if encrypted:
+		var config: ConfigFile = _load_cfg(LEVELS_PROGRESS_DEFAULTS_PATH)
+		config.save_encrypted(LEVELS_PROGRESS_PATH, encrypton_key)
+	else:
+		return _copy_default_to_user(LEVELS_PROGRESS_DEFAULTS_PATH, LEVELS_PROGRESS_PATH)
 	if encrypted:
 		var config: ConfigFile = _load_cfg(LEVELS_PROGRESS_DEFAULTS_PATH)
 		config.save_encrypted(LEVELS_PROGRESS_PATH, encrypton_key)
@@ -90,6 +109,12 @@ func _load_or_create_player_config() -> ConfigFile:
 		else:
 			return _copy_default_to_user(PLAYER_DEFAULTS_PATH, PLAYER_USER_PATH)
 
+		if encrypted:
+			var config: ConfigFile = _load_cfg(PLAYER_DEFAULTS_PATH)
+			config.save_encrypted(PLAYER_USER_PATH, encrypton_key)
+		else:
+			return _copy_default_to_user(PLAYER_DEFAULTS_PATH, PLAYER_USER_PATH)
+
 	return _load_cfg(PLAYER_USER_PATH)
 
 
@@ -101,6 +126,14 @@ func _load_or_create_levels_progress() -> ConfigFile:
 		else:
 			return _copy_default_to_user(LEVELS_PROGRESS_DEFAULTS_PATH, LEVELS_PROGRESS_PATH)
 	return _load_cfg(LEVELS_PROGRESS_PATH)
+	if not FileAccess.file_exists(LEVELS_PROGRESS_PATH):
+		if encrypted:
+			var config: ConfigFile = _load_cfg(LEVELS_PROGRESS_DEFAULTS_PATH)
+			config.save_encrypted(LEVELS_PROGRESS_PATH, encrypton_key)
+		else:
+			return _copy_default_to_user(LEVELS_PROGRESS_DEFAULTS_PATH, LEVELS_PROGRESS_PATH)
+	return _load_cfg(LEVELS_PROGRESS_PATH)
+
 
 
 func _copy_default_to_user(defaults_path: String, user_path: String) -> ConfigFile:
@@ -112,6 +145,11 @@ func _copy_default_to_user(defaults_path: String, user_path: String) -> ConfigFi
 
 func _load_cfg(path: String) -> ConfigFile:
 	var config := ConfigFile.new()
+	var err
+	if encrypted and (path == PLAYER_USER_PATH or path == LEVELS_PROGRESS_PATH):
+		err = config.load_encrypted(path, encrypton_key)
+	else:
+		err = config.load(path)
 	var err
 	if encrypted and (path == PLAYER_USER_PATH or path == LEVELS_PROGRESS_PATH):
 		err = config.load_encrypted(path, encrypton_key)

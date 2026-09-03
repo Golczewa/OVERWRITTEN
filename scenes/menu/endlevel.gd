@@ -49,6 +49,7 @@ func count_score(_score: Dictionary) -> void:
 	if _score["cheats"]:
 		return
 	var time_grade: Array = ConfigManager.levels.get_value(
+	var time_grade: Array = ConfigManager.levels.get_value(
 		"level_" + str(_score["level"]), "grading_time"
 	)
 	var max_score = 1700
