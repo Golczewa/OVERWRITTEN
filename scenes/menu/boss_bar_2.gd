@@ -15,6 +15,7 @@ func _ready() -> void:
 
 
 func boss_is_in(boss_name: String, hp: int, time = 1.5) -> void:
+	AudioPlayer.play_game_sfx(AudioPlayer.hp_loading)
 	$AspectRatioContainer.format_title(boss_name)
 	$TextureProgressBar.max_value = hp
 	var tween = create_tween()

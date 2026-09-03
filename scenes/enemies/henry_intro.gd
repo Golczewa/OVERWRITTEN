@@ -12,6 +12,7 @@ func _ready() -> void:
 func play_cuscene(body: Node):
 	if body != player:
 		return
+	AudioPlayer.volume_down()
 	player.in_cutscene = true
 	get_parent().door.disable_doors()
 	$CollisionShape2D.set_deferred("disabled", true)
@@ -27,3 +28,4 @@ func play_cuscene(body: Node):
 	remove_child(henry)
 	get_parent().add_enemy(henry, henry_pos)
 	henry.toogle_cutscene()
+	AudioPlayer.volume_up()

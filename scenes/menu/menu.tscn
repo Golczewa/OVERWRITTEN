@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://mfb74lanpi3a" path="res://asstets/menu/title.svg" id="4_f2fum"]
 [ext_resource type="FontFile" uid="uid://d1feesbwk46ll" path="res://asstets/menu/DroidSansMono.ttf" id="5_3y2rt"]
 [ext_resource type="Script" uid="uid://uamd46ltc757" path="res://scenes/menu/menu_button.gd" id="5_t0a87"]
+[ext_resource type="PackedScene" uid="uid://du4k8ns7pgxg8" path="res://scenes/menu/button.tscn" id="7_y4i35"]
 [ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="8_kaijy"]
 [ext_resource type="PackedScene" uid="uid://q6ale2m8tx0" path="res://scenes/menu/level_panel.tscn" id="9_qo0fc"]
 [ext_resource type="PackedScene" uid="uid://iliwbvxt5w52" path="res://scenes/menu/quit_panel.tscn" id="10_k48pe"]
@@ -81,6 +82,10 @@ theme = ExtResource("3_r8yej")
 text = "  Settings"
 alignment = 0
 script = ExtResource("5_t0a87")
+
+[node name="Button4" parent="Panel/VBoxContainer" unique_id=2078812563 instance=ExtResource("7_y4i35")]
+layout_mode = 2
+text = "  Credits"
 
 [node name="Button2" type="Button" parent="Panel/VBoxContainer" unique_id=2024678113]
 layout_mode = 2

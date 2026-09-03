@@ -18,6 +18,8 @@ const weapon_equip: AudioStreamWAV = preload("res://asstets/sfx/Click_Combo_5_Pi
 #MUSIC
 const menu_theme: String = "res://asstets/music/Polaris FULL TRACK.ogg"
 const level_1_theme: String = "res://asstets/music/Spinner FULL TRACK.ogg"
+const level_2_theme: String = "res://asstets/music/Anexodus FULL TRACK LOOPABLE.ogg"
+const level_3_theme: String = "res://asstets/music/Anexodus FULL TRACK LOOPABLE.ogg"
 const level_4_theme: String = "res://asstets/music/Anexodus FULL TRACK LOOPABLE.ogg"
 
 #IN GAME SFX
@@ -37,6 +39,7 @@ const slash: AudioStreamWAV = preload("res://asstets/sfx/sword.wav")
 const patchwork_shot: AudioStreamWAV = preload("res://asstets/sfx/pach_gunshot.wav")
 const coat: AudioStreamWAV = preload("res://asstets/sfx/cloth.wav")
 const virtual_guy_deadth: AudioStreamWAV = preload("res://asstets/sfx/virtual_death.wav")
+const hp_loading:AudioStreamWAV=preload("res://asstets/sfx/juice.wav")
 
 const bullet_rickoshet1: AudioStreamWAV = preload("res://asstets/sfx/bullet_rickoshet1.wav")
 const bullet_rickoshet2: AudioStreamWAV = preload("res://asstets/sfx/bullet_rickoshet2.wav")
