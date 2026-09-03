@@ -91,7 +91,7 @@ func kill_all():
 
 func load_next_level(level_id: int):
 	level_id += 1
-	var level_path: String = ConfigManager.get_level_value("level_" + str(level_id), "path")
+	var level_path: String = ConfigManager.levels.get_value("level_" + str(level_id), "path")
 	get_parent().play_game(level_path)
 
 

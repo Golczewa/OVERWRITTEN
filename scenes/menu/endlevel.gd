@@ -28,10 +28,10 @@ func setup(score: Dictionary):
 	$VBoxContainer/time.text = "Time: " + format_time(score["time"])
 	$VBoxContainer/deaths.text = "Deaths: " + str(score["deaths"])
 	$VBoxContainer/used.text = "Healing used: " + str(score["hused"])
-	ConfigManager.set_level_value("level_" + str(score["level"] + 1), "unlocked", true)
-	if score["score"] > ConfigManager.get_level_value("level_" + str(score["level"]), "score", 0):
-		ConfigManager.set_level_value("level_" + str(score["level"]), "score", score["score"])
-		ConfigManager.set_level_value("level_" + str(score["level"]), "rank", score["rank"])
+	ConfigManager.levels_progress.set_value("level_" + str(score["level"] + 1), "unlocked", true)
+	if score["score"] > ConfigManager.levels.get_value("level_" + str(score["level"]), "score", 0):
+		ConfigManager.levels_progress.set_value("level_" + str(score["level"]), "score", score["score"])
+		ConfigManager.levels_progress.set_value("level_" + str(score["level"]), "rank", score["rank"])
 	ConfigManager.save_levels_progress()
 	ConfigManager.reload_levels_progress()
 	unlock_next_level()
@@ -48,7 +48,7 @@ func setup(score: Dictionary):
 func count_score(_score: Dictionary) -> void:
 	if _score["cheats"]:
 		return
-	var time_grade: Array = ConfigManager.get_level_value(
+	var time_grade: Array = ConfigManager.levels.get_value(
 		"level_" + str(_score["level"]), "grading_time"
 	)
 	var max_score = 1700

@@ -46,6 +46,7 @@ func _die():
 	floor_.enemies = floor_.enemies - 1
 	$CollisionShape2D.set_deferred("disabled", true)
 	$PointLight2D.hide()
+	AudioPlayer.play_game_sfx(AudioPlayer.virtual_guy_deadth)
 	var tween = create_tween().set_parallel(true)
 	tween.tween_property($AnimatedSprite2D, "scale", Vector2(0, 0), 0.2)
 	tween.tween_property($AnimatedSprite2D, "modulate:a", 0, 0.2)

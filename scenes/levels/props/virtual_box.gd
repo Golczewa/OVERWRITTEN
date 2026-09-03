@@ -18,6 +18,7 @@ func _ready() -> void:
 
 
 func begone():
+	AudioPlayer.play_game_sfx(AudioPlayer.virtual_guy_deadth)
 	floor_.enemies = floor_.enemies - 1
 	$CollisionShape2D.set_deferred("disabled", true)
 	$PointLight2D.hide()

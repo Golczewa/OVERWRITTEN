@@ -9,38 +9,39 @@ extends Node
 @export var game_sfx_loop_players: Array[AudioStreamPlayer]
 
 #UI SFX
-@onready var menu_window_open: Resource = preload("res://asstets/sfx/Ting_Pitched_Down.wav")
-@onready
-var menu_window_close: Resource = preload("res://asstets/sfx/Ting_Pitched_Down_Backwards2.wav")
-@onready var weapon_equip: Resource = preload("res://asstets/sfx/Click_Combo_5_Pitched_Up.wav")
+const menu_window_open: AudioStreamWAV = preload("res://asstets/sfx/Ting_Pitched_Down.wav")
+const menu_window_close: AudioStreamWAV = preload(
+	"res://asstets/sfx/Ting_Pitched_Down_Backwards2.wav"
+)
+const weapon_equip: AudioStreamWAV = preload("res://asstets/sfx/Click_Combo_5_Pitched_Up.wav")
 
 #MUSIC
-@onready var menu_theme: Resource = preload("res://asstets/music/Polaris FULL TRACK.ogg")
-@onready var level_1_theme: Resource = preload("res://asstets/music/Spinner FULL TRACK.ogg")
-@onready
-var level_4_theme: Resource = preload("res://asstets/music/Anexodus FULL TRACK LOOPABLE.ogg")
+const menu_theme: String = "res://asstets/music/Polaris FULL TRACK.ogg"
+const level_1_theme: String = "res://asstets/music/Spinner FULL TRACK.ogg"
+const level_4_theme: String = "res://asstets/music/Anexodus FULL TRACK LOOPABLE.ogg"
 
 #IN GAME SFX
 
-@onready var pickup_hand: Resource = preload("res://asstets/sfx/Append.wav")
-@onready var startup: Resource = preload("res://asstets/sfx/startup.wav")
-@onready var explosion1: Resource = preload("res://asstets/sfx/explosion.wav")
-@onready var explosion2: Resource = preload("res://asstets/sfx/explosion2.wav")
-@onready var revolver_shot: Resource = preload("res://asstets/sfx/rev_shot.wav")
-@onready var lauch: Resource = preload("res://asstets/sfx/lauch.wav")
-@onready var shatter: Resource = preload("res://asstets/sfx/window_shatter.wav")
-@onready var chainsaw_running: Resource = preload("res://asstets/sfx/chainsaw_runing.wav")
-@onready var chainsaw_warning: Resource = preload("res://asstets/sfx/leader_chainsaw_warning.wav")
-@onready var punch: Resource = preload("res://asstets/sfx/punch_sometching.wav")
-@onready var swosh: Resource = preload("res://asstets/sfx/punch_air.wav")
-@onready var slash: Resource = preload("res://asstets/sfx/sword.wav")
-@onready var patchwork_shot: Resource = preload("res://asstets/sfx/pach_gunshot.wav")
-@onready var coat: Resource = preload("res://asstets/sfx/cloth.wav")
+const pickup_hand: AudioStreamWAV = preload("res://asstets/sfx/Append.wav")
+const startup: AudioStreamWAV = preload("res://asstets/sfx/startup.wav")
+const explosion1: AudioStreamWAV = preload("res://asstets/sfx/explosion.wav")
+const explosion2: AudioStreamWAV = preload("res://asstets/sfx/explosion2.wav")
+const revolver_shot: AudioStreamWAV = preload("res://asstets/sfx/rev_shot.wav")
+const lauch: AudioStreamWAV = preload("res://asstets/sfx/lauch.wav")
+const shatter: AudioStreamWAV = preload("res://asstets/sfx/window_shatter.wav")
+const chainsaw_running: AudioStreamWAV = preload("res://asstets/sfx/chainsaw_runing.wav")
+const chainsaw_warning: AudioStreamWAV = preload("res://asstets/sfx/leader_chainsaw_warning.wav")
+const punch: AudioStreamWAV = preload("res://asstets/sfx/punch_sometching.wav")
+const swosh: AudioStreamWAV = preload("res://asstets/sfx/punch_air.wav")
+const slash: AudioStreamWAV = preload("res://asstets/sfx/sword.wav")
+const patchwork_shot: AudioStreamWAV = preload("res://asstets/sfx/pach_gunshot.wav")
+const coat: AudioStreamWAV = preload("res://asstets/sfx/cloth.wav")
+const virtual_guy_deadth: AudioStreamWAV = preload("res://asstets/sfx/virtual_death.wav")
 
-@onready var bullet_rickoshet1: Resource = preload("res://asstets/sfx/bullet_rickoshet1.wav")
-@onready var bullet_rickoshet2: Resource = preload("res://asstets/sfx/bullet_rickoshet2.wav")
-@onready var bullet_rickoshet3: Resource = preload("res://asstets/sfx/bullet_rickoshet3.wav")
-@onready var bullet_rickoshet4: Resource = preload("res://asstets/sfx/bullet_rickoshet4.wav")
+const bullet_rickoshet1: AudioStreamWAV = preload("res://asstets/sfx/bullet_rickoshet1.wav")
+const bullet_rickoshet2: AudioStreamWAV = preload("res://asstets/sfx/bullet_rickoshet2.wav")
+const bullet_rickoshet3: AudioStreamWAV = preload("res://asstets/sfx/bullet_rickoshet3.wav")
+const bullet_rickoshet4: AudioStreamWAV = preload("res://asstets/sfx/bullet_rickoshet4.wav")
 
 
 func _ready() -> void:
@@ -50,12 +51,12 @@ func _ready() -> void:
 		stream.volume_db = sfx_volume
 
 
-func play(sound: Resource):
+func play(sound: AudioStreamWAV):
 	sfx_player.stream = sound
 	sfx_player.play()
 
 
-func play_game_sfx(sound: AudioStream, max_count := 3) -> void:
+func play_game_sfx(sound: AudioStreamWAV, max_count := 3) -> void:
 	var free_stream: AudioStreamPlayer = null
 	var same_sound_count := 0
 	for stream in game_sfx_players:
@@ -90,14 +91,14 @@ func play_game_sfx_loop(sound: AudioStreamWAV, max_count := 2) -> AudioStreamPla
 	return free_stream
 
 
-func play_music(sound: Resource):
+func play_music(sound: String):
 	if music_player.bus != "Master":
 		music_player.bus = "Master"
 	if music_player.volume_db != music_volume:
 		music_player.volume_db = music_volume
 	if music_player.pitch_scale != 1:
 		music_player.pitch_scale = 1
-	music_player.stream = sound
+	music_player.stream = load(sound)
 	music_player.play()
 
 
@@ -123,8 +124,8 @@ func volume_down(time = 1):
 	await tween.finished
 
 
-func play_with_entrance(music: Resource, time = 1):
-	music_player.stream = music
+func play_with_entrance(music: String, time = 1):
+	music_player.stream = load(music)
 	music_player.volume_db = -80
 	music_player.play()
 	volume_up(time)
