@@ -18,8 +18,6 @@ var player_config: ConfigFile
 var encrypted := true
 var encrypton_key: PackedByteArray
 
-var encrypted := true
-var encrypton_key: PackedByteArray
 
 
 func _ready() -> void:
