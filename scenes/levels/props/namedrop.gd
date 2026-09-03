@@ -10,7 +10,7 @@ func _ready() -> void:
 	level = get_parent().get_parent()
 	player = get_tree().get_first_node_in_group("player")
 	body_entered.connect(_on_body_entred)
-	level_title_ = ConfigManager.get_level_value("level_" + str(level.level_id), "name", "Error")
+	level_title_ = ConfigManager.levels.get_value("level_" + str(level.level_id), "name", "Error")
 
 
 func _on_body_entred(body):
