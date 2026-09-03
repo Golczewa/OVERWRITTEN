@@ -54,11 +54,6 @@ func save_levels_progress() -> Error:
 		err = levels_progress.save_encrypted(LEVELS_PROGRESS_PATH, encrypton_key)
 	else:
 		err = levels_progress.save(LEVELS_PROGRESS_PATH)
-	var err
-	if encrypted:
-		err = levels_progress.save_encrypted(LEVELS_PROGRESS_PATH, encrypton_key)
-	else:
-		err = levels_progress.save(LEVELS_PROGRESS_PATH)
 	if err != OK:
 		push_error("Config save error: %s (code %s)" % [LEVELS_PROGRESS_PATH, err])
 	return err
@@ -143,11 +138,6 @@ func _copy_default_to_user(defaults_path: String, user_path: String) -> ConfigFi
 
 func _load_cfg(path: String) -> ConfigFile:
 	var config := ConfigFile.new()
-	var err
-	if encrypted and (path == PLAYER_USER_PATH or path == LEVELS_PROGRESS_PATH):
-		err = config.load_encrypted(path, encrypton_key)
-	else:
-		err = config.load(path)
 	var err
 	if encrypted and (path == PLAYER_USER_PATH or path == LEVELS_PROGRESS_PATH):
 		err = config.load_encrypted(path, encrypton_key)
