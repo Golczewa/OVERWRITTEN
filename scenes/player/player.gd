@@ -110,6 +110,7 @@ func player_take_dmg(dmg):
 		if player_health <= 0:
 			die()
 		else:
+			AudioPlayer.play_game_sfx(AudioPlayer.get("hurt_"+str(randi_range(1,4))))
 			_damage_effect()
 
 

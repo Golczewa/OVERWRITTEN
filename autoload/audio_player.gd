@@ -17,9 +17,9 @@ const weapon_equip: AudioStreamWAV = preload("res://asstets/sfx/Click_Combo_5_Pi
 
 #MUSIC
 const menu_theme: String = "res://asstets/music/Polaris FULL TRACK.ogg"
-const level_1_theme: String = "res://asstets/music/Spinner FULL TRACK.ogg"
-const level_2_theme: String = "res://asstets/music/Anexodus FULL TRACK LOOPABLE.ogg"
-const level_3_theme: String = "res://asstets/music/Anexodus FULL TRACK LOOPABLE.ogg"
+const level_1_theme: String = "res://asstets/music/Neon After Dark FULL TRACK LOOPABLE.ogg"
+const level_2_theme: String = "res://asstets/music/Corporate Skyline FULL TRACK LOOPABLE.ogg"
+const level_3_theme: String = "res://asstets/music/Black Horses FULL TRACK LOOPABLE.ogg"
 const level_4_theme: String = "res://asstets/music/Anexodus FULL TRACK LOOPABLE.ogg"
 
 #IN GAME SFX
@@ -45,6 +45,13 @@ const bullet_rickoshet1: AudioStreamWAV = preload("res://asstets/sfx/bullet_rick
 const bullet_rickoshet2: AudioStreamWAV = preload("res://asstets/sfx/bullet_rickoshet2.wav")
 const bullet_rickoshet3: AudioStreamWAV = preload("res://asstets/sfx/bullet_rickoshet3.wav")
 const bullet_rickoshet4: AudioStreamWAV = preload("res://asstets/sfx/bullet_rickoshet4.wav")
+
+const hurt_1:AudioStreamWAV = preload("res://asstets/sfx/virtual_death.wav")
+const hurt_2:AudioStreamWAV = preload("res://asstets/sfx/Glitch_15.wav")
+const hurt_3:AudioStreamWAV = preload("res://asstets/sfx/Glitch_10.wav")
+const hurt_4:AudioStreamWAV = preload("res://asstets/sfx/Glitch_20.wav")
+
+
 
 
 

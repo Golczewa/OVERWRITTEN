@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bgwxrqs3aa6yr"
+path="res://.godot/imported/Black Horses FULL TRACK LOOPABLE.ogg-7551899d2615cd838df074a70d0ce31d.oggvorbisstr"
+
+[deps]
+
+source_file="res://asstets/music/Black Horses FULL TRACK LOOPABLE.ogg"
+dest_files=["res://.godot/imported/Black Horses FULL TRACK LOOPABLE.ogg-7551899d2615cd838df074a70d0ce31d.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
