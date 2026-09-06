@@ -1,38 +1,44 @@
 extends Enemy
 
+@onready var bullet_pack: PackedScene = preload("res://scenes/effects/bullet_test.tscn")
+var standing_room: int = 50
+var damage = 25
+var pierce = 1
+var closeup = 150
 
-@onready var bullet_pack:PackedScene=preload("res://scenes/effects/bullet_test.tscn")
-var standing_room:int=50
-var damage=25
-var pierce=1
 
 func _engage() -> void:
-	curr_speed=chase_speed
+	var stand := false
+	curr_speed = chase_speed
 	if not in_cooldown and can_see_player() and not is_spawning:
 		_attack()
 	weapon.look_at(player.global_position.rotated(weapon_offset))
-	var player_distance:float=(player.global_position-global_position).length()
-	if player_distance<attack_range and can_see_player():
+	var player_distance: float = (player.global_position - global_position).length()
+	if player_distance < closeup and can_see_player():
 		legs.walk()
 		var opposite: Vector2 = -(global_position - player.global_position)
 		nav_agent.target_position = opposite
-	elif attack_range<player_distance and player_distance<attack_range+standing_room and can_see_player():
-		nav_agent.target_position = global_position
+	elif (
+		closeup < player_distance and player_distance < closeup + standing_room and can_see_player()
+	):
+		direction = Vector2.ZERO
+		stand = true
 		legs.stop()
-	else :
+	else:
 		legs.walk()
-		nav_agent.target_position=player.global_position
+		nav_agent.target_position = player.global_position
 	var next_pos = nav_agent.get_next_path_position()
 	body.look_at(player.global_position)
 	legs.toogle_fallow(next_pos)
-	direction = global_position.direction_to(next_pos)
+	if not stand:
+		direction = global_position.direction_to(next_pos)
 
 
 func _attack() -> void:
-	in_cooldown=true
+	in_cooldown = true
 	AudioPlayer.play_game_sfx(AudioPlayer.revolver_shot)
-	var spawn_marker:Marker2D=$AnimatedSprite2D2/AnimatedSprite2D/Marker2D
-	var dir_marker:Marker2D=$AnimatedSprite2D2/AnimatedSprite2D/Marker2D2
+	var spawn_marker: Marker2D = $AnimatedSprite2D2/AnimatedSprite2D/Marker2D
+	var dir_marker: Marker2D = $AnimatedSprite2D2/AnimatedSprite2D/Marker2D2
 	var random_angle
 	var bullet = bullet_pack.instantiate()
 	random_angle = deg_to_rad(randf_range(-2, 2))

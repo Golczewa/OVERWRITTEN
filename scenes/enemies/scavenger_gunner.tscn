@@ -92,10 +92,10 @@ legs = NodePath("AnimatedSprite2D3")
 body = NodePath("AnimatedSprite2D2")
 knockback_marker = NodePath("AnimatedSprite2D2/Marker2D")
 to_hide_on_death = [NodePath("AnimatedSprite2D3"), NodePath("AnimatedSprite2D")]
-chase_speed = 100
+chase_speed = 70
+attack_range = 300
 main_collison = NodePath("CollisionShape2D")
 weapon = NodePath("AnimatedSprite2D2/AnimatedSprite2D")
-weapon_offset = -0.02
 metadata/_custom_type_script = "uid://dsrfyi6vfxl0j"
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1098890441]

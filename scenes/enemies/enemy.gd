@@ -16,12 +16,12 @@ class_name Enemy
 @export var chase_speed: int = 150
 @export var rot_speed: int = 15
 @export var view_distance: int = 200
-@export var attack_range:int=150
+@export var attack_range: int = 150
 @export var walk_range: int = 200
 @export var main_collison: CollisionShape2D
 @export var weapon: AnimatedSprite2D
 @export var weapon_offset: float = 0
-@export var cooldown_time:float=1
+@export var cooldown_time: float = 1
 
 @onready var warning_pack: PackedScene = preload("res://scenes/menu/warning_window.tscn")
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
@@ -38,7 +38,7 @@ var can_attack: bool = false
 var curr_health: int
 var curr_speed: int
 var in_cooldown: bool = false
-var triggered:bool=false
+var triggered: bool = false
 signal died
 
 
@@ -48,7 +48,7 @@ func _ready() -> void:
 	curr_floor.enemies += 1
 	legs.walk()
 	if spawn_dest != Vector2.ZERO and is_spawning:
-		in_cooldown=true
+		in_cooldown = true
 		await big_entrance(spawn_dest)
 		trigger()
 		get_tree().create_timer(cooldown_time).timeout.connect(end_cooldown)
@@ -77,11 +77,11 @@ func can_see_player() -> bool:
 	if sight.is_colliding():
 		var collider = sight.get_collider()
 		return collider == player
-	return true
+	return false
 
 
 func idle():
-	print("idling")
+	legs.walk()
 	if nav_agent.is_navigation_finished():
 		direction = Vector2.ZERO
 		curr_speed = patrol_speed
@@ -94,8 +94,8 @@ func idle():
 	var next_path = nav_agent.get_next_path_position()
 	direction = global_position.direction_to(next_path)
 	if (not melle) and direction:
-		weapon.look_at(direction.rotated(weapon_offset))
-	body.look_at(direction)
+		weapon.look_at(next_path.rotated(weapon_offset))
+	body.look_at(next_path)
 	legs.toogle_fallow(next_path)
 	print("direction")
 
@@ -111,7 +111,7 @@ func _attack() -> void:
 
 
 func take_damage(damage: int, knockback: int):
-	player_sighted=true
+	player_sighted = true
 	if is_spawning:
 		return
 	curr_health = curr_health - damage
@@ -192,5 +192,4 @@ func trigger_others():
 	for enemy in get_tree().get_nodes_in_group("enemies"):
 		if enemy is Enemy:
 			enemy.trigger()
-	triggered=true
-	
+	triggered = true
