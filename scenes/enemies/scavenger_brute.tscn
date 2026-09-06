@@ -107,7 +107,7 @@ size = Vector2(37, 37)
 [sub_resource type="CircleShape2D" id="CircleShape2D_mxdtc"]
 radius = 17.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1175308424 node_paths=PackedStringArray("nav_agent", "arrow", "sight", "legs", "body", "knockback_marker", "main_collison", "weapon") groups=["enemies"]]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1175308424 node_paths=PackedStringArray("nav_agent", "arrow", "sight", "legs", "body", "knockback_marker", "to_hide_on_death", "main_collison", "weapon") groups=["enemies"]]
 z_index = 1
 collision_layer = 4
 collision_mask = 3
@@ -121,25 +121,28 @@ sight = NodePath("RayCast2D")
 legs = NodePath("AnimatedSprite2D3")
 body = NodePath("AnimatedSprite2D")
 knockback_marker = NodePath("Marker2D")
-with_warning = true
+to_hide_on_death = [NodePath("AnimatedSprite2D3"), NodePath("AnimatedSprite2D/AnimatedSprite2D"), NodePath("AnimatedSprite2D2")]
+patrol_speed = 70
+chase_speed = 220
+view_distance = 250
 main_collison = NodePath("CollisionShape2D")
 weapon = NodePath("AnimatedSprite2D/AnimatedSprite2D")
 cooldown_time = 1.5
 metadata/_custom_type_script = "uid://dsrfyi6vfxl0j"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1590663486]
-position = Vector2(21, 0)
 sprite_frames = SubResource("SpriteFrames_tegdf")
+offset = Vector2(22, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D" unique_id=115770881]
-position = Vector2(20, -4)
 sprite_frames = SubResource("SpriteFrames_0878k")
 animation = &"2"
+offset = Vector2(42, -4)
 
 [node name="Area2D" type="Area2D" parent="AnimatedSprite2D/AnimatedSprite2D" unique_id=508101779]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/AnimatedSprite2D/Area2D" unique_id=1972620674]
-position = Vector2(-9, 4)
+position = Vector2(33, 0)
 shape = SubResource("RectangleShape2D_jiq1j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=413708611]
@@ -157,7 +160,6 @@ position = Vector2(-42, 0)
 
 [node name="AnimatedSprite2D3" parent="." unique_id=1071073496 instance=ExtResource("4_7scwk")]
 show_behind_parent = true
-position = Vector2(-2, 0)
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=129253402]
 target_position = Vector2(65, 0)

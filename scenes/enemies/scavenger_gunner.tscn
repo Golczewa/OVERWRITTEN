@@ -87,15 +87,16 @@ radius = 16.0
 script = ExtResource("1_ee4q7")
 nav_agent = NodePath("NavigationAgent2D")
 arrow = NodePath("AnimatedSprite2D")
-sight = NodePath("RayCast2D")
+sight = NodePath("AnimatedSprite2D2/AnimatedSprite2D/RayCast2D")
 legs = NodePath("AnimatedSprite2D3")
 body = NodePath("AnimatedSprite2D2")
 knockback_marker = NodePath("AnimatedSprite2D2/Marker2D")
 to_hide_on_death = [NodePath("AnimatedSprite2D3"), NodePath("AnimatedSprite2D")]
-chase_speed = 70
+patrol_speed = 70
 attack_range = 300
 main_collison = NodePath("CollisionShape2D")
 weapon = NodePath("AnimatedSprite2D2/AnimatedSprite2D")
+cooldown_time = 0.8
 metadata/_custom_type_script = "uid://dsrfyi6vfxl0j"
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1098890441]
@@ -120,15 +121,16 @@ position = Vector2(12, 5)
 [node name="Marker2D2" type="Marker2D" parent="AnimatedSprite2D2/AnimatedSprite2D" unique_id=698510724]
 position = Vector2(17, 5)
 
+[node name="RayCast2D" type="RayCast2D" parent="AnimatedSprite2D2/AnimatedSprite2D" unique_id=720988623]
+position = Vector2(2, 5)
+target_position = Vector2(71, 0)
+
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1354719252]
 
 [node name="AnimatedSprite2D" parent="." unique_id=1822404430 instance=ExtResource("2_sobr0")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=402731530]
 shape = SubResource("CircleShape2D_1qstb")
-
-[node name="RayCast2D" type="RayCast2D" parent="." unique_id=720988623]
-target_position = Vector2(71, 0)
 
 [node name="AnimatedSprite2D3" parent="." unique_id=1071073496 instance=ExtResource("5_ee4q7")]
 show_behind_parent = true

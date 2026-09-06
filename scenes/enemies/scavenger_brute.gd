@@ -20,7 +20,7 @@ extends Enemy
 # var is_spawning = false
 # @export var walk_range: int = 200
 
-var damage := 35
+var damage := 30
 
 
 func _engage() -> void:
@@ -34,15 +34,16 @@ func _engage() -> void:
 
 
 func _attack() -> void:
-	can_attack = false
+	in_cooldown = true
 	weapon.play("2")
-	await get_tree().create_timer(0.3).timeout
+	await get_tree().create_timer(0.1).timeout
 	for node: Node2D in $AnimatedSprite2D/AnimatedSprite2D/Area2D.get_overlapping_bodies():
 		if node.is_in_group("player"):
 			node.player_take_dmg(damage)
 			AudioPlayer.play_game_sfx(AudioPlayer.slash)
 		else:
 			AudioPlayer.play_game_sfx(AudioPlayer.swosh)
+	weapon.frame = 0
 	get_tree().create_timer(cooldown_time).timeout.connect(end_cooldown)
 
 

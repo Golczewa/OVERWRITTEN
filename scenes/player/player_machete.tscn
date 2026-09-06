@@ -56,12 +56,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pumti"]
 size = Vector2(43, 43)
 
-[node name="Area2D" type="Area2D" unique_id=1736020479 node_paths=PackedStringArray("mele_area")]
+[node name="Area2D" type="Area2D" unique_id=1736020479]
 collision_mask = 15
 script = ExtResource("1_dvmub")
-dmg = 25
-cooldown = 0.7
-mele_area = NodePath(".")
+machete_dmg = 30
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1592545076]
 position = Vector2(29, -11)

@@ -89,7 +89,7 @@ func _process(_delta: float) -> void:
 			right_up_weapon.attack("attack_right_up")
 	if Input.is_action_just_pressed("dash"):
 		_dash()
-	if Input.is_action_just_pressed("heal"):
+	if Input.is_action_just_pressed("heal") and not in_cutscene:
 		heal()
 
 

@@ -97,7 +97,6 @@ func idle():
 		weapon.look_at(next_path.rotated(weapon_offset))
 	body.look_at(next_path)
 	legs.toogle_fallow(next_path)
-	print("direction")
 
 
 ##fighting logic
