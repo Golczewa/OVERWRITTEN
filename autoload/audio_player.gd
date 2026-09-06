@@ -39,20 +39,17 @@ const slash: AudioStreamWAV = preload("res://asstets/sfx/sword.wav")
 const patchwork_shot: AudioStreamWAV = preload("res://asstets/sfx/pach_gunshot.wav")
 const coat: AudioStreamWAV = preload("res://asstets/sfx/cloth.wav")
 const virtual_guy_deadth: AudioStreamWAV = preload("res://asstets/sfx/virtual_death.wav")
-const hp_loading:AudioStreamWAV=preload("res://asstets/sfx/juice.wav")
+const hp_loading: AudioStreamWAV = preload("res://asstets/sfx/juice.wav")
 
 const bullet_rickoshet1: AudioStreamWAV = preload("res://asstets/sfx/bullet_rickoshet1.wav")
 const bullet_rickoshet2: AudioStreamWAV = preload("res://asstets/sfx/bullet_rickoshet2.wav")
 const bullet_rickoshet3: AudioStreamWAV = preload("res://asstets/sfx/bullet_rickoshet3.wav")
 const bullet_rickoshet4: AudioStreamWAV = preload("res://asstets/sfx/bullet_rickoshet4.wav")
 
-const hurt_1:AudioStreamWAV = preload("res://asstets/sfx/virtual_death.wav")
-const hurt_2:AudioStreamWAV = preload("res://asstets/sfx/Glitch_15.wav")
-const hurt_3:AudioStreamWAV = preload("res://asstets/sfx/Glitch_10.wav")
-const hurt_4:AudioStreamWAV = preload("res://asstets/sfx/Glitch_20.wav")
-
-
-
+const hurt_1: AudioStreamWAV = preload("res://asstets/sfx/virtual_death.wav")
+const hurt_2: AudioStreamWAV = preload("res://asstets/sfx/Glitch_15.wav")
+const hurt_3: AudioStreamWAV = preload("res://asstets/sfx/Glitch_10.wav")
+const hurt_4: AudioStreamWAV = preload("res://asstets/sfx/Glitch_20.wav")
 
 
 func _ready() -> void:
@@ -65,7 +62,6 @@ func _ready() -> void:
 func play(sound: AudioStreamWAV):
 	sfx_player.stream = sound
 	sfx_player.play()
-
 
 
 func play_game_sfx(sound: AudioStreamWAV, max_count := 3) -> void:

@@ -15,7 +15,7 @@ var waves_number: int = 0
 @export var enemy_spawners: Array[Node]
 
 @onready var sca_brute = preload("res://scenes/enemies/scavenger_brute.tscn")
-@onready var sca_gooner = preload("res://scenes/enemies/gooner_test.tscn")
+@onready var sca_gooner = preload("res://scenes/enemies/scavenger_gunner.tscn")
 @onready var sca_hunter = preload("res://scenes/enemies/scavenger_hunter.tscn")
 @onready var sca_rocketer = preload("res://scenes/enemies/scavenger_rocketer.tscn")
 

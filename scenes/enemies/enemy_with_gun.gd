@@ -38,6 +38,7 @@ func _ready() -> void:
 	if spawn_dest != Vector2.ZERO and is_spawning:
 		await big_entrance(spawn_dest)
 		trigger()
+		
 	randomize()
 	floor_ = get_parent().get_parent()
 	floor_.enemies = floor_.enemies + 1

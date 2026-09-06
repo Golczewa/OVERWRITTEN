@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://djvy7cjtuohp6"]
+
+[ext_resource type="Script" uid="uid://do7xpvxt5dkf6" path="res://scenes/enemies/scavenger_gunner.gd" id="1_ee4q7"]
+[ext_resource type="Texture2D" uid="uid://b7twfvry48epk" path="res://asstets/enemies/scavenger_gooner_corpse.png" id="2_1qstb"]
+[ext_resource type="PackedScene" uid="uid://yqxpfo2l2m20" path="res://scenes/effects/arrow.tscn" id="2_sobr0"]
+[ext_resource type="Texture2D" uid="uid://ctmdd472ojvj5" path="res://asstets/enemies/scavenger_gooner.png" id="3_ee4q7"]
+[ext_resource type="Texture2D" uid="uid://cr45pxckyf6i6" path="res://asstets/enemies/scavenger_gooner_weapon.png" id="4_mdpi0"]
+[ext_resource type="PackedScene" uid="uid://cnijtad8hhrio" path="res://scenes/enemies/legs.tscn" id="5_ee4q7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjsos"]
+atlas = ExtResource("2_1qstb")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fy2yf"]
+atlas = ExtResource("2_1qstb")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnyfx"]
+atlas = ExtResource("2_1qstb")
+region = Rect2(256, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4aiw4"]
+atlas = ExtResource("2_1qstb")
+region = Rect2(384, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvhym"]
+atlas = ExtResource("3_ee4q7")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mdpi0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjsos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fy2yf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnyfx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4aiw4")
+}],
+"loop": 0,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvhym")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aexgj"]
+atlas = ExtResource("4_mdpi0")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cj2n1"]
+atlas = ExtResource("4_mdpi0")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jiq1j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aexgj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cj2n1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aexgj")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1qstb"]
+radius = 16.0
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1342102832 node_paths=PackedStringArray("nav_agent", "arrow", "sight", "legs", "body", "knockback_marker", "to_hide_on_death", "main_collison", "weapon") groups=["enemies"]]
+script = ExtResource("1_ee4q7")
+nav_agent = NodePath("NavigationAgent2D")
+arrow = NodePath("AnimatedSprite2D")
+sight = NodePath("RayCast2D")
+legs = NodePath("AnimatedSprite2D3")
+body = NodePath("AnimatedSprite2D2")
+knockback_marker = NodePath("AnimatedSprite2D2/Marker2D")
+to_hide_on_death = [NodePath("AnimatedSprite2D3"), NodePath("AnimatedSprite2D")]
+chase_speed = 100
+main_collison = NodePath("CollisionShape2D")
+weapon = NodePath("AnimatedSprite2D2/AnimatedSprite2D")
+weapon_offset = -0.02
+metadata/_custom_type_script = "uid://dsrfyi6vfxl0j"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1098890441]
+sprite_frames = SubResource("SpriteFrames_mdpi0")
+offset = Vector2(10, 0)
+
+[node name="Marker2D" type="Marker2D" parent="AnimatedSprite2D2" unique_id=805114644]
+z_index = 1
+position = Vector2(-35, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D2" unique_id=650577359]
+show_behind_parent = true
+position = Vector2(0, 8)
+sprite_frames = SubResource("SpriteFrames_jiq1j")
+frame = 2
+frame_progress = 1.0
+offset = Vector2(10, -10)
+
+[node name="Marker2D" type="Marker2D" parent="AnimatedSprite2D2/AnimatedSprite2D" unique_id=701610588]
+position = Vector2(12, 5)
+
+[node name="Marker2D2" type="Marker2D" parent="AnimatedSprite2D2/AnimatedSprite2D" unique_id=698510724]
+position = Vector2(17, 5)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1354719252]
+
+[node name="AnimatedSprite2D" parent="." unique_id=1822404430 instance=ExtResource("2_sobr0")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=402731530]
+shape = SubResource("CircleShape2D_1qstb")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=720988623]
+target_position = Vector2(71, 0)
+
+[node name="AnimatedSprite2D3" parent="." unique_id=1071073496 instance=ExtResource("5_ee4q7")]
+show_behind_parent = true
+position = Vector2(-1, 0)
+frame_progress = 0.8775061

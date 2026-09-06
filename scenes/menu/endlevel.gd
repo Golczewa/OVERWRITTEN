@@ -30,8 +30,12 @@ func setup(score: Dictionary):
 	$VBoxContainer/used.text = "Healing used: " + str(score["hused"])
 	ConfigManager.levels_progress.set_value("level_" + str(score["level"] + 1), "unlocked", true)
 	if score["score"] > ConfigManager.levels.get_value("level_" + str(score["level"]), "score", 0):
-		ConfigManager.levels_progress.set_value("level_" + str(score["level"]), "score", score["score"])
-		ConfigManager.levels_progress.set_value("level_" + str(score["level"]), "rank", score["rank"])
+		ConfigManager.levels_progress.set_value(
+			"level_" + str(score["level"]), "score", score["score"]
+		)
+		ConfigManager.levels_progress.set_value(
+			"level_" + str(score["level"]), "rank", score["rank"]
+		)
 	ConfigManager.save_levels_progress()
 	ConfigManager.reload_levels_progress()
 	unlock_next_level()
