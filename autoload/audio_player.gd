@@ -40,7 +40,7 @@ const patchwork_shot: AudioStreamWAV = preload("res://asstets/sfx/pach_gunshot.w
 const coat: AudioStreamWAV = preload("res://asstets/sfx/cloth.wav")
 const virtual_guy_deadth: AudioStreamWAV = preload("res://asstets/sfx/virtual_death.wav")
 const hp_loading: AudioStreamWAV = preload("res://asstets/sfx/juice.wav")
-const revolver_spin:AudioStreamWAV=preload("res://asstets/sfx/revolver_spin.wav")
+const revolver_spin: AudioStreamWAV = preload("res://asstets/sfx/revolver_spin.wav")
 
 const bullet_rickoshet1: AudioStreamWAV = preload("res://asstets/sfx/bullet_rickoshet1.wav")
 const bullet_rickoshet2: AudioStreamWAV = preload("res://asstets/sfx/bullet_rickoshet2.wav")

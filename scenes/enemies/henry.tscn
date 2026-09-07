@@ -35,39 +35,11 @@ animations = [{
 atlas = ExtResource("6_bad0o")
 region = Rect2(0, 0, 128, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tmyn0"]
-atlas = ExtResource("6_bad0o")
-region = Rect2(128, 0, 128, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_otiuk"]
-atlas = ExtResource("6_bad0o")
-region = Rect2(256, 0, 128, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xhcor"]
-atlas = ExtResource("6_bad0o")
-region = Rect2(384, 0, 128, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_su1v2"]
-atlas = ExtResource("6_bad0o")
-region = Rect2(512, 0, 128, 64)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_jiq1j"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_k3mrm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tmyn0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_otiuk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xhcor")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_su1v2")
 }],
 "loop": 0,
 "name": &"default",
@@ -129,7 +101,7 @@ size = Vector2(36, 33)
 [sub_resource type="CircleShape2D" id="CircleShape2D_628fs"]
 radius = 15.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=349374792 node_paths=PackedStringArray("sight", "machete", "gun") groups=["enemies"]]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=349374792 node_paths=PackedStringArray("sight", "machete", "gun", "body", "to_hide_on_death") groups=["enemies"]]
 z_index = 1
 collision_layer = 4
 collision_mask = 3
@@ -138,6 +110,8 @@ script = ExtResource("1_an1b6")
 sight = NodePath("AnimatedSprite2D/AnimatedSprite2D/RayCast2D")
 machete = NodePath("AnimatedSprite2D/AnimatedSprite2D2")
 gun = NodePath("AnimatedSprite2D/AnimatedSprite2D")
+body = NodePath("AnimatedSprite2D")
+to_hide_on_death = [NodePath("AnimatedSprite2D3"), NodePath("AnimatedSprite2D2"), NodePath("AnimatedSprite2D/AnimatedSprite2D"), NodePath("AnimatedSprite2D/AnimatedSprite2D2")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=272506226]
 position = Vector2(1, 0)

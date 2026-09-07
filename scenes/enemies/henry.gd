@@ -4,10 +4,11 @@ extends CharacterBody2D
 @export var machete: AnimatedSprite2D
 @export var gun: AnimatedSprite2D
 @export var body: AnimatedSprite2D
+@export var to_hide_on_death:Array[Node2D]
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
-@onready var legs = $AnimatedSprite2D/AnimatedSprite2D3
+@onready var legs = $AnimatedSprite2D3
 @onready var arrow: AnimatedSprite2D = $AnimatedSprite2D2
 @onready var boss_bar = player.get_node("Camera2D/CanvasLayer/ProgressBar2")
 @onready var coat_pack: PackedScene = preload("res://scenes/player/coat.tscn")
@@ -21,7 +22,7 @@ var curr_speed: int = gunner_speed
 var scavenger_speed: int = 300
 var rot_speed: int = 15
 @onready var floor_: Floor = get_parent().get_parent()
-var view_distance: int = 250
+var view_distance: int = 300
 var in_knocback: bool = false
 var dead = false
 var can_attack = false
@@ -30,13 +31,13 @@ var in_cutscene: bool = false
 var in_cooldown: bool = true
 enum Mode { gunner, scavenger }
 var curr_mode: Mode = Mode.gunner
-var closeup = 150
-var standing_room = 50
+var closeup = 250
+var standing_room = 75
 var gunner_cyckle: Array[int] = get_new_cycle()
 var cycle_num := 0
-var gunner_cooldown:=0.8
-var in_sword_cooldown:=false
-var sword_cooldown:=1.5
+var gunner_cooldown := 0.8
+var in_sword_cooldown := false
+var sword_cooldown := 1.5
 
 signal died
 
@@ -54,6 +55,9 @@ func _physics_process(_delta: float) -> void:
 		gunner()
 	else:
 		scavenger()
+	if is_player_in():
+		scavenger_attack()
+	sight.target_position = sight.to_local(player.global_position)
 	arrow.update_arrow_pos(global_position, player.camera)
 	gun.look_at(player.global_position)
 	velocity = curr_speed * direction
@@ -86,27 +90,54 @@ func gunner():
 
 
 func gunner_attack():
-	in_cooldown=true
+	in_cooldown = true
 	if gunner_cyckle[cycle_num] == 0:
 		burst()
 	else:
 		spawn_bullet()
-	cycle_num+=1
-	if cycle_num>=gunner_cyckle.size():
-		curr_mode=Mode.scavenger
+	cycle_num += 1
 	get_tree().create_timer(gunner_cooldown).timeout.connect(end_cooldown)
+	if cycle_num >= gunner_cyckle.size()-1:
+		cycle_num=0
+		gunner_cyckle=get_new_cycle()
+		curr_mode = Mode.scavenger
+		get_tree().create_timer(randf_range(2,4)).timeout.connect(to_scavenger)
+
 
 func burst():
 	await AudioPlayer.play_game_sfx(AudioPlayer.revolver_spin)
 	for i in range(6):
 		if dead or in_knocback:
 			break
-		spawn_bullet()
+		spawn_bullet(15)
 		await get_tree().create_timer(0.1).timeout
 
 
 func scavenger():
-	pass
+	legs.run()
+	curr_speed = scavenger_speed
+	nav_agent.target_position = player.global_position
+	var next_pos = nav_agent.get_next_path_position()
+	legs.toogle_fallow(next_pos)
+	body.look_at(player.global_position)
+	direction = global_position.direction_to(next_pos)
+
+
+func scavenger_attack(damage = 30) -> void:
+	if in_sword_cooldown:
+		return
+	in_sword_cooldown = true
+	machete.play("default")
+	await get_tree().create_timer(0.1).timeout
+	for node: Node2D in $AnimatedSprite2D/AnimatedSprite2D2/Area2D.get_overlapping_bodies():
+		if node.is_in_group("player"):
+			node.player_take_dmg(damage)
+			AudioPlayer.play_game_sfx(AudioPlayer.slash)
+		else:
+			AudioPlayer.play_game_sfx(AudioPlayer.swosh)
+	await machete.animation_finished
+	machete.frame = 0
+	get_tree().create_timer(sword_cooldown).timeout.connect(end_sword_cooldown)
 
 
 func take_damage(damage: int, knockback: int):
@@ -149,15 +180,10 @@ func _die():
 	set_physics_process(false)
 	set_process(false)
 	$CollisionShape2D.set_deferred("disabled", true)
-	$AnimatedSprite2D/RayCast2D.set_deferred("disabled", true)
 	legs.stop_walking()
-	legs.visible = not legs.visible
-	arrow.hide()
-	gun.hide()
+	for node in to_hide_on_death:
+		node.hide()
 	boss_bar.boss_is_out()
-	$AnimatedSprite2D/Area2D/AnimatedSprite2D.visible = not (
-		$AnimatedSprite2D/Area2D/AnimatedSprite2D.visible
-	)
 	remove_from_group("enemies")
 	drop_cloth()
 
@@ -171,7 +197,6 @@ func _damage_effect():
 
 
 func toogle_cutscene() -> bool:
-	gun.in_cutscene = !gun.in_cutscene
 	in_cutscene = !in_cutscene
 	return in_cutscene
 
@@ -201,12 +226,14 @@ func get_new_cycle() -> Array[int]:
 	arr.shuffle()
 	return arr
 
-func spawn_bullet():
-	AudioPlayer.play_game_sfx(AudioPlayer.revolver_shot)
+
+func spawn_bullet(damage:=20):
+	AudioPlayer.play_game_sfx(AudioPlayer.revolver_shot, 6)
 	var spawn_marker: Marker2D = $AnimatedSprite2D/AnimatedSprite2D/Marker2D
 	var dir_marker: Marker2D = $AnimatedSprite2D/AnimatedSprite2D/Marker2D2
 	var random_angle
 	var bullet = bullet_pack.instantiate()
+	bullet.dmg=damage
 	random_angle = deg_to_rad(randf_range(-2, 2))
 	bullet.direction = (dir_marker.global_position - spawn_marker.global_position).normalized()
 	bullet.direction = bullet.direction.rotated(random_angle)
@@ -216,4 +243,19 @@ func spawn_bullet():
 
 
 func end_cooldown():
-	in_cooldown=false
+	in_cooldown = false
+
+
+func end_sword_cooldown():
+	in_sword_cooldown = false
+
+
+func is_player_in() -> bool:
+	for node: Node2D in $AnimatedSprite2D/AnimatedSprite2D2/Area2D.get_overlapping_bodies():
+		if node == player:
+			return true
+	return false
+
+
+func to_scavenger():
+	curr_mode=Mode.gunner
