@@ -1,40 +1,112 @@
 extends CharacterBody2D
 
-@export var test_max_health: int = 250
+@export var sight: RayCast2D
+@export var machete: AnimatedSprite2D
+@export var gun: AnimatedSprite2D
+@export var body: AnimatedSprite2D
+
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
-@onready var player = get_tree().get_first_node_in_group("player")
-@onready var weapon: Area2D = $AnimatedSprite2D/Area2D
-@onready var gun = $AnimatedSprite2D/AnimatedSprite2D2
+@onready var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
 @onready var legs = $AnimatedSprite2D/AnimatedSprite2D3
 @onready var arrow: AnimatedSprite2D = $AnimatedSprite2D2
 @onready var boss_bar = player.get_node("Camera2D/CanvasLayer/ProgressBar2")
 @onready var coat_pack: PackedScene = preload("res://scenes/player/coat.tscn")
+@onready var bullet_pack: PackedScene = preload("res://scenes/effects/bullet_test.tscn")
+
+var max_health: int = 300
 var curr_health: int
 var direction: Vector2 = Vector2.ZERO
-var speed: int = 50
+var gunner_speed: int = 100
+var curr_speed: int = gunner_speed
+var scavenger_speed: int = 300
 var rot_speed: int = 15
-var floor_
+@onready var floor_: Floor = get_parent().get_parent()
 var view_distance: int = 250
-var player_sighted: bool = false
 var in_knocback: bool = false
 var dead = false
 var can_attack = false
 var range_: int = 400
 var in_cutscene: bool = false
-@export var walk_range: int = 200
+var in_cooldown: bool = true
+enum Mode { gunner, scavenger }
+var curr_mode: Mode = Mode.gunner
+var closeup = 150
+var standing_room = 50
+var gunner_cyckle: Array[int] = get_new_cycle()
+var cycle_num := 0
+var gunner_cooldown:=0.8
+var in_sword_cooldown:=false
+var sword_cooldown:=1.5
 
 signal died
 
 
 func _ready() -> void:
-	randomize()
-	floor_ = get_parent().get_parent()
-	weapon.body_entered.connect(player_in)
-	weapon.body_exited.connect(player_out)
-	curr_health = test_max_health
+	curr_health = max_health
 	legs.walk()
-	_randomise_target()
-	player_sighted = true
+	get_tree().create_timer(gunner_cooldown).timeout.connect(end_cooldown)
+
+
+func _physics_process(_delta: float) -> void:
+	if in_cutscene or in_knocback:
+		return
+	if curr_mode == Mode.gunner:
+		gunner()
+	else:
+		scavenger()
+	arrow.update_arrow_pos(global_position, player.camera)
+	gun.look_at(player.global_position)
+	velocity = curr_speed * direction
+	move_and_slide()
+
+
+func gunner():
+	var stand := false
+	curr_speed = gunner_speed
+	if not in_cooldown and can_see_player():
+		gunner_attack()
+	var player_distance: float = (player.global_position - global_position).length()
+	if player_distance < closeup and can_see_player():
+		legs.walk()
+		nav_agent.target_position = get_opposite()
+	elif (
+		closeup < player_distance and player_distance < closeup + standing_room and can_see_player()
+	):
+		direction = Vector2.ZERO
+		stand = true
+		legs.stop()
+	else:
+		legs.walk()
+		nav_agent.target_position = player.global_position
+	var next_pos = nav_agent.get_next_path_position()
+	body.look_at(player.global_position)
+	legs.toogle_fallow(next_pos)
+	if not stand:
+		direction = global_position.direction_to(next_pos)
+
+
+func gunner_attack():
+	in_cooldown=true
+	if gunner_cyckle[cycle_num] == 0:
+		burst()
+	else:
+		spawn_bullet()
+	cycle_num+=1
+	if cycle_num>=gunner_cyckle.size():
+		curr_mode=Mode.scavenger
+	get_tree().create_timer(gunner_cooldown).timeout.connect(end_cooldown)
+
+func burst():
+	await AudioPlayer.play_game_sfx(AudioPlayer.revolver_spin)
+	for i in range(6):
+		if dead or in_knocback:
+			break
+		spawn_bullet()
+		await get_tree().create_timer(0.1).timeout
+
+
+func scavenger():
+	pass
 
 
 func take_damage(damage: int, knockback: int):
@@ -44,8 +116,8 @@ func take_damage(damage: int, knockback: int):
 	boss_bar.update(curr_health)
 	if knockback != 0:
 		legs.stop_walking()
-		var org_speed = speed
-		speed = knockback
+		var org_speed = curr_speed
+		curr_speed = knockback
 		if direction == Vector2.ZERO:
 			direction = -(
 				Vector2($AnimatedSprite2D/RayCast2D.target_position - global_position).normalized()
@@ -55,17 +127,15 @@ func take_damage(damage: int, knockback: int):
 		in_knocback = true
 		get_tree().create_timer(0.1).timeout.connect(end_knockback.bind(org_speed))
 	_damage_effect()
-	if (!player_sighted) and not player.invisible:
-		player_sighted = true
 	if curr_health <= 0 and not dead:
 		_die()
 
 
 func end_knockback(org_speed):
-	speed = 0
+	curr_speed = 0
 	direction = -direction
 	await get_tree().create_timer(1).timeout
-	speed = org_speed
+	curr_speed = org_speed
 	in_knocback = false
 
 
@@ -100,107 +170,6 @@ func _damage_effect():
 		modulate = Color.WHITE
 
 
-func _idle_moving():
-	if nav_agent.is_navigation_finished():
-		speed = 50
-		rot_speed = 15
-		direction = Vector2.ZERO
-		_randomise_target()
-		legs.walk()
-		return
-	var next_path = nav_agent.get_next_path_position()
-	direction = global_position.direction_to(next_path)
-
-
-func _randomise_target():
-	var x = randf_range(-walk_range, walk_range)
-	var y = randf_range(-walk_range, walk_range)
-	var target = global_position + Vector2(x, y)
-	nav_agent.target_position = target
-
-
-func _physics_process(_delta: float) -> void:
-	if not in_cutscene:
-		if !in_knocback:
-			arrow.update_arrow_pos(global_position, player.camera)
-			if player_sighted and not player.invisible:
-				chase()
-			else:
-				_idle_moving()
-				var offset = Vector2.RIGHT.rotated(rotation) * 100
-				var target_pos = global_position + offset
-				gun.target = target_pos
-			var target_angle = direction.angle()
-			rotation = lerp_angle(rotation, target_angle, rot_speed * _delta)
-		velocity = direction * speed
-		if !player_sighted:
-			player_sighted = can_see_player()
-			if player_sighted:
-				get_tree().call_group("enemies", "trigger")
-		if can_attack and not player.invisible:
-			weapon.attack()
-		move_and_slide()
-
-
-func can_see_player():
-	if player.invisible:
-		return false
-	var dist = global_position.distance_to(player.global_position)
-	if dist > view_distance:
-		return false
-	var space_state = get_world_2d().direct_space_state
-	var query = PhysicsRayQueryParameters2D.create(global_position, player.global_position)
-	query.collision_mask = 3
-	query.exclude = [self.get_rid()]
-	var result = space_state.intersect_ray(query)
-	if result:
-		if result.collider == player:
-			return true
-	return false
-
-
-func chase():
-	if curr_health <= test_max_health / 4:
-		speed = 300
-	else:
-		speed = 200
-	rot_speed = 20
-	gun.target = player.global_position
-	$AnimatedSprite2D.look_at(player.global_position)
-	if not is_path_blocked():
-		gun.attack()
-	legs.run()
-	nav_agent.target_position = player.global_position
-	var next_path = nav_agent.get_next_path_position()
-	direction = global_position.direction_to(next_path)
-
-
-func player_in(_body):
-	if _body.is_in_group("player"):
-		can_attack = true
-
-
-func player_out(_body):
-	if _body.is_in_group("player"):
-		can_attack = false
-
-
-func trigger():
-	if not player.invisible:
-		player_sighted = true
-
-
-func is_path_blocked():
-	$AnimatedSprite2D/AnimatedSprite2D2/RayCast2D.target_position = Vector2(range_, 0)
-	if $AnimatedSprite2D/AnimatedSprite2D2/RayCast2D.is_colliding():
-		var collider = $AnimatedSprite2D/AnimatedSprite2D2/RayCast2D.get_collider()
-		if collider and collider.is_in_group("player"):
-			return false
-		else:
-			return true
-	return false
-
-
 func toogle_cutscene() -> bool:
 	gun.in_cutscene = !gun.in_cutscene
 	in_cutscene = !in_cutscene
@@ -211,3 +180,40 @@ func drop_cloth():
 	var coat: Node2D = coat_pack.instantiate()
 	get_parent().get_parent().add_child(coat)
 	coat.global_position = global_position
+
+
+func can_see_player() -> bool:
+	if sight.is_colliding():
+		var collider = sight.get_collider()
+		return collider == player
+	return false
+
+
+func get_opposite(retreat := 60) -> Vector2:
+	var opposite = (global_position - player.global_position).normalized()
+	return global_position + opposite * retreat
+
+
+func get_new_cycle() -> Array[int]:
+	var arr: Array[int]
+	for i: int in range(randi_range(5, 8)):
+		arr.append(i)
+	arr.shuffle()
+	return arr
+
+func spawn_bullet():
+	AudioPlayer.play_game_sfx(AudioPlayer.revolver_shot)
+	var spawn_marker: Marker2D = $AnimatedSprite2D/AnimatedSprite2D/Marker2D
+	var dir_marker: Marker2D = $AnimatedSprite2D/AnimatedSprite2D/Marker2D2
+	var random_angle
+	var bullet = bullet_pack.instantiate()
+	random_angle = deg_to_rad(randf_range(-2, 2))
+	bullet.direction = (dir_marker.global_position - spawn_marker.global_position).normalized()
+	bullet.direction = bullet.direction.rotated(random_angle)
+	floor_.add_child(bullet)
+	bullet.global_position = spawn_marker.global_position
+	bullet.look_at(dir_marker.global_position)
+
+
+func end_cooldown():
+	in_cooldown=false

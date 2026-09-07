@@ -61,7 +61,6 @@ func _physics_process(_delta: float) -> void:
 	sight.target_position = sight.to_local(player.global_position)
 	if player_sighted and not player.invisible:
 		_engage()
-
 	else:
 		idle()
 	velocity = direction * curr_speed
@@ -197,3 +196,10 @@ func trigger_others():
 func get_opposite(retreat := 60) -> Vector2:
 	var opposite = (global_position - player.global_position).normalized()
 	return global_position + opposite * retreat
+
+
+func is_player_in() -> bool:
+	for node: Node2D in $AnimatedSprite2D/AnimatedSprite2D/Area2D.get_overlapping_bodies():
+		if node == player:
+			return true
+	return false
