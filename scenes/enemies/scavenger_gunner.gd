@@ -16,8 +16,7 @@ func _engage() -> void:
 	var player_distance: float = (player.global_position - global_position).length()
 	if player_distance < closeup and can_see_player():
 		legs.walk()
-		var opposite: Vector2 = -(global_position - player.global_position)
-		nav_agent.target_position = opposite
+		nav_agent.target_position = get_opposite()
 	elif (
 		closeup < player_distance and player_distance < closeup + standing_room and can_see_player()
 	):

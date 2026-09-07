@@ -43,7 +43,9 @@ func _attack() -> void:
 			AudioPlayer.play_game_sfx(AudioPlayer.slash)
 		else:
 			AudioPlayer.play_game_sfx(AudioPlayer.swosh)
+	await weapon.animation_finished
 	weapon.frame = 0
+	print(weapon.frame)
 	get_tree().create_timer(cooldown_time).timeout.connect(end_cooldown)
 
 

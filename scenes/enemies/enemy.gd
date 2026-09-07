@@ -192,3 +192,8 @@ func trigger_others():
 		if enemy is Enemy:
 			enemy.trigger()
 	triggered = true
+
+
+func get_opposite(retreat := 60) -> Vector2:
+	var opposite = (global_position - player.global_position).normalized()
+	return global_position + opposite * retreat
