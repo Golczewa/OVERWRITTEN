@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://utysrvollxcy"
-path="res://.godot/imported/v2137_goon.png-c51e746e5148052ca68c7549daaa3aec.ctex"
+uid="uid://ctwn2gc6ihi2i"
+path="res://.godot/imported/rv.png-17c79d667c9eb63fe6832629834fce55.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asstets/enemies/v2137_goon.png"
-dest_files=["res://.godot/imported/v2137_goon.png-c51e746e5148052ca68c7549daaa3aec.ctex"]
+source_file="res://asstets/enemies/rv.png"
+dest_files=["res://.godot/imported/rv.png-17c79d667c9eb63fe6832629834fce55.ctex"]
 
 [params]
 

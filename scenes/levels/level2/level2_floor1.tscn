@@ -27,11 +27,11 @@ position = Vector2(327, -13)
 position = Vector2(545, 235)
 
 [node name="StaticBody2D" parent="." unique_id=124000147 instance=ExtResource("3_ludok")]
-position = Vector2(544, 701)
+position = Vector2(544, 797)
 rotation = -1.5707964
 
 [node name="Area2D" parent="." unique_id=1410637359 instance=ExtResource("4_khal1")]
-position = Vector2(544, -61)
+position = Vector2(544, -157)
 rotation = -1.5707964
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=140041134]

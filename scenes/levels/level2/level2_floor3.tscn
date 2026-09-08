@@ -18,11 +18,11 @@ metadata/_custom_type_script = "uid://cramwugkt2of"
 [node name="NavigationRegion2D" parent="." unique_id=104207726 instance=ExtResource("2_mkx14")]
 
 [node name="Area2D" parent="." unique_id=1410637359 instance=ExtResource("3_r0n8q")]
-position = Vector2(544, -61)
+position = Vector2(544, -157)
 rotation = -1.5707964
 
 [node name="Area2D2" parent="." unique_id=231684190 instance=ExtResource("4_mkx14")]
-position = Vector2(544, 701)
+position = Vector2(544, 797)
 rotation = 1.5707964
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=989088594]

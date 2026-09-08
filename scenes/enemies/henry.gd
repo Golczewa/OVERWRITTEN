@@ -49,7 +49,11 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	if in_cutscene or in_knocback:
+	if in_cutscene:
+		return
+	if in_knocback:
+		velocity = direction * curr_speed
+		move_and_slide()
 		return
 	if curr_mode == Mode.gunner:
 		gunner()
@@ -105,7 +109,15 @@ func gunner_attack():
 
 
 func burst():
-	await AudioPlayer.play_game_sfx(AudioPlayer.revolver_spin)
+	gun.play("spin")
+	$AnimatedSprite2D/AnimatedSprite2D/Sprite2D.show()
+	var tween:=create_tween()
+	tween.tween_property($AnimatedSprite2D/AnimatedSprite2D/Sprite2D,"rotation",6.28,0.3)
+	AudioPlayer.play_game_sfx(AudioPlayer.revolver_spin)
+	await tween.finished
+	$AnimatedSprite2D/AnimatedSprite2D/Sprite2D.hide()
+	$AnimatedSprite2D/AnimatedSprite2D/Sprite2D.rotation=0
+	gun.play("default")
 	for i in range(6):
 		if dead or in_knocback:
 			break

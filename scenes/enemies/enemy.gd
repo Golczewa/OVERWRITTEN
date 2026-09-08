@@ -55,7 +55,11 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	if is_spawning or in_knocback or dead:
+	if is_spawning or dead:
+		return
+	if in_knocback:
+		velocity = direction * curr_speed
+		move_and_slide()
 		return
 	arrow.update_arrow_pos(global_position, player.camera)
 	sight.target_position = sight.to_local(player.global_position)
