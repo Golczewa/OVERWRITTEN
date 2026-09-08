@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dx7r1y82utrin"]
+
+[ext_resource type="Script" uid="uid://dlbtios3mnxtg" path="res://scenes/menu/settings.gd" id="1_37860"]
+[ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="2_37860"]
+[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="3_37860"]
+[ext_resource type="PackedScene" uid="uid://dv1vxbhqxe7f0" path="res://scenes/menu/option_button.tscn" id="4_0t5g5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jiq1j"]
+font = ExtResource("3_37860")
+font_size = 32
+font_color = Color(0.54509807, 0, 0.03529412, 1)
+
+[node name="MenuWindow" type="Control" unique_id=1436077712 node_paths=PackedStringArray("panel")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 676.0
+offset_bottom = 560.0
+script = ExtResource("1_37860")
+panel = NodePath("AspectRatioContainer")
+metadata/_custom_type_script = "uid://8vimbe8e08su"
+
+[node name="AspectRatioContainer" parent="." unique_id=1461861251 instance=ExtResource("2_37860")]
+layout_mode = 0
+offset_right = 676.0
+offset_bottom = 560.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1707188948]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 74.0
+offset_right = 299.0
+offset_bottom = 158.0
+theme_override_constants/separation = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=717955210]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1915403148]
+layout_mode = 2
+text = "Resolution:"
+label_settings = SubResource("LabelSettings_jiq1j")
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=2072003738]
+layout_mode = 2
+text = "Window mode:"
+label_settings = SubResource("LabelSettings_jiq1j")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer" unique_id=1465310873]
+layout_mode = 2
+
+[node name="OptionButton" parent="HBoxContainer/VBoxContainer2" unique_id=1905948071 instance=ExtResource("4_0t5g5")]
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "< 21x37 >"
+popup/item_1/text = "< 1x1 >"
+popup/item_1/id = 1

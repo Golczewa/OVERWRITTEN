@@ -35,7 +35,7 @@ var closeup = 250
 var standing_room = 75
 var gunner_cyckle: Array[int] = get_new_cycle()
 var cycle_num := 0
-var gunner_cooldown := 0.8
+var gunner_cooldown := 0.6
 var in_sword_cooldown := false
 var sword_cooldown := 1.5
 
@@ -113,7 +113,7 @@ func burst():
 	$AnimatedSprite2D/AnimatedSprite2D/Sprite2D.show()
 	var tween:=create_tween()
 	tween.tween_property($AnimatedSprite2D/AnimatedSprite2D/Sprite2D,"rotation",6.28,0.3)
-	AudioPlayer.play_game_sfx(AudioPlayer.revolver_spin)
+	await AudioPlayer.play_game_sfx(AudioPlayer.revolver_spin)
 	await tween.finished
 	$AnimatedSprite2D/AnimatedSprite2D/Sprite2D.hide()
 	$AnimatedSprite2D/AnimatedSprite2D/Sprite2D.rotation=0

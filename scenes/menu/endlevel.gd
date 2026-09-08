@@ -22,6 +22,7 @@ func _ready() -> void:
 
 
 func setup(score: Dictionary):
+	AudioPlayer.play_with_entrance(AudioPlayer.level_complete)
 	count_score(score)
 	level_num = score["level"]
 	$HBoxContainer.display("-")
@@ -92,6 +93,7 @@ func hidee():
 	await $AspectRatioContainer.close_animation()
 	hide()
 	unlock_weapon(level_num + 1)
+	AudioPlayer.play_music(AudioPlayer.menu_theme)
 
 
 func format_time(time: int):
