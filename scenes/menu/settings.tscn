@@ -51,7 +51,4 @@ layout_mode = 2
 
 [node name="OptionButton" parent="HBoxContainer/VBoxContainer2" unique_id=1905948071 instance=ExtResource("4_0t5g5")]
 layout_mode = 2
-item_count = 2
-popup/item_0/text = "< 21x37 >"
-popup/item_1/text = "< 1x1 >"
-popup/item_1/id = 1
+options = Array[String](["1920x1080", "1x1"])
