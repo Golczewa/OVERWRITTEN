@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dkvpv022ctymn" path="res://asstets/tiles/black_backround.png" id="2_y1o0p"]
 [ext_resource type="PackedScene" uid="uid://dorivql3hpxew" path="res://scenes/menu/endlevel.tscn" id="3_e0arn"]
 [ext_resource type="PackedScene" uid="uid://cagpq2ycw3mwg" path="res://scenes/menu/menu_code_effect.tscn" id="3_f2fum"]
-[ext_resource type="Theme" uid="uid://wmjvw5llbpog" path="res://asstets/menu/button_theme.tres" id="3_r8yej"]
+[ext_resource type="Theme" uid="uid://wmjvw5llbpog" path="res://asstets/themes/button_theme.tres" id="3_r8yej"]
 [ext_resource type="Texture2D" uid="uid://mfb74lanpi3a" path="res://asstets/menu/title.svg" id="4_f2fum"]
 [ext_resource type="FontFile" uid="uid://d1feesbwk46ll" path="res://asstets/menu/DroidSansMono.ttf" id="5_3y2rt"]
 [ext_resource type="Script" uid="uid://uamd46ltc757" path="res://scenes/menu/menu_button.gd" id="5_t0a87"]
@@ -13,6 +13,7 @@
 [ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="8_kaijy"]
 [ext_resource type="PackedScene" uid="uid://q6ale2m8tx0" path="res://scenes/menu/level_panel.tscn" id="9_qo0fc"]
 [ext_resource type="PackedScene" uid="uid://iliwbvxt5w52" path="res://scenes/menu/quit_panel.tscn" id="10_k48pe"]
+[ext_resource type="PackedScene" uid="uid://dx7r1y82utrin" path="res://scenes/menu/settings.tscn" id="14_rcuxh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_t0a87"]
 line_spacing = 0.0
@@ -153,3 +154,11 @@ offset_left = 300.0
 offset_top = 160.0
 offset_right = 850.0
 offset_bottom = 461.0
+
+[node name="MenuWindow" parent="." unique_id=1436077712 instance=ExtResource("14_rcuxh")]
+visible = false
+layout_mode = 0
+offset_left = 219.0
+offset_top = 154.0
+offset_right = 895.0
+offset_bottom = 464.0

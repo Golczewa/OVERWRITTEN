@@ -1,0 +1,24 @@
+[gd_resource type="Theme" format=3 uid="uid://euxcghaongvc"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_occy7"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_0t5g5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0t5g5"]
+bg_color = Color(0.8666667, 0.101960786, 0.21568628, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fq6v2"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_mst10"]
+color = Color(0.54509807, 0, 0.03529412, 1)
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 12
+
+[resource]
+HSlider/icons/grabber = SubResource("ImageTexture_occy7")
+HSlider/icons/grabber_highlight = SubResource("ImageTexture_0t5g5")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_0t5g5")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_fq6v2")
+HSlider/styles/slider = SubResource("StyleBoxLine_mst10")

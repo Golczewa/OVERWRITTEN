@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="2_37860"]
 [ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="3_37860"]
 [ext_resource type="PackedScene" uid="uid://dv1vxbhqxe7f0" path="res://scenes/menu/option_button.tscn" id="4_0t5g5"]
+[ext_resource type="Theme" uid="uid://euxcghaongvc" path="res://asstets/themes/slider.tres" id="5_occy7"]
+[ext_resource type="PackedScene" uid="uid://du4k8ns7pgxg8" path="res://scenes/menu/button.tscn" id="6_v208e"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jiq1j"]
 font = ExtResource("3_37860")
@@ -14,7 +16,7 @@ font_color = Color(0.54509807, 0, 0.03529412, 1)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 676.0
-offset_bottom = 560.0
+offset_bottom = 358.0
 script = ExtResource("1_37860")
 panel = NodePath("AspectRatioContainer")
 metadata/_custom_type_script = "uid://8vimbe8e08su"
@@ -22,7 +24,8 @@ metadata/_custom_type_script = "uid://8vimbe8e08su"
 [node name="AspectRatioContainer" parent="." unique_id=1461861251 instance=ExtResource("2_37860")]
 layout_mode = 0
 offset_right = 676.0
-offset_bottom = 560.0
+offset_bottom = 357.0
+title = "Settings"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1707188948]
 layout_mode = 0
@@ -46,9 +49,59 @@ layout_mode = 2
 text = "Window mode:"
 label_settings = SubResource("LabelSettings_jiq1j")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer" unique_id=1465310873]
+[node name="Label3" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1185520235]
 layout_mode = 2
+text = "Music:"
+label_settings = SubResource("LabelSettings_jiq1j")
+
+[node name="Label4" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=483445824]
+layout_mode = 2
+text = "SFX:"
+label_settings = SubResource("LabelSettings_jiq1j")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer" unique_id=1465310873]
+custom_minimum_size = Vector2(240, 400)
+custom_maximum_size = Vector2(240, 960)
+layout_mode = 2
+theme_override_constants/separation = 17
 
 [node name="OptionButton" parent="HBoxContainer/VBoxContainer2" unique_id=1905948071 instance=ExtResource("4_0t5g5")]
 layout_mode = 2
-options = Array[String](["1920x1080", "1x1"])
+
+[node name="OptionButton2" parent="HBoxContainer/VBoxContainer2" unique_id=958042726 instance=ExtResource("4_0t5g5")]
+layout_mode = 2
+options = Array[String](["Fullscreen", "Windowed"])
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer2" unique_id=659857894]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer/VBoxContainer2" unique_id=200863368]
+layout_mode = 2
+offset_transform_enabled = true
+theme = ExtResource("5_occy7")
+value = 100.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/VBoxContainer2" unique_id=57727676]
+layout_mode = 2
+
+[node name="HSlider2" type="HSlider" parent="HBoxContainer/VBoxContainer2" unique_id=1393681218]
+layout_mode = 2
+offset_transform_enabled = true
+theme = ExtResource("5_occy7")
+value = 100.0
+
+[node name="Button" parent="." unique_id=2078812563 instance=ExtResource("6_v208e")]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 298.0
+offset_right = 523.0
+offset_bottom = 329.0
+text = "  Apply"
+
+[node name="Button2" parent="." unique_id=1228676560 instance=ExtResource("6_v208e")]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 297.0
+offset_right = 271.0
+offset_bottom = 328.0
+text = "  Exit"

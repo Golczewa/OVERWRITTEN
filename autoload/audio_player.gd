@@ -1,7 +1,9 @@
 extends Node
 
-@export var music_volume: float = -2
-@export var sfx_volume: float = 3
+@export var default_music_volume: float = -2
+@export var default_sfx_volume: float = 3
+var curr_music_volume: float = default_music_volume
+var curr_sfx_volume: float = default_sfx_volume
 
 @onready var sfx_player: AudioStreamPlayer = $UI_SFX
 @onready var music_player: AudioStreamPlayer = $MUSIC
@@ -17,7 +19,7 @@ const weapon_equip: AudioStreamWAV = preload("res://asstets/sfx/Click_Combo_5_Pi
 
 #MUSIC
 const menu_theme: String = "res://asstets/music/Polaris FULL TRACK.ogg"
-const level_complete:String="res://asstets/music/Digital Angels LOOP 1.ogg"
+const level_complete: String = "res://asstets/music/Digital Angels LOOP 1.ogg"
 const level_1_theme: String = "res://asstets/music/Neon After Dark FULL TRACK LOOPABLE.ogg"
 const level_2_theme: String = "res://asstets/music/Corporate Skyline FULL TRACK LOOPABLE.ogg"
 const level_3_theme: String = "res://asstets/music/Black Horses FULL TRACK LOOPABLE.ogg"
@@ -55,10 +57,28 @@ const hurt_4: AudioStreamWAV = preload("res://asstets/sfx/Glitch_20.wav")
 
 
 func _ready() -> void:
-	sfx_player.volume_db = sfx_volume
-	music_player.volume_db = music_volume
+	sfx_player.volume_db = curr_sfx_volume
+	music_player.volume_db = curr_music_volume
 	for stream in game_sfx_players:
-		stream.volume_db = sfx_volume
+		stream.volume_db = curr_sfx_volume
+	for stream in game_sfx_loop_players:
+		stream.volume_db = curr_sfx_volume
+
+
+func change_music_volume(val: float):
+	music_player.volume_linear = db_to_linear(default_music_volume) * val
+	curr_music_volume = music_player.volume_db
+
+
+func change_sfx_volume(val: float):
+	var new_volume := db_to_linear(default_sfx_volume) * val
+	sfx_player.volume_linear = new_volume
+	for stream in game_sfx_players:
+		stream.volume_linear = new_volume
+	for stream in game_sfx_loop_players:
+		stream.volume_linear = new_volume
+	curr_sfx_volume = sfx_player.volume_db
+	print(curr_sfx_volume)
 
 
 func play(sound: AudioStreamWAV):
@@ -105,8 +125,8 @@ func play_game_sfx_loop(sound: AudioStreamWAV, max_count := 2) -> AudioStreamPla
 func play_music(sound: String):
 	if music_player.bus != "Master":
 		music_player.bus = "Master"
-	if music_player.volume_db != music_volume:
-		music_player.volume_db = music_volume
+	if music_player.volume_db != curr_music_volume:
+		music_player.volume_db = curr_music_volume
 	if music_player.pitch_scale != 1:
 		music_player.pitch_scale = 1
 	music_player.stream = load(sound)
@@ -122,12 +142,12 @@ func volume_up(time = 1):
 	var tween: Tween = create_tween()
 	tween.set_trans(Tween.TRANS_EXPO)
 	tween.set_ease(Tween.EASE_OUT)
-	tween.tween_property(music_player, "volume_db", music_volume, time)
+	tween.tween_property(music_player, "volume_db", curr_music_volume, time)
 	await tween.finished
 
 
 func volume_down(time = 1):
-	music_player.volume_db = music_volume
+	music_player.volume_db = curr_music_volume
 	var tween: Tween = create_tween()
 	tween.set_trans(Tween.TRANS_EXPO)
 	tween.set_ease(Tween.EASE_IN)
@@ -158,7 +178,7 @@ func death_pause(time = 1):
 
 
 func death_unpause(time = 1):
-	music_player.volume_db = music_volume
+	music_player.volume_db = curr_music_volume
 	var tween := create_tween()
 	tween.tween_property(music_player, "pitch_scale", 1, time)
 	await tween.finished

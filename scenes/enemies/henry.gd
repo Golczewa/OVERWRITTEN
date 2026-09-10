@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var machete: AnimatedSprite2D
 @export var gun: AnimatedSprite2D
 @export var body: AnimatedSprite2D
-@export var to_hide_on_death:Array[Node2D]
+@export var to_hide_on_death: Array[Node2D]
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
@@ -101,22 +101,22 @@ func gunner_attack():
 		spawn_bullet()
 	cycle_num += 1
 	get_tree().create_timer(gunner_cooldown).timeout.connect(end_cooldown)
-	if cycle_num >= gunner_cyckle.size()-1:
-		cycle_num=0
-		gunner_cyckle=get_new_cycle()
+	if cycle_num >= gunner_cyckle.size() - 1:
+		cycle_num = 0
+		gunner_cyckle = get_new_cycle()
 		curr_mode = Mode.scavenger
-		get_tree().create_timer(randf_range(2,4)).timeout.connect(to_scavenger)
+		get_tree().create_timer(randf_range(2, 4)).timeout.connect(to_scavenger)
 
 
 func burst():
 	gun.play("spin")
 	$AnimatedSprite2D/AnimatedSprite2D/Sprite2D.show()
-	var tween:=create_tween()
-	tween.tween_property($AnimatedSprite2D/AnimatedSprite2D/Sprite2D,"rotation",6.28,0.3)
+	var tween := create_tween()
+	tween.tween_property($AnimatedSprite2D/AnimatedSprite2D/Sprite2D, "rotation", 6.28, 0.3)
 	await AudioPlayer.play_game_sfx(AudioPlayer.revolver_spin)
 	await tween.finished
 	$AnimatedSprite2D/AnimatedSprite2D/Sprite2D.hide()
-	$AnimatedSprite2D/AnimatedSprite2D/Sprite2D.rotation=0
+	$AnimatedSprite2D/AnimatedSprite2D/Sprite2D.rotation = 0
 	gun.play("default")
 	for i in range(6):
 		if dead or in_knocback:
@@ -239,13 +239,13 @@ func get_new_cycle() -> Array[int]:
 	return arr
 
 
-func spawn_bullet(damage:=20):
+func spawn_bullet(damage := 20):
 	AudioPlayer.play_game_sfx(AudioPlayer.revolver_shot, 6)
 	var spawn_marker: Marker2D = $AnimatedSprite2D/AnimatedSprite2D/Marker2D
 	var dir_marker: Marker2D = $AnimatedSprite2D/AnimatedSprite2D/Marker2D2
 	var random_angle
 	var bullet = bullet_pack.instantiate()
-	bullet.dmg=damage
+	bullet.dmg = damage
 	random_angle = deg_to_rad(randf_range(-2, 2))
 	bullet.direction = (dir_marker.global_position - spawn_marker.global_position).normalized()
 	bullet.direction = bullet.direction.rotated(random_angle)
@@ -270,4 +270,4 @@ func is_player_in() -> bool:
 
 
 func to_scavenger():
-	curr_mode=Mode.gunner
+	curr_mode = Mode.gunner
