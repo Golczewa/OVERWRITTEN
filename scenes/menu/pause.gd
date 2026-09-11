@@ -3,7 +3,7 @@ extends Control
 var dragging = false
 var is_open: bool = false
 var drag_offset = Vector2()
-
+signal unpaused
 
 func _ready() -> void:
 	hide()
@@ -32,6 +32,7 @@ func _input(event: InputEvent) -> void:
 					is_open = false
 					get_tree().paused = false
 					AudioPlayer.unpause_effect()
+					unpaused.emit()
 
 
 func when_pressed():
@@ -40,6 +41,8 @@ func when_pressed():
 		get_tree().paused = false
 		AudioPlayer.unpause_effect()
 		is_open = false
+		unpaused.emit()
+
 
 
 func _on_panel_container_gui_input(event):

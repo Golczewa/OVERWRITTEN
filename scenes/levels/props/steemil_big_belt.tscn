@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://fvm578f5hyvf"]
 
 [ext_resource type="Texture2D" uid="uid://cisv2arih7ie5" path="res://asstets/props/big_belt.png" id="1_7of45"]
-[ext_resource type="Script" uid="uid://cn481723w7lax" path="res://steemil_big_belt.gd" id="1_djt3k"]
+[ext_resource type="Script" uid="uid://cn481723w7lax" path="res://scenes/levels/props/steemil_big_belt.gd" id="1_djt3k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_djt3k"]
 atlas = ExtResource("1_7of45")

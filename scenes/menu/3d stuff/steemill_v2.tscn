@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b0fntd36ji6wt"]
 
-[ext_resource type="Shader" uid="uid://bkpd0riwdw5fg" path="res://scenes/menu/3d stuff/steelmill.gdshader" id="1_6r3jp"]
+[ext_resource type="Shader" uid="uid://bkpd0riwdw5fg" path="res://shaders/steelmill.gdshader" id="1_6r3jp"]
 [ext_resource type="ArrayMesh" uid="uid://cubodd3iog5vw" path="res://asstets/3d stuff/stealmill.obj" id="1_v2jp7"]
 [ext_resource type="PackedScene" uid="uid://k5d3enng1mx" path="res://scenes/menu/3d stuff/3Dbutton.tscn" id="3_dnxhx"]
 

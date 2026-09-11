@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://by50psneamwru"]
 
 [ext_resource type="PackedScene" uid="uid://pdn2oykes4m1" path="res://scenes/enemies/test_gun.tscn" id="1_lqpsa"]
-[ext_resource type="Texture2D" uid="uid://utysrvollxcy" path="res://asstets/enemies/v2137_goon.png" id="2_nlpcc"]
+[ext_resource type="Texture2D" uid="uid://ifgm6fb2fuyv" path="res://asstets/enemies/v2137.png" id="2_nlpcc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_np2ag"]
 atlas = ExtResource("2_nlpcc")

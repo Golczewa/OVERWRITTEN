@@ -8,6 +8,7 @@ func _ready() -> void:
 	panel.close_button.pressed.connect(begone)
 	$Button2.pressed.connect(begone)
 	$Button.pressed.connect(apply_res)
+	$Button.pressed.connect(apply_mode)
 	$HBoxContainer/VBoxContainer2/OptionButton.overwrite_options(get_resolutions())
 	$HBoxContainer/VBoxContainer2/HSlider.value_changed.connect(set_volume)
 	$HBoxContainer/VBoxContainer2/HSlider2.value_changed.connect(set_sfx_volume)
@@ -39,6 +40,8 @@ func get_resolutions() -> Array[String]:
 
 
 func apply_res():
+	if $HBoxContainer/VBoxContainer2/OptionButton2.options[$HBoxContainer/VBoxContainer2/OptionButton2.selected]=="Fullscreen":
+		return
 	AudioPlayer.play(AudioPlayer.menu_window_open)
 	var res: String = $HBoxContainer/VBoxContainer2/OptionButton.options[
 		$HBoxContainer/VBoxContainer2/OptionButton.selected
@@ -46,16 +49,15 @@ func apply_res():
 	var hight_and_widh := res.split("x")
 	var true_res = Vector2i(int(hight_and_widh[0]), int(hight_and_widh[1]))
 	var window := get_window()
-	window.mode = Window.MODE_WINDOWED
+	window.mode=Window.MODE_WINDOWED
 	window.size = true_res
 	window.move_to_center()
 
 
 func apply_mode():
+	var window := get_window()
 	var mode: String = $HBoxContainer/VBoxContainer2/OptionButton2.options[
 		$HBoxContainer/VBoxContainer2/OptionButton2.selected
 	]
 	if mode == "Fullscreen":
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-	else:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		window.mode=Window.MODE_FULLSCREEN

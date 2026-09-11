@@ -1,7 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://wmjvw5llbpog"]
 
 [ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="1_aldd8"]
-[ext_resource type="FontFile" uid="uid://d1feesbwk46ll" path="res://asstets/menu/DroidSansMono.ttf" id="1_bm8ty"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bm8ty"]
 bg_color = Color(0.52156866, 0, 0.101960786, 1)
@@ -12,7 +11,7 @@ bg_color = Color(0.52156866, 0, 0.101960786, 1)
 bg_color = Color(0.52156866, 0, 0.101960786, 1)
 
 [resource]
-default_font = ExtResource("1_bm8ty")
+default_font = ExtResource("1_aldd8")
 Button/colors/font_color = Color(0.52156866, 0, 0.101960786, 1)
 Button/colors/font_hover_color = Color(0, 0, 0, 1)
 Button/font_sizes/font_size = 30

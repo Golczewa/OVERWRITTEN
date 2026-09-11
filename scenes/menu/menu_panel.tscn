@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://cov4er266dbmo"]
 
-[ext_resource type="Theme" uid="uid://da1tvrlo4v74u" path="res://asstets/menu/panel_theme1.tres" id="1_hmmmm"]
+[ext_resource type="Theme" uid="uid://da1tvrlo4v74u" path="res://asstets/themes/panel_theme1.tres" id="1_hmmmm"]
 [ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="1_l5j5w"]
 [ext_resource type="Script" uid="uid://20xrquao5m0c" path="res://scenes/menu/menu_panel.gd" id="2_lwcl5"]
-[ext_resource type="Theme" uid="uid://c11w2xmim6hpl" path="res://asstets/menu/panel_theme2.tres" id="3_druww"]
-[ext_resource type="Theme" uid="uid://dgfg2te01wwei" path="res://asstets/menu/panel_theme3.tres" id="4_nnjte"]
+[ext_resource type="Theme" uid="uid://c11w2xmim6hpl" path="res://asstets/themes/panel_theme2.tres" id="3_druww"]
+[ext_resource type="Theme" uid="uid://dgfg2te01wwei" path="res://asstets/themes/panel_theme3.tres" id="4_nnjte"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_l5j5w"]
 font = ExtResource("1_l5j5w")

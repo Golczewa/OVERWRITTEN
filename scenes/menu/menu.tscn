@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cagpq2ycw3mwg" path="res://scenes/menu/menu_code_effect.tscn" id="3_f2fum"]
 [ext_resource type="Theme" uid="uid://wmjvw5llbpog" path="res://asstets/themes/button_theme.tres" id="3_r8yej"]
 [ext_resource type="Texture2D" uid="uid://mfb74lanpi3a" path="res://asstets/menu/title.svg" id="4_f2fum"]
-[ext_resource type="FontFile" uid="uid://d1feesbwk46ll" path="res://asstets/menu/DroidSansMono.ttf" id="5_3y2rt"]
+[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="5_3y2rt"]
 [ext_resource type="Script" uid="uid://uamd46ltc757" path="res://scenes/menu/menu_button.gd" id="5_t0a87"]
 [ext_resource type="PackedScene" uid="uid://du4k8ns7pgxg8" path="res://scenes/menu/button.tscn" id="7_y4i35"]
 [ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="8_kaijy"]

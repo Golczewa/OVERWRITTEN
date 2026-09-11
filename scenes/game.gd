@@ -12,6 +12,8 @@ func _ready() -> void:
 	get_parent().game.connect(showGameUI)
 	$CanvasLayer/skill_issue.restart.connect(restart)
 	$CanvasLayer/pause/VBoxContainer/Button2.pressed.connect(restart)
+	$CanvasLayer/pause/VBoxContainer/Button4.pressed.connect(show_settings)
+	$CanvasLayer/pause.unpaused.connect($CanvasLayer/MenuWindow.begone)
 	$Timer.timeout.connect(add_time)
 
 
@@ -98,3 +100,7 @@ func load_next_level(level_id: int):
 func unload_level():
 	if curr_scene:
 		curr_scene.queue_free()
+
+
+func show_settings():
+	$CanvasLayer/MenuWindow.open()

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://du4k8ns7pgxg8"]
 
-[ext_resource type="Theme" uid="uid://wmjvw5llbpog" path="res://asstets/menu/button_theme.tres" id="1_ls264"]
+[ext_resource type="Theme" uid="uid://wmjvw5llbpog" path="res://asstets/themes/button_theme.tres" id="1_ls264"]
 [ext_resource type="Script" uid="uid://uamd46ltc757" path="res://scenes/menu/menu_button.gd" id="2_qgph2"]
 
 [node name="Button" type="Button" unique_id=2078812563]
