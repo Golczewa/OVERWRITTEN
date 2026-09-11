@@ -15,13 +15,14 @@ var levels: ConfigFile
 var levels_progress: ConfigFile
 var player_config: ConfigFile
 
-var encrypted := true
+var encrypted := false
 var encrypton_key: PackedByteArray
 
 
 func _ready() -> void:
 	encrypton_key = "9ee585b96c20d9c300f2f4fdf7a664c7799697f6063ed19b6be36537e06394fd".hex_decode()
 	load_all()
+	call_deferred("apply_player_settings")
 
 
 func load_all() -> void:
@@ -29,6 +30,29 @@ func load_all() -> void:
 	levels = _load_cfg(LEVELS_PATH)
 	levels_progress = _load_or_create_levels_progress()
 	player_config = _load_or_create_player_config()
+
+
+func apply_player_settings() -> void:
+	var window := get_window()
+	var mode: String = player_config.get_value("settings", "mode", "Fullscreen")
+	if mode == "Fullscreen":
+		window.mode = Window.MODE_FULLSCREEN
+	else:
+		var resolution: String = player_config.get_value("settings", "resolution", "")
+		var dimensions := resolution.split("x")
+		if dimensions.size() == 2:
+			var size := Vector2i(int(dimensions[0]), int(dimensions[1]))
+			if size.x > 0 and size.y > 0:
+				window.mode = Window.MODE_WINDOWED
+				window.size = size
+				window.move_to_center()
+
+	AudioPlayer.change_music_volume(
+		clampf(float(player_config.get_value("settings", "music", 1.0)), 0.0, 1.0)
+	)
+	AudioPlayer.change_sfx_volume(
+		clampf(float(player_config.get_value("settings", "sfx", 1.0)), 0.0, 1.0)
+	)
 
 
 func reload_player_config() -> void:

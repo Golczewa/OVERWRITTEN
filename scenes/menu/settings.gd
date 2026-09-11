@@ -7,12 +7,14 @@ func _ready() -> void:
 	panel.upper_bar.gui_input.connect(_on_panel_container_gui_input)
 	panel.close_button.pressed.connect(begone)
 	$Button2.pressed.connect(begone)
-	$Button.pressed.connect(apply_res)
-	$Button.pressed.connect(apply_mode)
+	$Button.pressed.connect(apply_settings)
 	$HBoxContainer/VBoxContainer2/OptionButton.overwrite_options(get_resolutions())
 	$HBoxContainer/VBoxContainer2/HSlider.value_changed.connect(set_volume)
 	$HBoxContainer/VBoxContainer2/HSlider2.value_changed.connect(set_sfx_volume)
-
+	$HBoxContainer/VBoxContainer2/HSlider.drag_ended.connect(save_music)
+	$HBoxContainer/VBoxContainer2/HSlider2.drag_ended.connect(save_sfx)
+	$HBoxContainer/VBoxContainer2/HSlider.value=ConfigManager.player_config.get_value("settings", "music", 1)*100
+	$HBoxContainer/VBoxContainer2/HSlider2.value=ConfigManager.player_config.get_value("settings", "sfx", 1)*100
 
 #	get_tree().current_scene.game.connect(begone)
 
@@ -39,25 +41,41 @@ func get_resolutions() -> Array[String]:
 	return resolutions
 
 
-func apply_res():
-	if $HBoxContainer/VBoxContainer2/OptionButton2.options[$HBoxContainer/VBoxContainer2/OptionButton2.selected]=="Fullscreen":
-		return
-	AudioPlayer.play(AudioPlayer.menu_window_open)
-	var res: String = $HBoxContainer/VBoxContainer2/OptionButton.options[
-		$HBoxContainer/VBoxContainer2/OptionButton.selected
-	]
-	var hight_and_widh := res.split("x")
-	var true_res = Vector2i(int(hight_and_widh[0]), int(hight_and_widh[1]))
-	var window := get_window()
-	window.mode=Window.MODE_WINDOWED
-	window.size = true_res
-	window.move_to_center()
-
-
-func apply_mode():
+func apply_settings():
 	var window := get_window()
 	var mode: String = $HBoxContainer/VBoxContainer2/OptionButton2.options[
 		$HBoxContainer/VBoxContainer2/OptionButton2.selected
 	]
 	if mode == "Fullscreen":
-		window.mode=Window.MODE_FULLSCREEN
+		ConfigManager.player_config.set_value("settings", "mode", "Fullscreen")
+		window.mode = Window.MODE_FULLSCREEN
+		ConfigManager.save_player_config()
+		return
+	AudioPlayer.play(AudioPlayer.menu_window_open)
+	var res: String = $HBoxContainer/VBoxContainer2/OptionButton.options[
+		$HBoxContainer/VBoxContainer2/OptionButton.selected
+	]
+	ConfigManager.player_config.set_value("settings", "resolution", res)
+	ConfigManager.player_config.set_value("settings", "mode", "Windowed")
+	var hight_and_widh := res.split("x")
+	var true_res := Vector2i(int(hight_and_widh[0]), int(hight_and_widh[1]))
+	window.mode = Window.MODE_WINDOWED
+	window.size = true_res
+	window.move_to_center()
+	ConfigManager.save_player_config()
+
+
+func save_music(_value_changed: bool):
+	print($HBoxContainer/VBoxContainer2/HSlider.value / 100)
+	ConfigManager.player_config.set_value(
+		"settings", "music", $HBoxContainer/VBoxContainer2/HSlider.value / 100
+	)
+	ConfigManager.save_player_config()
+
+
+func save_sfx(_value_changed: bool):
+	print($HBoxContainer/VBoxContainer2/HSlider2.value / 100)
+	ConfigManager.player_config.set_value(
+		"settings", "sfx", $HBoxContainer/VBoxContainer2/HSlider2.value / 100
+	)
+	ConfigManager.save_player_config()

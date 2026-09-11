@@ -5,6 +5,7 @@ var is_open: bool = false
 var drag_offset = Vector2()
 signal unpaused
 
+
 func _ready() -> void:
 	hide()
 	$VBoxContainer/Button.pressed.connect(when_pressed)
@@ -42,7 +43,6 @@ func when_pressed():
 		AudioPlayer.unpause_effect()
 		is_open = false
 		unpaused.emit()
-
 
 
 func _on_panel_container_gui_input(event):
