@@ -17,10 +17,10 @@ title = "Pause"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=947962906]
 layout_mode = 0
-offset_left = 53.0
-offset_top = 128.0
-offset_right = 205.0
-offset_bottom = 229.0
+offset_left = 56.0
+offset_top = 112.0
+offset_right = 225.0
+offset_bottom = 248.0
 
 [node name="Button" parent="VBoxContainer" unique_id=2078812563 instance=ExtResource("3_1mvc1")]
 layout_mode = 2
@@ -29,6 +29,11 @@ text = "  Resume"
 [node name="Button2" parent="VBoxContainer" unique_id=336210084 instance=ExtResource("3_1mvc1")]
 layout_mode = 2
 text = "  Restart"
+
+[node name="Button4" parent="VBoxContainer" unique_id=2144878402 instance=ExtResource("3_1mvc1")]
+layout_mode = 2
+text = "  Settings
+"
 
 [node name="Button3" parent="VBoxContainer" unique_id=1750761088 instance=ExtResource("3_1mvc1")]
 layout_mode = 2

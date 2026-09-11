@@ -30,6 +30,7 @@ AudioPlayer="*uid://dwp0ca40lalfh"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [editor]

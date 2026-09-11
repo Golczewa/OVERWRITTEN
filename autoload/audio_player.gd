@@ -78,7 +78,6 @@ func change_sfx_volume(val: float):
 	for stream in game_sfx_loop_players:
 		stream.volume_linear = new_volume
 	curr_sfx_volume = sfx_player.volume_db
-	print(curr_sfx_volume)
 
 
 func play(sound: AudioStreamWAV):

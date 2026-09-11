@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bgyyaiqgaghs2" path="res://scenes/menu/pause.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://jvxuc6sf5ovw" path="res://scenes/menu/boss_bar.tscn" id="5_p57ef"]
 [ext_resource type="PackedScene" uid="uid://dvaddkl6o6wwr" path="res://scenes/menu/cheats_menu.tscn" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://dx7r1y82utrin" path="res://scenes/menu/settings.tscn" id="7_u5sy4"]
 
 [node name="game" type="Node2D" unique_id=1596037007 groups=["game"]]
 script = ExtResource("1_lbhrr")
@@ -36,9 +37,17 @@ offset_right = 951.0
 offset_bottom = 62.0
 
 [node name="Control" parent="CanvasLayer" unique_id=788894851 instance=ExtResource("6_p57ef")]
+visible = false
 offset_left = 418.0
 offset_top = 115.0
 offset_right = -369.0
 offset_bottom = -98.0
+
+[node name="MenuWindow" parent="CanvasLayer" unique_id=1436077712 instance=ExtResource("7_u5sy4")]
+visible = false
+offset_left = 269.0
+offset_top = 139.0
+offset_right = 945.0
+offset_bottom = 497.0
 
 [node name="Timer" type="Timer" parent="." unique_id=625494770]
