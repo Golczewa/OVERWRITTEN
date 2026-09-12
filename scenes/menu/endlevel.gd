@@ -6,7 +6,7 @@ var in_animation: bool = false
 var score_tween: Tween
 var level_num: int
 var unlock_screen_pack: PackedScene = preload("res://scenes/menu/weapon_unlocked.tscn")
-
+var score_audio:AudioStreamPlayer
 
 func _ready() -> void:
 	hide()
@@ -130,12 +130,14 @@ func open():
 
 
 func score_animation(s: int):
+	score_audio=AudioPlayer.play_game_sfx_loop(AudioPlayer.score)
 	var time = s / 300
 	in_animation = true
 	$VBoxContainer/used2.text = "Score: "
 	score_tween = create_tween()
 	score_tween.tween_method(update_score, 0, s, time)
 	await score_tween.finished
+	score_audio.stop()
 
 
 func update_score(s: int):
@@ -145,6 +147,8 @@ func update_score(s: int):
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("skip_cuscene") and in_animation:
 		score_tween.custom_step(1000)
+		if score_audio:
+			score_audio.stop()
 		in_animation = false
 
 

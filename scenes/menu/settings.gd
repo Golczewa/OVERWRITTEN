@@ -13,8 +13,8 @@ func _ready() -> void:
 	$HBoxContainer/VBoxContainer2/HSlider2.value_changed.connect(set_sfx_volume)
 	$HBoxContainer/VBoxContainer2/HSlider.drag_ended.connect(save_music)
 	$HBoxContainer/VBoxContainer2/HSlider2.drag_ended.connect(save_sfx)
-	$HBoxContainer/VBoxContainer2/HSlider.value=ConfigManager.player_config.get_value("settings", "music", 1)*100
-	$HBoxContainer/VBoxContainer2/HSlider2.value=ConfigManager.player_config.get_value("settings", "sfx", 1)*100
+	update_values()
+
 
 #	get_tree().current_scene.game.connect(begone)
 
@@ -79,3 +79,31 @@ func save_sfx(_value_changed: bool):
 		"settings", "sfx", $HBoxContainer/VBoxContainer2/HSlider2.value / 100
 	)
 	ConfigManager.save_player_config()
+
+
+func update_values():
+	$HBoxContainer/VBoxContainer2/HSlider.value = (
+		ConfigManager.player_config.get_value("settings", "music", 1) * 100
+	)
+	$HBoxContainer/VBoxContainer2/HSlider2.value = (
+		ConfigManager.player_config.get_value("settings", "sfx", 1) * 100
+	)
+	var index1 = $HBoxContainer/VBoxContainer2/OptionButton.options.find(
+		ConfigManager.player_config.get_value("settings", "resolution")
+	)
+	var index2 = $HBoxContainer/VBoxContainer2/OptionButton2.options.find(
+		ConfigManager.player_config.get_value("settings", "mode")
+	)
+	$HBoxContainer/VBoxContainer2/OptionButton._on_item_picked(index1)
+	$HBoxContainer/VBoxContainer2/OptionButton2._on_item_picked(index2)
+
+
+func open():
+	update_values()
+	show()
+	for child in get_children():
+		child.hide()
+	await panel.open_animation()
+	for child in get_children():
+		if not child == panel:
+			child.show()

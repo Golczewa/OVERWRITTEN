@@ -15,7 +15,7 @@ var levels: ConfigFile
 var levels_progress: ConfigFile
 var player_config: ConfigFile
 
-var encrypted := false
+var encrypted := true
 var encrypton_key: PackedByteArray
 
 

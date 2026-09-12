@@ -25,8 +25,7 @@ func _ready() -> void:
 	else:
 		frame = 1
 		messege = "Compatible hand!"
-	tutorial_window = tutorial_window_pack.instantiate()
-	player.canvas.add_child(tutorial_window)
+
 
 
 func _physics_process(_delta: float) -> void:
@@ -36,6 +35,8 @@ func _physics_process(_delta: float) -> void:
 
 
 func dance(size_offset: float = 0.15, time: float = 0.5) -> void:
+	tutorial_window = tutorial_window_pack.instantiate()
+	player.canvas.add_child(tutorial_window)
 	if tutorial_window:
 		tutorial_window.setup(self, Vector2(32, 32), end_signal, messege)
 	if dance_tween:

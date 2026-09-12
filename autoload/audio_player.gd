@@ -23,7 +23,7 @@ const level_complete: String = "res://asstets/music/Digital Angels LOOP 1.ogg"
 const level_1_theme: String = "res://asstets/music/Neon After Dark FULL TRACK LOOPABLE.ogg"
 const level_2_theme: String = "res://asstets/music/Corporate Skyline FULL TRACK LOOPABLE.ogg"
 const level_3_theme: String = "res://asstets/music/Black Horses FULL TRACK LOOPABLE.ogg"
-const level_4_theme: String = "res://asstets/music/Anexodus FULL TRACK LOOPABLE.ogg"
+const level_4_theme: String = "res://asstets/music/Landing Zone FULL TRACK.ogg"
 
 #IN GAME SFX
 
@@ -44,6 +44,7 @@ const coat: AudioStreamWAV = preload("res://asstets/sfx/cloth.wav")
 const virtual_guy_deadth: AudioStreamWAV = preload("res://asstets/sfx/virtual_death.wav")
 const hp_loading: AudioStreamWAV = preload("res://asstets/sfx/juice.wav")
 const revolver_spin: AudioStreamWAV = preload("res://asstets/sfx/revolver_spin.wav")
+const score: AudioStreamWAV = preload("res://asstets/sfx/score.wav")
 
 const bullet_rickoshet1: AudioStreamWAV = preload("res://asstets/sfx/bullet_rickoshet1.wav")
 const bullet_rickoshet2: AudioStreamWAV = preload("res://asstets/sfx/bullet_rickoshet2.wav")
