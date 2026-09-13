@@ -28,7 +28,7 @@ position = Vector2(960, 637)
 rotation = 1.5707964
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1549931647]
-color = Color(0.89492244, 0.89492244, 0.8949223, 1)
+color = Color(0.56078434, 0.654902, 0.88235295, 1)
 
 [node name="Area2D3" parent="." unique_id=219715312 instance=ExtResource("5_day18")]
 position = Vector2(159, 252)

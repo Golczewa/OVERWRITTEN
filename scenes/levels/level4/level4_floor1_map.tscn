@@ -131,6 +131,14 @@ navigation_polygon = SubResource("NavigationPolygon_hoqsf")
 rotation = 1.2444198
 color = Color(0.9411765, 0.67058825, 0, 0.60784316)
 shadow_enabled = true
+max_distance = 7336.0
+
+[node name="DirectionalLight2D2" type="DirectionalLight2D" parent="." unique_id=1473195728]
+visible = false
+rotation = 1.2444198
+color = Color(1, 0.9033187, 0.7488772, 0.60784316)
+shadow_enabled = true
+max_distance = 8802.0
 
 [node name="Sprite2D" parent="." unique_id=41209180 instance=ExtResource("1_wi5xl")]
 position = Vector2(394.5, -167.50002)

@@ -33,12 +33,12 @@ func update():
 			ConfigManager.weapons.get_value(str(num), "card", "res://icon.svg")
 		)
 		$TextureRect.rotation_degrees = -25
-		$TextureRect.position = Vector2(-20, 43)
+		$TextureRect.position = Vector2(-1, 41)
 	else:
 		$Label.text = "Locked"
 		$TextureRect.texture = load("res://asstets/menu/locked.png")
 		$TextureRect.rotation = 0
-		$TextureRect.position = Vector2(0, -5)
+		$TextureRect.position = Vector2(13, 1)
 		$button.disabled = true
 
 
