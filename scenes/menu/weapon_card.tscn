@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bpf5ntl6k4qfh"]
 
 [ext_resource type="Script" uid="uid://b52abn5ec2n20" path="res://scenes/menu/weapon_card.gd" id="1_6anpk"]
+[ext_resource type="Texture2D" uid="uid://cbu3satu6s52f" path="res://asstets/menu/chainsaw_card.png" id="2_6anpk"]
 [ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="3_6anpk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v67j5"]
@@ -63,21 +64,25 @@ offset_bottom = 173.0
 theme = SubResource("Theme_gtl4y")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1166471362]
+modulate = Color(1, 1, 1, 0.47058824)
 layout_mode = 0
-offset_left = 46.0
-offset_top = -21.0
-offset_right = 190.0
-offset_bottom = 75.0
-rotation = 0.286234
+offset_left = -19.999994
+offset_top = 43.0
+offset_right = 176.0
+offset_bottom = 189.0
+rotation = -0.43633232
 mouse_filter = 2
+texture = ExtResource("2_6anpk")
+stretch_mode = 6
 
 [node name="Label" type="Label" parent="." unique_id=1399336506]
+modulate = Color(1, 1, 1, 0.47058824)
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 0
-offset_left = 11.0
-offset_top = 99.0
-offset_right = 190.0
-offset_bottom = 142.0
+offset_left = 9.0
+offset_top = 121.0
+offset_right = 188.0
+offset_bottom = 164.0
 text = "test"
 label_settings = SubResource("LabelSettings_u1kcl")
 horizontal_alignment = 1
