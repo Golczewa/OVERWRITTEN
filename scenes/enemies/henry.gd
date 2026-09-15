@@ -114,7 +114,6 @@ func burst():
 	var tween := create_tween()
 	tween.tween_property($AnimatedSprite2D/AnimatedSprite2D/Sprite2D, "rotation", 6.28, 0.3)
 	await AudioPlayer.play_game_sfx(AudioPlayer.revolver_spin)
-	await tween.finished
 	$AnimatedSprite2D/AnimatedSprite2D/Sprite2D.hide()
 	$AnimatedSprite2D/AnimatedSprite2D/Sprite2D.rotation = 0
 	gun.play("default")

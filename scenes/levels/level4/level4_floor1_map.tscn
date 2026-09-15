@@ -129,7 +129,7 @@ navigation_polygon = SubResource("NavigationPolygon_hoqsf")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1295456738]
 rotation = 1.2444198
-color = Color(0.9411765, 0.67058825, 0, 0.60784316)
+color = Color(0.9999998, 0.7769566, 0.38500082, 0.60784316)
 shadow_enabled = true
 max_distance = 7336.0
 

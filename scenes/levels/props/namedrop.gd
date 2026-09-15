@@ -1,6 +1,6 @@
 extends Area2D
 
-var level
+var level: Level
 var player
 var name_pre = preload("res://scenes/menu/level_title.tscn")
 var level_title_
@@ -20,6 +20,8 @@ func _on_body_entred(body):
 
 func namedrop():
 	var name_ = name_pre.instantiate()
+	if level.level_id == 1:
+		AudioPlayer.play_with_entrance(AudioPlayer.neon_afetr_dark)
 	name_.text = "Level " + str(level.level_id) + "\n" + level_title_
 	player.canvas.add_child(name_)
 	ConfigManager.levels_progress.set_value("level_" + str(level.level_id), "namedroped", true)

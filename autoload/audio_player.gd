@@ -20,7 +20,8 @@ const weapon_equip: AudioStreamWAV = preload("res://asstets/sfx/Click_Combo_5_Pi
 #MUSIC
 const menu_theme: String = "res://asstets/music/Polaris FULL TRACK.ogg"
 const level_complete: String = "res://asstets/music/Digital Angels LOOP 1.ogg"
-const level_1_theme: String = "res://asstets/music/Neon After Dark FULL TRACK LOOPABLE.ogg"
+const level_1_theme: String = "res://asstets/music/Spinner FULL TRACK.ogg"
+const neon_afetr_dark: String = "res://asstets/music/Neon After Dark FULL TRACK LOOPABLE.ogg"
 const level_2_theme: String = "res://asstets/music/Corporate Skyline FULL TRACK LOOPABLE.ogg"
 const level_3_theme: String = "res://asstets/music/Black Horses FULL TRACK LOOPABLE.ogg"
 const level_4_theme: String = "res://asstets/music/Landing Zone FULL TRACK.ogg"

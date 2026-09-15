@@ -27,7 +27,6 @@ func _ready() -> void:
 		messege = "Compatible hand!"
 
 
-
 func _physics_process(_delta: float) -> void:
 	if curr_floor.enemies_cleared and check:
 		check = false

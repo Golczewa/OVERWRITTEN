@@ -17,6 +17,12 @@ func _engage() -> void:
 	if player_distance < closeup and can_see_player():
 		legs.walk()
 		nav_agent.target_position = get_opposite()
+		if nav_agent.is_target_reachable():
+			legs.walk()
+		else:
+			direction = Vector2.ZERO
+			stand = true
+			legs.stop()
 	elif (
 		closeup < player_distance and player_distance < closeup + standing_room and can_see_player()
 	):

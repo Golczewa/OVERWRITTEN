@@ -6,7 +6,8 @@ var in_animation: bool = false
 var score_tween: Tween
 var level_num: int
 var unlock_screen_pack: PackedScene = preload("res://scenes/menu/weapon_unlocked.tscn")
-var score_audio:AudioStreamPlayer
+var score_audio: AudioStreamPlayer
+
 
 func _ready() -> void:
 	hide()
@@ -130,7 +131,7 @@ func open():
 
 
 func score_animation(s: int):
-	score_audio=AudioPlayer.play_game_sfx_loop(AudioPlayer.score)
+	score_audio = AudioPlayer.play_game_sfx_loop(AudioPlayer.score)
 	var time = s / 300
 	in_animation = true
 	$VBoxContainer/used2.text = "Score: "

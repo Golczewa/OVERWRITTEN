@@ -10,9 +10,11 @@ var shot_by_player: bool = false
 var trace_len = 3
 var bullet_hit_wall = preload("res://scenes/effects/rocket_explosion.tscn")
 var bullet_hit_wall_inst
+var start_position: Vector2
 
 
 func _ready() -> void:
+	start_position = global_position
 	body_entered.connect(_on_body_enterd)
 	velocity = direction * speed
 	bullet_hit_wall_inst = bullet_hit_wall.instantiate()
@@ -54,6 +56,8 @@ func _physics_process(delta: float) -> void:
 		elif collider.is_in_group("window"):
 			collider.shatter(self)
 	position = position + velocity * delta
+	if global_position.distance_to(start_position) > 1000:
+		queue_free()
 
 
 func spawn_explosion():
