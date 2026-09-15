@@ -22,6 +22,7 @@ func play_cuscene(body: Node2D):
 	$StaticBody2D.hide()
 	$Sprite2D.show()
 	$Sprite2D2.show()
+	AudioPlayer.play_game_sfx(AudioPlayer.metal_hit2)
 	player.set_camera_fallow(leader)
 	await leader.end_charge
 	leader.turn_cutscene()

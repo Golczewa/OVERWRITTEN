@@ -56,6 +56,7 @@ func _physics_process(_delta: float) -> void:
 			if get_slide_collision_count() > 0:
 				is_charging = false
 				sword.play("default")
+				AudioPlayer.play_game_sfx(AudioPlayer.metal_hit)
 				end_charge.emit()
 		return
 	if is_charging:
@@ -74,6 +75,8 @@ func _physics_process(_delta: float) -> void:
 					if collider.is_in_group("player"):
 						player.player_take_dmg(65)
 						break
+
+			AudioPlayer.play_game_sfx(AudioPlayer.metal_hit)
 		return
 	if keep_arrow:
 		arrow.update_arrow_pos(global_position, player.camera)

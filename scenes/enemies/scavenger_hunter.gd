@@ -2,7 +2,7 @@ extends Enemy
 
 @onready var bullet_pack: PackedScene = preload("res://scenes/effects/bullet_test.tscn")
 var standing_room: int = 50
-var damage = 17
+var damage = 15
 var pierce = 0
 var closeup = 250
 
@@ -48,6 +48,7 @@ func _attack() -> void:
 			break
 		AudioPlayer.play_game_sfx(AudioPlayer.patchwork_shot, 4)
 		var bullet = bullet_pack.instantiate()
+		bullet.dmg=damage
 		bullet.direction = (dir_marker.global_position - spawn_marker.global_position).normalized()
 		curr_floor.add_child(bullet)
 		bullet.global_position = spawn_marker.global_position
