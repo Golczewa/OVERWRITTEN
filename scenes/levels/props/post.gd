@@ -20,11 +20,13 @@ func show_menu(body):
 	if body == player and floor_.enemies_cleared:
 		menu = menu_pack.instantiate()
 		player.canvas.add_child(menu)
+		player.in_menu = true
 		unlock_revolver()
 
 
 func hide_menu(body):
 	if body == player and floor_.enemies_cleared:
+		player.in_menu = false
 		if menu:
 			menu.queue_free()
 

@@ -6,7 +6,7 @@ var max_health = 150
 var player_health = 150
 var direction = Vector2.ZERO
 var is_dashing: bool = false
-var dash_cd: int = 1
+var dash_cd: float = 1.5
 var can_dash: bool = true
 var heal_amount = 80
 var heal_charge = 3
@@ -31,6 +31,7 @@ var invincible: bool = false
 var invisible: bool = false
 var kill_swich: bool = false
 var floor_jumping: bool = false
+var in_menu: bool = false
 var camera_fallow: Node2D
 
 var default_state = {
@@ -46,10 +47,12 @@ func _ready() -> void:
 	score = get_parent().gameScore
 	$Camera2D/CanvasLayer.hide()
 	charges.update_max(heal_cd)
+	charges.update_dash_max(dash_cd)
 	charge_update()
 	hp_update()
 	charge_update()
 	$Timer.timeout.connect(replenish_charge)
+	$dashTimer.timeout.connect(dash_again)
 	heath_bar.max_value = max_health
 
 
@@ -75,22 +78,27 @@ func _process(_delta: float) -> void:
 		charges.update_value(heal_cd - $Timer.time_left)
 	else:
 		charges.update_value(heal_cd)
-	if Input.is_action_just_pressed("attack_left"):
-		if left_weapon:
-			left_weapon.attack("attack_left")
-	if Input.is_action_just_pressed("attack_right"):
-		if right_weapon:
-			right_weapon.attack("attack_right")
-	if Input.is_action_just_pressed("attack_left_up"):
-		if left_up_weapon:
-			left_up_weapon.attack("attack_left_up")
-	if Input.is_action_just_pressed("attack_right_up"):
-		if right_up_weapon:
-			right_up_weapon.attack("attack_right_up")
-	if Input.is_action_just_pressed("dash"):
-		_dash()
-	if Input.is_action_just_pressed("heal") and not in_cutscene:
-		heal()
+	if !is_dashing:
+		charges.update_dash(dash_cd - $dashTimer.time_left)
+	else :
+		charges.update_dash(0)
+	if not in_cutscene and not in_menu:
+		if Input.is_action_just_pressed("attack_left"):
+			if left_weapon:
+				left_weapon.attack("attack_left")
+		if Input.is_action_just_pressed("attack_right"):
+			if right_weapon:
+				right_weapon.attack("attack_right")
+		if Input.is_action_just_pressed("attack_left_up"):
+			if left_up_weapon:
+				left_up_weapon.attack("attack_left_up")
+		if Input.is_action_just_pressed("attack_right_up"):
+			if right_up_weapon:
+				right_up_weapon.attack("attack_right_up")
+		if Input.is_action_just_pressed("dash"):
+			_dash()
+		if Input.is_action_just_pressed("heal") and not in_cutscene:
+			heal()
 
 
 func _input(event: InputEvent) -> void:
@@ -137,6 +145,7 @@ func _dash():
 		var temp = SPEED
 		var dash_dir = direction
 		is_dashing = true
+		charges.update_dash(0)
 		add_ghost()
 		set_collision_mask_value(3, false)
 		set_collision_layer_value(1, false)
@@ -151,7 +160,7 @@ func _dash():
 		can_dash = false
 		set_collision_mask_value(3, true)
 		set_collision_layer_value(1, true)
-		get_tree().create_timer(dash_cd).timeout.connect(dash_again.bind())
+		$dashTimer.start(dash_cd)
 
 
 func dash_again():

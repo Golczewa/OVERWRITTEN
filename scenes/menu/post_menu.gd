@@ -27,3 +27,13 @@ func update_all():
 
 func _exit_tree() -> void:
 	begone()
+
+
+func begone():
+	player.in_menu = false
+	for child in get_children():
+		if child != panel:
+			child.hide()
+	await panel.close_animation()
+	hide()
+	hiding.emit()

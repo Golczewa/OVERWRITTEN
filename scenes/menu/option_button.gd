@@ -9,7 +9,7 @@ signal chosen
 func _ready() -> void:
 	for option in options:
 		popup.add_item(option)
-	if options.size()!=0:
+	if options.size() != 0:
 		text = format_text(popup.get_item_text(selected))
 	pressed.connect(_on_pressed)
 	popup.index_pressed.connect(_on_item_picked)

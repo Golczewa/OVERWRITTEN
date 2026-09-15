@@ -46,11 +46,10 @@ const virtual_guy_deadth: AudioStreamWAV = preload("res://asstets/sfx/virtual_de
 const hp_loading: AudioStreamWAV = preload("res://asstets/sfx/juice.wav")
 const revolver_spin: AudioStreamWAV = preload("res://asstets/sfx/revolver_spin.wav")
 const score: AudioStreamWAV = preload("res://asstets/sfx/score.wav")
-const door_open: AudioStreamWAV=preload("res://asstets/sfx/door_open.wav")
-const door_close:AudioStreamWAV=preload("res://asstets/sfx/door_close.wav")
-const metal_hit:AudioStreamWAV=preload("res://asstets/sfx/metal_hit.wav")
-const metal_hit2:AudioStreamWAV=preload("res://asstets/sfx/metal_hit2.wav")
-
+const door_open: AudioStreamWAV = preload("res://asstets/sfx/door_open.wav")
+const door_close: AudioStreamWAV = preload("res://asstets/sfx/door_close.wav")
+const metal_hit: AudioStreamWAV = preload("res://asstets/sfx/metal_hit.wav")
+const metal_hit2: AudioStreamWAV = preload("res://asstets/sfx/metal_hit2.wav")
 
 const bullet_rickoshet1: AudioStreamWAV = preload("res://asstets/sfx/bullet_rickoshet1.wav")
 const bullet_rickoshet2: AudioStreamWAV = preload("res://asstets/sfx/bullet_rickoshet2.wav")
@@ -195,3 +194,7 @@ func stop_all_sfx():
 		player.stop()
 	for player in game_sfx_loop_players:
 		player.stop()
+
+
+func reasume_all_sfx():
+	pass

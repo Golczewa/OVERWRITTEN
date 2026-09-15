@@ -39,6 +39,7 @@ func _on_panel_container_gui_input(event):
 
 
 func open():
+	player.in_menu = true
 	for child in get_children():
 		child.hide()
 	show()
@@ -48,6 +49,7 @@ func open():
 
 
 func begone():
+	player.in_menu = false
 	is_open = false
 	for child in get_children():
 		if child != $AspectRatioContainer:

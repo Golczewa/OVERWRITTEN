@@ -71,3 +71,6 @@ one_shot = true
 
 [node name="Node2D" parent="." unique_id=1226772294 instance=ExtResource("8_qek5x")]
 visible = false
+
+[node name="dashTimer" type="Timer" parent="." unique_id=873574126]
+one_shot = true

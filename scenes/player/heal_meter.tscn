@@ -10,6 +10,16 @@ bg_color = Color(0.9882353, 0.36862746, 0.3882353, 0.6627451)
 [sub_resource type="Theme" id="Theme_y05lr"]
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_mxo5j")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1wqiw"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7il6"]
+bg_color = Color(0.654902, 0.24313726, 0.25882354, 1)
+
+[sub_resource type="Theme" id="Theme_jiq1j"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_1wqiw")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_s7il6")
+
 [node name="Control" type="Control" unique_id=1428167716]
 layout_mode = 3
 anchors_preset = 15
@@ -23,20 +33,24 @@ script = ExtResource("1_y05lr")
 
 [node name="AspectRatioContainer" parent="." unique_id=1461861251 instance=ExtResource("1_mqhgx")]
 layout_mode = 0
-offset_right = 258.0
-offset_bottom = 176.0
+offset_right = 238.0
+offset_bottom = 190.0
 title = "Battery"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1299794661]
 layout_mode = 0
-offset_left = 20.0
-offset_top = 52.0
-offset_right = 269.0
-offset_bottom = 156.0
+offset_left = 13.0
+offset_top = 72.0
+offset_right = 262.0
+offset_bottom = 176.0
 texture = ExtResource("4_nba2d")
 
 [node name="Control" type="Control" parent="." unique_id=764119299]
 anchors_preset = 0
+offset_left = -7.0
+offset_top = 20.0
+offset_right = -7.0
+offset_bottom = 20.0
 
 [node name="bar3" type="ProgressBar" parent="Control" unique_id=1003021582]
 layout_mode = 0
@@ -69,4 +83,15 @@ offset_bottom = 139.0
 theme = SubResource("Theme_y05lr")
 step = 0.0
 value = 100.0
+show_percentage = false
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1720129151]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 51.0
+offset_right = 225.0
+offset_bottom = 60.0
+theme = SubResource("Theme_jiq1j")
+max_value = 22.0
+value = 2.0
 show_percentage = false

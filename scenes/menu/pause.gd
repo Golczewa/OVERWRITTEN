@@ -28,11 +28,13 @@ func _input(event: InputEvent) -> void:
 					is_open = true
 					get_tree().paused = true
 					AudioPlayer.pause_effect()
+					AudioPlayer.stop_all_sfx()
 				else:
 					begone()
 					is_open = false
 					get_tree().paused = false
 					AudioPlayer.unpause_effect()
+					AudioPlayer.reasume_all_sfx()
 					unpaused.emit()
 
 
@@ -41,6 +43,7 @@ func when_pressed():
 		begone()
 		get_tree().paused = false
 		AudioPlayer.unpause_effect()
+		AudioPlayer.reasume_all_sfx()
 		is_open = false
 		unpaused.emit()
 

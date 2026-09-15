@@ -37,12 +37,12 @@ func begone():
 	hide()
 
 
-func update_max(max_: int):
+func update_max(max_: float):
 	for bar in bars:
 		bar.max_value = max_
 
 
-func update_value(val: int):
+func update_value(val: float):
 	if charge_number < 3:
 		bars[charge_number].value = val
 
@@ -54,3 +54,11 @@ func update_charge(num: int):
 			bars[i].value = 0
 		else:
 			bars[i].value = bars[i].max_value
+
+
+func update_dash(num: float):
+	$ProgressBar.value = num
+
+
+func update_dash_max(num: float):
+	$ProgressBar.max_value = num
