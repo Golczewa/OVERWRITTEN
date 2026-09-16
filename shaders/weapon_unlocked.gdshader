@@ -12,7 +12,7 @@ uniform vec2 oval_size = vec2(0.5, 0.3);
 uniform float edge_smooth : hint_range(0.0, 0.1, 0.001) = 0.01;
 
 void fragment() {
-    vec2 uv_deriv = fwidthFine(UV);
+    vec2 uv_deriv = fwidth(UV);
     float aspect_ratio = uv_deriv.y / uv_deriv.x;
     vec2 corrected_uv = UV * vec2(aspect_ratio, 1.0);
     vec2 corrected_center = center * vec2(aspect_ratio, 1.0);

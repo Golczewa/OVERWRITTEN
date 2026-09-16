@@ -11,10 +11,10 @@ zoom = Vector2(1.5, 1.5)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1356407511]
 
 [node name="Control" parent="CanvasLayer" unique_id=1428167716 instance=ExtResource("3_sbsl8")]
-offset_left = 813.00006
-offset_top = 515.0
-offset_right = -186.99994
-offset_bottom = -11.0
+offset_left = 830.0
+offset_top = 493.0
+offset_right = -142.0
+offset_bottom = -22.0
 scale = Vector2(0.7, 0.7)
 
 [node name="Control2" parent="CanvasLayer" unique_id=419692922 instance=ExtResource("3_44dvt")]

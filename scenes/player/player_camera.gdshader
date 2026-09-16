@@ -1,97 +1,90 @@
 shader_type canvas_item;
 
-uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_linear;
+// Ten shader daje wrażenie patrzenia na obraz wyświetlany na nowoczesnym,
+// płaskim monitorze (LCD/OLED) — bez efektów CRT (brak zakrzywienia,
+// skanlinii, migotania). Zamiast tego: leciutka siatka pikseli,
+// wyostrzenie, delikatny refleks szkła i subtelna winieta.
+//
+// UŻYCIE: nałóż na ColorRect rozciągnięty na cały ekran (Anchor: Full Rect),
+// umieszczony w CanvasLayer NAD resztą sceny.
 
-group_uniforms Signal_Distortion;
-uniform float smearing : hint_range(0.0, 1.0) = 0.5;
-uniform float color_offset : hint_range(-0.05, 0.05) = 0.005;
-uniform float sharpening : hint_range(0.0, 1.0) = 0.4;
-uniform float static_noise : hint_range(0.0, 1.0) = 0.08;
+uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
 
-group_uniforms Glass_Crack;
-uniform vec2 crack_center = vec2(0.15, 0.85);
-uniform float crack_intensity : hint_range(0.0, 1.0) = 0.4;
-uniform float crack_size : hint_range(0.0, 1.0) = 0.35;
+// --- Wyostrzenie obrazu (subtelny "digital crispness") ---
+uniform bool enable_sharpen = true;
+uniform float sharpen_amount : hint_range(0.0, 1.0) = 0.15;
 
-group_uniforms Tape_Artifacts;
-uniform float vertical_jitter : hint_range(0.0, 0.1) = 0.002;
-uniform float scanline_opacity : hint_range(0.0, 1.0) = 0.1;
-uniform float vignette_intensity : hint_range(0.0, 1.0) = 0.3;
+// --- Leciutka siatka pikseli (imitacja struktury matrycy) ---
+uniform bool enable_pixel_grid = true;
+uniform float pixel_density : hint_range(1.0, 6.0) = 3.0;
+uniform float pixel_grid_intensity : hint_range(0.0, 0.3) = 0.05;
 
-float noise(vec2 p) {
-	return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453123);
+// --- Delikatny refleks szklanej powierzchni ekranu ---
+uniform bool enable_glare = true;
+uniform float glare_angle : hint_range(0.0, 6.28) = 0.5;
+uniform float glare_position : hint_range(-1.0, 1.0) = -0.35;
+uniform float glare_width : hint_range(0.01, 0.5) = 0.18;
+uniform float glare_intensity : hint_range(0.0, 0.3) = 0.05;
+
+// --- Subtelna winieta (lekkie przyciemnienie brzegów) ---
+uniform bool enable_vignette = true;
+uniform float vignette_intensity : hint_range(0.0, 2.0) = 0.25;
+uniform float vignette_smoothness : hint_range(0.0, 1.0) = 0.6;
+
+// --- Korekcja kolorów (czystszy, "cyfrowy" obraz) ---
+uniform float brightness : hint_range(0.5, 1.5) = 1.0;
+uniform float contrast : hint_range(0.5, 1.5) = 1.05;
+uniform float saturation : hint_range(0.0, 2.0) = 1.05;
+
+vec3 sharpen(vec2 uv, vec2 texel) {
+    vec3 center = texture(screen_texture, uv).rgb;
+    vec3 neighbors =
+        texture(screen_texture, uv + vec2(texel.x, 0.0)).rgb +
+        texture(screen_texture, uv - vec2(texel.x, 0.0)).rgb +
+        texture(screen_texture, uv + vec2(0.0, texel.y)).rgb +
+        texture(screen_texture, uv - vec2(0.0, texel.y)).rgb;
+    return center * (1.0 + 4.0 * sharpen_amount) - neighbors * sharpen_amount;
 }
 
-// logic for the shattered glass displacement
-vec2 get_crack_distortion(vec2 uv, vec2 center, float strength, float size) {
-    vec2 dir = uv - center;
-    float dist = length(dir);
-    
-    if (dist < size) {
-        // create angular "shards"
-        float angle = atan(dir.y, dir.x);
-        float shard = floor(angle * 8.0); // 8 main crack directions
-        
-        // displacement based on shard id and distance
-        float d = noise(vec2(shard, 1.0)) * strength * (1.0 - (dist / size));
-        return dir * d;
-    }
-    return vec2(0.0);
-}
-
-vec3 rgb_to_yiq(vec3 c) {
-	return vec3(dot(c, vec3(0.299, 0.587, 0.114)), dot(c, vec3(0.596, -0.274, -0.322)), dot(c, vec3(0.211, -0.523, 0.312)));
-}
-
-vec3 yiq_to_rgb(vec3 c) {
-	return vec3(dot(c, vec3(1.0, 0.956, 0.621)), dot(c, vec3(1.0, -0.272, -0.647)), dot(c, vec3(1.0, -1.106, 1.703)));
+vec3 grade(vec3 color) {
+    color = (color - 0.5) * contrast + 0.5;
+    float luma = dot(color, vec3(0.299, 0.587, 0.114));
+    color = mix(vec3(luma), color, saturation);
+    color *= brightness;
+    return color;
 }
 
 void fragment() {
-	vec2 uv = SCREEN_UV;
-	float t = TIME;
-	
-	// 1. GLASS CRACK DISPLACEMENT
-	vec2 glass_distort = get_crack_distortion(uv, crack_center, crack_intensity, crack_size);
-	uv += glass_distort;
-	
-	// 2. ANALOG JITTER
-	uv.y += (noise(vec2(t, 0.0)) - 0.5) * vertical_jitter;
+    vec2 uv = SCREEN_UV;
+    vec2 texel = SCREEN_PIXEL_SIZE;
 
-	// 3. SMEARED CHROMA
-	vec3 yiq_pure = rgb_to_yiq(texture(screen_texture, uv).rgb);
-	float y = yiq_pure.x;
-	float i_acc = 0.0;
-	float q_acc = 0.0;
-	
-	int samples = 12;
-	for(int n = 0; n < samples; n++) {
-		float x_offset = (float(n) * (smearing * 0.01)) + color_offset;
-		vec3 s = rgb_to_yiq(texture(screen_texture, uv - vec2(x_offset, 0.0)).rgb);
-		i_acc += s.y;
-		q_acc += s.z;
-	}
-	
-	vec3 final_yiq = vec3(y, i_acc / float(samples), q_acc / float(samples));
+    vec3 color = enable_sharpen ? sharpen(uv, texel) : texture(screen_texture, uv).rgb;
 
-	// 4. EDGE SHARPENING
-	float neighbor = rgb_to_yiq(texture(screen_texture, uv + vec2(0.001, 0.0)).rgb).x;
-	final_yiq.x += (y - neighbor) * sharpening;
+    // Siatka pikseli
+    if (enable_pixel_grid) {
+        vec2 res = 1.0 / texel;
+        vec2 cell = fract(uv * res / pixel_density);
+        float line = min(cell.x, cell.y);
+        float grid = smoothstep(0.0, 0.15, line);
+        color *= mix(1.0 - pixel_grid_intensity, 1.0, grid);
+    }
 
-	vec3 color = yiq_to_rgb(final_yiq);
+    // Refleks szkła
+    if (enable_glare) {
+        vec2 dir = vec2(cos(glare_angle), sin(glare_angle));
+        float d = dot(uv - vec2(0.5), dir);
+        float glare = smoothstep(glare_width, 0.0, abs(d - glare_position));
+        color += glare * glare_intensity;
+    }
 
-	// 5. DRAW CRACK LINES
-	float dist_to_center = length(SCREEN_UV - crack_center);
-	if (dist_to_center < crack_size) {
-		float crack_line = step(0.98, sin(atan(SCREEN_UV.y - crack_center.y, SCREEN_UV.x - crack_center.x) * 8.0 + noise(SCREEN_UV) * 2.0));
-		float line_mask = (1.0 - (dist_to_center / crack_size));
-		color += crack_line * line_mask * 0.5;
-	}
+    color = grade(color);
 
-	// 6. VHS ARTIFACTS
-	color += (noise(uv + t) - 0.5) * static_noise;
-	color -= sin(uv.y * 800.0) * scanline_opacity * y;
-	color *= smoothstep(0.8, 0.8 - vignette_intensity, distance(SCREEN_UV, vec2(0.5)));
+    // Winieta
+    if (enable_vignette) {
+        vec2 vig_uv = uv * (1.0 - uv.yx);
+        float vig = pow(vig_uv.x * vig_uv.y * 15.0, vignette_intensity);
+        color *= mix(1.0 - vignette_smoothness, 1.0, clamp(vig, 0.0, 1.0));
+    }
 
-	COLOR = vec4(color, 1.0);
+    COLOR = vec4(color, 1.0);
 }

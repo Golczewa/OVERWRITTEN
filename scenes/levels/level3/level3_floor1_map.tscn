@@ -298,32 +298,8 @@ rotation = 3.1415927
 [node name="light" type="Node2D" parent="." unique_id=292987401]
 
 [node name="PointLight2D" type="PointLight2D" parent="light" unique_id=989069474]
-position = Vector2(71, 289)
-color = Color(0.9882353, 0.79607844, 0, 1)
-energy = 1.62
-texture = ExtResource("5_vfja0")
-
-[node name="PointLight2D2" type="PointLight2D" parent="light" unique_id=244068410]
-position = Vector2(199, 288)
-color = Color(0.9882353, 0.79607844, 0, 1)
-energy = 1.62
-texture = ExtResource("5_vfja0")
-
-[node name="PointLight2D3" type="PointLight2D" parent="light" unique_id=1568417679]
-position = Vector2(327, 288)
-color = Color(0.9882353, 0.79607844, 0, 1)
-energy = 1.62
-texture = ExtResource("5_vfja0")
-
-[node name="PointLight2D4" type="PointLight2D" parent="light" unique_id=1603378138]
-position = Vector2(455, 288)
-color = Color(0.9882353, 0.79607844, 0, 1)
-energy = 1.62
-texture = ExtResource("5_vfja0")
-
-[node name="PointLight2D5" type="PointLight2D" parent="light" unique_id=841442424]
-position = Vector2(575, 290)
-scale = Vector2(0.875, 1)
+position = Vector2(287.99997, 289)
+scale = Vector2(4.3906245, 1)
 color = Color(0.9882353, 0.79607844, 0, 1)
 energy = 1.62
 texture = ExtResource("5_vfja0")
