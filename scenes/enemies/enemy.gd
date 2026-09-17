@@ -117,6 +117,7 @@ func take_damage(damage: int, knockback: int):
 	if is_spawning:
 		return
 	curr_health = curr_health - damage
+	AudioPlayer.play_game_sfx(AudioPlayer.get("enemy_hurt_"+str(randi_range(1,4))))
 	if knockback != 0:
 		var org_speed = curr_speed
 		curr_speed = knockback

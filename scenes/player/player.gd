@@ -170,6 +170,7 @@ func dash_again():
 
 func heal():
 	if heal_charge > 0:
+		AudioPlayer.play_game_sfx(AudioPlayer.heal)
 		if player_health + heal_amount > max_health:
 			player_health = max_health
 		else:

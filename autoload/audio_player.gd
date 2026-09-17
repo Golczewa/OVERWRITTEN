@@ -54,6 +54,7 @@ const alarm: AudioStreamWAV = preload("res://asstets/sfx/alarm.wav")
 const dash: AudioStreamWAV = preload("res://asstets/sfx/dash.wav")
 const fanfare: AudioStreamWAV = preload("res://asstets/sfx/fanfare.wav")
 const death: AudioStreamWAV = preload("res://asstets/sfx/death.wav")
+const heal:AudioStreamWAV=preload("res://asstets/sfx/Tone1A_FourthOctaveUp.wav")
 
 const bullet_rickoshet1: AudioStreamWAV = preload("res://asstets/sfx/bullet_rickoshet1.wav")
 const bullet_rickoshet2: AudioStreamWAV = preload("res://asstets/sfx/bullet_rickoshet2.wav")
@@ -64,6 +65,11 @@ const hurt_1: AudioStreamWAV = preload("res://asstets/sfx/virtual_death.wav")
 const hurt_2: AudioStreamWAV = preload("res://asstets/sfx/Glitch_15.wav")
 const hurt_3: AudioStreamWAV = preload("res://asstets/sfx/Glitch_10.wav")
 const hurt_4: AudioStreamWAV = preload("res://asstets/sfx/Glitch_20.wav")
+
+const enemy_hurt_1:AudioStreamWAV=preload("res://asstets/sfx/does_it_hurt_1.wav")
+const enemy_hurt_2:AudioStreamWAV=preload("res://asstets/sfx/does_it_hurt_2.wav")
+const enemy_hurt_3:AudioStreamWAV=preload("res://asstets/sfx/does_it_hurt_3.wav")
+const enemy_hurt_4:AudioStreamWAV=preload("res://asstets/sfx/does_it_hurt_4.wav")
 
 
 func _ready() -> void:
