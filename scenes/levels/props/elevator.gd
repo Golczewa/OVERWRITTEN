@@ -20,6 +20,7 @@ func _ready() -> void:
 
 func open_doors(body: Node2D):
 	if body.is_in_group("player") and floor_.cleared:
+		AudioPlayer.play_game_sfx(AudioPlayer.door_open)
 		$StaticBody2D/StaticBody2D/PointLight2D.hide()
 		$StaticBody2D/StaticBody2D/AnimatedSprite2D.play("default")
 		$StaticBody2D/StaticBody2D/CollisionShape2D.set_deferred("disabled", true)
@@ -27,6 +28,7 @@ func open_doors(body: Node2D):
 
 func close_doors(body: Node2D):
 	if body.is_in_group("player") and floor_.cleared:
+		AudioPlayer.play_game_sfx(AudioPlayer.door_close)
 		$StaticBody2D/StaticBody2D/AnimatedSprite2D.play_backwards("default")
 		$StaticBody2D/StaticBody2D/CollisionShape2D.set_deferred("disabled", false)
 		await $StaticBody2D/StaticBody2D/AnimatedSprite2D.animation_finished

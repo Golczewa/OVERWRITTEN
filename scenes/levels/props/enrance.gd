@@ -19,9 +19,11 @@ func on_body_enterd(body):
 
 func enter(body: CharacterBody2D):
 	$AnimatedSprite2D.play("default")
+	AudioPlayer.play_game_sfx(AudioPlayer.door_open)
 	await body.entrance_anim($Marker2D.global_position, $Marker2D2.global_position)
 	$CollisionShape2D.set_deferred("disabled", false)
 	$Area2D/CollisionShape2D.set_deferred("disabled", true)
 	$AnimatedSprite2D.play_backwards("default")
 	await $AnimatedSprite2D.animation_finished
+	AudioPlayer.play_game_sfx(AudioPlayer.door_close)
 	$AnimatedSprite2D.play("closed")

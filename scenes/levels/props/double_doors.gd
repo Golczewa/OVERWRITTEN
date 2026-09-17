@@ -25,6 +25,7 @@ func on_body_enterd(body):
 	if not locked:
 		if body.is_in_group("player") or body.is_in_group("enemies"):
 			if bodies_in() > 0 and bodies_in() < 2:
+				AudioPlayer.play_game_sfx(AudioPlayer.door_open)
 				$StaticBody2D/AnimatedSprite2D.play("open" + str(skin_num[skin]))
 				$StaticBody2D/AnimatedSprite2D2.play("open" + str(skin_num[skin]))
 				$StaticBody2D/CollisionShape2D.set_deferred("disabled", true)
@@ -34,6 +35,7 @@ func on_body_exited(body):
 	if not locked:
 		if body.is_in_group("player") or body.is_in_group("enemies"):
 			if bodies_in() < 1:
+				AudioPlayer.play_game_sfx(AudioPlayer.door_close)
 				$StaticBody2D/AnimatedSprite2D.play_backwards("open" + str(skin_num[skin]))
 				$StaticBody2D/AnimatedSprite2D2.play_backwards("open" + str(skin_num[skin]))
 				$StaticBody2D/CollisionShape2D.set_deferred("disabled", false)

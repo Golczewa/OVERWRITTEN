@@ -142,6 +142,7 @@ func _damage_effect():
 
 func _dash():
 	if can_dash and not in_cutscene:
+		AudioPlayer.play_game_sfx(AudioPlayer.dash)
 		var temp = SPEED
 		var dash_dir = direction
 		is_dashing = true

@@ -26,7 +26,7 @@ transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 
 material_override = SubResource("ShaderMaterial_6r3jp")
 mesh = ExtResource("1_v2jp7")
 
-[node name="Node" type="Node" parent="." unique_id=879491133]
+[node name="Node" type="Node3D" parent="." unique_id=820372636]
 
 [node name="Area3D" parent="Node" unique_id=1127251825 instance=ExtResource("3_dnxhx")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.4096454, -0.28229192, -2.1085358)

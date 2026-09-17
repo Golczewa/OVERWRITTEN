@@ -14,6 +14,7 @@ func _ready() -> void:
 		_on_panel_container_gui_input
 	)
 	setup_buttons()
+	_warmup_3d_preview()
 
 
 func level_setup(num: int):
@@ -81,3 +82,11 @@ func refresh_buttons():
 	var buttons = $SubViewportContainer/SubViewport/Node3D/Node.get_children()
 	for button in buttons:
 		button.set_button_colors()
+
+
+func _warmup_3d_preview() -> void:
+	var viewport := $SubViewportContainer/SubViewport
+	viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
+	await get_tree().process_frame
+	await get_tree().process_frame
+	viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS

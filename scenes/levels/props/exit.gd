@@ -27,6 +27,7 @@ func exit():
 	$StaticBody2D/AnimatedSprite2D.play("default")
 	$StaticBody2D/PointLight2D.hide()
 	AudioPlayer.volume_down()
+	AudioPlayer.play_game_sfx(AudioPlayer.door_open)
 	await player.exit_anim($Marker2D.global_position, global_position)
 	player.global_position = Vector2.ZERO
 	player.clear_stray_warnings()

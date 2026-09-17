@@ -23,6 +23,7 @@ func on_body_enterd(body):
 
 func move_on():
 	$StaticBody2D/AnimatedSprite2D.play("default")
+	AudioPlayer.play_game_sfx(AudioPlayer.door_open)
 	player.freeze_player()
 	await $StaticBody2D/AnimatedSprite2D.animation_finished
 	player.unfreeze_player()

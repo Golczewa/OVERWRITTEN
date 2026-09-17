@@ -22,6 +22,7 @@ func unlock_weapon(num: int, reval_time: float = 1.5):
 	)
 	$Label.text = ConfigManager.weapons.get_value(str(num), "name", "???")
 	await reveal
+	AudioPlayer.play_game_sfx(AudioPlayer.fanfare)
 	var tween: Tween = create_tween().set_parallel()
 	tween.tween_property($TextureRect, "modulate", Color.WHITE, reval_time)
 	tween.tween_property($Label, "modulate", Color.WHITE, reval_time)
