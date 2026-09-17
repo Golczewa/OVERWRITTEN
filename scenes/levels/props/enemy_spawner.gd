@@ -23,7 +23,7 @@ func spawn_wave():
 		var wave = waves[wave_counter]
 		for enemy in wave:
 			for i in range(enemy[0]):
-				AudioPlayer.play_game_sfx(AudioPlayer.alarm,1)
+				AudioPlayer.play_game_sfx(AudioPlayer.alarm, 1)
 				var enemy_inst: Enemy = enemy[1].instantiate()
 				if give_warning:
 					enemy_inst.with_warning = true

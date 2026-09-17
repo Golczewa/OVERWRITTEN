@@ -80,7 +80,7 @@ func _process(_delta: float) -> void:
 		charges.update_value(heal_cd)
 	if !is_dashing:
 		charges.update_dash(dash_cd - $dashTimer.time_left)
-	else :
+	else:
 		charges.update_dash(0)
 	if not in_cutscene and not in_menu:
 		if Input.is_action_just_pressed("attack_left"):

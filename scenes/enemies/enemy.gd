@@ -136,6 +136,7 @@ func take_damage(damage: int, knockback: int):
 
 
 func die():
+	AudioPlayer.play_game_sfx(AudioPlayer.death)
 	died.emit()
 	curr_floor.enemies -= 1
 	dead = true
