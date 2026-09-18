@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://mey6k8jdkgmd"]
+
+[ext_resource type="Script" uid="uid://8vimbe8e08su" path="res://scenes/menu/menu_window.gd" id="1_lvsjn"]
+[ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="2_jemi7"]
+
+[node name="MenuWindow" type="Control" unique_id=167930882 node_paths=PackedStringArray("panel")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1175.7142
+offset_bottom = 707.1428
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_lvsjn")
+panel = NodePath("AspectRatioContainer")
+metadata/_custom_type_script = "uid://8vimbe8e08su"
+
+[node name="AspectRatioContainer" parent="." unique_id=1461861251 instance=ExtResource("2_jemi7")]
+layout_mode = 0
+offset_right = 1175.7142
+offset_bottom = 707.1428

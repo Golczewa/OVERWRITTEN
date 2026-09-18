@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dico4xcxnqi3w" path="res://scenes/levels/props/double_doors.tscn" id="6_vwc5l"]
 [ext_resource type="PackedScene" uid="uid://b027hwxqycj2f" path="res://scenes/levels/props/enemy_spawner.tscn" id="7_vwc5l"]
 [ext_resource type="PackedScene" uid="uid://kkqb7cfxl6sm" path="res://scenes/enemies/scavenger_brute.tscn" id="8_ntwuf"]
+[ext_resource type="PackedScene" uid="uid://crxcokgedkj4a" path="res://scenes/levels/props/lore.tscn" id="9_ntwuf"]
 
 [node name="Floor" type="Node2D" unique_id=1920436983 node_paths=PackedStringArray("down_node", "up_node", "enemy_spawners")]
 script = ExtResource("1_3jdk1")
@@ -55,3 +56,7 @@ rotation = 1.5707964
 
 [node name="CharacterBody2D" parent="enemies" unique_id=625731905 instance=ExtResource("8_ntwuf")]
 position = Vector2(138, -545)
+
+[node name="Node2D" parent="." unique_id=1690743224 instance=ExtResource("9_ntwuf")]
+position = Vector2(341, -445.99997)
+rotation = 1.0908308

@@ -2,8 +2,9 @@ extends Node2D
 
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
 @onready var leader = $CharacterBody2D
-var stop:=false
-var tween:Tween
+var stop := false
+var tween: Tween
+
 
 func _ready() -> void:
 	leader.toogle_cutscene()
@@ -55,9 +56,10 @@ func play_cuscene(body: Node2D):
 	$StaticBody2D/CollisionShape2D.set_deferred("disabled", false)
 	$StaticBody2D2/CollisionShape2D.set_deferred("disabled", true)
 
+
 func stop_cutscnene():
-	stop=true
-	player.in_cutscene=false
+	stop = true
+	player.in_cutscene = false
 	if tween:
 		tween.kill()
 	leader.boss_bar.stop_animation(leader.max_health)
