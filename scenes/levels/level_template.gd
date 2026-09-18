@@ -57,7 +57,7 @@ func restart_floor():
 	print("res")
 	if curr_floor < 1 or curr_floor > len(floors):
 		curr_floor = checkpoint
-	remove_child(floors[curr_floor - 1])
+	(floors[curr_floor - 1]).queue_free()
 	curr_floor = checkpoint
 	floors[curr_floor - 1] = floors_loaded[curr_floor - 1].instantiate()
 	add_child(floors[curr_floor - 1])

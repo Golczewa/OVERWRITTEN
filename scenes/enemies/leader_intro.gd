@@ -2,32 +2,47 @@ extends Node2D
 
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
 @onready var leader = $CharacterBody2D
-
+var stop:=false
+var tween:Tween
 
 func _ready() -> void:
 	leader.toogle_cutscene()
 	$Area2D.body_entered.connect(play_cuscene)
+	get_parent().get_parent().restart.connect(stop_cutscnene)
+	await get_tree().create_timer(0.1).timeout
+	stop = false
+	print("ready", stop)
 
 
 func play_cuscene(body: Node2D):
-	if body != player:
+	if body != player or player.in_cutscene or stop:
 		return
 	get_parent().cutscenes += 1
 	$StaticBody2D2/CollisionShape2D.set_deferred("disabled", false)
 	AudioPlayer.volume_down()
 	player.in_cutscene = true
 	$Area2D/CollisionShape2D.set_deferred("disabled", true)
+	if stop:
+		return
 	await player.focus_camera(leader.global_position)
+	if stop:
+		return
 	leader.charge_cutscene()
 	await get_tree().create_timer(0.5).timeout
+	if stop:
+		return
 	$StaticBody2D.hide()
 	$Sprite2D.show()
 	$Sprite2D2.show()
 	AudioPlayer.play_game_sfx(AudioPlayer.metal_hit2)
 	player.set_camera_fallow(leader)
 	await leader.end_charge
+	if stop:
+		return
 	leader.turn_cutscene()
 	await leader.boss_bar.boss_is_in("Hash V - Scavengers Leader", leader.max_health)
+	if stop:
+		return
 	player.retrun_camera()
 	leader.rotation = 0
 	player.in_cutscene = false
@@ -39,3 +54,12 @@ func play_cuscene(body: Node2D):
 	AudioPlayer.volume_up()
 	$StaticBody2D/CollisionShape2D.set_deferred("disabled", false)
 	$StaticBody2D2/CollisionShape2D.set_deferred("disabled", true)
+
+func stop_cutscnene():
+	stop=true
+	player.in_cutscene=false
+	if tween:
+		tween.kill()
+	leader.boss_bar.stop_animation(leader.max_health)
+	player.retrun_camera()
+	AudioPlayer.volume_up()

@@ -40,7 +40,8 @@ var default_state = {
 var charges_to_replenish: int = 0
 var ghost = preload("res://scenes/player/player_ghost2.tscn")
 var score
-var camera_tween:Tween
+var camera_tween: Tween
+
 
 func _ready() -> void:
 	get_dresed()

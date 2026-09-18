@@ -51,11 +51,11 @@ func _on_panel_container_gui_input(event):
 			global_position = target_position
 
 
-func stop_animation(hp: int,restart:=true):
+func stop_animation(hp: int, restart := true):
 	if tween:
 		tween.kill()
 		if restart:
 			modulate.a = 0
-		else :
-			modulate.a=1
+		else:
+			modulate.a = 1
 			$TextureProgressBar.value = hp

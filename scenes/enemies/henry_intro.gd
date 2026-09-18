@@ -7,19 +7,29 @@ var stop: bool = false
 
 
 func _ready() -> void:
-	#get_parent().get_parent().restart.connect(stop_cutscene)
+	get_parent().get_parent().restart.connect(stop_cutscene)
 	henry.toogle_cutscene()
 	body_entered.connect(play_cuscene)
+	await get_tree().create_timer(0.1).timeout
+	stop = false
+	print("ready", stop)
 
 
 func play_cuscene(body: Node):
-	print("cutscene")
-	if body != player:
+	print(stop)
+	if body != player or player.in_cutscene:
 		return
+	if stop:
+		print("stoped0")
+		return
+	print("cutscene")
 	AudioPlayer.volume_down()
 	player.in_cutscene = true
 	get_parent().door.disable_doors()
 	$CollisionShape2D.set_deferred("disabled", true)
+	if stop:
+		print("stoped0")
+		return
 	player.focus_camera(henry.global_position)
 	tween = create_tween()
 	tween.tween_property(henry, "rotation_degrees", 90, 2)
