@@ -10,6 +10,7 @@ var player_state: Dictionary
 var checkpoint = 1
 var real_curr_floor
 @export var level_id = 1
+signal restart
 
 
 func _ready() -> void:
@@ -53,6 +54,7 @@ func move_down():
 
 
 func restart_floor():
+	print("res")
 	if curr_floor < 1 or curr_floor > len(floors):
 		curr_floor = checkpoint
 	remove_child(floors[curr_floor - 1])
@@ -62,6 +64,7 @@ func restart_floor():
 	real_curr_floor = floors[curr_floor - 1]
 	player.set_player_position(floors[curr_floor - 1].spawn)
 	player.load_state(player_state)
+	restart.emit()
 
 
 func end_level():

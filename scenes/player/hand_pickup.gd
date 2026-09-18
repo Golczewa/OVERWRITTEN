@@ -28,6 +28,8 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
+	if ConfigManager.player_config.get_value("hands", hand, true):
+		return
 	if curr_floor.enemies_cleared and check:
 		check = false
 		dance()

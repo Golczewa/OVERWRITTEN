@@ -154,6 +154,7 @@ func scavenger_attack(damage = 30) -> void:
 func take_damage(damage: int, knockback: int):
 	if in_cutscene:
 		return
+	AudioPlayer.play_game_sfx(AudioPlayer.get("enemy_hurt_" + str(randi_range(1, 4))))
 	curr_health = curr_health - damage
 	boss_bar.update(curr_health)
 	if knockback != 0:

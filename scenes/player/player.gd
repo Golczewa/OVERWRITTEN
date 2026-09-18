@@ -40,7 +40,7 @@ var default_state = {
 var charges_to_replenish: int = 0
 var ghost = preload("res://scenes/player/player_ghost2.tscn")
 var score
-
+var camera_tween:Tween
 
 func _ready() -> void:
 	get_dresed()
@@ -333,9 +333,9 @@ func enable_floor_jumping():
 
 
 func focus_camera(pos: Vector2, travel_time = 1):
-	var tween = create_tween()
-	tween.tween_property($Camera2D, "global_position", pos, travel_time)
-	await tween.finished
+	camera_tween = create_tween()
+	camera_tween.tween_property($Camera2D, "global_position", pos, travel_time)
+	await camera_tween.finished
 
 
 func set_camera_fallow(who: Node2D):
@@ -344,6 +344,8 @@ func set_camera_fallow(who: Node2D):
 
 func retrun_camera():
 	camera_fallow = null
+	if camera_tween:
+		camera_tween.kill()
 	$Camera2D.global_position = global_position
 
 

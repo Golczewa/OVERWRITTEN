@@ -2,6 +2,7 @@ extends Control
 
 var dragging = false
 var drag_offset = Vector2()
+var tween: Tween
 
 
 func _ready() -> void:
@@ -18,7 +19,7 @@ func boss_is_in(boss_name: String, hp: int, time = 1.5) -> void:
 	AudioPlayer.play_game_sfx(AudioPlayer.hp_loading)
 	$AspectRatioContainer.format_title(boss_name)
 	$TextureProgressBar.max_value = hp
-	var tween = create_tween()
+	tween = create_tween()
 	$TextureProgressBar.value = 0
 	tween.tween_property(self, "modulate:a", 1, 0.5)
 	tween.tween_property($TextureProgressBar, "value", hp, time)
@@ -26,7 +27,7 @@ func boss_is_in(boss_name: String, hp: int, time = 1.5) -> void:
 
 
 func boss_is_out():
-	var tween = create_tween()
+	tween = create_tween()
 	tween.tween_property(self, "modulate:a", 0, 0.5)
 
 
@@ -48,3 +49,13 @@ func _on_panel_container_gui_input(event):
 			target_position.x = clamp(target_position.x, 0, viewport_size.x - window_size.x)
 			target_position.y = clamp(target_position.y, 0, viewport_size.y - window_size.y)
 			global_position = target_position
+
+
+func stop_animation(hp: int,restart:=true):
+	if tween:
+		tween.kill()
+		if restart:
+			modulate.a = 0
+		else :
+			modulate.a=1
+			$TextureProgressBar.value = hp

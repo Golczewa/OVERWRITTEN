@@ -12,6 +12,7 @@ func _ready() -> void:
 func play_cuscene(body: Node2D):
 	if body != player:
 		return
+	get_parent().cutscenes += 1
 	$StaticBody2D2/CollisionShape2D.set_deferred("disabled", false)
 	AudioPlayer.volume_down()
 	player.in_cutscene = true

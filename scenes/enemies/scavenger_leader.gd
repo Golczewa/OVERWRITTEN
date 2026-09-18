@@ -154,6 +154,7 @@ func distance(pos_a: Vector2, pos_b: Vector2) -> float:
 
 func take_damage(damage: int, _knockback: int) -> void:
 	health -= damage
+	AudioPlayer.play_game_sfx(AudioPlayer.get("enemy_hurt_" + str(randi_range(1, 4))))
 	boss_bar.update(health)
 	damage_effect()
 	if health <= 0:
