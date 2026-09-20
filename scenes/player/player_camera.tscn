@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://r8w2qan8yww7" path="res://scenes/player/player_health_bar.tscn" id="3_44dvt"]
 [ext_resource type="PackedScene" uid="uid://bk5dijd6c66fc" path="res://scenes/player/heal_meter.tscn" id="3_sbsl8"]
 [ext_resource type="PackedScene" uid="uid://d1y45jvayjig6" path="res://scenes/menu/tutorial_window.tscn" id="4_44dvt"]
+[ext_resource type="PackedScene" uid="uid://b80s61u4qtvud" path="res://scenes/menu/file_loading.tscn" id="5_2fj6k"]
 
 [node name="Camera2D" type="Camera2D" unique_id=518007863]
 zoom = Vector2(1.5, 1.5)
@@ -37,3 +38,10 @@ offset_top = 112.0
 offset_right = 353.14282
 offset_bottom = 564.8571
 scale = Vector2(0.7, 0.7)
+
+[node name="MenuWindow2" parent="CanvasLayer" unique_id=1044715563 instance=ExtResource("5_2fj6k")]
+visible = false
+offset_left = 238.0
+offset_top = 210.0
+offset_right = 1249.4285
+offset_bottom = 485.7143

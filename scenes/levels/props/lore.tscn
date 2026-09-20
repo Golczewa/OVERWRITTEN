@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cwa6v8ln6x6jg" path="res://scenes/levels/props/lore.gd" id="1_4houg"]
 [ext_resource type="Texture2D" uid="uid://h2f47iruoq1u" path="res://asstets/props/pendrive.png" id="1_srvmv"]
 [ext_resource type="Texture2D" uid="uid://b2ia38rnstokb" path="res://asstets/props/document.png" id="2_4houg"]
-[ext_resource type="PackedScene" uid="uid://mey6k8jdkgmd" path="res://scenes/menu/lore/cities_page1.tscn" id="2_kq6m0"]
 [ext_resource type="Texture2D" uid="uid://bdg4p4fkssrd4" path="res://asstets/props/tablet.png" id="3_kq6m0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jiq1j"]
@@ -23,12 +22,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jiq1j"]
-size = Vector2(30, 28)
+[sub_resource type="CircleShape2D" id="CircleShape2D_4houg"]
+radius = 30.316044
 
 [node name="Node2D" type="Node2D" unique_id=1690743224]
 script = ExtResource("1_4houg")
-window_pack = ExtResource("2_kq6m0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=649618396]
 sprite_frames = SubResource("SpriteFrames_jiq1j")
@@ -36,4 +34,4 @@ sprite_frames = SubResource("SpriteFrames_jiq1j")
 [node name="Area2D" type="Area2D" parent="." unique_id=933655012]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1903310467]
-shape = SubResource("RectangleShape2D_jiq1j")
+shape = SubResource("CircleShape2D_4houg")

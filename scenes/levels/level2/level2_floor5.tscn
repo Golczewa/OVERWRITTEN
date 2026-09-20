@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://rgpml3tss12d" path="res://scenes/levels/props/exit.tscn" id="4_7fue8"]
 [ext_resource type="PackedScene" uid="uid://eapp1741qlvm" path="res://scenes/levels/props/doors.tscn" id="5_sno20"]
 [ext_resource type="PackedScene" uid="uid://magiaqpb7yte" path="res://scenes/enemies/henry_intro.tscn" id="6_4wuda"]
+[ext_resource type="PackedScene" uid="uid://crxcokgedkj4a" path="res://scenes/levels/props/lore.tscn" id="7_fe8hw"]
+[ext_resource type="PackedScene" uid="uid://dk0t8bp5wep5h" path="res://scenes/menu/lore/henry_note.tscn" id="8_5d1er"]
 
 [node name="Floor" type="Node2D" unique_id=534768665 node_paths=PackedStringArray("down_node", "up_node")]
 script = ExtResource("1_sno20")
@@ -37,3 +39,10 @@ skin = "steelmill2"
 position = Vector2(244, 697)
 
 [node name="enemies" type="Node2D" parent="." unique_id=1642767858]
+
+[node name="Node2D" parent="." unique_id=1690743224 instance=ExtResource("7_fe8hw")]
+position = Vector2(218, 526)
+rotation = 0.858702
+skin = "tablet"
+window_pack = ExtResource("8_5d1er")
+message = "Decrypting..."

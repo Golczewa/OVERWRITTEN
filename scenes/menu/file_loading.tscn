@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://b80s61u4qtvud"]
+
+[ext_resource type="Script" uid="uid://fga1fbw788bq" path="res://scenes/menu/file_loading.gd" id="1_07pc5"]
+[ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="2_07pc5"]
+[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="3_07pc5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jiq1j"]
+font = ExtResource("3_07pc5")
+font_size = 64
+font_color = Color(0.54509807, 0, 0.03529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32e8e"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_icjp8"]
+bg_color = Color(0.54509807, 0, 0.03529412, 1)
+
+[sub_resource type="Theme" id="Theme_07pc5"]
+ProgressBar/font_sizes/font_size = 48
+ProgressBar/fonts/font = ExtResource("3_07pc5")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_32e8e")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_icjp8")
+
+[node name="MenuWindow" type="Control" unique_id=1044715563 node_paths=PackedStringArray("panel")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 212.0
+offset_top = 204.0
+offset_right = 1223.4285
+offset_bottom = 479.7143
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_07pc5")
+panel = NodePath("AspectRatioContainer")
+metadata/_custom_type_script = "uid://8vimbe8e08su"
+
+[node name="AspectRatioContainer" parent="." unique_id=1461861251 instance=ExtResource("2_07pc5")]
+layout_mode = 0
+offset_right = 1011.42847
+offset_bottom = 275.7143
+title = "Loading"
+
+[node name="Label" type="Label" parent="." unique_id=1021777629]
+layout_mode = 0
+offset_left = 22.857178
+offset_top = 68.57143
+offset_right = 991.42847
+offset_bottom = 132.57143
+text = "test"
+label_settings = SubResource("LabelSettings_jiq1j")
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2000195501]
+layout_mode = 0
+offset_left = 34.285713
+offset_top = 165.71428
+offset_right = 984.2856
+offset_bottom = 221.42857
+theme = SubResource("Theme_07pc5")

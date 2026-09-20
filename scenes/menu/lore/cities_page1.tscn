@@ -1,13 +1,49 @@
 [gd_scene format=3 uid="uid://mey6k8jdkgmd"]
 
-[ext_resource type="Script" uid="uid://8vimbe8e08su" path="res://scenes/menu/menu_window.gd" id="1_lvsjn"]
+[ext_resource type="Script" uid="uid://1nrcwwmkeunb" path="res://scenes/menu/lore/cities_page_1.gd" id="1_lvsjn"]
 [ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="2_jemi7"]
+[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="3_17ni2"]
+[ext_resource type="Texture2D" uid="uid://caa3am5vp3h1j" path="res://asstets/props/new_cracov.png" id="4_xt2ns"]
+[ext_resource type="Texture2D" uid="uid://djjupajru7vwh" path="res://asstets/props/thc.png" id="5_gk6oi"]
+[ext_resource type="Texture2D" uid="uid://csp8x2cs5sky4" path="res://asstets/props/paradise_city.png" id="6_xt2ns"]
+[ext_resource type="Texture2D" uid="uid://cutqtshxhvihh" path="res://asstets/props/crapdavia.png" id="7_gk6oi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qyf8b"]
+bg_color = Color(0.8666667, 0.101960786, 0.21568628, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gk6oi"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6qa6"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Theme" id="Theme_gk6oi"]
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_qyf8b")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_gk6oi")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_t6qa6")
+
+[sub_resource type="LabelSettings" id="LabelSettings_jiq1j"]
+font = ExtResource("3_17ni2")
+font_size = 64
+font_color = Color(0.54509807, 0, 0.03529412, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1wqiw"]
+font = ExtResource("3_17ni2")
+font_size = 32
+font_color = Color(0.54509807, 0, 0.03529412, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_s7il6"]
+font = ExtResource("3_17ni2")
+font_size = 32
+font_color = Color(0.54509807, 0, 0.03529412, 1)
 
 [node name="MenuWindow" type="Control" unique_id=167930882 node_paths=PackedStringArray("panel")]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1175.7142
-offset_bottom = 707.1428
+offset_left = 166.99998
+offset_top = 64.99999
+offset_right = 989.0
+offset_bottom = 560.0
 scale = Vector2(0.7, 0.7)
 script = ExtResource("1_lvsjn")
 panel = NodePath("AspectRatioContainer")
@@ -17,3 +53,125 @@ metadata/_custom_type_script = "uid://8vimbe8e08su"
 layout_mode = 0
 offset_right = 1175.7142
 offset_bottom = 707.1428
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1827742532]
+layout_mode = 0
+offset_left = 7.1428604
+offset_top = 38.571426
+offset_right = 1168.5714
+offset_bottom = 700.0
+theme = SubResource("Theme_gk6oi")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=242202437]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer" unique_id=1822246882]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=66090199]
+custom_minimum_size = Vector2(1160, 0)
+layout_mode = 2
+text = "Badge compendium"
+label_settings = SubResource("LabelSettings_jiq1j")
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=818033602]
+layout_mode = 2
+text = "Everyone wears a badge corresponding
+ to their city of orgin. Here are listed all
+ of revelant cities badges."
+label_settings = SubResource("LabelSettings_1wqiw")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=2008520919]
+layout_mode = 2
+theme_override_constants/separation = 200
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer" unique_id=1842334059]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer" unique_id=396608149]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1456287150]
+custom_minimum_size = Vector2(200, 400)
+layout_mode = 2
+texture = ExtResource("4_xt2ns")
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1935282782]
+layout_mode = 2
+text = "New Cracow"
+label_settings = SubResource("LabelSettings_s7il6")
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer" unique_id=936290794]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer" unique_id=2145096068]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=2079611465]
+custom_minimum_size = Vector2(200, 400)
+layout_mode = 2
+texture = ExtResource("5_gk6oi")
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=508793606]
+layout_mode = 2
+text = "Matmata"
+label_settings = SubResource("LabelSettings_s7il6")
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=1812509784]
+layout_mode = 2
+theme_override_constants/separation = 200
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=86606797]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=223420768]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=1153226966]
+custom_minimum_size = Vector2(200, 400)
+layout_mode = 2
+texture = ExtResource("6_xt2ns")
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=398902449]
+layout_mode = 2
+text = "Paradise
+ city"
+label_settings = SubResource("LabelSettings_s7il6")
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=1659341359]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=1324865764]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer2/VBoxContainer2" unique_id=1327255612]
+custom_minimum_size = Vector2(200, 400)
+layout_mode = 2
+texture = ExtResource("7_gk6oi")
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer2/VBoxContainer2" unique_id=1595613934]
+layout_mode = 2
+text = "Redwood"
+label_settings = SubResource("LabelSettings_s7il6")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=28032378]
+layout_mode = 2
+text = "Page 1     "
+label_settings = SubResource("LabelSettings_1wqiw")
+horizontal_alignment = 2
+
+[node name="Label3" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=415640155]
+layout_mode = 2
+text = "( Rest is corrupted )"
+label_settings = SubResource("LabelSettings_1wqiw")
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="ScrollContainer/VBoxContainer" unique_id=597941306]
+layout_mode = 2
