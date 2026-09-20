@@ -14,8 +14,8 @@ layout_mode = 3
 anchors_preset = 0
 offset_left = 361.0
 offset_top = 34.0
-offset_right = 992.4286
-offset_bottom = 805.4285
+offset_right = 802.0
+offset_bottom = 484.0
 scale = Vector2(0.7, 0.7)
 script = ExtResource("1_bx8kt")
 panel = NodePath("AspectRatioContainer")
@@ -25,6 +25,7 @@ metadata/_custom_type_script = "uid://8vimbe8e08su"
 layout_mode = 0
 offset_right = 631.4286
 offset_bottom = 642.8571
+title = "Journal"
 
 [node name="Label" type="Label" parent="." unique_id=2017878495]
 layout_mode = 0

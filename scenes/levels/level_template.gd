@@ -54,7 +54,6 @@ func move_down():
 
 
 func restart_floor():
-	print("res")
 	if curr_floor < 1 or curr_floor > len(floors):
 		curr_floor = checkpoint
 	(floors[curr_floor - 1]).queue_free()

@@ -12,7 +12,6 @@ func _ready() -> void:
 	get_parent().get_parent().restart.connect(stop_cutscnene)
 	await get_tree().create_timer(0.1).timeout
 	stop = false
-	print("ready", stop)
 
 
 func play_cuscene(body: Node2D):
@@ -52,7 +51,7 @@ func play_cuscene(body: Node2D):
 	get_parent().add_enemy(leader, leader_pos)
 	leader.toogle_cutscene()
 	leader.keep_arrow = true
-	AudioPlayer.volume_up()
+	AudioPlayer.play_with_entrance(AudioPlayer.boss_theme)
 	$StaticBody2D/CollisionShape2D.set_deferred("disabled", false)
 	$StaticBody2D2/CollisionShape2D.set_deferred("disabled", true)
 

@@ -66,7 +66,6 @@ func apply_settings():
 
 
 func save_music(_value_changed: bool):
-	print($HBoxContainer/VBoxContainer2/HSlider.value / 100)
 	ConfigManager.player_config.set_value(
 		"settings", "music", $HBoxContainer/VBoxContainer2/HSlider.value / 100
 	)
@@ -74,7 +73,6 @@ func save_music(_value_changed: bool):
 
 
 func save_sfx(_value_changed: bool):
-	print($HBoxContainer/VBoxContainer2/HSlider2.value / 100)
 	ConfigManager.player_config.set_value(
 		"settings", "sfx", $HBoxContainer/VBoxContainer2/HSlider2.value / 100
 	)

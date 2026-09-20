@@ -12,38 +12,30 @@ func _ready() -> void:
 	body_entered.connect(play_cuscene)
 	await get_tree().create_timer(0.1).timeout
 	stop = false
-	print("ready", stop)
 
 
 func play_cuscene(body: Node):
-	print(stop)
 	if body != player or player.in_cutscene:
 		return
 	if stop:
-		print("stoped0")
 		return
-	print("cutscene")
 	AudioPlayer.volume_down()
 	player.in_cutscene = true
 	get_parent().door.disable_doors()
 	$CollisionShape2D.set_deferred("disabled", true)
 	if stop:
-		print("stoped0")
 		return
 	player.focus_camera(henry.global_position)
 	tween = create_tween()
 	tween.tween_property(henry, "rotation_degrees", 90, 2)
 	if stop:
-		print("stoped1")
 		return
 	await tween.finished
 	henry.legs.stop_walking()
 	if stop:
-		print("stoped2")
 		return
 	await henry.boss_bar.boss_is_in("Henry - Scavenger lieutenant", henry.max_health)
 	if stop:
-		print("stoped3")
 		return
 	player.retrun_camera()
 	player.in_cutscene = false
@@ -51,11 +43,10 @@ func play_cuscene(body: Node):
 	remove_child(henry)
 	get_parent().add_enemy(henry, henry_pos)
 	henry.toogle_cutscene()
-	AudioPlayer.volume_up()
+	AudioPlayer.play_with_entrance(AudioPlayer.boss_theme)
 
 
 func stop_cutscene():
-	print("something happend")
 	player.in_cutscene = false
 	stop = true
 	if tween:

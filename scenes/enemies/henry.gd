@@ -198,6 +198,7 @@ func _die():
 	boss_bar.boss_is_out()
 	remove_from_group("enemies")
 	drop_cloth()
+	AudioPlayer.stop_music()
 
 
 func _damage_effect():

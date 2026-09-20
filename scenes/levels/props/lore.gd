@@ -46,14 +46,10 @@ func show_window(body: Node2D):
 	if not loaded:
 		await load_window.load_animation(message)
 		loaded=true
-	print(active)
 	player.in_menu=true
 	window = window_pack.instantiate()
 	player.canvas.add_child(window)
 	window.show()
-	print(window.visible)
-	print(window.global_position)
-	print(window.get_parent().get_parent().get_parent().name)
 	window.open()
 
 

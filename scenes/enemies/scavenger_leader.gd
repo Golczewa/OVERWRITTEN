@@ -190,6 +190,7 @@ func die(explosion_time = 0.3, spread = 100) -> void:
 	hand_pickup.hand = "left_upper"
 	curr_floor.add_child(hand_pickup)
 	hand_pickup.global_position = global_position
+	AudioPlayer.stop_music()
 
 
 func damage_effect() -> void:
