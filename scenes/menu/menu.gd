@@ -59,6 +59,7 @@ func show_next_level(num: int):
 	$map_choice.open()
 	$Control2.setup(num)
 
+
 func open_credits():
 	$MenuWindow2.open()
 

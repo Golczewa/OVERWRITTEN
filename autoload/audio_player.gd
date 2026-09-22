@@ -25,7 +25,7 @@ const neon_afetr_dark: String = "res://asstets/music/Neon After Dark FULL TRACK 
 const level_2_theme: String = "res://asstets/music/Corporate Skyline FULL TRACK LOOPABLE.ogg"
 const level_3_theme: String = "res://asstets/music/Black Horses FULL TRACK LOOPABLE.ogg"
 const level_4_theme: String = "res://asstets/music/Landing Zone FULL TRACK.ogg"
-const boss_theme:String="res://asstets/music/psychronic-chromatic-vanguard-281378.ogg"
+const boss_theme: String = "res://asstets/music/psychronic-chromatic-vanguard-281378.ogg"
 
 #IN GAME SFX
 

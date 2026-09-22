@@ -22,7 +22,7 @@ func _on_pressed() -> void:
 
 
 func _on_item_picked(index: int) -> void:
-	if -1<index and index<options.size():
+	if -1 < index and index < options.size():
 		text = format_text(popup.get_item_text(index))
 	selected = index
 	AudioPlayer.play(AudioPlayer.menu_window_open)

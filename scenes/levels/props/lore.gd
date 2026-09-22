@@ -2,7 +2,7 @@ extends Node2D
 
 @export_enum("pendrive", "page", "tablet") var skin = "pendrive"
 @export var window_pack: PackedScene
-@export var message:String="Loading..."
+@export var message: String = "Loading..."
 var window: MenuWindow
 var skin_num: Dictionary = {
 	"pendrive": 0,
@@ -13,8 +13,8 @@ var skin_num: Dictionary = {
 var active := false
 var dance_tween: Tween
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
-@onready var load_window:MenuWindow=player.canvas.get_node("MenuWindow2")
-var loaded:=false
+@onready var load_window: MenuWindow = player.canvas.get_node("MenuWindow2")
+var loaded := false
 
 
 func _ready() -> void:
@@ -45,8 +45,8 @@ func show_window(body: Node2D):
 		return
 	if not loaded:
 		await load_window.load_animation(message)
-		loaded=true
-	player.in_menu=true
+		loaded = true
+	player.in_menu = true
 	window = window_pack.instantiate()
 	player.canvas.add_child(window)
 	window.show()
@@ -60,4 +60,4 @@ func hide_window(body: Node2D):
 		if window.visible:
 			await window.begone()
 		window.queue_free()
-	player.in_menu=false
+	player.in_menu = false
