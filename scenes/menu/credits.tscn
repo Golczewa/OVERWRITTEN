@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dbt0ecw0q2i5q"]
+
+[ext_resource type="Script" uid="uid://8vimbe8e08su" path="res://scenes/menu/menu_window.gd" id="1_0l22u"]
+[ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="2_drpar"]
+[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="3_0s65u"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jiq1j"]
+font = ExtResource("3_0s65u")
+font_size = 32
+font_color = Color(0.54509807, 0, 0.03529412, 1)
+
+[node name="MenuWindow" type="Control" unique_id=549688514 node_paths=PackedStringArray("panel")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 232.0
+offset_top = 103.0
+offset_right = 981.0
+offset_bottom = 496.0
+script = ExtResource("1_0l22u")
+panel = NodePath("AspectRatioContainer")
+metadata/_custom_type_script = "uid://8vimbe8e08su"
+
+[node name="AspectRatioContainer" parent="." unique_id=1461861251 instance=ExtResource("2_drpar")]
+layout_mode = 0
+offset_right = 749.0
+offset_bottom = 393.0
+title = "Credits"
+
+[node name="Label" type="Label" parent="." unique_id=1391192829]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 187.0
+offset_right = 543.0
+offset_bottom = 219.0
+text = "Work in progress"
+label_settings = SubResource("LabelSettings_jiq1j")

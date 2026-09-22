@@ -14,6 +14,7 @@ func _ready() -> void:
 	var title_num = randi_range(0, len(titles) - 1)
 	$Panel/Label2.text = titles[title_num]
 	$Panel/VBoxContainer/Button3.pressed.connect($MenuWindow.open)
+	$Panel/VBoxContainer/Button4.pressed.connect(open_credits)
 	AudioPlayer.play_music(AudioPlayer.menu_theme)
 
 
@@ -57,6 +58,9 @@ func show_quit_game_panel() -> void:
 func show_next_level(num: int):
 	$map_choice.open()
 	$Control2.setup(num)
+
+func open_credits():
+	$MenuWindow2.open()
 
 #  ██████╗ ██╗   ██╗███████╗██████╗ ██╗    ██╗██████╗ ██╗████████╗████████╗███████╗███╗   ██╗
 # ██╔═══██╗██║   ██║██╔════╝██╔══██╗██║    ██║██╔══██╗██║╚══██╔══╝╚══██╔══╝██╔════╝████╗  ██║

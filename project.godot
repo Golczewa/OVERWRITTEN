@@ -11,7 +11,10 @@ config_version=5
 [application]
 
 config/name="OVERWRITTEN"
-run/main_scene="uid://bhv8006gbu02"
+config/version="0.1.0"
+run/main_scene="uid://dogsf0jphl0cq"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="/OVERWRITTEN/"
 config/features=PackedStringArray("4.7", "Mobile")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
@@ -31,6 +34,7 @@ AudioPlayer="*uid://dwp0ca40lalfh"
 [display]
 
 window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="uid://dqjlmkqpvc5mg"
 
 [editor]
 

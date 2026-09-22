@@ -7,17 +7,17 @@
 [ext_resource type="PackedScene" uid="uid://cagpq2ycw3mwg" path="res://scenes/menu/menu_code_effect.tscn" id="3_f2fum"]
 [ext_resource type="Theme" uid="uid://wmjvw5llbpog" path="res://asstets/themes/button_theme.tres" id="3_r8yej"]
 [ext_resource type="Texture2D" uid="uid://mfb74lanpi3a" path="res://asstets/menu/title.svg" id="4_f2fum"]
-[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="5_3y2rt"]
 [ext_resource type="Script" uid="uid://uamd46ltc757" path="res://scenes/menu/menu_button.gd" id="5_t0a87"]
 [ext_resource type="PackedScene" uid="uid://du4k8ns7pgxg8" path="res://scenes/menu/button.tscn" id="7_y4i35"]
 [ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="8_kaijy"]
 [ext_resource type="PackedScene" uid="uid://q6ale2m8tx0" path="res://scenes/menu/level_panel.tscn" id="9_qo0fc"]
 [ext_resource type="PackedScene" uid="uid://iliwbvxt5w52" path="res://scenes/menu/quit_panel.tscn" id="10_k48pe"]
+[ext_resource type="PackedScene" uid="uid://dbt0ecw0q2i5q" path="res://scenes/menu/credits.tscn" id="14_64m6r"]
 [ext_resource type="PackedScene" uid="uid://dx7r1y82utrin" path="res://scenes/menu/settings.tscn" id="14_rcuxh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_t0a87"]
 line_spacing = 0.0
-font = ExtResource("5_3y2rt")
+font = ExtResource("8_kaijy")
 font_size = 14
 
 [sub_resource type="LabelSettings" id="LabelSettings_jiq1j"]
@@ -162,3 +162,11 @@ offset_left = 219.0
 offset_top = 154.0
 offset_right = 895.0
 offset_bottom = 464.0
+
+[node name="MenuWindow2" parent="." unique_id=549688514 instance=ExtResource("14_64m6r")]
+visible = false
+layout_mode = 0
+offset_left = 192.0
+offset_top = 127.0
+offset_right = 941.0
+offset_bottom = 520.0
