@@ -51,6 +51,7 @@ func _attack() -> void:
 	bullet.direction = bullet.direction.rotated(random_angle)
 	curr_floor.add_child(bullet)
 	bullet.global_position = spawn_marker.global_position
+	bullet.start_position = spawn_marker.global_position
 	bullet.look_at(dir_marker.global_position)
 	weapon.play("default")
 	get_tree().create_timer(cooldown_time).timeout.connect(end_cooldown)

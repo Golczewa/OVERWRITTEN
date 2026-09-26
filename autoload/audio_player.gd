@@ -102,6 +102,13 @@ func play(sound: AudioStreamWAV):
 	sfx_player.play()
 
 
+func play_with_waiting(sound: AudioStreamWAV):
+	if sfx_player.playing:
+		return
+	sfx_player.stream = sound
+	sfx_player.play()
+
+
 func play_game_sfx(sound: AudioStreamWAV, max_count := 3) -> void:
 	var free_stream: AudioStreamPlayer = null
 	var same_sound_count := 0

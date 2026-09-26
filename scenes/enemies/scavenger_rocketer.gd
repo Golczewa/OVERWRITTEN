@@ -55,6 +55,7 @@ func _attack() -> void:
 		bullet.direction = bullet.direction.rotated(rot)
 		get_tree().get_first_node_in_group("game").curr_scene.real_curr_floor.add_child(bullet)
 		bullet.global_position = spawn_marker.global_position
+		bullet.start_position = spawn_marker.global_position
 		bullet.look_at(dir_marker.global_position)
 		bullet.rotate(rot)
 		rot += 0.35

@@ -52,6 +52,7 @@ func _attack() -> void:
 		bullet.direction = (dir_marker.global_position - spawn_marker.global_position).normalized()
 		curr_floor.add_child(bullet)
 		bullet.global_position = spawn_marker.global_position
+		bullet.start_position = spawn_marker.global_position
 		bullet.look_at(dir_marker.global_position)
 		await get_tree().create_timer(0.2).timeout
 	get_tree().create_timer(cooldown_time).timeout.connect(end_cooldown)

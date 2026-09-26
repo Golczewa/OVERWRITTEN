@@ -1,6 +1,7 @@
 extends PlayerWeapon
 
 @onready var sparks_pack: PackedScene = preload("res://scenes/effects/chainsaw_spark.tscn")
+@onready var shapecast: ShapeCast2D = $ShapeCast2D
 
 var event: String
 var chainsaw_sound: AudioStreamPlayer
@@ -34,14 +35,20 @@ func check_for_enemies():
 	for body in bodies:
 		if body.is_in_group("enemies"):
 			body.take_damage(dmg, knockback)
+			spawn_spark(body)
 		elif body.is_in_group("window"):
 			body.shatter(self)
+		if body is StaticBody2D or body is TileMapLayer:
+			spawn_spark(body)
 
 
 func spawn_spark(node: Node2D) -> void:
+	if not shapecast.is_colliding():
+		return
 	var sparks: GPUParticles2D = sparks_pack.instantiate()
+	var spark_postition = shapecast.get_collision_point(0)
 	node.add_child(sparks)
-	sparks.global_position = node.global_position
+	sparks.global_position = spark_postition
 
 
 func _upper():

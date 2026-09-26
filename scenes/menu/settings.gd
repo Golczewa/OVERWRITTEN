@@ -27,6 +27,7 @@ func set_volume(value: float):
 func set_sfx_volume(value: float):
 	var precent: float = value / 100
 	AudioPlayer.change_sfx_volume(precent)
+	AudioPlayer.play_with_waiting(AudioPlayer.menu_window_open)
 
 
 func get_resolutions() -> Array[String]:
