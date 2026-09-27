@@ -53,3 +53,7 @@ func open():
 	await $AspectRatioContainer.open_animation()
 	for child in get_children():
 		child.show()
+	if randi_range(0, 10) == 0:
+		$Label.text = "Skill Issue"
+	else:
+		$Label.text = "Game Over"

@@ -25,14 +25,12 @@ func _on_body_enterd(body):
 		if shot_by_player:
 			body.take_damage(dmg, 0)
 			if perced == perce:
-				print(body.name)
 				queue_free()
 			perced = perced + 1
 	elif body.is_in_group("player"):
 		if not shot_by_player:
 			body.player_take_dmg(dmg)
 			if perced == perce:
-				print(body.name)
 				queue_free()
 			perced = perced + 1
 
@@ -56,12 +54,9 @@ func _physics_process(delta: float) -> void:
 			get_tree().get_first_node_in_group("game").curr_scene.real_curr_floor.add_child(
 				bullet_hit_wall_inst
 			)
-			print(collider.name)
 			queue_free()
 		elif collider.is_in_group("window"):
 			collider.shatter(self)
 	position = position + velocity * delta
 	if global_position.distance_to(start_position) > 1000:
-		print(start_position, global_position)
-		print("Died of distance")
 		queue_free()

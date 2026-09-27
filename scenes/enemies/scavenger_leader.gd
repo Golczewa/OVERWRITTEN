@@ -19,7 +19,7 @@ extends CharacterBody2D
 @onready var boss_bar = player.get_node("Camera2D/CanvasLayer/ProgressBar2")
 @onready var arrow = $AnimatedSprite2D
 
-var max_health := 500
+var max_health := 600
 var health: int = max_health
 var speed := 30
 var charge_speed := 900
@@ -30,10 +30,11 @@ var shield_rot_speed := 5
 var dead := false
 var direction := Vector2.ZERO
 var in_cooldown := false
-var attack_cooldonwn := 3
+var attack_cooldonwn := 2
 var curr_floor: Floor
 var keep_arrow := false
 var chainsaw_sound: AudioStreamPlayer
+var attack_speed_modifier: float = 0.75
 
 signal end_charge
 
@@ -125,7 +126,13 @@ func chose_attack() -> void:
 				charge()
 				attack_cooldonwn = 3
 			1, 2:
-				fire_laucher()
+				if attack_speed_modifier==0.5:
+					if randi_range(0,1):
+						fire_laucher()
+					else :
+						fire_above()
+				else:
+					fire_laucher()
 				attack_cooldonwn = 2
 			3:
 				fire_hoaming_rocket()
@@ -139,7 +146,7 @@ func chose_attack() -> void:
 				fire_above()
 				attack_cooldonwn = 2
 	in_cooldown = true
-	get_tree().create_timer(attack_cooldonwn).timeout.connect(end_cooldown)
+	get_tree().create_timer(attack_cooldonwn*attack_speed_modifier).timeout.connect(end_cooldown)
 
 
 func end_cooldown() -> void:
@@ -157,6 +164,8 @@ func take_damage(damage: int, _knockback: int) -> void:
 	AudioPlayer.play_game_sfx(AudioPlayer.get("enemy_hurt_" + str(randi_range(1, 4))))
 	boss_bar.update(health)
 	damage_effect()
+	if health < max_health / 2:
+		attack_speed_modifier = 0.5
 	if health <= 0:
 		die()
 
@@ -221,6 +230,7 @@ func spanwn_rocket(rot_degree: float) -> void:
 	var dir = (rocket_directory.global_position - rocket_spawn.global_position).normalized()
 	var rocket: Node = rocket_pack.instantiate()
 	rocket.global_position = rocket_spawn.global_position
+	rocket.start_position = rocket_spawn.global_position
 	rocket.look_at(rocket_directory.global_position)
 	rocket.direction = dir.rotated(rot_degree)
 	rocket.rotate(rot_degree)
@@ -233,6 +243,7 @@ func fire_hoaming_rocket() -> void:
 	var hrocket = hrocket_pack.instantiate()
 	await rotate_by(laucher, (player.global_position - global_position).rotated(-1).angle())
 	hrocket.global_position = rocket_spawn.global_position
+	hrocket.start_position = rocket_spawn.global_position
 	hrocket.look_at(rocket_directory.global_position)
 	hrocket.direction = dir
 	hrocket.sender = self

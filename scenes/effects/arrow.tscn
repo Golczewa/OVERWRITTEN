@@ -98,12 +98,13 @@ animations = [{
 }]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1822404430]
+modulate = Color(4.3302517, 4.3302517, 4.3302517, 1)
 top_level = true
 light_mask = 4
 z_index = 10
 scale = Vector2(-1.3, 1.3)
 sprite_frames = SubResource("SpriteFrames_jiq1j")
 animation = &"3d"
-frame_progress = 0.029187957
+frame_progress = 0.42178446
 script = ExtResource("1_rsrv0")
 edge_margin = 20.0

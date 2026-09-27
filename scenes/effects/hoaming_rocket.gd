@@ -19,7 +19,6 @@ var start_position: Vector2
 
 
 func _ready() -> void:
-	start_position = global_position
 	body_entered.connect(_on_body_enterd)
 	bullet_hit_wall_inst = bullet_hit_wall.instantiate()
 	$RayCast2D.target_position = Vector2((speed) * get_physics_process_delta_time(), 0)
