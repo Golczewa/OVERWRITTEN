@@ -108,7 +108,7 @@ label_settings = SubResource("LabelSettings_t0a87")
 
 [node name="Label2" type="Label" parent="Panel" unique_id=2119411517]
 layout_mode = 0
-offset_left = 698.0
+offset_left = 61.0
 offset_top = 256.0
 offset_right = 1106.0
 offset_bottom = 280.0

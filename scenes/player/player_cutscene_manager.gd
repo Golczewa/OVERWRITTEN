@@ -7,6 +7,8 @@ var in_stopable_cutscene := false
 
 
 func get_up_cutscene():
+	show()
+	get_parent().show()
 	in_stopable_cutscene = true
 	hide_player_stuff()
 	$AnimatedSprite2D.look_at(Vector2.RIGHT)
@@ -30,6 +32,9 @@ func get_up_cutscene():
 
 
 func dying(death_duration := 1.5):
+	z_index = 1
+	for enemy: CharacterBody2D in get_tree().get_nodes_in_group("enemies"):
+		enemy.z_index = 2
 	player.body.hide()
 	show()
 	var death_number: int = randi_range(0, 4)
@@ -41,7 +46,9 @@ func dying(death_duration := 1.5):
 		else:
 			$AnimatedSprite2D.animation = "dead"
 		$AnimatedSprite2D.frame = death_number
+	print(visible, $AnimatedSprite2D.frame, death_number)
 	await get_tree().create_timer(death_duration).timeout
+	z_index = 0
 
 
 func hide_player_stuff():

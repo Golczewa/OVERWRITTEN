@@ -247,6 +247,8 @@ func load_state(state: Dictionary):
 	invisible = false
 	is_dashing = false
 	SPEED = 500.0
+	heath_bar.get_parent().show()
+	charges.show()
 	modulate = Color.WHITE
 	z_index = 3
 	show_stuff()

@@ -1,6 +1,6 @@
 extends Node2D
 @onready var player = $CharacterBody2D
-var curr_scene
+var curr_scene: Level
 var gameScore = {
 	"level": 0, "time": 0, "deaths": 0, "hused": 0, "score": 0, "rank": "-", "cheats": false
 }

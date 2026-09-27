@@ -126,10 +126,10 @@ func chose_attack() -> void:
 				charge()
 				attack_cooldonwn = 3
 			1, 2:
-				if attack_speed_modifier==0.5:
-					if randi_range(0,1):
+				if attack_speed_modifier == 0.5:
+					if randi_range(0, 1):
 						fire_laucher()
-					else :
+					else:
 						fire_above()
 				else:
 					fire_laucher()
@@ -146,7 +146,7 @@ func chose_attack() -> void:
 				fire_above()
 				attack_cooldonwn = 2
 	in_cooldown = true
-	get_tree().create_timer(attack_cooldonwn*attack_speed_modifier).timeout.connect(end_cooldown)
+	get_tree().create_timer(attack_cooldonwn * attack_speed_modifier).timeout.connect(end_cooldown)
 
 
 func end_cooldown() -> void:
@@ -164,7 +164,7 @@ func take_damage(damage: int, _knockback: int) -> void:
 	AudioPlayer.play_game_sfx(AudioPlayer.get("enemy_hurt_" + str(randi_range(1, 4))))
 	boss_bar.update(health)
 	damage_effect()
-	if health < max_health / 2:
+	if health < max_health / 3:
 		attack_speed_modifier = 0.5
 	if health <= 0:
 		die()

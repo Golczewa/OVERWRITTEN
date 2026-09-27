@@ -57,6 +57,8 @@ func restart_floor():
 	if curr_floor < 1 or curr_floor > len(floors):
 		curr_floor = checkpoint
 	(floors[curr_floor - 1]).queue_free()
+	for bullet in get_tree().get_nodes_in_group("bullets"):
+		bullet.queue_free()
 	curr_floor = checkpoint
 	floors[curr_floor - 1] = floors_loaded[curr_floor - 1].instantiate()
 	add_child(floors[curr_floor - 1])

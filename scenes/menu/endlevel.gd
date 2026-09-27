@@ -31,7 +31,10 @@ func setup(score: Dictionary):
 	$VBoxContainer/deaths.text = "Deaths: " + str(score["deaths"])
 	$VBoxContainer/used.text = "Healing used: " + str(score["hused"])
 	ConfigManager.levels_progress.set_value("level_" + str(score["level"] + 1), "unlocked", true)
-	if score["score"] > ConfigManager.levels.get_value("level_" + str(score["level"]), "score", 0):
+	if (
+		score["score"]
+		> ConfigManager.levels_progress.get_value("level_" + str(score["level"]), "score", 0)
+	):
 		ConfigManager.levels_progress.set_value(
 			"level_" + str(score["level"]), "score", score["score"]
 		)
