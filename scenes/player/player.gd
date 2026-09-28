@@ -40,6 +40,7 @@ var default_state = {
 var charges_to_replenish: int = 0
 var ghost = preload("res://scenes/player/player_ghost2.tscn")
 var score
+var walk_tween: Tween
 var camera_tween: Tween
 
 
@@ -232,6 +233,8 @@ func get_state() -> Dictionary:
 
 
 func load_state(state: Dictionary):
+	if walk_tween:
+		walk_tween.kill()
 	$Timer.stop()
 	$AnimatedSprite2D.show()
 	$Node2D.hide()
@@ -297,13 +300,13 @@ func exit_anim(pos_a: Vector2, pos_b: Vector2, anim_time: int = 1):
 func entrance_anim(pos_a: Vector2, pos_b: Vector2, anim_time: int = 1):
 	in_cutscene = true
 	global_position = pos_a
-	var tween = create_tween().set_parallel(true)
+	walk_tween = create_tween().set_parallel(true)
 	$AnimatedSprite2D.look_at(pos_b)
 	legs.walk_anim(pos_b)
 	modulate = Color.BLACK
-	tween.tween_property(self, "global_position", pos_b, anim_time)
-	tween.tween_property(self, "modulate", Color.WHITE, anim_time)
-	await tween.finished
+	walk_tween.tween_property(self, "global_position", pos_b, anim_time)
+	walk_tween.tween_property(self, "modulate", Color.WHITE, anim_time)
+	await walk_tween.finished
 	legs.stop_walking()
 	in_cutscene = false
 

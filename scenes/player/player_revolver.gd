@@ -4,6 +4,12 @@ extends PlayerWeapon
 func attack(_event):
 	if is_hand_in_wall():
 		return
+	var enemy_in_hand: Node2D = is_hand_in_enemy()
+	print(enemy_in_hand)
+	if enemy_in_hand:
+		enemy_in_hand.take_damage(dmg, 0)
+		AudioPlayer.play_game_sfx(AudioPlayer.revolver_shot)
+		return
 	if can_attack:
 		AudioPlayer.play_game_sfx(AudioPlayer.revolver_shot)
 		_spawn_bullet(0, 4, 1)

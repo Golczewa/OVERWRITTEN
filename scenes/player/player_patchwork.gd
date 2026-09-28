@@ -2,16 +2,20 @@ extends PlayerWeapon
 
 
 func attack(_event):
+	print(is_hand_in_wall(),can_attack)
 	if can_attack:
 		can_attack = false
 		if not is_hand_in_wall():
 			for i in range(0, 3):
 				if is_hand_in_wall():
-					print("monday left me broken")
 					break
-				_spawn_bullet()
+				var enemy_in_hand=is_hand_in_enemy()
+				if enemy_in_hand:
+					enemy_in_hand.take_damage(dmg,0)
+				else :
+					_spawn_bullet()
+				print(enemy_in_hand)
 				AudioPlayer.play_game_sfx(AudioPlayer.patchwork_shot, 4)
-
 				await get_tree().create_timer(0.2).timeout
 		play("0")
 		get_tree().create_timer(cooldown).timeout.connect(end_cd)

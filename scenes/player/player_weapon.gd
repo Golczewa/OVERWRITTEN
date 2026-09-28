@@ -48,6 +48,15 @@ func is_hand_in_wall():
 	return false
 
 
+func is_hand_in_enemy():
+	var bodies = weapon_area.get_overlapping_bodies()
+	print(bodies.size())
+	for body in bodies:
+		if body.is_in_group("enemies"):
+			return body
+	return null
+
+
 func _spawn_bullet(rot_angle = 0, spred_angle = 2, pierce = 0):
 	var bullet = bullet_pack.instantiate()
 	bullet.perce = pierce
