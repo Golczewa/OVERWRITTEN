@@ -236,7 +236,8 @@ position = Vector2(160.00006, -341.00006)
 
 [node name="Area2D" parent="." unique_id=219715312 instance=ExtResource("9_4v5ia")]
 position = Vector2(316, 64)
+rotation = 3.1415927
 
 [node name="Area2D2" parent="." unique_id=552625345 instance=ExtResource("9_4v5ia")]
 position = Vector2(576, -61)
-rotation = 1.5707964
+rotation = -1.5707964

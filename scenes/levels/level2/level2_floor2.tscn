@@ -32,10 +32,11 @@ rotation = 1.5707964
 
 [node name="Area2D4" parent="." unique_id=2016989141 instance=ExtResource("5_i8q6f")]
 position = Vector2(224, 355)
-rotation = 1.5707964
+rotation = -1.5707964
 
 [node name="Area2D5" parent="." unique_id=867155296 instance=ExtResource("6_3sfku")]
 position = Vector2(476, 288)
+rotation = 3.1415927
 
 [node name="StaticBody2D" parent="." unique_id=179286510 instance=ExtResource("7_gydyh")]
 position = Vector2(733, 256)

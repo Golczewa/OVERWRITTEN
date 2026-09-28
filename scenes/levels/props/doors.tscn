@@ -88,7 +88,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4x3mg"]
-size = Vector2(6, 64)
+size = Vector2(7, 64)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l42pt"]
 polygon = PackedVector2Array(-3, -32, -3, 32, 3, 32, 3, -32)
@@ -109,6 +109,7 @@ sprite_frames = SubResource("SpriteFrames_78wek")
 animation = &"open1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=740416489]
+position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_4x3mg")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="StaticBody2D" unique_id=60974125]

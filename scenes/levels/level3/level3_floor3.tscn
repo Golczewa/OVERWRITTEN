@@ -33,11 +33,12 @@ color = Color(0.6419338, 0.64193404, 0.64193386, 1)
 
 [node name="Area2D3" parent="." unique_id=219715312 instance=ExtResource("5_ng6kd")]
 position = Vector2(35, -544)
+rotation = 3.1415927
 skin = "steelmill2"
 
 [node name="Area2D4" parent="." unique_id=867155296 instance=ExtResource("6_vwc5l")]
 position = Vector2(288, -196)
-rotation = 1.5707964
+rotation = -1.5707964
 skin = "steelmill2"
 
 [node name="Area2D5" parent="." unique_id=1962857823 instance=ExtResource("6_vwc5l")]

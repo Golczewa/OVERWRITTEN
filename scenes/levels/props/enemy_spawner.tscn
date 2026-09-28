@@ -47,7 +47,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ewhtn"]
-size = Vector2(6, 64)
+size = Vector2(7, 64)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jiq1j"]
 polygon = PackedVector2Array(-3, 32, 3, 32, 3, -32, -3, -32)
@@ -63,6 +63,7 @@ sprite_frames = SubResource("SpriteFrames_nmoyu")
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1934107275]
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_ewhtn")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1340283198]

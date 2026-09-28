@@ -34,7 +34,7 @@ var attack_cooldonwn := 2
 var curr_floor: Floor
 var keep_arrow := false
 var chainsaw_sound: AudioStreamPlayer
-var attack_speed_modifier: float = 0.75
+var attack_speed_modifier: float = 1
 
 signal end_charge
 
@@ -59,6 +59,8 @@ func _physics_process(_delta: float) -> void:
 				sword.play("default")
 				AudioPlayer.play_game_sfx(AudioPlayer.metal_hit)
 				end_charge.emit()
+				if chainsaw_sound:
+					chainsaw_sound.stop()
 		return
 	if is_charging:
 		move_and_slide()
@@ -89,6 +91,8 @@ func _physics_process(_delta: float) -> void:
 	velocity = direction * speed
 	$body/head.look_at(player.global_position)
 	sword.look_at(player.global_position)
+	if not is_charging and chainsaw_sound:
+		chainsaw_sound.stop()
 	move_and_slide()
 
 
@@ -126,22 +130,16 @@ func chose_attack() -> void:
 				charge()
 				attack_cooldonwn = 3
 			1, 2:
-				if attack_speed_modifier == 0.5:
-					if randi_range(0, 1):
-						fire_laucher()
-					else:
-						fire_above()
-				else:
-					fire_laucher()
+				fire_laucher()
 				attack_cooldonwn = 2
 			3:
 				fire_hoaming_rocket()
-				attack_cooldonwn = 3
+				attack_cooldonwn = 4
 	else:
 		match randi_range(0, 2):
 			0:
 				fire_hoaming_rocket()
-				attack_cooldonwn = 3
+				attack_cooldonwn = 4
 			_:
 				fire_above()
 				attack_cooldonwn = 2
@@ -164,8 +162,6 @@ func take_damage(damage: int, _knockback: int) -> void:
 	AudioPlayer.play_game_sfx(AudioPlayer.get("enemy_hurt_" + str(randi_range(1, 4))))
 	boss_bar.update(health)
 	damage_effect()
-	if health < max_health / 3:
-		attack_speed_modifier = 0.5
 	if health <= 0:
 		die()
 
