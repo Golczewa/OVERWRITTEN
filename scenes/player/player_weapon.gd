@@ -50,7 +50,6 @@ func is_hand_in_wall():
 
 func is_hand_in_enemy():
 	var bodies = weapon_area.get_overlapping_bodies()
-	print(bodies.size())
 	for body in bodies:
 		if body.is_in_group("enemies"):
 			return body

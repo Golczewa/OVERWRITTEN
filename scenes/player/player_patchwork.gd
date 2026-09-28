@@ -2,7 +2,6 @@ extends PlayerWeapon
 
 
 func attack(_event):
-	print(is_hand_in_wall(),can_attack)
 	if can_attack:
 		can_attack = false
 		if not is_hand_in_wall():
@@ -14,7 +13,6 @@ func attack(_event):
 					enemy_in_hand.take_damage(dmg,0)
 				else :
 					_spawn_bullet()
-				print(enemy_in_hand)
 				AudioPlayer.play_game_sfx(AudioPlayer.patchwork_shot, 4)
 				await get_tree().create_timer(0.2).timeout
 		play("0")
