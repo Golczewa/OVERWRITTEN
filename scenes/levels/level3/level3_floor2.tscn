@@ -41,7 +41,7 @@ skin = "steelmill2"
 [node name="enemies" type="Node2D" parent="." unique_id=988792059]
 
 [node name="EnemyWithGun" parent="enemies" unique_id=1440674812 instance=ExtResource("7_0lrqg")]
-position = Vector2(103, -404)
+position = Vector2(70, -464)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2081626323]
 color = Color(0.6419338, 0.64193404, 0.64193386, 1)

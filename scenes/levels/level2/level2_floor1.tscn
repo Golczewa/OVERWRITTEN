@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bmxjqrc0n5ewc" path="res://scenes/levels/level2/level2_floor1_ map.tscn" id="2_undik"]
 [ext_resource type="PackedScene" uid="uid://kkqb7cfxl6sm" path="res://scenes/enemies/scavenger_brute.tscn" id="3_1ngfn"]
 [ext_resource type="PackedScene" uid="uid://bdwlvl0qdr800" path="res://scenes/levels/props/entrance.tscn" id="3_ludok"]
+[ext_resource type="PackedScene" uid="uid://djvy7cjtuohp6" path="res://scenes/enemies/scavenger_gunner.tscn" id="4_1ngfn"]
 [ext_resource type="PackedScene" uid="uid://gvdpfkhlvqdq" path="res://scenes/levels/props/transition.tscn" id="4_khal1"]
-[ext_resource type="PackedScene" uid="uid://clap81ynbqx0x" path="res://scenes/enemies/gooner_test.tscn" id="4_knmx7"]
 [ext_resource type="PackedScene" uid="uid://b0iqe6x2742im" path="res://scenes/levels/props/namedrop.tscn" id="5_ludok"]
 [ext_resource type="PackedScene" uid="uid://b027hwxqycj2f" path="res://scenes/levels/props/enemy_spawner.tscn" id="6_khal1"]
 
@@ -23,8 +23,8 @@ metadata/_custom_type_script = "uid://cramwugkt2of"
 [node name="CharacterBody2D" parent="enemies" unique_id=625731905 instance=ExtResource("3_1ngfn")]
 position = Vector2(327, -13)
 
-[node name="CharacterBody2D2" parent="enemies" unique_id=1837710199 instance=ExtResource("4_knmx7")]
-position = Vector2(545, 235)
+[node name="Enemy" parent="enemies" unique_id=1342102832 instance=ExtResource("4_1ngfn")]
+position = Vector2(580, 234)
 
 [node name="StaticBody2D" parent="." unique_id=124000147 instance=ExtResource("3_ludok")]
 position = Vector2(544, 797)

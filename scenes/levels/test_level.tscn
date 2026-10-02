@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://bwm6yfn2g5ii8"]
-
-[ext_resource type="Script" uid="uid://b8hlk3iv17tt6" path="res://scenes/levels/test_level.gd" id="1_2venv"]
-
-[node name="Node2D" type="Node2D" unique_id=58144035]
-script = ExtResource("1_2venv")

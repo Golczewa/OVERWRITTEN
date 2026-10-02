@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://eapp1741qlvm" path="res://scenes/levels/props/doors.tscn" id="5_jnn8v"]
 [ext_resource type="PackedScene" uid="uid://b027hwxqycj2f" path="res://scenes/levels/props/enemy_spawner.tscn" id="6_vtmej"]
 [ext_resource type="PackedScene" uid="uid://cnukyg5amafvv" path="res://scenes/enemies/scavenger_hunter.tscn" id="7_qpwfj"]
-[ext_resource type="PackedScene" uid="uid://clap81ynbqx0x" path="res://scenes/enemies/gooner_test.tscn" id="8_8mfhj"]
 [ext_resource type="PackedScene" uid="uid://brysa1ib4uxgf" path="res://scenes/enemies/scavenger_rocketer.tscn" id="9_4x1o1"]
+[ext_resource type="PackedScene" uid="uid://djvy7cjtuohp6" path="res://scenes/enemies/scavenger_gunner.tscn" id="9_kcw4k"]
 
 [node name="Floor" type="Node2D" unique_id=854294009 node_paths=PackedStringArray("down_node", "up_node", "enemy_spawners")]
 script = ExtResource("1_4x1o1")
@@ -53,8 +53,8 @@ rotation = 3.1415927
 [node name="CharacterBody2D" parent="enemies" unique_id=943878568 instance=ExtResource("7_qpwfj")]
 position = Vector2(424, -255)
 
-[node name="CharacterBody2D2" parent="enemies" unique_id=1837710199 instance=ExtResource("8_8mfhj")]
-position = Vector2(-465, -484)
-
 [node name="EnemyWithGun" parent="enemies" unique_id=1440674812 instance=ExtResource("9_4x1o1")]
 position = Vector2(281, -564)
+
+[node name="Enemy" parent="enemies" unique_id=1342102832 instance=ExtResource("9_kcw4k")]
+position = Vector2(-457, -419)

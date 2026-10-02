@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cw83w7odrkiji" path="res://scenes/levels/level1/level1_floor6_map.tscn" id="1_6ia43"]
 [ext_resource type="Script" uid="uid://d15sg5nvpo03h" path="res://scenes/levels/level1/level_1_floor_6.gd" id="1_q2e2e"]
-[ext_resource type="PackedScene" uid="uid://clap81ynbqx0x" path="res://scenes/enemies/gooner_test.tscn" id="3_vcevg"]
+[ext_resource type="PackedScene" uid="uid://djvy7cjtuohp6" path="res://scenes/enemies/scavenger_gunner.tscn" id="3_vcevg"]
 [ext_resource type="PackedScene" uid="uid://dico4xcxnqi3w" path="res://scenes/levels/props/double_doors.tscn" id="3_wpny8"]
 [ext_resource type="PackedScene" uid="uid://gvdpfkhlvqdq" path="res://scenes/levels/props/transition.tscn" id="4_vcevg"]
 [ext_resource type="PackedScene" uid="uid://bu878f6tabfh3" path="res://scenes/levels/props/transition_exit.tscn" id="5_psjq6"]
@@ -18,11 +18,11 @@ enemy_spawners = [NodePath("StaticBody2D"), NodePath("StaticBody2D2")]
 
 [node name="enemies" type="Node2D" parent="." unique_id=160445985]
 
-[node name="CharacterBody2D" parent="enemies" unique_id=1837710199 instance=ExtResource("3_vcevg")]
-position = Vector2(197, 141)
+[node name="Enemy" parent="enemies" unique_id=1342102832 instance=ExtResource("3_vcevg")]
+position = Vector2(243, 135)
 
-[node name="CharacterBody2D2" parent="enemies" unique_id=603729554 instance=ExtResource("3_vcevg")]
-position = Vector2(205, 539)
+[node name="Enemy2" parent="enemies" unique_id=1469478419 instance=ExtResource("3_vcevg")]
+position = Vector2(216, 538)
 
 [node name="Area2D" parent="." unique_id=867155296 instance=ExtResource("3_wpny8")]
 position = Vector2(224, 259)

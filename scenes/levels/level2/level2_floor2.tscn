@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://eapp1741qlvm" path="res://scenes/levels/props/doors.tscn" id="5_i8q6f"]
 [ext_resource type="PackedScene" uid="uid://dico4xcxnqi3w" path="res://scenes/levels/props/double_doors.tscn" id="6_3sfku"]
 [ext_resource type="PackedScene" uid="uid://b027hwxqycj2f" path="res://scenes/levels/props/enemy_spawner.tscn" id="7_gydyh"]
-[ext_resource type="PackedScene" uid="uid://clap81ynbqx0x" path="res://scenes/enemies/gooner_test.tscn" id="8_kd6my"]
+[ext_resource type="PackedScene" uid="uid://djvy7cjtuohp6" path="res://scenes/enemies/scavenger_gunner.tscn" id="8_kd6my"]
 
 [node name="Floor" type="Node2D" unique_id=233839026 node_paths=PackedStringArray("down_node", "up_node", "enemy_spawners")]
 script = ExtResource("1_xyhyu")
@@ -52,5 +52,5 @@ color = Color(0.4045111, 0.40451115, 0.4045111, 1)
 
 [node name="enemies" type="Node2D" parent="." unique_id=2028666092]
 
-[node name="CharacterBody2D" parent="enemies" unique_id=1837710199 instance=ExtResource("8_kd6my")]
-position = Vector2(250, 129)
+[node name="Enemy" parent="enemies" unique_id=1342102832 instance=ExtResource("8_kd6my")]
+position = Vector2(234, 136)

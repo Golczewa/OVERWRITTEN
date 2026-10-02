@@ -3,10 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://dcf014qvo5dua" path="res://scenes/levels/level1/level1_floor5_map.tscn" id="1_h3lmp"]
 [ext_resource type="Script" uid="uid://bc0dri8jmpa33" path="res://scenes/levels/level1/level_1_floor_5.gd" id="1_otsnt"]
 [ext_resource type="PackedScene" uid="uid://bu878f6tabfh3" path="res://scenes/levels/props/transition_exit.tscn" id="3_tatkq"]
+[ext_resource type="PackedScene" uid="uid://djvy7cjtuohp6" path="res://scenes/enemies/scavenger_gunner.tscn" id="5_prxvq"]
 [ext_resource type="PackedScene" uid="uid://b027hwxqycj2f" path="res://scenes/levels/props/enemy_spawner.tscn" id="5_tatkq"]
-[ext_resource type="PackedScene" uid="uid://clap81ynbqx0x" path="res://scenes/enemies/gooner_test.tscn" id="6_adioa"]
 [ext_resource type="PackedScene" uid="uid://rgpml3tss12d" path="res://scenes/levels/props/exit.tscn" id="7_m7b1t"]
-[ext_resource type="PackedScene" uid="uid://kkqb7cfxl6sm" path="res://scenes/enemies/scavenger_brute.tscn" id="7_prxvq"]
 [ext_resource type="PackedScene" uid="uid://cm7t0o20f14m5" path="res://scenes/player/hand_pickup.tscn" id="8_m7b1t"]
 
 [node name="Node2D" type="Node2D" unique_id=1899703556 node_paths=PackedStringArray("down_node", "up_node", "enemy_spawners")]
@@ -34,11 +33,11 @@ rotation = 3.1415927
 
 [node name="enemies" type="Node2D" parent="." unique_id=1384737383]
 
-[node name="CharacterBody2D" parent="enemies" unique_id=1837710199 instance=ExtResource("6_adioa")]
-position = Vector2(506, -154)
+[node name="Enemy" parent="enemies" unique_id=1342102832 instance=ExtResource("5_prxvq")]
+position = Vector2(102, -222)
 
-[node name="CharacterBody2D2" parent="enemies" unique_id=625731905 instance=ExtResource("7_prxvq")]
-position = Vector2(120, -222)
+[node name="Enemy2" parent="enemies" unique_id=2142294237 instance=ExtResource("5_prxvq")]
+position = Vector2(585, -197)
 
 [node name="Area2D" parent="." unique_id=1227416673 instance=ExtResource("7_m7b1t")]
 position = Vector2(384, -349)
