@@ -6,6 +6,11 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_jiq1j"]
 font = ExtResource("3_0s65u")
+font_size = 48
+font_color = Color(0.54509807, 0, 0.03529412, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0l22u"]
+font = ExtResource("3_0s65u")
 font_size = 32
 font_color = Color(0.54509807, 0, 0.03529412, 1)
 
@@ -23,14 +28,55 @@ metadata/_custom_type_script = "uid://8vimbe8e08su"
 [node name="AspectRatioContainer" parent="." unique_id=1461861251 instance=ExtResource("2_drpar")]
 layout_mode = 0
 offset_right = 749.0
-offset_bottom = 393.0
+offset_bottom = 492.0
 title = "Credits"
 
-[node name="Label" type="Label" parent="." unique_id=1391192829]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1213134935]
 layout_mode = 0
-offset_left = 255.0
-offset_top = 187.0
-offset_right = 543.0
-offset_bottom = 219.0
-text = "Work in progress"
+offset_left = 153.0
+offset_top = 55.0
+offset_right = 612.0
+offset_bottom = 436.0
+theme_override_constants/separation = 11
+
+[node name="Label5" type="Label" parent="VBoxContainer" unique_id=877444854]
+layout_mode = 2
+text = "Game design, 
+programming, art:"
 label_settings = SubResource("LabelSettings_jiq1j")
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="VBoxContainer" unique_id=645614914]
+layout_mode = 2
+text = "Golczewa"
+label_settings = SubResource("LabelSettings_0l22u")
+horizontal_alignment = 1
+justification_flags = 161
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1391192829]
+layout_mode = 2
+text = "Music:"
+label_settings = SubResource("LabelSettings_jiq1j")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=1410364341]
+layout_mode = 2
+text = "Tomality"
+label_settings = SubResource("LabelSettings_0l22u")
+horizontal_alignment = 1
+justification_flags = 161
+
+[node name="Label3" type="Label" parent="VBoxContainer" unique_id=61473923]
+layout_mode = 2
+text = "Testing:"
+label_settings = SubResource("LabelSettings_jiq1j")
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer" unique_id=884918868]
+layout_mode = 2
+text = "Kumarancza, lukimogger613
+The Driver, Burgerowy
+Golcrewg"
+label_settings = SubResource("LabelSettings_0l22u")
+horizontal_alignment = 1
+justification_flags = 161

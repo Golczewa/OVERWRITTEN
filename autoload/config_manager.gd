@@ -20,7 +20,7 @@ var encrypton_key: PackedByteArray
 
 
 func _ready() -> void:
-	encrypton_key = "9ee585b96c20d9c300f2f4fdf7a664c7799697f6063ed19b6be36537e06394fd".hex_decode()
+	encrypton_key = Keys.config_encription_key.hex_decode()
 	load_all()
 	call_deferred("apply_player_settings")
 

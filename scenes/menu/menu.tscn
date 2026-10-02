@@ -54,7 +54,6 @@ offset_left = 90.0
 offset_right = 1268.0
 
 [node name="TextureRect" type="TextureRect" parent="Panel" unique_id=452749659]
-modulate = Color(0.5358087, 0, 0.10357297, 1)
 layout_mode = 0
 offset_left = 42.0
 offset_top = 47.0

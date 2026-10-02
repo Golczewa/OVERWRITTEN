@@ -7,3 +7,4 @@ CMakePresets.json
 .vscode/
 export_presets.cfg
 /builds/
+/autoload/key/
