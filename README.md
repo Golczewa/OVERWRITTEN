@@ -35,7 +35,7 @@ Found a bug? Open an [issue](../../issues).
 
 - Game design, programming, art: [Golczewa](https://golczewa.itch.io)
 - Music: [Tomality](https://tomality.itch.io)
-- Testing: Kumarancza, lukimogger613, The Driver, Burgerowy, Golcrewg, Józef Piłsudski
+- Testing: Kumarancza, lukimogger613, The Driver, Burgerowy, Golcrewg, Józef Piłsudski, Zenworld, Rorzek
 
 ## License
 
