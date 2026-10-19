@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://cnukyg5amafvv"]
 
 [ext_resource type="Script" uid="uid://dxuqxbga8qmaa" path="res://scenes/enemies/scavenger_hunter.gd" id="1_b4jvi"]
-[ext_resource type="Texture2D" uid="uid://duf1k30n3pnp2" path="res://asstets/enemies/scavenger_hunter_head.png" id="2_0k8x3"]
-[ext_resource type="Texture2D" uid="uid://cr0aeyk2ua2ki" path="res://asstets/enemies/hunter_corpse.png" id="2_y7tc8"]
+[ext_resource type="Texture2D" uid="uid://duf1k30n3pnp2" path="res://assets/enemies/scavenger_hunter_head.png" id="2_0k8x3"]
+[ext_resource type="Texture2D" uid="uid://cr0aeyk2ua2ki" path="res://assets/enemies/hunter_corpse.png" id="2_y7tc8"]
 [ext_resource type="PackedScene" uid="uid://cnijtad8hhrio" path="res://scenes/enemies/legs.tscn" id="3_ku0l3"]
-[ext_resource type="Texture2D" uid="uid://0i53iptkdel5" path="res://asstets/enemies/scavenger_hunter_hands.png" id="4_y7tc8"]
-[ext_resource type="Texture2D" uid="uid://bn0qmamv5kro2" path="res://asstets/enemies/patchwork.png" id="5_y7tc8"]
+[ext_resource type="Texture2D" uid="uid://0i53iptkdel5" path="res://assets/enemies/scavenger_hunter_hands.png" id="4_y7tc8"]
+[ext_resource type="Texture2D" uid="uid://bn0qmamv5kro2" path="res://assets/enemies/patchwork.png" id="5_y7tc8"]
 [ext_resource type="PackedScene" uid="uid://yqxpfo2l2m20" path="res://scenes/effects/arrow.tscn" id="7_y7tc8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ikgbx"]

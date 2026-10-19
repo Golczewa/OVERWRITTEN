@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cs1grtahgtfeq"]
 
 [ext_resource type="Script" uid="uid://dgjs6ox0i6mw4" path="res://scenes/player/player.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://blfiaj0pbji4r" path="res://asstets/player/john_overwritten.png" id="2_dqkch"]
-[ext_resource type="Texture2D" uid="uid://baaa7onhuwytt" path="res://asstets/player/player2.png" id="3_0owmy"]
+[ext_resource type="Texture2D" uid="uid://blfiaj0pbji4r" path="res://assets/player/john_overwritten.png" id="2_dqkch"]
+[ext_resource type="Texture2D" uid="uid://baaa7onhuwytt" path="res://assets/player/player2.png" id="3_0owmy"]
 [ext_resource type="PackedScene" uid="uid://btl0mxf27lbcx" path="res://scenes/player/weapon_menager.tscn" id="4_tuyoq"]
 [ext_resource type="PackedScene" uid="uid://dco1qqc6am2wg" path="res://scenes/player/player_legs.tscn" id="5_qlg0r"]
 [ext_resource type="PackedScene" uid="uid://cad8a5ncmngqb" path="res://scenes/player/player_camera.tscn" id="6_tuyoq"]

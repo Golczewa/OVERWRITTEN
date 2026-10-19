@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bn4nlbvpeol31"]
 
-[ext_resource type="Texture2D" uid="uid://7udl0jyeut5g" path="res://asstets/props/pneumatic_post.png" id="1_ouxmy"]
+[ext_resource type="Texture2D" uid="uid://7udl0jyeut5g" path="res://assets/props/pneumatic_post.png" id="1_ouxmy"]
 [ext_resource type="Script" uid="uid://dvm0okruw6ana" path="res://scenes/levels/props/post.gd" id="1_pi01h"]
-[ext_resource type="Texture2D" uid="uid://0uh0rx1ddq6w" path="res://asstets/props/light_test.png" id="3_nglee"]
+[ext_resource type="Texture2D" uid="uid://0uh0rx1ddq6w" path="res://assets/props/light_test.png" id="3_nglee"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pi01h"]
 animations = [{

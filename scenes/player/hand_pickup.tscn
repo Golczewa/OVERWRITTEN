@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cm7t0o20f14m5"]
 
-[ext_resource type="Texture2D" uid="uid://dm41iyi0ks5yt" path="res://asstets/player/hand_pickup.png" id="1_tw4s7"]
+[ext_resource type="Texture2D" uid="uid://dm41iyi0ks5yt" path="res://assets/player/hand_pickup.png" id="1_tw4s7"]
 [ext_resource type="Script" uid="uid://dkvdl5ipcvng8" path="res://scenes/player/hand_pickup.gd" id="2_mx7e2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mx7e2"]

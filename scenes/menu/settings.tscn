@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dlbtios3mnxtg" path="res://scenes/menu/settings.gd" id="1_37860"]
 [ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="2_37860"]
-[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="3_37860"]
+[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://assets/menu/Perfect DOS VGA 437 Win.ttf" id="3_37860"]
 [ext_resource type="PackedScene" uid="uid://dv1vxbhqxe7f0" path="res://scenes/menu/option_button.tscn" id="4_0t5g5"]
-[ext_resource type="Theme" uid="uid://euxcghaongvc" path="res://asstets/themes/slider.tres" id="5_occy7"]
+[ext_resource type="Theme" uid="uid://euxcghaongvc" path="res://assets/themes/slider.tres" id="5_occy7"]
 [ext_resource type="PackedScene" uid="uid://du4k8ns7pgxg8" path="res://scenes/menu/button.tscn" id="6_v208e"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jiq1j"]

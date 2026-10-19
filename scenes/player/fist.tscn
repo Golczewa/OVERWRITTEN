@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://clo2bdo08tpn"]
 
-[ext_resource type="Texture2D" uid="uid://bkhtemel8lin2" path="res://asstets/player/fist.png" id="1_13ffo"]
-[ext_resource type="Texture2D" uid="uid://crv0nl4xar6wa" path="res://asstets/player/fist2.png" id="1_iad6r"]
+[ext_resource type="Texture2D" uid="uid://bkhtemel8lin2" path="res://assets/player/fist.png" id="1_13ffo"]
+[ext_resource type="Texture2D" uid="uid://crv0nl4xar6wa" path="res://assets/player/fist2.png" id="1_iad6r"]
 [ext_resource type="Script" uid="uid://docl282vob1qf" path="res://scenes/player/fist.gd" id="1_ku1og"]
-[ext_resource type="Texture2D" uid="uid://cymummawncy4v" path="res://asstets/player/fist2.aseprite.png" id="2_sbfs3"]
+[ext_resource type="Texture2D" uid="uid://cymummawncy4v" path="res://assets/player/fist2.aseprite.png" id="2_sbfs3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n4yoh"]
 atlas = ExtResource("1_iad6r")

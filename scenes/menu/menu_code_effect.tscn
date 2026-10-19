@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cagpq2ycw3mwg"]
 
-[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="1_38ebu"]
+[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://assets/menu/Perfect DOS VGA 437 Win.ttf" id="1_38ebu"]
 [ext_resource type="Script" uid="uid://bfh44y41c5yhp" path="res://scenes/menu/menu_code_effect.gd" id="1_iyhdt"]
 
 [node name="Label" type="RichTextLabel" unique_id=1579308870]

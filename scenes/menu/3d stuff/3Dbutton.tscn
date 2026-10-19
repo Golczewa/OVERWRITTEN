@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://k5d3enng1mx"]
 
 [ext_resource type="Script" uid="uid://ue3clyo3iq33" path="res://scenes/menu/3d stuff/3_dbutton.gd" id="1_20hqj"]
-[ext_resource type="ArrayMesh" uid="uid://c7pjeumicmaih" path="res://asstets/3d stuff/button1.obj" id="1_lnlwm"]
-[ext_resource type="ArrayMesh" uid="uid://bofs1p8ecqt02" path="res://asstets/3d stuff/button2.obj" id="2_20hqj"]
+[ext_resource type="ArrayMesh" uid="uid://c7pjeumicmaih" path="res://assets/3d stuff/button1.obj" id="1_lnlwm"]
+[ext_resource type="ArrayMesh" uid="uid://bofs1p8ecqt02" path="res://assets/3d stuff/button2.obj" id="2_20hqj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lnlwm"]
 albedo_color = Color(1, 1, 0, 1)

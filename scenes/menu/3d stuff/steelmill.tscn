@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bmps6hqseaixa"]
 
 [ext_resource type="Shader" uid="uid://bkpd0riwdw5fg" path="res://shaders/steelmill.gdshader" id="1_fd3cx"]
-[ext_resource type="ArrayMesh" uid="uid://cubodd3iog5vw" path="res://asstets/3d stuff/stealmill.obj" id="2_fd3cx"]
+[ext_resource type="ArrayMesh" uid="uid://cubodd3iog5vw" path="res://assets/3d stuff/stealmill.obj" id="2_fd3cx"]
 [ext_resource type="PackedScene" uid="uid://k5d3enng1mx" path="res://scenes/menu/3d stuff/3Dbutton.tscn" id="3_7ais2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fd3cx"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cnijtad8hhrio"]
 
-[ext_resource type="Texture2D" uid="uid://cs7aaabdkabo" path="res://asstets/enemies/scavenger_brute_legs.png" id="1_etw4g"]
+[ext_resource type="Texture2D" uid="uid://cs7aaabdkabo" path="res://assets/enemies/scavenger_brute_legs.png" id="1_etw4g"]
 [ext_resource type="Script" uid="uid://dbj6alxoapjxn" path="res://scenes/enemies/legs.gd" id="2_kx4nc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kx4nc"]

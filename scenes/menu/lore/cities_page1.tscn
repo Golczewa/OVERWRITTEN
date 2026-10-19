@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://1nrcwwmkeunb" path="res://scenes/menu/lore/cities_page_1.gd" id="1_lvsjn"]
 [ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="2_jemi7"]
-[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="3_17ni2"]
-[ext_resource type="Texture2D" uid="uid://caa3am5vp3h1j" path="res://asstets/props/new_cracov.png" id="4_xt2ns"]
-[ext_resource type="Texture2D" uid="uid://djjupajru7vwh" path="res://asstets/props/thc.png" id="5_gk6oi"]
-[ext_resource type="Texture2D" uid="uid://csp8x2cs5sky4" path="res://asstets/props/paradise_city.png" id="6_xt2ns"]
-[ext_resource type="Texture2D" uid="uid://cutqtshxhvihh" path="res://asstets/props/crapdavia.png" id="7_gk6oi"]
+[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://assets/menu/Perfect DOS VGA 437 Win.ttf" id="3_17ni2"]
+[ext_resource type="Texture2D" uid="uid://caa3am5vp3h1j" path="res://assets/props/new_cracov.png" id="4_xt2ns"]
+[ext_resource type="Texture2D" uid="uid://djjupajru7vwh" path="res://assets/props/thc.png" id="5_gk6oi"]
+[ext_resource type="Texture2D" uid="uid://csp8x2cs5sky4" path="res://assets/props/paradise_city.png" id="6_xt2ns"]
+[ext_resource type="Texture2D" uid="uid://cutqtshxhvihh" path="res://assets/props/crapdavia.png" id="7_gk6oi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qyf8b"]
 bg_color = Color(0.8666667, 0.101960786, 0.21568628, 1)

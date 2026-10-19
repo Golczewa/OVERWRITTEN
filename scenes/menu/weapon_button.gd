@@ -9,4 +9,4 @@ func setup(_name: String, img: String, unlocked: bool = true):
 		icon = load(img)
 	else:
 		disabled = true
-		icon = load("res://asstets/menu/locked.png")
+		icon = load("res://assets/menu/locked.png")

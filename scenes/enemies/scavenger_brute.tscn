@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://kkqb7cfxl6sm"]
 
 [ext_resource type="Script" uid="uid://cemewsf4rmgj3" path="res://scenes/enemies/scavenger_brute.gd" id="1_i4orf"]
-[ext_resource type="Texture2D" uid="uid://c4fnrvd3fufx0" path="res://asstets/enemies/scavenger_brute_corpse.png" id="2_i4orf"]
-[ext_resource type="Texture2D" uid="uid://d5ptim6p6hj4" path="res://asstets/enemies/scavenger_brute.png" id="3_i4orf"]
+[ext_resource type="Texture2D" uid="uid://c4fnrvd3fufx0" path="res://assets/enemies/scavenger_brute_corpse.png" id="2_i4orf"]
+[ext_resource type="Texture2D" uid="uid://d5ptim6p6hj4" path="res://assets/enemies/scavenger_brute.png" id="3_i4orf"]
 [ext_resource type="PackedScene" uid="uid://cnijtad8hhrio" path="res://scenes/enemies/legs.tscn" id="4_7scwk"]
-[ext_resource type="Texture2D" uid="uid://btpe60h2pnb5g" path="res://asstets/enemies/machete_2,0 — kopia.png" id="4_crxno"]
+[ext_resource type="Texture2D" uid="uid://btpe60h2pnb5g" path="res://assets/enemies/machete_2,0 — kopia.png" id="4_crxno"]
 [ext_resource type="PackedScene" uid="uid://yqxpfo2l2m20" path="res://scenes/effects/arrow.tscn" id="6_crxno"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7scwk"]

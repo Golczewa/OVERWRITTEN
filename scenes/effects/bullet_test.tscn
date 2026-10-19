@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c7334xe3kn3dl"]
 
 [ext_resource type="Script" uid="uid://b3a1boyjd2pa8" path="res://scenes/effects/bullet_test.gd" id="1_87sy2"]
-[ext_resource type="Texture2D" uid="uid://dsb3x3xdqaame" path="res://asstets/enemies/bullet_revolver.png" id="2_87sy2"]
+[ext_resource type="Texture2D" uid="uid://dsb3x3xdqaame" path="res://assets/enemies/bullet_revolver.png" id="2_87sy2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87sy2"]
 size = Vector2(4, 2)

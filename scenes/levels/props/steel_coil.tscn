@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ekuae61xiicy"]
 
 [ext_resource type="Script" uid="uid://dqqv1cgtqfror" path="res://scenes/levels/props/steel_coil.gd" id="1_odi5r"]
-[ext_resource type="Texture2D" uid="uid://fxo3o4hnbpbp" path="res://asstets/props/steel_coil.png" id="1_swchx"]
+[ext_resource type="Texture2D" uid="uid://fxo3o4hnbpbp" path="res://assets/props/steel_coil.png" id="1_swchx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_odi5r"]
 atlas = ExtResource("1_swchx")

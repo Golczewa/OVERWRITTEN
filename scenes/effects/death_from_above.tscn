@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://6q75tinf5ntg"]
 
 [ext_resource type="Script" uid="uid://cc3kn2ojcsfs3" path="res://scenes/effects/death_from_above.gd" id="1_37j1q"]
-[ext_resource type="Texture2D" uid="uid://cap3qyeffnj6t" path="res://asstets/efects/warning.png" id="1_rkdms"]
+[ext_resource type="Texture2D" uid="uid://cap3qyeffnj6t" path="res://assets/efects/warning.png" id="1_rkdms"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jiq1j"]
 radius = 32.24903

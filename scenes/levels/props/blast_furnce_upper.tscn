@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bw06yqrcnjj2e"]
 
 [ext_resource type="PackedScene" uid="uid://bqml6iwreuavg" path="res://scenes/levels/props/black_backround.tscn" id="2_kdcwc"]
-[ext_resource type="Texture2D" uid="uid://cswaqot70ta7n" path="res://asstets/props/blast_furnace.png" id="3_mibdx"]
-[ext_resource type="Texture2D" uid="uid://0uh0rx1ddq6w" path="res://asstets/props/light_test.png" id="4_mfkth"]
+[ext_resource type="Texture2D" uid="uid://cswaqot70ta7n" path="res://assets/props/blast_furnace.png" id="3_mibdx"]
+[ext_resource type="Texture2D" uid="uid://0uh0rx1ddq6w" path="res://assets/props/light_test.png" id="4_mfkth"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_87agk"]
 atlas = ExtResource("3_mibdx")

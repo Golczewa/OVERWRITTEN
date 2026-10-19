@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://pdn2oykes4m1"]
 
-[ext_resource type="Texture2D" uid="uid://cr45pxckyf6i6" path="res://asstets/enemies/scavenger_gooner_weapon.png" id="1_16teb"]
+[ext_resource type="Texture2D" uid="uid://cr45pxckyf6i6" path="res://assets/enemies/scavenger_gooner_weapon.png" id="1_16teb"]
 [ext_resource type="Script" uid="uid://drnr315lviwe1" path="res://scenes/test_gun.gd" id="2_16teb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ve081"]

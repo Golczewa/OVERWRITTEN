@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://caviuqcdjj66h"]
 
-[ext_resource type="Texture2D" uid="uid://bsy575g8qrh4t" path="res://asstets/efects/explosion.png" id="1_jbyia"]
+[ext_resource type="Texture2D" uid="uid://bsy575g8qrh4t" path="res://assets/efects/explosion.png" id="1_jbyia"]
 [ext_resource type="Script" uid="uid://bir08fo0tcgli" path="res://scenes/effects/rocket_explosion.gd" id="2_nlfac"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nlfac"]

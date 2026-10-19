@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://outynbsf3ogm"]
 
-[ext_resource type="Texture2D" uid="uid://ph5jxrv7cha4" path="res://asstets/player/revolver_player.png" id="1_d5d1h"]
+[ext_resource type="Texture2D" uid="uid://ph5jxrv7cha4" path="res://assets/player/revolver_player.png" id="1_d5d1h"]
 [ext_resource type="Script" uid="uid://bvvkqj5bslth" path="res://scenes/player/player_revolver.gd" id="2_cghyl"]
 [ext_resource type="PackedScene" uid="uid://c7334xe3kn3dl" path="res://scenes/effects/bullet_test.tscn" id="3_jf0n7"]
-[ext_resource type="Texture2D" uid="uid://dqalvdhpngak" path="res://asstets/player/playerHand.png" id="3_yyisv"]
-[ext_resource type="Texture2D" uid="uid://c1cf4pisbmws6" path="res://asstets/player/cloghed_hand.png" id="5_1ulb6"]
-[ext_resource type="Texture2D" uid="uid://cc1qdby3jfcoa" path="res://asstets/player/other_arm.png" id="5_jf0n7"]
+[ext_resource type="Texture2D" uid="uid://dqalvdhpngak" path="res://assets/player/playerHand.png" id="3_yyisv"]
+[ext_resource type="Texture2D" uid="uid://c1cf4pisbmws6" path="res://assets/player/cloghed_hand.png" id="5_1ulb6"]
+[ext_resource type="Texture2D" uid="uid://cc1qdby3jfcoa" path="res://assets/player/other_arm.png" id="5_jf0n7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uutei"]
 animations = [{

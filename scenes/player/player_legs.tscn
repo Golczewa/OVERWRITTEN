@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dco1qqc6am2wg"]
 
-[ext_resource type="Texture2D" uid="uid://dg20y37x3od4n" path="res://asstets/player/john_overwritten_legs.png" id="1_vgpjd"]
-[ext_resource type="Texture2D" uid="uid://dt7ldvrspm8r5" path="res://asstets/player/john_overwritten_legs_redux.png" id="2_3htt6"]
+[ext_resource type="Texture2D" uid="uid://dg20y37x3od4n" path="res://assets/player/john_overwritten_legs.png" id="1_vgpjd"]
+[ext_resource type="Texture2D" uid="uid://dt7ldvrspm8r5" path="res://assets/player/john_overwritten_legs_redux.png" id="2_3htt6"]
 [ext_resource type="Script" uid="uid://bk4wwtdtpjyn6" path="res://scenes/player/player_legs.gd" id="2_oag7y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_alqou"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://24vf6dkfak24"
+path="res://.godot/imported/Corporate Skyline FULL TRACK LOOPABLE.ogg-f27d9f4c8dba9c3629afeee683990f0d.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Corporate Skyline FULL TRACK LOOPABLE.ogg"
+dest_files=["res://.godot/imported/Corporate Skyline FULL TRACK LOOPABLE.ogg-f27d9f4c8dba9c3629afeee683990f0d.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

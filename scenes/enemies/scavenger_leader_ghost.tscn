@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://baylbwoglweja"]
 
 [ext_resource type="Script" uid="uid://bd1x3r5rv3sg4" path="res://scenes/enemies/scavenger_leader_ghost.gd" id="1_7o775"]
-[ext_resource type="Texture2D" uid="uid://c6hl8g71fw5xx" path="res://asstets/enemies/scavenger_leader_body.png" id="1_vchd8"]
-[ext_resource type="Texture2D" uid="uid://cghj8gl4lqgpm" path="res://asstets/enemies/scavenger_leader_head.png" id="2_7o775"]
+[ext_resource type="Texture2D" uid="uid://c6hl8g71fw5xx" path="res://assets/enemies/scavenger_leader_body.png" id="1_vchd8"]
+[ext_resource type="Texture2D" uid="uid://cghj8gl4lqgpm" path="res://assets/enemies/scavenger_leader_head.png" id="2_7o775"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d8gqy"]
 atlas = ExtResource("1_vchd8")

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c7dras6px7ygo" path="res://scenes/levels/props/window.tscn" id="1_utici"]
 [ext_resource type="PackedScene" uid="uid://bqml6iwreuavg" path="res://scenes/levels/props/black_backround.tscn" id="1_wi5xl"]
-[ext_resource type="Texture2D" uid="uid://bbk2vnch32h3q" path="res://asstets/tiles/carpet.png" id="2_x3r45"]
+[ext_resource type="Texture2D" uid="uid://bbk2vnch32h3q" path="res://assets/tiles/carpet.png" id="2_x3r45"]
 [ext_resource type="PackedScene" uid="uid://ekuae61xiicy" path="res://scenes/levels/props/steel_coil.tscn" id="3_n5rw6"]
 [ext_resource type="PackedScene" uid="uid://dx6coyedjwi70" path="res://scenes/levels/props/shelf.tscn" id="4_0eo14"]
 [ext_resource type="PackedScene" uid="uid://bn4nlbvpeol31" path="res://scenes/levels/props/post.tscn" id="4_t2k05"]

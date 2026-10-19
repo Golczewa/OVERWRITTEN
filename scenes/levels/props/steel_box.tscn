@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cjq4kxi30n77n"]
 
-[ext_resource type="Texture2D" uid="uid://dh0ce72dk0ue8" path="res://asstets/props/steel_box.png" id="1_dlxih"]
+[ext_resource type="Texture2D" uid="uid://dh0ce72dk0ue8" path="res://assets/props/steel_box.png" id="1_dlxih"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jiq1j"]
 size = Vector2(64, 64)

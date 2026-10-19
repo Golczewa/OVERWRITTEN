@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bqml6iwreuavg" path="res://scenes/levels/props/black_backround.tscn" id="1_fm6fj"]
 [ext_resource type="PackedScene" uid="uid://c7dras6px7ygo" path="res://scenes/levels/props/window.tscn" id="1_u5l26"]
-[ext_resource type="Texture2D" uid="uid://bbk2vnch32h3q" path="res://asstets/tiles/carpet.png" id="2_vmyvg"]
+[ext_resource type="Texture2D" uid="uid://bbk2vnch32h3q" path="res://assets/tiles/carpet.png" id="2_vmyvg"]
 [ext_resource type="PackedScene" uid="uid://dx6coyedjwi70" path="res://scenes/levels/props/shelf.tscn" id="3_bhd4d"]
 [ext_resource type="PackedScene" uid="uid://ccejfivnmcve4" path="res://scenes/levels/props/box.tscn" id="4_k3bux"]
 [ext_resource type="PackedScene" uid="uid://gj30vfnvc6xg" path="res://scenes/levels/props/small_box.tscn" id="5_uht3s"]
@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://celr313hqg5fq" path="res://scenes/levels/props/cabinet.tscn" id="10_6ri67"]
 [ext_resource type="PackedScene" uid="uid://7t52ndlogwmr" path="res://scenes/levels/props/waring_sign.tscn" id="12_c5goy"]
 [ext_resource type="PackedScene" uid="uid://b3ueah6mp7i4o" path="res://scenes/levels/props/vent_seelmill.tscn" id="13_n4tn6"]
-[ext_resource type="Texture2D" uid="uid://b4n04w13r6f14" path="res://asstets/props/spill.png" id="13_syev4"]
+[ext_resource type="Texture2D" uid="uid://b4n04w13r6f14" path="res://assets/props/spill.png" id="13_syev4"]
 [ext_resource type="PackedScene" uid="uid://d3wncsnwtpaki" path="res://scenes/levels/props/barrel_spill.tscn" id="14_c3kdu"]
 [ext_resource type="PackedScene" uid="uid://b4aojcvvkdto3" path="res://scenes/levels/props/pipe_steelmill.tscn" id="15_cdvrm"]
 [ext_resource type="PackedScene" uid="uid://sy828mfp74w6" path="res://scenes/levels/props/barrel.tscn" id="15_kjmiq"]

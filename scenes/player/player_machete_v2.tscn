@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://byrdojof2wfwb"]
 
-[ext_resource type="Texture2D" uid="uid://ye6er3qijuih" path="res://asstets/player/john_overwritten_machete3.png" id="1_kjfne"]
+[ext_resource type="Texture2D" uid="uid://ye6er3qijuih" path="res://assets/player/john_overwritten_machete3.png" id="1_kjfne"]
 [ext_resource type="Script" uid="uid://bp4p5yqq1s7ab" path="res://scenes/player/player_machete_v_2.gd" id="2_qmelj"]
-[ext_resource type="Texture2D" uid="uid://dqalvdhpngak" path="res://asstets/player/playerHand.png" id="3_cjgvy"]
-[ext_resource type="Texture2D" uid="uid://c1cf4pisbmws6" path="res://asstets/player/cloghed_hand.png" id="4_cjgvy"]
-[ext_resource type="Texture2D" uid="uid://cc1qdby3jfcoa" path="res://asstets/player/other_arm.png" id="4_oue8g"]
+[ext_resource type="Texture2D" uid="uid://dqalvdhpngak" path="res://assets/player/playerHand.png" id="3_cjgvy"]
+[ext_resource type="Texture2D" uid="uid://c1cf4pisbmws6" path="res://assets/player/cloghed_hand.png" id="4_cjgvy"]
+[ext_resource type="Texture2D" uid="uid://cc1qdby3jfcoa" path="res://assets/player/other_arm.png" id="4_oue8g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7yk3n"]
 atlas = ExtResource("1_kjfne")

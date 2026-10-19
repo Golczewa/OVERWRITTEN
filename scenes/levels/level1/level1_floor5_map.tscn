@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://dcf014qvo5dua"]
 
 [ext_resource type="PackedScene" uid="uid://bqml6iwreuavg" path="res://scenes/levels/props/black_backround.tscn" id="1_oo2fr"]
-[ext_resource type="Texture2D" uid="uid://bsdq8pplmunrd" path="res://asstets/tiles/rusty_wall.png" id="1_uxyrs"]
+[ext_resource type="Texture2D" uid="uid://bsdq8pplmunrd" path="res://assets/tiles/rusty_wall.png" id="1_uxyrs"]
 [ext_resource type="PackedScene" uid="uid://cohjld5qw3j8c" path="res://scenes/levels/props/trash_area.tscn" id="2_1rfwn"]
 [ext_resource type="PackedScene" uid="uid://c71vhww3onajj" path="res://scenes/levels/props/steelmill_table.tscn" id="4_0xma8"]
 [ext_resource type="PackedScene" uid="uid://ceu0cohg5lr7t" path="res://scenes/levels/props/pile_of_trash.tscn" id="5_jysi8"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://2i15cw6dhsjf"
+path="res://.godot/imported/Anexodus FULL TRACK LOOPABLE.ogg-b84482136a2d63025b378c4c595447b5.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Anexodus FULL TRACK LOOPABLE.ogg"
+dest_files=["res://.godot/imported/Anexodus FULL TRACK LOOPABLE.ogg-b84482136a2d63025b378c4c595447b5.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

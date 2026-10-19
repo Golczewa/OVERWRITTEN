@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://crxcokgedkj4a"]
 
 [ext_resource type="Script" uid="uid://cwa6v8ln6x6jg" path="res://scenes/levels/props/lore.gd" id="1_4houg"]
-[ext_resource type="Texture2D" uid="uid://h2f47iruoq1u" path="res://asstets/props/pendrive.png" id="1_srvmv"]
-[ext_resource type="Texture2D" uid="uid://b2ia38rnstokb" path="res://asstets/props/document.png" id="2_4houg"]
-[ext_resource type="Texture2D" uid="uid://bdg4p4fkssrd4" path="res://asstets/props/tablet.png" id="3_kq6m0"]
+[ext_resource type="Texture2D" uid="uid://h2f47iruoq1u" path="res://assets/props/pendrive.png" id="1_srvmv"]
+[ext_resource type="Texture2D" uid="uid://b2ia38rnstokb" path="res://assets/props/document.png" id="2_4houg"]
+[ext_resource type="Texture2D" uid="uid://bdg4p4fkssrd4" path="res://assets/props/tablet.png" id="3_kq6m0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jiq1j"]
 animations = [{

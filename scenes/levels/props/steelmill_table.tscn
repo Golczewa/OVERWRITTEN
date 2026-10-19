@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c71vhww3onajj"]
 
-[ext_resource type="Texture2D" uid="uid://cnit8bg658uy4" path="res://asstets/props/steelmill_table.png" id="1_7amvd"]
+[ext_resource type="Texture2D" uid="uid://cnit8bg658uy4" path="res://assets/props/steelmill_table.png" id="1_7amvd"]
 [ext_resource type="Script" uid="uid://bs5uytnsuyqub" path="res://scenes/levels/props/steelmill_table.gd" id="1_d28mc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d28mc"]

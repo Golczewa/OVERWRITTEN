@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d3wncsnwtpaki"]
 
-[ext_resource type="Texture2D" uid="uid://dmr0kimrwnvcn" path="res://asstets/props/barrel_spill.png" id="1_ut7au"]
+[ext_resource type="Texture2D" uid="uid://dmr0kimrwnvcn" path="res://assets/props/barrel_spill.png" id="1_ut7au"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jiq1j"]
 size = Vector2(53, 31)

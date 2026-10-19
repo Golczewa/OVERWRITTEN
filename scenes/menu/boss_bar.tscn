@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://jvxuc6sf5ovw"]
 
-[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="1_4iphp"]
+[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://assets/menu/Perfect DOS VGA 437 Win.ttf" id="1_4iphp"]
 [ext_resource type="Script" uid="uid://tv0x1tn5kdug" path="res://scenes/menu/boss_bar.gd" id="1_f1vsr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1vsr"]

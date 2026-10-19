@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b2hh5rx0awj0n"]
 
 [ext_resource type="Script" uid="uid://4gsgwt1ji3vx" path="res://scenes/levels/props/scav_wrack.gd" id="1_3kj54"]
-[ext_resource type="Texture2D" uid="uid://fp05j5bhxyc8" path="res://asstets/props/wrack_scav.png" id="1_tukmh"]
-[ext_resource type="Texture2D" uid="uid://0uh0rx1ddq6w" path="res://asstets/props/light_test.png" id="2_kk8jy"]
+[ext_resource type="Texture2D" uid="uid://fp05j5bhxyc8" path="res://assets/props/wrack_scav.png" id="1_tukmh"]
+[ext_resource type="Texture2D" uid="uid://0uh0rx1ddq6w" path="res://assets/props/light_test.png" id="2_kk8jy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kk8jy"]
 animations = [{

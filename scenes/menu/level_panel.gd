@@ -34,7 +34,7 @@ func setup(num: int):
 			$TextureRect.set_texture(load(ConfigManager.levels.get_value(section_name, "image")))
 			$AspectRatioContainer.format_title(ConfigManager.levels.get_value(section_name, "name"))
 		else:
-			$TextureRect.set_texture(load("res://asstets/level_thumbnail/unknown.png"))
+			$TextureRect.set_texture(load("res://assets/level_thumbnail/unknown.png"))
 			$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Label.text = " ???.ovr"
 		$HBoxContainer2.display(ConfigManager.levels_progress.get_value(section_name, "rank"))
 		$score.text = (

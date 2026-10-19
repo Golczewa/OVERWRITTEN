@@ -36,7 +36,7 @@ func update():
 		$TextureRect.position = Vector2(-1, 41)
 	else:
 		$Label.text = "Locked"
-		$TextureRect.texture = load("res://asstets/menu/locked.png")
+		$TextureRect.texture = load("res://assets/menu/locked.png")
 		$TextureRect.rotation = 0
 		$TextureRect.position = Vector2(13, 1)
 		$button.disabled = true

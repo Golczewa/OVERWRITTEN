@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://bkriveic7mop1"]
 
 [ext_resource type="Script" uid="uid://c5fd0s3wrkgcf" path="res://scenes/enemies/henry.gd" id="1_an1b6"]
-[ext_resource type="Texture2D" uid="uid://ifgm6fb2fuyv" path="res://asstets/enemies/v2137.png" id="2_5i5tf"]
-[ext_resource type="Texture2D" uid="uid://ck0nieumfogoa" path="res://asstets/enemies/v2137_corpse.png" id="2_an1b6"]
+[ext_resource type="Texture2D" uid="uid://ifgm6fb2fuyv" path="res://assets/enemies/v2137.png" id="2_5i5tf"]
+[ext_resource type="Texture2D" uid="uid://ck0nieumfogoa" path="res://assets/enemies/v2137_corpse.png" id="2_an1b6"]
 [ext_resource type="PackedScene" uid="uid://cnijtad8hhrio" path="res://scenes/enemies/legs.tscn" id="3_bad0o"]
-[ext_resource type="Texture2D" uid="uid://b0yooecf0iyub" path="res://asstets/enemies/revo.png" id="4_otiuk"]
-[ext_resource type="Texture2D" uid="uid://ctwn2gc6ihi2i" path="res://asstets/enemies/rv.png" id="5_otiuk"]
-[ext_resource type="Texture2D" uid="uid://cjad2l5ylt80k" path="res://asstets/enemies/v2137_machete.png" id="5_tmyn0"]
+[ext_resource type="Texture2D" uid="uid://b0yooecf0iyub" path="res://assets/enemies/revo.png" id="4_otiuk"]
+[ext_resource type="Texture2D" uid="uid://ctwn2gc6ihi2i" path="res://assets/enemies/rv.png" id="5_otiuk"]
+[ext_resource type="Texture2D" uid="uid://cjad2l5ylt80k" path="res://assets/enemies/v2137_machete.png" id="5_tmyn0"]
 [ext_resource type="PackedScene" uid="uid://yqxpfo2l2m20" path="res://scenes/effects/arrow.tscn" id="8_otiuk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iqkd3"]

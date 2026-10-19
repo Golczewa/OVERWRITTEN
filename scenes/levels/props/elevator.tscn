@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://w11kiwjryi55"]
 
 [ext_resource type="Script" uid="uid://cg58ykryfd5ch" path="res://scenes/levels/props/elevator.gd" id="1_1cg7p"]
-[ext_resource type="Texture2D" uid="uid://dxrmn30ae17ht" path="res://asstets/props/elevator.png" id="1_ginok"]
-[ext_resource type="Texture2D" uid="uid://bvoap1pkrhdkt" path="res://asstets/props/entrance.png" id="2_4nc5c"]
-[ext_resource type="Texture2D" uid="uid://0uh0rx1ddq6w" path="res://asstets/props/light_test.png" id="4_xagq4"]
+[ext_resource type="Texture2D" uid="uid://dxrmn30ae17ht" path="res://assets/props/elevator.png" id="1_ginok"]
+[ext_resource type="Texture2D" uid="uid://bvoap1pkrhdkt" path="res://assets/props/entrance.png" id="2_4nc5c"]
+[ext_resource type="Texture2D" uid="uid://0uh0rx1ddq6w" path="res://assets/props/light_test.png" id="4_xagq4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ginok"]
 size = Vector2(128, 4)

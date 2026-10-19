@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://eapp1741qlvm"]
 
 [ext_resource type="Script" uid="uid://dj2ovwcp267bp" path="res://scenes/levels/props/doors.gd" id="1_26m4p"]
-[ext_resource type="Texture2D" uid="uid://bfqtecnk8hw27" path="res://asstets/props/le_door.png" id="2_l42pt"]
-[ext_resource type="Texture2D" uid="uid://cq8mq25b3mvm1" path="res://asstets/walls/doors_steemill2.png" id="3_3jg5l"]
+[ext_resource type="Texture2D" uid="uid://bfqtecnk8hw27" path="res://assets/props/le_door.png" id="2_l42pt"]
+[ext_resource type="Texture2D" uid="uid://cq8mq25b3mvm1" path="res://assets/walls/doors_steemill2.png" id="3_3jg5l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3jg5l"]
 atlas = ExtResource("2_l42pt")

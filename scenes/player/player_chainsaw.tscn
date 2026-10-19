@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://iuedbxgfku1v"]
 
-[ext_resource type="Texture2D" uid="uid://18vttnag6lfo" path="res://asstets/player/chainsaw_sword.png" id="1_yycl8"]
+[ext_resource type="Texture2D" uid="uid://18vttnag6lfo" path="res://assets/player/chainsaw_sword.png" id="1_yycl8"]
 [ext_resource type="Script" uid="uid://b07d28o8w673d" path="res://scenes/player/player_chainsaw.gd" id="2_yycl8"]
-[ext_resource type="Texture2D" uid="uid://dqalvdhpngak" path="res://asstets/player/playerHand.png" id="3_h53pi"]
-[ext_resource type="Texture2D" uid="uid://c1cf4pisbmws6" path="res://asstets/player/cloghed_hand.png" id="4_h53pi"]
-[ext_resource type="Texture2D" uid="uid://cc1qdby3jfcoa" path="res://asstets/player/other_arm.png" id="4_m4w4o"]
+[ext_resource type="Texture2D" uid="uid://dqalvdhpngak" path="res://assets/player/playerHand.png" id="3_h53pi"]
+[ext_resource type="Texture2D" uid="uid://c1cf4pisbmws6" path="res://assets/player/cloghed_hand.png" id="4_h53pi"]
+[ext_resource type="Texture2D" uid="uid://cc1qdby3jfcoa" path="res://assets/player/other_arm.png" id="4_m4w4o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6pfbh"]
 atlas = ExtResource("1_yycl8")

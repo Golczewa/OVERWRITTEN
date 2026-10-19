@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cgeswc1idc7bu" path="res://scenes/menu/game_over.gd" id="1_wqhvx"]
 [ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="2_cwht0"]
-[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="3_uhccs"]
+[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://assets/menu/Perfect DOS VGA 437 Win.ttf" id="3_uhccs"]
 [ext_resource type="PackedScene" uid="uid://du4k8ns7pgxg8" path="res://scenes/menu/button.tscn" id="4_uhccs"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ypicd"]

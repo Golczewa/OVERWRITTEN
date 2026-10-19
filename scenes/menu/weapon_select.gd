@@ -50,7 +50,7 @@ func display_disc(i):
 		$Label2.text = ConfigManager.weapons.get_value(str(i), "name")
 		$Label.text = ConfigManager.weapons.get_value(str(i), "description")
 	else:
-		$TextureRect.texture = load("res://asstets/menu/locked.png")
+		$TextureRect.texture = load("res://assets/menu/locked.png")
 		$Label2.text = "???"
 		$Label.text = ""
 

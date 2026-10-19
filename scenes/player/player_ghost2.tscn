@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://h32rru3abg61"]
 
-[ext_resource type="Texture2D" uid="uid://blfiaj0pbji4r" path="res://asstets/player/john_overwritten.png" id="1_navkg"]
+[ext_resource type="Texture2D" uid="uid://blfiaj0pbji4r" path="res://assets/player/john_overwritten.png" id="1_navkg"]
 [ext_resource type="Script" uid="uid://di7mmhac6eqfc" path="res://scenes/player/player_ghost_2.gd" id="2_ddt07"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ddt07"]

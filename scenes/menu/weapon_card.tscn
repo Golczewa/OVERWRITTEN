@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bpf5ntl6k4qfh"]
 
 [ext_resource type="Script" uid="uid://b52abn5ec2n20" path="res://scenes/menu/weapon_card.gd" id="1_6anpk"]
-[ext_resource type="Texture2D" uid="uid://c02eoit2fy7kt" path="res://asstets/menu/locked.png" id="2_6anpk"]
-[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="3_6anpk"]
+[ext_resource type="Texture2D" uid="uid://c02eoit2fy7kt" path="res://assets/menu/locked.png" id="2_6anpk"]
+[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://assets/menu/Perfect DOS VGA 437 Win.ttf" id="3_6anpk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v67j5"]
 bg_color = Color(0.24115604, 0.24115604, 0.24115604, 1)

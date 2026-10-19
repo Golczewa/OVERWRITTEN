@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bo6iv6ycgyodt" path="res://scenes/menu/menu_map_choice.gd" id="1_086vr"]
 [ext_resource type="PackedScene" uid="uid://du4k8ns7pgxg8" path="res://scenes/menu/button.tscn" id="2_g5ekd"]
 [ext_resource type="PackedScene" uid="uid://b0fntd36ji6wt" path="res://scenes/menu/3d stuff/steemill_v2.tscn" id="3_g5ekd"]
-[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="5_4d16b"]
+[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://assets/menu/Perfect DOS VGA 437 Win.ttf" id="5_4d16b"]
 [ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="5_pj20j"]
 [ext_resource type="PackedScene" uid="uid://bjll8nw7yfsi7" path="res://scenes/menu/level_label.tscn" id="6_4d16b"]
 

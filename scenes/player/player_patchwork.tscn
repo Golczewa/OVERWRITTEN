@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dmspk8okdglfj"]
 
-[ext_resource type="Texture2D" uid="uid://bn0qmamv5kro2" path="res://asstets/enemies/patchwork.png" id="1_437ls"]
+[ext_resource type="Texture2D" uid="uid://bn0qmamv5kro2" path="res://assets/enemies/patchwork.png" id="1_437ls"]
 [ext_resource type="Script" uid="uid://dj0ff7uioldw8" path="res://scenes/player/player_patchwork.gd" id="2_5tg5p"]
-[ext_resource type="Texture2D" uid="uid://dqalvdhpngak" path="res://asstets/player/playerHand.png" id="2_ouqbr"]
+[ext_resource type="Texture2D" uid="uid://dqalvdhpngak" path="res://assets/player/playerHand.png" id="2_ouqbr"]
 [ext_resource type="PackedScene" uid="uid://c7334xe3kn3dl" path="res://scenes/effects/bullet_test.tscn" id="3_5tg5p"]
-[ext_resource type="Texture2D" uid="uid://c1cf4pisbmws6" path="res://asstets/player/cloghed_hand.png" id="5_03cxe"]
-[ext_resource type="Texture2D" uid="uid://cc1qdby3jfcoa" path="res://asstets/player/other_arm.png" id="5_hh8a5"]
+[ext_resource type="Texture2D" uid="uid://c1cf4pisbmws6" path="res://assets/player/cloghed_hand.png" id="5_03cxe"]
+[ext_resource type="Texture2D" uid="uid://cc1qdby3jfcoa" path="res://assets/player/other_arm.png" id="5_hh8a5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5tg5p"]
 animations = [{

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dcg067jrbv53c"]
 
-[ext_resource type="Texture2D" uid="uid://b026njp6upe77" path="res://asstets/props/steelmill_belt.png" id="1_l31lp"]
+[ext_resource type="Texture2D" uid="uid://b026njp6upe77" path="res://assets/props/steelmill_belt.png" id="1_l31lp"]
 [ext_resource type="Script" uid="uid://bc6ksxuj6ryu" path="res://scenes/levels/props/steelmill_belt.gd" id="1_ut5gg"]
-[ext_resource type="Texture2D" uid="uid://0uh0rx1ddq6w" path="res://asstets/props/light_test.png" id="3_g4aax"]
+[ext_resource type="Texture2D" uid="uid://0uh0rx1ddq6w" path="res://assets/props/light_test.png" id="3_g4aax"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ut5gg"]
 atlas = ExtResource("1_l31lp")

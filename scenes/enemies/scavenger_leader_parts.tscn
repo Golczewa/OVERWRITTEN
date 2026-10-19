@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://iumx4q2lqrkd"]
 
-[ext_resource type="Texture2D" uid="uid://ctx02ycfjuln1" path="res://asstets/enemies/scavenger_leader_parts.png" id="1_tsxi1"]
+[ext_resource type="Texture2D" uid="uid://ctx02ycfjuln1" path="res://assets/enemies/scavenger_leader_parts.png" id="1_tsxi1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nba7q"]
 atlas = ExtResource("1_tsxi1")

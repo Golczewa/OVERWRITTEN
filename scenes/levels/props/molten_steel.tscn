@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dqhm3a6wmllxj"]
 
-[ext_resource type="Texture2D" uid="uid://bjy5e6ywv64kx" path="res://asstets/tiles/molten_steel2.png" id="1_qnsvs"]
+[ext_resource type="Texture2D" uid="uid://bjy5e6ywv64kx" path="res://assets/tiles/molten_steel2.png" id="1_qnsvs"]
 [ext_resource type="Script" uid="uid://p0a0jb1br633" path="res://scenes/levels/props/molten_steel.gd" id="2_4wm7r"]
-[ext_resource type="Texture2D" uid="uid://0uh0rx1ddq6w" path="res://asstets/props/light_test.png" id="2_qnsvs"]
+[ext_resource type="Texture2D" uid="uid://0uh0rx1ddq6w" path="res://assets/props/light_test.png" id="2_qnsvs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4wm7r"]
 atlas = ExtResource("1_qnsvs")

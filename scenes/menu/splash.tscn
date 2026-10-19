@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ldlptfqyh36y" path="res://scenes/menu/splash.gd" id="1_1j5u6"]
 [ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="1_qt77y"]
-[ext_resource type="Texture2D" uid="uid://cxbgagm43f0f5" path="res://asstets/godot_logo.png" id="2_1j5u6"]
+[ext_resource type="Texture2D" uid="uid://cxbgagm43f0f5" path="res://assets/godot_logo.png" id="2_1j5u6"]
 
 [node name="Control" type="Control" unique_id=1735869793]
 layout_mode = 3

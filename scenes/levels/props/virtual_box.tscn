@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c6ah02d8uk7au"]
 
 [ext_resource type="Script" uid="uid://djmpfmmrjomj7" path="res://scenes/levels/props/virtual_box.gd" id="1_bkbjm"]
-[ext_resource type="Texture2D" uid="uid://boajjubom8or" path="res://asstets/enemies/virtual_scavengerr.png" id="2_bkbjm"]
-[ext_resource type="Texture2D" uid="uid://0uh0rx1ddq6w" path="res://asstets/props/light_test.png" id="3_dyrt8"]
+[ext_resource type="Texture2D" uid="uid://boajjubom8or" path="res://assets/enemies/virtual_scavengerr.png" id="2_bkbjm"]
+[ext_resource type="Texture2D" uid="uid://0uh0rx1ddq6w" path="res://assets/props/light_test.png" id="3_dyrt8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{

@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://djvy7cjtuohp6"]
 
 [ext_resource type="Script" uid="uid://do7xpvxt5dkf6" path="res://scenes/enemies/scavenger_gunner.gd" id="1_ee4q7"]
-[ext_resource type="Texture2D" uid="uid://b7twfvry48epk" path="res://asstets/enemies/scavenger_gooner_corpse.png" id="2_1qstb"]
+[ext_resource type="Texture2D" uid="uid://b7twfvry48epk" path="res://assets/enemies/scavenger_gooner_corpse.png" id="2_1qstb"]
 [ext_resource type="PackedScene" uid="uid://yqxpfo2l2m20" path="res://scenes/effects/arrow.tscn" id="2_sobr0"]
-[ext_resource type="Texture2D" uid="uid://ctmdd472ojvj5" path="res://asstets/enemies/scavenger_gooner.png" id="3_ee4q7"]
-[ext_resource type="Texture2D" uid="uid://cr45pxckyf6i6" path="res://asstets/enemies/scavenger_gooner_weapon.png" id="4_mdpi0"]
+[ext_resource type="Texture2D" uid="uid://ctmdd472ojvj5" path="res://assets/enemies/scavenger_gooner.png" id="3_ee4q7"]
+[ext_resource type="Texture2D" uid="uid://cr45pxckyf6i6" path="res://assets/enemies/scavenger_gooner_weapon.png" id="4_mdpi0"]
 [ext_resource type="PackedScene" uid="uid://cnijtad8hhrio" path="res://scenes/enemies/legs.tscn" id="5_ee4q7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rjsos"]

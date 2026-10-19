@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="1_mqhgx"]
 [ext_resource type="Script" uid="uid://brom815a2dli8" path="res://scenes/player/heal_meter.gd" id="1_y05lr"]
-[ext_resource type="Texture2D" uid="uid://c6koe7khi1kqa" path="res://asstets/menu/battery.png" id="4_nba2d"]
+[ext_resource type="Texture2D" uid="uid://c6koe7khi1kqa" path="res://assets/menu/battery.png" id="4_nba2d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mxo5j"]
 bg_color = Color(0.9882353, 0.36862746, 0.3882353, 0.6627451)

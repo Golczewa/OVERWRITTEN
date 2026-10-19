@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://celr313hqg5fq"]
 
 [ext_resource type="Script" uid="uid://drydt4albecrt" path="res://scenes/levels/props/cabinet.gd" id="1_ecst6"]
-[ext_resource type="Texture2D" uid="uid://dkfgtvamvilrf" path="res://asstets/props/cabinet.png" id="1_tl5wn"]
+[ext_resource type="Texture2D" uid="uid://dkfgtvamvilrf" path="res://assets/props/cabinet.png" id="1_tl5wn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ecst6"]
 atlas = ExtResource("1_tl5wn")

@@ -11,66 +11,66 @@ var curr_sfx_volume: float = default_sfx_volume
 @export var game_sfx_loop_players: Array[AudioStreamPlayer]
 
 #UI SFX
-const menu_window_open: AudioStreamWAV = preload("res://asstets/sfx/Ting_Pitched_Down.wav")
+const menu_window_open: AudioStreamWAV = preload("res://assets/sfx/Ting_Pitched_Down.wav")
 const menu_window_close: AudioStreamWAV = preload(
-	"res://asstets/sfx/Ting_Pitched_Down_Backwards2.wav"
+	"res://assets/sfx/Ting_Pitched_Down_Backwards2.wav"
 )
-const weapon_equip: AudioStreamWAV = preload("res://asstets/sfx/Click_Combo_5_Pitched_Up.wav")
+const weapon_equip: AudioStreamWAV = preload("res://assets/sfx/Click_Combo_5_Pitched_Up.wav")
 
 #MUSIC
-const menu_theme: String = "res://asstets/music/Polaris FULL TRACK.ogg"
-const level_complete: String = "res://asstets/music/Digital Angels LOOP 1.ogg"
-const level_1_theme: String = "res://asstets/music/Spinner FULL TRACK.ogg"
-const neon_afetr_dark: String = "res://asstets/music/Neon After Dark FULL TRACK LOOPABLE.ogg"
-const level_2_theme: String = "res://asstets/music/Corporate Skyline FULL TRACK LOOPABLE.ogg"
-const level_3_theme: String = "res://asstets/music/Black Horses FULL TRACK LOOPABLE.ogg"
-const level_4_theme: String = "res://asstets/music/Landing Zone FULL TRACK.ogg"
-const boss_theme: String = "res://asstets/music/psychronic-chromatic-vanguard-281378.ogg"
+const menu_theme: String = "res://assets/music/Polaris FULL TRACK.ogg"
+const level_complete: String = "res://assets/music/Digital Angels LOOP 1.ogg"
+const level_1_theme: String = "res://assets/music/Spinner FULL TRACK.ogg"
+const neon_afetr_dark: String = "res://assets/music/Neon After Dark FULL TRACK LOOPABLE.ogg"
+const level_2_theme: String = "res://assets/music/Corporate Skyline FULL TRACK LOOPABLE.ogg"
+const level_3_theme: String = "res://assets/music/Black Horses FULL TRACK LOOPABLE.ogg"
+const level_4_theme: String = "res://assets/music/Landing Zone FULL TRACK.ogg"
+const boss_theme: String = "res://assets/music/psychronic-chromatic-vanguard-281378.ogg"
 
 #IN GAME SFX
 
-const pickup_hand: AudioStreamWAV = preload("res://asstets/sfx/Append.wav")
-const startup: AudioStreamWAV = preload("res://asstets/sfx/startup.wav")
-const explosion1: AudioStreamWAV = preload("res://asstets/sfx/explosion.wav")
-const explosion2: AudioStreamWAV = preload("res://asstets/sfx/explosion2.wav")
-const revolver_shot: AudioStreamWAV = preload("res://asstets/sfx/rev_shot.wav")
-const lauch: AudioStreamWAV = preload("res://asstets/sfx/lauch.wav")
-const shatter: AudioStreamWAV = preload("res://asstets/sfx/window_shatter.wav")
-const chainsaw_running: AudioStreamWAV = preload("res://asstets/sfx/chainsaw_runing.wav")
-const chainsaw_warning: AudioStreamWAV = preload("res://asstets/sfx/leader_chainsaw_warning.wav")
-const punch: AudioStreamWAV = preload("res://asstets/sfx/punch_sometching.wav")
-const swosh: AudioStreamWAV = preload("res://asstets/sfx/punch_air.wav")
-const slash: AudioStreamWAV = preload("res://asstets/sfx/sword.wav")
-const patchwork_shot: AudioStreamWAV = preload("res://asstets/sfx/pach_gunshot.wav")
-const coat: AudioStreamWAV = preload("res://asstets/sfx/cloth.wav")
-const virtual_guy_deadth: AudioStreamWAV = preload("res://asstets/sfx/virtual_death.wav")
-const hp_loading: AudioStreamWAV = preload("res://asstets/sfx/juice.wav")
-const revolver_spin: AudioStreamWAV = preload("res://asstets/sfx/revolver_spin.wav")
-const score: AudioStreamWAV = preload("res://asstets/sfx/score.wav")
-const door_open: AudioStreamWAV = preload("res://asstets/sfx/door_open.wav")
-const door_close: AudioStreamWAV = preload("res://asstets/sfx/door_close.wav")
-const metal_hit: AudioStreamWAV = preload("res://asstets/sfx/metal_hit.wav")
-const metal_hit2: AudioStreamWAV = preload("res://asstets/sfx/metal_hit2.wav")
-const alarm: AudioStreamWAV = preload("res://asstets/sfx/alarm.wav")
-const dash: AudioStreamWAV = preload("res://asstets/sfx/dash.wav")
-const fanfare: AudioStreamWAV = preload("res://asstets/sfx/fanfare.wav")
-const death: AudioStreamWAV = preload("res://asstets/sfx/death.wav")
-const heal: AudioStreamWAV = preload("res://asstets/sfx/Tone1A_FourthOctaveUp.wav")
+const pickup_hand: AudioStreamWAV = preload("res://assets/sfx/Append.wav")
+const startup: AudioStreamWAV = preload("res://assets/sfx/startup.wav")
+const explosion1: AudioStreamWAV = preload("res://assets/sfx/explosion.wav")
+const explosion2: AudioStreamWAV = preload("res://assets/sfx/explosion2.wav")
+const revolver_shot: AudioStreamWAV = preload("res://assets/sfx/rev_shot.wav")
+const lauch: AudioStreamWAV = preload("res://assets/sfx/lauch.wav")
+const shatter: AudioStreamWAV = preload("res://assets/sfx/window_shatter.wav")
+const chainsaw_running: AudioStreamWAV = preload("res://assets/sfx/chainsaw_runing.wav")
+const chainsaw_warning: AudioStreamWAV = preload("res://assets/sfx/leader_chainsaw_warning.wav")
+const punch: AudioStreamWAV = preload("res://assets/sfx/punch_sometching.wav")
+const swosh: AudioStreamWAV = preload("res://assets/sfx/punch_air.wav")
+const slash: AudioStreamWAV = preload("res://assets/sfx/sword.wav")
+const patchwork_shot: AudioStreamWAV = preload("res://assets/sfx/pach_gunshot.wav")
+const coat: AudioStreamWAV = preload("res://assets/sfx/cloth.wav")
+const virtual_guy_deadth: AudioStreamWAV = preload("res://assets/sfx/virtual_death.wav")
+const hp_loading: AudioStreamWAV = preload("res://assets/sfx/juice.wav")
+const revolver_spin: AudioStreamWAV = preload("res://assets/sfx/revolver_spin.wav")
+const score: AudioStreamWAV = preload("res://assets/sfx/score.wav")
+const door_open: AudioStreamWAV = preload("res://assets/sfx/door_open.wav")
+const door_close: AudioStreamWAV = preload("res://assets/sfx/door_close.wav")
+const metal_hit: AudioStreamWAV = preload("res://assets/sfx/metal_hit.wav")
+const metal_hit2: AudioStreamWAV = preload("res://assets/sfx/metal_hit2.wav")
+const alarm: AudioStreamWAV = preload("res://assets/sfx/alarm.wav")
+const dash: AudioStreamWAV = preload("res://assets/sfx/dash.wav")
+const fanfare: AudioStreamWAV = preload("res://assets/sfx/fanfare.wav")
+const death: AudioStreamWAV = preload("res://assets/sfx/death.wav")
+const heal: AudioStreamWAV = preload("res://assets/sfx/Tone1A_FourthOctaveUp.wav")
 
-const bullet_rickoshet1: AudioStreamWAV = preload("res://asstets/sfx/bullet_rickoshet1.wav")
-const bullet_rickoshet2: AudioStreamWAV = preload("res://asstets/sfx/bullet_rickoshet2.wav")
-const bullet_rickoshet3: AudioStreamWAV = preload("res://asstets/sfx/bullet_rickoshet3.wav")
-const bullet_rickoshet4: AudioStreamWAV = preload("res://asstets/sfx/bullet_rickoshet4.wav")
+const bullet_rickoshet1: AudioStreamWAV = preload("res://assets/sfx/bullet_rickoshet1.wav")
+const bullet_rickoshet2: AudioStreamWAV = preload("res://assets/sfx/bullet_rickoshet2.wav")
+const bullet_rickoshet3: AudioStreamWAV = preload("res://assets/sfx/bullet_rickoshet3.wav")
+const bullet_rickoshet4: AudioStreamWAV = preload("res://assets/sfx/bullet_rickoshet4.wav")
 
-const hurt_1: AudioStreamWAV = preload("res://asstets/sfx/virtual_death.wav")
-const hurt_2: AudioStreamWAV = preload("res://asstets/sfx/Glitch_15.wav")
-const hurt_3: AudioStreamWAV = preload("res://asstets/sfx/Glitch_10.wav")
-const hurt_4: AudioStreamWAV = preload("res://asstets/sfx/Glitch_20.wav")
+const hurt_1: AudioStreamWAV = preload("res://assets/sfx/virtual_death.wav")
+const hurt_2: AudioStreamWAV = preload("res://assets/sfx/Glitch_15.wav")
+const hurt_3: AudioStreamWAV = preload("res://assets/sfx/Glitch_10.wav")
+const hurt_4: AudioStreamWAV = preload("res://assets/sfx/Glitch_20.wav")
 
-const enemy_hurt_1: AudioStreamWAV = preload("res://asstets/sfx/does_it_hurt_1.wav")
-const enemy_hurt_2: AudioStreamWAV = preload("res://asstets/sfx/does_it_hurt_2.wav")
-const enemy_hurt_3: AudioStreamWAV = preload("res://asstets/sfx/does_it_hurt_3.wav")
-const enemy_hurt_4: AudioStreamWAV = preload("res://asstets/sfx/does_it_hurt_4.wav")
+const enemy_hurt_1: AudioStreamWAV = preload("res://assets/sfx/does_it_hurt_1.wav")
+const enemy_hurt_2: AudioStreamWAV = preload("res://assets/sfx/does_it_hurt_2.wav")
+const enemy_hurt_3: AudioStreamWAV = preload("res://assets/sfx/does_it_hurt_3.wav")
+const enemy_hurt_4: AudioStreamWAV = preload("res://assets/sfx/does_it_hurt_4.wav")
 
 
 func _ready() -> void:

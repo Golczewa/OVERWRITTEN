@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dohr1syjxqq1r"]
 
-[ext_resource type="Texture2D" uid="uid://dreb6mqke7ul1" path="res://asstets/props/trash.png" id="1_2yc8w"]
+[ext_resource type="Texture2D" uid="uid://dreb6mqke7ul1" path="res://assets/props/trash.png" id="1_2yc8w"]
 [ext_resource type="Script" uid="uid://04tohu0ni5yx" path="res://scenes/levels/props/trash_steelmill.gd" id="2_ykp38"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ykp38"]

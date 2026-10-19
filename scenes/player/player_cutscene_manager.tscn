@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://eahvexcdkbyl"]
 
-[ext_resource type="Texture2D" uid="uid://byco8efm2dweg" path="res://asstets/player/john_overriten_corpse.png" id="1_1rxj8"]
+[ext_resource type="Texture2D" uid="uid://byco8efm2dweg" path="res://assets/player/john_overriten_corpse.png" id="1_1rxj8"]
 [ext_resource type="Script" uid="uid://tiyl3xyq3n8p" path="res://scenes/player/player_cutscene_manager.gd" id="1_yp5bs"]
-[ext_resource type="Texture2D" uid="uid://dhmlcuhsbjuhm" path="res://asstets/player/stary_wstal.png" id="2_yp5bs"]
-[ext_resource type="Texture2D" uid="uid://c5r2jdhcptvo5" path="res://asstets/player/john_overriten_corpse_cloth.png" id="3_10nri"]
+[ext_resource type="Texture2D" uid="uid://dhmlcuhsbjuhm" path="res://assets/player/stary_wstal.png" id="2_yp5bs"]
+[ext_resource type="Texture2D" uid="uid://c5r2jdhcptvo5" path="res://assets/player/john_overriten_corpse_cloth.png" id="3_10nri"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0owmy"]
 atlas = ExtResource("1_1rxj8")

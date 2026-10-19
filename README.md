@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="asstets/menu/title.svg" alt="OVERWRITTEN">
+  <img src="assets/menu/title.svg" alt="OVERWRITTEN">
 </p>
 
 **OVERWRITTEN** is a single-player 2D action shooter inspired by Hotline Miami.After the apocalypse, no biological life remains. The robots create the only remaining societies on the planet. You wake up as one of them in middle of nowhere, wanting revenge on whoever did this to you. Unlock new weapons, get up to 4 hands to put them in, and fight through waves on enemies! Made in Godot 4.7 and written in GDScript.
 
 <p align="center">
-  <img src="asstets/ovr.gif" alt="OVERWRITTEN gameplay showcase">
+  <img src="assets/ovr.gif" alt="OVERWRITTEN gameplay showcase">
 </p>
 
 ## Beta version Features

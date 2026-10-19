@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ca0633vmwox0a" path="res://scenes/menu/warning_window.gd" id="1_hh58h"]
 [ext_resource type="Script" uid="uid://8vimbe8e08su" path="res://scenes/menu/menu_window.gd" id="2_2lff1"]
 [ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="3_7w3s5"]
-[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="4_n11dh"]
+[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://assets/menu/Perfect DOS VGA 437 Win.ttf" id="4_n11dh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7il6"]
 bg_color = Color(0.6, 0.6, 0.6, 0)

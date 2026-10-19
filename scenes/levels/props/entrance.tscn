@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bdwlvl0qdr800"]
 
 [ext_resource type="Script" uid="uid://bb1fyq055an6q" path="res://scenes/levels/props/enrance.gd" id="1_4wcqd"]
-[ext_resource type="Texture2D" uid="uid://dolt8f6j7b5hd" path="res://asstets/props/exit_door.png" id="1_aln74"]
+[ext_resource type="Texture2D" uid="uid://dolt8f6j7b5hd" path="res://assets/props/exit_door.png" id="1_aln74"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q0new"]
 atlas = ExtResource("1_aln74")

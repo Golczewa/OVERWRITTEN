@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dbspqfu56vr5r"]
 
-[ext_resource type="Texture2D" uid="uid://dsdld16o7vgly" path="res://asstets/props/steelmill_lamp2.png" id="1_gxtd8"]
-[ext_resource type="Texture2D" uid="uid://dfxvl50jvls0n" path="res://asstets/props/lamp.png" id="2_gxtd8"]
-[ext_resource type="Texture2D" uid="uid://0uh0rx1ddq6w" path="res://asstets/props/light_test.png" id="2_xotw0"]
+[ext_resource type="Texture2D" uid="uid://dsdld16o7vgly" path="res://assets/props/steelmill_lamp2.png" id="1_gxtd8"]
+[ext_resource type="Texture2D" uid="uid://dfxvl50jvls0n" path="res://assets/props/lamp.png" id="2_gxtd8"]
+[ext_resource type="Texture2D" uid="uid://0uh0rx1ddq6w" path="res://assets/props/light_test.png" id="2_xotw0"]
 [ext_resource type="Script" uid="uid://8v8urfgumhjs" path="res://scenes/levels/props/lamp_test.gd" id="3_fwrmw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fwrmw"]

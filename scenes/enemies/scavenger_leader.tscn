@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://cpne4lxw3tky5"]
 
 [ext_resource type="Script" uid="uid://xq8nasfdsali" path="res://scenes/enemies/scavenger_leader.gd" id="1_ax7ho"]
-[ext_resource type="Texture2D" uid="uid://c6hl8g71fw5xx" path="res://asstets/enemies/scavenger_leader_body.png" id="1_rppon"]
-[ext_resource type="Texture2D" uid="uid://cghj8gl4lqgpm" path="res://asstets/enemies/scavenger_leader_head.png" id="2_cx8lh"]
-[ext_resource type="Texture2D" uid="uid://bx6x6gioue88d" path="res://asstets/enemies/scavenger_leader_shield.png" id="2_d8gqy"]
-[ext_resource type="Texture2D" uid="uid://c2xmm1vxmog3j" path="res://asstets/enemies/scavenger_leader.png" id="2_h1rju"]
-[ext_resource type="Texture2D" uid="uid://dilobk7t5leed" path="res://asstets/enemies/scavenger_leader_chainsword.png" id="3_vfrd0"]
-[ext_resource type="Texture2D" uid="uid://oimf0va12y0v" path="res://asstets/enemies/scavenger_leader_laucher.png" id="5_h1rju"]
+[ext_resource type="Texture2D" uid="uid://c6hl8g71fw5xx" path="res://assets/enemies/scavenger_leader_body.png" id="1_rppon"]
+[ext_resource type="Texture2D" uid="uid://cghj8gl4lqgpm" path="res://assets/enemies/scavenger_leader_head.png" id="2_cx8lh"]
+[ext_resource type="Texture2D" uid="uid://bx6x6gioue88d" path="res://assets/enemies/scavenger_leader_shield.png" id="2_d8gqy"]
+[ext_resource type="Texture2D" uid="uid://c2xmm1vxmog3j" path="res://assets/enemies/scavenger_leader.png" id="2_h1rju"]
+[ext_resource type="Texture2D" uid="uid://dilobk7t5leed" path="res://assets/enemies/scavenger_leader_chainsword.png" id="3_vfrd0"]
+[ext_resource type="Texture2D" uid="uid://oimf0va12y0v" path="res://assets/enemies/scavenger_leader_laucher.png" id="5_h1rju"]
 [ext_resource type="PackedScene" uid="uid://yqxpfo2l2m20" path="res://scenes/effects/arrow.tscn" id="8_wxdaf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d8gqy"]

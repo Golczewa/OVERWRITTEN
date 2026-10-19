@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bgn3h5bg7xvyc"]
 
-[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="1_0f5ld"]
-[ext_resource type="Theme" uid="uid://c11w2xmim6hpl" path="res://asstets/themes/panel_theme2.tres" id="1_0orkd"]
+[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://assets/menu/Perfect DOS VGA 437 Win.ttf" id="1_0f5ld"]
+[ext_resource type="Theme" uid="uid://c11w2xmim6hpl" path="res://assets/themes/panel_theme2.tres" id="1_0orkd"]
 [ext_resource type="Script" uid="uid://4wh6wuvywfnk" path="res://scenes/menu/menu_panel_v_2.gd" id="1_jqdpl"]
-[ext_resource type="Theme" uid="uid://da1tvrlo4v74u" path="res://asstets/themes/panel_theme1.tres" id="1_mtpdp"]
-[ext_resource type="Theme" uid="uid://dgfg2te01wwei" path="res://asstets/themes/panel_theme3.tres" id="3_rrn3i"]
+[ext_resource type="Theme" uid="uid://da1tvrlo4v74u" path="res://assets/themes/panel_theme1.tres" id="1_mtpdp"]
+[ext_resource type="Theme" uid="uid://dgfg2te01wwei" path="res://assets/themes/panel_theme3.tres" id="3_rrn3i"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rrn3i"]
 font = ExtResource("1_0f5ld")

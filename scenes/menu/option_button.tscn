@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dv1vxbhqxe7f0"]
 
-[ext_resource type="Theme" uid="uid://wmjvw5llbpog" path="res://asstets/themes/button_theme.tres" id="1_3s5t0"]
+[ext_resource type="Theme" uid="uid://wmjvw5llbpog" path="res://assets/themes/button_theme.tres" id="1_3s5t0"]
 [ext_resource type="Script" uid="uid://io37el5l3pkh" path="res://scenes/menu/option_button.gd" id="2_3s5t0"]
-[ext_resource type="Theme" uid="uid://b4xd1u2hfnvja" path="res://asstets/themes/new_theme.tres" id="3_6y22n"]
+[ext_resource type="Theme" uid="uid://b4xd1u2hfnvja" path="res://assets/themes/new_theme.tres" id="3_6y22n"]
 
 [node name="OptionButton" type="Button" unique_id=958042726]
 offset_right = 76.0

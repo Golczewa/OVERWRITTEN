@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ddgw4rm0opd4s"
+path="res://.godot/imported/Neon After Dark FULL TRACK LOOPABLE.ogg-d15b540c357ba28de9465355f21db3da.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Neon After Dark FULL TRACK LOOPABLE.ogg"
+dest_files=["res://.godot/imported/Neon After Dark FULL TRACK LOOPABLE.ogg-d15b540c357ba28de9465355f21db3da.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

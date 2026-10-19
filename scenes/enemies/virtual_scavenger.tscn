@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dnn8p00ywx8vr"]
 
-[ext_resource type="Texture2D" uid="uid://boajjubom8or" path="res://asstets/enemies/virtual_scavengerr.png" id="1_cjccf"]
+[ext_resource type="Texture2D" uid="uid://boajjubom8or" path="res://assets/enemies/virtual_scavengerr.png" id="1_cjccf"]
 [ext_resource type="Script" uid="uid://dj54sewrcpbqq" path="res://scenes/enemies/virtual_scavenger.gd" id="1_fhysm"]
-[ext_resource type="Texture2D" uid="uid://6wtk3htq4ekr" path="res://asstets/enemies/virtual_legs.png" id="2_renea"]
+[ext_resource type="Texture2D" uid="uid://6wtk3htq4ekr" path="res://assets/enemies/virtual_legs.png" id="2_renea"]
 [ext_resource type="Script" uid="uid://dbj6alxoapjxn" path="res://scenes/enemies/legs.gd" id="4_bocn7"]
-[ext_resource type="Texture2D" uid="uid://0uh0rx1ddq6w" path="res://asstets/props/light_test.png" id="5_yu5yy"]
+[ext_resource type="Texture2D" uid="uid://0uh0rx1ddq6w" path="res://assets/props/light_test.png" id="5_yu5yy"]
 [ext_resource type="PackedScene" uid="uid://yqxpfo2l2m20" path="res://scenes/effects/arrow.tscn" id="6_bocn7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vm2f1"]

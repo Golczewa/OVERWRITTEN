@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ccejfivnmcve4"]
 
-[ext_resource type="Texture2D" uid="uid://bdorbvv4hgt8y" path="res://asstets/props/box.png" id="1_0pjpx"]
+[ext_resource type="Texture2D" uid="uid://bdorbvv4hgt8y" path="res://assets/props/box.png" id="1_0pjpx"]
 [ext_resource type="Script" uid="uid://btqcxlah1pdms" path="res://scenes/levels/props/box.gd" id="1_m8pk4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m8pk4"]

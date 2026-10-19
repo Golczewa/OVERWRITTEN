@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://du8nxh3gswcba"
+path="res://.godot/imported/Spinner FULL TRACK.ogg-550f072c850b336e22d74e934d85884a.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Spinner FULL TRACK.ogg"
+dest_files=["res://.godot/imported/Spinner FULL TRACK.ogg-550f072c850b336e22d74e934d85884a.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

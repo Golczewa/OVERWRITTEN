@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://co3c2ging2lj0"]
 
-[ext_resource type="Texture2D" uid="uid://c0hjes78hl7a0" path="res://asstets/player/hoaming_rocket.png" id="1_edlyh"]
+[ext_resource type="Texture2D" uid="uid://c0hjes78hl7a0" path="res://assets/player/hoaming_rocket.png" id="1_edlyh"]
 [ext_resource type="Script" uid="uid://cmf4icestt55k" path="res://scenes/effects/hoaming_rocket.gd" id="1_lu8g8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lu8g8"]

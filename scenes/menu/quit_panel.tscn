@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d3r8d8lv75ppo" path="res://scenes/menu/quit_panel.gd" id="1_3p7xm"]
 [ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="1_8k1th"]
 [ext_resource type="PackedScene" uid="uid://du4k8ns7pgxg8" path="res://scenes/menu/button.tscn" id="2_e01yi"]
-[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://asstets/menu/Perfect DOS VGA 437 Win.ttf" id="3_e01yi"]
+[ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://assets/menu/Perfect DOS VGA 437 Win.ttf" id="3_e01yi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pchsw"]
 font = ExtResource("3_e01yi")

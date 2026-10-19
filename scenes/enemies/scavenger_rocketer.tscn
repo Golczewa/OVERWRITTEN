@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://brysa1ib4uxgf"]
 
 [ext_resource type="Script" uid="uid://81l8ljihx5oj" path="res://scenes/enemies/scavenger_rocketer.gd" id="1_628fs"]
-[ext_resource type="Texture2D" uid="uid://casaix5baxr53" path="res://asstets/enemies/scavenger_rocketer_head.png" id="2_8lbkl"]
-[ext_resource type="Texture2D" uid="uid://bkr3f70sphx6l" path="res://asstets/enemies/rocketer_corpse.png" id="2_o3g64"]
-[ext_resource type="Texture2D" uid="uid://qlbu2l21gcxa" path="res://asstets/enemies/scavenger_rocketer_hands.png" id="3_kkets"]
+[ext_resource type="Texture2D" uid="uid://casaix5baxr53" path="res://assets/enemies/scavenger_rocketer_head.png" id="2_8lbkl"]
+[ext_resource type="Texture2D" uid="uid://bkr3f70sphx6l" path="res://assets/enemies/rocketer_corpse.png" id="2_o3g64"]
+[ext_resource type="Texture2D" uid="uid://qlbu2l21gcxa" path="res://assets/enemies/scavenger_rocketer_hands.png" id="3_kkets"]
 [ext_resource type="PackedScene" uid="uid://cnijtad8hhrio" path="res://scenes/enemies/legs.tscn" id="4_kkets"]
-[ext_resource type="Texture2D" uid="uid://7hporae8mupb" path="res://asstets/player/triple_laucher.png" id="5_628fs"]
+[ext_resource type="Texture2D" uid="uid://7hporae8mupb" path="res://assets/player/triple_laucher.png" id="5_628fs"]
 [ext_resource type="PackedScene" uid="uid://yqxpfo2l2m20" path="res://scenes/effects/arrow.tscn" id="7_628fs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_628fs"]

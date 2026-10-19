@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://yqxpfo2l2m20"]
 
-[ext_resource type="Texture2D" uid="uid://8eddr31uvmoc" path="res://asstets/menu/arrow3d.png" id="1_8lxa0"]
+[ext_resource type="Texture2D" uid="uid://8eddr31uvmoc" path="res://assets/menu/arrow3d.png" id="1_8lxa0"]
 [ext_resource type="Script" uid="uid://cxgqnse7u5pij" path="res://scenes/effects/arrow.gd" id="1_rsrv0"]
-[ext_resource type="Texture2D" uid="uid://bfgg82qnbxdi5" path="res://asstets/menu/arrow.png" id="1_x5f8e"]
+[ext_resource type="Texture2D" uid="uid://bfgg82qnbxdi5" path="res://assets/menu/arrow.png" id="1_x5f8e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_25tkt"]
 atlas = ExtResource("1_8lxa0")

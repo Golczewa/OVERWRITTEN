@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bu878f6tabfh3"]
 
 [ext_resource type="Script" uid="uid://ckypxlvw0u6f7" path="res://scenes/levels/props/transition_exit.gd" id="1_3s3hs"]
-[ext_resource type="Texture2D" uid="uid://bvoap1pkrhdkt" path="res://asstets/props/entrance.png" id="2_pdpqx"]
-[ext_resource type="Texture2D" uid="uid://0uh0rx1ddq6w" path="res://asstets/props/light_test.png" id="3_6mlov"]
+[ext_resource type="Texture2D" uid="uid://bvoap1pkrhdkt" path="res://assets/props/entrance.png" id="2_pdpqx"]
+[ext_resource type="Texture2D" uid="uid://0uh0rx1ddq6w" path="res://assets/props/light_test.png" id="3_6mlov"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6mlov"]
 atlas = ExtResource("2_pdpqx")

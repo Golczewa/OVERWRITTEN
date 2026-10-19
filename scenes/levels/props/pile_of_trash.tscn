@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ceu0cohg5lr7t"]
 
-[ext_resource type="Texture2D" uid="uid://ljbfsefvp5mq" path="res://asstets/props/pile.png" id="1_15v58"]
+[ext_resource type="Texture2D" uid="uid://ljbfsefvp5mq" path="res://assets/props/pile.png" id="1_15v58"]
 
 [node name="StaticBody2D" type="StaticBody2D" unique_id=2014694285]
 

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bo2lkvvfacrsb" path="res://scenes/enemies/leader_intro.gd" id="1_emc65"]
 [ext_resource type="PackedScene" uid="uid://cpne4lxw3tky5" path="res://scenes/enemies/scavenger_leader.tscn" id="2_ndkpm"]
-[ext_resource type="Texture2D" uid="uid://cu3qryaqmqa3m" path="res://asstets/props/spawn_door.png" id="4_emc65"]
-[ext_resource type="Texture2D" uid="uid://1g7kxmbn7fjw" path="res://asstets/props/broken_spawn_doors.png" id="4_o105g"]
+[ext_resource type="Texture2D" uid="uid://cu3qryaqmqa3m" path="res://assets/props/spawn_door.png" id="4_emc65"]
+[ext_resource type="Texture2D" uid="uid://1g7kxmbn7fjw" path="res://assets/props/broken_spawn_doors.png" id="4_o105g"]
 [ext_resource type="PackedScene" uid="uid://bqml6iwreuavg" path="res://scenes/levels/props/black_backround.tscn" id="5_o105g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jiq1j"]

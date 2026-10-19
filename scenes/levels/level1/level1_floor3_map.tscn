@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://cy5q0ea223xwj"]
 
 [ext_resource type="PackedScene" uid="uid://bqml6iwreuavg" path="res://scenes/levels/props/black_backround.tscn" id="1_f3l6b"]
-[ext_resource type="Texture2D" uid="uid://ch2ynyyogbi4j" path="res://asstets/tiles/stealmill_tiles.png" id="1_pmalg"]
-[ext_resource type="Texture2D" uid="uid://bsdq8pplmunrd" path="res://asstets/tiles/rusty_wall.png" id="2_0rgv4"]
+[ext_resource type="Texture2D" uid="uid://ch2ynyyogbi4j" path="res://assets/tiles/stealmill_tiles.png" id="1_pmalg"]
+[ext_resource type="Texture2D" uid="uid://bsdq8pplmunrd" path="res://assets/tiles/rusty_wall.png" id="2_0rgv4"]
 [ext_resource type="PackedScene" uid="uid://cohjld5qw3j8c" path="res://scenes/levels/props/trash_area.tscn" id="4_g0bqt"]
 [ext_resource type="PackedScene" uid="uid://dbspqfu56vr5r" path="res://scenes/levels/props/lamp_test.tscn" id="5_fcgv4"]
 

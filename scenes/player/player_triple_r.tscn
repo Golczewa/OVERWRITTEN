@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://cw1bqhu2chn80"]
 
-[ext_resource type="Texture2D" uid="uid://7hporae8mupb" path="res://asstets/player/triple_laucher.png" id="1_2imax"]
-[ext_resource type="Texture2D" uid="uid://dqalvdhpngak" path="res://asstets/player/playerHand.png" id="2_4txer"]
+[ext_resource type="Texture2D" uid="uid://7hporae8mupb" path="res://assets/player/triple_laucher.png" id="1_2imax"]
+[ext_resource type="Texture2D" uid="uid://dqalvdhpngak" path="res://assets/player/playerHand.png" id="2_4txer"]
 [ext_resource type="Script" uid="uid://bi3p03jyem56l" path="res://scenes/player/player_triple_r.gd" id="2_mudg7"]
 [ext_resource type="PackedScene" uid="uid://bp8rfuaig8wcf" path="res://scenes/effects/rocket.tscn" id="3_mudg7"]
-[ext_resource type="Texture2D" uid="uid://c1cf4pisbmws6" path="res://asstets/player/cloghed_hand.png" id="5_0ws2o"]
-[ext_resource type="Texture2D" uid="uid://cc1qdby3jfcoa" path="res://asstets/player/other_arm.png" id="5_nn178"]
+[ext_resource type="Texture2D" uid="uid://c1cf4pisbmws6" path="res://assets/player/cloghed_hand.png" id="5_0ws2o"]
+[ext_resource type="Texture2D" uid="uid://cc1qdby3jfcoa" path="res://assets/player/other_arm.png" id="5_nn178"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nn178"]
 atlas = ExtResource("1_2imax")

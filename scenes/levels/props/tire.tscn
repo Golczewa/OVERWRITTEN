@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dksc7l0hb7ibr"]
 
 [ext_resource type="Script" uid="uid://qcoaa5006d1m" path="res://scenes/levels/props/tire.gd" id="1_7cg3b"]
-[ext_resource type="Texture2D" uid="uid://dy2any4a3yi0q" path="res://asstets/props/tire.png" id="1_7lias"]
+[ext_resource type="Texture2D" uid="uid://dy2any4a3yi0q" path="res://assets/props/tire.png" id="1_7lias"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(29, 29)

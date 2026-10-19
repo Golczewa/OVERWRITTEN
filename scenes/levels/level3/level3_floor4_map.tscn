@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dqhm3a6wmllxj" path="res://scenes/levels/props/molten_steel.tscn" id="1_6ou6q"]
 [ext_resource type="PackedScene" uid="uid://dfnmq8n1u0uit" path="res://scenes/levels/props/blast_furnace.tscn" id="2_6ou6q"]
 [ext_resource type="PackedScene" uid="uid://dcg067jrbv53c" path="res://scenes/levels/props/steelmill_belt.tscn" id="3_wqodp"]
-[ext_resource type="Texture2D" uid="uid://cjag8vgcoucet" path="res://asstets/efects/light_horizontal.png" id="4_drnq6"]
+[ext_resource type="Texture2D" uid="uid://cjag8vgcoucet" path="res://assets/efects/light_horizontal.png" id="4_drnq6"]
 [ext_resource type="PackedScene" uid="uid://cjq4kxi30n77n" path="res://scenes/levels/props/steel_box.tscn" id="5_v6875"]
 [ext_resource type="PackedScene" uid="uid://celr313hqg5fq" path="res://scenes/levels/props/cabinet.tscn" id="6_eux8u"]
 [ext_resource type="PackedScene" uid="uid://b4aojcvvkdto3" path="res://scenes/levels/props/pipe_steelmill.tscn" id="6_laypg"]
@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dbspqfu56vr5r" path="res://scenes/levels/props/lamp_test.tscn" id="8_d1r6j"]
 [ext_resource type="PackedScene" uid="uid://ccejfivnmcve4" path="res://scenes/levels/props/box.tscn" id="9_ty8wt"]
 [ext_resource type="PackedScene" uid="uid://ekuae61xiicy" path="res://scenes/levels/props/steel_coil.tscn" id="10_7s3es"]
-[ext_resource type="Texture2D" uid="uid://b4n04w13r6f14" path="res://asstets/props/spill.png" id="13_hialo"]
+[ext_resource type="Texture2D" uid="uid://b4n04w13r6f14" path="res://assets/props/spill.png" id="13_hialo"]
 [ext_resource type="PackedScene" uid="uid://7t52ndlogwmr" path="res://scenes/levels/props/waring_sign.tscn" id="14_y0dr0"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_6ou6q"]

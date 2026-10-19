@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dd18baucil8v4"]
 
 [ext_resource type="Script" uid="uid://dgryyk5m3kwpj" path="res://scenes/player/player_ghost.gd" id="1_hmsbg"]
-[ext_resource type="Texture2D" uid="uid://blfiaj0pbji4r" path="res://asstets/player/john_overwritten.png" id="1_sljg1"]
+[ext_resource type="Texture2D" uid="uid://blfiaj0pbji4r" path="res://assets/player/john_overwritten.png" id="1_sljg1"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6nbgw"]
 particle_flag_disable_z = true

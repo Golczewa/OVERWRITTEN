@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b027hwxqycj2f"]
 
 [ext_resource type="Script" uid="uid://b2d4kowi7po0r" path="res://scenes/levels/props/enemy_spawner.gd" id="1_devoi"]
-[ext_resource type="Texture2D" uid="uid://cu3qryaqmqa3m" path="res://asstets/props/spawn_door.png" id="2_c4uhn"]
+[ext_resource type="Texture2D" uid="uid://cu3qryaqmqa3m" path="res://assets/props/spawn_door.png" id="2_c4uhn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3jpvg"]
 atlas = ExtResource("2_c4uhn")

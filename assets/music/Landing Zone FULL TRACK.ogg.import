@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cwtjfc2gmk6su"
+path="res://.godot/imported/Landing Zone FULL TRACK.ogg-403cae37d6138f6c747b98b016790aad.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Landing Zone FULL TRACK.ogg"
+dest_files=["res://.godot/imported/Landing Zone FULL TRACK.ogg-403cae37d6138f6c747b98b016790aad.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

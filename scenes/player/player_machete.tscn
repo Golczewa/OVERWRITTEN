@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dc4tq025xxm62"]
 
 [ext_resource type="Script" uid="uid://ds80p0bhx1leo" path="res://scenes/player/player_machete.gd" id="1_dvmub"]
-[ext_resource type="Texture2D" uid="uid://bu3tg78yuhiir" path="res://asstets/player/john_overwritten_machete2.png" id="1_gt6oj"]
+[ext_resource type="Texture2D" uid="uid://bu3tg78yuhiir" path="res://assets/player/john_overwritten_machete2.png" id="1_gt6oj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1s1h1"]
 atlas = ExtResource("1_gt6oj")

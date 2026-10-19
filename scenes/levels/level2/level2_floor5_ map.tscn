@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bc5xmevlw01co"]
 
-[ext_resource type="Texture2D" uid="uid://dtkysqt775fji" path="res://asstets/tiles/steemill_tiles2.png" id="1_ct5b1"]
+[ext_resource type="Texture2D" uid="uid://dtkysqt775fji" path="res://assets/tiles/steemill_tiles2.png" id="1_ct5b1"]
 [ext_resource type="PackedScene" uid="uid://bqml6iwreuavg" path="res://scenes/levels/props/black_backround.tscn" id="1_k7m0h"]
 [ext_resource type="PackedScene" uid="uid://dbspqfu56vr5r" path="res://scenes/levels/props/lamp_test.tscn" id="3_x34o2"]
 [ext_resource type="PackedScene" uid="uid://c71vhww3onajj" path="res://scenes/levels/props/steelmill_table.tscn" id="4_xevoi"]
