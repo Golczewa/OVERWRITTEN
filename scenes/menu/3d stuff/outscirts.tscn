@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dq1yfjo27rm74"]
+
+[ext_resource type="ArrayMesh" uid="uid://b4jk4dktkodpp" path="res://assets/3d stuff/outscirts.obj" id="1_ebfgo"]
+[ext_resource type="Shader" uid="uid://bkpd0riwdw5fg" path="res://shaders/steelmill.gdshader" id="1_f6mk6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tuoik"]
+render_priority = 0
+shader = ExtResource("1_f6mk6")
+shader_parameter/hologram_color = Color(0.5372549, 0, 0.101960786, 1)
+shader_parameter/dot_scale = 50.0
+shader_parameter/dot_size = 0.2
+
+[node name="Node3D" type="Node3D" unique_id=792736751]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=660478684]
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, -0.41050148, 0.45453954, 0.42391038)
+material_override = SubResource("ShaderMaterial_tuoik")
+mesh = ExtResource("1_ebfgo")

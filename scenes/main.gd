@@ -17,11 +17,9 @@ func _ready() -> void:
 func play_game(path: String):
 	AudioPlayer.stop_music()
 	AudioPlayer.stop_all_sfx()
-	$CanvasLayer/loading.load_animation()
 	emit_signal("game")
 	$game.process_mode = Node.PROCESS_MODE_INHERIT
 	$game.load_level(path)
-	$CanvasLayer/loading.stop_loading()
 	$CanvasLayer.hide()
 	$CanvasLayer.process_mode = Node.PROCESS_MODE_DISABLED
 	state = 1
