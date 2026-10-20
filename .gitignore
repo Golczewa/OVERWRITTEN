@@ -8,3 +8,4 @@ CMakePresets.json
 export_presets.cfg
 /builds/
 /autoload/key/
+.godotlauncher

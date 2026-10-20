@@ -15,12 +15,13 @@ var levels: ConfigFile
 var levels_progress: ConfigFile
 var player_config: ConfigFile
 
-var encrypted := true
+var encrypted := false
 var encrypton_key: PackedByteArray
 
 
 func _ready() -> void:
-	encrypton_key = Keys.config_encription_key.hex_decode()
+	#if encrypted:
+	#	encrypton_key = Keys.config_encription_key.hex_decode()
 	load_all()
 	call_deferred("apply_player_settings")
 

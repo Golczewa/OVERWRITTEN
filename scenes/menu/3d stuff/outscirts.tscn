@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dq1yfjo27rm74"]
 
-[ext_resource type="ArrayMesh" uid="uid://b4jk4dktkodpp" path="res://assets/3d stuff/outscirts.obj" id="1_ebfgo"]
 [ext_resource type="Shader" uid="uid://bkpd0riwdw5fg" path="res://shaders/steelmill.gdshader" id="1_f6mk6"]
+[ext_resource type="ArrayMesh" uid="uid://d1yx3f3gphydu" path="res://assets/3d stuff/outscits.obj" id="2_f6mk6"]
+[ext_resource type="PackedScene" uid="uid://k5d3enng1mx" path="res://scenes/menu/3d stuff/3Dbutton.tscn" id="3_tuoik"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tuoik"]
 render_priority = 0
@@ -15,4 +16,22 @@ shader_parameter/dot_size = 0.2
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=660478684]
 transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, -0.41050148, 0.45453954, 0.42391038)
 material_override = SubResource("ShaderMaterial_tuoik")
-mesh = ExtResource("1_ebfgo")
+mesh = ExtResource("2_f6mk6")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=315150026]
+
+[node name="Area3D" parent="Node3D" unique_id=1127251825 instance=ExtResource("3_tuoik")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.8944368, 0.5368612, 0.37038654)
+level = 5
+
+[node name="Area3D2" parent="Node3D" unique_id=1140256956 instance=ExtResource("3_tuoik")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.6753439, 0.5368612, -0.76503456)
+level = 6
+
+[node name="Area3D3" parent="Node3D" unique_id=296312427 instance=ExtResource("3_tuoik")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.50851893, 0.5368612, 0.93427336)
+level = 7
+
+[node name="Area3D4" parent="Node3D" unique_id=352268714 instance=ExtResource("3_tuoik")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.5426115, 0.5368612, 0.7055461)
+level = 7

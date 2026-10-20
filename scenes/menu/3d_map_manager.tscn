@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b0smgc5fx4h8p"]
+
+[ext_resource type="Script" uid="uid://bys037wn0lqj6" path="res://scenes/menu/3d_map_manager.gd" id="1_0kjr4"]
+[ext_resource type="PackedScene" uid="uid://b0fntd36ji6wt" path="res://scenes/menu/3d stuff/steemill_v2.tscn" id="1_7lwfl"]
+[ext_resource type="PackedScene" uid="uid://dq1yfjo27rm74" path="res://scenes/menu/3d stuff/outscirts.tscn" id="2_06a03"]
+
+[sub_resource type="Environment" id="Environment_06a03"]
+background_mode = 1
+
+[node name="Node3D" type="Node3D" unique_id=812272336]
+script = ExtResource("1_0kjr4")
+
+[node name="map1" parent="." unique_id=810478375 instance=ExtResource("1_7lwfl")]
+
+[node name="map2" parent="." unique_id=792736751 instance=ExtResource("2_06a03")]
+transform = Transform3D(0.783408, 0, -0.62150764, 0, 1, 0, 0.62150764, 0, 0.783408, 5.572386, 0, 1.7990613)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=840099726]
+transform = Transform3D(0.20240559, 0.3101642, -0.92888653, -0.029907467, 0.95003456, 0.31070885, 0.978845, -0.03510857, 0.20156851, 3.202732, 1.1408386, 1.6074038)
+environment = SubResource("Environment_06a03")
+current = true
