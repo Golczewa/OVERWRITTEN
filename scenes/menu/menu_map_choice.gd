@@ -3,6 +3,10 @@ extends Control
 var label_pack: PackedScene = preload("res://scenes/menu/level_label.tscn")
 var dragging = false
 var drag_offset = Vector2()
+var curr_map := 1
+var map_names:=["Old steelmill","City outskirts"]
+const max_map := 2
+@onready var map_manager: Node3D = $SubViewportContainer/SubViewport/Node3D
 
 
 func _ready() -> void:
@@ -13,6 +17,8 @@ func _ready() -> void:
 	$AspectRatioContainer/VBoxContainer/PanelContainer/HBoxContainer/Control.gui_input.connect(
 		_on_panel_container_gui_input
 	)
+	$HBoxContainer/Button3.pressed.connect(next_map)
+	$HBoxContainer/Button4.pressed.connect(previous_map)
 	setup_buttons()
 	_warmup_3d_preview()
 
@@ -46,7 +52,8 @@ func begone():
 
 
 func show_label(pos: Vector3, num: int) -> void:
-	var button_pos = $SubViewportContainer/SubViewport/Node3D/Camera3D.unproject_position(pos)
+	var camera_ = map_manager.get_node("Camera3D")
+	var button_pos = camera_.unproject_position(pos)
 	var container = $SubViewportContainer
 	var viewport = $SubViewportContainer/SubViewport
 	var ratio = container.size / Vector2(viewport.size)
@@ -59,7 +66,7 @@ func hide_label() -> void:
 
 
 func setup_buttons() -> void:
-	var buttons = $SubViewportContainer/SubViewport/Node3D/Node.get_children()
+	var buttons = map_manager.get_buttons()
 	for button in buttons:
 		button.mouse_entered.connect(show_label.bind(button.global_position, button.level))
 		button.mouse_exited.connect(hide_label)
@@ -79,7 +86,7 @@ func open():
 
 
 func refresh_buttons():
-	var buttons = $SubViewportContainer/SubViewport/Node3D/Node.get_children()
+	var buttons = map_manager.get_buttons()
 	for button in buttons:
 		button.set_button_colors()
 
@@ -90,3 +97,22 @@ func _warmup_3d_preview() -> void:
 	await get_tree().process_frame
 	await get_tree().process_frame
 	viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
+
+
+func next_map():
+	curr_map += 1
+	if curr_map > max_map:
+		curr_map = 1
+	map_manager.switch_map(curr_map)
+	swich_name(curr_map-1)
+
+
+func previous_map():
+	curr_map -= 1
+	if curr_map < 1:
+		curr_map = max_map
+	map_manager.switch_map(curr_map)
+	swich_name(curr_map-1)
+
+func swich_name(i:int):
+	$Label.text=map_names[i]

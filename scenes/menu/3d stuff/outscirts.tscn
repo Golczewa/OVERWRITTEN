@@ -25,11 +25,11 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.8944368, 0.5368612, 
 level = 5
 
 [node name="Area3D2" parent="Node3D" unique_id=1140256956 instance=ExtResource("3_tuoik")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.6753439, 0.5368612, -0.76503456)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.6753439, 0.5368612, -0.4101559)
 level = 6
 
 [node name="Area3D3" parent="Node3D" unique_id=296312427 instance=ExtResource("3_tuoik")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.50851893, 0.5368612, 0.93427336)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.43316483, 0.5368612, 1.4517121)
 level = 7
 
 [node name="Area3D4" parent="Node3D" unique_id=352268714 instance=ExtResource("3_tuoik")]

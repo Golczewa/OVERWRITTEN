@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bo6iv6ycgyodt" path="res://scenes/menu/menu_map_choice.gd" id="1_086vr"]
 [ext_resource type="PackedScene" uid="uid://du4k8ns7pgxg8" path="res://scenes/menu/button.tscn" id="2_g5ekd"]
-[ext_resource type="PackedScene" uid="uid://b0fntd36ji6wt" path="res://scenes/menu/3d stuff/steemill_v2.tscn" id="3_g5ekd"]
+[ext_resource type="PackedScene" uid="uid://b0smgc5fx4h8p" path="res://scenes/menu/3d_map_manager.tscn" id="3_4d16b"]
 [ext_resource type="FontFile" uid="uid://lk1dml0r76fp" path="res://assets/menu/Perfect DOS VGA 437 Win.ttf" id="5_4d16b"]
 [ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="5_pj20j"]
 [ext_resource type="PackedScene" uid="uid://bjll8nw7yfsi7" path="res://scenes/menu/level_label.tscn" id="6_4d16b"]
@@ -11,6 +11,24 @@
 font = ExtResource("5_4d16b")
 font_size = 48
 font_color = Color(0.54509807, 0, 0.03529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4d16b"]
+bg_color = Color(0.52156866, 0, 0.101960786, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8oyp7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ajjll"]
+bg_color = Color(0.52156866, 0, 0.101960786, 1)
+
+[sub_resource type="Theme" id="Theme_iejgq"]
+default_font = ExtResource("5_4d16b")
+Button/colors/font_color = Color(0.52156866, 0, 0.101960786, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/font_sizes/font_size = 30
+Button/fonts/font = ExtResource("5_4d16b")
+Button/styles/hover = SubResource("StyleBoxFlat_4d16b")
+Button/styles/normal = SubResource("StyleBoxEmpty_8oyp7")
+Button/styles/pressed = SubResource("StyleBoxFlat_ajjll")
 
 [node name="Control2" type="Control" unique_id=1884821685]
 layout_mode = 3
@@ -45,7 +63,7 @@ physics_object_picking = true
 size = Vector2i(719, 487)
 render_target_update_mode = 4
 
-[node name="Node3D" parent="SubViewportContainer/SubViewport" unique_id=810478375 instance=ExtResource("3_g5ekd")]
+[node name="Node3D" parent="SubViewportContainer/SubViewport" unique_id=812272336 instance=ExtResource("3_4d16b")]
 
 [node name="Button2" parent="." unique_id=2078812563 instance=ExtResource("2_g5ekd")]
 layout_mode = 0
@@ -57,13 +75,34 @@ text = "  Back"
 
 [node name="Label" type="Label" parent="." unique_id=338550579]
 layout_mode = 0
-offset_left = 346.0
+offset_left = 8.0
 offset_top = 48.0
-offset_right = 697.0
+offset_right = 1026.0
 offset_bottom = 96.0
 text = "Old steelmill"
 label_settings = SubResource("LabelSettings_8oyp7")
+horizontal_alignment = 1
 
 [node name="PanelContainer" parent="." unique_id=1654148982 instance=ExtResource("6_4d16b")]
 visible = false
 layout_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=780142480]
+layout_mode = 0
+offset_top = 252.0
+offset_right = 1034.0
+offset_bottom = 343.0
+theme_override_constants/separation = 900
+alignment = 1
+
+[node name="Button4" type="Button" parent="HBoxContainer" unique_id=145354329]
+layout_mode = 2
+theme = SubResource("Theme_iejgq")
+theme_override_font_sizes/font_size = 90
+text = "<"
+
+[node name="Button3" type="Button" parent="HBoxContainer" unique_id=33581759]
+layout_mode = 2
+theme = SubResource("Theme_iejgq")
+theme_override_font_sizes/font_size = 90
+text = ">"

@@ -8,10 +8,10 @@ func attack(_event):
 			for i in range(0, 3):
 				if is_hand_in_wall():
 					break
-				var enemy_in_hand=is_hand_in_enemy()
+				var enemy_in_hand = is_hand_in_enemy()
 				if enemy_in_hand:
-					enemy_in_hand.take_damage(dmg,0)
-				else :
+					enemy_in_hand.take_damage(dmg, 0)
+				else:
 					_spawn_bullet()
 				AudioPlayer.play_game_sfx(AudioPlayer.patchwork_shot, 4)
 				await get_tree().create_timer(0.2).timeout
