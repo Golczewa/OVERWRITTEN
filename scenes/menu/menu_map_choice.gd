@@ -100,19 +100,23 @@ func _warmup_3d_preview() -> void:
 
 
 func next_map():
+	AudioPlayer.play(AudioPlayer.menu_window_open)
 	curr_map += 1
 	if curr_map > max_map:
 		curr_map = 1
 	map_manager.switch_map(curr_map)
 	swich_name(curr_map-1)
+	setup_buttons()
 
 
 func previous_map():
+	AudioPlayer.play(AudioPlayer.menu_window_open)
 	curr_map -= 1
 	if curr_map < 1:
 		curr_map = max_map
 	map_manager.switch_map(curr_map)
 	swich_name(curr_map-1)
+	setup_buttons()
 
 func swich_name(i:int):
 	$Label.text=map_names[i]

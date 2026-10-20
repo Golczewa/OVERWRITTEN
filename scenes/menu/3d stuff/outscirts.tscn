@@ -34,4 +34,4 @@ level = 7
 
 [node name="Area3D4" parent="Node3D" unique_id=352268714 instance=ExtResource("3_tuoik")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.5426115, 0.5368612, 0.7055461)
-level = 7
+level = 8
