@@ -4,7 +4,8 @@ var label_pack: PackedScene = preload("res://scenes/menu/level_label.tscn")
 var dragging = false
 var drag_offset = Vector2()
 var curr_map := 1
-var map_names:=["Old steelmill","City outskirts"]
+var map_names := ["Old steelmill", "City outskirts"]
+var visited := [true, false]
 const max_map := 2
 @onready var map_manager: Node3D = $SubViewportContainer/SubViewport/Node3D
 
@@ -68,6 +69,7 @@ func hide_label() -> void:
 func setup_buttons() -> void:
 	var buttons = map_manager.get_buttons()
 	for button in buttons:
+		button.mouse_entered.connect(func(): print("HOVER: ", button.get_path()))
 		button.mouse_entered.connect(show_label.bind(button.global_position, button.level))
 		button.mouse_exited.connect(hide_label)
 		button.pressed_.connect(level_setup.bind(button.level))
@@ -105,8 +107,13 @@ func next_map():
 	if curr_map > max_map:
 		curr_map = 1
 	map_manager.switch_map(curr_map)
-	swich_name(curr_map-1)
-	setup_buttons()
+	swich_name(curr_map - 1)
+	if !(visited[curr_map - 1]):
+		setup_buttons()
+		visited[curr_map - 1] = true
+		print(curr_map - 1, visited[curr_map - 1])
+	else:
+		refresh_buttons()
 
 
 func previous_map():
@@ -115,8 +122,14 @@ func previous_map():
 	if curr_map < 1:
 		curr_map = max_map
 	map_manager.switch_map(curr_map)
-	swich_name(curr_map-1)
-	setup_buttons()
+	swich_name(curr_map - 1)
+	if !(visited[curr_map - 1]):
+		setup_buttons()
+		visited[curr_map - 1] = true
+		print(curr_map - 1, visited[curr_map - 1])
+	else:
+		refresh_buttons()
 
-func swich_name(i:int):
-	$Label.text=map_names[i]
+
+func swich_name(i: int):
+	$Label.text = map_names[i]
