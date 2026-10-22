@@ -4,9 +4,9 @@ var label_pack: PackedScene = preload("res://scenes/menu/level_label.tscn")
 var dragging = false
 var drag_offset = Vector2()
 var curr_map := 1
-var map_names := ["Old steelmill", "City outskirts"]
-var visited := [true, false]
-const max_map := 2
+var map_names := ["Old steelmill", "City outskirts","Imaginary"]
+var visited := [true, false,false]
+const max_map := 3
 @onready var map_manager: Node3D = $SubViewportContainer/SubViewport/Node3D
 
 
@@ -130,5 +130,3 @@ func previous_map():
 
 func swich_name(i: int):
 	$Label.text = map_names[i]
-
-

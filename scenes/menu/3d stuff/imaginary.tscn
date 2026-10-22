@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cqafxfl0foo8n"]
+
+[ext_resource type="Shader" uid="uid://bkpd0riwdw5fg" path="res://shaders/steelmill.gdshader" id="1_mibpf"]
+[ext_resource type="ArrayMesh" uid="uid://djhpa61moi6uk" path="res://assets/3d stuff/shard.obj" id="2_47s84"]
+[ext_resource type="PackedScene" uid="uid://k5d3enng1mx" path="res://scenes/menu/3d stuff/3Dbutton.tscn" id="3_47s84"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_35331"]
+render_priority = 0
+shader = ExtResource("1_mibpf")
+shader_parameter/hologram_color = Color(0.5372549, 0, 0.101960786, 1)
+shader_parameter/dot_scale = 50.0
+shader_parameter/dot_size = 0.2
+
+[node name="Node3D" type="Node3D" unique_id=1620516720]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1655212314]
+transform = Transform3D(-0.038814973, 0, -0.79905784, 0, 0.8, 0, 0.79905784, 0, -0.038814973, 0, 0.45453954, 0.026792288)
+material_override = SubResource("ShaderMaterial_35331")
+mesh = ExtResource("2_47s84")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=5678821]
+
+[node name="Area3D" parent="Node3D" unique_id=1127251825 instance=ExtResource("3_47s84")]
+transform = Transform3D(0.07721394, -0.13577521, 0.12491233, 0.18360762, 0.069808096, -0.03761724, -0.018062018, 0.12919718, 0.1515976, -0.39553738, 0.8512783, 0.35564148)
+level = 1

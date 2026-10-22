@@ -16,7 +16,6 @@ enemy_spawners = [NodePath("StaticBody2D"), NodePath("StaticBody2D2")]
 metadata/_custom_type_script = "uid://cramwugkt2of"
 
 [node name="NavigationRegion2D" parent="." unique_id=104207726 instance=ExtResource("2_mkx14")]
-position = Vector2(43, 65)
 
 [node name="Area2D" parent="." unique_id=1410637359 instance=ExtResource("3_r0n8q")]
 position = Vector2(544, -157)

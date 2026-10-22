@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bys037wn0lqj6" path="res://scenes/menu/3d_map_manager.gd" id="1_0kjr4"]
 [ext_resource type="PackedScene" uid="uid://b0fntd36ji6wt" path="res://scenes/menu/3d stuff/steemill_v2.tscn" id="1_7lwfl"]
 [ext_resource type="PackedScene" uid="uid://dq1yfjo27rm74" path="res://scenes/menu/3d stuff/outscirts.tscn" id="2_06a03"]
+[ext_resource type="PackedScene" uid="uid://cqafxfl0foo8n" path="res://scenes/menu/3d stuff/imaginary.tscn" id="4_bs4bo"]
 
 [sub_resource type="Environment" id="Environment_06a03"]
 background_mode = 1
@@ -15,7 +16,10 @@ script = ExtResource("1_0kjr4")
 [node name="map2" parent="." unique_id=792736751 instance=ExtResource("2_06a03")]
 transform = Transform3D(0.783408, 0, -0.62150764, 0, 1, 0, 0.62150764, 0, 0.783408, 5.572386, 0, 1.7990613)
 
+[node name="map3" parent="." unique_id=1620516720 instance=ExtResource("4_bs4bo")]
+transform = Transform3D(-0.88072705, 0, -0.47362423, 0, 1, 0, 0.47362423, 0, -0.88072705, 2.817502, 0, 7.872241)
+
 [node name="Camera3D" type="Camera3D" parent="." unique_id=840099726]
-transform = Transform3D(0.15643449, 0.5861129, -0.7949842, 0, 0.8048938, 0.5934189, 0.98768836, -0.09283118, 0.12591316, 2.773178, 1.5206525, 2.307519)
+transform = Transform3D(-0.9198116, 0.21400797, -0.32885742, 0.058331504, 0.90342414, 0.42476144, 0.388, 0.3715177, -0.8434635, 1.7220564, 1.665312, 6.296739)
 environment = SubResource("Environment_06a03")
 current = true
