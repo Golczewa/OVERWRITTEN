@@ -29,13 +29,11 @@ func _on_klik(_camera, event, _pos, _normal, _idx) -> void:
 
 
 func _on_hover() -> void:
-	print("hovering")
 	if unlocked:
 		_change_color(curr_color.darkened(0.3))
 
 
 func _on_hover_exit():
-	print("end hovering")
 	if unlocked:
 		_change_color(curr_color)
 

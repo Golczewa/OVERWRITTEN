@@ -69,7 +69,6 @@ func hide_label() -> void:
 func setup_buttons() -> void:
 	var buttons = map_manager.get_buttons()
 	for button in buttons:
-		button.mouse_entered.connect(func(): print("HOVER: ", button.get_path()))
 		button.mouse_entered.connect(show_label.bind(button.global_position, button.level))
 		button.mouse_exited.connect(hide_label)
 		button.pressed_.connect(level_setup.bind(button.level))
@@ -111,7 +110,6 @@ func next_map():
 	if !(visited[curr_map - 1]):
 		setup_buttons()
 		visited[curr_map - 1] = true
-		print(curr_map - 1, visited[curr_map - 1])
 	else:
 		refresh_buttons()
 
@@ -126,10 +124,11 @@ func previous_map():
 	if !(visited[curr_map - 1]):
 		setup_buttons()
 		visited[curr_map - 1] = true
-		print(curr_map - 1, visited[curr_map - 1])
 	else:
 		refresh_buttons()
 
 
 func swich_name(i: int):
 	$Label.text = map_names[i]
+
+

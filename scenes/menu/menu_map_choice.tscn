@@ -7,11 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bgn3h5bg7xvyc" path="res://scenes/menu/menu_panel_v2.tscn" id="5_pj20j"]
 [ext_resource type="PackedScene" uid="uid://bjll8nw7yfsi7" path="res://scenes/menu/level_label.tscn" id="6_4d16b"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_8oyp7"]
-font = ExtResource("5_4d16b")
-font_size = 48
-font_color = Color(0.54509807, 0, 0.03529412, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4d16b"]
 bg_color = Color(0.52156866, 0, 0.101960786, 1)
 
@@ -30,6 +25,11 @@ Button/styles/hover = SubResource("StyleBoxFlat_4d16b")
 Button/styles/normal = SubResource("StyleBoxEmpty_8oyp7")
 Button/styles/pressed = SubResource("StyleBoxFlat_ajjll")
 
+[sub_resource type="LabelSettings" id="LabelSettings_8oyp7"]
+font = ExtResource("5_4d16b")
+font_size = 48
+font_color = Color(0.54509807, 0, 0.03529412, 1)
+
 [node name="Control2" type="Control" unique_id=1884821685]
 layout_mode = 3
 anchors_preset = 15
@@ -46,6 +46,26 @@ layout_mode = 0
 offset_right = 1035.0
 offset_bottom = 581.0
 title = "Map"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=780142480]
+layout_mode = 0
+offset_top = 252.0
+offset_right = 1034.0
+offset_bottom = 343.0
+theme_override_constants/separation = 900
+alignment = 1
+
+[node name="Button4" type="Button" parent="HBoxContainer" unique_id=145354329]
+layout_mode = 2
+theme = SubResource("Theme_iejgq")
+theme_override_font_sizes/font_size = 90
+text = "<"
+
+[node name="Button3" type="Button" parent="HBoxContainer" unique_id=33581759]
+layout_mode = 2
+theme = SubResource("Theme_iejgq")
+theme_override_font_sizes/font_size = 90
+text = ">"
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1462048294]
 layout_mode = 0
@@ -86,23 +106,3 @@ horizontal_alignment = 1
 [node name="PanelContainer" parent="." unique_id=1654148982 instance=ExtResource("6_4d16b")]
 visible = false
 layout_mode = 0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=780142480]
-layout_mode = 0
-offset_top = 252.0
-offset_right = 1034.0
-offset_bottom = 343.0
-theme_override_constants/separation = 900
-alignment = 1
-
-[node name="Button4" type="Button" parent="HBoxContainer" unique_id=145354329]
-layout_mode = 2
-theme = SubResource("Theme_iejgq")
-theme_override_font_sizes/font_size = 90
-text = "<"
-
-[node name="Button3" type="Button" parent="HBoxContainer" unique_id=33581759]
-layout_mode = 2
-theme = SubResource("Theme_iejgq")
-theme_override_font_sizes/font_size = 90
-text = ">"
