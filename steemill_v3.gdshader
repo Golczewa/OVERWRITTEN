@@ -33,6 +33,12 @@ group_uniforms Flicker;
 uniform float flicker_amount : hint_range(0.0, 1.0, 0.01) = 0.3;
 uniform float flicker_speed : hint_range(0.0, 30.0, 0.01) = 10.0;
 
+group_uniforms Fresnel;
+uniform float fresnel_power : hint_range(0.5, 8.0, 0.01) = 2.0;
+uniform float rim_amount : hint_range(0.0, 1.0, 0.01) = 0.6;
+uniform float min_highlight : hint_range(0.0, 1.0, 0.01) = 0.15;
+uniform float back_highlight : hint_range(0.0, 1.0, 0.01) = 0.5;
+
 varying vec3 vert;
 
 float overlay(float base, float blend){
@@ -114,13 +120,18 @@ void fragment() {
 	
 	float fresnel = clamp(dot(normalize(NORMAL), normalize(VIEW)), 0.0, 1.0);
 	
-	float highlight = pow(fresnel, 4.0);
-	highlight = mix(highlight, highlight / (signal + 0.1), signal_blend);
-	highlight *= (1.0 - wipe_blend) + scan * wipe_blend;
-	highlight *= (1.0 - grain_amount) + grain * grain_amount;
-	highlight *= noise_xyz;
-	
-	if(FRONT_FACING){
-		ALBEDO = mix(ALBEDO, ALBEDO + secondary_color * effect_strength, highlight);
-	}
+	float ndv = abs(dot(normalize(NORMAL), normalize(VIEW)));
+
+float facing = pow(ndv, fresnel_power);
+float rim = pow(1.0 - ndv, fresnel_power) * rim_amount;
+float highlight = max(facing, rim);
+highlight = max(highlight, min_highlight);   // podłoga widoczności
+
+highlight = mix(highlight, highlight / (signal + 0.1), signal_blend);
+highlight *= (1.0 - wipe_blend) + scan * wipe_blend;
+highlight *= (1.0 - grain_amount) + grain * grain_amount;
+highlight *= noise_xyz;
+
+float side = FRONT_FACING ? 1.0 : back_highlight;
+ALBEDO = mix(ALBEDO, ALBEDO + secondary_color * effect_strength, highlight * side);
 }

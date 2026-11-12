@@ -21,9 +21,13 @@ shader_parameter/signal_blend = 1.0
 shader_parameter/noise_distort_amount = 0.1
 shader_parameter/noise_amount = 1.0
 shader_parameter/grain_amount = 0.4
-shader_parameter/displacement_amount = 1.0
+shader_parameter/displacement_amount = 0.0
 shader_parameter/flicker_amount = 0.3
 shader_parameter/flicker_speed = 10.0
+shader_parameter/fresnel_power = 2.0
+shader_parameter/rim_amount = 0.6
+shader_parameter/min_highlight = 0.15
+shader_parameter/back_highlight = 0.5
 
 [node name="Node3D" type="Node3D" unique_id=792736751]
 
