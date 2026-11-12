@@ -22,7 +22,7 @@ font = ExtResource("4_fupg1")
 font = ExtResource("4_fupg1")
 font_size = 28
 
-[node name="Control" type="Control" unique_id=468939172 groups=["weapon_select"]]
+[node name="Control" type="Control" unique_id=610669020 node_paths=PackedStringArray("panel")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 681.0
@@ -30,6 +30,8 @@ offset_bottom = 484.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gdfb8")
+panel = NodePath("AspectRatioContainer")
+metadata/_custom_type_script = "uid://8vimbe8e08su"
 
 [node name="AspectRatioContainer" parent="." unique_id=1461861251 instance=ExtResource("2_1yqu5")]
 layout_mode = 0

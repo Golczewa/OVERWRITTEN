@@ -14,7 +14,7 @@ func _ready() -> void:
 	$game/CanvasLayer/skill_issue/AspectRatioContainer.close_button.pressed.connect(back_to_menu)
 
 
-func play_game(path: String):
+func play_game(path: String) -> void:
 	AudioPlayer.stop_music()
 	AudioPlayer.stop_all_sfx()
 	emit_signal("game")
@@ -25,7 +25,7 @@ func play_game(path: String):
 	state = 1
 
 
-func back_to_menu():
+func back_to_menu() -> void:
 	AudioPlayer.play_music(AudioPlayer.menu_theme)
 	$game/CanvasLayer/pause.is_open = false
 	get_tree().paused = false
@@ -35,7 +35,7 @@ func back_to_menu():
 	state = 0
 
 
-func end_level():
+func end_level() -> void:
 	$game.timer_stop()
 	var score = $game.gameScore
 	back_to_menu()

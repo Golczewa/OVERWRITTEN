@@ -4,9 +4,11 @@ var panel_pack = preload("res://scenes/menu/weapon_select.tscn")
 var where_add_menu
 @export_enum("left", "right", "left_upper", "right_upper") var hand: String
 signal update_all_sig
+var menu
 
 
 func _ready() -> void:
+	menu = get_parent().get_parent()
 	$button.pressed.connect(weapon_panel)
 	update()
 
@@ -18,7 +20,8 @@ func weapon_panel():
 		panel.closed.connect(update_all)
 		if not in_game:
 			panel.global_position = Vector2(200, 60)
-			get_tree().get_first_node_in_group("menu").add_child(panel)
+			menu.add_child(panel)
+			menu.weapon_choice = panel
 		else:
 			panel.position = Vector2(100, 40)
 			get_parent().add_child(panel)
@@ -47,7 +50,6 @@ func update_all():
 
 
 func is_panel_runing() -> bool:
-	var result = get_tree().get_first_node_in_group("weapon_select")
-	if result:
+	if menu.weapon_choice:
 		return true
 	return false

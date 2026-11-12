@@ -1,13 +1,10 @@
-extends Control
+extends MenuWindow
 var card_pack = preload("res://scenes/menu/weapon_button.tscn")
 var row_pack = preload("res://scenes/menu/weapon_row.tscn")
 var to_untoggle: Button
 var hand: String
 var weapon_num: int
 signal closed
-var dragging = false
-var drag_offset = Vector2()
-
 
 func _ready() -> void:
 	$AspectRatioContainer/VBoxContainer/PanelContainer.gui_input.connect(
@@ -55,16 +52,6 @@ func display_disc(i):
 		$Label.text = ""
 
 
-func begone():
-	equip()
-	emit_signal("closed")
-	for child in get_children():
-		if child != $AspectRatioContainer:
-			child.hide()
-	await $AspectRatioContainer.close_animation()
-	queue_free()
-
-
 func untoggling(button: Button):
 	AudioPlayer.play(AudioPlayer.weapon_equip)
 	if to_untoggle != null:
@@ -93,16 +80,11 @@ func set_weapon_num(num: int):
 	weapon_num = num
 
 
-func _on_panel_container_gui_input(event):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			dragging = event.pressed
-			drag_offset = get_global_mouse_position() - global_position
-
-	if event is InputEventMouseMotion and dragging:
-		var target_position = get_global_mouse_position() - drag_offset
-		var viewport_size = get_viewport_rect().size
-		var window_size = size
-		target_position.x = clamp(target_position.x, 0, viewport_size.x - window_size.x)
-		target_position.y = clamp(target_position.y, 0, viewport_size.y - window_size.y)
-		global_position = target_position
+func begone():
+	equip()
+	closed.emit()
+	for child in get_children():
+		if child != $AspectRatioContainer:
+			child.hide()
+	await $AspectRatioContainer.close_animation()
+	queue_free()

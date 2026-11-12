@@ -25,7 +25,7 @@ font = ExtResource("8_kaijy")
 font_size = 24
 font_color = Color(0.21950102, 0.21950102, 0.21950102, 1)
 
-[node name="Control2" type="Control" unique_id=937757178 groups=["menu"]]
+[node name="Control2" type="Control" unique_id=937757178]
 layout_mode = 3
 anchor_left = -0.499
 anchor_top = -0.48000002

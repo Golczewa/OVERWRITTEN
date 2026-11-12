@@ -1,6 +1,7 @@
 extends Control
 
 @export var titles: Array[String] = ["By Golczewa"]
+var weapon_choice: MenuWindow
 
 
 func _ready() -> void:
@@ -18,21 +19,21 @@ func _ready() -> void:
 	AudioPlayer.play_music(AudioPlayer.menu_theme)
 
 
-func open_map_choice():
-	$map_choice.open()
+func open_map_choice()->void:
+	$map_choice.open([$map_choice.panel,$map_choice/PanelContainer])
 
 
-func get_main_menu():
+func get_main_menu()->void:
 	$map_choice.begone()
 	$Control.hide()
 
 
-func come():
+func come()->void:
 	get_parent().show()
 	get_main_menu()
 
 
-func begone():
+func begone()->void:
 	get_parent().hide()
 
 
@@ -45,10 +46,9 @@ func hide_level_panel() -> void:
 	$Control2.go_back()
 
 
-func destroy_weapon_choice():
-	var wc = get_tree().get_first_node_in_group("weapon_select")
-	if wc:
-		wc.begone()
+func destroy_weapon_choice() -> void:
+	if weapon_choice:
+		weapon_choice.delete()
 
 
 func show_quit_game_panel() -> void:
@@ -56,16 +56,9 @@ func show_quit_game_panel() -> void:
 
 
 func show_next_level(num: int):
-	$map_choice.open()
+	$map_choice.open([$map_choice.panel,$map_choice/PanelContainer])
 	$Control2.setup(num)
 
 
-func open_credits():
+func open_credits()->void:
 	$MenuWindow2.open()
-
-#  ██████╗ ██╗   ██╗███████╗██████╗ ██╗    ██╗██████╗ ██╗████████╗████████╗███████╗███╗   ██╗
-# ██╔═══██╗██║   ██║██╔════╝██╔══██╗██║    ██║██╔══██╗██║╚══██╔══╝╚══██╔══╝██╔════╝████╗  ██║
-# ██║   ██║██║   ██║█████╗  ██████╔╝██║ █╗ ██║██████╔╝██║   ██║      ██║   █████╗  ██╔██╗ ██║
-# ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗██║███╗██║██╔══██╗██║   ██║      ██║   ██╔══╝  ██║╚██╗██║
-# ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║╚███╔███╔╝██║  ██║██║   ██║      ██║   ███████╗██║ ╚████║
-#  ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝   ╚═╝      ╚═╝   ╚══════╝╚═╝  ╚═══╝

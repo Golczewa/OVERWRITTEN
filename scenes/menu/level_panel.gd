@@ -1,7 +1,5 @@
-extends Control
+extends MenuWindow
 
-var dragging = false
-var drag_offset = Vector2()
 var path: String
 @export var max_level: int = 5
 
@@ -50,12 +48,8 @@ func play():
 
 
 func go_back():
-	for child in get_children():
-		if child != $AspectRatioContainer:
-			child.hide()
-	await $AspectRatioContainer.close_animation()
 	get_parent().destroy_weapon_choice()
-	hide()
+	begone()
 
 
 func update_all():
@@ -63,28 +57,3 @@ func update_all():
 	$Control2.update()
 	$Control3.update()
 	$Control4.update()
-
-
-func _on_panel_container_gui_input(event):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			dragging = event.pressed
-			drag_offset = get_global_mouse_position() - global_position
-
-	if event is InputEventMouseMotion and dragging:
-		var target_position = get_global_mouse_position() - drag_offset
-		var viewport_size = get_viewport_rect().size
-		var window_size = size
-		target_position.x = clamp(target_position.x, 0, viewport_size.x - window_size.x)
-		target_position.y = clamp(target_position.y, 0, viewport_size.y - window_size.y)
-		global_position = target_position
-
-
-func open():
-	for child in get_children():
-		child.hide()
-	show()
-	await $AspectRatioContainer.open_animation()
-	for child in get_children():
-		if not child == $AspectRatioContainer:
-			child.show()

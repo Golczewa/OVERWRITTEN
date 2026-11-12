@@ -1,11 +1,9 @@
-extends Control
+extends MenuWindow
 
 var label_pack: PackedScene = preload("res://scenes/menu/level_label.tscn")
-var dragging = false
-var drag_offset = Vector2()
 var curr_map := 1
-var map_names := ["Old steelmill", "City outskirts","Imaginary"]
-var visited := [true, false,false]
+var map_names := ["Old steelmill", "City outskirts", "Imaginary"]
+var visited := [true, false, false]
 const max_map := 3
 @onready var map_manager: Node3D = $SubViewportContainer/SubViewport/Node3D
 
@@ -26,30 +24,6 @@ func _ready() -> void:
 
 func level_setup(num: int):
 	get_parent().setup_level_panel(num)
-
-
-func _on_panel_container_gui_input(event):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			dragging = event.pressed
-			drag_offset = get_global_mouse_position() - global_position
-
-	if event is InputEventMouseMotion and dragging:
-		var target_position = get_global_mouse_position() - drag_offset
-		var viewport_size = get_viewport_rect().size
-		var window_size = size
-		target_position.x = clamp(target_position.x, 0, viewport_size.x - window_size.x)
-		target_position.y = clamp(target_position.y, 0, viewport_size.y - window_size.y)
-		global_position = target_position
-
-
-func begone():
-	for child in get_children():
-		if child != $AspectRatioContainer:
-			child.hide()
-	await $AspectRatioContainer.close_animation()
-	hide()
-	get_parent().hide_level_panel()
 
 
 func show_label(pos: Vector3, num: int) -> void:
@@ -73,17 +47,6 @@ func setup_buttons() -> void:
 		button.mouse_exited.connect(hide_label)
 		button.pressed_.connect(level_setup.bind(button.level))
 		button.set_button_colors()
-
-
-func open():
-	refresh_buttons()
-	show()
-	for child in get_children():
-		child.hide()
-	await $AspectRatioContainer.open_animation()
-	for child in get_children():
-		if not child == $PanelContainer:
-			child.show()
 
 
 func refresh_buttons():

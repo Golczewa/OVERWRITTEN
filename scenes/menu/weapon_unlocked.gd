@@ -15,7 +15,7 @@ func _ready():
 
 
 func unlock_weapon(num: int, reval_time: float = 1.5):
-	open()
+	open([panel, $Button])
 	rainbow()
 	$TextureRect.texture = load(
 		ConfigManager.weapons.get_value(str(num), "image", "res://icon.svg")
@@ -77,13 +77,3 @@ func begone():
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("skip_cuscene"):
 		reveal.emit()
-
-
-func open():
-	for child in get_children():
-		child.hide()
-	show()
-	await panel.open_animation()
-	for child in get_children():
-		if child != $Button:
-			child.show()

@@ -97,12 +97,12 @@ func update_values():
 	$HBoxContainer/VBoxContainer2/OptionButton2._on_item_picked(index2)
 
 
-func open():
+func open(exeptions: Array = [panel]):
 	update_values()
 	show()
 	for child in get_children():
 		child.hide()
 	await panel.open_animation()
 	for child in get_children():
-		if not child == panel:
+		if child not in exeptions:
 			child.show()

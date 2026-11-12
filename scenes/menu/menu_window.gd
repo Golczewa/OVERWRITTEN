@@ -18,7 +18,7 @@ func _ready() -> void:
 	get_tree().current_scene.game.connect(begone)
 
 
-func _on_panel_container_gui_input(event):
+func _on_panel_container_gui_input(event) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			dragging = event.pressed
@@ -33,20 +33,25 @@ func _on_panel_container_gui_input(event):
 		global_position = target_position
 
 
-func open():
+func open(exeptions: Array = [panel]) -> void:
 	show()
 	for child in get_children():
 		child.hide()
 	await panel.open_animation()
 	for child in get_children():
-		if not child == panel:
+		if child not in exeptions:
 			child.show()
 
 
-func begone():
+func begone() -> void:
 	for child in get_children():
 		if child != panel:
 			child.hide()
 	await panel.close_animation()
 	hide()
 	hiding.emit()
+
+
+func delete() -> void:
+	await begone()
+	queue_free()
