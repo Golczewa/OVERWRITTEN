@@ -1,21 +1,35 @@
 [gd_scene format=3 uid="uid://b0fntd36ji6wt"]
 
-[ext_resource type="Shader" uid="uid://bkpd0riwdw5fg" path="res://shaders/steelmill.gdshader" id="1_6r3jp"]
 [ext_resource type="ArrayMesh" uid="uid://cubodd3iog5vw" path="res://assets/3d stuff/stealmill.obj" id="1_v2jp7"]
+[ext_resource type="Shader" uid="uid://hr1hk0ieggbo" path="res://steemill_v3.gdshader" id="1_y1xs4"]
 [ext_resource type="PackedScene" uid="uid://k5d3enng1mx" path="res://scenes/menu/3d stuff/3Dbutton.tscn" id="3_dnxhx"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6r3jp"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dyd15"]
 render_priority = 0
-shader = ExtResource("1_6r3jp")
-shader_parameter/hologram_color = Color(0.5372549, 0, 0.101960786, 1)
-shader_parameter/dot_scale = 50.0
-shader_parameter/dot_size = 0.2
+shader = ExtResource("1_y1xs4")
+shader_parameter/primary_color = Color(1, 0, 0, 1)
+shader_parameter/secondary_color = Color(1, 0, 0, 1)
+shader_parameter/density = 1.0
+shader_parameter/effect_strength = 2.0
+shader_parameter/wipe_scale = 3.0
+shader_parameter/wipe_speed = 0.5
+shader_parameter/wipe_blend = 0.7
+shader_parameter/signal_scale = 40.0
+shader_parameter/signal_speed = 1.0
+shader_parameter/signal_random_scale = 0.3
+shader_parameter/signal_blend = 1.0
+shader_parameter/noise_distort_amount = 0.1
+shader_parameter/noise_amount = 1.0
+shader_parameter/grain_amount = 0.4
+shader_parameter/displacement_amount = 1.0
+shader_parameter/flicker_amount = 0.3
+shader_parameter/flicker_speed = 10.0
 
 [node name="Node3D" type="Node3D" unique_id=810478375]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=441258476]
 transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 0, 0.45453954, -2.8718421)
-material_override = SubResource("ShaderMaterial_6r3jp")
+material_override = SubResource("ShaderMaterial_dyd15")
 mesh = ExtResource("1_v2jp7")
 
 [node name="Node3D" type="Node3D" parent="." unique_id=820372636]
