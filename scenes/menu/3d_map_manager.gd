@@ -4,7 +4,7 @@ var tween: Tween
 
 const map1_poz = [Vector3(-1.976, 0.821, -0.285), Vector3(-9.0, -33.6, 0)]
 const map2_poz = [Vector3(2.773, 1.521, 2.308), Vector3(-36.4, -81, 0)]
-const map3_poz = [Vector3(1.652, 1.665, 5.714), Vector3(-25.1, -142.9, 3.7)]
+const map3_poz = [Vector3(1.652, 1.665, 5.714), Vector3(-25.1, -158.7, 3.7)]
 
 var curr_map: Node3D
 
