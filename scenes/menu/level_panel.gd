@@ -1,7 +1,7 @@
 extends MenuWindow
 
 var path: String
-@export var max_level: int = 5
+@export var max_level: int = 8
 
 
 func _ready() -> void:

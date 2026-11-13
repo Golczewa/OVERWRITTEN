@@ -23,6 +23,7 @@ func _ready() -> void:
 
 
 func level_setup(num: int):
+	print(num)
 	get_parent().setup_level_panel(num)
 
 

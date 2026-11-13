@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b32hmqppn4vbb"]
+
+[ext_resource type="Script" uid="uid://cb4ypqr5ddld1" path="res://scenes/levels/level_template.gd" id="1_pq0r3"]
+[ext_resource type="PackedScene" uid="uid://bc77vmhquqbe1" path="res://scenes/levels/level5/level5_floor1.tscn" id="2_10404"]
+
+[node name="Level" type="Node2D" unique_id=414312708]
+script = ExtResource("1_pq0r3")
+floors_loaded = Array[PackedScene]([ExtResource("2_10404")])
+level_id = 5
+metadata/_custom_type_script = "uid://cb4ypqr5ddld1"

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cyas0ki50fig3"]
+
+[ext_resource type="Texture2D" uid="uid://delfbisitbwnp" path="res://assets/enemies/mine.png" id="1_axc4m"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m8kij"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_axc4m")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8kij"]
+size = Vector2(10, 10)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1240831185]
+sprite_frames = SubResource("SpriteFrames_m8kij")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1064419547]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=166170168]
+shape = SubResource("RectangleShape2D_m8kij")

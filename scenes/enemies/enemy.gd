@@ -96,7 +96,7 @@ func idle():
 		return
 	var next_path = nav_agent.get_next_path_position()
 	direction = global_position.direction_to(next_path)
-	if (not melle) and direction:
+	if (not melle) and direction and weapon:
 		weapon.look_at(next_path.rotated(weapon_offset))
 	body.look_at(next_path)
 	legs.toogle_fallow(next_path)

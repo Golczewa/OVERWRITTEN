@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bc77vmhquqbe1"]
+
+[ext_resource type="Script" uid="uid://cramwugkt2of" path="res://scenes/levels/floor_template.gd" id="1_cxy67"]
+[ext_resource type="PackedScene" uid="uid://cjus3kfawg638" path="res://scenes/levels/level5/level5_floor1_map.tscn" id="2_0xx46"]
+[ext_resource type="PackedScene" uid="uid://bdwlvl0qdr800" path="res://scenes/levels/props/entrance.tscn" id="3_0citk"]
+[ext_resource type="PackedScene" uid="uid://gvdpfkhlvqdq" path="res://scenes/levels/props/transition.tscn" id="4_sa0ip"]
+[ext_resource type="PackedScene" uid="uid://crsh6cslub6kj" path="res://scenes/enemies/walking_mine.tscn" id="5_6qxf0"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_0xx46"]
+vertices = PackedVector2Array(4.8828125, 115.0625, -117.703125, 113.14844, -112.25781, -76.32031, -5.2109375, -79.953125, 105.953125, -48.859375, 38.890625, 145.42969, 157.60156, 127.64844, 97.14844, 180.10156, 39.75, 181.71094)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 0, 4, 6, 7), PackedInt32Array(5, 7, 8)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-122, -86, -128, 123, 1, 125, 29, 150, 30, 192, 101, 190, 169, 131, 114, -57, -4, -90)])
+
+[node name="Floor" type="Node2D" unique_id=1911157786 node_paths=PackedStringArray("down_node", "up_node")]
+script = ExtResource("1_cxy67")
+down_node = NodePath("StaticBody2D")
+up_node = NodePath("Area2D")
+metadata/_custom_type_script = "uid://cramwugkt2of"
+
+[node name="NavigationRegion2D" parent="." unique_id=1781758922 instance=ExtResource("2_0xx46")]
+navigation_polygon = SubResource("NavigationPolygon_0xx46")
+
+[node name="StaticBody2D" parent="." unique_id=124000147 instance=ExtResource("3_0citk")]
+position = Vector2(-111, 9)
+
+[node name="Area2D" parent="." unique_id=1410637359 instance=ExtResource("4_sa0ip")]
+position = Vector2(151, 54)
+
+[node name="enemy" type="Node2D" parent="." unique_id=1404538814]
+
+[node name="Enemy" parent="enemy" unique_id=1597167077 instance=ExtResource("5_6qxf0")]
+position = Vector2(91, 117)
